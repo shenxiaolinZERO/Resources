@@ -1,0 +1,3607 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+<!-- Run date = March 7, 2005 11:38:54 -->
+<meta name="Generator" content=" Oracle DARB XHTML converter - Version 4.1.3 Build 116" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Oracle&#174; Database  Readme</title>
+<link rel="stylesheet" type="text/css" href="blafdoc.css" title="default" />
+<link rel="stylesheet" type="text/css" href="darbbook.css" title="default" />
+<link rel="copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" />
+</head>
+<body>
+<div class="header">
+<a id="top" name="top"></a>
+<div class="zz-skip-header"><a href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<b>Oracle&#174; Database  Readme </b>
+<br />
+<b>10<span class="italic">g</span> Release 2 (10.2) BETA 3   </b>
+<br />
+Part No. B14233-01
+</td>
+<td valign="bottom" align="right">
+<table  class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="225">
+<tr><td>&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100">
+<tr>
+<td>&nbsp;</td>
+</tr>
+</table>
+<a name="BEGIN"></a>
+</div><!-- class="header" -->
+<div class="IND">
+<!-- End Header -->
+<p class="betadraftsubtitle">Beta Draft</p>
+<p>
+Copyright &#169; 2005, &nbsp;Oracle. All rights reserved.
+</p>
+<p>Oracle is a registered trademark of Oracle Corporation and/or its affiliates. Other names may be trademarks of their respective owners. 
+</p>
+<h1>Oracle&#174; Database </h1>
+<p class="BookTitle">
+Readme
+</p>
+<p>
+<span class="RevNumber">
+10<span class="italic">g</span> Release 2 (10.2) BETA 3 
+</span>
+<span class="Platform">
+ 
+</span>
+</p>
+<p class="InvPartNumber">Part No. B14233-01</p>
+<p class="Date">February 2005</p><a id="sthref1" name="sthref1"></a>
+<p class="subhead2">Purpose of this Readme</p>
+<p>This Readme file is relevant only to the delivered Oracle Database 10<span class="italic">g</span> Release 2 (10.2) BETA 3 product and its integral parts, such as SQL, PL/SQL, the Oracle Call Interface (OCI), SQL&#042;Loader, Import/Export utilities, and so on.
+</p>
+<p>This Readme documents differences between the server and its integral parts and its documented functionality, as well as known problems and workarounds.
+</p>
+<p>Operating system releases, such as UNIX and Windows, often provide readme documents specific to that operating system. Additional Readme files may also exist. This Readme file is provided in lieu of system bulletins or similar publications.
+</p><a id="sthref2" name="sthref2"></a>
+<p class="subhead2">Welcome Letter and Licensing</p>
+<p>Please read the welcome letter included with your Oracle Database 10<span class="italic">g</span> Release 2 (10.2) BETA 3 package.
+</p><a id="sthref3" name="sthref3"></a>
+<p class="subhead2">Documentation</p>
+<p>For further documentation, see the full list of books provided with this release.
+</p>
+<p class="subhead1">Contents</p>
+<p><a href="#CHDJAGFI">Section 1, "Compatibility, Upgrading, and Downgrading"</a>
+</p>
+<p><a href="#CHDJFIFH">Section 2, "Default Behavior Changes"</a>
+</p>
+<p><a href="#CACDCFHA">Section 3, "Automatic Storage Management"</a>
+</p>
+<p><a href="#CACCEICF">Section 4, "Block Change Tracking"</a>
+</p>
+<p><a href="#CHDEEHHA">Section 5, "Configuration Assistants"</a>
+</p>
+<p><a href="#BABDCGJB">Section 6, "Database Control"</a>
+</p>
+<p><a href="#CHDCHFGG">Section 7, "Database Security"</a>
+</p>
+<p><a href="#BABBFFGD">Section 8, "Encryption and Integrity"</a>
+</p>
+<p><a href="#CHDCCIEF">Section 9, "Java and Web Services"</a>
+</p>
+<p><a href="#CHDFBBED">Section 10, "Media Management Software"</a>
+</p>
+<p><a href="#CHDEBJAJ">Section 11, "Oracle Data Guard"</a>
+</p>
+<p><a href="#CHDBEDHF">Section 12, "Oracle Data Mining"</a>
+</p>
+<p><a href="#CACEJDCB">Section 13, "Oracle HTML DB"</a>
+</p>
+<p><a href="#CHDCFBIH">Section 14, "Oracle <span class="italic">inter</span>Media"</a>
+</p>
+<p><a href="#CHDBDACH">Section 15, "Oracle Internet Directory"</a>
+</p>
+<p><a href="#CHDEBBAB">Section 16, "Oracle-Managed Files"</a>
+</p>
+<p><a href="#CHDDIDAE">Section 19, "Oracle Sample Schemas"</a>
+</p>
+<p><a href="#BABDAHAC">Section 20, "Oracle Spatial"</a>
+</p>
+<p><a href="#CACIBCIJ">Section 21, "Oracle Text"</a>
+</p>
+<p><a href="#CHDIFCDA">Section 22, "Oracle XML Developer's Kit"</a>
+</p>
+<p><a href="#CHDIHGCH">Section 23, "Pro&#042;C"</a>
+</p>
+<p><a href="#CHDDDAGJ">Section 24, "Pro&#042;COBOL"</a>
+</p>
+<p><a href="#CHDJDGFD">Section 25, "Pro&#042;FORTRAN"</a>
+</p>
+<p><a href="#CHDCHGFD">Section 26, "Replication"</a>
+</p>
+<p><a href="#BABGICBC">Section 27, "SQLJ"</a>
+</p>
+<p><a href="#CHDFCHHA">Section 28, "SQL&#042;Module for ADA"</a>
+</p>
+<p><a href="#CHDBIHCC">Section 29, "SQL&#042;Plus"</a>
+</p>
+<p><a href="#CHDHFEEI">Section 30, "Summary Management"</a>
+</p>
+<p><a href="#CHDICCFG">Section 31, "Table Compression"</a>
+</p>
+<p><a href="#CHDBBABA">Section 32, "Types"</a>
+</p>
+<p><a href="#CHDIDGBA">Section 33, "Utilities"</a>
+</p>
+<p><a href="#CHDJICDC">Section 34, "Documentation Addendum"</a>
+</p>
+<p><a href="#CHDDJCFH">Section 35, "Open Bugs"</a>
+</p>
+<p><a href="#BABJCAFC">Section 36, "Documentation Accessibility"</a>
+</p><a id="CHDJAGFI" name="CHDJAGFI"></a>
+<div class="sect1">
+<a id="sthref4" name="sthref4"></a>
+<h2><span class="secnum">1 </span>Compatibility, Upgrading, and Downgrading
+</h2>
+<p>Please note the following items for compatibility, upgrading and downgrading.
+</p>
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref5" name="sthref5"></a>
+<h3><span class="secnum">1.1 </span>Installation Scenarios Included in This Release
+</h3>
+<p>The installation scenarios included in Oracle Database 10g release 2 (10.2) BETA 3 are described in the following table.
+</p>
+<div class="tblFormalWide">
+<a id="sthref6" name="sthref6"></a><a id="sthref7" name="sthref7"></a>
+<p class="titleintable">Table 1 CRS and RAC Installation Scenarios Supported for Oracle Database 10g release 2 (10.2) BETA 3</p>
+<table class="FormalWide" title="CRS and RAC Installation Scenarios Supported for Oracle Database 10g release 2 (10.2) BETA 3" summary="CRS and RAC install scenarios" dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t2">Install Type
+</th>
+<th align="left" valign="bottom" id="r1c2-t2">Scenario
+</th>
+<th align="left" valign="bottom" id="r1c3-t2">Oracle Home Description
+</th>
+<th align="left" valign="bottom" id="r1c4-t2">Database
+</th>
+<th align="left" valign="bottom" id="r1c5-t2">Storage
+</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t2" headers="r1c1-t2">New Install
+</td>
+<td align="left" headers="r2c1-t2 r1c2-t2">CRS1
+</td>
+<td align="left" headers="r2c1-t2 r1c3-t2">Shared CRS&#095;OH
+</td>
+<td align="left" headers="r2c1-t2 r1c4-t2">&#042; OCR, VDISK
+</td>
+<td align="left" headers="r2c1-t2 r1c5-t2">NAS
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t2" headers="r1c1-t2">New Install
+</td>
+<td align="left" headers="r3c1-t2 r1c2-t2">CRS3
+</td>
+<td align="left" headers="r3c1-t2 r1c3-t2">Non-shared CRS&#095;OH
+</td>
+<td align="left" headers="r3c1-t2 r1c4-t2">&#042; OCR, VDISK
+</td>
+<td align="left" headers="r3c1-t2 r1c5-t2">NAS
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t2" headers="r1c1-t2">New Install
+</td>
+<td align="left" headers="r4c1-t2 r1c2-t2">CRS7
+</td>
+<td align="left" headers="r4c1-t2 r1c3-t2">Non-shared CRS&#095;OH
+</td>
+<td align="left" headers="r4c1-t2 r1c4-t2">&#042; OCR, VDISK
+</td>
+<td align="left" headers="r4c1-t2 r1c5-t2">Raw
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t2" headers="r1c1-t2">New Install
+</td>
+<td align="left" headers="r5c1-t2 r1c2-t2">RAC2
+</td>
+<td align="left" headers="r5c1-t2 r1c3-t2">Shared OH
+</td>
+<td align="left" headers="r5c1-t2 r1c4-t2">Seed Database
+</td>
+<td align="left" headers="r5c1-t2 r1c5-t2">NAS
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t2" headers="r1c1-t2">New Install
+</td>
+<td align="left" headers="r6c1-t2 r1c2-t2">RAC4
+</td>
+<td align="left" headers="r6c1-t2 r1c3-t2">Non-shared OH
+</td>
+<td align="left" headers="r6c1-t2 r1c4-t2">Custom Database
+</td>
+<td align="left" headers="r6c1-t2 r1c5-t2">ASM (NAS)
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t2" headers="r1c1-t2">New Install
+</td>
+<td align="left" headers="r7c1-t2 r1c2-t2">RAC10
+</td>
+<td align="left" headers="r7c1-t2 r1c3-t2">Standard Edition, Non-shared OH
+</td>
+<td align="left" headers="r7c1-t2 r1c4-t2">Seed Database
+</td>
+<td align="left" headers="r7c1-t2 r1c5-t2">ASM
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t2" headers="r1c1-t2">New Install
+</td>
+<td align="left" headers="r8c1-t2 r1c2-t2">RAC25
+</td>
+<td align="left" headers="r8c1-t2 r1c3-t2">Non-shared OH
+</td>
+<td align="left" headers="r8c1-t2 r1c4-t2">Custom Database
+</td>
+<td align="left" headers="r8c1-t2 r1c5-t2">Raw
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t2" headers="r1c1-t2">New Install
+</td>
+<td align="left" headers="r9c1-t2 r1c2-t2">RAC29
+</td>
+<td align="left" headers="r9c1-t2 r1c3-t2">Non-shared OH
+</td>
+<td align="left" headers="r9c1-t2 r1c4-t2">Seed Database
+</td>
+<td align="left" headers="r9c1-t2 r1c5-t2">NAS
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r10c1-t2" headers="r1c1-t2">CRS Upgrade (Rolling)
+</td>
+<td align="left" headers="r10c1-t2 r1c2-t2">CU15
+</td>
+<td align="left" headers="r10c1-t2 r1c3-t2">Non-shared CRS&#095;OH; 10.1.0.3 upgrade to 10.2 CRS
+</td>
+<td align="left" headers="r10c1-t2 r1c4-t2">
+<br />
+</td>
+<td align="left" headers="r10c1-t2 r1c5-t2">NAS
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r11c1-t2" headers="r1c1-t2">RAC Upgrade
+</td>
+<td align="left" headers="r11c1-t2 r1c2-t2">RU7
+</td>
+<td align="left" headers="r11c1-t2 r1c3-t2">Non-shared OH; 10.1.0.3 DB upgrade to 10.2
+</td>
+<td align="left" headers="r11c1-t2 r1c4-t2">
+<br />
+</td>
+<td align="left" headers="r11c1-t2 r1c5-t2">NAS
+</td>
+</tr>
+</tbody>
+</table><br />
+</div><!-- class="tblFormalWide" -->
+
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref8" name="sthref8"></a>
+<h3><span class="secnum">1.2 </span>Supported Upgrade Paths for Oracle Database 10<span class="italic">g</span> Release 2 (10.2) BETA 3
+</h3>
+<p>Upgrade to Oracle Database 10<span class="italic">g</span> Release 2 (10.2) BETA 3 is only supported from the following releases:
+</p>
+<ul>
+<li type="disc">
+<p>Oracle8<span class="italic">i</span> release 8.1.7.4
+</p>
+</li>
+<li type="disc">
+<p>Oracle9<span class="italic">i</span> releases 9.0.1.4 and 9.0.1.5
+</p>
+</li>
+<li type="disc">
+<p>Oracle9<span class="italic">i</span> releases 9.2.0.4, 9.2.0.5, and 9.2.0.6
+</p>
+</li>
+<li type="disc">
+<p>Oracle Database 10<span class="italic">g</span> releases 10.1.0.2, 10.1.0.3
+</p>
+</li>
+</ul>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref9" name="sthref9"></a>
+<h3><span class="secnum">1.3 </span>Standard Edition Starter Database Upgrade
+</h3>
+<p>When the Standard Edition starter database is upgraded, the following components cannot be upgraded by the SE server because they require options that are not installed in the Standard Edition:
+</p>
+<ul>
+<li type="disc">
+<p>Oracle Data Mining
+</p>
+</li>
+<li type="disc">
+<p>Spatial
+</p>
+</li>
+<li type="disc">
+<p>OLAP Catalog
+</p>
+</li>
+<li type="disc">
+<p>OLAP Analytic Workspace
+</p>
+</li>
+<li type="disc">
+<p>Oracle OLAP API
+</p>
+</li>
+</ul>
+<p>After the upgrade, these components will have a <code>STATUS</code> value of '<code>OPTION OFF</code>' in the <code>DBA&#095;REGISTRY</code> view, and there will be some invalid objects in the associated component schemas. The Database Upgrade Assistant will show unsuccessful upgrades for these components.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref10" name="sthref10"></a>
+<h3><span class="secnum">1.4 </span>Upgrading to Oracle Database 10<span class="italic">g</span> Release 2 Beta or Oracle Database 10g Release 2 Production Version
+</h3>
+<p>Upgrading from this beta release to a subsequent beta release or to the Oracle 10<span class="italic">g</span> Database Release 2 production version is not supported.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref11" name="sthref11"></a>
+<h3><span class="secnum">1.5 </span>Tablespace Sizing
+</h3>
+<p>The Oracle Database 10<span class="italic">g</span> Pre-Upgrade Information Utility (<code>utlu102i.sql</code>) estimates the additional space required in the <code>SYSTEM</code> tablespace and in any tablespaces associated with the components that are in the database (for example, SYSAUX, DRSYS). For a manual upgrade, be sure to run this utility on your existing database prior to upgrading.
+</p>
+<p>To avoid potential space problems during the upgrade, you can set one data file for each tablespace to <code>AUTOEXTEND ON MAXSIZE UNLIMITED</code> for the duration of the upgrade.
+</p>
+<p>If you are using ASM, be sure there is adequate space in the ASM disk groups for the total tablespace sizes estimated by the <code>utlu102i.sql</code> utility.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref12" name="sthref12"></a>
+<h3><span class="secnum">1.6 </span>Downgrading to Oracle9<span class="italic">i</span> Database Release 2 or Oracle Database 10<span class="italic">g</span> Release 1
+</h3>
+<p>Downgrade is not supported for this BETA 3 release.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref13" name="sthref13"></a>
+<h3><span class="secnum">1.7 </span>JServer JAVA Virtual Machine Upgrade
+</h3>
+<p>The JServer NCOMP files, JAccelerator, are now on the Companion CD. If JServer is in the database that is being upgraded, the following error will occur during a manual upgrade, provided the Companion CD is not installed:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">ORA-29558: JAccelerator (NCOMP) not installed.
+
+</pre>
+<p>JAccelerator can be installed either before or after the upgrade; installing it prior to the upgrade avoids the error.
+</p>
+<p>This error will not be displayed if you are upgrading using the Database Upgrade Assistant (DBUA). Instead, DBUA shows a warning message at the end of the upgrade in the Upgrade Results page, stating which components should be installed from the Companion CD.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref14" name="sthref14"></a>
+<h3><span class="secnum">1.8 </span>Upgrading Databases with interMedia, Spatial, or XDK for Java
+</h3>
+<p>If any of these components are in your database, but XML Database (XDB) is not, then XDB will automatically be installed during the upgrade, since these components are dependent on its functionality.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref15" name="sthref15"></a>
+<h3><span class="secnum">1.9 </span>Compatibility with Oracle8<span class="italic">i</span> Database
+</h3>
+<p>Connection of Oracle Database 10<span class="italic">g</span> Release 2 client or server to Oracle8<span class="italic">i</span> Database release 8.1.7 servers is supported. Similarly, connecting Oracle8<span class="italic">i</span> Database servers to Oracle Database 10<span class="italic">g</span> Release 2 servers is supported.
+</p>
+</div><!-- class="sect2" -->
+
+</div><!-- class="sect1" -->
+<a id="CHDJFIFH" name="CHDJFIFH"></a>
+<div class="sect1">
+
+<!-- infolevel=all infotype=General --><a id="sthref16" name="sthref16"></a>
+<h2><span class="secnum">2 </span>Default Behavior Changes
+</h2>
+<p>This section describes some of the differences in behavior between Oracle Database 10<span class="italic">g</span> and previous releases. The majority of the information about upgrading and downgrading is already included in the <span class="italic">Oracle Database Upgrade Guide</span>. 
+</p>
+<p class="subhead2">Log Transport Services Password</p>
+<p>Log transport services now require that all databases in an Oracle Data Guard configuration use a password file. The password for the <code>SYS</code> user must be identical in the password file of every system that is in the same Oracle Data Guard configuration. For more details, refer to <span class="italic">Oracle Data Guard Concepts and Administration</span>.
+</p>
+<p class="subhead2">Offset for CLOB and NCLOB APIs</p>
+<p>Starting with this release, APIs that write to a <code>CLOB</code> or <code>NCLOB</code> will cause error <code>ORA-22831</code> when the offset specified for the beginning of the write is not on a character boundary in the existing <code>LOB</code> data. 
+</p>
+<p><code>LOB</code> APIs use codepoint semantics for the amount and offset parameters when the database default or national character set is Unicode. For example, if the starting offset is in the middle of a surrogate pair, error <code>ORA-22831</code> occurs and the data is not written. This avoids corrupting the character in the target <code>LOB</code>.
+</p>
+<p>To configure the database so that it does not throw <code>ORA-22831</code>, you can set event <code>10973</code> to any level. When this event is set, data is written to the target <code>LOB</code> regardless of whether the offset is on a character boundary. Note that when supplemental logging is enabled, setting event <code>10973</code> does not disable error <code>ORA-22831</code>. 
+</p>
+<p class="subhead2">LOG&#095;ARCHIVE&#095;DEST&#095;<span class="italic">n</span> Parameter</p>
+<p>The <code>LOG&#095;ARCHIVE&#095;DEST&#095;</code><code><span class="codeinlineitalic">n</span></code> parameter can now specify standby destinations that are running Oracle Standard Edition, but only when specifying local destinations with the <code>LOCATION</code> attribute. See Section 2.3.2 "Oracle Software Requirements" in <span class="italic">Oracle Data Guard Concepts and Administration</span> for details.
+</p>
+<p class="subhead2">PARALLEL&#095;ADAPTIVE&#095;MULTI&#095;USER Parameter</p>
+<p>The default value of the initialization parameter <code>PARALLEL&#095;ADAPTIVE&#095;MULTI&#095;USER</code> has changed. See <span class="italic">Oracle Database Reference</span> for details.
+</p>
+<p class="subhead2">QUERY&#095;REWRITE&#095;ENABLED Parameter</p>
+<p>The default value of the initialization parameter <code>QUERY&#095;REWRITE&#095;ENABLED </code>has changed. See <span class="italic">Oracle Database Reference</span> for details.
+</p>
+<p class="subhead2">SHARED&#095;POOL&#095;SIZE Parameter</p>
+<p>The amount of shared pool memory allocated by previous Oracle Database releases was equal to the sum of the value of the <code>SHARED&#095;POOL&#095;SIZE</code> initialization parameter and the internal SGA overhead computed during instance startup. This overhead was based on the values of several other initialization parameters. As an example, if the <code>SHARED&#095;POOL&#095;SIZE</code> parameter is 64m and the internal SGA overhead is 12m, the real size of shared pool in the SGA would be 76m, although the value of the SHARED&#095;POOL&#095;SIZE parameter would still be displayed as 64m.
+</p>
+<p>Starting with Oracle Database 10<span class="italic">g</span> release 1, the size of internal SGA overhead is included in the value of <code>SHARED&#095;POOL&#095;SIZE</code> parameter; the shared pool memory allocated at startup is exactly the value of <code>SHARED&#095;POOL&#095;SIZE</code>. Therefore, this parameter must be set such that it includes both the internal SGA overhead and the desired effective value of the shared pool size. Assuming that the internal SGA overhead remains unchanged, the effective available value of shared pool after startup would be 12m less than the value of the <code>SHARED&#095;POOL&#095;SIZE</code> parameter, or 52m. To maintain 64m for the effective value of shared pool memory, set the parameter to 76m.Migration utilities for this release recommend new values for <code>SHARED&#095;POOL&#095;SIZE</code> based on the value of internal SGA overheads in the pre-upgrade environment, which you can determine by running the following query before upgrading to Oracle Database 10<span class="italic">g</span>:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">SQL> SELECT SUM(BYTES) FROM v&#036;sgastat WHERE pool &#061; 'shared pool';
+
+</pre>
+<p>In Oracle Database 10<span class="italic">g</span>, the exact value of internal SGA overhead, or Startup overhead in Shared Pool, is listed in the new <code>v&#036;sgainfo</code> view. 
+</p>
+<p>In the <span class="italic">manual</span> SGA mode, values of <code>SHARED&#095;POOL&#095;SIZE</code> that are too small to accommodate the internal SGA overhead result in an <code>ORA-00371</code> error during startup. This generated error message includes a suggested value for the <code>SHARED&#095;POOL&#095;SIZE</code> parameter.If you are using <span class="italic">automatic</span> shared memory management, the size of the shared pool is tuned automatically, and the <code>ORA-00371</code> error is never generated.
+</p>
+<p class="subhead2">SHARED&#095;SERVERS Parameter</p>
+<p>When the initialization parameter <code>SHARED&#095;SERVERS</code> is dynamically changed to <code>0</code>, no new clients can connect in shared mode, but existing shared server connections can continue to operate. Prior to<span class="italic"></span> Oracle Database 10<span class="italic">g</span>, existing shared server connections would hang in this situation.
+</p>
+</div><!-- class="sect1" -->
+<a id="CACDCFHA" name="CACDCFHA"></a>
+<div class="sect1">
+
+<!-- infolevel=all infotype=General --><a id="sthref17" name="sthref17"></a>
+<h2><span class="secnum">3 </span>Automatic Storage Management
+</h2>
+<p>Please note the following changes in Automatic Storage Management (ASM):
+</p>
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref18" name="sthref18"></a>
+<h3><span class="secnum">3.1 </span>New Command Line Interface to ASM
+</h3>
+<p>ASMCMD is a new utility for easy viewing and manipulation of files and directories in ASM disk groups. It can list the contents of disk groups, perform searches, create and remove directories and aliases, display space utilization, and more.
+</p>
+<p>The utility provides both interactive and non-interactive modes. The interactive mode enters a shell-like environment where you are prompted to issue ASMCMD commands. The non-interactive mode, which is useful for scripts and batch processing, executes a single command and exits the utility.
+</p>
+<p>To use ASMCMD:
+</p>
+<ol type="1" start="1">
+<li>
+<p>Ensure that the ASM instance is started and that disk groups are mounted.
+</p>
+</li>
+<li>
+<p>Log in to the host with a user that has SYSDBA privileges.
+</p>
+</li>
+<li>
+<p>Set the <code>ORACLE&#095;HOME</code> and <code>ORACLE&#095;SID</code> environment variables to select the ASM instance. Depending on your operating system, you may have to set other environment variables to properly connect to the ASM instance.
+</p>
+</li>
+<li>
+<p>Type <code>asmcmd</code>. An ASMCMD> prompt is shown.
+</p>
+</li>
+<li>
+<p>Type <code>help</code> at the ASMCMD> prompt to view general ASMCMD help and a list of available commands. You can also access help in non-interactive mode by typing <code>asmcmd help</code> at the command prompt.
+</p>
+</li>
+</ol>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref19" name="sthref19"></a>
+<h3><span class="secnum">3.2 </span>ASM Deinstall Related Precautions
+</h3>
+<p>ASM uses Cluster Synchronization Services (CSS) for inter-instance synchronization. In an Oracle Real Application Cluster (RAC) environment, CSS runs out of the <code>CRS&#095;HOME</code> on each node. In a single node environment, start CSS by running the <code>root.sh</code> script on the first installed <code>&#036;ORACLE&#095;HOME</code>. ASM requires CSS in a single node environment for synchronization between the ASM and database instances.
+</p>
+<p>If deinstalling an <code>&#036;ORACLE&#095;HOME</code> from a non-RAC machine that is running ASM, first check to see if the CSS daemon (CSSD) is running on the <code>&#036;ORACLE&#095;HOME</code> that you intend to deinstall. If it is and you wish to continue using ASM on this machine, migrate the CSS service to the <code>&#036;ORACLE&#095;HOME</code> from which you run your ASM instance by executing this script:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">&#036;ORACLE&#095;HOME/bin/localconfig reset <span class="italic">new&#095;&#036;ORACLE&#095;HOME</span>
+
+</pre>
+<p>Detailed instructions on how to migrate CSSD to a new <code>&#036;ORACLE&#095;HOME</code> are provided in the <span class="italic">Oracle Database Installation Guide</span> specific to your platform and the <span class="italic">Oracle Real Application Clusters Installation and Configuration Guide</span> Chapter 12 "Understanding the Real Application Clusters Installed Configuration".
+</p>
+<p>If more than one database instance on a node will use ASM storage, you should have a separate <code>&#036;ORACLE&#095;HOME</code> for the ASM instance. Doing this will reduce the likelihood of accidentally deinstalling the ASM instance when deinstalling a database's <code>&#036;ORACLE&#095;HOME</code>. If a single database uses ASM on a machine, then both the database and ASM instances can run from the same <code>&#036;ORACLE&#095;HOME</code>.
+</p>
+</div><!-- class="sect2" -->
+
+</div><!-- class="sect1" -->
+<a id="CACCEICF" name="CACCEICF"></a>
+<div class="sect1">
+
+<!-- infolevel=all infotype=General --><a id="sthref20" name="sthref20"></a>
+<h2><span class="secnum">4 </span>Block Change Tracking
+</h2>
+<p>Please note the following change in block change tracking:
+</p>
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref21" name="sthref21"></a>
+<h3><span class="secnum">4.1 </span>Block Change Tracking and Physical Standby Database
+</h3>
+<p>Block Change Tracking can be enabled at a physical standby database. However, you should note that changed blocks are not recorded, and incremental backups will not be faster during the physical standby as they are receiving and applying redo transactions from the primary database.
+</p>
+<p>When the physical standby becomes a primary database, changes are once again recorded. Following the subsequent Level 0 backup, incremental backups take advantage of change tracking.
+</p>
+</div><!-- class="sect2" -->
+
+</div><!-- class="sect1" -->
+<a id="CHDEEHHA" name="CHDEEHHA"></a>
+<div class="sect1">
+<a id="sthref22" name="sthref22"></a>
+<h2><span class="secnum">5 </span>Configuration Assistants
+</h2>
+<p>Cloning a database using Database Configuration Assistant (DBCA) is only supported for a database that has tablespaces with blocks of equal size.
+</p>
+<p>Enterprise Manager DB Cloning functionality does not have any restrictions on block size; it should be used as the primary tool for cloning a database.
+</p>
+</div><!-- class="sect1" -->
+<a id="BABDCGJB" name="BABDCGJB"></a>
+<div class="sect1">
+
+<!-- infolevel=all infotype=General --><a id="sthref23" name="sthref23"></a>
+<h2><span class="secnum">6 </span>Database Control
+</h2>
+<p>Please refer to the Oracle Enterprise Manager 10<span class="italic">g</span> Database Control Readme, at:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">&#036;ORACLE&#095;HOME/relnotes/readmes/EM&#095;db&#095;control.htm
+</pre>
+</div><!-- class="sect1" -->
+<a id="CHDCHFGG" name="CHDCHFGG"></a>
+<div class="sect1">
+<a id="sthref24" name="sthref24"></a>
+<h2><span class="secnum">7 </span>Database Security
+</h2>
+<p>Please note the following changes in Database Security.
+</p>
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref25" name="sthref25"></a>
+<h3><span class="secnum">7.1 </span>CONNECT Role Privileges Removed
+</h3>
+<p>In Oracle 10<span class="italic">g</span> Release 2 the <code>CONNECT</code> role only contains the <code>CREATE SESSION</code> privilege. Making this change enables new and existing database customers to enforce good security practices more easily. Applications that rely on the <code>CONNECT</code> role to create tables, views, sequences, synonyms, clusters, or database links, or that use the alter session command dynamically, may fail due to insufficient privileges.
+</p>
+<div align="center">
+<div class="inftblNote">
+
+<br /><table class = "Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>Appendix A of the <span class="italic">Oracle Database Security Guide</span>, for a discussion of possible customer impacts and approaches to dealing with the <code>CONNECT</code> role changes
+</td>
+</tr>
+</tbody>
+</table><br />
+</div><!-- class="inftblNote -->
+
+</div>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref26" name="sthref26"></a>
+<h3><span class="secnum">7.2 </span>Changes in Default Security Settings
+</h3>
+<p>Java class <code>oracle.security rdbms.server.AppCtx</code> will be deprecated in future Oracle Database releases.
+</p>
+</div><!-- class="sect2" -->
+<a id="CACGCDJA" name="CACGCDJA"></a>
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref27" name="sthref27"></a>
+<h3><span class="secnum">7.3 </span>Enterprise User Security
+</h3>
+<p>Databases with different methods of authenticating to Oracle Internet Directory cannot share the same <code>ldap.ora</code> file. 
+</p>
+<p>If these databases use the same <code>&#036;ORACLE&#095;HOME</code>, one of them should have a separate <code>TNS&#095;ADMIN</code> directory with its own <code>ldap.ora</code> file (Bug 3327626).
+</p>
+<p class="subhead2">Upgrading from Oracle9<span class="italic">i</span></p>
+<p>If you are upgrading from an Oracle9<span class="italic">i</span> Database (Release 9.1 or Release 9.2) to an Oracle Database 10<span class="italic">g</span> Release 1 (10.1), or if you are upgrading from Oracle Internet Directory Release 9.2 to Release 9.0.4, then use the following steps. Note that an Oracle9<span class="italic">i</span> Database Release 2 (9.2) will work with an Oracle Internet Directory Release 9.2 or Release 9.0.4, but that an Oracle Database 10<span class="italic">g</span> Release 1 (10.1) only works with Oracle Internet Directory Release 9.0.4.
+</p>
+<p><span class="bold">Upgrading Oracle Internet Directory from Release 9.2 to Release 9.0.4</span>
+</p>
+<ol type="1" start="1">
+<li>
+<p>Upgrade Oracle Internet Directory from Release 9.2 to Release 9.0.4 by using Oracle Internet Directory Configuration Assistant. Note that this is required if you want to register Oracle Database 10<span class="italic">g</span> instances in this directory.
+</p>
+<p>If you are not planning to use the Oracle Context for Oracle Database 10<span class="italic">g</span>, you can skip the following step.
+</p>
+</li>
+<li>
+<p>If they are not root contexts, you should upgrade all Oracle Contexts used for Enterprise User Security to Identity Management Realms. Use the Oracle Internet Directory Configuration Assistant command-line utility as follows:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">oidca mode&#061;CTXTOIMR
+
+</pre>
+<p>This step is required if you want to register an Oracle Database 10<span class="italic">g</span> database in this realm.
+</p>
+<p>You cannot use the root Oracle Context for Oracle Database 10<span class="italic">g</span> databases because it is not an Identity Management Realm. See <span class="italic">Oracle Advanced Security Administrator's Guide</span> for further information.
+</p>
+</li>
+<li>
+<p>Use Oracle Internet Directory tools, such as <code>ldapmodify</code> and <code>bulkmodify</code>, to add the <code>orcluserV2</code> <code>objectclass</code> to existing user entries. This <code>objectclass</code> is required for users to change their database passwords, and for Kerberos authentication to the database.
+</p>
+</li>
+<li>
+<p>In a realm that contains both an Oracle9<span class="italic">i</span> Database (Release 9.1 or Release 9.2) and an Oracle Database 10<span class="italic">g</span> Release 1 (10.1), use a DAS-based tool from Oracle Internet Directory Release 9.0.4 (either Oracle Internet Directory Self-Service Console or Enterprise Security Manager Console) to create and manage users, including their passwords. Do not use Enterprise Security Manager or Enterprise Login Assistant from Oracle9<span class="italic">i</span> Database installations.
+</p>
+</li>
+</ol>
+<p><span class="bold">Upgrading Oracle Databases from Release 9.2 to Release 10.1</span>
+</p>
+<p>For each Oracle9<span class="italic">i</span> Database instance that you upgrade to Oracle Database 10<span class="italic">g</span>, perform the following steps:
+</p>
+<ol type="1" start="1">
+<li>
+<p>Use Oracle Wallet Manager to disable automatic login for the database wallet.
+</p>
+</li>
+<li>
+<p>Copy the database distinguished name (DN) from the initialization parameter <code>rdbms&#095;server&#095;dn</code> to a file in a secure location.
+</p>
+</li>
+<li>
+<p>Upgrade the database to Oracle Database 10<span class="italic">g</span>.
+</p>
+</li>
+<li>
+<p>Depending on where your database <code>admin</code> directory is stored, move the database wallet either to <code>&#036;ORACLE&#095;HOME/admin/</code><code><span class="codeinlineitalic">olddbuniquename</span></code><code>/</code><code>wallet</code> or <code>&#036;ORACLE&#095;BASE/admin/</code><code><span class="codeinlineitalic">olddbuniquename</span></code><code>/</code><code>wallet</code>. Note that <code>&#036;ORACLE&#095;HOME</code> is for the new Oracle Database 10<span class="italic">g</span>. You may have to create the <code>wallet</code> directory.
+</p>
+</li>
+<li>
+<p>Copy the old <code>&#036;ORACLE&#095;HOME/network/admin/ldap.ora</code> file to the new <code>&#036;ORACLE&#095;HOME/ldap/admin/ldap.ora</code> file. Alternatively, you can use Oracle Net Configuration Assistant to create a new <code>ldap.ora</code> file.
+</p>
+</li>
+<li>
+<p>Use the command-line utility, <code>mkstore</code>, to put the database DN (from the file in the previously created secure directory location) into the wallet by using the following syntax; you will be prompted for the wallet password.
+</p>
+<pre xml:space="preserve" class="oac_no_warn">mkstore -wrl <span class="italic">database&#095;wallet&#095;location</span> -createEntry
+&nbsp;&nbsp;&nbsp;ORACLE.SECURITY.DN <span class="italic">database&#095;DN</span>
+
+</pre>
+<p>If you make a mistake, use the <code>-modifyEntry</code> option to correct it.
+</p>
+</li>
+<li>
+<p>Use Database Configuration Assistant to generate the database-to-directory password in the database wallet. Choose the Modify Database option.
+</p>
+</li>
+<li>
+<p>Use Oracle Wallet Manager to re-enable automatic login for the database wallet.
+</p>
+</li>
+<li>
+<p>Use Oracle Net Manager to set the new wallet location in the <code>sqlnet.ora</code> file to the directory previously specified in step 4.
+</p>
+</li>
+</ol>
+<p>The default for the nickname attribute, such as <code>cn</code>, remains unchanged; the upgrade process does not change the default nickname attribute setting.
+</p>
+<p>After upgrading from Oracle Internet Directory Release 9.2 to Release 9.0.4, if you are unable to log into an Oracle Database 10<span class="italic">g</span>, you must use the DAS-based Oracle Internet Directory Self-Service Console to reset your password.
+</p>
+</div><!-- class="sect2" -->
+
+</div><!-- class="sect1" -->
+<a id="BABBFFGD" name="BABBFFGD"></a>
+<div class="sect1">
+
+<!-- infolevel=all infotype=General --><a id="sthref28" name="sthref28"></a>
+<h2><span class="secnum">8 </span>Encryption and Integrity
+</h2>
+<p>Oracle recommends the use of SHA-1 for data integrity for protected communication between clients and servers. Using MD5 in cipher suites that affect short-timed transactions such as during SSL/TLS authentication or using keyed MD5 for one-way hash stores and using MD5 in SSL/TLS protocols have not been identified as being vulnerable at this time.
+</p>
+</div><!-- class="sect1" -->
+<a id="CHDCCIEF" name="CHDCCIEF"></a>
+<div class="sect1">
+<a id="sthref29" name="sthref29"></a>
+<h2><span class="secnum">9 </span>Java and Web Services
+</h2>
+<p>Please note the following items when working with Java.
+</p>
+<div class="sect2">
+<a id="sthref30" name="sthref30"></a>
+<h3><span class="secnum">9.1 </span>JavaVM
+</h3>
+<p>The JavaVM readme file is located at:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">&#036;ORACLE&#095;HOME/javavm/doc/readme.txt
+</pre>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref31" name="sthref31"></a>
+<h3><span class="secnum">9.2 </span>JDBC
+</h3>
+<p>For Instant Client operation of the JDBC Driver, the following files must be copied from the <code>&#036;ORACLE&#095;HOME/jdbc/lib</code> directory:
+</p>
+<ul>
+<li type="disc">
+<p><code>classes12.jar</code> if JDK 1.2 or 1.3 will be used
+</p>
+</li>
+<li type="disc">
+<p><code>orai18n.jar</code> for Globalization and NLS support
+</p>
+</li>
+<li type="disc">
+<p><code>ocrs12.jar</code> for Oracle JDBC rowset implementation
+</p>
+</li>
+</ul>
+<p>The JDBC readme file is located at:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">&#036;ORACLE&#095;HOME/jdbc/Readme.txt
+</pre>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref32" name="sthref32"></a>
+<h3><span class="secnum">9.3 </span>JPublisher
+</h3>
+<p>The JPublisher software, including Database Web services, is provided on the Companion CD.
+</p>
+<p>The JPublisher readme is at the following locations:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">&#036;ORACLE&#095;HOME/sqlj/READMEJPub.txt
+&#036;ORACLE&#095;HOME/sqlj/READMEJPub.html
+</pre>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref33" name="sthref33"></a>
+<h3><span class="secnum">9.4 </span>Web Services
+</h3>
+<p>As an alternative to Oracle Net, Oracle Database Web services provides non-connected access to the database through standard Web services mechanisms. These include XML, SOAP, and WSDL, and can turn the database into a Web services provider. Similarly, the database itself can act as a Web service consumer and invoke external Web services. Important features of Web services include: 
+</p>
+<ul>
+<li type="disc">
+<p>A JAX-RPC based SOAP Client library supports invocation of external Web services from within the database, and applies the power of SQL to the results.
+</p>
+</li>
+<li type="disc">
+<p><span class="bold">Web Services Call-In:</span> Deploying a JPublisher-generated Java class against Oracle Application Server 10<span class="italic">g</span> enables you to invoke database operations like Java and PL/SQL procedures and packages, SQL queries, and DML operations.
+</p>
+</li>
+<li type="disc">
+<p><span class="bold">Web Services Call-Out:</span> Deploying a JPublisher-generated Web services client from a WSDL and its PL/SQL wrapper supports invocation of external Web services from within the database.
+</p>
+</li>
+</ul>
+</div><!-- class="sect2" -->
+
+</div><!-- class="sect1" -->
+<a id="CHDFBBED" name="CHDFBBED"></a>
+<div class="sect1">
+<a id="sthref34" name="sthref34"></a>
+<h2><span class="secnum">10 </span>Media Management Software
+</h2>
+<p>Oracle Database 10<span class="italic">g</span> Release 2 includes Oracle Backup software to provide tape backups of your Oracle Database and other critical Oracle infrastructure. Oracle Backup is fully integrated with Recovery Manager (RMAN) to provide data protection services for one or more databases in a networked environment. Oracle Backup differs from Oracle&#039;s previously bundled media management software, Legato Single Server Version (LSSV), in the following ways:
+</p>
+<ul>
+<li type="disc">
+<p>Oracle Backup does not restrict the types of devices that may be used.
+</p>
+</li>
+<li type="disc">
+<p>Oracle Backup does not restrict the number of devices that may be used.
+</p>
+</li>
+<li type="disc">
+<p>Oracle Backup is supported for non-database file backups, for files such as your Oracle home. LSSV is supported only for RMAN-based database file backups.
+</p>
+</li>
+<li type="disc">
+<p>Oracle Backup can operate in a networked environment. LSSV is constrained to operate on a single host.
+</p>
+</li>
+</ul>
+<p>Oracle no longer bundles LSSV.
+</p>
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref35" name="sthref35"></a>
+<h3><span class="secnum">10.1 </span>Limited Globalization Support for Oracle Backup
+</h3>
+<p>The following globalization restrictions apply to Oracle Backup:
+</p>
+<ul>
+<li type="disc">
+<p>The Oracle Backup command line interface is English only and is not globalized. It does not support localizations or multi-byte character set data. All messages are in English.
+</p>
+</li>
+<li type="disc">
+<p>Those portions of the Oracle Backup graphical user interface (GUI) that are exposed through Oracle Database Control are globalized and are translated to local languages. However, any information passed between the command line and Database Control is in English only.
+</p>
+</li>
+<li type="disc">
+<p>Older graphical interfaces to Oracle Backup, other than the Database Control interface, are English only.
+</p>
+</li>
+<li type="disc">
+<p>Oracle Backup does not support backups of file system files whose names are encoded in character sets that do not support null-termination, such as Universal Character Set (UCS).
+</p>
+</li>
+<li type="disc">
+<p>Oracle Backup does not support RMAN database backups when the backup names are encoded in character sets that do not support null-termination, such as UCS.
+</p>
+</li>
+</ul>
+</div><!-- class="sect2" -->
+
+</div><!-- class="sect1" -->
+<a id="CHDEBJAJ" name="CHDEBJAJ"></a>
+<div class="sect1">
+<a id="sthref36" name="sthref36"></a>
+<h2><span class="secnum">11 </span>Oracle Data Guard
+</h2>
+<p>Please refer to Note 278521.1 on Oracle MetaLink for information and instructions on upgrading a primary database and a physical standby database from Oracle Database release 9.2 to release 10.1. For information and instructions for upgrading a logical standby please refer to Note 278108.1.
+</p>
+<div class="sect2">
+<a id="sthref37" name="sthref37"></a>
+<h3><span class="secnum">11.1 </span>DDL Statements that Use DBLINKS
+</h3>
+<p>On logical standby databases, avoid using SQL statements such as <code>CREATE TABLE</code> <code><span class="codeinlineitalic">tablename</span></code> <code>AS SELECT &#042; FROM bar&#064;dblink</code> as they may fail.
+</p>
+<p>When a statement is executed on the logical standby database, it will access the database link at that time. It is not possible to know if the information on the logical standby database is the same as it was at the time the statement was executed on the primary database. For example, additional columns may have been added or dropped; this can make it impossible to apply the rows that follow. Assuming that the network was set up so that the initial creation succeeded, you may see the following error: <code>ORA-26689: column datatype mismatch in LCR</code> for a table containing nested table columns. Also, the <code>ORA-02019: connection description for remote database not found</code> error may be returned if the database link or the TNS service was undefined on the logical standby database.
+</p>
+<p>When this happens, use the <code>DBMS&#095;LOGSTDBY.INSTANTIATE&#095;TABLE</code> procedure for the table being created, and then restart SQL <code>APPLY</code> operations.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref38" name="sthref38"></a>
+<h3><span class="secnum">11.2 </span>Logical Standby Databases on the Same Node as the Primary Database
+</h3>
+<p>If a logical standby database is located on the same computer system as the primary database, it is likely that both Oracle Database instances have access to the same directory structure. There are Oracle Database commands that reuse datafiles. If Oracle Database commands that reuse datafiles are applied on the primary database, the commands may also be applied on the logical standby database. If that happens while the primary database is shut down, it is possible for the logical standby database to claim the file as part of its database and possibly cause damage to the primary database.
+</p>
+<p>For this reason only, Oracle recommends using the following settings when running the primary and logical standby databases on the same computer system:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">EXECUTE DBMS&#095;LOGSTDBY.SKIP('ALTER TABLESPACE');
+</pre>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref39" name="sthref39"></a>
+<h3><span class="secnum">11.3 </span>Logical Standby Stops with Error ORA-00955
+</h3>
+<p>When this error occurs, check the alert log for the following output:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">LOGSTDBY stmt: Create table anyddl.anyobj... 
+LOGSTDBY status: ORA-16542: unrecognized operation 
+LOGSTDBY status: ORA-16222: automatic Logical Standby retry of last action 
+LOGSTDBY status: ORA-16111: log mining and apply setting up 
+LOGSTDBY stmt: Create table anyddl.anyobj... 
+LOGSTDBY status: ORA-00955: name is already used by an existing object 
+
+</pre>
+<p>The initial attempt to apply the DDL actually completed, but failed to be recorded. The <code>ORA-16542</code> error identifies this problem.
+</p>
+<p>You can restart the logical standby database using the following command:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">ALTER DATABASE START LOGICAL STANDBY APPLY SKIP FAILED TRANSACTION;
+</pre>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref40" name="sthref40"></a>
+<h3><span class="secnum">11.4 </span>ALTER DATABASE GUARD Issues on Oracle Real Application Clusters
+</h3>
+<p>For logical standby databases running on an Oracle Real Application Clusters system, you must issue the <code>ALTER DATABASE GUARD</code> statement on each active instance for it to be effective on all instances in the cluster.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref41" name="sthref41"></a>
+<h3><span class="secnum">11.5 </span>Defining Destinations for Standby Log Files When Using a Flash Recovery Area with Logical Standby Databases
+</h3>
+<p>If you have enabled a flash recovery area on a logical standby database, you must set the following initialization parameters on each logical standby database in the Oracle Data Guard configuration:
+</p>
+<ul>
+<li type="disc">
+<p>Define the <code>STANDBY&#095;ARCHIVE&#095;DEST</code> parameter to point to a location other than the flash recovery area. Doing so ensures that standby redo log files received from the primary database are not accidentally archived in the flash recovery area.
+</p>
+<p>For example, when creating a logical standby database as described in Section 4.2.3.2 of <span class="italic">Oracle Data Guard Concepts and Administration</span>, define the following parameter on the logical standby database: <code>STANDBY&#095;ARCHIVE&#095;DEST&#061;'/arch2/boston/</code>'
+</p>
+</li>
+<li type="disc">
+<p>Define a <code>LOG&#095;ARCHIVE&#095;DEST&#095;</code><code><span class="codeinlineitalic">n</span></code> parameter and include the <code>LOCATION</code> and the <code>VALID&#095;FOR&#061;(STANDBY&#095;LOGFILES, STANDBY&#095;ROLE)</code> attributes to direct archiving of standby redo log files to a destination that is not the flash recovery area. For example, 
+</p>
+<pre xml:space="preserve" class="oac_no_warn">LOG&#095;ARCHIVE&#095;DEST&#095;3&#061;
+   'LOCATION&#061;/arch2/boston/
+   VALID&#095;FOR&#061;(STANDBY&#095;LOGFILES,STANDBY&#095;ROLE)
+   DB&#095;UNIQUE&#095;NAME&#061;boston'
+
+</pre>
+</li>
+</ul>
+<p>In addition, Oracle recommends that you set the same initialization parameters on the primary database to prepare it for a future switchover:
+</p>
+<ul>
+<li type="disc">
+<p>Define the <code>STANDBY&#095;ARCHIVE&#095;DEST</code> to point to a location other than the flash recovery area.
+</p>
+<p>For example, when creating a logical standby database as described in Section 4.2.2.2 of <span class="italic">Oracle Data Guard Concepts and Administration</span>, define the following parameter on the primary database: <code>STANDBY&#095;ARCHIVE&#095;DEST&#061;'/arch2/chicago/</code>'.
+</p>
+</li>
+<li type="disc">
+<p>Define a <code>LOG&#095;ARCHIVE&#095;DEST&#095;</code><code><span class="codeinlineitalic">n</span></code> parameter and include the <code>LOCATION</code> and the <code>VALID&#095;FOR&#061;(STANDBY&#095;LOGFILES, STANDBY&#095;ROLE)</code> attributes to direct archiving of standby redo log files to a directory that is not the flash recovery area. For example, 
+</p>
+<pre xml:space="preserve" class="oac_no_warn">LOG&#095;ARCHIVE&#095;DEST&#095;3&#061;
+   'LOCATION&#061;/arch2/chicago/
+   VALID&#095;FOR&#061;(STANDBY&#095;LOGFILES,STANDBY&#095;ROLE)
+   DB&#095;UNIQUE&#095;NAME&#061;chicago'
+</pre>
+</li>
+</ul>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref42" name="sthref42"></a>
+<h3><span class="secnum">11.6 </span>Database Guard Stays On In the New Primary Database If a Prepared Switchover Operation Detects a Network Outage
+</h3>
+<p>If a logical standby database performs a switchover to the primary database role running in maximum protection mode, and the <code>LGWR</code> process encounters an error with a destination, <code>LGWR</code> will re-evaluate all destinations to ensure at least one of them is working properly. 
+</p>
+<p>If the <code>LGWR</code> process does not find a destination to which it can successfully write the standby redo log file, and if it does not contain any missing log files, or gaps, then the primary instance shuts down. Although the switchover completes successfully, the database guard remains enabled to prevent data divergence.
+</p>
+<p>The solution, which appears in the alert log for the database instance, is to:
+</p>
+<ul>
+<li type="disc">
+<p>Start the database in a lower protection mode, such as maximum performance.
+</p>
+</li>
+<li type="disc">
+<p>Manually disable the database guard by issuing the <code>ALTER DATABASE GUARD NONE</code> command.
+</p>
+</li>
+</ul>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref43" name="sthref43"></a>
+<h3><span class="secnum">11.7 </span>Max Protection Switchover With a Bystander Logical Standby
+</h3>
+<p>When performing a zero data loss switchover in a maximum protection configuration that involves more than one logical standby database, keep the following items in mind:
+</p>
+<ul>
+<li type="disc">
+<p>Ensure that all transport settings (specified by the <code>LOG&#095;ARCHIVE&#095;DEST&#095;</code><code><span class="codeinlineitalic">n</span></code> parameters on the current primary database) for logical standby instances not participating in the switchover are set to <code>ARCH</code>, not <code>LGWR</code>, for the duration of the switchover.
+</p>
+</li>
+<li type="disc">
+<p>After the transport setting is modified, but before the switchover operation, perform an <code>ALTER SYSTEM ARCHIVE LOG CURRENT</code> to ensure that any active standby redo logfiles are archived.
+</p>
+</li>
+<li type="disc">
+<p>Once the switchover is complete, the destination setting for the bystanders should be changed back to the <code>LGWR</code> transport mode.
+</p>
+</li>
+</ul>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref44" name="sthref44"></a>
+<h3><span class="secnum">11.8 </span>Enable Flashback Database on All Databases in a Data Guard Configuration
+</h3>
+<p>Oracle recommends that flashback database be enabled on all databases in a Data Guard configuration. This is particularly important on standby databases that do not use a log apply delay.
+</p>
+</div><!-- class="sect2" -->
+
+</div><!-- class="sect1" -->
+<a id="CHDBEDHF" name="CHDBEDHF"></a>
+<div class="sect1">
+<a id="sthref45" name="sthref45"></a>
+<h2><span class="secnum">12 </span>Oracle Data Mining
+</h2>
+<p>The Data Mining readme file is located at:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">&#036;ORACLE&#095;HOME/rdbms/demo/dmREADME.txt
+</pre>
+</div><!-- class="sect1" -->
+<a id="CACEJDCB" name="CACEJDCB"></a>
+<div class="sect1">
+
+<!-- infolevel=all infotype=General --><a id="sthref46" name="sthref46"></a>
+<h2><span class="secnum">13 </span>Oracle HTML DB
+</h2>
+<p>Please note the following items when working with Oracle HTML DB.
+</p>
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref47" name="sthref47"></a>
+<h3><span class="secnum">13.1 </span>Rendering Select Lists in a Report or Tabular Form
+</h3>
+<p>You can use the HTMLDB&#095;ITEM package to render select lists in a report or tabular form by making direct calls to HTMLDB&#095;ITEM.SELECT&#095;LIST or by applying certain display types to report columns. Note that this type of select list cannot exceed 32K characters. Also note that selecting too many options may result in the select list not rendering correctly.
+</p>
+<p>In Oracle HTML DB 1.5.1, select lists rendered using this approach did not include closing OPTION tags for each option. Closing OPTION tags for each option are now included in Oracle HTML DB 1.6, reducing the number of options allowed in a select list. The actual change in the number of options depends on the length of the option text strings. This also affects pagination if the row ranges in select list style is chosen. If the number of allowed options is reached, the pagination style changes to X-Y of Z without using a select list.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref48" name="sthref48"></a>
+<h3><span class="secnum">13.2 </span>Escaping Special Characters Rendered from Session State
+</h3>
+<p>Page and application items can have their session state values established using a URL or in POSTDATA. In release 1.6, the HTML DB engine escapes these values for two item types when it saves them in session state.
+</p>
+<div class="sect3">
+
+<!-- infolevel=all infotype=General --><a id="sthref49" name="sthref49"></a>
+<h4><span class="secnum">13.2.1 </span>Item Types Escaped on Input
+</h4>
+<p>To accomplish this, the HTML DB engine converts commonly used characters to entity references. For example, the HTML DB engine converts the less than sign (&lt;) to &amp;lt;. This rule applies to two types of items:
+</p>
+<ul>
+<li type="disc">
+<p>Page items of type Display as text (does not save state)
+</p>
+</li>
+<li type="disc">
+<p>Application level items (that is, items that are not associated with a particular page)
+</p>
+</li>
+</ul>
+<p>The objective of this change is to protect your application from cross site scripting (XSS) security attacks for item types that are not escaped during rendering. Developers may continue to store escapable characters into any type of item by setting those item values internally within the page (for example, using page processes, computations, or queries). However, attempts to externally set the values of application items or page items of type Display as text (does not save state) will result in their values being escaped when they are saved in session state. Be aware that setting these types of items to text containing HTML or Java Script from outside the application (for example, using the URL) is a dangerous practice.
+</p>
+<p>Note that you may have problems with existing pages if they rely on the previous behavior (that is, no items values being escaped on input.) Possible examples include:
+</p>
+<ul>
+<li type="disc">
+<p>When escapable input characters are passed into session state using a URL or POSTDATA for page items of type Display as text (does not save state) and are to be rendered as form items on the page without being escaped. In release 1.6 the values will be escaped on input and thus will not render correctly.
+</p>
+</li>
+<li type="disc">
+<p>When escapable input characters are passed into session state using a URL or POSTDATA for application items or for page items of type Display as text (does not save state) and are referenced in HTML regions using &amp;ITEM&#095;NAME. syntax and are expected to be rendered exactly as they were represented on input. For example, the string A&lt;B passed into page item P1&#095;ITEM in the URL would be stored as A&amp;lt;B and would be rendered incorrectly as A&amp;lt;B.
+</p>
+</li>
+</ul>
+<p>To fix these types of pages:
+</p>
+<ul>
+<li type="disc">
+<p>Set the content of page items of type Display as text (does not save state) using item default source values, page processes, or computations instead of setting them using the URL method. In this way values will not be escaped when stored in session state and the values will not be escaped during rendering as form items.
+</p>
+</li>
+<li type="disc">
+<p>Set the content of application items or page items of type Display as text (does not save state) using page processes or computations instead of setting them using the URL method. In this way values will not be escaped when stored in session state. These values will, however, be escaped during rendering in the HTML region, just as they were in prior releases, so that the less than sign (&lt;) will appear as the less than sign (&lt;) and will not be interpreted as a special character by the browser.
+</p>
+</li>
+</ul>
+</div><!-- class="sect3" -->
+
+<div class="sect3">
+
+<!-- infolevel=all infotype=General --><a id="sthref50" name="sthref50"></a>
+<h4><span class="secnum">13.2.2 </span>Item Type Escaped on Output
+</h4>
+<p>Page items of type Display as Text (saves state) are escaped on output when rendered as form items on a page. The purpose of this change is to correct a bug that caused these items to not be escaped. The new behavior makes this form item display type consistent with other form item display types.
+</p>
+<p>Note that you may also have problems with existing pages if they rely on the previous behavior (that is, where form items of type Display as Text (saves state) were not escaped during rendering.) For example, you may have problems with a page with items that containing escapable characters used for HTML markup.
+</p>
+<p>To correct this type of situation:
+</p>
+<ol type="1" start="1">
+<li>
+<p>Change the item type to Display as text (does not save state).
+</p>
+</li>
+<li>
+<p>If there is a requirement to submit the value in POSTDATA, adjust the page design to achieve the desired results without introducing XSS exposures.
+</p>
+</li>
+</ol>
+</div><!-- class="sect3" -->
+
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref51" name="sthref51"></a>
+<h3><span class="secnum">13.3 </span>Restoring Indented Values in a Report Column
+</h3>
+<p>Earlier releases of Oracle HTML DB stripped all HTML tags from query column values when those columns where used in HTML expressions and links. In Oracle HTML DB 1.6, you can disable this behavior by turning off the Strip HTML attribute on the Report Attribute page. By default, this attribute is enabled so that applications developed in earlier releases will behave the same way after upgrading.
+</p>
+<p>In release 1.6, stripping of HTML tags also includes NBSC escape characters. This type of character is used in some applications to indent link values in a report column. You can restore the indent after upgrading, by editing your report and setting the Strip HTML attribute on the Report Attribute page to No.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref52" name="sthref52"></a>
+<h3><span class="secnum">13.4 </span>Implementing Themes in an Application Migrated from Earlier Releases
+</h3>
+<p>Oracle HTML DB release 1.6 introduces the concept of themes. A theme is a logical group and classification of templates within an Oracle HTML DB application. The HTML DB engine maps templates between different themes using classes. Because this functionality did not exist in previous releases, be aware of the following issues before trying to utilize themes in an application created in a previous release.
+</p>
+<p>When you import an application into release 1.6 from an earlier release, Oracle HTML DB groups all the templates in the application into a theme named Application Theme.
+</p>
+<p>Before switching the theme of an application developed in an earlier release you must:
+</p>
+<ul>
+<li type="disc">
+<p>Edit each template in your application and assign it the appropriate class.Both the theme you are switching from and the theme you are switching to must contain the same classes. If you have a template that does not fall within a predefined class, you can use a custom class. Each template type has eight custom classes.
+</p>
+</li>
+<li type="disc">
+<p>Review the default templates (and template classes) in the theme you are switching from and the theme you are switching to. You can review the default templates defined in a theme on the Define Theme page.Note that failing to perform this step may result in unexpected results. For example, you might run into problems if one theme has a default page template that is one-level template while another has a default page template which is a two-level template.
+</p>
+</li>
+</ul>
+<p>If you switch an application theme and it does not render correctly:
+</p>
+<ol type="1" start="1">
+<li>
+<p>Verify that the default templates for the active theme are set correctly.
+</p>
+</li>
+<li>
+<p>Check that the templates within the active theme have the correct template classifications.
+</p>
+</li>
+</ol>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref53" name="sthref53"></a>
+<h3><span class="secnum">13.5 </span>About Column Attribute Format in Japanese
+</h3>
+<p>When you open the number or date format select popup dialog on the Column Attribute of a Page Definition in Application Builder, it always displays 'backslash'&#043; 5,234.10 in the dialog. It is expected that the symbol of 'yen' displays accurately in a Japanese environment.
+</p>
+<p>Note that backslash and yen are the same character code point, but display differently depending on the selected font. Backslash is also displayed when applying the data format on the page in the application.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref54" name="sthref54"></a>
+<h3><span class="secnum">13.6 </span>Creating an Item with a Name that Includes Non-ASCII Characters
+</h3>
+<p>If you create a form on a table or view using a wizard based on an included column whose name contains non-ASCII characters, the name of the new item will also contain non-ASCII characters.
+</p>
+<p>To correct this problem, when you create new items on the Page Definition use alphanumeric characters A&#095;Z, 0-9 and '&#095;' for the item names. You may also need to change the item names to alphanumeric before you apply changes to the item.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref55" name="sthref55"></a>
+<h3><span class="secnum">13.7 </span>Runtime Errors in an Application Imported from a previous Release
+</h3>
+<p>If you export an application from an earlier Oracle HTML DB release and then import and install it using the installation pages in Application Builder, in rare situations you may encounter runtime errors after the application installs.
+</p>
+<p>These errors often manifest themselves as PL/SQL parser or execution errors pertaining to blocks of PL/SQL code embedded within application components. The installation process sometimes splits strings greater than 200 characters into multiple lines. For example, lines may split between PL/SQL keywords, or at other places that cause parsing errors.
+</p>
+<p>If you encounter these types of errors and suspect the installation process has split large strings:
+</p>
+<ol type="1" start="1">
+<li>
+<p>Isolate the failing component containing the suspect PL/SQL within the application by editing the failing page in Application Builder.
+</p>
+</li>
+<li>
+<p>Locate the blocks of code that appear to split incorrectly.
+</p>
+</li>
+<li>
+<p>Attempt to split the blocks of code in more appropriate places, or insert whitespace with the lines until no runtime errors are observed.
+</p>
+</li>
+<li>
+<p>Export the application, import the export file, and then reinstall it.
+</p>
+</li>
+<li>
+<p>Retain the new export file as a permanent backup copy.
+</p>
+</li>
+</ol>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref56" name="sthref56"></a>
+<h3><span class="secnum">13.8 </span>Creating a Web Reference on a WSDL that has Input parameters Defined as Arrays
+</h3>
+<p>If you create a Web service reference in Oracle HTML DB on a WSDL document that has input parameters defined as arrays, you will not be able to use built-in wizards to create a form or a form and report on that Web reference. Oracle HTML DB does not provide a user interface for input parameters that are arrays. Output parameters that are defined as arrays are handled properly if you use the Form and Report on Web Service Wizard.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref57" name="sthref57"></a>
+<h3><span class="secnum">13.9 </span>No Support for Corel SVG Viewer
+</h3>
+<p>Oracle HTML DB release 1.6 does not support the Corel SVG viewer.
+</p>
+</div><!-- class="sect2" -->
+
+</div><!-- class="sect1" -->
+<a id="CHDCFBIH" name="CHDCFBIH"></a>
+<div class="sect1">
+<a id="sthref58" name="sthref58"></a>
+<h2><span class="secnum">14 </span>Oracle <span class="italic">inter</span>Media
+</h2>
+<p>Performance related components of Oracle <span class="italic">inter</span>Media are now packaged on the Companion CD. Although <span class="italic">inter</span>Media functions properly without the Companion CD, the following components must be installed from the Companion CD in order to achieve acceptable performance of image processing:
+</p>
+<ul>
+<li type="disc">
+<p>JAccelerator (NCOMP)
+</p>
+</li>
+<li type="disc">
+<p>Oracle <span class="italic">inter</span>Media Image Accelerator
+</p>
+</li>
+</ul>
+<p>The <span class="italic">inter</span>Media readme file is located at:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">&#036;ORACLE&#095;HOME/ord/im/admin/README.txt
+</pre>
+</div><!-- class="sect1" -->
+<a id="CHDBDACH" name="CHDBDACH"></a>
+<div class="sect1">
+<a id="sthref59" name="sthref59"></a>
+<h2><span class="secnum">15 </span>Oracle Internet Directory
+</h2>
+<p>The Oracle Internet Directory product ships only with Oracle Application Server, not the Oracle Database 10<span class="italic">g</span> product set. The following information is included because Oracle Network functionality may use Oracle Internet Directory. Many of the administrative activities for Oracle Internet Directory have been consolidated into a single tool, Oracle Internet Directory Configuration Assistant (OIDCA). OIDCA should be used with Enterprise User Security and Network Names features under these conditions:
+</p>
+<ol type="1" start="1">
+<li>
+<p>Enterprise User Security
+</p>
+<ul>
+<li type="disc">
+<p>Enterprise User Security only works with Identity Management Realms in this release. You must convert Oracle Contexts used in prior releases to Identity Management Realms using the OIDCA tool.
+</p>
+</li>
+<li type="disc">
+<p>Use OIDCA when creating or updating the <code>ldap.ora</code> configuration file for discovering the Oracle Internet Directory server in the environment.
+</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Network Names
+</p>
+<ul>
+<li type="disc">
+<p>Use OIDCA when creating, upgrading and deleting Oracle Contexts.
+</p>
+</li>
+<li type="disc">
+<p>Use OIDCA when converting an Oracle Context from an earlier release to an Identity Management Realm
+</p>
+</li>
+<li type="disc">
+<p>Use OIDCA when setting up the <code>ldap.ora</code> configuration file for discovering the Oracle Internet Directory server in the environment.
+</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>Please note the following items when working with Oracle Internet Directory.
+</p>
+<div class="sect2">
+<a id="sthref60" name="sthref60"></a>
+<h3><span class="secnum">15.1 </span>Using the Oracle Internet Directory Configuration Assistant
+</h3>
+<p>The Oracle Internet Directory Configuration Assistant (OIDCA) enables you to create, upgrade, and delete an Oracle Context, configure the file <code>ldap.ora</code>, and convert an Oracle Context to an Identity Management Realm.
+</p>
+<p>The OIDCA syntax is:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">oidca oidhost&#061;<span class="italic">host</span> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nonsslport&#061;<span class="italic">port</span> &#124;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sslport&#061;<span class="italic">SSL Port</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dn&#061;<span class="italic">binddn</span> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pwd&#061;<span class="italic">bindpwd</span> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;propfile&#061;<span class="italic">properties file</span>
+
+</pre>
+<p>The following table lists parameters of the <code>OIDCA</code>. To see the usage of OIDCA, enter <code>oidca -help</code> at the command prompt.
+</p>
+<div class="inftblInformal">
+
+<table class = "Informal" title="Properties" summary="Properties of OIDCA; first column contains the properties, the second column describes the properties." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t4">Parameters
+</th>
+<th align="left" valign="bottom" id="r1c2-t4">Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t4" headers="r1c1-t4">
+<pre xml:space="preserve" class="oac_no_warn">oidhost
+</pre>
+</td>
+<td align="left" headers="r2c1-t4 r1c2-t4">OID server host; default is <code>localhost</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t4" headers="r1c1-t4">
+<pre xml:space="preserve" class="oac_no_warn">nonsslport
+</pre>
+</td>
+<td align="left" headers="r3c1-t4 r1c2-t4">OID server port; default is <code>389</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t4" headers="r1c1-t4">
+<pre xml:space="preserve" class="oac_no_warn">sslport
+</pre>
+</td>
+<td align="left" headers="r4c1-t4 r1c2-t4">OID SSL port; default is <code>636</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t4" headers="r1c1-t4">
+<pre xml:space="preserve" class="oac_no_warn">dn
+</pre>
+</td>
+<td align="left" headers="r5c1-t4 r1c2-t4">OID user, such as <code>cn&#061;orcladmin</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t4" headers="r1c1-t4">
+<pre xml:space="preserve" class="oac_no_warn">pwd
+</pre>
+</td>
+<td align="left" headers="r6c1-t4 r1c2-t4">OID user password
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t4" headers="r1c1-t4">
+<pre xml:space="preserve" class="oac_no_warn">propfile
+</pre>
+</td>
+<td align="left" headers="r7c1-t4 r1c2-t4">File containing a list of properties to determine the mode of operation and the required operation-specific parameters
+</td>
+</tr>
+</tbody>
+</table><br />
+</div><!-- class="inftblInformal -->
+
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref61" name="sthref61"></a>
+<h3><span class="secnum">15.2 </span>Creating an Oracle Context
+</h3>
+<p>The following syntax is used to create an Oracle Context in OIDCA; the parameters are described in the subsequent table.
+</p>
+<pre xml:space="preserve" class="oac_no_warn">
+oidca oidhost&#061;<span class="italic">host</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nonsslport&#061;<span class="italic">port</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sslport&#061;<code>SSL Port</code>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dn&#061;<span class="italic">binddn</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pwd&#061;<span class="italic">bindpwd</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mode&#061;CREATECTX 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contextdn&#061;<span class="italic">OracleContext DN</span>
+</pre>
+<div class="inftblInformal">
+
+<table class = "Informal" title="Properties" summary="Properties of OIDCA; first column contains the properties, the second column describes the properties." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t5">Parameters
+</th>
+<th align="left" valign="bottom" id="r1c2-t5">Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t5" headers="r1c1-t5">
+<pre xml:space="preserve" class="oac_no_warn">oidhost
+</pre>
+</td>
+<td align="left" headers="r2c1-t5 r1c2-t5">OID server host; if not specified, default is <code>localhost</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t5" headers="r1c1-t5">
+<pre xml:space="preserve" class="oac_no_warn">nonsslport
+</pre>
+</td>
+<td align="left" headers="r3c1-t5 r1c2-t5">OID server port; if not specified, default is <code>389</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t5" headers="r1c1-t5">
+<pre xml:space="preserve" class="oac_no_warn">sslport
+</pre>
+</td>
+<td align="left" headers="r4c1-t5 r1c2-t5">OID SSL port; if not specified, default is <code>636</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t5" headers="r1c1-t5">
+<pre xml:space="preserve" class="oac_no_warn">dn
+</pre>
+</td>
+<td align="left" headers="r5c1-t5 r1c2-t5">OID user, such as <code>cn&#061;orcladmin</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t5" headers="r1c1-t5">
+<pre xml:space="preserve" class="oac_no_warn">pwd
+</pre>
+</td>
+<td align="left" headers="r6c1-t5 r1c2-t5">OID user password
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t5" headers="r1c1-t5">mode
+</td>
+<td align="left" headers="r7c1-t5 r1c2-t5">Mode of the OIDCA; set to <code>CREATECTX</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t5" headers="r1c1-t5">
+<pre xml:space="preserve" class="oac_no_warn">contextdn
+</pre>
+</td>
+<td align="left" headers="r8c1-t5 r1c2-t5">DN under which <code>OracleContext</code> must be created, such as <code>dc&#061;acme</code>, <code>dc&#061;com</code>
+</td>
+</tr>
+</tbody>
+</table><br />
+</div><!-- class="inftblInformal -->
+
+<p>Note the following points:
+</p>
+<ul>
+<li type="disc">
+<p>The <code>contextdn</code> must exist for this operation to be successful.
+</p>
+</li>
+<li type="disc">
+<p>This valid DN should not exist in OID: <code>"cn&#061;oraclecontext,dc&#061;acme, dc&#061;com"</code>.
+</p>
+</li>
+<li type="disc">
+<p>This valid DN must exist in OID: <code>"dc&#061;acme,dc&#061;com"</code>.
+</p>
+</li>
+<li type="disc">
+<p>The parameters <code>mode</code> and <code>contextdn</code> can also be passed as a properties file.
+</p>
+</li>
+<li type="disc">
+<p>Specify the parameter <code>nonsslport&#061;port</code> if you want to perform the operation using non-SSL mode.
+</p>
+</li>
+<li type="disc">
+<p>Specify the parameter <code>sslport&#061;sslport</code> if you want to perform the operation using SSL mode.
+</p>
+</li>
+<li type="disc">
+<p>Either the <code>nonsslport</code> or the <code>sslport</code> parameter must be specified, but not both.
+</p>
+</li>
+</ul>
+<p class="subhead2">Functionality</p>
+<ol type="1" start="1">
+<li>
+<p>The OIDCA verifies that <code>contextdn</code> has a valid DN syntax and that the entry exists in Oracle Internet Directory. Note that the OIDCA cannot create a root <code>OracleContext</code> explicitly. If there is no root Oracle Context, then OIDCA exits with an error.
+</p>
+</li>
+<li>
+<p>If DN exists, then OIDCA verifies that the Oracle Context already exists.
+</p>
+<ul>
+<li type="disc">
+<p>If the Oracle Context already exists and is up-to-date, then OIDCA exits with the message <code>Oracle Context already exists and is up to date</code>.
+</p>
+</li>
+<li type="disc">
+<p>If the Oracle Context already exists, but it is an older version, then OIDCA exits with the message <code>Oracle Context already exists and is of an older version</code>.
+</p>
+</li>
+<li type="disc">
+<p>If the Oracle Context does not exist, then OIDCA creates the Oracle Context under this DN.
+</p>
+</li>
+</ul>
+</li>
+</ol>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref62" name="sthref62"></a>
+<h3><span class="secnum">15.3 </span>Upgrading an Oracle Context
+</h3>
+<p>To upgrade an <code>OracleContext</code> instance, use the following syntax; the parameters are listed in the subsequent table.
+</p>
+<pre xml:space="preserve" class="oac_no_warn">oidca oidhost&#061;<span class="italic">host</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nonsslport&#061;<span class="italic">port</span> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sslport&#061;<span class="italic">SSL Port</span> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dn&#061;<span class="italic">binddn</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pwd&#061;<span class="italic">bindpwd</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mode&#061;UPGRADECTX
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contextdn&#061;<span class="italic">OracleContext DN</span>
+</pre>
+<div class="inftblInformal">
+
+<table class = "Informal" title="Properties" summary="Properties of OIDCA; first column contains the properties, the second column describes the properties." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t6">Parameters
+</th>
+<th align="left" valign="bottom" id="r1c2-t6">Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t6" headers="r1c1-t6">
+<pre xml:space="preserve" class="oac_no_warn">oidhost
+</pre>
+</td>
+<td align="left" headers="r2c1-t6 r1c2-t6">OID server host; if not specified, default is <code>localhost</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t6" headers="r1c1-t6">
+<pre xml:space="preserve" class="oac_no_warn">nonsslport
+</pre>
+</td>
+<td align="left" headers="r3c1-t6 r1c2-t6">OID server port; if not specified, default is <code>389</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t6" headers="r1c1-t6">
+<pre xml:space="preserve" class="oac_no_warn">sslport
+</pre>
+</td>
+<td align="left" headers="r4c1-t6 r1c2-t6">OID SSL port; if not specified, default is <code>636</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t6" headers="r1c1-t6">
+<pre xml:space="preserve" class="oac_no_warn">dn
+</pre>
+</td>
+<td align="left" headers="r5c1-t6 r1c2-t6">OID user, such as <code>cn&#061;orcladmin</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t6" headers="r1c1-t6">
+<pre xml:space="preserve" class="oac_no_warn">pwd
+</pre>
+</td>
+<td align="left" headers="r6c1-t6 r1c2-t6">OID user password
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t6" headers="r1c1-t6">mode
+</td>
+<td align="left" headers="r7c1-t6 r1c2-t6">Mode of the OIDCA; always set to <code>UPGRADECTX</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t6" headers="r1c1-t6">
+<pre xml:space="preserve" class="oac_no_warn">contextdn
+</pre>
+</td>
+<td align="left" headers="r8c1-t6 r1c2-t6">DN under which <code>OracleContext</code> must be created, such as <code>dc&#061;acme</code>, <code>dc&#061;com</code>
+</td>
+</tr>
+</tbody>
+</table><br />
+</div><!-- class="inftblInformal -->
+
+<p>Note the following points:
+</p>
+<ul>
+<li type="disc">
+<p>The <code>contextdn</code> must contain an <code>OracleContext</code> for this operation to be successful.
+</p>
+</li>
+<li type="disc">
+<p>The DNs <code>"cn&#061;oraclecontext</code>,<code>dc&#061;acme,dc&#061;com"</code> and <code>"dc&#061;acme,dc&#061;com"</code> are both valid.
+</p>
+</li>
+<li type="disc">
+<p>The parameters <code>mode</code> and <code>contextdn</code> can also be passed as a properties file.
+</p>
+</li>
+<li type="disc">
+<p>Specify the parameter <code>nonsslport&#061;port</code> if you want to perform the operation using a non-SSL mode.
+</p>
+</li>
+<li type="disc">
+<p>Specify the parameter <code>sslport&#061;sslport</code> if you want to perform the operation using SSL mode.
+</p>
+</li>
+<li type="disc">
+<p>Either the <code>nonsslport</code> or the <code>sslport</code> parameter must be specified, but not both.
+</p>
+</li>
+</ul>
+<p class="subhead2">Functionality</p>
+<ol type="1" start="1">
+<li>
+<p>OIDCA verifies that the <code>contextdn</code> has valid DN syntax and that <code>OracleContext</code> exists in Oracle Internet Directory. OIDCA cannot upgrade a root <code>OracleContext</code> explicitly. If there is no root <code>OracleContext</code>, then OIDCA sends an error message.
+</p>
+</li>
+<li>
+<p>If <code>OracleContext</code> exists under <code>contextdn</code>,
+</p>
+<ul>
+<li type="disc">
+<p>The OIDCA checks if the <code>OracleContext</code> belongs to a realm, in which case it exits with the appropriate message. Note that <code>OracleContext</code> instances that belong to a realm cannot be upgraded.
+</p>
+</li>
+<li type="disc">
+<p>The OIDCA verifies that the <code>OracleContext</code> is up-to-date, then exits with the message <code>Oracle Context already exists and is up to date</code>.
+</p>
+</li>
+<li type="disc">
+<p>If the <code>OracleContext</code> is not up-to-date, then the OIDCA upgrades the <code>OracleContext</code> under this DN.
+</p>
+</li>
+</ul>
+</li>
+</ol>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref63" name="sthref63"></a>
+<h3><span class="secnum">15.4 </span>Deleting an Oracle Context
+</h3>
+<p>To delete an <code>OracleContext</code>, use the following syntax; the parameters are listed in the subsequent table.
+</p>
+<pre xml:space="preserve" class="oac_no_warn">oidca oidhost&#061;<span class="italic">host</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nonsslport&#061;<span class="italic">port</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sslport&#061;<span class="italic">SSL Port</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dn&#061;<span class="italic">binddn</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pwd&#061;<span class="italic">bindpwd</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mode&#061;DELETECTX
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contextdn&#061;<span class="italic">OracleContext DN</span>
+</pre>
+<div class="inftblInformal">
+
+<table class = "Informal" title="Properties" summary="Properties of OIDCA; first column contains the properties, the second column describes the properties." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t7">Parameters
+</th>
+<th align="left" valign="bottom" id="r1c2-t7">Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t7" headers="r1c1-t7">
+<pre xml:space="preserve" class="oac_no_warn">oidhost
+</pre>
+</td>
+<td align="left" headers="r2c1-t7 r1c2-t7">OID server host; if not specified, default is <code>localhost</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t7" headers="r1c1-t7">
+<pre xml:space="preserve" class="oac_no_warn">nonsslport
+</pre>
+</td>
+<td align="left" headers="r3c1-t7 r1c2-t7">OID server port; if not specified, default is <code>389</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t7" headers="r1c1-t7">
+<pre xml:space="preserve" class="oac_no_warn">sslport
+</pre>
+</td>
+<td align="left" headers="r4c1-t7 r1c2-t7">OID SSL port; if not specified, default is <code>636</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t7" headers="r1c1-t7">
+<pre xml:space="preserve" class="oac_no_warn">dn
+</pre>
+</td>
+<td align="left" headers="r5c1-t7 r1c2-t7">OID user, such as <code>cn&#061;orcladmin</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t7" headers="r1c1-t7">
+<pre xml:space="preserve" class="oac_no_warn">pwd
+</pre>
+</td>
+<td align="left" headers="r6c1-t7 r1c2-t7">OID user password
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t7" headers="r1c1-t7">mode
+</td>
+<td align="left" headers="r7c1-t7 r1c2-t7">Mode of the OIDCA; always set to <code>DELETECTX</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t7" headers="r1c1-t7">
+<pre xml:space="preserve" class="oac_no_warn">contextdn
+</pre>
+</td>
+<td align="left" headers="r8c1-t7 r1c2-t7">DN under which OracleContext must be created, such as <code>dc&#061;acme</code>, <code>dc&#061;com</code>
+</td>
+</tr>
+</tbody>
+</table><br />
+</div><!-- class="inftblInformal -->
+
+<p>Note the following points:
+</p>
+<ul>
+<li type="disc">
+<p>The <code>contextdn</code> must contain an <code>OracleContext</code> for this operation to be successful.
+</p>
+</li>
+<li type="disc">
+<p>The DNs <code>"cn&#061;oraclecontext,</code> <code>dc&#061;acme,dc&#061;com"</code> and "dc&#061;acme,dc&#061;com" are both valid.
+</p>
+</li>
+<li type="disc">
+<p>The parameters <code>mode</code> and <code>contextdn</code> can also be passed as a properties file.
+</p>
+</li>
+<li type="disc">
+<p>Specify the parameter <code>nonsslport&#061;port</code> if you want to perform the operation using a non-SSL mode.
+</p>
+</li>
+<li type="disc">
+<p>Specify the parameter <code>sslport&#061;sslport</code> if you want to perform the operation using SSL mode.
+</p>
+</li>
+<li type="disc">
+<p>Either the <code>nonsslport</code> or the <code>sslport</code> parameter must be specified, but not both.
+</p>
+</li>
+</ul>
+<p class="subhead2">Functionality</p>
+<ol type="1" start="1">
+<li>
+<p>OIDCA verifies that the <code>contextdn</code> has valid DN syntax and that <code>OracleContext</code> exists in Oracle Internet Directory.
+</p>
+</li>
+<li>
+<p>If <code>OracleContext</code> exists under <code>contextdn</code>,
+</p>
+<ul>
+<li type="disc">
+<p>The OIDCA checks if the <code>OracleContext</code> belongs to a realm, in which case it exits with the appropriate message. Note that <code>OracleContext</code> instances that belong to a realm cannot be deleted.
+</p>
+</li>
+<li type="disc">
+<p>If <code>OracleContext</code> does not belong to a realm, OIDCA deletes it.
+</p>
+</li>
+</ul>
+</li>
+</ol>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref64" name="sthref64"></a>
+<h3><span class="secnum">15.5 </span>Configuring the file ldap.ora
+</h3>
+<p>To configure the file <code>ldap.ora</code>, use the following syntax; the parameters are listed in the subsequent table.
+</p>
+<pre xml:space="preserve" class="oac_no_warn">oidca oidhost&#061;<span class="italic">host</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nonsslport&#061;<span class="italic">port</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sslport&#061;<span class="italic">SSL Port</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;adminctx&#061;<span class="italic">Administrative context</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mode&#061;LDAPORA  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dirtype&#061;OID<span class="italic"> or </span>AD
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-update
+</pre>
+<div class="inftblInformal">
+
+<table class = "Informal" title="Properties" summary="Properties of OIDCA; first column contains the properties, the second column describes the properties." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t8">Parameters
+</th>
+<th align="left" valign="bottom" id="r1c2-t8">Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t8" headers="r1c1-t8">
+<pre xml:space="preserve" class="oac_no_warn">oidhost
+</pre>
+</td>
+<td align="left" headers="r2c1-t8 r1c2-t8">OID server host; if not specified, default is <code>localhost</code>.
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t8" headers="r1c1-t8">
+<pre xml:space="preserve" class="oac_no_warn">nonsslport
+</pre>
+</td>
+<td align="left" headers="r3c1-t8 r1c2-t8">OID server port; determined using discovery APIs.
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t8" headers="r1c1-t8">
+<pre xml:space="preserve" class="oac_no_warn">sslport
+</pre>
+</td>
+<td align="left" headers="r4c1-t8 r1c2-t8">OID SSL port; determined using discovery APIs.
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t8" headers="r1c1-t8">mode
+</td>
+<td align="left" headers="r5c1-t8 r1c2-t8">Mode of the OIDCA; always set to <code>LDAPORA</code>.
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t8" headers="r1c1-t8">
+<pre xml:space="preserve" class="oac_no_warn">dirtype
+</pre>
+</td>
+<td align="left" headers="r6c1-t8 r1c2-t8">Directory type; possible values are <code>OID</code> and <code>AD</code>; mandatory attribute.
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t8" headers="r1c1-t8">
+<pre xml:space="preserve" class="oac_no_warn">adminctx
+</pre>
+</td>
+<td align="left" headers="r7c1-t8 r1c2-t8">Default administrative context, such as <code>dc&#061;acme,dc&#061;com</code>. If not specified, determined using discovery.
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t8" headers="r1c1-t8">
+<pre xml:space="preserve" class="oac_no_warn">-update
+</pre>
+</td>
+<td align="left" headers="r8c1-t8 r1c2-t8">If this flag is specified, then overwrite existing <code>ldap.ora</code><code></code>; if not, then create <code>ldap.ora</code> only if it does not already exist.
+</td>
+</tr>
+</tbody>
+</table><br />
+</div><!-- class="inftblInformal -->
+
+<p>Note the following points:
+</p>
+<ul>
+<li type="disc">
+<p>At least either non-SSL or SSL port must be specified. The other port is discovered.
+</p>
+</li>
+<li type="disc">
+<p>The parameters <code>mode</code>, <code>dirtype</code>, and <code>adminctx</code> can also be passed in within a properties file.
+</p>
+</li>
+</ul>
+<p class="subhead2">Functionality</p>
+<ol type="1" start="1">
+<li>
+<p>Using the Discovery API, the OIDCA determines all the parameters not specified on the command line.
+</p>
+</li>
+<li>
+<p>The OIDCA checks for the <code>ldap.ora</code> location using Discovery APIs.
+</p>
+<ul>
+<li type="disc">
+<p>If <code>ldap.ora</code> exists and the <code>-update</code> parameter is not specified, then exit with message <code>ldap.ora exists</code>.
+</p>
+</li>
+<li type="disc">
+<p>If <code>ldap.ora</code> exists and the <code>-update</code> parameter is not specified, then update the existing <code>ldap.ora</code> using Discovery API.
+</p>
+</li>
+<li type="disc">
+<p>If <code>ldap.ora</code> does not exist, create a new <code>ldap.ora</code> file in a location in the following order:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">LDAP&#095;ADMIN
+&#036;ORACLE&#095;HOME/ldap/admin
+</pre>
+</li>
+</ul>
+</li>
+</ol>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref65" name="sthref65"></a>
+<h3><span class="secnum">15.6 </span>Converting an Oracle Context to an Identity Management Realm
+</h3>
+<p>Oracle Database 10<span class="italic">g</span> entries must be stored in Oracle Internet Directory Release 9.0.4 server. An Identity Management Realm Release 9.0.4 is also required for Enterprise User Security, a feature of the Oracle Database 10<span class="italic">g</span>.
+</p>
+<p>To convert an existing <code>OracleContext</code> to an Identity Management Realm, use the following syntax. The parameters are listed in the subsequent table. Note that the root of the <code>OracleContext</code> object is not converted.
+</p>
+<pre xml:space="preserve" class="oac_no_warn">oidca oidhost&#061;<span class="italic">host</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nonsslport&#061;<span class="italic">port</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sslport&#061;<span class="italic">SSL Port</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dn&#061;<span class="italic">binddn</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pwd&#061;<span class="italic">bindpwd</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mode&#061;CTXTOIMR
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contextdn&#061;<span class="italic">OracleContext DN</span>
+</pre>
+<div class="inftblInformal">
+
+<table class = "Informal" title="Properties" summary="Properties of OIDCA; first column contains the properties, the second column describes the properties." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t9">Parameters
+</th>
+<th align="left" valign="bottom" id="r1c2-t9">Description
+</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t9" headers="r1c1-t9">
+<pre xml:space="preserve" class="oac_no_warn">oidhost
+</pre>
+</td>
+<td align="left" headers="r2c1-t9 r1c2-t9">OID server host; default is <code>localhost</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t9" headers="r1c1-t9">
+<pre xml:space="preserve" class="oac_no_warn">nonsslport
+</pre>
+</td>
+<td align="left" headers="r3c1-t9 r1c2-t9">OID server port; default is <code>389</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t9" headers="r1c1-t9">
+<pre xml:space="preserve" class="oac_no_warn">sslport
+</pre>
+</td>
+<td align="left" headers="r4c1-t9 r1c2-t9">OID SSL port; default is <code>636</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t9" headers="r1c1-t9">
+<pre xml:space="preserve" class="oac_no_warn">dn
+</pre>
+</td>
+<td align="left" headers="r5c1-t9 r1c2-t9">OID user, such as <code>cn&#061;orcladmin</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t9" headers="r1c1-t9">
+<pre xml:space="preserve" class="oac_no_warn">pwd
+</pre>
+</td>
+<td align="left" headers="r6c1-t9 r1c2-t9">OID user password
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t9" headers="r1c1-t9">mode
+</td>
+<td align="left" headers="r7c1-t9 r1c2-t9">Mode of the OIDCA; always set to <code>CTXTOIMR</code>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t9" headers="r1c1-t9">
+<pre xml:space="preserve" class="oac_no_warn">contextdn
+</pre>
+</td>
+<td align="left" headers="r8c1-t9 r1c2-t9">DN under which <code>OracleContext</code> must be created, such as <code>dc&#061;acme</code>, <code>dc&#061;com</code>
+</td>
+</tr>
+</tbody>
+</table><br />
+</div><!-- class="inftblInformal -->
+
+<p>Note the following points:
+</p>
+<ul>
+<li type="disc">
+<p>The <code>OracleContext</code> must exist under the specified <code>contextdn</code>.
+</p>
+</li>
+<li type="disc">
+<p>The DNs <code>"cn&#061;oraclecontext</code>, <code>dc&#061;acme,dc&#061;com"</code> and <code>"dc&#061;acme, dc&#061;com"</code> are both valid.
+</p>
+</li>
+<li type="disc">
+<p>The parameters <code>mode</code> and <code>contextdn</code> can also be passed in a properties file.
+</p>
+</li>
+<li type="disc">
+<p>Specify the parameter <code>nonsslport&#061;port</code> if you want to perform the operation using a non-SSL mode.
+</p>
+</li>
+<li type="disc">
+<p>Specify the parameter <code>sslport&#061;sslport</code> if you want to perform the operation using SSL mode.
+</p>
+</li>
+<li type="disc">
+<p>Either the <code>nonsslport</code> or the <code>sslport</code> parameter must be specified, but not both.
+</p>
+</li>
+</ul>
+<p class="subhead2">Functionality</p>
+<ol type="1" start="1">
+<li>
+<p>The OIDCA checks if <code>contextdn</code> has valid DN syntax, and if it contains a valid <code>OracleContext</code>.
+</p>
+</li>
+<li>
+<p>If <code>OracleContext</code> exists under <code>contextdn,</code>
+</p>
+<ul>
+<li type="disc">
+<p>The OIDCA checks if the <code>OracleContext</code> belongs to a realm. If it does, then it exits with an appropriate error message.
+</p>
+</li>
+<li type="disc">
+<p>If <code>OracleContext</code> does not belong to a realm, OIDCA upgrades it to the latest version, and converts it to a realm.
+</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>Note also:
+</p>
+<ul>
+<li type="disc">
+<p>If the nickname attribute is not <code>cn</code>, configure it as a user configuration attribute using the Oracle Internet Directory Self-Service Console.
+</p>
+</li>
+<li type="disc">
+<p>If you want to use the Oracle Internet Directory Self-Service Console to manage the users and groups in the converted realm, you must set up the administrative privileges appropriately. For details, see the chapter on "Delegation of Privileges for an Oracle Technology Deployment" in <span class="italic">Oracle Internet Directory Administrator's Guide</span>, 10<span class="italic">g</span> Application Server (9.0.4).
+</p>
+</li>
+</ul>
+</div><!-- class="sect2" -->
+
+</div><!-- class="sect1" -->
+<a id="CHDEBBAB" name="CHDEBBAB"></a>
+<div class="sect1">
+
+<!-- infolevel=all infotype=General --><a id="sthref66" name="sthref66"></a>
+<h2><span class="secnum">16 </span>Oracle-Managed Files
+</h2>
+<p>When you rename an Oracle-managed file using the <code>ALTER DATABASE RENAME FILE</code> command, the file with the original filename is deleted. On UNIX platforms, if you rename the Oracle-managed file to a symbolic (soft) link to the original file, then no copy of the original file is left on disk.
+</p>
+<p>To avoid this situation, create a hard link to the Oracle-managed file, and then create a soft link to the hard link. Then, rename the Oracle-managed file to the symbolic (soft) link.
+</p>
+</div><!-- class="sect1" -->
+
+<div class="sect1">
+
+<!-- infolevel=all infotype=General --><a id="sthref67" name="sthref67"></a>
+<h2><span class="secnum">17 </span>Oracle Net Services
+</h2>
+<p>Please note the following items when working with Oracle Net Services.
+</p>
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref68" name="sthref68"></a>
+<h3><span class="secnum">17.1 </span>Listener Compatibility Between Releases	
+</h3>
+<p>A 10gR1 or later listener is required for a 10gR1 instance. Listener from an older release will not work.
+</p>
+<p> A 10gR2 or later listener is required for a 10gR2 instance. Listener from an older release (including 10gR1) will not work.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref69" name="sthref69"></a>
+<h3><span class="secnum">17.2 </span>Non-Blocking OCI Error
+</h3>
+<p>Using OCI to establish a server connection in non-blocking mode does not work. ORA-12160 is erroneously generated in this case. The workaround is to use blocking mode OCI connects.
+</p>
+</div><!-- class="sect2" -->
+
+</div><!-- class="sect1" -->
+
+<div class="sect1">
+
+<!-- infolevel=all infotype=General --><a id="sthref70" name="sthref70"></a>
+<h2><span class="secnum">18 </span>Oracle Real Application Clusters
+</h2>
+<p>Please note the following items when working with Oracle Real Application Clusters (RAC). 
+</p>
+<p>Additional RAC-specific information may also be found in a special readme file located at: 
+</p>
+<pre xml:space="preserve" class="oac_no_warn">&#036;ORACLE&#095;HOME/srvm/doc/README.doc
+</pre>
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref71" name="sthref71"></a>
+<h3><span class="secnum">18.1 </span>Virtual IP Addresses 
+</h3>
+<p>RAC now manages Virtual IP (VIP) addresses on the cluster nodes. Before installing RAC, acquire one unused IP address for each node.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref72" name="sthref72"></a>
+<h3><span class="secnum">18.2 </span>Shared Recovery Area 
+</h3>
+<p>When you configure a database recovery area in a RAC environment, the database recovery area must be on shared storage. When the DBCA configures automatic disk backup, it uses a database recovery area which must be shared. If the database files are stored on a cluster file system, then the recovery area can also be shared through the cluster file system. If the database files are stored on an Automatic Storage Management (ASM) disk group, then the recovery area can also be shared through ASM. If the database files are stored on raw devices, then configure a shared directory using NFS.
+</p>
+<div align="center">
+<div class="inftblNote">
+
+<br /><table class = "Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>ASM disk groups are always valid recovery areas, as are cluster file systems. Where the datafiles reside does not determine where your recovery area must reside. For instance, you can store datafiles on raw devices, but use ASM for the recovery area.
+</td>
+</tr>
+</tbody>
+</table><br />
+</div><!-- class="inftblNote -->
+
+</div>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref73" name="sthref73"></a>
+<h3><span class="secnum">18.3 </span>Changing Hostnames and VIP Addresses 
+</h3>
+<p>Avoid changing hostnames and VIP addresses after you complete the CRS installation. This is a complex process and it includes adding or deleting domain qualifications.
+</p>
+<div align="center">
+<div class="inftblNote">
+
+<br /><table class = "Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>MetaLink note 276434.1 describes how to change hostnames and VIP addresses
+</td>
+</tr>
+</tbody>
+</table><br />
+</div><!-- class="inftblNote -->
+
+</div>
+</div><!-- class="sect2" -->
+
+</div><!-- class="sect1" -->
+<a id="CHDDIDAE" name="CHDDIDAE"></a>
+<div class="sect1">
+<a id="sthref74" name="sthref74"></a>
+<h2><span class="secnum">19 </span>Oracle Sample Schemas
+</h2>
+<p>The following sections describe Oracle Sample Schemas.
+</p>
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref75" name="sthref75"></a>
+<h3><span class="secnum">19.1 </span>SH Schema
+</h3>
+<p>In previous releases of the Sample Schemas, the <code>SH</code> schema contained data for pharmaceutical and beauty care products. In this release, the <code>SH</code> schema contains consumer electronics and computer products.The Oracle Sample Schemas readme file is located at:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">&#036;ORACLE&#095;HOME/rdbms/demo/schema/README.txt
+
+</pre>
+<p>The scripts for manually creating Sample Schemas or any of their components are on the Companion CD.
+</p>
+<p>The <code>SH</code> component of the Sample Schemas does not create the <code>SALES</code> and <code>COSTS</code> cubes. To create these cubes, run <code>olp&#095;v3.sql</code> after installing the database. The script completes in approximately 30 seconds.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref76" name="sthref76"></a>
+<h3><span class="secnum">19.2 </span>OE Schema
+</h3>
+<p>The OE schema contains XML purchase order documents. The XML documents are stored in the Oracle XML DB Repository after validation against the registered XML schema <code>purchaseorder.xsd</code>.
+</p>
+<p>The purchase order XML documents are located at the Oracle XML DB Repository folder <code>&#036;ORACLE&#095;HOME/rdbms/demo/order&#095;entry/2002/&lt;month></code>, where <code>&lt;month></code> is one of the three-letter month abbreviations (for example, <code>Jan</code>, <code>Feb</code>, <code>Mar</code>, and so on).
+</p>
+</div><!-- class="sect2" -->
+
+</div><!-- class="sect1" -->
+<a id="BABDAHAC" name="BABDAHAC"></a>
+<div class="sect1">
+<a id="sthref77" name="sthref77"></a>
+<h2><span class="secnum">20 </span>Oracle Spatial
+</h2>
+<p>The Oracle Spatial readme file supplements the information in the following manuals: <span class="italic">Oracle Spatial User's Guide and Reference</span>, <span class="italic">Oracle Spatial Topology and Network Data Models</span>, and <span class="italic">Oracle Spatial GeoRaster</span>. The Oracle Spatial readme file is located at:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">&#036;ORACLE&#095;HOME/md/doc/README.txt
+</pre>
+</div><!-- class="sect1" -->
+<a id="CACIBCIJ" name="CACIBCIJ"></a>
+<div class="sect1">
+
+<!-- infolevel=all infotype=General --><a id="sthref78" name="sthref78"></a>
+<h2><span class="secnum">21 </span>Oracle Text
+</h2>
+<p>Please note the following items when working with Oracle Text. You should also check entries for Oracle Text Application Developer's Guide in the Documentation Addendum.
+</p>
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref79" name="sthref79"></a>
+<h3><span class="secnum">21.1 </span>Oracle Text Supplied Knowledge Bases
+</h3>
+<p>An Oracle Text knowledge base is a hierarchical tree of concepts used for theme indexing, <code>ABOUT</code> queries, and deriving themes for document services. The following Oracle Text services require that a knowledge base be installed:
+</p>
+<ul>
+<li type="disc">
+<p>Index creation using a <code>BASIC&#095;LEXER</code> preference where <code>INDEX&#095;THEMES&#061;YES</code>
+</p>
+</li>
+<li type="disc">
+<p><code>SYNC</code>ing of an index where <code>INDEX&#095;THEMES&#061;YES</code>
+</p>
+</li>
+<li type="disc">
+<p><code>CTX&#095;DOC.THEME</code>s
+</p>
+</li>
+<li type="disc">
+<p><code>CTX&#095;DOC.POLICY&#095;THEME</code>s
+</p>
+</li>
+<li type="disc">
+<p><code>CTX&#095;DOC.GIST</code>
+</p>
+</li>
+<li type="disc">
+<p><code>CTX&#095;DOC.POLICY&#095;GIST</code>
+</p>
+</li>
+<li type="disc">
+<p><code>CTX&#095;QUERY.HFEEDBACK</code>
+</p>
+</li>
+<li type="disc">
+<p><code>CTX&#095;QUERY.EXPLAIN</code>, if using <code>ABOUT</code> or <code>THEMES</code> with <code>TRANSFORM</code>
+</p>
+</li>
+<li type="disc">
+<p><code>CTX&#095;DOC.SNIPPET</code> (if using the <code>ABOUT</code> operator)
+</p>
+</li>
+<li type="disc">
+<p><code>CTX&#095;DOC.POLICY&#095;SNIPPET</code> (if using the <code>ABOUT</code> operator)
+</p>
+</li>
+<li type="disc">
+<p><code>CONTAINS</code> queries that use <code>ABOUT</code> or <code>THEMES</code> with <code>TRANSFORM</code>
+</p>
+</li>
+<li type="disc">
+<p>The Knowledge Base Extension Compiler, <code>ctxkbtc</code>
+</p>
+</li>
+<li type="disc">
+<p>Clustering and classification services, if themes are specified
+</p>
+</li>
+</ul>
+<p>If you plan to use any of these Oracle Text features, you should install the supplied knowledge bases, English and French, from the Oracle Database 10<span class="italic">g</span> Companion CD.
+</p>
+<p>Note that you can extend the supplied knowledge bases, or create your own knowledge bases, possibly in languages other than English and French. For more information about creating and extending knowledge bases, see the <span class="italic">Oracle Text Reference</span>.
+</p>
+<p>For information on how to install products from the Companion CD, see the <span class="italic">Companion CD Installation Guide</span> and the <span class="italic">Oracle Database Installation Guide</span> specific to your platform.
+</p>
+<p class="subhead2">Supplied Knowledge Bases and Upgrades</p>
+<p>Because the supplied knowledge bases are contained on the Oracle Database 10<span class="italic">g</span> Companion CD, they are not immediately available after an upgrade to Oracle Database 10<span class="italic">g</span>. Oracle Text features that depend on the supplied knowledge bases available before the upgrade will not function after the upgrade, so you have to install the supplied knowledge bases from the Companion CD. 
+</p>
+<p>After an upgrade, you must regenerate all user extensions to the supplied knowledge bases. These changes affect all databases installed in the given <code>&#036;ORACLE&#095;HOME</code>. 
+</p>
+<p>For more information on upgrading Oracle Text and supplied knowledge bases, see the <span class="italic">Oracle Database Upgrade Guide</span>, Chapter 4, "After Upgrading a Database", section "Upgrading Oracle Text". The <span class="italic">Oracle Text Application Developer's Guide</span> contains both general instructions for upgrading from previous releases of Oracle Text and information on supplied knowledge bases. 
+</p>
+</div><!-- class="sect2" -->
+
+</div><!-- class="sect1" -->
+<a id="CHDIFCDA" name="CHDIFCDA"></a>
+<div class="sect1">
+<a id="sthref80" name="sthref80"></a>
+<h2><span class="secnum">22 </span>Oracle XML Developer's Kit
+</h2>
+<p>The Oracle XML Developer's Kit readme file is located at:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">&#036;ORACLE&#095;HOME/xdk/readme.html
+</pre>
+</div><!-- class="sect1" -->
+<a id="CHDIHGCH" name="CHDIHGCH"></a>
+<div class="sect1">
+<a id="sthref81" name="sthref81"></a>
+<h2><span class="secnum">23 </span>Pro&#042;C
+</h2>
+<p>The Pro&#042;C readme file is located at:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">&#036;ORACLE&#095;HOME/precomp/doc/proc/readme.doc
+</pre>
+</div><!-- class="sect1" -->
+<a id="CHDDDAGJ" name="CHDDDAGJ"></a>
+<div class="sect1">
+<a id="sthref82" name="sthref82"></a>
+<h2><span class="secnum">24 </span>Pro&#042;COBOL
+</h2>
+<p>The Pro&#042;COBOL readme file is located at:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">&#036;ORACLE&#095;HOME/precomp/doc/procob2/readme.doc
+</pre>
+</div><!-- class="sect1" -->
+<a id="CHDJDGFD" name="CHDJDGFD"></a>
+<div class="sect1">
+<a id="sthref83" name="sthref83"></a>
+<h2><span class="secnum">25 </span>Pro&#042;FORTRAN
+</h2>
+<p>The Pro&#042;FORTRAN readme file is located at:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">&#036;ORACLE&#095;HOME/precomp/doc/prolx/readme.txt
+</pre>
+</div><!-- class="sect1" -->
+<a id="CHDCHGFD" name="CHDCHGFD"></a>
+<div class="sect1">
+<a id="sthref84" name="sthref84"></a>
+<h2><span class="secnum">26 </span>Replication
+</h2>
+<p>Please note the following items when working with replication.
+</p>
+<div class="sect2">
+<a id="sthref85" name="sthref85"></a>
+<h3><span class="secnum">26.1 </span>Globalization Support (NLS) and Replication
+</h3>
+<p>In a replication environment involving Oracle Database 10<span class="italic">g</span> and pre-Oracle9<span class="italic">i</span> Database releases at sites utilizing <code>NCHAR</code> and <code>NVARCHAR2</code> data types, an Oracle Database patch must be installed at the earlier release (pre-Oracle9<span class="italic">i</span> Database) site. Contact Oracle Support Services to obtain the appropriate NLS patch as recommended in <code>ALERT 140014.1 Oracle8, Oracle8i to Oracle9i using New AL16UTF16</code> available on Oracle<span class="italic">MetaLink</span>, <code><a href="http://metalink.oracle.com">http://metalink.oracle.com</a></code>.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref86" name="sthref86"></a>
+<h3><span class="secnum">26.2 </span>Virtual Private Database (VPD) and Replication
+</h3>
+<p>For multimaster replication, there must be no VPD restrictions on the replication propagator and receiver schemas. For materialized views, the defining query for the materialized view may not be modified by VPD. VPD must return a <code>NULL</code> policy for the schema that performs both the create and refresh of the materialized view. Creating a remote materialized view with a non-<code>NULL</code> VPD policy does not generate an error, but may yield incorrect results.
+</p>
+</div><!-- class="sect2" -->
+
+</div><!-- class="sect1" -->
+<a id="BABGICBC" name="BABGICBC"></a>
+<div class="sect1">
+
+<!-- infolevel=all infotype=General --><a id="sthref87" name="sthref87"></a>
+<h2><span class="secnum">27 </span>SQLJ
+</h2>
+<p>SQLJ was temporarily desupported in Oracle Database 10.1. We are once again supporting SQLJ in Oracle Database 10.2.
+</p>
+<p class="subhead2">SQLJ Supports only Java 1.2 through Java 1.4</p>
+<p>SQLJ, starting in release 10.1.0.4, will only support Java 1.2 through Java 1.4. Java 1.1 support has been discontinued. As Java 1.1 is desupported, the file <code>runtime11.jar</code>, used for Java 1.1 only, will not be shipped.
+</p>
+<p class="subhead2">SQLJ Does not support Non-Oracle JDBC implementations </p>
+<p>SQLJ will not support any non-Oracle JDBC implementations, and thus will not ship with the file <code>runtime-nonoracle.jar</code>, which is used with non-Oracle JDBC implementations. 
+</p>
+</div><!-- class="sect1" -->
+<a id="CHDFCHHA" name="CHDFCHHA"></a>
+<div class="sect1">
+<a id="sthref88" name="sthref88"></a>
+<h2><span class="secnum">28 </span>SQL&#042;Module for ADA
+</h2>
+<p>The SQL&#042;Module for ADA readme file is located at:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">&#036;ORACLE&#095;HOME/precomp/doc/mod/readme.txt
+</pre>
+</div><!-- class="sect1" -->
+<a id="CHDBIHCC" name="CHDBIHCC"></a>
+<div class="sect1">
+<a id="sthref89" name="sthref89"></a>
+<h2><span class="secnum">29 </span>SQL&#042;Plus
+</h2>
+<p>The SQL&#042;Plus readme file is located at:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">&#036;ORACLE&#095;HOME/sqlplus/doc/README.htm
+</pre>
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref90" name="sthref90"></a>
+<h3><span class="secnum">29.1 </span>DESCRIBE Behavior Change
+</h3>
+<p><code>DESCRIBE</code> behavior of invalidated objects has been changed to be more user-friendly. In previous releases, a <code>DESCRIBE</code> on an invalidated object failed with an error <code>ORA-24372: invalid object for describe</code>; this error would continue to be generated even after the object was re-validated. In Oracle Database 10<span class="italic">g</span>, a <code>DESCRIBE</code> operation automatically revalidates the object, and lets it work if the revalidation is successful.
+</p>
+</div><!-- class="sect2" -->
+
+</div><!-- class="sect1" -->
+<a id="CHDHFEEI" name="CHDHFEEI"></a>
+<div class="sect1">
+<a id="sthref91" name="sthref91"></a>
+<h2><span class="secnum">30 </span>Summary Management
+</h2>
+<p>Please note the following items when working with Summary Management.
+</p>
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref92" name="sthref92"></a>
+<h3><span class="secnum">30.1 </span>Feature Availability
+</h3>
+<p>The creation and refresh features of materialized views are supported in both the Standard and Enterprise Editions. However, query rewrite and materialized view advice from the SQL Access Advisor are available in the Enterprise Edition only.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref93" name="sthref93"></a>
+<h3><span class="secnum">30.2 </span>NLS Parameters
+</h3>
+<p>When using or refreshing certain materialized views, you must ensure that your NLS parameters are the same as when you created them in the materialized view. Materialized views that fall under this restriction contain the following constructs: 
+</p>
+<ol type="1" start="1">
+<li>
+<p><span class="bold">Expressions that may return different values, depending on NLS parameter settings</span> For example, <code>(date >?01/02/03?)</code> or <code>(rate &lt;&#061; ?2.150?)</code> are NLS parameter dependent expressions.
+</p>
+</li>
+<li>
+<p><span class="bold">Equijoins where one side of the join is character data</span> The result of this equijoin depends on collation and this can change on a session basis, giving an incorrect result in the case of query rewrite or an inconsistent materialized view after a refresh operation. 
+</p>
+</li>
+<li>
+<p><span class="bold">Expressions that generate internal conversion to character data in the select list of a materialized view, or inside an aggregate of a materialized aggregate view</span> This restriction does not apply to expressions that involve only numeric data, for example, <code>a&#043;b</code> where <code>a</code> and <code>b</code> are numeric values.
+</p>
+</li>
+</ol>
+</div><!-- class="sect2" -->
+
+</div><!-- class="sect1" -->
+<a id="CHDICCFG" name="CHDICCFG"></a>
+<div class="sect1">
+
+<!-- infolevel=all infotype=General --><a id="sthref94" name="sthref94"></a>
+<h2><span class="secnum">31 </span>Table Compression
+</h2>
+<p>Table compression does not support the compression of tables with more than 255 columns. All compression operations, such as <code>ALTER TABLE MOVE COMPRESS</code>, work and succeed with such tables, but they are implemented as no-operations. After such an operation, the content is still stored in an uncompressed format, although the dictionary shows these tables as compressed.
+</p>
+</div><!-- class="sect1" -->
+<a id="CHDBBABA" name="CHDBBABA"></a>
+<div class="sect1">
+<a id="sthref95" name="sthref95"></a>
+<h2><span class="secnum">32 </span>Types
+</h2>
+<p>Please note the following item when working with types.
+</p>
+<div class="sect2">
+<a id="sthref96" name="sthref96"></a>
+<h3><span class="secnum">32.1 </span>Object Type Translator
+</h3>
+<p>The Object Type Translator (OTT) readme file is located at:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">&#036;ORACLE&#095;HOME/precomp/doc/ott/readme.doc
+</pre>
+</div><!-- class="sect2" -->
+
+</div><!-- class="sect1" -->
+<a id="CHDIDGBA" name="CHDIDGBA"></a>
+<div class="sect1">
+<a id="sthref97" name="sthref97"></a>
+<h2><span class="secnum">33 </span>Utilities
+</h2>
+<p>Please note the following items when working with utilities.
+</p>
+<div class="sect2">
+<a id="sthref98" name="sthref98"></a>
+<h3><span class="secnum">33.1 </span>Data Pump Export/Import and Rollback Consumption
+</h3>
+<p>Data Pump Export and Import consume more rollback segments or undo tablespace than the original Export and Import. This is due to additional metadata queries (Export) and some relatively long-running master table queries (Import). As a result, for databases with large amounts of metadata, you may receive the following error: <code>ORA-01555: snapshot too old</code>.
+</p>
+<p>To avoid this error, consider adding additional rollback segments, adding additional undo tablespace, or increasing your <code>undo&#095;retention</code> parameter for the database.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref99" name="sthref99"></a>
+<h3><span class="secnum">33.2 </span>Data Pump Export/Import Using Automatic Storage Management and LOGFILE
+</h3>
+<p>To perform a Data Pump Export or Import using Automatic Storage Management (ASM), you must specify a <code>LOGFILE</code> parameter that includes a <code>DIRECTORY</code> object that does not include the ASM <code>&#043;</code> notation. That is, the logfile must be written to a diskfile, and not written into the ASM storage. Alternatively, you can specify <code>NOLOGFILE&#061;Y</code>. However, this prevents the writing of the logfile.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref100" name="sthref100"></a>
+<h3><span class="secnum">33.3 </span>Data Pump Import with FLASHBACK&#095;SCN and FLASHBACK&#095;TIME
+</h3>
+<p>The Data Pump Import <code>FLASHBACK&#095;SCN</code> and <code>FLASHBACK&#095;TIME</code> options pertain only to the Flashback Query capability in the current release. They are not applicable to the Flashback Database, Flashback Drop, and other new Flashback capabilities.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref101" name="sthref101"></a>
+<h3><span class="secnum">33.4 </span>Data Pump Export/Import and Database Link types
+</h3>
+<p>The following types of database links are supported for use with Data Pump Export/Import:
+</p>
+<ul>
+<li type="disc">
+<p>Public database link (both public and shared)
+</p>
+</li>
+<li type="disc">
+<p>Fixed-user database link
+</p>
+</li>
+<li type="disc">
+<p>Connected user database link
+</p>
+</li>
+</ul>
+<p>The following type of database link is not supported for use with Data Pump Export/Import:
+</p>
+<ul>
+<li type="disc">
+<p>Current user database link
+</p>
+</li>
+</ul>
+<p>Refer to the <span class="italic">Oracle Database SQL Reference</span> for further information about database links.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref102" name="sthref102"></a>
+<h3><span class="secnum">33.5 </span>Data Pump Export/Import Roles with NETWORK&#095;LINK
+</h3>
+<p>When performing a Data Pump Import using the <code>NETWORK&#095;LINK</code> option, if the <code>USERID</code> that is executing the job has the <code>IMP&#095;FULL&#095;DATABASE</code> role on the target database, then that user must also have the <code>EXP&#095;FULL&#095;DATABASE</code> role on the source database.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref103" name="sthref103"></a>
+<h3><span class="secnum">33.6 </span>Data Pump Export and Compressed Tables
+</h3>
+<p>Compressed tables are supported in Data Pump Export. However, the default size estimation using <code>ESTIMATE&#061;BLOCKS</code> is inaccurate for that type of table, since the size estimate does not reflect that the data was stored in a compressed form. Use <code>ESTIMATE&#061;STATISTICS</code> to get a more accurate size estimation for compressed tables.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref104" name="sthref104"></a>
+<h3><span class="secnum">33.7 </span>Data Pump Export and ATTACH
+</h3>
+<p>When attaching to a stopped Data Pump Export job, the dumpfile set and master table must be undisturbed, otherwise the <code>ATTACH</code> fails. If the dumpfile set was deleted before the job completed, then the Data Pump master table must be manually dropped using the instructions in <span class="italic">Oracle Database Utilities</span>.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref105" name="sthref105"></a>
+<h3><span class="secnum">33.8 </span>DBMS&#095;METADATA MODIFY Transform Restriction
+</h3>
+<p>A maximum of ten instances of any remap parameter may be specified for a <code>MODIFY</code> transform. That is, you may specify up to ten <code>REMAP&#095;DATAFILE</code> parameters, up to ten <code>REMAP&#095;SCHEMA</code> parameters, and so on. Additional instances are ignored. As a workaround, perform another <code>ADD&#095;TRANSFORM</code> for the <code>MODIFY</code> transform and specify the additional remap parameters:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">th1 :&#061; dbms&#095;metadata.add&#095;transform(h,'MODIFY');
+dbms&#095;metadata.set&#095;transform&#095;param(th1,'REMAP&#095;SCHEMA','USER1','USER101');
+dbms&#095;metadata.set&#095;transform&#095;param(th1,'REMAP&#095;SCHEMA','USER2','USER102');
+...
+dbms&#095;metadata.set&#095;transform&#095;param(th1,'REMAP&#095;SCHEMA', 'USER10', 'USER110');
+th2 :&#061; dbms&#095;metadata.add&#095;transform(h,'MODIFY');
+dbms&#095;metadata.set&#095;transform&#095;param(th2,'REMAP&#095;SCHEMA','USER11', 'USER111');
+...
+</pre>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref106" name="sthref106"></a>
+<h3><span class="secnum">33.9 </span>Original Export/Import
+</h3>
+<p>After an <code>IMPORT</code> is finished for which <code>ROWS&#061;N</code>, the statistics for all tables imported will be locked.
+</p>
+</div><!-- class="sect2" -->
+
+</div><!-- class="sect1" -->
+<a id="CHDJICDC" name="CHDJICDC"></a>
+<div class="sect1">
+<a id="sthref107" name="sthref107"></a>
+<h2><span class="secnum">34 </span>Documentation Addendum
+</h2>
+<p>This section contains corrections to Oracle Documentation for this release.
+</p>
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref108" name="sthref108"></a>
+<h3><span class="secnum">34.1 </span>Oracle Database Upgrade Guide
+</h3>
+<p class="subhead2">Obsolete NCHAR Character Sets</p>
+<p>In Chapter 5, "Compatibility and Interoperability", section "Database Character Sets" should contain the following statement: "In Oracle Database 10<span class="italic">g</span>, the <code>NCHAR</code> data types such as <code>NCHAR</code>, <code>NVARCHAR2</code>, and <code>NCLOB</code>, are limited to the Unicode character set encoding, <code>UTF8</code> and <code>AL16UTF16</code>."
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref109" name="sthref109"></a>
+<h3><span class="secnum">34.2 </span>Oracle Database Administrator's Guide
+</h3>
+<p class="subhead2">Size of SYSAUX Tablespace</p>
+<p>In Chapter 8, "Managing Tablespaces", section "Controlling the Size of the <code>SYSAUX</code> Tablespace" states that a system with an average of 30 concurrent active sessions may require approximately 200 MB to 300 MB of space for its Automatic Workload Repository data. The 200 MB to 300 MB estimate is valid for a system with an average of 10 (rather than 30) concurrent active sessions. 
+</p>
+<p>The following table provides guidelines on sizing the <code>SYSAUX</code> tablespace, based on the system configuration and expected load.
+</p>
+<div class="inftblInformal">
+
+<table class = "Informal" title="Guidelines for SYSAUX Tablespace Sizing" summary="Column one provides sizing parameters, column two describes the approximate value of the parameters for small systems, column three describes the approximate value of the parameters for medium systems, column four describes the approximate value of the parameters for large systems; last row provides the sizing estimates for all three system sizes." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t12">Parameter/Recommendation
+</th>
+<th align="left" valign="bottom" id="r1c2-t12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Small
+</th>
+<th align="left" valign="bottom" id="r1c3-t12">&nbsp;&nbsp;&nbsp;&nbsp;Medium
+</th>
+<th align="left" valign="bottom" id="r1c4-t12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Large
+</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t12" headers="r1c1-t12">Number of CPUs
+</td>
+<td align="left" headers="r2c1-t12 r1c2-t12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2
+</td>
+<td align="left" headers="r2c1-t12 r1c3-t12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8
+</td>
+<td align="left" headers="r2c1-t12 r1c4-t12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;32
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t12" headers="r1c1-t12">Number of concurrently active sessions
+</td>
+<td align="left" headers="r3c1-t12 r1c2-t12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10
+</td>
+<td align="left" headers="r3c1-t12 r1c3-t12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20
+</td>
+<td align="left" headers="r3c1-t12 r1c4-t12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;100
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t12" headers="r1c1-t12">Number of user objects: tables and indexes
+</td>
+<td align="left" headers="r4c1-t12 r1c2-t12">&nbsp;&nbsp;&nbsp;&nbsp;500
+</td>
+<td align="left" headers="r4c1-t12 r1c3-t12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5,000
+</td>
+<td align="left" headers="r4c1-t12 r1c4-t12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;50,000
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t12" headers="r1c1-t12"><span class="bold">Estimated SYSAUX size at steady state with default configuration</span>
+</td>
+<td align="left" headers="r5c1-t12 r1c2-t12">&nbsp;&nbsp;&nbsp;&nbsp;<span class="bold">500 MB</span>
+</td>
+<td align="left" headers="r5c1-t12 r1c3-t12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="bold">2 GB</span>
+</td>
+<td align="left" headers="r5c1-t12 r1c4-t12">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="bold">5 GB</span>
+</td>
+</tr>
+</tbody>
+</table><br />
+</div><!-- class="inftblInformal -->
+
+<p class="subhead2">Running Database Configuration Assistant (DBCA) in Silent Mode</p>
+<p>In Chapter 2, "Creating an Oracle Database", the following information should be included.
+</p>
+<p>Silent mode does not have a user interface (other than what you initially input on the command line) or user interaction. It outputs all messages, including information, errors, and warnings, to a log file. 
+</p>
+<p>From the command line, enter the following to see all of the DBCA options that are available when using silent mode:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">dbca -help
+
+</pre>
+<p>The following sections contain examples that illustrate the use of silent mode.
+</p><a id="sthref110" name="sthref110"></a>
+<p> <span class="subhead3">DBCA Silent Mode Example 1: Creating a New Database&nbsp;</span>To create a clone database, enter the following on the command line: 
+</p>
+<pre xml:space="preserve" class="oac_no_warn">&#037; dbca -silent -createDatabase -templateName Transaction&#095;Processing.dbc 
+-gdbname ora10i -sid ora10i -datafileJarLocation 
+/private/oracle10i/ora10i/assistants/dbca/templates -datafileDestination 
+/private/oracle10i/ora10i/oradata -responseFile NO&#095;VALUE 
+-characterset WE8ISO8859P1 
+</pre><a id="sthref111" name="sthref111"></a>
+<p> <span class="subhead3">DBCA Silent Mode Example 2: Creating a Seed Template &nbsp;</span>To create a seed template, enter the following on the command line:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">&#037; dbca -silent -createCloneTemplate -sourceDB ora10i -sysDBAUserName 
+sys -sysDBAPassword change&#095;on&#095;install -templateName copy&#095;of&#095;ora10i.dbc 
+-datafileJarLocation /private/oracle/ora10i/assistants/dbca/templates 
+</pre>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref112" name="sthref112"></a>
+<h3><span class="secnum">34.3 </span>Oracle Database Reference
+</h3>
+<p class="subhead2">TRANSACTIONS Parameter</p>
+<p>In Chapter 1, "Initialization Parameters", the <code>TRANSACTIONS</code> initialization parameter specifies how many rollback segments to online when <code>UNDO&#095;MANAGEMENT &#061; MANUAL</code>. The maximum number of concurrent transactions is now restricted by undo tablespace size (<code>UNDO&#095;MANAGEMENT &#061; AUTO</code>) or the number of online rollback segments (<code>UNDO&#095;MANAGEMENT &#061; MANUAL</code>).
+</p>
+<p class="subhead2">LARGE&#095;POOL&#095;SIZE and Automatic Storage Management Files</p>
+<p>In Chapter 1, "Initialization Parameters", the following statement is missing:
+</p>
+<p>The value of<code> LARGE&#095;POOL&#095;SIZE</code> derived from the values of <code>PARALLEL&#095;MAX&#095;SERVERS</code>, <code>PARALLEL&#095;THREADS&#095;PER&#095;CPU</code>, <code>CLUSTER&#095;DATABASE&#095;INSTANCES</code>, <code>DISPATCHERS</code>, and <code>DBWR&#095;IO&#095;SLAVES</code> does not take into account the requirements used for Automatic Storage Management files. Automatic Storage Management files use the following amount of memory in the large pool:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">(maximum total MB of all concurrently open files in the database) x (mirroring factor) x (8 bytes)
+
+</pre>
+<p>This means that <code>LARGE&#095;POOL&#095;SIZE &#061; 8MB</code> can support one of the following:
+</p>
+<ul>
+<li type="disc">
+<p>1 TB of unmirrored database file space (external redundancy disk group) 
+</p>
+</li>
+<li type="disc">
+<p><sup>1</sup>/<sub>2</sub> TB of mirrored database file space (normal redundancy disk group)
+</p>
+</li>
+<li type="disc">
+<p><sup>1</sup>/<sub>3</sub> TB of mirrored database file space (high redundancy disk group).
+</p>
+</li>
+</ul>
+<p class="subhead2">LOG&#095;CHECKPOINT&#095;INTERVAL and LOG&#095;CHECKPOINT&#095;TIMEOUT Range of Values</p>
+<p>In Chapter 1, "Initialization Parameters", the following statement is missing:
+</p>
+<p>In Oracle Database 10<span class="italic">g</span>, the <code>LOG&#095;CHECKPOINT&#095;INTERVAL</code> and <code>LOG&#095;CHECKPOINT&#095;TIMEOUT</code> initialization parameters have this range of values: 0 to (2<sup>31</sup> - 1).
+</p>
+<p class="subhead2">V&#036;ASM&#095;CLIENT View</p>
+<p>In Chapter 4, "Dynamic Performance (V&#036;) View", the <code>V&#036;ASM&#095;CLIENT</code> view is incorrectly documented for database instances. The view description currently states that there is only one row in this view in database instances, containing information about the Automatic Storage Management instance. The actual implementation returns one row per open Automatic Storage Management disk group.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref113" name="sthref113"></a>
+<h3><span class="secnum">34.4 </span>Oracle Data Guard Concepts and Administration
+</h3>
+<p class="subhead2">THROUGH ALL SWITCHOVER</p>
+<p>In Chapter 10, "Data Guard Scenarios", Section 10.3.1, "Converting a Failed Primary Database into a Physical Standby Database", Step 5, "Start Redo Apply", the command in the second bullet item should include the <code>THROUGH ALL SWITCHOVER</code> clause, as shown in the following example:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">SQL> ALTER DATABASE RECOVER MANAGED STANDBY DATABASE THROUGH ALL SWITCHOVER DISCONNECT;
+
+</pre>
+<p>Including the <code>THROUGH ALL SWITCHOVER</code> clause ensures that Redo Apply can continue through the end-of-redo marker in the last log file that was archived by the failed primary database. If you do not include this clause, recovery stops and you must issue the command again to restart Redo Apply and continue past the end-of-redo marker.
+</p>
+<p class="subhead2">Oracle Label Security Is Not Supported with a Logical Standby Database</p>
+<p>In Chapter 4, "Creating a Logical Standby Database", section "Determine Support for Data Types and Storage Attributes for Tables" should state that Oracle Label Security is not supported by logical standby databases. If Oracle Label Security is installed on the primary database, SQL Apply fails on the logical standby database with an internal error during startup. 
+</p>
+<p class="subhead2">Starting Real-Time Apply</p>
+<ul>
+<li type="disc">
+<p>In Chapter 10, "Data Guard Scenarios", section "Flashing Back a Physical Standby Database", Step "Restart log apply services", should demonstrate how to start real-time apply:
+</p>
+<p>Issue the following command to start real-time apply on the physical standby database:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">SQL> ALTER DATABASE RECOVER MANAGED STANDBY DATABASE USING CURRENT LOGFILE;
+
+</pre>
+</li>
+<li type="disc">
+<p>In Chapter 10, "Data Guard Scenarios", section "Flashing Back a Logical Standby Database", Step "Start SQL Apply", should demonstrate how to start real-time apply:
+</p>
+<p>Issue the following command to start real-time apply on the logical standby database:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">SQL> ALTER DATABASE START LOGICAL STANDBY APPLY IMMEDIATE;
+</pre>
+</li>
+</ul>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref114" name="sthref114"></a>
+<h3><span class="secnum">34.5 </span>Oracle Database JPublisher User's Guide
+</h3>
+<p class="subhead2">SQLJ Option</p>
+<p>Chapter 5, "Command Line Options and Import Files", should contain the following information. The Oracle SQLJ translator and runtime libraries are supplied with the Oracle JPublisher product. If you do not have direct access to the SQLJ translator command-line utility, you can translate SQLJ source files through the JPublisher <code>-sqlj</code> option.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref115" name="sthref115"></a>
+<h3><span class="secnum">34.6 </span>PL/SQL Packages and Types Reference
+</h3>
+<p class="subhead2">DBMS&#095;DATA&#095;MINING Package</p>
+<p>In Chapter 23, "<code>DBMS&#095;DATA&#095;MINING</code>", the usage notes for the <code>GET&#095;MODEL&#095;DETAILS&#095;SVM</code> function should include the following information: "For the linear SVM model, to reduce storage requirements and speed up model loading, only non zero coefficients are stored. As a result, if an attribute is missing in the coefficient list returned by <code>GET&#095;MODEL&#095;DETAILS&#095;SVM</code>, then the coefficient of this attribute should be interpreted as zero."
+</p>
+<p class="subhead2">DBMS&#095;SQLTUNE Package</p>
+<p>Chapter 91, "<code>DBMS&#095;SQLTUNE</code>", is missing the following information: 
+</p><a id="sthref116" name="sthref116"></a>
+<p> <span class="subhead3">SELECT&#095;CURSOR&#095;CACHE Function&nbsp;</span>This function enables collection of SQL statements from the cursor cache.
+</p>
+<p><span class="bold">Syntax</span>
+</p>
+<pre xml:space="preserve" class="oac_no_warn">DBMS&#095;SQLTUNE.SELECT&#095;CURS0R&#095;CACHE (
+  basic&#095;filter        IN   VARCHAR2 :&#061; NULL,
+  object&#095;filter       IN   VARCHAR2 :&#061; NULL,
+  ranking&#095;measure1    IN   VARCHAR2 :&#061; NULL,
+  ranking&#095;measure2    IN   VARCHAR2 :&#061; NULL,
+  ranking&#095;measure3    IN   VARCHAR2 :&#061; NULL,
+  result&#095;percentage   IN   NUMBER   :&#061; 1,
+  result&#095;limit        IN   NUMBER   :&#061; NULL)
+ RETURN sys.sqlset PIPELINED;
+
+</pre>
+<p><span class="bold">Parameters</span>
+</p>
+<ul>
+<li type="disc">
+<p><code><span class="codeinlinebold">basic&#095;filter</span></code> The SQL predicate to filter the SQL from the cursor cache.
+</p>
+</li>
+<li type="disc">
+<p><code><span class="codeinlinebold">object&#095;filter</span></code> Specifies the objects that should exist in the object list of selected SQL from the cursor cache.
+</p>
+</li>
+<li type="disc">
+<p><code><span class="codeinlinebold">ranking&#095;measure</span></code><code><span class="codeinlineboldital">n</span></code> An order-by clause on the selected SQL.
+</p>
+</li>
+<li type="disc">
+<p><code><span class="codeinlinebold">result&#095;percentage</span></code> A percentage on the sum of a ranking measure.
+</p>
+</li>
+<li type="disc">
+<p><code><span class="codeinlinebold">result&#095;limit</span></code> The top limit SQL from the filtered source, ranked by the ranking measure.
+</p>
+</li>
+</ul>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref117" name="sthref117"></a>
+<h3><span class="secnum">34.7 </span>Oracle Database Heterogeneous Connectivity Administrator's Guide
+</h3>
+<p>The following information should be removed from Chapter 4, "Using Heterogeneous Services Agents", section "Determining the Heterogeneous Services Parameters":
+</p>
+<p>The Distributed Access Manager has a refresh capability available through the menu and toolbar that allows users to rerun queries if necessary and update the data. When the data is refreshed, the tool verifies that the set of registered agents remains the same. If it is not, the global view is updated. See <span class="italic">Oracle Enterprise Manager Administrator's Guide</span> and online help for more information about the Distributed Access Manager.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref118" name="sthref118"></a>
+<h3><span class="secnum">34.8 </span>Oracle OLAP Application Developer's Guide
+</h3>
+<p>In Chapter 12, "Administering Oracle OLAP", the following information is missing:
+</p>
+<p>Users who want to author or execute Analytic Workspace Java API applications within the Oracle JVM may need the following Java permissions, in addition to the <code>OLAP&#095;DBA</code> or <code>OLAP&#095;USER</code> role:
+</p>
+<div class="inftblInformal">
+
+<table class = "Informal" title="Permission Types and Allowed Actions" summary="Permission Types for Analytic Workspace Java Application, and the Actions they allow." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t13">Permission Type
+</th>
+<th align="left" valign="bottom" id="r1c2-t13">Action
+</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t13" headers="r1c1-t13">
+<pre xml:space="preserve" class="oac_no_warn">java.io.FilePermission
+</pre>
+</td>
+<td align="left" headers="r2c1-t13 r1c2-t13">read, write, execute
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t13" headers="r1c1-t13">
+<pre xml:space="preserve" class="oac_no_warn">java.util.PropertyPermission
+</pre>
+</td>
+<td align="left" headers="r3c1-t13 r1c2-t13">read, write
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t13" headers="r1c1-t13">
+<pre xml:space="preserve" class="oac_no_warn">java.net.SocketPermission
+</pre>
+</td>
+<td align="left" headers="r4c1-t13 r1c2-t13">connect, resolve
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t13" headers="r1c1-t13">
+<pre xml:space="preserve" class="oac_no_warn">java.lang.RuntimePermission
+</pre>
+</td>
+<td align="left" headers="r5c1-t13 r1c2-t13">null
+</td>
+</tr>
+</tbody>
+</table><br />
+</div><!-- class="inftblInformal -->
+
+<p>You can grant these permissions in either Java or SQL. For more information about Oracle JVM security and Java permissions, refer to the <span class="italic">Oracle Database Java Developer's Guide</span>.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref119" name="sthref119"></a>
+<h3><span class="secnum">34.9 </span>Oracle Data Mining Application Developer's Guide
+</h3>
+<p>Appendix B, "ODM Tips and Techniques" should contain a new section B.2.11, "Linear SVM Model Coefficients":
+</p>
+<p>For the linear SVM model, to reduce storage requirements and speed up model loading, only non-zero coefficients are stored. As a result, if an attribute is missing in the coefficient list returned by <code>GET&#095;MODEL&#095;DETAILS&#095;SVM</code>, the coefficient of this attribute should be interpreted as zero.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref120" name="sthref120"></a>
+<h3><span class="secnum">34.10 </span>Oracle Data Mining Administrator's Guide
+</h3>
+<p>In Chapter 5, "Oracle Data Mining Administration", section "ODM Configuration Parameters" should contain the following description for <code>AI&#095;BUILD&#095;SEQ&#095;PER&#095;PARTITION</code>:
+</p>
+<p>Data type is <code>int</code> and the default value is <code>50000</code>. This keeps the computations constrained to memory-sized chunks. There is no maximum value; this value should not be smaller than <code>1000</code>.
+</p>
+</div><!-- class="sect2" -->
+
+</div><!-- class="sect1" -->
+<a id="CHDDJCFH" name="CHDDJCFH"></a>
+<div class="sect1">
+<a id="sthref121" name="sthref121"></a>
+<h2><span class="secnum">35 </span>Open Bugs
+</h2>
+<p>This section lists known bugs for this release. A supplemental list of bugs may be found as part of the release documentation specific for your platform.
+</p>
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref122" name="sthref122"></a>
+<h3><span class="secnum">35.1 </span>Automatic Undo Management Known Bugs
+</h3>
+<p class="subhead2">Bug 1800314</p>
+<p>The ORA-600 &#091;ktsiseg&#095;info4&#093; error occurs during undo segment creation. This error means the undo segment information does not match the <code>SEG&#036;</code> row cache.
+</p><a id="sthref123" name="sthref123"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Retry the transaction which automatically re-creates an undo segment.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref124" name="sthref124"></a>
+<h3><span class="secnum">35.2 </span>Compatibility and Upgrade Known Bugs
+</h3>
+<p class="subhead2">Bug 3334209</p>
+<p>When upgrading an Oracle8<span class="italic">i</span> Database to Oracle Database 10<span class="italic">g</span>, the size of the four KOT system tables, <code>KOTTD&#036;</code>, <code>KOTAD&#036;</code>, <code>KOTMD&#036;</code> and <code>KOTTB&#036;</code>, may increase significantly, depending on the size of blocks used. Additional space may be required for a successful upgrade to Oracle Database 10<span class="italic">g</span>.
+</p><a id="sthref125" name="sthref125"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Use the SQL script <code>rdbms/admin/utlu101i.sql</code> to estimate the amount of space necessary. Alternatively, set <code>AUTOEXTEND ON MAXSIZE UNLIMITED</code> for the <code>SYSTEM</code> tablespace.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref126" name="sthref126"></a>
+<h3><span class="secnum">35.3 </span>OLAP Known Bugs
+</h3><a id="CACHJFGC" name="CACHJFGC"></a>
+<p class="subhead2">Bug 3313073</p>
+<p>In Analytic Workspace Manager, the default "All objects" option in the Import from EIF file dialog will not import all the objects.
+</p><a id="sthref127" name="sthref127"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>In the Import from EIF file dialog, select the "Import Object Properties" option found on the Advance tab.
+</p>
+<p class="subhead2">Bug 3340372</p>
+<p>OLAP Worksheet cannot be launched.
+</p><a id="sthref128" name="sthref128"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Launch the OLAP Worksheet from the OLAP Analytic Workspace Manager Tool installed with Oracle Database 10<span class="italic">g</span> client.
+</p>
+<p class="subhead2">Bug 3366805</p>
+<p>While installing the OLAP option, a custom DBCA database creation can fail with an <code>ORA-00060: Deadlock Detected</code> error message.
+</p><a id="sthref129" name="sthref129"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Press the Ignore button and continue with the installation. Once the installation is complete, login as <code>sysdba</code> and re-run the <code>&#036;ORACLE&#095;HOME/olap/admin/cataps.sql</code> script.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref130" name="sthref130"></a>
+<h3><span class="secnum">35.4 </span>Oracle Call Interface Known Bugs
+</h3>
+<p class="subhead2">Bug 1704273</p>
+<p>This bug manifests itself in MTS setups when shared db links are used between the middle-tier and the dedicated backend. The symptoms of this bug are client disconnects, accompanied by the following error messages: <code>ORA-02068: following severe error from BACKEND</code>, <code>ORA-00022: invalid session ID; access denied</code>.
+</p><a id="sthref131" name="sthref131"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Set the values of system variables <code>mts&#095;servers</code> and <code>max&#095;mts&#095;servers</code> to be equal.
+</p>
+<p class="subhead2">Bug 3133023</p>
+<p>Performing an array operation through <code>OCIStmtExecute</code> using <code>iters >&#061; 65535</code> will result in the error <code>ORA-24381: error(s) in array DML</code>.
+</p><a id="sthref132" name="sthref132"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Do repeated <code>OCIStmtExecute</code> operations in a loop with <code>iters</code> set to a value less than <code>65535</code>, and use the <code>rowoff</code> argument as necessary for array binds or defines.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref133" name="sthref133"></a>
+<h3><span class="secnum">35.5 </span>Oracle Data Guard Known Bugs
+</h3>
+<p class="subhead2">Bug 2834560</p>
+<p>Transient constraint violations as part of batch updates are not supported in a logical standby database. Updates to primary key or unique key causing transient collisions are not resolved in the logical standby database. 
+</p>
+<p>For instance, the primary database may contain a table contact, <code>(ID number primary key, name varchar2(32))</code>, that contains rows with ID values <code>(1...32)</code>. An update statement such as <code>UPDATE CONTACT SET ID &#061; id&#043;1;</code> causes temporary collisions on the ID column but executes successfully in the primary database. 
+</p>
+<p>On the logical standby database, the attempt to replicate the effects will result in constraint violation.
+</p><a id="sthref134" name="sthref134"></a>
+<p> <span class="subhead3">Workaround&nbsp;</span>None.
+</p>
+<p class="subhead2">Bug 2795200</p>
+<p>Distributed transaction states are not preserved after failover involving a logical standby database. The state of an in-doubt transaction at the primary database is not preserved in the logical standby database on a failover or switchover.
+</p><a id="sthref135" name="sthref135"></a>
+<p> <span class="subhead3">Workaround&nbsp;</span>None.
+</p>
+<p class="subhead2">Bug 3184834</p>
+<p>Logical standby database shows job processes are available, although jobs cannot be executed in the logical standby database. 
+</p>
+<p>Querying the <code>V&#036;PARAMETER</code> view in the Logical Standby database may show <code>JOB&#095;QUEUE&#095;PROCESSES</code> being available, and the logical standby database allows for scheduling jobs. However, the scheduled jobs are not executed in the logical standby database. 
+</p>
+<p>Some applications may incorrectly assume that job scheduling is possible, when it is not.
+</p><a id="sthref136" name="sthref136"></a>
+<p> <span class="subhead3">Workaround&nbsp;</span>Set <code>JOB&#095;QUEUE&#095;PROCESSES</code> to <code>0</code> before starting SQL Apply. After a failover or switchover to the database, set <code>JOB&#095;QUEUE&#095;PROCESSES</code> to the desired value.
+</p>
+<p class="subhead2">Bug 3199961</p>
+<p>The command <code>ALTER DATABASE GUARD &#123;ALL &#124; STANDBY &#124; NONE&#125;</code> does not propagate to all active instances in RAC. Executing the <code>ALTER DATABASE GUARD</code> command on one instance does not affect the other active instances in a RAC cluster. Instances that are shut down at the time of the command execution, automatically pick up the new guard setting when starting up.
+</p><a id="sthref137" name="sthref137"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Execute the <code>ALTER DATABASE GUARD</code> command on all active instances.
+</p>
+<p class="subhead2">Bug 3310115</p>
+<p>If a logical standby database operating in an Oracle Real Application Clusters mode is involved in a switchover, and if the Oracle Data Guard configuration is running maximum protection mode or maximum availability mode, then standby locks will not be acquired by the instance that performs that switchover. 
+</p>
+<p>If the standby locks are not acquired, the instance cannot communicate destination failures to other instances; this directly affects no-data-loss recovery.
+</p><a id="sthref138" name="sthref138"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Before performing a switchover to a logical standby database configured in an Oracle Real Application Cluster, make sure to shut down all instances except for one on each database. After the switchover is complete, the other instances can be started. If the primary database is running in maximum protection mode or maximum availability mode, the original instance that performed the switchover on the primary database should be stopped and restarted. This can take place before or after the other instances have been restored on the database.
+</p>
+<p class="subhead2">Bug 3311688</p>
+<p>The Oracle Label Security feature is incompatible with SQL Apply. 
+</p><a id="sthref139" name="sthref139"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>If Oracle Label Security is in use, use Redo Apply instead of SQL Apply for reporting and disaster recovery.
+</p>
+<p class="subhead2">Bug 3372626</p>
+<p>If you do not cancel real-time apply before performing a failover to a physical standby database, then less redo data may be applied to the standby database, and the new primary database may contain inconsistent data after the failover.
+
+</p><a id="sthref140" name="sthref140"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Before failing over to a physical standby database that has real-time apply enabled, issue the <code>ALTER DATABASE RECOVER MANAGED STANDBY DATABASE CANCEL</code> statement to stop real-time apply before you issue the <code>ALTER DATABASE RECOVER MANAGED STANDBY DATABASE FINISH</code> statement to initiate the failover. 
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref141" name="sthref141"></a>
+<h3><span class="secnum">35.6 </span>Oracle Data Mining Known Bugs
+</h3>
+<p class="subhead2">Bug 3202916</p>
+<p>If a cost matrix is supplied to the build operation, the default behavior is to return costs, not probabilities, when doing a batch apply.
+</p><a id="sthref142" name="sthref142"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>None.
+</p>
+<p class="subhead2">Bug 2545555</p>
+<p>Mining attributes may be specified with mixed case names in the ODM Java API methods, such as "<code>Age</code>", "<code>EducationLevel</code>", "<code>Affinity&#095;Card</code>", but the ODM server uniformly converts the names to uppercase, like "<code>AGE</code>", "<code>EDUCATIONLEVEL</code>", "<code>AFFINITY&#095;CARD</code>", before using them for model operations. Consequently, the input tables used for model build, testing, and scoring, should have the non-transactional input column names in uppercase, and the attribute names in the case of transactional input in uppercase.
+</p><a id="sthref143" name="sthref143"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>When using data tables with ODM, do not name columns in lower or mixed case, using the literal-based naming mechanism, as in "<code>Education&#095;Num</code>", for non-transactional input data. For transactional input, all attributes that are provided through the <code>attribute&#095;name</code> column in the schema:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">(sequence&#095;id, attribute&#095;name, attribute&#095;value)
+
+</pre>
+<p>are implicitly converted into upper case before being used for model operations. Also, do not introduce special characters, such as <code>'</code>, <code>"</code>, space, and <code>:</code>, in your attribute names.
+</p>
+<p class="subhead2">Bug 3259277</p>
+<p><code>BLAST</code> problem: When there are gaps in alignment, the attributes <code>pct&#095;identity</code>, <code>positives</code>, <code>mismatches</code>, and <code>gap&#095;openings</code> will be incorrect. However, all other attributes are correct. Users who are not interested in the attributes that are incorrect can still make use of the results. If the alignment does not produce any gaps, all the result attributes are correct.
+</p><a id="sthref144" name="sthref144"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>None.
+</p>
+<p class="subhead2">Bug 3268579</p>
+<p>Model Migration: During an RDBMS upgrade from Oracle9<span class="italic">i</span> Database Release 2 to Oracle Database 10<span class="italic">g</span>, Oracle JVM resource constraints may limit the number of Java Data Mining models that can be migrated at once.
+</p><a id="sthref145" name="sthref145"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>After an RDBMS upgrade, compare the number of models in <code>odm.odm&#095;mining&#095;model</code> in Oracle9<span class="italic">i</span> Database Release 2 with the number of models in <code>odm.dm&#095;model</code> view in Oracle Database 10<span class="italic">g</span>. If there is a discrepancy between the row number of the <code>odm&#095;mining&#095;model</code> table and the Oracle Database 10<span class="italic">g</span> <code>dm&#095;model</code> view, use the following script to migrate all remaining ODM Java models:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">cd &#036;ORACLE&#095;HOME/dm/admin 
+sqlplus odm/<span class="italic">&lt;passwd></span> 
+SQL>&#064;initodm.sql 
+SQL>exit 
+
+</pre>
+<p>Verify the results once more in the <code>odm.dm&#095;model</code> view to ensure that all Java models are migrated.
+</p>
+<p class="subhead2">Bug 3313128</p>
+<p>k-Means build in the PL/SQL API can fail under stress load, such as large number of attributes (in hundreds of thousands) or large number of clusters (in thousands), or a combination of both.
+</p><a id="sthref146" name="sthref146"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Build smaller models with fewer clusters and attributes.
+</p>
+<p class="subhead2">Bug 3387835</p>
+<p>K-Means build in the PL/SQL API fails in MTS mode when SGA memory is fragmented.
+</p><a id="sthref147" name="sthref147"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Log in as <code>sysdba</code> and <code>ALTER SYSTEM FLUSH SHARED&#095;POOL</code>.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref148" name="sthref148"></a>
+<h3><span class="secnum">35.7 </span>Oracle HTML DB Known Bugs
+</h3>
+<p class="subhead2">Bug 3384664</p>
+<p>When you open the number or date format select popup dialog on 'Column Attribute' in 'Page Definition' of Application Builder, it always displays '<code>backslash'&#043; 5,234.10</code> in the dialog, it is expected that the symbol of 'yen' accurately in Japanese environment. (Note: backslash and yen are the same character code point, but displayed differently depending on font used). Backslash is also displayed when applying the data format on the page in the application.
+</p><a id="sthref149" name="sthref149"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>None.
+</p>
+<p class="subhead2">Bug 3393090</p>
+<p>If you create a form on a table or view based on an included column whose name is in Japanese, using the Application Builder wizard, the name of the new item will be included in Japanese.
+</p><a id="sthref150" name="sthref150"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>When you create new items on the Page Definition page in ApplicationBuilder, you need to use alphanumeric characters A&#095;Z, 0-9 and '&#095;' as item names. You also need to edit item names to alphanumeric before you apply changes to the item.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref151" name="sthref151"></a>
+<h3><span class="secnum">35.8 </span>Oracle Installation - Enterprise Edition Known Bugs
+</h3>
+<p class="subhead2">Bug 3374370</p>
+<p>When the language is Traditional or Standard Chinese, if you install Enterprise Edition and create a database and then install it again in the same<code> &#036;ORACLE&#095;HOME</code>, you get the following error:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">Oracle Universal Installer has detected that there are processes running in the currently selected Oracle Home.
+The following processes need to be  ...
+</pre><a id="sthref152" name="sthref152"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>None.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref153" name="sthref153"></a>
+<h3><span class="secnum">35.9 </span>Oracle <span class="italic">inter</span>Media Known Bugs
+</h3>
+<p class="subhead2">Bug 3250761</p>
+<p>Repeatedly calling <code>ordsys.ordimage.processcopy()</code> within a single session can eventually cause an out of memory error. This is a problem for applications that batch process many large images during a single database session.
+</p><a id="sthref154" name="sthref154"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Establish a new database session when available memory runs low.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref155" name="sthref155"></a>
+<h3><span class="secnum">35.10 </span>Oracle Real Application Clusters Known Bugs
+</h3>
+<p class="subhead2">Bug 3799097</p>
+<p>While deleting CRS, node error is thrown.
+</p><a id="sthref156" name="sthref156"></a>
+<p class="subhead2">Workaround:	</p>
+<p>Before issuing the <code>crssetup -del</code> command to delete a node from the cluster, stop OracleCRService, OracleEVMService, and OracleCSService on the node to be deleted. Wait for approximately one minute to ensure that the removal of the node from the cluster has completed. After the one minute wait, proceed with the <code>crssetup -del</code> command to remove the desired nodes.
+</p>
+<p class="subhead2">Bug 3780455</p>
+<p>An intermittent failure exists with the Delete Node operation that may cause a crash of the OCSSD process, thereby causing an unintended node crash/reboot of a cluster member.
+</p><a id="sthref157" name="sthref157"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Only perform node deletion operations during scheduled downtime periods.
+</p>
+<p class="subhead2">Bug 3235218</p>
+<p><code>ocrconfig</code> commands can only be executed by the root user, but <code>ocrconfig</code> does not check to ensure that the executing user is root.
+</p>
+<p>If an <code>oraconfig.log</code> file exists before the execution of <code>ocrconfig</code> begins, and if the current user in the current directory has no write privileges for this log file, <code>ocrconfig</code> fails without reporting any errors.
+</p><a id="sthref158" name="sthref158"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Become root before executing <code>ocrconfig</code>.
+</p>
+<p class="subhead2">Bug 3311316</p>
+<p><code>CLSR&#095;START&#095;ASM</code> doesn't check the <code>ENABLED</code> or <code>DISABLED</code> status of the ASM instance. When starting an Automatic Storage Management (ASM) instance which has a CRS resource defined for it, the CRS resource is started even when the ASM instance has been disabled through <code>srvctl</code>. The CRS resource will detect that the ASM instance is disabled and shut it down. Thus, a disabled ASM instance cannot be started through SQL&#042;Plus.
+</p><a id="sthref159" name="sthref159"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Enable the ASM instance before starting it.
+</p>
+<p class="subhead2">Bug 3377903</p>
+<p>When shutting down an instance and immediately starting it again using SQL&#042;Plus, sometimes the CRS resource for the instance does not get started, because it is still busy stopping. In this case, <code>srvctl status instance -d </code><code><span class="codeinlineitalic">name</span></code> <code>-i</code> <code><span class="codeinlineitalic">sid</span></code> will incorrectly report the instance not to be running.
+</p><a id="sthref160" name="sthref160"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Start the instance's CRS resource with <code>srvctl status instance -d </code><code><span class="codeinlineitalic">name</span></code> <code>-i</code> <code><span class="codeinlineitalic">sid</span></code>.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref161" name="sthref161"></a>
+<h3><span class="secnum">35.11 </span>Oracle Streams Known Bugs
+</h3>
+<p class="subhead2">Bug 3241689</p>
+<p>The Streams queue buffer may not be initialized on database restart after some types of configuration problems.
+</p><a id="sthref162" name="sthref162"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Avoid using <code>dbms&#095;propagation&#095;adm</code> or other Oracle Streams APIs interchangeably with Oracle Streams Advanced Queuing (AQ) APIs to create and drop propagations. Always use Oracle Streams APIs for configuring propagation between databases. Particularly if the <code>DB&#095;DOMAIN</code> parameter is <code>null</code>, avoid using multiple database link names where one link may be a substring of another link in propagations from the same queue.
+</p>
+<p class="subhead2">Bug 3316255</p>
+<p>In general, DDL statements are not supported on queue tables and may even render them inoperable. For example, issuing an <code>ALTER TABLE ... SHRINK</code> statement against a queue table results in an internal error and all subsequent attempts to use the queue table will also result in errors.
+</p><a id="sthref163" name="sthref163"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Do not use DDL commands on queue tables.
+</p>
+<p class="subhead2">Bug 3317678</p>
+<p>Reducing the scope of rules for Streams processes while the Streams queue contains messages can result in partial or incomplete transactions. If the modified rules eliminate logical change records, LCRs, for a transaction that previously satisfied the rules, and if LCRs for that eliminated transaction already exist in the queue, subsequent LCRs of the transaction, including the commit or rollback, may not be processed.
+</p><a id="sthref164" name="sthref164"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>To ensure that uncommitted transactions are not impacted by such rule changes, stop the Streams processes and confirm that the Streams queue is empty before modifying the rules.
+</p>
+<p class="subhead2">Bug 3384300</p>
+<p>Intermittently, executing a remote cursor that has aged out of the shared pool generates an <code>ORA-00600 &#091;OPIXRM-1&#093;</code> error message.
+</p><a id="sthref165" name="sthref165"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Increase the shared pool size, or mark the remote cursor as kept. See <span class="italic">PL/SQL Packages and Types Reference</span>, Chapter 87, "<code>DBMS&#095;SHARED&#095;POOL</code>".
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref166" name="sthref166"></a>
+<h3><span class="secnum">35.12 </span>Oracle XML DB Known Bugs
+</h3>
+<p class="subhead2">Bug 3141321</p>
+<p>When running in Oracle Real Application Clusters mode, multiple instances of Oracle XML DB may hang during a <code>DBMS&#095;XMLSCHEMA.DELETESCHEMA</code> call. 
+</p>
+<p>If a session from node A performs an operation on the same schema that node B is attempting to delete, the <code>DELETESCHEMA</code> operation will hang. This happens because the session pool will remain with node A during the <code>DELETESCHEMA</code> call; the pool is cleared only for the local instance.
+</p><a id="sthref167" name="sthref167"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Shut down all nodes that have accessed the schema.
+</p>
+<p class="subhead2">Bug 3330788</p>
+<p>Direct path loading is not supported if the schema-based xml column is not a top-level column of a table, or if the types created for the schema-based xml involve inheritance.
+</p><a id="sthref168" name="sthref168"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Use conventional loading to load the data through SQL&#042;Loader<code></code>.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref169" name="sthref169"></a>
+<h3><span class="secnum">35.13 </span>Oracle Workflow Known Bugs
+</h3>
+<p class="subhead2">Bug 3541376</p>
+<p>After installing Oracle Workflow using the Workflow Configuration Assistant, the following error message may appear in the Workflow installation log file (<code>workflow.log</code>):
+</p>
+<pre xml:space="preserve" class="oac_no_warn">&lt;date> &lt;time> oracle.apps.fnd.cp.gsc.SvcComponentContainerException: oracle.apps.fnd.wf.common.ContextFactoryException: Unable to get initial context because the following Exception occurred -> javax.naming.NameNotFoundException: jdbc/WorkflowDS not found
+</pre><a id="sthref170" name="sthref170"></a>
+<p class="subhead2">Workaround:</p>
+<p>Ignore the message and start the containers required for the Oracle Workflow Manager component in Oracle Enterprise Manager to create the data sources. After the data sources are created, this error should no longer appear. For instructions, see the <span class="italic">Oracle Workflow Installation Notes for Oracle Database</span>.
+</p>
+<p class="subhead2">Bug 3399034</p>
+<p>There is a problem in the PL/SQL Web Toolkit: If the user has installed Workflow Schema and Workflow password as the same string in the database, this error will be returned while accessing <code>http://</code><code><span class="codeinlineitalic">hostname</span></code><code>:</code><code><span class="codeinlineitalic">HTTP Server Port number</span></code><code>/pls/wf/wfa&#095;html.home</code> after the installation of middle tier, the following error would be returned.
+</p>
+<pre xml:space="preserve" class="oac_no_warn">You don't have permission to access /pls/wf/wfa&#095;html.home on this server.
+</pre><a id="sthref171" name="sthref171"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>The user should manually type the Workflow schema name for <code>PlsqlDatabaseUsername</code> in <code>&#036;ORACLE&#095;HOME/Apache/modplsql/conf/dads.conf</code>.
+</p>
+<p class="subhead2">Bug 3399659</p>
+<p>During Workflow Middle Tier installation, if the user enters an incorrect Workflow username, password, or database connection information, Workflow installation sets the <code>PlsqlNLSLanguage</code> parameter to <code>""AMERICAN&#095;AMERICA.AL32UTF8""</code>, which causes the HTTP Server startup to fail.
+</p>
+<pre xml:space="preserve" class="oac_no_warn">You don't have permission to access /pls/wf/wfa&#095;html.home on this server.
+
+</pre><a id="sthref172" name="sthref172"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Remove one set of quotes, so that the value of the <code>PlsqlNLSLanguage</code> parameter is <code>"AMERICAN&#095;AMERICA.AL32UTF8"</code>, or set it to the correct database <code>NLS&#095;LANG</code>. Bring up the HTTP Server manually.
+</p>
+<p>Manually type the Workflow schema name for <code>PlsqlDatabaseUsername</code> in <code>&#036;ORACLE&#095;HOME/Apache/modplsql/conf/dads.conf</code>.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref173" name="sthref173"></a>
+<h3><span class="secnum">35.14 </span>PL/SQL Known Bugs
+</h3>
+<p class="subhead2">Bug 3291684</p>
+<p>The Oracle Database 10<span class="italic">g</span> Compiler implements stricter checks for allowed data type definitions of the row signature returned by a pipelined table function.
+</p>
+<p>In prior releases, the PL/SQL compiler allowed the definition of the signature of the rows returned by a pipelined table function to include one or more fields of data type <code>PL/SQL RECORD</code>. Such definitions are no longer allowed in Oracle Database 10<span class="italic">g</span>; this means that programs that used this loophole and compiled and ran successfully prior to the current release will no longer compile.
+</p><a id="sthref174" name="sthref174"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Oracle has implemented a mechanism in Oracle Database 10<span class="italic">g</span>, to be used only under guidance from Oracle Support, which will preserve the Oracle9<span class="italic">i</span> Database Release 2 loophole behavior. It is turned on in this manner:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">alter session set events &#061; '10946 trace name context level 4'
+
+</pre>
+<p>Code that fails to compile in Oracle Database 10<span class="italic">g</span> because it uses the loophole behavior must be recompiled after event 10946 is set. Although the environment in which the compiled code runs does not need this event setting under normal runtime conditions, you should set the event to enable successful automatic recompilation in response to invalidation that might be caused by the dependency mechanism. The event may be set at the system level, and therefore may be set through the <code>pfile</code> or <code>spfile</code>. 
+</p>
+<p>For further notes and alternative implementations that do not rely on this loophole, please review bug 3291684.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref175" name="sthref175"></a>
+<h3><span class="secnum">35.15 </span>Pro&#042;C Known Bugs
+</h3>
+<p class="subhead2">Bug 1466269</p>
+<p>Hints are not precompiled properly when used in an <code>EXEC SQL EXPLAIN PLAN</code> statement. The hints are not carried forward in the Pro&#042;C generated code.
+</p><a id="sthref176" name="sthref176"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>None.
+</p>
+<p class="subhead2">Bug 1323304</p>
+<p>When PL/SQL code is used in a version of Pro&#042;C that has embedded <code>&#092;n</code> characters, if the statement is sufficiently long, it has to be split into a call to <code>sqlbuft</code> and also be placed in <code>sqlstm.stmt</code>. This results in inconsistent escaping for <code>&#092;n</code> in <code>sqlbuft</code>, with a runtime error in <code>prepare</code>:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">PLS-00103: Encountered the symbol "&#092;" when expecting ...
+</pre><a id="sthref177" name="sthref177"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Edit the generated C file to remove the extra backslashes when the statement is split.
+</p>
+<p class="subhead2">Bug 658837</p>
+<p>While precompiling even with <code>SQLCHECK&#061;FULL</code>, Pro&#042;C doesn't detect invalid column names in <code>UPDATE</code> statement when <code>WHERE CURRENT OF</code> clause is used.
+</p><a id="sthref178" name="sthref178"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>None.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref179" name="sthref179"></a>
+<h3><span class="secnum">35.16 </span>Pro&#042;COBOL Known Bugs
+</h3>
+<p class="subhead2">Bug 1897639</p>
+<p>Referring to an implicit <code>VARCHAR</code> within a group item returns a <code>PCB-S-00208</code> error while precompiling with Pro&#042;Cobol.
+</p><a id="sthref180" name="sthref180"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Add an <code>EXEC SQL VAR</code> statement before referring it as host variable as follows:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">EXEC SQL VAR &lt;varchar group item name> IS VARCHAR(&lt;size>) END-EXEC
+</pre>
+<p class="subhead2">Bug 1656765</p>
+<p>Using the <code>INCLUDE</code> statement to copy files, which contain <code>IDENTIFICATION</code>, <code>ENVIRONMENT</code>, <code>DATA</code>, and <code>PROCEDURE DIVISION</code>, into a host program as sub programs, Pro&#042;Cobol fails with <code>PCB-S-00400</code> error. This problem happens if <code>.pco</code> files use <code>EXEC SQL INCLUDE</code> statements to include one nested program after another nested program.
+</p><a id="sthref181" name="sthref181"></a>
+<p> <span class="subhead3">Workaround&nbsp;</span>Put two files into one include file. If <code>PROCEDURE DIVISION</code> has only one <code>INCLUDE</code> statement, Pro&#042;Cobol precompiler succeeds in generating a <code>.cob</code> file. The included <code>.pco</code> file should not contain <code>IDENTIFICATION DIVISION</code>, any <code>DIVISIONS</code> for that matter but only code (routines).
+</p>
+<p class="subhead2">Bug 1620777</p>
+<p>If a host variable is defined by adding the keyword <code>VARYING</code>, and then the data type is overridden using data type equivalencing, the length value of the expanded string field is increased by 2.
+</p><a id="sthref182" name="sthref182"></a>
+<p> <span class="subhead3">Workaround&nbsp;</span>None.
+</p>
+<p class="subhead2">Bug 953338</p>
+<p>When a Pro&#042;Cobol program is precompiled with embedded PL/SQL using select<code> /&#042;&#043; index hint &#042;/</code> statement, <code>PCB-S-00567</code>, <code>PLS-103</code> errors are returned.
+</p><a id="sthref183" name="sthref183"></a>
+<p> <span class="subhead3">Workaround&nbsp;</span>None.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref184" name="sthref184"></a>
+<h3><span class="secnum">35.17 </span>Pro&#042;FORTRAN Known Bugs
+</h3>
+<p class="subhead2">Bug 2425918</p>
+<p>Use of <code>CHARACTER&#042;(&#042;)</code> as a host variable generates bad code. This is a restriction of <code>PROFOR</code>. <code>CHARACTER&#042;(&#042;)</code> variables have no predetermined length. They are used to specify dummy arguments in a subroutine declaration. The maximum length of an actual argument is returned by the <code>LEN</code> intrinsic function. Although <code>CHARACTER&#042;(&#042;)</code> variables are valid <code>FORTRAN</code> variable names, they are not supported as a host variable.
+</p><a id="sthref185" name="sthref185"></a>
+<p> <span class="subhead3">Workaround&nbsp;</span>None.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref186" name="sthref186"></a>
+<h3><span class="secnum">35.18 </span>RMAN Known Bugs
+</h3>
+<p class="subhead2">Bug 3993884</p>
+<p>RMAN does not work for languages other than Japanese and French.
+</p><a id="sthref187" name="sthref187"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Do not set <code>NLS&#095;LANG</code> to use a language other than Japanese and French.
+</p>
+<p class="subhead2">Bug 2656503</p>
+<p>RMAN cannot back up transported tablespaces unless they have been made read-write after they have been transported. It is not necessary to leave them in read-write status, but they cannot be backed up by RMAN unless they have been made read-write once, if only briefly, after they have been plugged in.
+</p><a id="sthref188" name="sthref188"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>None.
+</p>
+<p class="subhead2">Bug 2692990</p>
+<p>When restoring files at a standby database using recovery catalog, RMAN attempts to use the file names of the primary database for the restored files.
+</p><a id="sthref189" name="sthref189"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Use <code>SET NEWNAME</code> to restore the files to the correct locations.
+</p>
+<p class="subhead2">Bug 2670671</p>
+<p>Lack of statistics in RMAN catalog schema can lead to poor performance.
+</p><a id="sthref190" name="sthref190"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Occasionally use the <code>ALTER USER ... COMPUTE STATISTICS</code> command to re-compute the statics for the RMAN catalog schema.
+</p>
+<p class="subhead2">Bug 2353334</p>
+<p>RMAN backups will fail with internal errors when a non-standard<code> db&#095;block&#095;size</code>, such as 6k, is used, and the tablespace that is being backed up has a standard block size, such as 8k or 16k.
+</p><a id="sthref191" name="sthref191"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Contact Oracle support for the workaround if you encounter this bug.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref192" name="sthref192"></a>
+<h3><span class="secnum">35.19 </span>Shared Servers Known Bugs
+</h3>
+<p class="subhead2">Bug 3398097</p>
+<p>Client connections terminate with <code>ORA-03113</code> error message:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">ORA-03113: end-of-file on communication channel
+
+</pre>
+<p>Trace files in Oracle Net Dispatcher lists these error messages:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">NS Primary Error: TNS-12535: TNS:operation timed out
+NS Secondary Error: TNS-12606: TNS: Application timeout occurred
+</pre>
+<p>
+</p><a id="sthref193" name="sthref193"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>When using shared servers, do not specify the <code>SQLNET.INBOUND&#095;CONNECT&#095;TIMEOUT</code> parameter in <code>sqlnet.ora</code> on a database server.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref194" name="sthref194"></a>
+<h3><span class="secnum">35.20 </span>SQL Execution Known Bugs
+</h3>
+<p class="subhead2">Bug 3342089</p>
+<p>Attempts to <code>DROP TABLE</code> result in an <code>ORA-04063: table has errors</code> when both of these conditions are true:
+</p>
+<ol type="1" start="1">
+<li>
+<p>The table being dropped has columns that depend on an invalid type, such as a type that was altered or dropped forcibly without upgrading its dependents.
+</p>
+</li>
+<li>
+<p>The RecycleBin feature is enabled for <code>UNDROP TABLE</code> support.
+</p>
+</li>
+</ol><a id="sthref195" name="sthref195"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>There are several workarounds for this problem:
+</p>
+<ul>
+<li type="disc">
+<p>Use <code>DROP TABLE ... PURGE</code> instead, if you are certain that you will <span class="bold">not</span> need to <code>UNDROP</code> the table at a later time.
+</p>
+</li>
+<li type="disc">
+<p>Use <code>ALTER TABLE ... UPGRADE INCLUDING DATA; DROP TABLE ...</code>, if you will need to <code>UNDROP</code> the table at a later time.
+</p>
+<p>Alternatively, you can use a temporary table, which allows you to delete the invalid table and retain the ability to <code>UNDROP</code> the valid subset of the original table. This is illustrated in the following script:
+</p>
+<pre xml:space="preserve" class="oac_no_warn">CREATE TABLE TMP AS SELECT &#042; FROM ORIG;
+DROP TABLE ORIG PURGE;
+ALTER TABLE TMP RENAME TO ORIG;
+DROP TABLE ORIG;
+</pre>
+</li>
+</ul>
+<p class="subhead2">Bug 3382501</p>
+<p>A query selecting from three or more tables with <code>optimizer&#095;mode</code> set to <code>first&#095;rows&#095;</code><code><span class="codeinlineitalic">xx</span></code>, where <code><span class="codeinlineitalic">xx</span></code> is 1, 10, 100, or 1000, may crash the database.
+</p><a id="sthref196" name="sthref196"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Set <code>optimizer&#095;mode</code> to <code>all&#095;rows</code>, or specify <code>all&#095;rows</code> hint in the SQL statement.
+</p>
+<p class="subhead2">Bug 3399017</p>
+<p>Reads against a <code>LOB</code> column may unexpectedly generate an <code>ORA-01555 01555: snapshot too old: rollback segment number &#037;s with name &#092;"&#037;s&#092;" too small</code> message error, even if the tablespace has been sized appropriately. This happens when the database is in auto undo management mode and the <code>LOB</code> is using time-based retention. Either the <code>RETENTION</code> clause was explicitly specified when creating the <code>LOB</code>, or <code>PCTVERSION</code> was not specified.
+</p><a id="sthref197" name="sthref197"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Alter the <code>LOB</code> to use <code>PCTVERSION</code> explicitly. This switches the <code>LOB</code> to use space-based retention. Note that time-based retention is no longer supported. 
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+<a id="sthref198" name="sthref198"></a>
+<h3><span class="secnum">35.21 </span>Utilities Known Bugs
+</h3>
+<p class="subhead2">Bug 2770880</p>
+<p>When a <code>READ&#095;ONLY</code> tablespace is imported into the target database using Data Pump Import, it is created <code>OFFLINE</code>.
+</p><a id="sthref199" name="sthref199"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>The tablespace can be manually set back to <code>READ&#095;ONLY</code> when the Data Pump Import completes.
+</p>
+<p class="subhead2">Bug 3309770</p>
+<p>If an object type in one schema references an object type in another schema, there will be compilation warnings when Data Pump Import creates the first object type.
+</p><a id="sthref200" name="sthref200"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>The object types can be manually revalidated once Data Pump Import completes.
+</p>
+<p class="subhead2">Bug 3369197</p>
+<p>Errors will result when attempting to perform a network mode Data Pump Import using the <code>NETWORK&#095;LINK</code> parameter if the source database table contains a <code>LONG</code> data type.
+</p><a id="sthref201" name="sthref201"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Use a standard dumpfile-based Data Pump Export and Import of the table that contains the <code>LONG</code> data type.
+</p>
+<p class="subhead2">Bug 3392310</p>
+<p>Data Pump Export and Original Export fail with ORA-29341: The transportable set is not self-contained error message when in transportable mode.
+</p><a id="sthref202" name="sthref202"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Use <code>EXCLUDE&#061;CONSTRAINT</code> with Data Pump Export and <code>CONSTRAINTS&#061;N</code> with original export.
+</p><a id="sthref203" name="sthref203"></a>
+<p> <span class="subhead3">Workaround:&nbsp;</span>Use original export instead of D	ata Pump Export if your tablespace contains a nested table.
+</p>
+</div><!-- class="sect2" -->
+
+<div class="sect2">
+
+<!-- infolevel=all infotype=General --><a id="sthref204" name="sthref204"></a>
+<h3><span class="secnum">35.22 </span>XQuery Known Bugs
+</h3>
+<p class="subhead2">Bug 4096824</p>
+<p>When XPath predicates are used for <code>ORA:VIEW()</code>, performance is slow.
+</p><a id="sthref205" name="sthref205"></a>
+<p> <span class="subhead3">Workaround&nbsp;</span>None.
+</p>
+<p class="subhead2">Bug 4096832</p>
+<p>Getting <code>932</code> error or assertion failure in<code> QMXQTMCHKXQATOMMAPSQL</code>.
+</p><a id="sthref206" name="sthref206"></a>
+<p> <span class="subhead3">Workaround&nbsp;</span>None.
+</p>
+<p class="subhead2">Bug 4096841</p>
+<p>Typeswitch expression needs to be natively executed.
+</p><a id="sthref207" name="sthref207"></a>
+<p> <span class="subhead3">Workaround&nbsp;</span>None.
+</p>
+<p class="subhead2">Bug 4096849</p>
+<p>There is an assertion failure in <code>QCTVCO:CSFORM</code>.
+</p><a id="sthref208" name="sthref208"></a>
+<p> <span class="subhead3">Workaround&nbsp;</span>None.
+</p>
+<p class="subhead2">Bug 4096858</p>
+<p><code>ORA:VIEW()</code> should not have NUM attribute as the output.
+</p><a id="sthref209" name="sthref209"></a>
+<p> <span class="subhead3">Workaround&nbsp;</span>None.
+</p>
+<p class="subhead2">Bug 4122591</p>
+<p>Sequence function in XQuery needs to be natively executed.
+</p><a id="sthref210" name="sthref210"></a>
+<p> <span class="subhead3">Workaround&nbsp;</span>None.
+</p>
+<p class="subhead2">Bug 4144966</p>
+<p><code>FN:DATA()</code> in XQuery needs to be natively executed
+</p><a id="sthref211" name="sthref211"></a>
+<p> <span class="subhead3">Workaround&nbsp;</span>None.
+</p>
+</div><!-- class="sect2" -->
+
+</div><!-- class="sect1" -->
+<a id="BABJCAFC" name="BABJCAFC"></a>
+<div class="sect1">
+
+<!-- infolevel=all infotype=General --><a id="sthref212" name="sthref212"></a>
+<h2><span class="secnum">36 </span>Documentation Accessibility
+</h2>
+<p>Our goal is to make Oracle products, services, and supporting documentation accessible, with good usability, to the disabled community. To that end, our documentation includes features that make information available to users of assistive technology. This documentation is available in HTML format, and contains markup to facilitate access by the disabled community. Standards will continue to evolve over time, and Oracle is actively engaged with other market-leading technology vendors to address technical obstacles so that our documentation can be accessible to all of our customers. For additional information, visit the Oracle Accessibility Program Web site at 
+</p>
+<pre xml:space="preserve" class="oac_no_warn"><code><a href="http://www.oracle.com/accessibility/">http://www.oracle.com/accessibility/</a></code>
+</pre><a id="sthref213" name="sthref213"></a>
+<p> <span class="subhead3">Accessibility of Code Examples in Documentation&nbsp;</span>JAWS, a Windows screen reader, may not always correctly read the code examples in this document. The conventions for writing code require that closing braces should appear on an otherwise empty line; however, JAWS may not always read a line of text that consists solely of a bracket or brace.
+</p><a id="sthref214" name="sthref214"></a>
+<p> <span class="subhead3">Accessibility of Links to External Web Sites in Documentation&nbsp;</span>This documentation may contain links to Web sites of other companies or organizations that Oracle does not own or control. Oracle neither evaluates nor makes any representations regarding the accessibility of these Web sites.
+</p>
+</div><!-- class="sect1" -->
+
+</div>
+<!-- Start Footer -->
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td valign="bottom" width="33%">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100">
+<tr><td>&nbsp;</td>
+</tr>
+</table>
+</td>
+<td class="copyrightlogo">
+<a href="../../dcommon/html/cpyr.htm">
+<img class="copyrightlogo" src="../../dcommon/gifs/oracle.gif" alt="Oracle Logo" /><br />
+<span class="copyrightlogo">
+Copyright&nbsp;&copy;&nbsp;2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.
+</span>
+</a>
+</td>
+<td valign="bottom" align="right" width="33%">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="225">
+<tr><td>&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div><!-- class="footer" -->
+</body>
+</html>

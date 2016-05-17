@@ -1,0 +1,814 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Oracle&reg; Database</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.5 Build 270" />
+<meta name="Date" content="August 25, 2005 20:11:22" />
+<meta name="doctitle" content="Oracle&reg; Database Release Notes 10g Release 2 (10.2) for Microsoft Windows (32-Bit)" />
+<meta name="partno" content="B14264-01" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="alternate" href="../b14264.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database Release Notes<br />
+10<i>g</i> Release 2 (10.2) for Microsoft Windows (32-Bit)</b><br />
+Part Number B14264-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="196">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">&nbsp;</td>
+<td align="right" valign="top"><a href="../b14264.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header -->
+<h1>Oracle&reg; Database</h1>
+<p class="booktitle">Release Notes</p>
+<p><span class="revnumber">10<span class="italic">g</span> Release 2 (10.2)</span> <span class="platform">for Microsoft Windows (32-Bit)</span></p>
+<p class="invpartnumber">B14264-01</p>
+<p class="date">August 2005</p>
+<p>This document contains important information that was not included in the platform-specific or product-specific documentation for this release. This document supplements <span class="italic">Oracle Database Readme</span>.</p>
+<p>This document may be updated after it is released. To check for updates to this document and to view other Oracle documentation, see the Documentation section on the Oracle Technology Network (OTN) Web site:</p>
+<pre xml:space="preserve" class="oac_no_warn"><a href="http://www.oracle.com/technology/documentation/">http://www.oracle.com/technology/documentation/</a>
+
+</pre>
+<p>For additional information about this release, refer to the readme files located in the <code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\</code><code><span class="codeinlineitalic">ORACLE_HOME</span></code><code>\</code><code>relnotes</code> directory.</p>
+<p>It contains the following topics:</p>
+<ul>
+<li type="disc">
+<p><a href="#BABEGCCD">Certification Information</a></p>
+</li>
+<li type="disc">
+<p><a href="#CJAFJFFA">Unsupported Products</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDCFJGD">Accessibility Software Recommendations</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABHHHDC">Installation, Configuration, and Upgrade Issues</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABEDHIA">Grant Additional Privileges to the Oracle Enterprise Manager Repository User</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDBBECA">Other Known Issues</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABECFJD">Documentation Corrections and Additions</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABIEFHE">Documentation Accessibility</a></p>
+</li>
+</ul>
+<a id="BABEGCCD" name="BABEGCCD"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref1" name="sthref1"></a>
+<h2 class="sect1"><span class="secnum">1</span> Certification Information</h2>
+<p>The latest certification information for Oracle Database 10<span class="italic">g</span> release 2 (10.2) is available at:</p>
+<pre xml:space="preserve" class="oac_no_warn"><a href="http://metalink.oracle.com">http://metalink.oracle.com</a>
+</pre></div>
+<!-- class="sect1" -->
+<a id="CJAFJFFA" name="CJAFJFFA"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref2" name="sthref2"></a>
+<h2 class="sect1"><span class="secnum">2</span> Unsupported Products</h2>
+<p>The following products are not supported with Oracle Database 10<span class="italic">g</span> release 2 (10.2):</p>
+<ul>
+<li type="disc">
+<p>Grid Control Support</p>
+<p>Oracle Database 10<span class="italic">g</span> release 2 (10.2) can be managed as a target by Grid Control 10.1.0.4. Oracle Database 10<span class="italic">g</span> release 2 is not supported by Grid Control 10.1.0.4 as a repository.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect1" -->
+<a id="CHDCFJGD" name="CHDCFJGD"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref3" name="sthref3"></a>
+<h2 class="sect1"><span class="secnum">3</span> Accessibility Software Recommendations</h2>
+<p>Our goal is to make Oracle products, services, and supporting documentation accessible to the disabled community. Oracle Database 10<span class="italic">g</span> release 2 (10.2) supports accessibility features. To make best use of these accessibility features, Oracle recommends the following software configuration:</p>
+<ul>
+<li type="disc">
+<p>Windows 2000 with Service Pack 2 or later</p>
+</li>
+<li type="disc">
+<p>Sun Java Access Bridge 1.0.4 (included with the Oracle Database 10<span class="italic">g</span> release 2 (10.2) media)</p>
+</li>
+<li type="disc">
+<p>JAWS screen reader 5.0</p>
+</li>
+<li type="disc">
+<p>Microsoft Internet Explorer 5.5 or later</p>
+</li>
+</ul>
+<p>Additional accessibility information for Oracle products can be found at</p>
+<pre xml:space="preserve" class="oac_no_warn"><a href="http://www.oracle.com/accessibility/">http://www.oracle.com/accessibility</a>
+
+</pre>
+<p>For the latest configuration information and for information about addressing accessibility and assistive technology issues, see the Oracle Accessibility FAQ at</p>
+<pre xml:space="preserve" class="oac_no_warn"><a href="http://www.oracle.com/accessibility/faq.html">http://www.oracle.com/accessibility/faq.html</a>
+</pre></div>
+<!-- class="sect1" -->
+<a id="BABHHHDC" name="BABHHHDC"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref4" name="sthref4"></a>
+<h2 class="sect1"><span class="secnum">4</span> Installation, Configuration, and Upgrade Issues</h2>
+<p>Review the following sections for information about issues that affect Oracle Database installation, configuration, and upgrade:</p>
+<ul>
+<li type="disc">
+<p><a href="#BABIAGEF">Database Upgrade Using Database Upgrade Assistant</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABHCFIG">Limitations with 32-Bit Windows</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABDBJAI">RAC and ASM Interoperability With Oracle Database 10<span class="italic">g</span> Release 2</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABEHJED">Shutdown of Cluster Ready Services Stack May Leave Processes Running</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABGFFBI">Modifying a Virtual IP Address Node Application</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABBBFIH">10.2 RAC Installations on an Oracle Database Release 10.1.0.4 Cluster</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABFEIIE">Error While Deleting a Remote Instance From a RAC-Shared Oracle Home Database</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABCJHJA">Reading a Downgraded Oracle Cluster Registry with Database Management Tools</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABFIEAG">Oracle Database 9.2 Startup Error with srvctl when the Global Services Daemon is Running in a 10.2 Home</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABHCJHJ">Oracle Database 9.2 Startup Error with srvctl when the Global Services Daemon is Running in an Oracle 10.2 Clusterware</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABBCECE">Deleting a Node from Oracle Clusterware</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABCEGGD">Installing Enterprise Security Manager</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABDCFEA">Configuring Raw Devices for Storage</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABDHCAA">Central Configuration of Oracle Real Application Clusters Disabled on Windows</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABDDEFH">Oracle C++ Call Interface (OCCI) Libraries</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABHACJI">ODBC Online Help in Japanese is Not Installed</a></p>
+</li>
+</ul>
+<a id="BABIAGEF" name="BABIAGEF"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref5" name="sthref5"></a>
+<h3 class="sect2"><span class="secnum">4.1</span> Database Upgrade Using Database Upgrade Assistant</h3>
+<p>If the database version does not match the Oracle release version, Database Upgrade Assistant displays a warning message. The warning message incorrectly instructs you to run <code>catpatch.sql</code> from the Oracle Database 10g release 1 home. Do not do this. Instead, run <code>catpatch.sql</code> from the <code>rdbms\admin</code> directory of the source Oracle home from which you are upgrading.</p>
+<p>The issue is tracked with Oracle bug 4551401.</p>
+<p>After the upgrade, the <code>ORACLE_SID</code> parameter is not defined in the Windows registry.</p>
+<p><span class="bold">Workaround</span>:</p>
+<ol type="1" start="1">
+<li>
+<p>Set <code>ORACLE_SID</code>=<code><span class="codeinlineitalic">Oracle_Sid</span></code> at the command prompt <span class="italic">before</span> you use SQL*Plus.</p>
+</li>
+<li>
+<p>Set the <code>ORACLE_SID</code> parameter in the registry (<code>My Computer\HKEY_LOCAL_MACHINE\SOFTWARE\ORACLE\KEY_</code><code><span class="codeinlineitalic">10.</span></code><code><span class="codeinlineitalic">2UpgradeHome</span></code><code>\ORACLE_SID</code>).</p>
+</li>
+</ol>
+<p>This issue is tracked with Oracle bug 4534421.</p>
+</div>
+<!-- class="sect2" -->
+<a id="BABHCFIG" name="BABHCFIG"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref6" name="sthref6"></a>
+<h3 class="sect2"><span class="secnum">4.2</span> Limitations with 32-Bit Windows</h3>
+<p>If you do not have sufficient address space to allocate PGA memory, you can run into <code>ORA-04030</code> errors or system commands can fail with OS error <code>1450</code> or <code>997</code>. The following solutions are suggested:</p>
+<ul>
+<li type="disc">
+<p>Run a smaller work load and use less users.</p>
+</li>
+<li type="disc">
+<p>Run with the /3GB option and use Windows Enterprise Edition. Note that the /3GB option has the potential to deprive the operating system of necessary kernel resources, which can lead to Oracle instance failures. See the Oracle<span class="italic">MetaLink</span> technical note at <code>http://metalink.oracle.com</code> entitled Note 297498.1: Resolving Instance Evictions on Windows Platforms Due to OS 10055 Errors (OS-1540).</p>
+<p>Aside from not using the /3GB option, you can tune the amount of RAM that is available to the kernel by using the <code>/USERVA</code> parameter. Visit the following URL for details:</p>
+<pre xml:space="preserve" class="oac_no_warn">http://support.microsoft.com/default.aspx?scid=kb;en-us;810371
+
+</pre>
+<p>Determining the correct value is a trial and error process, but 2048 has worked for some users.</p>
+<p>Oracle can support Physical Addressing Extensions/Address Windowing Extensions. This is another way in which you can get the Oracle instance to use large amounts of RAM (64G on 32-bit Windows).</p>
+</li>
+<li type="disc">
+<p>Use VLM with a small window so that address space is allocated for PGA.</p>
+</li>
+<li type="disc">
+<p>Reduce the per thread stack space usage using <code>orastack</code>.</p>
+</li>
+</ul>
+<p>This issue is tracked with Oracle bugs 4552171, 4552150, and 4552097.</p>
+</div>
+<!-- class="sect2" -->
+<a id="BABDBJAI" name="BABDBJAI"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref7" name="sthref7"></a>
+<h3 class="sect2"><span class="secnum">4.3</span> RAC and ASM Interoperability With Oracle Database 10<span class="italic">g</span> Release 2</h3>
+<p>10.1.0.2 or 10.1.0.3 RAC or Automatic Storage Management, instances do not interoperate with 10.2 Cluster Synchronization Service on Windows. The following error may appear on the top of the stack:</p>
+<pre xml:space="preserve" class="oac_no_warn">/_propropen+2162      CALLrel  _proprutidtoname/
+
+</pre>
+<p><span class="bold">Workaround</span>:</p>
+<p>Apply the patch for bug 3843632 to the 10.1.0.2 or 10.1.0.3 Oracle home.</p>
+<p>This issue is tracked with Oracle bug 3843632.</p>
+</div>
+<!-- class="sect2" -->
+<a id="BABEHJED" name="BABEHJED"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref8" name="sthref8"></a>
+<h3 class="sect2"><span class="secnum">4.4</span> Shutdown of Cluster Ready Services Stack May Leave Processes Running</h3>
+<p>After shutting down the Cluster Ready Services (CRS) stack on a given node using the following command:</p>
+<pre xml:space="preserve" class="oac_no_warn">CRSCTL.EXE stop crs
+
+</pre>
+<p>the <code>OracleEVMService</code> or <code>OracleCRService</code> may not be listed in the <code>STOPPED</code> state. Furthermore, you may notice the existence of <code>CRSD.EXE</code> or <code>EVMD.EXE</code> in the Task Manager list of running processes. To stop these processes, issue the following commands from the operating system command prompt:</p>
+<pre xml:space="preserve" class="oac_no_warn">net stop OracleCRService 
+net stop OracleEVMService
+
+</pre></div>
+<!-- class="sect2" -->
+<a id="BABGFFBI" name="BABGFFBI"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref9" name="sthref9"></a>
+<h3 class="sect2"><span class="secnum">4.5</span> Modifying a Virtual IP Address Node Application</h3>
+<p>When modifying the name, IP address, or netmask of an existing virtual IP address (VIP) resource using the following command:</p>
+<pre xml:space="preserve" class="oac_no_warn">srvctl modify nodeapps
+
+</pre>
+<p>you must include the existing interfaces for the VIP in the <code>-A</code> argument. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">srvctl modify nodeapps -n mynode1 -A 100.200.300.40/255.255.255.0/eth0
+
+</pre>
+<p>This issue is tracked with Oracle bug 4500688.</p>
+</div>
+<!-- class="sect2" -->
+<a id="BABBBFIH" name="BABBBFIH"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref10" name="sthref10"></a>
+<h3 class="sect2"><span class="secnum">4.6</span> 10.2 RAC Installations on an Oracle Database Release 10.1.0.4 Cluster</h3>
+<p>When Oracle Universal Installer is performing a RAC 10<span class="italic">g</span> release 2 installation on a cluster that already has Oracle Database release 10.1.0.4, Oracle Universal Installer gives you an option of performing an upgrade on any databases running on the system.</p>
+<p>If you select this option to upgrade, Oracle Universal Installer invokes Database Upgrade Assistant to perform the upgrade. As part of the database upgrade, Enterprise Manager Database Control is also upgraded. This does not impact the upgrade itself. The impact is that if the preupgrade version of the database is 10.1.0.4, Database Control may not start on one or more nodes after the upgrade. As a result, if you run the following command on that node:</p>
+<pre xml:space="preserve" class="oac_no_warn">emctl status dbconsole
+
+</pre>
+<p>it reports that Enterprise Manager Database Console is not running. Logging in through the browser also fails. This bug is intermittently observed.</p>
+<p><span class="bold">Workaround</span>:</p>
+<ol type="1" start="1">
+<li>
+<p>Go to the node where the Enterprise Manager Database Console is not running.</p>
+</li>
+<li>
+<p>End the <code>emagent.exe</code> process from the Task Manager.</p>
+</li>
+<li>
+<p>Restart the <code>OracleDBConsole</code><code><span class="codeinlineitalic">SID</span></code> service.</p>
+</li>
+</ol>
+<p>This issue is tracked with Oracle bug 4550226.</p>
+</div>
+<!-- class="sect2" -->
+<a id="BABFEIIE" name="BABFEIIE"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref11" name="sthref11"></a>
+<h3 class="sect2"><span class="secnum">4.7</span> Error While Deleting a Remote Instance From a RAC-Shared Oracle Home Database</h3>
+<p>During a delete instance operation on a cluster database using a shared Oracle home, you can encounter the following error message if the database has been configured for Enterprise Manager Database Control:</p>
+<pre xml:space="preserve" class="oac_no_warn">Error updating EM configuration for node <span class="italic">node name</span>
+
+</pre>
+<p>As a result, the Enterprise Manager configuration is not completely removed from the node where the deleted instance was running. However, this does not have any adverse effects. You can click <span class="bold">OK</span>, ignore the error, and proceed.</p>
+<p>This issue is tracked with Oracle bug 4547265.</p>
+</div>
+<!-- class="sect2" -->
+<a id="BABCJHJA" name="BABCJHJA"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref12" name="sthref12"></a>
+<h3 class="sect2"><span class="secnum">4.8</span> Reading a Downgraded Oracle Cluster Registry with Database Management Tools</h3>
+<p>Oracle Database 9.2 management tools (such as <code>srvctl</code>) encounter errors when attempting to read an Oracle Cluster Registry (OCR) that was downgraded from 10.2 to 9.2 on Windows.</p>
+<p><span class="bold">Workaround</span>:</p>
+<ol type="1" start="1">
+<li><a id="BABHJCCC" name="BABHJCCC"></a>
+<p>Dump the contents of the 10.2 OCR before downgrading by using the <code>ocrdump</code> tool. Identify the set of 9.2 configured databases. The database configuration resides under the <code>DATABASE.DATABASES</code> key.</p>
+</li>
+<li>
+<p>Follow the downgrade procedure as documented.</p>
+</li>
+<li>
+<p>Identify the location of the 9.2 OCR. It is either <code>\\.\srvcfg</code> or the file pointed to by registry value <code>CfsOcrRoot</code> under <code>HKEY_LOCAL_SYSTEM\SOFTWARE\Oracle\osd9i\ocr</code>.</p>
+</li>
+<li>
+<p>Clear the contents of the 9.2 OCR.</p>
+</li>
+<li>
+<p>Execute the following command from the 9.2 Oracle home:</p>
+<pre xml:space="preserve" class="oac_no_warn">srvconfig -init -f
+
+</pre></li>
+<li>
+<p>Configure the 9.2 cluster databases identified in Step <a href="#BABHJCCC">1</a>:</p>
+<pre xml:space="preserve" class="oac_no_warn">srvctl add database
+
+</pre></li>
+</ol>
+<p>This issue is tracked with Oracle bug 4507090.</p>
+</div>
+<!-- class="sect2" -->
+<a id="BABFIEAG" name="BABFIEAG"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref13" name="sthref13"></a>
+<h3 class="sect2"><span class="secnum">4.9</span> Oracle Database 9.2 Startup Error with srvctl when the Global Services Daemon is Running in a 10.2 Home</h3>
+<p>The <code>srvctl</code> tool fails with the following errors when starting Oracle9<span class="italic">i</span> databases after Oracle 10g release 2 Clusterware is installed and the Global Services Daemon (GSD) is started from the Oracle Clusterware home:</p>
+<pre xml:space="preserve" class="oac_no_warn">/ORA-01005: null password given; logon denied /
+/ORA-01031: insufficient privileges /
+/ORA-01005: null password given; logon denied" / 
+
+</pre>
+<p><span class="bold">Workaround</span>:</p>
+<ol type="1" start="1">
+<li><a id="BABEGDBE" name="BABEGDBE"></a>
+<p>Execute the following command to get the list of nodes in the Oracle Clusterware:</p>
+<pre xml:space="preserve" class="oac_no_warn">CRS <span class="italic">home</span>/bin/olsnodes
+
+</pre>
+<p>where <code><span class="codeinlineitalic">home</span></code> is the Oracle Clusterware home.</p>
+</li>
+<li>
+<p>Execute the following command on one node.</p>
+<pre xml:space="preserve" class="oac_no_warn">CRS home/bin/crsuser add <span class="italic">Oracle_user</span>*
+
+</pre>
+<p>This command creates the service on all other nodes.</p>
+</li>
+<li>
+<p>Execute the following commands for each node identified in Step <a href="#BABEGDBE">1</a>:</p>
+<pre xml:space="preserve" class="oac_no_warn">CRS home/bin/crs_stop ora.<span class="italic">node_name</span>.gsd
+CRS home/bin/crs_setperm ora.<span class="italic">node_name</span>.gsd -o <span class="italic">Oracle_user</span>
+CRS home/bin/crs_start ora.<span class="italic">node_name</span>.gsd 
+
+</pre></li>
+</ol>
+<p>This issue is tracked with Oracle bug 4523043.</p>
+</div>
+<!-- class="sect2" -->
+<a id="BABHCJHJ" name="BABHCJHJ"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref14" name="sthref14"></a>
+<h3 class="sect2"><span class="secnum">4.10</span> Oracle Database 9.2 Startup Error with srvctl when the Global Services Daemon is Running in an Oracle 10.2 Clusterware</h3>
+<p>Starting Oracle Database release 9.2 with <code>srvctl</code> fails when the Global Services Daemon (GSD) is running from Oracle 10.2 Clusterware. A dialog window displays the following error message:</p>
+<pre xml:space="preserve" class="oac_no_warn">The instruction at <span class="italic">hex_address</span> referenced memeory at <span class="italic">hex_address</span>. The memory could not be read
+
+</pre>
+<p><span class="bold">Workaround</span>:</p>
+<ol type="1" start="1">
+<li>
+<p>Copy <code>srvctl.bat</code> to <code>srvctl.orig.bat</code> in the 9.2 <code><span class="codeinlineitalic">Oracle_Home</span></code><code>\bin</code> directory.</p>
+</li>
+<li>
+<p>Edit the 9.2 <code><span class="codeinlineitalic">Oracle_Home</span></code><code>\bin</code><code>\srvctl.bat</code> file to add the following <span class="italic">before</span> <code>-classpath</code>.</p>
+<pre xml:space="preserve" class="oac_no_warn">-DTRACING.ENABLED=true -DTRACING.LEVEL=2
+
+</pre></li>
+<li>
+<p>Save the <code><span class="codeinlineitalic">Oracle_Home</span></code><code>\bin</code><code>\srvctl.bat</code> file and reissue the same command with srvctl that previously failed.</p>
+</li>
+</ol>
+<p>This issue is tracked with Oracle bug 4571520.</p>
+</div>
+<!-- class="sect2" -->
+<a id="BABBCECE" name="BABBCECE"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref15" name="sthref15"></a>
+<h3 class="sect2"><span class="secnum">4.11</span> Deleting a Node from Oracle Clusterware</h3>
+<p>If the <code>ORA.</code><code><span class="codeinlineitalic">ORA_SID</span></code><code>.DB</code> resource is <code>ONLINE</code> on a node that you want to delete from Oracle Clusterware, the delete node procedure displays the following errors while running <code>crssetup</code>:</p>
+<pre xml:space="preserve" class="oac_no_warn">prompt&gt; crssetup del -nn <span class="italic">node_name</span> 
+Step 1:  shutting down node apps
+    :<span class="italic">node_name</span> ora.racr1.db in ONLINE state 
+ . . .
+please manually stop dependent CRS resource before continuing
+
+</pre>
+<p><span class="bold">Workaround</span>:</p>
+<p>For the database resource (<code>ora.*.db</code>) mentioned in the error as being <code>ONLINE</code>, perform a relocation of that resource to any other node that is a part of the cluster. Run the <code>crs_relocate</code> command as shown below to perform the relocation:</p>
+<pre xml:space="preserve" class="oac_no_warn">crs_relocate <span class="italic">name_of_the_db_resource</span> -c <span class="italic">cluster_node</span>
+
+</pre>
+<p>This issue is tracked with Oracle bug 4564000.</p>
+</div>
+<!-- class="sect2" -->
+<a id="BABCEGGD" name="BABCEGGD"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref16" name="sthref16"></a>
+<h3 class="sect2"><span class="secnum">4.12</span> Installing Enterprise Security Manager</h3>
+<p>To install Enterprise Security Manager (ESM), install Oracle Client and choose the Administrator installation type.</p>
+</div>
+<!-- class="sect2" -->
+<a id="BABDCFEA" name="BABDCFEA"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref17" name="sthref17"></a>
+<h3 class="sect2"><span class="secnum">4.13</span> Configuring Raw Devices for Storage</h3>
+<p>While Oracle Database 10g supports raw devices, tools such as Database Configuration Assistant do not support the configuration of raw devices for single instances. Instead, use Automatic Storage Management (ASM) or the file system to store database files.For Oracle Real Application Clusters (RAC) installations, configure raw device shared storage by stamping disks with Oracle Object Link Manager. You can also use your own scripts to configure raw devices.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p><span class="italic">Oracle Database Installation Guide</span> <span class="italic">for Microsoft Windows</span> (for single-instance database installations)</p>
+</li>
+<li type="disc">
+<p><span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Installation Guide</span> <span class="italic">for Microsoft Windows</span></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+<p>This issue is tracked with Oracle bug 4554058.</p>
+</div>
+<!-- class="sect2" -->
+<a id="BABDHCAA" name="BABDHCAA"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref18" name="sthref18"></a>
+<h3 class="sect2"><span class="secnum">4.14</span> Central Configuration of Oracle Real Application Clusters Disabled on Windows</h3>
+<p>The option for configuring central management of your database by Enterprise Manager 10<span class="italic">g</span> Grid Control is not available during RAC installation on Windows. Also not supported on Windows is the use of standalone Enterprise Manager Configuration Assistant or Database Configuration Assistant to configure central management for RAC.</p>
+<p>If you want central management for the installed RAC database, then you will have to discover the RAC database target manually from Grid Control after the installation.</p>
+</div>
+<!-- class="sect2" -->
+<a id="BABDDEFH" name="BABDDEFH"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref19" name="sthref19"></a>
+<h3 class="sect2"><span class="secnum">4.15</span> Oracle C++ Call Interface (OCCI) Libraries</h3>
+<p>OCCI libraries for developing applications with Microsoft Visual C++ version 7.1 (.NET 2003) and version 7.0 (.NET 2002) are available in the 10.2 release. Microsoft Visual C++ version 6.0 is no longer supported.</p>
+<p>Microsoft Visual C++ version 7.1 libraries are now installed in the default location: <code>oraocci10.dll</code> under <code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\</code><code><span class="codeinlineitalic">ORACLE_HOME</span></code><code>\bin</code> and <code>oraocci10.lib</code> under <code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\</code><code><span class="codeinlineitalic">ORACLE_HOME</span></code><code>\oci\lib\msvc</code>. Copies of these two files are also installed under <code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\</code><code><span class="codeinlineitalic">ORACLE_HOME</span></code><code>\oci\lib\msvc\vc71</code>. The Microsoft Visual C++ 7.0-specific version of the libraries are installed under <code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\</code><code><span class="codeinlineitalic">ORACLE_HOME</span></code><code>\oci\lib\msvc\vc7</code>.</p>
+<p>Applications required to link with <code>MSVCRTD.DLL</code> (debug version of Microsoft C-Runtime, <code>/MDd</code> compiler flag) should link with the specific OCCI libraries for this purpose: <code>oraocci10d.lib</code> and <code>oraocci10d.dll</code>.</p>
+<p>All Instant Client packages contain the Microsoft Visual C++ version 7.1 compatible version of the OCCI DLL.</p>
+<p>Applications should link with the appropriate OCCI library and ensure that the corresponding DLL is located first in the Windows system <code>PATH</code>.</p>
+</div>
+<!-- class="sect2" -->
+<a id="BABHACJI" name="BABHACJI"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref20" name="sthref20"></a>
+<h3 class="sect2"><span class="secnum">4.16</span> ODBC Online Help in Japanese is Not Installed</h3>
+<p>If you select <span class="bold">Start</span> &gt; <span class="bold">Programs</span> &gt; <span class="bold">Oracle</span> - <span class="bolditalic">HOME_NAME</span> &gt; <span class="bold">Application Development</span> &gt; <span class="bold">Oracle ODBC</span>, the online help displays in English instead of Japanese.</p>
+<p>This issue is tracked with Oracle bug 4490895.</p>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BABEDHIA" name="BABEDHIA"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref21" name="sthref21"></a>
+<h2 class="sect1"><span class="secnum">5</span> Grant Additional Privileges to the Oracle Enterprise Manager Repository User</h2>
+<p>If you are using Oracle Enterprise Manager Java Console to manage your database, grant the following privileges to the repository user and create the repository:</p>
+<pre xml:space="preserve" class="oac_no_warn">CREATE CLUSTER
+CREATE DATABASE LINK
+CREATE SEQUENCE
+ALTER SESSION
+CREATE SYNONYM
+CREATE TABLE
+CREATE VIEW
+
+</pre>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Oracle Enterprise Manager Java Console is available on the Oracle Database Client installation media.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+<p>Complete the following steps to create a repository user and grant privileges:</p>
+<ol type="1" start="1">
+<li>
+<p>Start the standalone Java Console.</p>
+</li>
+<li>
+<p>Double-click the database node in the navigator tree and connect to the database as a user with the <code>NORMAL</code> role.</p>
+</li>
+<li>
+<p>Select <span class="bold">Create</span> from the Object menu.</p>
+<p>The Create window appears.</p>
+</li>
+<li>
+<p>Expand the database node in the Create window and select <span class="bold">User</span>. Then click the <span class="bold">Create</span> button.</p>
+<p>The Create User property sheet appears.</p>
+</li>
+<li>
+<p>On the General page, enter the name of the user and the password, and select <code>OEM_REPOSITORY</code> as the default tablespace and <code>TEMP</code> as the temporary tablespace.</p>
+</li>
+<li>
+<p>On the Role page, grant the <code>CONNECT</code> and <code>SELECT_CATALOG_ROLE</code> roles to the repository user.</p>
+</li>
+<li>
+<p>On the System Privileges page, grant the <code>CREATE TRIGGER</code>, <code>CREATE PROCEDURE</code>, <code>EXECUTE ANY PROCEDURE</code>, <code>CREATE TYPE</code>, <code>EXECUTE ANY TYPE</code>, <code>SELECT ANY TABLE</code>, <code>CREATE CLUSTER</code>, <code>CREATE DATABASE LINK</code>, <code>CREATE SEQUENCE</code>, <code>ALTER SESSION</code>, <code>CREATE SYNONYM</code>, <code>CREATE TABLE</code>, and <code>CREATE VIEW</code> privileges to the repository user.</p>
+</li>
+<li>
+<p>On the Quota page, specify unlimited for <code>OEM_REPOSITORY</code> and <code>TEMP</code>.</p>
+</li>
+<li>
+<p>On the Create User property sheet, click the <span class="bold">Create</span> button.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect1" -->
+<a id="CHDBBECA" name="CHDBBECA"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref22" name="sthref22"></a>
+<h2 class="sect1"><span class="secnum">6</span> Other Known Issues</h2>
+<p>The following sections contain information about issues related to Oracle Database 10<span class="italic">g</span> and associated products:</p>
+<ul>
+<li type="disc">
+<p><a href="#CHDDFCDA">Readme Text Files</a></p>
+</li>
+<li type="disc">
+<p><a href="#CACDCEHG">NTS Authentication Failure with .NET Remote Objects</a></p>
+</li>
+<li type="disc">
+<p><a href="#CJAJGIFJ">Windows Firewall Configuration</a></p>
+</li>
+<li type="disc">
+<p><a href="#CJAFGFFH">Local Oracle Database Client Connections</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABDDGFB">Untranslated Start Menu Item for Oracle Workflow</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABBIAEA">Transportable Tablespaces feature in Enterprise Manager Database Console</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABJHAEH">Enterprise Manager Database Control Exception Error To Ignore</a></p>
+</li>
+</ul>
+<a id="CHDDFCDA" name="CHDDFCDA"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref23" name="sthref23"></a>
+<h3 class="sect2"><span class="secnum">6.1</span> Readme Text Files</h3>
+<p>Some Readme text files contain UNIX line breaks. If you double-click these files, they open in Notepad by default, but Notepad does not recognize UNIX line breaks. Use WordPad (<code>write.exe</code>) or <code>edit.com</code> instead.</p>
+</div>
+<!-- class="sect2" -->
+<a id="CACDCEHG" name="CACDCEHG"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref24" name="sthref24"></a>
+<h3 class="sect2"><span class="secnum">6.2</span> NTS Authentication Failure with .NET Remote Objects</h3>
+<p>If NTS authentication is used with an Oracle client as a .NET remote object impersonating a user credential, then NTS authentication fails with the error <code>ora-12638</code> <code>Credential</code> <code>Retrieval</code> <code>Failed</code>. This happens due to the failure of the Windows API <code>AcquireCredentialsHandle()</code> in the NTS adapter inside the .NET remote object. Refer to Oracle<span class="italic">Metalink</span> for more details.</p>
+</div>
+<!-- class="sect2" -->
+<a id="CJAJGIFJ" name="CJAJGIFJ"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref25" name="sthref25"></a>
+<h3 class="sect2"><span class="secnum">6.3</span> Windows Firewall Configuration</h3>
+<p>Windows XP Service Pack 2 changes the security of WebDAV configurations. The following access error message may display when computers with Windows XP Service Pack 2 attempt to access an Oracle XML DB repository using the HTTP/Web Distributed Authoring and Versioning (WebDAV) protocol from Windows Explorer or other tools:</p>
+<pre xml:space="preserve" class="oac_no_warn">The folder you entered does not appear to be valid. Please choose another.
+
+</pre>
+<p>Perform the following steps to access Oracle XML DB from a client computer using the WebDAV protocol:</p>
+<ol type="1" start="1">
+<li>
+<p>Create the following registry key on the client machine and set it to a non-zero value:</p>
+<pre xml:space="preserve" class="oac_no_warn">HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WebClient\Parameters\UseBasicAuth (DWORD)
+
+</pre></li>
+<li>
+<p>Restart the client computer or restart the WebClient service.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p><code><a href="http://www.microsoft.com/technet/prodtechnol/winxppro/maintain/sp2netwk.mspx#XSLTsection129121120120">http://www.microsoft.com/technet/prodtechnol/winxppro/maintain/sp2netwk.mspx#XSLTsection129121120120</a></code> for more information about the WebDAV security changes in Service Pack 2</p>
+</li>
+<li type="disc">
+<p>"Postinstallation Configuration Tasks on Windows" in <span class="italic">Oracle Database Platform Guide for Microsoft Windows (32-Bit)</span> for more information about required Microsoft Firewall configuration tasks</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect2" -->
+<a id="CJAFGFFH" name="CJAFGFFH"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref26" name="sthref26"></a>
+<h3 class="sect2"><span class="secnum">6.4</span> Local Oracle Database Client Connections</h3>
+<p>If you plan to connect the Oracle Database to a release of Oracle Database Client that is earlier than 10<span class="italic">g</span> release 2 (10.2), you cannot do so if all of the following conditions exist:</p>
+<ul>
+<li type="disc">
+<p>Oracle Database Client is running on the same computer as Oracle Database 10<span class="italic">g</span> release 2 (10.2).</p>
+</li>
+<li type="disc">
+<p>Microsoft Windows Terminal Services is not running on the same computer as Oracle Database Client. Typically, Terminal Services is installed and configured with Microsoft Windows 2003, but on Microsoft Windows 2000 or XP, it may not be installed or enabled.</p>
+</li>
+<li type="disc">
+<p>Oracle Database Client is version 9.0.<span class="italic">x</span> to 9.2.0.6 or 10.1 to 10.1.0.3.</p>
+</li>
+<li type="disc">
+<p>Oracle Database Client is not running as Administrator.</p>
+</li>
+</ul>
+<p>To remedy this problem, upgrade Oracle Database Client to release 9.2.0.7, or 10.1.0.4 or higher by downloading the Oracle Database Family patch set from Oracle<span class="italic">MetaLink</span> at:</p>
+<pre xml:space="preserve" class="oac_no_warn"><a href="http://metalink.oracle.com/">http://metalink.oracle.com/</a>
+</pre></div>
+<!-- class="sect2" -->
+<a id="BABDDGFB" name="BABDDGFB"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref27" name="sthref27"></a>
+<h3 class="sect2"><span class="secnum">6.5</span> Untranslated Start Menu Item for Oracle Workflow</h3>
+<p>If you install Oracle Database 10<span class="italic">g</span> Products, which include Oracle Workflow server, in a language other than English, the installation adds a submenu named Configuration and Migration Tools in English to the Windows Start menu under the corresponding Oracle home. This submenu includes only one item: Workflow Configuration Assistant. Other Oracle Database tools still appear under a separate, properly translated Configuration and Migration Tools submenu.</p>
+<p>This issue is tracked with Oracle bug 4551276.</p>
+</div>
+<!-- class="sect2" -->
+<a id="BABBIAEA" name="BABBIAEA"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref28" name="sthref28"></a>
+<h3 class="sect2"><span class="secnum">6.6</span> Transportable Tablespaces feature in Enterprise Manager Database Console</h3>
+<p>The transportable tablespaces feature accessible from the <span class="bold">Maintenance</span> tab has some limitations when generating and integrating tablespaces in Automatic Storage Mode (ASM). The limitations and workarounds are described below:</p>
+<p><span class="bold">Limitation</span>:</p>
+<p>There is a limitation when generating the transportable tablespace set on databases using ASM as storage. On Page 4, Files Page, if you provide the disk group name in the dump file location, you receive the following error when you submit the job:</p>
+<pre xml:space="preserve" class="oac_no_warn">RMAN-00571: ===========================================================
+RMAN-00569: =============== ERROR MESSAGE STACK FOLLOWS ===============
+RMAN-00571: ===========================================================
+RMAN-03009: failure of backup command on ORA_DISK_1 channel at 08/22/2005
+08:23:58
+ORA-19504: failed to create file
+"+DATA/naresh/testtablespace1.260.566954713"
+ORA-17502: ksfdcre:4 Failed to create file
++DATA/naresh/testtablespace1.260.566954713
+ORA-15046: ASM file name '+DATA/naresh/testtablespace1.260.566954713' is not
+in single-file creation form
+
+</pre>
+<p><span class="bold">Workaround</span>:</p>
+<p>On Page 4, Files Page, provide a file system location instead of the disk group name. Data files and dump files are generated on the file system location you provide.</p>
+<p><span class="bold">Limitation</span>:</p>
+<p>There is a limitation when integrating the transportable tablespace set on databases using ASM as storage. On Page 2, Datafile Destination Page, if in the data files table you provide the same disk group name for all data files, you can receive the following error when you submit the job:</p>
+<pre xml:space="preserve" class="oac_no_warn">RMAN&gt; 2&gt; 3&gt;
+Starting backup at 22-AUG-05
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: sid=152 devtype=DISK
+RMAN-00571: ===========================================================
+RMAN-00569: =============== ERROR MESSAGE STACK FOLLOWS ===============
+RMAN-00571: ===========================================================
+RMAN-03002: failure of backup command at 08/22/2005 09:08:36
+ORA-15122: ASM file name '+MAKI/+MAKI/+MAKI/+MAKI/' contains an invalid file
+number 
+
+</pre>
+<p><span class="bold">Workaround</span>:</p>
+<p>On Page 2, Datafile Destination Page, provide a unique disk group name for each data file.</p>
+<p>This issue is tracked with Oracle bug 4566250.</p>
+</div>
+<!-- class="sect2" -->
+<a id="BABJHAEH" name="BABJHAEH"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref29" name="sthref29"></a>
+<h3 class="sect2"><span class="secnum">6.7</span> Enterprise Manager Database Control Exception Error To Ignore</h3>
+<p>Immediately after switching the Enterprise Manager Agent from nonsecure to secure mode, or vice versa, Enterprise Manager Database Control can show the following exception on the home page:</p>
+<pre xml:space="preserve" class="oac_no_warn">java.lang.Exception: Exception in sending Request :: null
+
+</pre>
+<p>The home page is fully functional despite this exception, and this exception should go away within five minutes. Starting and stopping Enterprise Manager Database Control should also make this exception go away.</p>
+<p>This issue is tracked with Oracle bug 4562655.</p>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BABECFJD" name="BABECFJD"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref30" name="sthref30"></a>
+<h2 class="sect1"><span class="secnum">7</span> Documentation Corrections and Additions</h2>
+<p>This section contains these topics:</p>
+<ul>
+<li type="disc">
+<p><a href="#BABFJGID">Oracle Data Provider for .NET and RAC Issues</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABICJAF">Oracle Data Provider for .NET, InitialLOBFetchSize Issues</a></p>
+</li>
+</ul>
+<a id="BABFJGID" name="BABFJGID"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref31" name="sthref31"></a>
+<h3 class="sect2"><span class="secnum">7.1</span> Oracle Data Provider for .NET and RAC Issues</h3>
+<p>The Oracle Data Provider for .NET Dynamic Help differs slightly from the <span class="italic">Oracle Data Provider for .NET Developer's Guide</span> (in Acrobat PDF), due to terminology changes describing Real Application Clusters (RAC). These differences occur in the "Connection Pooling for Real Application Clusters (RAC)" section in Chapter 3 of the Oracle Data Provider for .NET Developer's Guide. The information in this guide is up to date. The main differences are as follows:</p>
+<ul>
+<li type="disc">
+<p>The Dynamic Help refers to <span class="italic">Load Balancing</span> and the guide refers to <span class="italic">Runtime Connection Load Balancing</span> in several places. The Dynamic Help refers to a basis in <span class="italic">real-time workload metrics and distribution policy</span> and the guide refers to the <span class="italic">load balancing advisory and service goal</span> in several places.</p>
+</li>
+<li type="disc">
+<p>Only the Dynamic Help includes the following sentence (in the first paragraph of the first subheading of Chapter 3):</p>
+<p>Furthermore, ODP.NET connection pool can be enabled to proactively free resources associated with connections that have been severed due to a down RAC service, service member, or node.</p>
+</li>
+<li type="disc">
+<p>The Dynamic Help references Oracle Real Application Clusters Quick Start and the guide references <span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span> and <span class="italic">Oracle Database Net Services Administrator's Guide</span> in a See Also note. The Dynamic Help references the <span class="italic">Oracle Real Application Clusters Administrator's Guide</span> and the guide references <span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span> in another See Also note.</p>
+</li>
+<li type="disc">
+<p>The guide includes the following note in the second subheading:</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+The database service being connected to must be configured for <code>AQ_HA_NOTIFICATIONS</code>. For more details, see <span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+</li>
+<li type="disc">
+<p>The guide includes the following paragraph in the sub-bullets:</p>
+<p>In order to use Runtime Connection Load Balancing, specific RAC configurations must be set. For further information, see <span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span>. Oracle Net Services should also be configured for load balancing. See <span class="italic">Oracle Database Net Services Administrator's Guide</span> for further details.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect2" -->
+<a id="BABICJAF" name="BABICJAF"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref32" name="sthref32"></a>
+<h3 class="sect2"><span class="secnum">7.2</span> Oracle Data Provider for .NET, InitialLOBFetchSize Issues</h3>
+<p>In Chapter 5 of <span class="italic">Oracle Data Provider for .NET Developer's Guide</span>, under the section <code>InitialLOBFetchSize</code>, the following information appears incorrectly under the section "For releases prior to Oracle Database 10<span class="italic">g</span> release 2 (10.2)":</p>
+<p>If the <code>InitialLOBFetchSize</code> is set to a nonzero value, <code>GetOracleBlob()</code> and <code>GetOracleClob</code> methods are disabled. <code>BLOB</code> and <code>CLOB</code> data are fetched by using <code>GetBytes</code> and <code>GetChars</code> methods, respectively.</p>
+<p>This was corrected to appear as follows under: For Oracle Database 10<span class="italic">g</span> release 2 (10.2) and later:</p>
+<p>Prior to Oracle Database 10<span class="italic">g</span> release 2 (10.2), if the <code>InitialLOBFetchSize</code> is set to a nonzero value, <code>GetOracleBlob</code> and <code>GetOracleClob</code> methods were disabled. <code>BLOB</code> and <code>CLOB</code> data was fetched by using <code>GetBytes</code> and <code>GetChars</code> methods, respectively. In Oracle Database 10<span class="italic">g</span> release 2 (10.2), this restriction no longer exists. <code>GetOracleBlob</code> and <code>GetOracleClob</code> methods can be used for any <code>InitialLOBFetchSize</code> value zero or greater.</p>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BABIEFHE" name="BABIEFHE"></a>
+<div class="sect1"><a id="sthref33" name="sthref33"></a>
+<h2 class="sect1"><span class="secnum">8</span> Documentation Accessibility</h2>
+<p>Our goal is to make Oracle products, services, and supporting documentation accessible, with good usability, to the disabled community. To that end, our documentation includes features that make information available to users of assistive technology. This documentation is available in HTML format, and contains markup to facilitate access by the disabled community. Accessibility standards will continue to evolve over time, and Oracle is actively engaged with other market-leading technology vendors to address technical obstacles so that our documentation can be accessible to all of our customers. For more information, visit the Oracle Accessibility Program Web site at <code><a href="http://www.oracle.com/accessibility/">http://www.oracle.com/accessibility/</a></code>.</p>
+<a id="sthref34" name="sthref34"></a>
+<p class="subhead2">Accessibility of Code Examples in Documentation</p>
+<p>Screen readers may not always correctly read the code examples in this document. The conventions for writing code require that closing braces should appear on an otherwise empty line; however, some screen readers may not always read a line of text that consists solely of a bracket or brace.</p>
+<a id="sthref35" name="sthref35"></a>
+<p class="subhead2">Accessibility of Links to External Web Sites in Documentation</p>
+<p>This documentation may contain links to Web sites of other companies or organizations that Oracle does not own or control. Oracle neither evaluates nor makes any representations regarding the accessibility of these Web sites.</p>
+<a id="sthref36" name="sthref36"></a>
+<p class="subhead2">TTY Access to Oracle Support Services</p>
+<p>Oracle provides dedicated Text Telephone (TTY) access to Oracle Support Services within the United States of America 24 hours a day, seven days a week. For TTY support, call 800.446.2398.</p>
+</div>
+<!-- class="sect1" -->
+<a id="sthref37" name="sthref37"></a>
+<hr />
+<p>Oracle Database Release Notes, 10<span class="italic">g</span> Release 2 (10.2) for Microsoft Windows (32-Bit)</p>
+<p>B14264-01</p>
+<p>Copyright &copy; 1996, 2005, Oracle. All rights reserved.</p>
+<p>The Programs (which include both the software and documentation) contain proprietary information; they are provided under a license agreement containing restrictions on use and disclosure and are also protected by copyright, patent, and other intellectual and industrial property laws. Reverse engineering, disassembly, or decompilation of the Programs, except to the extent required to obtain interoperability with other independently created software or as specified by law, is prohibited.</p>
+<p>The information contained in this document is subject to change without notice. If you find any problems in the documentation, please report them to us in writing. This document is not warranted to be error-free. Except as may be expressly permitted in your license agreement for these Programs, no part of these Programs may be reproduced or transmitted in any form or by any means, electronic or mechanical, for any purpose.</p>
+<p>If the Programs are delivered to the United States Government or anyone licensing or using the Programs on behalf of the United States Government, the following notice is applicable:</p>
+<p>U.S. GOVERNMENT RIGHTS Programs, software, databases, and related documentation and technical data delivered to U.S. Government customers are "commercial computer software" or "commercial technical data" pursuant to the applicable Federal Acquisition Regulation and agency-specific supplemental regulations. As such, use, duplication, disclosure, modification, and adaptation of the Programs, including documentation and technical data, shall be subject to the licensing restrictions set forth in the applicable Oracle license agreement, and, to the extent applicable, the additional rights set forth in FAR 52.227-19, Commercial Computer Software&#x2014;Restricted Rights (June 1987). Oracle Corporation, 500 Oracle Parkway, Redwood City, CA 94065</p>
+<p>The Programs are not intended for use in any nuclear, aviation, mass transit, medical, or other inherently dangerous applications. It shall be the licensee's responsibility to take all appropriate fail-safe, backup, redundancy and other measures to ensure the safe use of such applications if the Programs are used for such purposes, and we disclaim liability for any damages caused by such use of the Programs.</p>
+<p>Oracle, JD Edwards, PeopleSoft, and Retek are registered trademarks of Oracle Corporation and/or its affiliates. Other names may be trademarks of their respective owners.</p>
+<p>The Programs may provide links to Web sites and access to content, products, and services from third parties. Oracle is not responsible for the availability of, or any content provided on, third-party Web sites. You bear all risks associated with the use of such content. If you choose to purchase any products or services from a third party, the relationship is directly between you and the third party. Oracle is not responsible for: (a) the quality of third-party products or services; or (b) fulfilling any of the terms of the agreement with the third party, including delivery of products or services and warranty obligations related to purchased products or services. Oracle is not responsible for any loss or damage of any sort that you may incur from dealing with any third party.</p>
+</div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">&nbsp;</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;1996, 2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="196">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

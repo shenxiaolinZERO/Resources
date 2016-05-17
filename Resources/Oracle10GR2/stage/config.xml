@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 2005 Oracle Corporation. All rights Reserved -->
+<!-- Do not modify the contents of this file by hand. -->
+<CONFIG_LIST>
+<COMP NAME="oracle.assistants.server" VER="10.2.0.1.0" PLAT="NT_X86">
+   <CT NAME="localconfig" NAME_ID="localconfig_ALL" DESC_ID="localconfig_DESC_ALL" LOC="" AGGREGATE_NAME="oracle.assistants.server.10_2_0_1_0.xml" CLS_NAME="Components.oracle.assistants.server.v10_2_0_1_0.PostInstallTool0" PLAT="NT_X86 W95 W98"/>
+   <CT NAME="dbca" NAME_ID="dbca_ALL" DESC_ID="dbca_DESC_ALL" LOC="" AGGREGATE_NAME="oracle.assistants.server.10_2_0_1_0.xml" CLS_NAME="Components.oracle.assistants.server.v10_2_0_1_0.PostInstallTool1" PLAT="Solaris Intel_Solaris UNIX_Alpha IBM_AIX UnixWare DG_UX HP_UX Linux Linux_S390 Linux_IA64 NT_X86"/>
+   <CT NAME="dbma" NAME_ID="dbma_ALL" DESC_ID="dbma_DESC_ALL" LOC="" AGGREGATE_NAME="oracle.assistants.server.10_2_0_1_0.xml" CLS_NAME="Components.oracle.assistants.server.v10_2_0_1_0.PostInstallTool2" PLAT="Solaris Intel_Solaris UnixWare DG_UX HP_UX IBM_AIX UNIX_Alpha NT_X86 Linux Linux_S390 Linux_IA64"/>
+</COMP>
+<COMP NAME="oracle.has.common" VER="10.2.0.1.0" PLAT="NT_X86">
+   <CT NAME="LocalConfig" NAME_ID="LocalConfig_ALL" DESC_ID="LocalConfig_DESC_ALL" LOC="" AGGREGATE_NAME="oracle.has.common.10_2_0_1_0.xml" CLS_NAME="Components.oracle.has.common.v10_2_0_1_0.PostInstallTool0" PLAT="NT_X86"/>
+</COMP>
+<COMP NAME="oracle.network.client" VER="10.2.0.1.0" PLAT="NT_X86">
+   <CT NAME="netca" NAME_ID="netca_ALL" DESC_ID="netca_DESC_ALL" LOC="" AGGREGATE_NAME="oracle.network.client.10_2_0_1_0.xml" CLS_NAME="Components.oracle.network.client.v10_2_0_1_0.PostInstallTool0" PLAT="Solaris Intel_Solaris UnixWare DG_UX HP_UX IBM_AIX UNIX_Alpha NT_X86 W95 W98 Linux Linux_IA64 Linux_S390"/>
+   <CT NAME="netca_deinst" NAME_ID="netca_deinst_ALL" DESC_ID="netca_deinst_DESC_ALL" LOC="" AGGREGATE_NAME="oracle.network.client.10_2_0_1_0.xml" CLS_NAME="Components.oracle.network.client.v10_2_0_1_0.PostInstallTool1" PLAT="Solaris Intel_Solaris UnixWare DG_UX HP_UX IBM_AIX UNIX_Alpha NT_X86 W95 W98 Linux Linux_IA64 Linux_S390"/>
+</COMP>
+<COMP NAME="oracle.sqlplus.isqlplus" VER="10.2.0.1.0" PLAT="NT_X86">
+   <CT NAME="isqlplus" NAME_ID="isqlplus_ALL" DESC_ID="isqlplus_DESC_ALL" LOC="" AGGREGATE_NAME="oracle.sqlplus.isqlplus.10_2_0_1_0.xml" CLS_NAME="Components.oracle.sqlplus.isqlplus.v10_2_0_1_0.PostInstallTool0" PLAT="Solaris Intel_Solaris UNIX_Alpha IBM_AIX UnixWare DG_UX HP_UX Linux Linux_S390 Linux_IA64 NT_X86"/>
+   <CT NAME="removeisqlplusSrvc" NAME_ID="removeisqlplusSrvc_ALL" DESC_ID="removeisqlplusSrvc_DESC_ALL" LOC="" AGGREGATE_NAME="oracle.sqlplus.isqlplus.10_2_0_1_0.xml" CLS_NAME="Components.oracle.sqlplus.isqlplus.v10_2_0_1_0.PostInstallTool1" PLAT="NT_X86"/>
+</COMP>
+<COMP NAME="oracle.sysman.console.db" VER="10.2.0.1.0" PLAT="NT_X86">
+   <CT NAME="launchBrowser" NAME_ID="launchBrowser_ALL" DESC_ID="launchBrowser_DESC_ALL" LOC="" AGGREGATE_NAME="oracle.sysman.console.db.10_2_0_1_0.xml" CLS_NAME="Components.oracle.sysman.console.db.v10_2_0_1_0.PostInstallTool0" PLAT="NT_X86 W95 W98"/>
+</COMP>
+</CONFIG_LIST>

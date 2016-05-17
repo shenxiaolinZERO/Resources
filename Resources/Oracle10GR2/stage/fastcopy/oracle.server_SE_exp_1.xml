@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2005 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FILE_LIST>
+ <COMP NAME="oracle.rdbms" VERSION="10.2.0.1.0" >
+  <FILE>
+    <SOURCE> Components/oracle.rdbms/10.2.0.1.0/1/DataFiles/Expanded/filegroup16/README_rdbms.htm </SOURCE>
+    <DEST> relnotes/readmes/README_rdbms.htm </DEST>
+  </FILE>
+  <FILE>
+    <SOURCE> Components/oracle.rdbms/10.2.0.1.0/1/DataFiles/Expanded/filegroup15/README_rdbms.htm </SOURCE>
+    <DEST> rdbms/doc/README_rdbms.htm </DEST>
+  </FILE>
+ </COMP>
+ <COMP NAME="oracle.sysman.repository.core" VERSION="10.2.0.1.0" >
+  <FILE>
+    <SOURCE> Components/oracle.sysman.repository.core/10.2.0.1.0/1/DataFiles/Expanded/filegroup1/log4j.jar </SOURCE>
+    <DEST> sysman/admin/emdrep/lib/log4j.jar </DEST>
+  </FILE>
+  <FILE>
+    <SOURCE> Components/oracle.sysman.repository.core/10.2.0.1.0/1/DataFiles/Expanded/filegroup3/emDB.jar </SOURCE>
+    <DEST> sysman/jlib/emDB.jar </DEST>
+  </FILE>
+  <FILE>
+    <SOURCE> Components/oracle.sysman.repository.core/10.2.0.1.0/1/DataFiles/Expanded/filegroup3/emportlets.jar </SOURCE>
+    <DEST> sysman/jlib/emportlets.jar </DEST>
+  </FILE>
+  <FILE>
+    <SOURCE> Components/oracle.sysman.repository.core/10.2.0.1.0/1/DataFiles/Expanded/filegroup3/ems.jar </SOURCE>
+    <DEST> sysman/jlib/ems.jar </DEST>
+  </FILE>
+  <FILE>
+    <SOURCE> Components/oracle.sysman.repository.core/10.2.0.1.0/1/DataFiles/Expanded/filegroup2/ewm-1_1.jar </SOURCE>
+    <DEST> sysman/jlib/ewm-1_1.jar </DEST>
+  </FILE>
+  <FILE>
+    <SOURCE> Components/oracle.sysman.repository.core/10.2.0.1.0/1/DataFiles/Expanded/filegroup2/jcb.jar </SOURCE>
+    <DEST> sysman/jlib/jcb.jar </DEST>
+  </FILE>
+  <FILE>
+    <SOURCE> Components/oracle.sysman.repository.core/10.2.0.1.0/1/DataFiles/Expanded/filegroup2/phaos.jar </SOURCE>
+    <DEST> sysman/jlib/phaos.jar </DEST>
+  </FILE>
+  <FILE>
+    <SOURCE> Components/oracle.sysman.repository.core/10.2.0.1.0/1/DataFiles/Expanded/filegroup2/topview.jar </SOURCE>
+    <DEST> sysman/jlib/topview.jar </DEST>
+  </FILE>
+ </COMP>
+ <COMP NAME="oracle.javavm.client" VERSION="10.2.0.1.0" >
+  <FILE>
+    <SOURCE> Components/oracle.javavm.client/10.2.0.1.0/1/DataFiles/Expanded/filegroup2/readme.txt </SOURCE>
+    <DEST> relnotes/readmes/README_javavm.txt </DEST>
+  </FILE>
+  <FILE>
+    <SOURCE> Components/oracle.javavm.client/10.2.0.1.0/1/DataFiles/Expanded/filegroup1/oracle.aurora.javadoc.zip </SOURCE>
+    <DEST> javavm/doc/javadoc.zip </DEST>
+  </FILE>
+  <FILE>
+    <SOURCE> Components/oracle.javavm.client/10.2.0.1.0/1/DataFiles/Expanded/filegroup1/readme.txt </SOURCE>
+    <DEST> javavm/doc/readme.txt </DEST>
+  </FILE>
+ </COMP>
+ <COMP NAME="oracle.rdbms.install.seeddb" VERSION="10.2.0.1.0" >
+  <FILE>
+    <SOURCE> Components/oracle.rdbms.install.seeddb/10.2.0.1.0/1/DataFiles/Expanded/filegroup1/Seed_Database.ctl </SOURCE>
+    <DEST> assistants/dbca/templates/Seed_Database.ctl </DEST>
+  </FILE>
+  <FILE>
+    <SOURCE> Components/oracle.rdbms.install.seeddb/10.2.0.1.0/1/DataFiles/Expanded/filegroup1/Seed_Database.dfb </SOURCE>
+    <DEST> assistants/dbca/templates/Seed_Database.dfb </DEST>
+  </FILE>
+ </COMP>
+ <COMP NAME="oracle.rdbms.install.seeddb.sample_schema" VERSION="10.2.0.1.0" >
+  <FILE>
+    <SOURCE> Components/oracle.rdbms.install.seeddb.sample_schema/10.2.0.1.0/1/DataFiles/Expanded/filegroup1/example.dmp </SOURCE>
+    <DEST> assistants/dbca/templates/example.dmp </DEST>
+  </FILE>
+  <FILE>
+    <SOURCE> Components/oracle.rdbms.install.seeddb.sample_schema/10.2.0.1.0/1/DataFiles/Expanded/filegroup1/example01.dfb </SOURCE>
+    <DEST> assistants/dbca/templates/example01.dfb </DEST>
+  </FILE>
+ </COMP>
+ <COMP NAME="oracle.dbjava.common" VERSION="10.2.0.1.0" >
+  <FILE>
+    <SOURCE> Components/oracle.dbjava.common/10.2.0.1.0/1/DataFiles/Expanded/filegroup2/Readme.txt </SOURCE>
+    <DEST> relnotes/readmes/README_jdbc.txt </DEST>
+  </FILE>
+  <FILE>
+    <SOURCE> Components/oracle.dbjava.common/10.2.0.1.0/1/DataFiles/Expanded/filegroup1/Readme.txt </SOURCE>
+    <DEST> jdbc/Readme.txt </DEST>
+  </FILE>
+ </COMP>
+ <COMP NAME="oracle.network.rsf" VERSION="10.2.0.1.0" >
+  <FILE>
+    <SOURCE> Components/oracle.network.rsf/10.2.0.1.0/1/DataFiles/Expanded/filegroup4/README_OracleNet.htm </SOURCE>
+    <DEST> relnotes/README_OracleNet.htm </DEST>
+  </FILE>
+  <FILE>
+    <SOURCE> Components/oracle.network.rsf/10.2.0.1.0/1/DataFiles/Expanded/filegroup3/README_OracleNet.htm </SOURCE>
+    <DEST> network/doc/README_OracleNet.htm </DEST>
+  </FILE>
+ </COMP>
+ <COMP NAME="oracle.swd.oui.core" VERSION="10.2.0.1.0" >
+  <FILE>
+    <SOURCE> Components/oracle.swd.oui.core/10.2.0.1.0/1/DataFiles/Expanded/oui/instImages/bg.jpg </SOURCE>
+    <DEST> oui/instImages/bg.jpg </DEST>
+  </FILE>
+  <FILE>
+    <SOURCE> Components/oracle.swd.oui.core/10.2.0.1.0/1/DataFiles/Expanded/oui/instImages/10gOneClickbusybar.gif </SOURCE>
+    <DEST> oui/instImages/10gOneClickbusybar.gif </DEST>
+  </FILE>
+  <FILE>
+    <SOURCE> Components/oracle.swd.oui.core/10.2.0.1.0/1/DataFiles/Expanded/oui/instImages/splashScr.gif </SOURCE>
+    <DEST> oui/instImages/splashScr.gif </DEST>
+  </FILE>
+  <FILE>
+    <SOURCE> Components/oracle.swd.oui.core/10.2.0.1.0/1/DataFiles/Expanded/oui/instImages/oneclickbg.gif </SOURCE>
+    <DEST> oui/instImages/oneclickbg.gif </DEST>
+  </FILE>
+  <FILE>
+    <SOURCE> Components/oracle.swd.oui.core/10.2.0.1.0/1/DataFiles/Expanded/oui/instImages/images.properties </SOURCE>
+    <DEST> oui/instImages/images.properties </DEST>
+  </FILE>
+ </COMP>
+</FILE_LIST>

@@ -1,0 +1,1379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>5 Getting Started with Oracle Database</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.5 Build 272" />
+<meta name="Date" content="August 18, 2005 19:51:01" />
+<meta name="doctitle" content="Oracle&reg; Database Installation Guide 10g Release 2 (10.2) for Microsoft Windows (32-Bit)" />
+<meta name="partno" content="B14316-01" />
+<meta name="docid" content="NTDBI" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Glossary" href="glossary.htm" title="Glossary" type="text/html" />
+<link rel="Prev" href="postcfg.htm" title="Previous" type="text/html" />
+<link rel="Next" href="deinstall.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14316.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database Installation Guide<br />
+10<i>g</i> Release 2 (10.2) for Microsoft Windows (32-Bit)</b><br />
+Part Number B14316-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="postcfg.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="deinstall.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top"><a href="../b14316.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="BDCCGFFA" name="BDCCGFFA"></a><a id="i1006482" name="i1006482"></a>
+<h1 class="chapter"><span class="secnum">5</span> <span class="bold"><a name="NTDBI005" id="NTDBI005"></a></span> Getting Started with Oracle Database</h1>
+<p><a id="ABC1244664" name="ABC1244664"></a><a id="ABC1244664SRI1" name="ABC1244664SRI1"></a>This chapter describes where to go after you have completed an Oracle Database installation, such as how to check the installed contents, start various tools, and identify and locate various files. It covers these topics:</p>
+<ul>
+<li type="disc">
+<p><a href="#CHDCADBD">Checking the Installed Oracle Database Contents and Directory Location</a></p>
+</li>
+<li type="disc">
+<p><a href="#BDCJJGDA">Logging into Enterprise Manager Database Control</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDDEEAF">Starting and Stopping an Oracle Database</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDFJABD">Managing Automatic Storage Management (ASM)</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDIIIDB">Accessing Oracle Database with SQL*Plus or <span class="italic">i</span>SQL*Plus</a></p>
+</li>
+<li type="disc">
+<p><a href="#BDCCADCJ">Reviewing User Accounts and Passwords</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1006051">Identifying Databases</a></p>
+</li>
+<li type="disc">
+<p><a href="#BDCFBGCH">Locating the Server Parameter File</a></p>
+</li>
+<li type="disc">
+<p><a href="#BDCFHCCJ">Identifying Tablespaces and Datafiles</a></p>
+</li>
+<li type="disc">
+<p><a href="#BDCDEIDJ">Locating Redo Log Files</a></p>
+</li>
+<li type="disc">
+<p><a href="#BDCBJEEG">Locating Control Files</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1006089">Understanding Oracle Database Services on Windows</a></p>
+</li>
+</ul>
+<a id="CHDCADBD" name="CHDCADBD"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref695" name="sthref695"></a>
+<h2 class="sect1"><span class="secnum">5.1</span> Checking the Installed Oracle Database Contents and Directory Location</h2>
+<p><a id="sthref696" name="sthref696"></a>Use Oracle Universal Installer to check the contents and directory location of your Oracle Database installation.</p>
+<p>Follow these steps:</p>
+<ol type="1" start="1">
+<li>
+<p>From the <span class="bold">Start</span> menu, select <span class="bold">Programs</span>, then <span class="bold">Oracle -</span> <span class="bolditalic">HOME_NAME</span>, then <span class="bold">Oracle Installation Products</span>, then <span class="bold">Universal Installer</span>.</p>
+</li>
+<li>
+<p>In the Welcome window, click <span class="bold">Installed Products</span> to display the Inventory dialog box.</p>
+</li>
+<li>
+<p>To check the installed contents, find the Oracle Database product in the list.</p>
+<p>To find additional information about an installed product, click <span class="bold">Details</span>.</p>
+</li>
+<li>
+<p>To check the directory location of the installed contents, click the <span class="bold">Environment</span> tab.</p>
+</li>
+<li>
+<p>Click <span class="bold">Close</span> to exit the Inventory dialog box.</p>
+</li>
+<li>
+<p>Click <span class="bold">Cancel</span> to exit Oracle Universal Installer, then click <span class="bold">Yes</span> to confirm.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect1" -->
+<a id="BDCJJGDA" name="BDCJJGDA"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref697" name="sthref697"></a>
+<h2 class="sect1"><span class="secnum">5.2</span> Logging into Enterprise Manager Database Control<a id="sthref698" name="sthref698"></a></h2>
+<p>Oracle Enterprise Manager Database Control provides a Web-based user interface that you can use to monitor, administer, and maintain an Oracle database, including Automatic Storage Management.</p>
+<p>To log in to Oracle Enterprise Manager Database Control:</p>
+<ol type="1" start="1">
+<li>
+<p>Open your Web browser and enter the following URL</p>
+<pre xml:space="preserve" class="oac_no_warn">http://<span class="italic">hostname</span>:<span class="italic">port</span>/em
+</pre>
+<pre xml:space="preserve" class="oac_no_warn"></pre>
+<p>In a default installation, the port number is 1158. If you are unsure of the correct port number to use, look for the following line in the <code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\</code><code><span class="codeinlineitalic">ORACLE_HOME</span></code><code>\install\portlist.ini</code> file:</p>
+<pre xml:space="preserve" class="oac_no_warn">Enterprise Manager Console HTTP Port (<span class="italic">db_name</span>) = <span class="italic">port</span>
+
+</pre>
+<p>For example, if you installed the database on a host computer named <code>mgmt42</code>, and the port number listed in the <code>portlist.ini</code> file is 5500, then enter the following URL</p>
+<pre xml:space="preserve" class="oac_no_warn">http://mgmt42:5500/em
+</pre>
+<pre xml:space="preserve" class="oac_no_warn"></pre>
+<p>Enterprise Manager displays the Database Control Login Page.</p>
+</li>
+<li>
+<p>Log in to the database using the <code>SYSMAN</code> database user account. Enterprise Manager displays the Oracle Database home page.</p>
+<p>Use the password you specified for the <code>SYSMAN</code> account during the Oracle Database installation.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p><a href="postcfg.htm#BABFAEIG">"Setting Credentials for the Job System to Work with Enterprise Manager"</a> if you have difficulty logging into Enterprise Manager Database Control</p>
+</li>
+<li type="disc">
+<p><a href="#BDCCADCJ">"Reviewing User Accounts and Passwords"</a></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+<div class="sect2"><a id="sthref699" name="sthref699"></a>
+<h3 class="sect2"><span class="secnum">5.2.1</span> Understanding Database Control Login Privileges<a id="sthref700" name="sthref700"></a></h3>
+<p>When you log in to Oracle Enterprise Manager Database Control using the <code>SYSMAN</code> user account, you are logging in as the Oracle Enterprise Manager super user. The <code>SYSMAN</code> account is automatically granted the roles and privileges required to access all the management functionality provided with Database Control.</p>
+<p>You can also use the <code>SYS</code> and <code>SYSTEM</code> accounts to log in to Database Control. In addition, you can grant login privileges to other database users. To grant management access for other database users, use the following procedure:</p>
+<ol type="1" start="1">
+<li>
+<p>Log in to Database Control.</p>
+<div align="center">
+<div class="inftblinformal"><br />
+<table class="Informal oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr align="left" valign="top">
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="#BDCJJGDA">"Logging into Enterprise Manager Database Control"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblinformal --></div>
+</li>
+<li>
+<p>Click <span class="bold">Setup</span> at the top of the Database Control home page.</p>
+</li>
+<li>
+<p>Click <span class="bold">Administrators</span> in the left navigation bar.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span> to create a new Enterprise Manager user.</p>
+</li>
+<li>
+<p>In the <span class="bold">Name</span> field, enter the username of an existing database user or click the flashlight icon and select a user from the pop-up window.</p>
+</li>
+<li>
+<p>Enter the password for this user, then click <span class="bold">Finish</span>.</p>
+</li>
+</ol>
+<p>Enterprise Manager assigns login privileges to the specified user and includes this user in the list of Enterprise Manager users on the Setup Administrators page.</p>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CHDDEEAF" name="CHDDEEAF"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref701" name="sthref701"></a>
+<h2 class="sect1"><span class="secnum">5.3</span> Starting and Stopping an Oracle Database</h2>
+<p><a id="sthref702" name="sthref702"></a><a id="sthref703" name="sthref703"></a><a id="sthref704" name="sthref704"></a>You can start and stop an Oracle database by using any of the following methods:</p>
+<ul>
+<li type="disc">
+<p><a href="#CHDFCFAI">Starting and Stopping the Database with Oracle Enterprise Manager Database Control</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDGGDAB">Starting and Stopping the Database with Oracle Administration Assistant for Windows</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDFDIHI">Starting and Stopping the Database from the Microsoft Windows Services Utility</a></p>
+</li>
+</ul>
+<a id="CHDFCFAI" name="CHDFCFAI"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref705" name="sthref705"></a>
+<h3 class="sect2"><span class="secnum">5.3.1</span> Starting and Stopping the Database with Oracle Enterprise Manager Database Control</h3>
+<p><a id="sthref706" name="sthref706"></a>Follow these steps:</p>
+<ol type="1" start="1">
+<li>
+<p>From a Web browser, start Enterprise Manager Database Control and log in, for example:</p>
+<pre xml:space="preserve" class="oac_no_warn">http://myserver:1158/em
+</pre>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="#BDCJJGDA">"Logging into Enterprise Manager Database Control"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</li>
+<li>
+<p>Click <span class="bold">Home</span> to go to the home page.</p>
+</li>
+<li>
+<p>Under General, click <span class="bold">Start</span> to start the database or <span class="bold">Shutdown</span> to shut it down.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="CHDGGDAB" name="CHDGGDAB"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref707" name="sthref707"></a>
+<h3 class="sect2"><span class="secnum">5.3.2</span> Starting and Stopping the Database with Oracle Administration Assistant for Windows</h3>
+<p><a id="sthref708" name="sthref708"></a>Oracle Administration Assistant is available from the Custom installation type.</p>
+<p>Follow these steps:</p>
+<ol type="1" start="1">
+<li>
+<p>From the <span class="bold">Start</span> menu, select <span class="bold">Programs</span>, then <span class="bold">Oracle -</span> <span class="bolditalic">HOME_NAME</span>, then <span class="bold">Configuration and Migration Tools</span>, then <span class="bold">Administrative Assistant for Windows</span>.</p>
+</li>
+<li>
+<p>In the console window, expand the Oracle Administration Assistant for Windows tree structure.</p>
+</li>
+<li>
+<p>Under Databases, right-click the name of the database that you want, and from the menu, select from the following options:</p>
+<ul>
+<li type="disc">
+<p><span class="bold">Connect Database</span></p>
+</li>
+<li type="disc">
+<p><span class="bold">Start Service</span></p>
+</li>
+<li type="disc">
+<p><span class="bold">Disconnect Database</span></p>
+</li>
+<li type="disc">
+<p><span class="bold">Stop Service</span></p>
+</li>
+<li type="disc">
+<p><span class="bold">Startup/Shutdown Options</span></p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="CHDFDIHI" name="CHDFDIHI"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref709" name="sthref709"></a>
+<h3 class="sect2"><span class="secnum">5.3.3</span> Starting and Stopping the Database from the Microsoft Windows Services Utility</h3>
+<p><a id="sthref710" name="sthref710"></a>Follow these steps:</p>
+<ol type="1" start="1">
+<li>
+<p>From the <span class="bold">Start</span> menu, select <span class="bold">Programs</span>, then <span class="bold">Administrative Tools</span>, then <span class="bold">Services</span>.</p>
+</li>
+<li>
+<p>In the Services dialog box, locate the name of the database you want to start or stop.</p>
+</li>
+<li>
+<p>Right-click the name of the database, and from the menu, select either <span class="bold">Start</span>, <span class="bold">Stop</span>, or <span class="bold">Pause</span>.</p>
+<p>To set its start-up properties, right-click <span class="bold">Properties</span>, and in the dialog box, select either <span class="bold">Automatic</span>, <span class="bold">Manual</span>, or <span class="bold">Disabled</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CHDFJABD" name="CHDFJABD"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref711" name="sthref711"></a>
+<h2 class="sect1"><span class="secnum">5.4</span> Managing Automatic Storage Management (ASM)</h2>
+<p>This section covers the following topics:<a id="sthref712" name="sthref712"></a></p>
+<ul>
+<li type="disc">
+<p><a href="#BABFGCII">Starting and Stopping Automatic Storage Management</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABFBIGB">Automatic Storage Management Utilities</a></p>
+</li>
+</ul>
+<a id="BABFGCII" name="BABFGCII"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref713" name="sthref713"></a>
+<h3 class="sect2"><span class="secnum">5.4.1</span> Starting and Stopping Automatic Storage Management</h3>
+<p><a id="sthref714" name="sthref714"></a>To start and stop Automatic Storage Management, in addition to using SQL*Plus or <span class="italic">i</span>SQL*Plus, you can use the Windows <span class="bold">Services</span> utility.</p>
+<p>To start Automatic Storage Management using the <span class="bold">Services</span> utility:</p>
+<ol type="1" start="1">
+<li>
+<p>From the <span class="bold">Start</span> menu, select <span class="bold">Programs</span>, then <span class="bold">Administrative Tools</span>, then <span class="bold">Services</span>.</p>
+</li>
+<li>
+<p>In the Services dialog box, start the following services by right-clicking their names and in the menu, selecting <span class="bold">Start</span>:</p>
+<ul>
+<li type="disc">
+<p><code>OracleCSService</code></p>
+</li>
+<li type="disc">
+<p><code>OracleASMService+ASM</code></p>
+</li>
+</ul>
+<p>To set the start-up properties for these services, right-click <span class="bold">Properties</span>, and in the Properties dialog box, under Startup Type, select either <span class="bold">Automatic</span>, <span class="bold">Manual</span>, or <span class="bold">Disabled</span>.</p>
+</li>
+<li>
+<p>Exit <span class="bold">Services</span>.</p>
+</li>
+</ol>
+<p>To stop Automatic Storage Management using the <span class="bold">Services</span> utility:</p>
+<ol type="1" start="1">
+<li>
+<p>From the <span class="bold">Start</span> menu, select <span class="bold">Programs</span>, then <span class="bold">Administrative Tools</span>, then <span class="bold">Services</span>.</p>
+</li>
+<li>
+<p>In the Services dialog box, Shut down any databases that use ASM. Names of Oracle databases are preceded with <code>OracleService</code>.</p>
+</li>
+<li>
+<p>Right-click the <code>OracleCSService</code> and <code>Oracle ASMService+ASM</code> services and from the menu, select <span class="bold">Stop</span>.</p>
+</li>
+<li>
+<p>Exit <span class="bold">Services</span>.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Database Administrator's Guide</span> for information on starting and stopping ASM instances by using SQL*Plus or <span class="italic">i</span>SQL*Plus</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect2" -->
+<a id="BABFBIGB" name="BABFBIGB"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref715" name="sthref715"></a>
+<h3 class="sect2"><span class="secnum">5.4.2</span> Automatic Storage Management Utilities</h3>
+<p><a id="sthref716" name="sthref716"></a><a id="sthref717" name="sthref717"></a>To manage Automatic Storage Management, you can use the following tools:</p>
+<ul>
+<li type="disc">
+<p><a id="sthref718" name="sthref718"></a><span class="bold">asmcmd</span>: This command-line tool lets you manage ASM disk group files and directories.</p>
+</li>
+<li type="disc">
+<p><span class="bold">Oracle Enterprise Manager Grid Control</span>: If you have Oracle Enterprise Manager installed, you can use Grid Control to manage Automatic Storage Management functions such as migrating an existing database to ASM, checking the status of the ASM instance, checking the performance of the ASM disk groups, creating or dropping ASM disk groups, and so on.</p>
+</li>
+<li type="disc">
+<p><span class="bold">Oracle Enterprise Manager Database Control</span>: This utility lets you perform functions similar to Grid Control.</p>
+</li>
+<li type="disc">
+<p><span class="bold">SQL*Plus or</span> <span class="bolditalic">i</span><span class="bold">SQL*Plus</span>: You can use Automatic Storage Management-specific commands from either of these tools. To connect to the ASM instance, you use the same methods that you use to connect to an Oracle Database instance.</p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p><a href="#BDCJJGDA">"Logging into Enterprise Manager Database Control"</a></p>
+</li>
+<li type="disc">
+<p><span class="italic">Oracle Database Administrator's Guide</span> for more information on managing Automatic Storage Management</p>
+</li>
+<li type="disc">
+<p><span class="italic">Oracle Database Utilities</span> for more information on <code>asmcmd</code></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CHDIIIDB" name="CHDIIIDB"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref719" name="sthref719"></a>
+<h2 class="sect1"><span class="secnum">5.5</span> Accessing Oracle Database with SQL*Plus or <span class="italic">i</span>SQL*Plus</h2>
+<p><a id="sthref720" name="sthref720"></a><a id="sthref721" name="sthref721"></a><a id="sthref722" name="sthref722"></a><a id="sthref723" name="sthref723"></a>To issue SQL and PL/SQL statements to Oracle Database, you can use either SQL*Plus or its Web version, <span class="italic">i</span>SQL*Plus. These tools enable you to perform the same database management operations, as well as to query, insert, update, or delete data directly in the database.</p>
+<p>To start SQL*Plus:</p>
+<ol type="1" start="1">
+<li>
+<p>From the <span class="bold">Start</span> menu, select <span class="bold">Programs</span>, then <span class="bold">Oracle -</span> <span class="bolditalic">HOME_NAME</span>, then <span class="bold">Application Development</span>, then <span class="bold">SQL Plus</span>.</p>
+</li>
+<li>
+<p>In the Log On dialog box, enter the user name, password, and for the host string, the name of the database to which you want to connect.</p>
+</li>
+</ol>
+<p>Alternatively, at the command line, you can enter the following command at a Windows command prompt:</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\&gt; sqlplus <span class="italic">username</span>/<span class="italic">password</span>
+
+</pre>
+<p>For example, to log on as SYSTEM using the password <code>welcome</code>, you would enter:</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\&gt; sqlplus system/welcome
+
+</pre>
+<p>If you are logging on as <code>SYS</code>, you would need to connect as <code>SYSDBA</code>:</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\&gt; sqlplus sys/welcome as sysdba
+
+</pre>
+<p>To start <span class="italic">i</span>SQL*Plus:</p>
+<ol type="1" start="1">
+<li>
+<p>Open your Web browser and enter the following URL:</p>
+<pre xml:space="preserve" class="oac_no_warn">http://<span class="italic">hostname</span>:<span class="italic">port</span>/isqlplus
+
+</pre>
+<p>If you are unsure of the correct port number to use, check the <code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\</code><code><span class="codeinlineitalic">ORACLE_HOME</span></code><code>\install\portlist.ini</code> file.</p>
+</li>
+<li>
+<p>In the Login window, enter the username, password, and for the connect identifier, the name of the database to which you want to connect.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p><span class="italic">SQL*Plus User's Guide and Reference</span></p>
+</li>
+<li type="disc">
+<p><span class="italic">SQL*Plus Quick Reference</span></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect1" -->
+<a id="BDCCADCJ" name="BDCCADCJ"></a>
+<div class="sect1"><a id="sthref724" name="sthref724"></a>
+<h2 class="sect1"><span class="secnum">5.6</span> Reviewing User Accounts and Passwords</h2>
+<p>All databases created by Database Configuration Assistant include the <code>SYS</code>, <code>SYSTEM</code>, <code>SYSMAN</code>, and <code>DBSNMP</code> database accounts. In addition, Oracle provides several other administrative accounts. <a id="sthref725" name="sthref725"></a>Before using these other accounts, you must unlock them and reset their passwords. <a href="#g1016156">Table 5-1</a> describes these accounts, listing their usernames and passwords.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1"><span class="bold">See Also</span>:</p>
+<ul>
+<li type="disc">
+<p><a href="#BDCDIEBD">"Unlocking and Changing Passwords"</a> for information about using Oracle Enterprise Manager Database Control to view a complete list of the user accounts defined for your database</p>
+</li>
+<li type="disc">
+<p>"Modifying Oracle Counters for Windows Performance Monitor Parameters" in <span class="italic">Oracle Database Platform Guide for Microsoft Windows (32-Bit)</span> for instructions on how to change the password for Oracle Counters for Windows Performance Monitor</p>
+</li>
+<li type="disc">
+<p><span class="italic">Oracle Database Administrator's Guide</span> for information about Oracle security procedures and security best practices</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+<a id="CHDHEBIB" name="CHDHEBIB"></a>
+<div class="sect2"><a id="sthref726" name="sthref726"></a>
+<h3 class="sect2"><span class="secnum">5.6.1</span> Reviewing Administrative Accounts<a id="sthref727" name="sthref727"></a><a id="sthref728" name="sthref728"></a></h3>
+<p><a href="#g1016156">Table 5-1</a> describes the administrative usernames.</p>
+<div class="tblhruleformalwide"><a id="sthref729" name="sthref729"></a><a id="g1016156" name="g1016156"></a>
+<p class="titleintable">Table 5-1 Administrative Accounts <a id="ABC1228910" name="ABC1228910"></a></p>
+<table class="HRuleFormalWide" title="Administrative Accounts " summary="This table lists Adminstrative usernames. Column 1 lists the username, column 2 provides a description, and column 3 references sources for more information." dir="ltr" border="1" width="100%" frame="hsides" rules="rows" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t9">Username</th>
+<th align="left" valign="bottom" id="r1c2-t9">Description</th>
+<th align="left" valign="bottom" id="r1c3-t9">See Also</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t9" headers="r1c1-t9">
+<p><code>ANONYMOUS</code><a id="sthref730" name="sthref730"></a><a id="sthref731" name="sthref731"></a><a id="sthref732" name="sthref732"></a></p>
+</td>
+<td align="left" headers="r2c1-t9 r1c2-t9">
+<p><a id="sthref733" name="sthref733"></a><a id="sthref734" name="sthref734"></a>Allows HTTP access to Oracle XML DB.</p>
+</td>
+<td align="left" headers="r2c1-t9 r1c3-t9">
+<p>Not applicable</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t9" headers="r1c1-t9">
+<p><code>BI</code><a id="sthref735" name="sthref735"></a><a id="sthref736" name="sthref736"></a><a id="sthref737" name="sthref737"></a></p>
+</td>
+<td align="left" headers="r3c1-t9 r1c2-t9">
+<p>Owns the Business Intelligence schema included in the Oracle Sample Schemas. It is only available if you loaded the Sample Schemas.</p>
+</td>
+<td align="left" headers="r3c1-t9 r1c3-t9">
+<p><span class="italic">Oracle Database Sample Schemas</span></p>
+<br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t9" headers="r1c1-t9">
+<p><code>CTXSYS</code> <a id="sthref738" name="sthref738"></a><a id="sthref739" name="sthref739"></a><a id="sthref740" name="sthref740"></a></p>
+</td>
+<td align="left" headers="r4c1-t9 r1c2-t9">
+<p>The Oracle Text account.</p>
+</td>
+<td align="left" headers="r4c1-t9 r1c3-t9">
+<p><span class="italic">Oracle Text Reference</span></p>
+<br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t9" headers="r1c1-t9">
+<p><code>DBSNMP</code> <a id="sthref741" name="sthref741"></a><a id="sthref742" name="sthref742"></a><a id="sthref743" name="sthref743"></a></p>
+</td>
+<td align="left" headers="r5c1-t9 r1c2-t9">
+<p>Used by Management Agent of Oracle Enterprise Manager to monitor and manage the database. This account is created only if you configure the database to use Database Control.</p>
+</td>
+<td align="left" headers="r5c1-t9 r1c3-t9">
+<p><span class="italic">Oracle Enterprise Manager Grid Control Installation and Basic Configuration</span></p>
+<br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t9" headers="r1c1-t9">
+<p><code>DIP</code><a id="sthref744" name="sthref744"></a><a id="sthref745" name="sthref745"></a><a id="sthref746" name="sthref746"></a></p>
+</td>
+<td align="left" headers="r6c1-t9 r1c2-t9">
+<p>Used by Directory Integration Platform (DIP) to synchronize the changes in Oracle Internet Directory with the applications in the database.</p>
+</td>
+<td align="left" headers="r6c1-t9 r1c3-t9">
+<p><span class="italic">Oracle Internet Directory Administrator's Guide</span></p>
+<br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t9" headers="r1c1-t9">
+<p><code>DMSYS</code><a id="sthref747" name="sthref747"></a><a id="sthref748" name="sthref748"></a><a id="sthref749" name="sthref749"></a></p>
+</td>
+<td align="left" headers="r7c1-t9 r1c2-t9">
+<p>Performs data mining operations.</p>
+</td>
+<td align="left" headers="r7c1-t9 r1c3-t9">
+<p><span class="italic">Oracle Data Mining Administrator's Guide</span></p>
+<br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t9" headers="r1c1-t9">
+<p><code>EXFSYS</code><a id="sthref750" name="sthref750"></a><a id="sthref751" name="sthref751"></a><a id="sthref752" name="sthref752"></a></p>
+</td>
+<td align="left" headers="r8c1-t9 r1c2-t9">
+<p>Owns the Expression Filter schema.</p>
+</td>
+<td align="left" headers="r8c1-t9 r1c3-t9">
+<p>None</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t9" headers="r1c1-t9">
+<p><code>HR</code><a id="sthref753" name="sthref753"></a><a id="sthref754" name="sthref754"></a><a id="sthref755" name="sthref755"></a></p>
+</td>
+<td align="left" headers="r9c1-t9 r1c2-t9">
+<p>Owns the Human Resources schema included in the Oracle Sample Schemas. It is available only if you loaded the Sample Schemas.</p>
+</td>
+<td align="left" headers="r9c1-t9 r1c3-t9">
+<p><span class="italic">Oracle Database Sample Schemas</span></p>
+<br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r10c1-t9" headers="r1c1-t9">
+<p><code>IX</code><a id="sthref756" name="sthref756"></a><a id="sthref757" name="sthref757"></a><a id="sthref758" name="sthref758"></a></p>
+</td>
+<td align="left" headers="r10c1-t9 r1c2-t9">
+<p>Owns the Information Transport schema included in the Oracle Sample Schemas. This account is available only if you loaded the Sample Schemas.</p>
+</td>
+<td align="left" headers="r10c1-t9 r1c3-t9">
+<p><span class="italic">Oracle Database Sample Schemas</span></p>
+<br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r11c1-t9" headers="r1c1-t9">
+<p><code>LBACSYS</code><a id="sthref759" name="sthref759"></a><a id="sthref760" name="sthref760"></a><a id="sthref761" name="sthref761"></a></p>
+</td>
+<td align="left" headers="r11c1-t9 r1c2-t9">
+<p>The Oracle Label Security administrator account.</p>
+</td>
+<td align="left" headers="r11c1-t9 r1c3-t9">
+<p><span class="italic">Oracle Label Security Administrator's Guide</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r12c1-t9" headers="r1c1-t9">
+<p><code>MDDATA</code><a id="sthref762" name="sthref762"></a><a id="sthref763" name="sthref763"></a><a id="sthref764" name="sthref764"></a></p>
+</td>
+<td align="left" headers="r12c1-t9 r1c2-t9">
+<p>Used by Oracle Spatial for storing Geocoder and router data.</p>
+</td>
+<td align="left" headers="r12c1-t9 r1c3-t9">
+<p><span class="italic">Oracle Spatial User's Guide and Reference</span></p>
+<br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r13c1-t9" headers="r1c1-t9">
+<p><code>MDSYS</code><a id="sthref765" name="sthref765"></a><a id="sthref766" name="sthref766"></a><a id="sthref767" name="sthref767"></a></p>
+</td>
+<td align="left" headers="r13c1-t9 r1c2-t9">
+<p>The Oracle Spatial and Oracle Locator administrator account.</p>
+</td>
+<td align="left" headers="r13c1-t9 r1c3-t9">
+<p><span class="italic">Oracle Spatial User's Guide and Reference</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r14c1-t9" headers="r1c1-t9">
+<p><code>MGMT_VIEW</code><a id="sthref768" name="sthref768"></a><a id="sthref769" name="sthref769"></a><a id="sthref770" name="sthref770"></a></p>
+</td>
+<td align="left" headers="r14c1-t9 r1c2-t9">
+<p>Used by Oracle Enterprise Manager Database Control.</p>
+</td>
+<td align="left" headers="r14c1-t9 r1c3-t9">
+<p>None</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r15c1-t9" headers="r1c1-t9">
+<p><code>OE</code><a id="sthref771" name="sthref771"></a><a id="sthref772" name="sthref772"></a><a id="sthref773" name="sthref773"></a></p>
+</td>
+<td align="left" headers="r15c1-t9 r1c2-t9">
+<p>Owns the Order Entry schema included in the Oracle Sample Schemas. This account is available only if you loaded the Sample Schemas.</p>
+</td>
+<td align="left" headers="r15c1-t9 r1c3-t9">
+<p><span class="italic">Oracle Database Sample Schemas</span></p>
+<br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r16c1-t9" headers="r1c1-t9">
+<p><code>OLAPSYS</code> <a id="sthref774" name="sthref774"></a><a id="sthref775" name="sthref775"></a><a id="sthref776" name="sthref776"></a></p>
+</td>
+<td align="left" headers="r16c1-t9 r1c2-t9">
+<p>Owns the OLAP catalogs</p>
+</td>
+<td align="left" headers="r16c1-t9 r1c3-t9">
+<p><span class="italic">Oracle OLAP Application Developer's Guide</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r17c1-t9" headers="r1c1-t9">
+<p><code>ORDPLUGINS</code> <a id="sthref777" name="sthref777"></a><a id="sthref778" name="sthref778"></a><a id="sthref779" name="sthref779"></a></p>
+</td>
+<td align="left" headers="r17c1-t9 r1c2-t9">
+<p>The Oracle <span class="italic">inter</span>Media Audio and Video account. Plug-ins supplied by Oracle and third party plug-ins are installed in this schema.</p>
+</td>
+<td align="left" headers="r17c1-t9 r1c3-t9">
+<p><span class="italic">Oracle interMedia Reference</span></p>
+<br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r18c1-t9" headers="r1c1-t9">
+<p><code>ORDSYS</code> <a id="sthref780" name="sthref780"></a><a id="sthref781" name="sthref781"></a><a id="sthref782" name="sthref782"></a></p>
+</td>
+<td align="left" headers="r18c1-t9 r1c2-t9">
+<p>The Oracle <span class="italic">inter</span>Media Audio, Video, Locator, and Image administrator account.</p>
+</td>
+<td align="left" headers="r18c1-t9 r1c3-t9">
+<p><span class="italic">Oracle interMedia Reference</span></p>
+<br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r19c1-t9" headers="r1c1-t9">
+<p><code>OUTLN</code> <a id="sthref783" name="sthref783"></a><a id="sthref784" name="sthref784"></a><a id="sthref785" name="sthref785"></a></p>
+</td>
+<td align="left" headers="r19c1-t9 r1c2-t9">
+<p>Centrally manages metadata associated with stored outlines. Supports plan stability, which enables maintenance of the same execution plans for the same SQL statements.</p>
+</td>
+<td align="left" headers="r19c1-t9 r1c3-t9">
+<p><span class="italic">Oracle Database Performance Tuning Guide</span></p>
+<br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r20c1-t9" headers="r1c1-t9">
+<p><code>PM</code><a id="sthref786" name="sthref786"></a><a id="sthref787" name="sthref787"></a><a id="sthref788" name="sthref788"></a></p>
+</td>
+<td align="left" headers="r20c1-t9 r1c2-t9">
+<p>Owns the Product Media schema included in the Oracle Sample Schemas. This account is created only if you loaded the Sample Schemas.</p>
+</td>
+<td align="left" headers="r20c1-t9 r1c3-t9">
+<p><span class="italic">Oracle Database Sample Schemas</span></p>
+<br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r21c1-t9" headers="r1c1-t9">
+<p><code>SCOTT</code><a id="sthref789" name="sthref789"></a><a id="sthref790" name="sthref790"></a><a id="sthref791" name="sthref791"></a></p>
+</td>
+<td align="left" headers="r21c1-t9 r1c2-t9">
+<p>An account used by Oracle sample programs and examples.</p>
+</td>
+<td align="left" headers="r21c1-t9 r1c3-t9">
+<p><span class="italic">Oracle Database Administrator's Guide</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r22c1-t9" headers="r1c1-t9">
+<p><code>SH</code><a id="sthref792" name="sthref792"></a><a id="sthref793" name="sthref793"></a><a id="sthref794" name="sthref794"></a></p>
+</td>
+<td align="left" headers="r22c1-t9 r1c2-t9">
+<p>Owns the Sales History schema included in the Oracle Sample Schemas. This account is available only if you loaded the Sample Schemas during an Enterprise Edition installation</p>
+</td>
+<td align="left" headers="r22c1-t9 r1c3-t9">
+<p><span class="italic">Oracle Database Sample Schemas</span></p>
+<br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r23c1-t9" headers="r1c1-t9">
+<p><code>SI_INFORMTN_SCHEMA</code><a id="sthref795" name="sthref795"></a><a id="sthref796" name="sthref796"></a><a id="sthref797" name="sthref797"></a></p>
+</td>
+<td align="left" headers="r23c1-t9 r1c2-t9">
+<p>Stores the information views for the SQL/MM Still Image Standard.</p>
+</td>
+<td align="left" headers="r23c1-t9 r1c3-t9">
+<p><span class="italic">Oracle interMedia Reference</span></p>
+<br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r24c1-t9" headers="r1c1-t9">
+<p><code>SYS</code><a id="sthref798" name="sthref798"></a><a id="sthref799" name="sthref799"></a><a id="sthref800" name="sthref800"></a></p>
+</td>
+<td align="left" headers="r24c1-t9 r1c2-t9">
+<p>Used for performing database administration tasks.</p>
+</td>
+<td align="left" headers="r24c1-t9 r1c3-t9">
+<p><span class="italic">Oracle Database Administrator's Guide</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r25c1-t9" headers="r1c1-t9">
+<p><code>SYSMAN</code><a id="sthref801" name="sthref801"></a><a id="sthref802" name="sthref802"></a><a id="sthref803" name="sthref803"></a></p>
+</td>
+<td align="left" headers="r25c1-t9 r1c2-t9">
+<p>The account used to perform Oracle Enterprise Manager database administration tasks.This account is created only if you configure the database to use the Database Control.</p>
+</td>
+<td align="left" headers="r25c1-t9 r1c3-t9">
+<p><span class="italic">Oracle Enterprise Manager Grid Control Installation and Basic Configuration</span></p>
+<br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r26c1-t9" headers="r1c1-t9">
+<p><code>SYSTEM</code><a id="sthref804" name="sthref804"></a><a id="sthref805" name="sthref805"></a><a id="sthref806" name="sthref806"></a></p>
+</td>
+<td align="left" headers="r26c1-t9 r1c2-t9">
+<p>Used for performing database administration tasks.</p>
+</td>
+<td align="left" headers="r26c1-t9 r1c3-t9">
+<p><span class="italic">Oracle Database Administrator's Guide</span></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r27c1-t9" headers="r1c1-t9">
+<p><code>WMSYS</code><a id="sthref807" name="sthref807"></a><a id="sthref808" name="sthref808"></a><a id="sthref809" name="sthref809"></a></p>
+</td>
+<td align="left" headers="r27c1-t9 r1c2-t9">
+<p>The account used to store the metadata information for Oracle Workspace Manager.</p>
+</td>
+<td align="left" headers="r27c1-t9 r1c3-t9">
+<p><span class="italic">Oracle Database Application Developer's Guide - Workspace Manager</span></p>
+<br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r28c1-t9" headers="r1c1-t9">
+<p><code>XDB</code><a id="sthref810" name="sthref810"></a><a id="sthref811" name="sthref811"></a><a id="sthref812" name="sthref812"></a><a id="sthref813" name="sthref813"></a></p>
+</td>
+<td align="left" headers="r28c1-t9 r1c2-t9">
+<p>Used for storing Oracle XML DB data and metadata.</p>
+</td>
+<td align="left" headers="r28c1-t9 r1c3-t9">
+<p><span class="italic">Oracle XML DB Developer's Guide</span><a id="sthref814" name="sthref814"></a></p>
+<br /></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblhruleformalwide" -->
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p>"Privileges, Roles, and Security Policies" of <span class="italic">Oracle Database Concepts</span></p>
+</li>
+<li type="disc">
+<p>"The Oracle Database Administrator" of <span class="italic">Oracle Database Administrator's Guide</span></p>
+</li>
+<li type="disc">
+<p>"Administering External Users and Roles on Windows" of <span class="italic">Oracle Database Platform Guide for Microsoft Windows (32-Bit)</span></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect2" -->
+<a id="BDCDIEBD" name="BDCDIEBD"></a>
+<div class="sect2"><a id="sthref815" name="sthref815"></a>
+<h3 class="sect2"><span class="secnum">5.6.2</span> Unlocking and Changing Passwords<a id="sthref816" name="sthref816"></a><a id="sthref817" name="sthref817"></a><a id="sthref818" name="sthref818"></a></h3>
+<p>Passwords for all Oracle system administration accounts except <code>SYS</code>, <code>SYSTEM</code>, <code>SYSMAN</code>, and <code>DBSNMP</code> are revoked after installation. Before you use a locked account, you must unlock it and reset its password. If you created a starter database during the installation, Database Configuration Assistant displays a screen with your database information and the Password Management button. Use the Password Management button to unlock only the usernames you will use.</p>
+<p>If you created a starter database during the installation, but you did not unlock the required account, unlock the account using one of the following methods:</p>
+<ul>
+<li type="disc">
+<p><a href="#CHDJDDEA">Using SQL*Plus to Unlock and Change Passwords</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDCBCHD">Using Enterprise Manager Database Control to Unlock and Change Passwords</a></p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+To permit unauthenticated access to your data through HTTP, unlock the <code>ANONYMOUS</code> account.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Database Administrator's Guide</span> for more information about:
+<ul>
+<li type="disc">
+<p>Unlocking and changing passwords after installation</p>
+</li>
+<li type="disc">
+<p>Oracle security procedures</p>
+</li>
+<li type="disc">
+<p>Security best practices</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+<a id="CHDJDDEA" name="CHDJDDEA"></a>
+<div class="sect3"><a id="sthref819" name="sthref819"></a>
+<h4 class="sect3"><span class="secnum">5.6.2.1</span> Using SQL*Plus to Unlock and Change Passwords</h4>
+<p><a id="sthref820" name="sthref820"></a>Use <a id="sthref821" name="sthref821"></a>SQL*Plus to unlock accounts and change passwords any time after the installation process.</p>
+<p>To change a password after installation:</p>
+<ol type="1" start="1">
+<li>
+<p>Start SQL*Plus:</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\&gt; sqlplus /NOLOG
+
+</pre></li>
+<li>
+<p>Connect as <code>SYSDBA</code>:</p>
+<pre xml:space="preserve" class="oac_no_warn">SQL&gt; connect sys/<span class="italic">SYS_password</span> as sysdba
+
+</pre></li>
+<li>
+<p>Enter a command similar to the following, where <code><span class="codeinlineitalic">account</span></code> is the user account that you want to unlock and <code><span class="codeinlineitalic">password</span></code> is the new password:</p>
+<pre xml:space="preserve" class="oac_no_warn">SQL&gt; ALTER USER <span class="italic">account</span> [IDENTIFIED BY <span class="italic">password</span>] ACCOUNT UNLOCK;
+
+</pre>
+<p>In this example:</p>
+<ul>
+<li type="disc">
+<p>The <code>ACCOUNT</code> <code>UNLOCK</code> clause unlocks the account.</p>
+</li>
+<li type="disc">
+<p>The <code>IDENTIFIED</code> <code>BY</code> <code><span class="codeinlineitalic">password</span></code> clause resets the password.</p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CHDCBCHD" name="CHDCBCHD"></a>
+<div class="sect3"><a id="sthref822" name="sthref822"></a>
+<h4 class="sect3"><span class="secnum">5.6.2.2</span> Using Enterprise Manager Database Control to Unlock and Change Passwords<a id="sthref823" name="sthref823"></a></h4>
+<p><a id="sthref824" name="sthref824"></a>To unlock and reset user account passwords with Oracle Enterprise Manager Database Control:</p>
+<ol type="1" start="1">
+<li>
+<p>Log in to Database Control.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="#BDCJJGDA">"Logging into Enterprise Manager Database Control"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</li>
+<li>
+<p>Click <span class="bold">Administration</span>.</p>
+</li>
+<li>
+<p>In the Security section of the Administration page, click <span class="bold">Users</span>.</p>
+<p>Enterprise Manager displays a table containing all database accounts. The Account Status column indicates whether the account is locked and whether the password is expired.</p>
+</li>
+<li>
+<p>Select the user account you want to modify, then click <span class="bold">Edit</span>.</p>
+</li>
+<li>
+<p>Use the General page of the Users property sheet to change the password and lock or unlock the selected account. Click <span class="bold">Help</span> for additional information.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="i1006051" name="i1006051"></a>
+<div class="sect1"><a id="sthref825" name="sthref825"></a>
+<h2 class="sect1"><span class="secnum">5.7</span> Identifying Databases<a id="sthref826" name="sthref826"></a><a id="sthref827" name="sthref827"></a><a id="sthref828" name="sthref828"></a><a id="sthref829" name="sthref829"></a></h2>
+<p>The Oracle Database 10<span class="italic">g</span> software identifies a database by its <a id="sthref830" name="sthref830"></a><a id="sthref831" name="sthref831"></a>global database name. A global database name consists of the database name and database domain. Usually, the database domain is the same as the network domain, but it need not be. The global database name uniquely distinguishes a database from any other database in the same network. You specify the global database name when you create a database during the installation, or using Database Configuration Assistant. For example:</p>
+<p><code>sales.us.mycompany.com</code></p>
+<p>In this example:</p>
+<ul>
+<li type="disc">
+<p><code>sales</code> is the name of the database. The database name portion is a string of no more than 30 characters that can contain alphanumeric, underscore (_), dollar ($), and pound (#) characters. The <code>DB_NAME</code> initialization parameter specifies the database name.</p>
+</li>
+<li type="disc">
+<p><code>us.mycompany.com</code> is the network domain in which the database is located. Together, the database name and the network domain make the global database name unique. The domain portion is a string of no more than 128 characters that can contain alphanumeric, underscore (_), and pound (#) characters. The <code>DB_DOMAIN</code> initialization parameter specifies the domain name.</p>
+</li>
+</ul>
+<p>The <code>DB_NAME</code> parameter and the <code>DB_DOMAIN</code> name parameter combine to create the global database name value assigned to the <code>SERVICE_NAMES</code> parameter in the initialization parameter file.</p>
+<p>The System Identifier (SID) identifies a specific database instance. The SID uniquely distinguishes the instance from any other instance on the same computer. Each database instance requires a unique SID and database name. <a id="sthref832" name="sthref832"></a></p>
+<p>For example, if the SID and database name for an Oracle database are <code>ORCL</code>, then each database file is located in the <code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\</code><code><span class="codeinlineitalic">ORACLE_HOME</span></code><code>\</code><code>orcl</code> directory and the initialization parameter file is located in the <code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\admin\</code><code>orcl</code><code>\pfile</code> directory.</p>
+</div>
+<!-- class="sect1" -->
+<a id="BDCFBGCH" name="BDCFBGCH"></a>
+<div class="sect1"><a id="sthref833" name="sthref833"></a>
+<h2 class="sect1"><span class="secnum">5.8</span> Locating the Server Parameter File<a id="sthref834" name="sthref834"></a><a id="sthref835" name="sthref835"></a><a id="sthref836" name="sthref836"></a></h2>
+<p>The starter database contains one database initialization parameter file. <a id="sthref837" name="sthref837"></a><a id="sthref838" name="sthref838"></a><a id="sthref839" name="sthref839"></a>The initialization parameter file, <code>init.ora.</code><code><span class="codeinlineitalic">xxxxx</span></code>, must exist for an instance to start. A parameter file is a text file that contains a list of instance configuration parameters. The starter database init.ora file has preconfigured parameters. You do not need to edit this file to use the starter database.</p>
+<p>The server parameter file (SPFILE) is created from the initialization parameter file, then the initialization parameter file is renamed. The SPFILE filename is <code>spfile</code><code><span class="codeinlineitalic">SID</span></code><code>.ora</code> and is located in the <code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\</code><code><span class="codeinlineitalic">ORACLE_HOME</span></code><code>\database</code> directory.</p>
+<p>You can use Oracle Enterprise Manager Database Control to view the location of the server parameter file and list all of the initialization parameters, as follows:<a id="sthref840" name="sthref840"></a></p>
+<ol type="1" start="1">
+<li>
+<p>Log in to Database Control.</p>
+<div align="center">
+<div class="inftblinformal"><br />
+<table class="Informal oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr align="left" valign="top">
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="#BDCJJGDA">"Logging into Enterprise Manager Database Control"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblinformal --></div>
+</li>
+<li>
+<p>Click <span class="bold">Administration</span>.</p>
+</li>
+<li>
+<p>In the Instance section of the Administration page, click <span class="bold">All Initialization Parameters</span>.</p>
+<p>Database Control displays a table listing the current value of each initialization parameter.</p>
+</li>
+<li>
+<p>Click <span class="bold">SPFile</span>.</p>
+<p>Database Control displays a table listing the value of each initialization parameter specified in the server parameter file. The location of the server parameter file is displayed before the table.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p>"Oracle Database Specifications for Windows" of <span class="italic">Oracle Database Platform Guide for Microsoft Windows (32-Bit)</span> for a list of Oracle Database-specific initialization parameters for Windows and their default values</p>
+</li>
+<li type="disc">
+<p><span class="italic">Oracle Database Reference</span> for more information about initialization parameters</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect1" -->
+<a id="BDCFHCCJ" name="BDCFHCCJ"></a>
+<div class="sect1"><a id="sthref841" name="sthref841"></a>
+<h2 class="sect1"><span class="secnum">5.9</span> Identifying Tablespaces and Datafiles<a id="sthref842" name="sthref842"></a><a id="sthref843" name="sthref843"></a><a id="sthref844" name="sthref844"></a></h2>
+<p><a id="sthref845" name="sthref845"></a>An Oracle Database is divided into smaller logical areas of space known as tablespaces. Each tablespace corresponds to one or more physical datafiles. Datafiles contain the contents of logical database structures such as tables and indexes. A datafile can be associated with only one tablespace and database.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+The <code>SYSAUX</code> and <code>SYSTEM</code> tablespaces must be present in all Oracle Database 10<span class="italic">g</span> release 1 (10.2) databases.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+<p><a href="#g1016274">Table 5-2</a> list the tablespaces and datafiles in the Oracle Database. By default, the datafiles are located in the <code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\oradata\</code><code><span class="codeinlineitalic">DB_NAME</span></code> directory.</p>
+<div class="tblhruleformal"><a id="sthref846" name="sthref846"></a><a id="g1016274" name="g1016274"></a>
+<p class="titleintable">Table 5-2 Tablespaces and Datafiles<a id="sthref847" name="sthref847"></a><a id="sthref848" name="sthref848"></a><a id="sthref849" name="sthref849"></a></p>
+<table class="HRuleFormal" title="Tablespaces and Datafiles" summary="This table lists the Tablespaces and Datafiles of the database. Column 1 lists the tablespaces. Column 2 lists the datafile name. Column 3 describes the content of the datafile." dir="ltr" border="1" width="100%" frame="hsides" rules="rows" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t17">Tablespace</th>
+<th align="left" valign="bottom" id="r1c2-t17">Datafile</th>
+<th align="left" valign="bottom" id="r1c3-t17">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t17" headers="r1c1-t17">
+<p><code>EXAMPLE<a id="sthref850" name="sthref850"></a><a id="sthref851" name="sthref851"></a></code></p>
+</td>
+<td align="left" headers="r2c1-t17 r1c2-t17">
+<p><code>EXAMPLE01.DBF</code><a id="sthref852" name="sthref852"></a></p>
+</td>
+<td align="left" headers="r2c1-t17 r1c3-t17">
+<p><a id="sthref853" name="sthref853"></a><a id="sthref854" name="sthref854"></a>Stores the Sample Schemas, if you included them.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t17" headers="r1c1-t17">
+<p><code>SYSAUX</code><a id="sthref855" name="sthref855"></a></p>
+</td>
+<td align="left" headers="r3c1-t17 r1c2-t17">
+<p><code>SYSAUX01.DBF</code><a id="sthref856" name="sthref856"></a></p>
+</td>
+<td align="left" headers="r3c1-t17 r1c3-t17">
+<p>Serves as an auxiliary tablespace to the <code>SYSTEM</code> tablespace. Some products and options that previously used the <code>SYSTEM</code> tablespace now use the <code>SYSAUX</code> tablespace to reduce the load on the <code>SYSTEM</code> tablespace.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t17" headers="r1c1-t17">
+<p><code>SYSTEM</code> <a id="sthref857" name="sthref857"></a></p>
+</td>
+<td align="left" headers="r4c1-t17 r1c2-t17">
+<p><code>SYSTEM01.DBF</code><a id="sthref858" name="sthref858"></a></p>
+</td>
+<td align="left" headers="r4c1-t17 r1c3-t17">
+<p>Stores the data dictionary, including definitions of tables, views, and stored procedures needed by the Oracle Database. Information in this area is maintained automatically.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t17" headers="r1c1-t17">
+<p><code>TEMP</code> <a id="sthref859" name="sthref859"></a><a id="sthref860" name="sthref860"></a><a id="sthref861" name="sthref861"></a></p>
+</td>
+<td align="left" headers="r5c1-t17 r1c2-t17">
+<p><code>TEMP01.DBF</code><a id="sthref862" name="sthref862"></a></p>
+</td>
+<td align="left" headers="r5c1-t17 r1c3-t17">
+<p>Stores temporary tables and indexes created during the processing of your SQL statement. If you are running a SQL statement that involves a lot of sorting, such as the constructs <code>GROUP</code> <code>BY</code>, <code>ORDER</code> <code>BY</code>, or <code>DISTINCT</code>, then you may need to expand this tablespace.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t17" headers="r1c1-t17">
+<p><code>UNDOTBS</code> <a id="sthref863" name="sthref863"></a><a id="sthref864" name="sthref864"></a></p>
+</td>
+<td align="left" headers="r6c1-t17 r1c2-t17">
+<p><code>UNDOTBS01.DBF</code></p>
+</td>
+<td align="left" headers="r6c1-t17 r1c3-t17">
+<p>Stores undo information. The <a href="glossary.htm#i432471"><span class="xrefglossterm">undo tablespace</span></a> contains one or more undo segments that maintain transaction history that is used to roll back, or undo, changes to the database.</p>
+<p>All starter databases are configured to run in automatic undo management mode.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t17" headers="r1c1-t17">
+<p><code>USERS</code> <a id="sthref865" name="sthref865"></a><a id="sthref866" name="sthref866"></a></p>
+</td>
+<td align="left" headers="r7c1-t17 r1c2-t17">
+<p><code>USERS01.DBF</code></p>
+</td>
+<td align="left" headers="r7c1-t17 r1c3-t17">
+<p>Stores database objects created by database users.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblhruleformal" -->
+<p>To use Oracle Enterprise Manager Database Control to view the list of tablespaces currently available in your database:<a id="sthref867" name="sthref867"></a></p>
+<ol type="1" start="1">
+<li>
+<p>Log in to Database Control.</p>
+<div align="center">
+<div class="inftblinformal"><br />
+<table class="Informal oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr align="left" valign="top">
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="#BDCJJGDA">"Logging into Enterprise Manager Database Control"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblinformal --></div>
+</li>
+<li>
+<p>Click <span class="bold">Administration</span>.</p>
+</li>
+<li>
+<p>In the Storage section of the Administration page, click <span class="bold">Tablespaces</span>.</p>
+<p>Enterprise Manager displays a table containing all the tablespaces currently defined for this database instance. For more information about using Database Control to view, modify, and create tablespaces, click <span class="bold">Help</span>.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p>"Tablespaces, Datafiles, and Control Files" of <span class="italic">Oracle Database Concepts</span></p>
+</li>
+<li type="disc">
+<p>"Managing Tablespaces" and "Managing Datafiles and Tempfiles" of <span class="italic">Oracle Database Administrator's Guide</span></p>
+</li>
+<li type="disc">
+<p>"Managing the Undo Tablespace" of <span class="italic">Oracle Database Administrator's Guide</span></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect1" -->
+<a id="BDCDEIDJ" name="BDCDEIDJ"></a>
+<div class="sect1"><a id="sthref868" name="sthref868"></a>
+<h2 class="sect1"><span class="secnum">5.10</span> Locating Redo Log Files<a id="sthref869" name="sthref869"></a><a id="sthref870" name="sthref870"></a><a id="sthref871" name="sthref871"></a><a id="sthref872" name="sthref872"></a></h2>
+<p>A redo log can be either an online redo log or an archived redo log. The online redo log is a set of two or more redo log groups that records all changes made to Oracle datafiles and control files. An archived redo log is a copy of an online redo log that has been copied to an offline destination. If the database is in <code>ARCHIVELOG</code> mode and automatic archiving is enabled, then the archive process or processes copy each online redo log to one or more archive log destinations after it is filled.</p>
+<p>The starter database and the custom database each contain three redo log files located in the <code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\oradata</code><code>\</code><code><span class="codeinlineitalic">DB_NAME</span></code> directory. Redo log files hold a record of all changes made to data in the database buffer cache. If an instance fails, then Oracle Database uses the redo log files to recover the modified data in memory.</p>
+<p>To use Oracle Enterprise Manager Database Control to view or modify the redo log files for your starter database:<a id="sthref873" name="sthref873"></a></p>
+<ol type="1" start="1">
+<li>
+<p>Start your Web browser and log in to Database Control.</p>
+<div align="center">
+<div class="inftblinformal"><br />
+<table class="Informal oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr align="left" valign="top">
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="#BDCJJGDA">"Logging into Enterprise Manager Database Control"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblinformal --></div>
+</li>
+<li>
+<p>Click <span class="bold">Administration</span>.</p>
+</li>
+<li>
+<p>In the Storage section of the Administration page, click <span class="bold">Redo Log Groups</span>.</p>
+<p>Enterprise Manager displays a table containing the control files currently defined for this database instance.</p>
+</li>
+<li>
+<p>To view the name and location of the redo log file associated with a particular group, select that group then click <span class="bold">View</span>.</p>
+<p>For more information about using Database Control to view, modify, and create tablespaces, click <span class="bold">Help</span>.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p><span class="italic">Oracle Database Backup and Recovery Basics</span></p>
+</li>
+<li type="disc">
+<p>"Managing Archived Redo Logs" in <span class="italic">Oracle Database Administrator's Guide</span></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect1" -->
+<a id="BDCBJEEG" name="BDCBJEEG"></a>
+<div class="sect1"><a id="sthref874" name="sthref874"></a>
+<h2 class="sect1"><span class="secnum">5.11</span> Locating Control Files<a id="sthref875" name="sthref875"></a><a id="sthref876" name="sthref876"></a><a id="sthref877" name="sthref877"></a></h2>
+<p>The starter database and the custom database contain three control files located in the <code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\oradata</code><code>\</code><code><span class="codeinlineitalic">DB_NAME</span></code> directory. Oracle recommends that you keep at least three control files (on separate physical drives) for each database and set the <code>CONTROL_FILES</code> initialization parameter to list each control file.</p>
+<p>A control file is an administrative file required to start and run the database. The control file records the physical structure of the database. For example, a control file contains the database name, and the names and locations of the database datafiles and redo log files.</p>
+<p>To use Oracle Enterprise Manager Database Control to view or modify the control files for your starter database:<a id="sthref878" name="sthref878"></a></p>
+<ol type="1" start="1">
+<li>
+<p>Log in to Database Control.</p>
+<div align="center">
+<div class="inftblinformal"><br />
+<table class="Informal oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr align="left" valign="top">
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="#BDCJJGDA">"Logging into Enterprise Manager Database Control"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblinformal --></div>
+</li>
+<li>
+<p>Click <span class="bold">Administration</span>.</p>
+</li>
+<li>
+<p>In the Storage section of the Administration page, click <span class="bold">Controlfiles</span>.</p>
+<p>Enterprise Manager displays a table containing the control files currently defined for this database instance. For more information about using control files and backing up control files, click <span class="bold">Help</span>.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+"Managing Control Files" of <span class="italic">Oracle Database Administrator's Guide</span> for information about setting this initialization parameter value</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect1" -->
+<a id="i1006089" name="i1006089"></a>
+<div class="sect1"><a id="sthref879" name="sthref879"></a>
+<h2 class="sect1"><span class="secnum">5.12</span> Understanding Oracle Database Services on Windows</h2>
+<p>Two main Oracle services are automatically started after installation when you create a database:</p>
+<ul>
+<li type="disc">
+<p><code>OracleService</code><code><span class="codeinlineitalic">SID</span></code> (the Oracle Database service)</p>
+</li>
+<li type="disc">
+<p><code>Oracle</code><code><span class="codeinlineitalic">HOME_NAME</span></code><code>TNSListener</code> (the Oracle Database listener service)</p>
+</li>
+</ul>
+<p>If you installed Oracle Enterprise Manager Database Control, then the <code>OracleDBConsole</code><code><span class="codeinlineitalic">SID</span></code> service is automatically started. In you configured Automatic Storage Management, the <code>OracleCSService</code> and <code>OracleASMService+ASM</code> services are listed as well. However, other services for networking or other individual components may not automatically start.</p>
+<p><a id="sthref880" name="sthref880"></a><a id="sthref881" name="sthref881"></a></p>
+</div>
+<!-- class="sect1" --></div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="postcfg.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="deinstall.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;1996, 2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

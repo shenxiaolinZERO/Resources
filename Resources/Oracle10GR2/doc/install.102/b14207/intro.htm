@@ -1,0 +1,721 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>1 Introduction to Installing Oracle Clusterware and Oracle Real Application Clusters</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.1.3 Build 116" />
+<meta name="Date" content="August 18, 2005 11:44:23" />
+<meta name="doctitle" content="Oracle&reg; Database Oracle Clusterware and Oracle Real Application Clusters Installation Guide 10g Release 2 (10.2) for Microsoft Windows" />
+<meta name="partno" content="B14207-01" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="part1.htm" title="Previous" type="text/html" />
+<link rel="Next" href="part2.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14207.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database Oracle Clusterware and Oracle Real Application Clusters Installation Guide<br />
+10<i>g</i> Release 2 (10.2) for Microsoft Windows</b><br />
+Part Number B14207-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="part1.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="part2.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top"><a href="../b14207.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="g1033340" name="g1033340"></a><a id="i1026198" name="i1026198"></a>
+<h1><span class="secnum">1</span> <a id="sthref57" name="sthref57"></a>Introduction to Installing Oracle Clusterware and Oracle Real Application Clusters</h1>
+<p>This chapter provides an overview of the Oracle Clusterware and Oracle Real Application Clusters (RAC) installation and configuration procedures and includes the following topics:</p>
+<ul>
+<li type="disc">
+<p><a href="#BHCBJAEI">Oracle Clusterware and Oracle Real Application Clusters Documentation Overview</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1029791">General System Installation Requirements for Oracle Real Application Clusters</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1030440">Cluster Setup and Pre-Installation Configuration Tasks for Real Application Clusters</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1029311">Pre-Installation, Installation, and Post-Installation Overview</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1030388">The Oracle Universal Installer and Real Application Clusters</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1031225">Storage Considerations for Installing Oracle Database 10<span class="italic">g</span> Real Application Clusters</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1029287">Additional Considerations for Using Oracle Database 10<span class="italic">g</span> Features in RAC</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1027615">Oracle Database 10<span class="italic">g</span> and Real Application Clusters Components</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDFEFBC">Oracle Database 10<span class="italic">g</span> Real Application Clusters Version Compatibility</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDEIIGB">Cloning Oracle Clusterware and RAC in Grid Environments</a></p>
+</li>
+</ul>
+<a id="BHCBJAEI" name="BHCBJAEI"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref58" name="sthref58"></a>
+<h2><span class="secnum">1.1</span> <a id="sthref59" name="sthref59"></a><a id="sthref60" name="sthref60"></a>Oracle Clusterware and Oracle Real Application Clusters Documentation Overview</h2>
+<p>This section describes the Oracle Clusterware and RAC documentation set.</p>
+<a id="sthref61" name="sthref61"></a>
+<p class="subhead2">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Installation Guide for Microsoft Windows</p>
+<p><span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Installation Guide for Microsoft Windows</span> (this document) contains the pre-installation, installation, and post-installation information for Microsoft Windows. Additional information for this release may be available in the Oracle Database 10<span class="italic">g</span> README or Release Notes. The platform-specific Oracle Database 10<span class="italic">g</span> media contains a copy of this book in both HTML and PDF formats.</p>
+<p>The Server Documentation media contains <span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span></p>
+<a id="CHDBBEED" name="CHDBBEED"></a><a id="sthref62" name="sthref62"></a>
+<p class="subhead2">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide<a id="sthref63" name="sthref63"></a></p>
+<p><span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span> describes how to administer the Oracle Clusterware components such as the voting disks and the Oracle Cluster Registry (OCR) devices. This book also explains how to administer storage and how to use RAC scalability features to add and delete instances and nodes. This book also discusses how to use Recovery Manager (RMAN), and how to perform backup and recovery in RAC.</p>
+<p><span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span> describes RAC deployment topics such as services, high availability, and workload management. The book describes how the Automatic Workload Repository (AWR) tracks and reports service levels and how you can use service level thresholds and alerts to balance complex workloads in your RAC environment. The book also describes how to make your applications highly available using the Oracle Clusterware.</p>
+<p><span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span> also provides information about how to monitor and tune performance in RAC environments by using Oracle Enterprise Manager and by using information in AWR and Oracle performance views. This book also highlights some application-specific deployment techniques for online transaction processing and data warehousing environments.</p>
+</div>
+<!-- class="sect1" -->
+<a id="i1029791" name="i1029791"></a>
+<div class="sect1"><a id="sthref64" name="sthref64"></a>
+<h2><span class="secnum">1.2</span> General System Installation Requirements<a id="sthref65" name="sthref65"></a><a id="sthref66" name="sthref66"></a><a id="sthref67" name="sthref67"></a> for Oracle Real Application Clusters</h2>
+<p>Each node that is going to be part of your Oracle Clusterware and RAC installation must meet the hardware and software requirements described in this section. You can verify these requirements with the Cluster Verification Utility. This book provides step-by-step tasks that you can follow to prepare your hardware and software to meet these requirements for your system in <a href="part2.htm#CHDGFBJF">Part II</a> of this book. You can verify that you have met these requirements with the Cluster Verification Utility.</p>
+<p>Before using this manual, however, you should read the <span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span> to inform yourself about concepts such as services, setting up storage, and other information relevant to configuring your cluster.</p>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref68" name="sthref68"></a>
+<h3><span class="secnum">1.2.1</span> <a id="sthref69" name="sthref69"></a>Cluster Verification Utility</h3>
+<p>Cluster Verification Utility (CVU) is provided with Oracle Database 10<span class="italic">g</span> Release 2 (10.2) with Real Application Clusters. The purpose of CVU is to enable you or your hardware vendors to verify during setup and configuration that all components required for a successful installation of a RAC database are installed and configured correctly, and to provide you with ongoing assistance any time you need to make changes to your RAC cluster. You are provided with commands to use CVU to verify completion of tasks in this guide.</p>
+<p>There are two types of CVU commands:</p>
+<ul>
+<li type="disc">
+<p><span class="bold">Stage Commands</span> are CVU commands used to test system setup and readiness for successful software installation, database creation, or configuration change steps. These commands are also used to validate successful completion of specific cluster configuration steps.</p>
+</li>
+<li type="disc">
+<p><span class="bold">Component Commands</span> are CVU commands used to check individual cluster components, and determine their state.</p>
+</li>
+</ul>
+<p>This guide provides stage and component CVU commands where appropriate to assist you with cluster verification.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span> for detailed information about the Cluster Verification Utility.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect2" -->
+<a id="i1028985" name="i1028985"></a>
+<div class="sect2"><a id="sthref70" name="sthref70"></a>
+<h3><span class="secnum">1.2.2</span> Hardware Requirements for Oracle Database 10<span class="italic">g</span> Real Application Clusters</h3>
+<p>Each node in a cluster requires the following hardware:</p>
+<ul>
+<li type="disc">
+<p>External shared disks for storing the Oracle Clusterware and database files.</p>
+<p>The disk configuration options available to you are described in <a href="storage.htm#CDECEBGH">Chapter 3, "Storage Pre-Installation Tasks"</a>. Review these options before you decide which storage option to use in your RAC environment. However, note that when Database Configuration Assistant (DBCA) configures automatic disk backup, it uses a database recovery area which must be shared. The database files and recovery files do not necessarily have to be located on the same type of storage.</p>
+</li>
+<li type="disc">
+<p>One private internet protocol (IP) address for each node to serve as the private interconnect. The following must be true for each private IP address:</p>
+<ul>
+<li type="circle">
+<p>It must be separate from the public network</p>
+</li>
+<li type="circle">
+<p>It must be accessible on the same network interface on each node</p>
+</li>
+<li type="circle">
+<p>It must have a unique address on each node</p>
+</li>
+</ul>
+<p>The private interconnect is used for inter-node communication by both Oracle Clusterware and RAC. If the private address is available from a network name server (DNS), then you can use that name. Otherwise, the private IP address must be available in each node's C:\WINNT\system32\drivers\etc\hosts file.</p>
+<p>During Oracle Clusterware installation, the information you enter as the private IP address determines which private interconnects are used by RAC database instances. If you define more than one interconnect, then they must all be in an up state, just as if their IP addresses were specified in the initialization parameter, <a id="sthref71" name="sthref71"></a>CLUSTER_INTERCONNECTS. RAC does not fail over between cluster interconnects; if one is down then the instances using them will not start.</p>
+<p>Oracle recommends that you use a logical IP address that is available across all OLE networks, and that you take advantage of any available operating system-based failover mechanism by configuring it according to your third-party vendor's instructions for using their product to support failover.</p>
+</li>
+<li type="disc">
+<p>One public IP address for each node, to be used as the Virtual IP (VIP) address for client connections and for connection failover The name associated with the VIP must be different from the default host name.</p>
+<p>This VIP must be associated with the same interface name on every node that is part of your cluster. In addition, the IP addresses that you use for all of the nodes that are part of a cluster must be from the same subnet. If you have a domain name server (DNS), then register the host names for the <a id="sthref72" name="sthref72"></a>VIP with DNS. The Virtual IP address should not be in use at the time of the installation, because this is a Virtual IP address that Oracle manages.</p>
+</li>
+<li type="disc">
+<p>One public fixed hostname address for each node, typically assigned by the system administrator during operating system installation. If you have a DNS, then register both the fixed IP and the VIP address with DNS. If you do not have DNS, then you must make sure that the public IP and VIP addresses for all nodes are in each node's <code>host</code> file.</p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+In addition to these requirements, Oracle recommends the following:
+<ul>
+<li type="disc">
+<p>While installing and using Real Application Clusters software, you should attempt to keep the system clocks on all of your cluster nodes as close as possible to the same time.</p>
+</li>
+<li type="disc">
+<p>Use redundant switches as a standard configuration for all cluster sizes.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><a id="sthref73" name="sthref73"></a>
+<h3><span class="secnum">1.2.3</span> Software Requirements for Oracle Database 10<span class="italic">g</span> Real Application Clusters</h3>
+<p>Each node in a cluster requires a supported interconnect software protocol to support Cache Fusion, and to support Oracle Clusterware polling. Your interconnect <span class="italic">must</span> be certified by Oracle for your platform. You should also have a Web browser, both to enable Oracle Enterprise Manager, and to view online documentation.</p>
+<p>RAC databases on the same cluster must all be 64-bit or all 32-bit. A mix of 32-bit RAC databases and 64-bit RAC databases on the same cluster is not supported.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Database Platform Guide for Microsoft Windows</span> for additional information about the OSDBA and OSOPER groups, and the <code>SYSDBA</code> and <code>SYSOPER</code> privileges.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="i1030440" name="i1030440"></a>
+<div class="sect1"><a id="sthref74" name="sthref74"></a>
+<h2><span class="secnum">1.3</span> Cluster Setup and Pre-Installation Configuration Tasks for Real Application Clusters</h2>
+<p>Before installing RAC, perform the following procedures:</p>
+<a id="i1029050" name="i1029050"></a>
+<ol type="1" start="1">
+<li>
+<p>Ensure that you have a certified combination of operating system and Oracle software version by referring to the Oracle<span class="italic">MetaLink</span> certification information, which is located at the following Web site:</p>
+<pre xml:space="preserve" class="oac_no_warn"><a href="http://metalink.oracle.com">http://metalink.oracle.com</a>
+
+</pre>
+<p>Click <span class="bold">Certify &amp; Availability</span>, and select <span class="bold">1.View Certifications by Product</span>.</p>
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+The layout of the Oracle<span class="italic">MetaLink</span> site and the site's certification policies are subject to change.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></li>
+<li><a id="i1029060" name="i1029060"></a>
+<p>Configure a high-speed interconnect that uses a private network. Some platforms support automatic failover to an additional interconnect.</p>
+</li>
+<li>
+<p>Determine the storage option for your system and configure the shared disk. Oracle recommends that you use Automatic Storage Management (ASM) and Oracle Managed Files (OMF), or a cluster file system. If you use ASM or a cluster file system, then you can also take advantage of OMF and other Oracle Database 10<span class="italic">g</span> storage features. If you use RAC on Oracle Database 10<span class="italic">g</span> Standard Edition, then you must use ASM.</p>
+<p>If you intend to use <a id="sthref75" name="sthref75"></a><a id="sthref76" name="sthref76"></a>multiple voting disks, then you need at least three voting disks to provide sufficient voting disk redundancy, and you should ensure that each voting disk is located on physically independent storage. When you start the Oracle Universal Installer (OUI) to install Oracle Clusterware, you are asked to provide the paths for each voting disk you want to configure: one disk, if you have existing redundancy support for the voting disk, or three disks to provide redundant voting disks managed by Oracle.</p>
+<p>In addition, if you select multiple voting disks managed by Oracle, then you should ensure that all voting disks are located on a secure network protected from external security threats, and you should ensure that all voting disks are on regularly maintained systems. If a voting disk fails, then you need to fix the physical hardware and bring it back online. The Cluster Synchronization Services (CSS)<a id="sthref77" name="sthref77"></a><a id="sthref78" name="sthref78"></a> component of Oracle Clusterware continues to use the other voting disks, and automatically makes use of the restored drive when it is brought online again.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+If you use ASM, then Oracle recommends that you install ASM<a id="sthref79" name="sthref79"></a><a id="sthref80" name="sthref80"></a> in a separate home from the Oracle Clusterware home and the Oracle home. You should particularly follow this recommendation if the ASM instance is to manage storage for more than one RAC database. Following this recommendation reduces downtime when upgrading or de-installing different versions of the software.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</li>
+<li>
+<p>Install the operating system patches that are listed in the pre-installation chapter in this book in <a href="part2.htm#CHDGFBJF">Part II</a>.</p>
+</li>
+<li>
+<p>Use the Cluster Verification Utility (CVU) to help you to verify that your system meets requirements for installing the Oracle Database with RAC.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect1" -->
+<a id="i1029311" name="i1029311"></a>
+<div class="sect1"><a id="sthref81" name="sthref81"></a>
+<h2><span class="secnum">1.4</span> Pre-Installation, Installation, and Post-Installation Overview</h2>
+<p>The following describes the installation procedures that are covered in <a href="part2.htm#CHDGFBJF">Part II</a> and <a href="part3.htm#BCFGBCID">Part III</a> of this book.</p>
+<div class="sect2"><a id="sthref82" name="sthref82"></a>
+<h3><span class="secnum">1.4.1</span> Pre-Installation Overview for Oracle Clusterware and Oracle Real Application Clusters</h3>
+<p>The pre-installation procedures in <a href="part2.htm#CHDGFBJF">Part II</a> explain how to verify user equivalence, perform network connectivity tests, as well as how to set directory and file permissions. Complete all of the pre-installation procedures and verify that your system meets all of the pre-installation requirements before proceeding to the install phase.</p>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><a id="sthref83" name="sthref83"></a>
+<h3><span class="secnum">1.4.2</span> Installation Overview for Oracle Clusterware and Oracle Real Application Clusters</h3>
+<p>Oracle Database 10<span class="italic">g</span> Real Application Clusters installation is a two-phase installation. In phase one, use the Oracle Universal Installer (OUI) to install Oracle Clusterware as described in <a href="crswin.htm#BABCHCED">Chapter 4, "Installing Oracle Clusterware on Windows-Based Systems"</a>. In phase two, install the database software using OUI. The Oracle Clusterware installation starts the Oracle Clusterware processes in preparation for installing Oracle Database 10<span class="italic">g</span>. In phase two, you install the Oracle database software for use with single-instance or with RAC databases. To install the database software for use with single-instance databases in phase two, refer to the Microsoft Windows installation guides. To install the database software with RAC in phase two, use OUI to install the RAC software as described in <a href="racinstl.htm#CIHHEHBF">Chapter 5, "Installing Oracle Database 10<span class="italic">g</span> with Real Application Clusters"</a>. Note that the Oracle home that you use in phase one is a home for the Oracle Clusterware software which <span class="italic">must be different</span> from the Oracle home that you use in phase two.</p>
+<p>If OUI detects a previous version of the Oracle Database, then OUI starts the Database Upgrade Assistant (DBUA) to upgrade your database to Oracle Database 10<span class="italic">g</span> Release 2 (10.2). In addition, the DBUA displays a Service Configuration page for configuring services in your RAC database.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Database Upgrade Guide</span> for additional information about preparing for upgrades</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<p>After the database software installation completes, OUI starts the Oracle assistants, such as the Database Configuration Assistant (DBCA), to configure your environment and create your database. For a RAC database, you can later use DBCA Instance Management feature to add or modify services and instances as described in <a href="dbcacrea.htm#BGBIJGDA">Chapter 6, "Creating RAC Databases with the Database Configuration Assistant"</a>.</p>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><a id="sthref84" name="sthref84"></a>
+<h3><span class="secnum">1.4.3</span> Post-Installation Overview for Oracle Database 10<span class="italic">g</span> Real Application Clusters</h3>
+<p>After you create your database, download and install the most recent patch sets for your Oracle Database 10<span class="italic">g</span> version as described in the single-instance installation manual or in <a href="postinst.htm#g1011160">Chapter 7, "Real Application Clusters Post-Installation Procedures"</a>. If you are using other Oracle products with your RAC database, then you must also configure them.</p>
+<p>You must also perform several post-installation configuration tasks to use certain Oracle Database 10<span class="italic">g</span> products such as the Sample Schema, Oracle Net Services, or Oracle Messaging Gateway. You must also configure Oracle pre-compilers for your operating system and if desired, configure Oracle Advanced Security.</p>
+<p>Use the Companion media to install additional Oracle Database 10<span class="italic">g</span> software that may improve performance or extend database capabilities, for example, Oracle JVM, Oracle <span class="italic">inter</span>Media or Oracle Text.</p>
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic"><a class="olinkSRC RACAD" href="http://www.oracle.com/pls/db102/to_bookid?id=RACAD">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</a></span> for more information about using RAC scalability features of adding and deleting nodes and instances from RAC databases</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="i1030388" name="i1030388"></a>
+<div class="sect1"><a id="sthref85" name="sthref85"></a>
+<h2><span class="secnum">1.5</span> The Oracle Universal Installer and Real Application Clusters</h2>
+<p><a id="sthref86" name="sthref86"></a>The <a id="sthref87" name="sthref87"></a>Oracle Universal Installer (OUI) facilitates the installation of Oracle Clusterware and Oracle Database 10<span class="italic">g</span> software. In most cases, you use the graphical user interface (GUI) provided by OUI to install the software. However, you can also use OUI to complete non-interactive<a id="sthref88" name="sthref88"></a><a id="sthref89" name="sthref89"></a> (or "silent") installations, without using the GUI. See <a href="scripts.htm#CIHBDCAJ">Appendix B</a> for information about non-interactive installations.</p>
+<p>The Oracle Inventory maintains records of Oracle software versions and patches. Each installation has central inventory where the Oracle home is registered. Oracle software installations have a local inventory directory, whose path location is recorded in the central inventory Oracle home. The local inventory directory for each Oracle software installation contains a list of components and applied interim patches associated with that software. Because your Oracle software installation can be corrupted by faulty inventory information, OUI must perform all read and write operations on Oracle inventories. The Oracle Inventory is installed in the path <code><span class="codeinlineitalic">systemdrive</span></code>:<code>\program files\oracle</code>.</p>
+<p>When you install Oracle Clusterware or RAC, OUI copies the Oracle software onto the node from which you are running it. If your Oracle home is not on a cluster file system, then OUI propagates the software onto the other nodes that you have selected to be part of your OUI installation session. The Oracle Inventory maintains a list of each node that is a member of the RAC database, and lists the paths to each node's Oracle home. This is used to maintain patches and updates for each member node of the RAC database.</p>
+<p>If you create your RAC database using OUI, or if you create it later using DBCA, then Oracle Enterprise Manager Database Control is configured for your cluster database. Database control can manage your cluster database and, for a RAC database, all of its instances.</p>
+<p>You can also configure Enterprise Manager Grid Control to manage multiple databases and application servers from a single console. To manage RAC databases in Grid Control, you must a install Grid Control agent on each of the nodes of your cluster. The Agent installation is designed to recognize a cluster environment and install across all cluster nodes; you need to perform the install on only one of the cluster nodes to install Grid Control agent on all cluster nodes.</p>
+<p>When OUI installs the Oracle software, Oracle recommends that you select a preconfigured database, or use the Database Configuration Assistant (DBCA) interactively to create your cluster database. You can also manually create your database as described in procedures posted on the Oracle Technical Network, which is at the following URL:</p>
+<p><code>http://www.oracle.com/technology/index.html</code></p>
+<p>Oracle recommends that you use Automatic Storage Management (ASM). If you are not using ASM, or if you are not using a cluster file system, then configure shared raw devices before you create your database.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p><span class="italic">Oracle Universal Installer and OPatch User's Guide</span> for more details about OUI</p>
+</li>
+<li type="disc">
+<p><span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span> for information about using Enterprise Manager to administer RAC environments</p>
+</li>
+<li type="disc">
+<p>The Grid Technology Center on the Oracle Technology Network (OTN), which is available at the following URL:</p>
+<p><code><a href="http://www.oracle.com/technology/tech/index.html">http://www.oracle.com/technology/tech/index.html</a></code></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect1" -->
+<a id="i1031225" name="i1031225"></a>
+<div class="sect1"><a id="sthref90" name="sthref90"></a>
+<h2><span class="secnum">1.6</span> Storage Considerations for Installing Oracle Database 10<span class="italic">g</span> Real Application Clusters</h2>
+<p>This section discusses storage configuration options that you should consider before installing Oracle Database 10<span class="italic">g</span> Release 2 (10.2) with Real Application Clusters.</p>
+<a id="CEGEDEJE" name="CEGEDEJE"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref91" name="sthref91"></a>
+<h3><span class="secnum">1.6.1</span> Overview of Automatic Storage Management</h3>
+<p>Oracle recommends using Automatic Storage Management (ASM) or a cluster file system with Oracle Managed Files (OMF) for database storage. This section provides an overview of ASM.</p>
+<p>Note that RAC installations using Oracle Database Standard Edition must use ASM for database file storage.</p>
+<p>You <a id="sthref92" name="sthref92"></a><a id="sthref93" name="sthref93"></a><a id="sthref94" name="sthref94"></a><a id="sthref95" name="sthref95"></a>can use ASM to simplify the administration of Oracle database files. Instead of having to manage potentially thousands of database files, using ASM, you need to manage only a small number of disk groups. A disk group is a set of disk devices that ASM manages as a single logical unit. You can define a particular disk group as the default disk group for a database, and Oracle will automatically allocate storage for, create, or delete, the files associated with the appropriate database object. When administering the database, you need only refer to database objects by name, rather than by file name.</p>
+<p>When using ASM with a single Oracle home for database instances on a node, the ASM instance can run from that same home. If you are using ASM with Oracle database instances from multiple database homes on the same node, then Oracle recommends that you run the ASM instance from an Oracle home that is distinct from the database homes. In addition, the ASM home should be installed on every cluster node. Following this recommendation prevents the accidental removal of ASM instances that are in use by databases from other homes during the de-installation of a database's Oracle home.</p>
+<p class="subhead2">Benefits of Automatic Storage Management</p>
+<p>ASM <a id="sthref96" name="sthref96"></a><a id="sthref97" name="sthref97"></a><a id="sthref98" name="sthref98"></a><a id="sthref99" name="sthref99"></a><a id="sthref100" name="sthref100"></a>provides many of the same benefits as storage technologies such as a redundant array of independent disks (RAID) or logical volume managers (LVMs). Like these technologies, ASM enables you to create a single disk group from a collection of individual disk devices. It balances input and output (I/O) loads to the disk group across all of the devices in the disk group. It also implements striping and mirroring to improve I/O performance and data reliability.</p>
+<p>However, unlike RAID or LVMs, ASM implements striping and mirroring at the file level. This implementation enables you to specify different storage attributes for individual files in the same disk group.</p>
+<p class="subhead2">Disk Groups and Failure Groups</p>
+<p><a id="sthref101" name="sthref101"></a><a id="sthref102" name="sthref102"></a><a id="sthref103" name="sthref103"></a><a id="sthref104" name="sthref104"></a><a id="sthref105" name="sthref105"></a><a id="sthref106" name="sthref106"></a><a id="sthref107" name="sthref107"></a><a id="sthref108" name="sthref108"></a>A disk group can include up to 10,000 disk devices. Each disk device can be an individual physical disk, a multiple disk device such as a RAID storage array or logical volume, or even a partition on a physical disk. However, in most cases, disk groups consist of one or more individual physical disks. To enable ASM to balance I/O and storage appropriately within the disk group, all devices in the disk group should have similar, if not identical, storage capacity and performance.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Do not assign more than one partition on a single physical disk to the same disk group. ASM expects each disk group device to be on a separate physical disk.
+<p>Although you can specify a logical volume as a device in an ASM disk group, Oracle does not recommend their use. Because logical volume managers can hide the physical disk architecture, ASM may not operate effectively when logical volumes are specified as disk group devices.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<p>When <a id="sthref109" name="sthref109"></a><a id="sthref110" name="sthref110"></a><a id="sthref111" name="sthref111"></a>you add a device to a disk group, you can specify a failure group for that device. Failure groups define ASM disks that share a common potential failure mechanism. An example of a failure group is a set of SCSI disks sharing the same SCSI controller. Failure groups are used to determine which ASM disks to use for storing redundant copies of data. For example, if two-way mirroring is specified for a file, ASM automatically stores redundant copies of file extents in separate failure groups.</p>
+<p class="subhead2">Redundancy Levels</p>
+<p><a id="sthref112" name="sthref112"></a><a id="sthref113" name="sthref113"></a><a id="sthref114" name="sthref114"></a><a id="sthref115" name="sthref115"></a><a id="sthref116" name="sthref116"></a>ASM provides three levels of mirroring, called redundancy levels, that you can specify when creating a disk group. The redundancy levels are:</p>
+<ul>
+<li type="disc">
+<p>External redundancy</p>
+<p><a id="sthref117" name="sthref117"></a>In disk groups created with external redundancy, the contents of the disk group are not mirrored by ASM. You might choose this redundancy level when:</p>
+<ul>
+<li type="circle">
+<p>The disk group contains devices, such as RAID devices, that provide their own data protection</p>
+</li>
+<li type="circle">
+<p>Your use of the database does not require uninterrupted access to data, for example, in a development environment where you have a suitable back-up strategy</p>
+</li>
+</ul>
+</li>
+<li type="disc">
+<p>Normal redundancy</p>
+<p>In disk groups created with normal redundancy, the contents of the disk group are two-way mirrored by default, except the control file, which is three-way mirrored. However, you can choose to create certain files that are not mirrored or that are three-way mirrored in a disk group with normal redundancy. To create a disk group with normal redundancy, you must specify at least two failure groups (a minimum of two devices).</p>
+<p>The effective disk space of a disk group that uses normal redundancy is half the total disk space of all of its devices.</p>
+</li>
+<li type="disc">
+<p>High redundancy</p>
+<p>In disk groups created with high redundancy, the contents of the disk group all three-way mirrored. To create a disk group with high redundancy, you must specify at least three failure groups (a minimum of three devices).</p>
+<p>The effective disk space of a disk group that uses high redundancy is one-third of the total disk space of all of its devices.</p>
+</li>
+</ul>
+<p class="subhead2">ASM and Installation Types</p>
+<p>The type and number of disk groups that you can create when installing Oracle software depends on the type of database you choose to create during the installation, as follows:</p>
+<ul>
+<li type="disc">
+<p><a id="sthref118" name="sthref118"></a><a id="sthref119" name="sthref119"></a><a id="sthref120" name="sthref120"></a><a id="sthref121" name="sthref121"></a><a id="sthref122" name="sthref122"></a>Preconfigured database</p>
+<p>If you choose to create the default preconfigured database that uses ASM, then OUI prompts you for the disk device names it will use to create a disk group with the default name of DATA.</p>
+</li>
+<li type="disc">
+<p>Advanced database</p>
+<p>If you choose to create an advanced database that uses ASM, then you can create one or more disk groups. These disk groups can use one or more devices. For each disk group, you can specify the redundancy level that suits your requirements.</p>
+</li>
+</ul>
+<p><a id="sthref123" name="sthref123"></a><a id="sthref124" name="sthref124"></a><a id="sthref125" name="sthref125"></a><a id="sthref126" name="sthref126"></a>The following table lists the total disk space required in all disk group devices for a typical preconfigured database, depending on the redundancy level you choose to use for the disk group:</p>
+<div class="inftblInformal">
+<table class="Informal" title="Disk Space Requirements for Each ASM Redundancy Level" summary="This table shows the disk space requirements for each ASM redundancy level" dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t11">Redundancy Level</th>
+<th align="left" valign="bottom" id="r1c2-t11">Total DIsk Space Required</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t11" headers="r1c1-t11">External</td>
+<td align="left" headers="r2c1-t11 r1c2-t11">1 GB</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t11" headers="r1c1-t11">Normal</td>
+<td align="left" headers="r3c1-t11 r1c2-t11">2 GB (on a minimum of two devices)</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t11" headers="r1c1-t11">High</td>
+<td align="left" headers="r4c1-t11 r1c2-t11">3 GB (on a minimum of three devices)</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblInformal -->
+<p>You can also run OUI and to install ASM only without the database and RAC software.</p>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref127" name="sthref127"></a>
+<h3><span class="secnum">1.6.2</span> Shared Storage for Database Recovery Area<a id="sthref128" name="sthref128"></a><a id="sthref129" name="sthref129"></a><a id="sthref130" name="sthref130"></a></h3>
+<p>When you configure a database recovery area in a RAC environment, the database recovery area must be on shared storage. When the Database Configuration Assistant (DBCA) configures automatic disk backup, it uses a database recovery area that must be shared.</p>
+<p>If the database files are stored on a cluster file system<a id="sthref131" name="sthref131"></a>, then the recovery area can also be shared through the cluster file system.</p>
+<p>If the database files are stored on an <a id="sthref132" name="sthref132"></a>Automatic Storage Management (ASM) disk group, then the recovery area can also be shared through ASM.</p>
+<p>If the database files are stored on raw devices<a id="sthref133" name="sthref133"></a>, then you must use either a cluster file system or ASM for the recovery area.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+ASM disk groups are always valid recovery areas, as are cluster file systems. Recovery area files do not have to be in the same location where datafiles are stored. For instance, you can store datafiles on raw devices, but use ASM for the recovery area.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="i1029287" name="i1029287"></a>
+<div class="sect1"><a id="sthref134" name="sthref134"></a>
+<h2><span class="secnum">1.7</span> Additional Considerations for Using Oracle Database 10<span class="italic">g</span> Features in RAC</h2>
+<p>Oracle recommends that you use the following Oracle Database 10<span class="italic">g</span> features to simplify RAC database management:</p>
+<ul>
+<li type="disc">
+<p>Enterprise Manager&#x2014;Use Enterprise Manager to administer your <span class="italic">entire</span> processing environment, not just the RAC database. Enterprise Manager enables you to manage a RAC database with its instance targets, listener targets, host targets, and a cluster target, as well as ASM targets if you are using ASM storage for your database.</p>
+</li>
+<li type="disc">
+<p>Automatic undo management&#x2014;Automatically manages undo processing.</p>
+</li>
+<li type="disc">
+<p>Automatic segment-space management&#x2014;Automatically manages segment freelists and freelist groups.</p>
+</li>
+<li type="disc">
+<p>Locally managed tablespaces&#x2014;Enhances space management performance.</p>
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span> for more information about these features in RAC environments</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></li>
+</ul>
+</div>
+<!-- class="sect1" -->
+<a id="i1027615" name="i1027615"></a>
+<div class="sect1"><a id="sthref135" name="sthref135"></a>
+<h2><span class="secnum">1.8</span> <a id="sthref136" name="sthref136"></a>Oracle Database 10<span class="italic">g</span> and Real Application Clusters Components</h2>
+<p>Oracle Database 10<span class="italic">g</span> provides single-instance database software and the additional components to operate RAC databases. Some of the RAC-specific components include:</p>
+<ul>
+<li type="disc">
+<p>Oracle Clusterware</p>
+</li>
+<li type="disc">
+<p>A RAC-enabled Oracle home</p>
+</li>
+</ul>
+<div class="sect2"><a id="sthref137" name="sthref137"></a>
+<h3><span class="secnum">1.8.1</span> Oracle Clusterware</h3>
+<p>You must provide OUI with the names of the nodes on which you want to install Oracle Clusterware. The Oracle Clusterware home can be either shared by all nodes, or private to each node, depending on your responses when you run OUI. The home that you select for Oracle Clusterware <span class="italic">must</span> be different from the RAC-enabled Oracle home.</p>
+<p>When third-party vendor clusterware is present, Oracle Clusterware may interact with the third-party vendor clusterware. For Oracle Database 10<span class="italic">g</span> on Windows, Oracle Clusterware coexists with but does not interact with previous Oracle clusterware versions.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+The Oracle Database cluster manager on database versions previous to 10<span class="italic">g</span> Release 1 was referred to as "Cluster Manager." In Oracle Database 10<span class="italic">g</span>, the cluster manager role is performed by Cluster Synchronization Services (CSS)<a id="sthref138" name="sthref138"></a><a id="sthref139" name="sthref139"></a>, a component of Oracle Clusterware, on all platforms. The Cluster Synchronization Service Daemon (OCSSD)<a id="sthref140" name="sthref140"></a><a id="sthref141" name="sthref141"></a><a id="sthref142" name="sthref142"></a> performs this function.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><a id="sthref143" name="sthref143"></a>
+<h3><span class="secnum">1.8.2</span> The Installed Real Application Clusters Components</h3>
+<a id="i1028692" name="i1028692"></a>
+<p>All instances in <a id="sthref144" name="sthref144"></a>RAC environments share the <a id="sthref145" name="sthref145"></a>control file, <a id="sthref146" name="sthref146"></a>server parameter file, redo log files, and all <a id="sthref147" name="sthref147"></a>datafiles. These files reside on a shared cluster file system or on shared disks. Either of these types of file configurations are accessed by all the cluster database instances. Each instance also has its own set of <a id="sthref148" name="sthref148"></a>redo log files. During failures, shared access to redo log files enables surviving instances to perform recovery.</p>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CHDFEFBC" name="CHDFEFBC"></a>
+<div class="sect1"><a id="sthref149" name="sthref149"></a>
+<h2><span class="secnum">1.9</span> Oracle Database 10<span class="italic">g</span> Real Application Clusters Version Compatibility</h2>
+<p>You can install and operate different versions of Oracle cluster database software on the same computer as described in the following points:</p>
+<ul>
+<li type="disc">
+<p>With Oracle Database 10<span class="italic">g</span> Release 2 (10.2) if you have a pre-existing Oracle home, then you must install the database into the existing Oracle home. You should install Oracle Clusterware in a separate Oracle Clusterware home. Each node can have only one Oracle Clusterware home.</p>
+<p>During installation, Oracle Universal Installer (OUI) prompts you to install additional Oracle Database 10<span class="italic">g</span> products if you have not already installed all of them.</p>
+</li>
+<li type="disc">
+<p>OUI also enables you to de-install and re-install Oracle Database 10<span class="italic">g</span> Real Application Clusters if needed.</p>
+</li>
+<li type="disc">
+<p>If OUI detects an earlier version of a database, then OUI asks you about your upgrade preferences. You have the option to upgrade one of the previous-version databases with DBUA or to create a new database using DBCA. The information collected during this dialog is passed to DBUA or DBCA after the software is installed.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Do not move Oracle binaries from the Oracle home to another location. Doing so can cause dynamic link failures.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</li>
+</ul>
+</div>
+<!-- class="sect1" -->
+<a id="CHDEIIGB" name="CHDEIIGB"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref150" name="sthref150"></a>
+<h2><span class="secnum">1.10</span> Cloning Oracle Clusterware and RAC in Grid Environments</h2>
+<p>The following section provides a summary of the procedure for deployments of RAC in grid environments with large numbers of nodes using cloned Clusterware and RAC images.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+For detailed information about cloning RAC and Oracle Clusterware images, refer to the following documents:
+<p>Cloning, and adding and deleting nodes:</p>
+<p><span class="italic">Oracle Universal Installer and OPatch User's Guide</span></p>
+<p>Additional information about adding and deleting nodes:</p>
+<p><span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<p>This section contains the following:</p>
+<ul>
+<li type="disc">
+<p><a href="#CHDDBHAB">Cloning Oracle Clusterware Homes</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDEDAIE">Cloning Real Application Clusters Homes</a></p>
+</li>
+</ul>
+<a id="CHDDBHAB" name="CHDDBHAB"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref151" name="sthref151"></a>
+<h3><span class="secnum">1.10.1</span> Cloning Oracle Clusterware Homes</h3>
+<p>This section outlines the procedure required to clone an existing Oracle Clusterware home from one node (the source node) to one or more other nodes (the target nodes). The procedure consists of the following tasks:</p>
+<ol type="1" start="1">
+<li>
+<p>Ensure that the Oracle Clusterware software is installed successfully on the source node. You can use the CVU for this task.</p>
+</li>
+<li>
+<p>As a Windows administrative user, create a zip file of the Oracle Clusterware home directory, selecting the "Save full path info" option.</p>
+</li>
+<li>
+<p>On a selected target node, create an Oracle Clusterware home directory, and copy the Oracle Clusterware zip file from the source node to the target node Oracle Clusterware home.</p>
+</li>
+<li>
+<p>As a Windows administrative user, extract the zip file contents, selecting the "Use folder names" option.</p>
+</li>
+<li>
+<p>Repeat steps 3 and 4 on each of the other target nodes, unless the Oracle Clusterware home is on a shared storage device.</p>
+</li>
+<li>
+<p>On each of the target nodes, run OUI in clone mode as described in <span class="italic">Oracle Universal Installer and OPatch User's Guide</span>.</p>
+</li>
+<li><a id="CHDCJDHE" name="CHDCJDHE"></a>
+<p>Complete the post-cloning installation instructions as described in <span class="italic">Oracle Universal Installer and OPatch User's Guide</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="CHDEDAIE" name="CHDEDAIE"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref152" name="sthref152"></a>
+<h3><span class="secnum">1.10.2</span> Cloning Real Application Clusters Homes</h3>
+<p>Complete the following tasks to Clone a RAC database image on multiple nodes:</p>
+<ol type="1" start="1">
+<li>
+<p>Ensure that the Oracle Database with RAC software is installed successfully on the source node.</p>
+</li>
+<li>
+<p>Create a zip file of the Oracle home directory, selecting the "Save full path info" option.</p>
+</li>
+<li>
+<p>On a selected target node, create an Oracle home directory, and copy the Oracle Clusterware zip file from the source node to the target node Oracle Clusterware home.</p>
+</li>
+<li>
+<p>Extract the zip file contents, selecting the "Use folder names" option.</p>
+</li>
+<li>
+<p>Repeat steps 3 and 4 on each of the other target nodes, unless the Oracle home is on a shared storage device.</p>
+</li>
+<li>
+<p>On each of the target nodes, run OUI in clone mode as described in <span class="italic">Oracle Universal Installer and OPatch User's Guide</span>.</p>
+</li>
+<li>
+<p>Complete the post-cloning installation instructions as described in <span class="italic">Oracle Universal Installer and OPatch User's Guide</span>.</p>
+</li>
+<li>
+<p>Run the configuration assistant NetCA on a local node of the cluster, and provide a list when prompted of all nodes that are part of the cluster.</p>
+</li>
+<li>
+<p>Run the configuration assistant DBCA to create the database.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" --></div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="part1.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="part2.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

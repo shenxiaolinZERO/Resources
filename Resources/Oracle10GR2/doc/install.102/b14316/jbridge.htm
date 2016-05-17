@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>B Installing Java Access Bridge</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.5 Build 272" />
+<meta name="Date" content="August 18, 2005 19:51:01" />
+<meta name="doctitle" content="Oracle&reg; Database Installation Guide 10g Release 2 (10.2) for Microsoft Windows (32-Bit)" />
+<meta name="partno" content="B14316-01" />
+<meta name="docid" content="NTDBI" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Glossary" href="glossary.htm" title="Glossary" type="text/html" />
+<link rel="Prev" href="faq.htm" title="Previous" type="text/html" />
+<link rel="Next" href="ofa.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14316.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database Installation Guide<br />
+10<i>g</i> Release 2 (10.2) for Microsoft Windows (32-Bit)</b><br />
+Part Number B14316-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="faq.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="ofa.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top"><a href="../b14316.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="BABFBBFE" name="BABFBBFE"></a><a id="sthref1030" name="sthref1030"></a>
+<h1 class="appendix"><span class="secnum">B</span> <span class="bold"><a name="NTDBI007" id="NTDBI007"></a></span> Installing Java Access Bridge</h1>
+<p><a id="sthref1031" name="sthref1031"></a>This appendix describes how to install Java Access Bridge. Java Access Bridge enables use of a screen reader with Oracle components:</p>
+<ul>
+<li type="disc">
+<p><a href="#i697702">Introduction</a></p>
+</li>
+<li type="disc">
+<p><a href="#i697547">Setup for JRE 1.4.2</a></p>
+</li>
+<li type="disc">
+<p><a href="#i696276">Setup for Oracle Installed Components</a></p>
+</li>
+</ul>
+<a id="i697702" name="i697702"></a>
+<div class="sect1"><a id="sthref1032" name="sthref1032"></a>
+<h2 class="sect1"><span class="secnum">B.1</span> Introduction</h2>
+<p><a id="sthref1033" name="sthref1033"></a>Java Access Bridge enables assistive technologies, such as JAWS screen reader, to read Java applications running on the Windows platform. Assistive technologies can read Java-based interfaces, such as Oracle Universal Installer and Oracle Enterprise Manager Database Control.</p>
+<p>Your Oracle Database, Oracle Database Client, and Oracle Database Companion CD installation media contain the Java Runtime Environment (JRE) 1.4.2, which Oracle Universal Installer uses during installation. The JRE enables use of Java Access Bridge during installation. See <a href="#i696276">"Setup for Oracle Installed Components"</a> for information about installing and configuring Java Access Bridge after you install Oracle components.</p>
+</div>
+<!-- class="sect1" -->
+<a id="i697547" name="i697547"></a>
+<div class="sect1"><a id="sthref1034" name="sthref1034"></a>
+<h2 class="sect1"><span class="secnum">B.2</span> Setup for JRE 1.4.2</h2>
+<p><a id="sthref1035" name="sthref1035"></a><a id="sthref1036" name="sthref1036"></a>To set up Java Access Bridge with JRE 1.4.2, run the following batch file on Oracle installation media.</p>
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">DRIVE_LETTER</span>:\install\access_setup.bat
+
+</pre>
+<p>After the batch file has run, restart your assistive technology program.</p>
+</div>
+<!-- class="sect1" -->
+<a id="i696276" name="i696276"></a>
+<div class="sect1"><a id="sthref1037" name="sthref1037"></a>
+<h2 class="sect1"><span class="secnum">B.3</span> Setup for Oracle Installed Components</h2>
+<p>This section describes how to install and configure Java Access Bridge for Windows after installing Oracle components. It contains the following topics:</p>
+<ul>
+<li type="disc">
+<p><a href="#BABDIIJC">Installing Java Access Bridge</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABGADED">Configuring Oracle Components to Use Java Access Bridge</a></p>
+</li>
+</ul>
+<a id="BABDIIJC" name="BABDIIJC"></a>
+<div class="sect2"><a id="sthref1038" name="sthref1038"></a>
+<h3 class="sect2"><span class="secnum">B.3.1</span> Installing Java Access Bridge</h3>
+<p><a id="sthref1039" name="sthref1039"></a><a id="sthref1040" name="sthref1040"></a>To install Java Access Bridge, follow these steps:</p>
+<ol type="1" start="1">
+<li>
+<p>On the Oracle installation media, go to the <code>AccessBridge</code> directory.</p>
+</li>
+<li>
+<p>Select the <code>accessbridge-1_0_4.zip</code> file and extract its files to the system where you plan to install Access Bridge. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\AccessBridge-1.0.4
+
+</pre></li>
+<li>
+<p>Copy the Java Access Bridge files listed in <a href="#CACJFBFC">Table B-1</a> into the JRE 1.4.2 directory used by Oracle components. By default, the JRE used by Oracle components is installed in:</p>
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">ORACLE_BASE</span>\<span class="italic">ORACLE_HOME</span>\jre\1.4.2
+
+</pre>
+<p><a href="#CACJFBFC">Table B-1</a> lists the files you need to copy from the Java Access Bridge location on your hard drive to the JRE directory used by Oracle components:</p>
+<div class="tblruleformal"><a id="sthref1041" name="sthref1041"></a><a id="CACJFBFC" name="CACJFBFC"></a>
+<p class="titleintable">Table B-1 Copy Files to JRE Directory</p>
+<table class="RuleFormal" title="Copy Files to JRE Directory" summary="Lists the files to copy from the Java Access Bridge location on your computer hard drive to the appropriate subdirectory of the JRE used by Oracle components" dir="ltr" border="1" width="100%" frame="border" rules="all" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t2">Copy</th>
+<th align="left" valign="bottom" id="r1c2-t2">To</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t2" headers="r1c1-t2">
+<p><code>\AccessBridge-1_0_4\installer\installerFiles\jaccess-1_4.jar</code></p>
+</td>
+<td align="left" headers="r2c1-t2 r1c2-t2">
+<p><code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\</code><code><span class="codeinlineitalic">ORACLE_HOME</span></code><code>\jre\1.4.2\lib\ext</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t2" headers="r1c1-t2">
+<p><code>\AccessBridge-1_0_4\installer\installerFiles\access-bridge.jar</code></p>
+</td>
+<td align="left" headers="r3c1-t2 r1c2-t2">
+<p><code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\</code><code><span class="codeinlineitalic">ORACLE_HOME</span></code><code>\jre\1.4.2\lib\ext</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t2" headers="r1c1-t2">
+<p><code>\AccessBridge-1_0_4\installer\installerFiles\JavaAccessBridge.dll</code></p>
+</td>
+<td align="left" headers="r4c1-t2 r1c2-t2">
+<p><code><span class="codeinlineitalic">windows_directory</span></code><code>\system32</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t2" headers="r1c1-t2">
+<p><code>\AccessBridge-1_0_4\installer\installerFiles\WindowsAccessBridge.dll</code></p>
+</td>
+<td align="left" headers="r5c1-t2 r1c2-t2">
+<p><code><span class="codeinlineitalic">windows_directory</span></code><code>\system32</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t2" headers="r1c1-t2">
+<p><code>\AccessBridge-1_0_4\installer\installerFiles\JAWTAccessBridge.dll</code></p>
+</td>
+<td align="left" headers="r6c1-t2 r1c2-t2">
+<p><code><span class="codeinlineitalic">windows_directory</span></code><code>\system32</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t2" headers="r1c1-t2">
+<p><code>\AccessBridge-1_0_4\installer\installerFiles\accessibility.properties</code></p>
+</td>
+<td align="left" headers="r7c1-t2 r1c2-t2">
+<p><code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\</code><code><span class="codeinlineitalic">ORACLE_HOME</span></code><code>\jre\1.4.2\lib</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblruleformal" --></li>
+<li>
+<p>Rename <code>jaccess-1_4.jar</code> (now located in <code><span class="codeinlineitalic">ORACLE_BASE\ORACLE_HOME</span></code><code>\jre\1.4.2\lib\ext</code>) to <code>jaccess.jar</code>.</p>
+</li>
+<li>
+<p>Following a successful installation, you can access Java Access Bridge documentation located at:</p>
+<pre xml:space="preserve" class="oac_no_warn">DRIVE_LETTER:\AccessBridge-1.0.4\doc
+</pre></li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="BABGADED" name="BABGADED"></a>
+<div class="sect2"><a id="sthref1042" name="sthref1042"></a>
+<h3 class="sect2"><span class="secnum">B.3.2</span> Configuring Oracle Components to Use Java Access Bridge</h3>
+<p><a id="sthref1043" name="sthref1043"></a>You can configure Oracle components to use Java Access Bridge after you complete the installation. To do so, you need to set the system variable <code>ORACLE_OEM_CLASSPATH</code> to point to the installed Java Access Bridge files.</p>
+<p>Follow these steps:</p>
+<ol type="1" start="1">
+<li>
+<p>From the <span class="bold">Start</span> menu, select <span class="bold">Settings</span>, <span class="bold">Control Panel</span>, then <span class="bold">System</span> to display the Windows System control panel.</p>
+</li>
+<li>
+<p>Select the Advanced tab.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Environment Variables</span> button.</p>
+</li>
+<li>
+<p>Click the <span class="bold">New</span> button under the System Variable list. The New System Variable dialog appears.</p>
+</li>
+<li>
+<p>In the <span class="bold">Variable Name</span> field, enter <code>ORACLE_OEM_CLASSPATH</code>.</p>
+</li>
+<li>
+<p>In the <span class="bold">Variable Value</span> field, enter the full path to <code>jaccess.jar</code> and <code>access-bridge.jar</code>.</p>
+<p>Use a semicolon to separate the two paths. Do not use quotes or character spaces. For example, if JRE 1.4.2 is installed in the default location, the setting would be:</p>
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">ORACLE_BASE</span>\<span class="italic">ORACLE_HOME</span>\jre\1.4.2\lib\ext\jaccess.jar;<span class="italic">ORACLE_BASE</span>\<span class="italic">ORACLE_HOME</span>\jre\1.4.2\lib\ext\access-bridge.jar
+
+</pre></li>
+<li>
+<p>Click <span class="bold">OK</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" --></div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="faq.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="ofa.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;1996, 2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

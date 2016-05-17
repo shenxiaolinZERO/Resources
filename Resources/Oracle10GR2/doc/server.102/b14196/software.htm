@@ -1,0 +1,372 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>11 Managing Oracle Software</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.1.3 Build 116" />
+<meta name="Date" content="June 22, 2005 15:47:53" />
+<meta name="doctitle" content="Oracle&reg; Database 2 Day DBA 10g Release 2 (10.2)" />
+<meta name="partno" content="B14196-01" />
+<meta name="docid" content="ADMQS" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="montune.htm" title="Previous" type="text/html" />
+<link rel="Next" href="asm.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14196.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database 2 Day DBA<br />
+10<i>g</i> Release 2 (10.2)</b><br />
+Part Number B14196-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="montune.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="asm.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top"><a href="../b14196.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="CHDBJFDC" name="CHDBJFDC"></a><a id="sthref748" name="sthref748"></a>
+<h1><span class="secnum">11</span> <a name="ADMQS1100" id="ADMQS1100"></a>Managing Oracle Software</h1>
+<p>This chapter describes how to keep your Oracle software up-to-date with patch releases. This chapter contains the following topics:</p>
+<ul>
+<li type="disc">
+<p><a href="#g1012444">About Software Management and Patch Releases</a></p>
+</li>
+<li type="disc">
+<p><a href="#g1086288">Applying a Patch Release</a></p>
+</li>
+</ul>
+<a id="g1012444" name="g1012444"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref749" name="sthref749"></a>
+<h2>About Software Management and Patch Releases</h2>
+<p>Software management involves keeping your Oracle software up-to-date with the latest product fixes.</p>
+<p>Periodically, Oracle issues product fixes for its software called patch releases. Patch releases are fully tested product fixes only. They do not include new functionality. Application of a patch release affects the software residing in your Oracle home only, with no upgrade or change to the database.</p>
+<p>Patches are individual bug fixes. Patch sets are a collection of bug fixes up to the time of the patch set release.</p>
+<p>All patch and patch set releases carry version numbers. For example, if you bought Oracle 10g Release 10.2.0.1, then an available patch set might be 10.2.0.2. Every patch or patch set also has a patch number to identify it.</p>
+<p>Every patch release has an associated README file that describes its bug fixes. The README also has instructions for manually applying the patch.</p>
+<p>Enterprise Manager enables you to find the latest patch release on the Oracle MetaLink Web site and to download it to your Oracle home.</p>
+</div>
+<!-- class="sect1" -->
+<a id="g1086288" name="g1086288"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref750" name="sthref750"></a>
+<h2>Applying a Patch Release</h2>
+<p>The steps involved in applying a patch are as follows:</p>
+<ol type="1" start="1">
+<li>
+<p><a href="#g1012460">Determining your Oracle Software Environment</a></p>
+</li>
+<li>
+<p><a href="#g1085244">Setting your Oracle MetaLink Login Credentials</a></p>
+</li>
+<li>
+<p><a href="#g1085253">Staging the Patch Release</a></p>
+</li>
+<li>
+<p><a href="#g1085271">Installing the Patch Release</a></p>
+</li>
+</ol>
+<a id="g1012460" name="g1012460"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref751" name="sthref751"></a>
+<h3>Determining your Oracle Software Environment</h3>
+<p>To select the appropriate patch for your environment, answer the following questions:</p>
+<ul>
+<li type="disc">
+<p>What version of the Oracle database are you running?</p>
+</li>
+<li type="disc">
+<p>Where does your software reside? This is the location of your Oracle home.</p>
+</li>
+<li type="disc">
+<p>What is your hardware configuration?</p>
+</li>
+</ul>
+<p>You can find this information in the General section of the Database Home page, as shown in <a href="#g1085528">Figure 11-1</a>.</p>
+<div class="figure"><a id="g1085528" name="g1085528"></a><a id="sthref752" name="sthref752"></a>
+<p class="titleinfigure">Figure 11-1 General Section of Database Home Page</p>
+<img src="./general.gif" alt="Description of general.gif follows" title="Description of general.gif follows" /><br />
+<a id="sthref753" name="sthref753" href="./img_text/general.htm">Description of the illustration general.gif</a></div>
+<!-- class="figure" -->
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref754" name="sthref754"></a>
+<h4>Determining the Oracle Database Version</h4>
+<p>You can determine your Oracle database version by navigating to the General section of the Enterprise Manager home page. For example, <a href="#g1085528">Figure 11-1</a> shows that the database version is 10.2.0.1.0.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref755" name="sthref755"></a>
+<h4>Determining the Location of your Oracle Home</h4>
+<p>The Oracle home is the operating system location of your Oracle installation.</p>
+<p>To determine the Oracle home:</p>
+<ol type="1" start="1">
+<li>
+<p>In the General section of Enterprise Manager home page, click <span class="bold">View All Properties</span>.</p>
+<p>The View All Properties: <span class="italic">instance_name</span> page appears. As shown in <a href="#CFHGGEDH">Figure 11-2</a>, this page displays the path for the Oracle home.</p>
+<div class="figure"><a id="CFHGGEDH" name="CFHGGEDH"></a><a id="sthref756" name="sthref756"></a>
+<p class="titleinfigure">Figure 11-2 View All Properties Page</p>
+<img src="./view_all_props.gif" alt="This screenshot shows the View All Properties page." title="This screenshot shows the View All Properties page." /></div>
+<!-- class="figure" --></li>
+<li>
+<p>Click the path link next to <span class="bold">Oracle Home</span>.</p>
+<p>The Oracle home: <span class="italic">oracle_home</span> page appears. As shown in <a href="#g1085558">Figure 11-3</a>, this page displays the file directory of your Oracle home, along with the installed product components and time of installation.</p>
+<div class="figure"><a id="g1085558" name="g1085558"></a><a id="sthref757" name="sthref757"></a>
+<p class="titleinfigure">Figure 11-3 Oracle Home Page</p>
+<img src="./oracle_home_path.gif" alt="Description of oracle_home_path.gif follows" title="Description of oracle_home_path.gif follows" /><br />
+<a id="sthref758" name="sthref758" href="./img_text/oracle_home_path.htm">Description of the illustration oracle_home_path.gif</a></div>
+<!-- class="figure" --></li>
+<li>
+<p>In the Component section, click the link to drill down to a page that describes specific components in your installation, including all component dependencies. In the Oracle Home Target section, click the links to display pages for the host agent, instance, and listener.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref759" name="sthref759"></a>
+<h4>Determining Your Hardware Configuration</h4>
+<p>You hardware configuration is information about your database machine and operating system. You need this information to select the appropriate Oracle patch.</p>
+<p>To learn more about your hardware configuration:</p>
+<ol type="1" start="1">
+<li>
+<p>In the General section of Enterprise Manager home page, click the link next to <span class="bold">Host</span>.</p>
+<p>The Host: <span class="italic">host_name</span> page appears. This page lists your operating system, hardware platform, IP address, number of CPUs, memory size, and disk space.</p>
+</li>
+<li>
+<p>In the Configuration section, click the links to drill down to pages that describe your operating system, hardware platform, and disk space.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="g1085244" name="g1085244"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref760" name="sthref760"></a>
+<h3>Setting your Oracle MetaLink Login Credentials</h3>
+<p>You obtain patches and patch releases from Oracle MetaLink, which is the Oracle support Web site:</p>
+<p><code>http://metalink.oracle.com</code></p>
+<p>To download patches from Metalink, you need to register using your customer support identifier, which your company obtains when it signs a support contract with Oracle. On registering with MetaLink, you are given a username and password that enables you to log in to this site from a browser.</p>
+<p>Alternatively, you can give Enterprise Manager your login credentials so that it can log in to MetaLink automatically and search for patch releases. You must set these credentials before you can run the patch wizard in Enterprise Manager. The patch wizard can automatically search and download patches for you, and is described in section <a href="#g1085253">"Staging the Patch Release"</a> .</p>
+<p>To set your MetaLink login credentials:</p>
+<ol type="1" start="1">
+<li>
+<p>Click the <span class="bold">Setup</span> link located at the top and bottom of most Enterprise Manager pages.</p>
+<p>The Setup page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Patching Setup</span>.</p>
+<p>The Patching Setup page appears, as shown in <a href="#g1085975">Figure 11-4</a>.</p>
+<div class="figure"><a id="g1085975" name="g1085975"></a><a id="sthref761" name="sthref761"></a>
+<p class="titleinfigure">Figure 11-4 Patching Setup Page</p>
+<img src="./patch_setup.gif" alt="Description of patch_setup.gif follows" title="Description of patch_setup.gif follows" /><br />
+<a id="sthref762" name="sthref762" href="./img_text/patch_setup.htm">Description of the illustration patch_setup.gif</a></div>
+<!-- class="figure" --></li>
+<li>
+<p>In the <span class="bold">MetaLink Username</span> and <span class="bold">MetaLink Password</span> boxes, enter the username and password that you obtain by registering with your customer support id. In <span class="bold">Patch Cache Maximum Size (MB)</span>, you can optionally set the maximum size of your patch cache, a temporary area where patches are stored. The oldest patches are automatically removed to keep the patch cache under its maximum size.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply</span> to set your MetaLink credentials.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="g1085253" name="g1085253"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref763" name="sthref763"></a>
+<h3>Staging the Patch Release</h3>
+<p>You can view available patch releases at MetaLink by using Enterprise Manager. Viewing these updates is the first step in the patching wizard, which you can use to download the patch to your Oracle home.</p>
+<p>Downloading the patch is known as staging. After staging, you can apply the patch manually by shutting down the database and running the Oracle Universal Installer.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+The following example searches for and stages a patch release on an Oracle Database, Release 10.1.0.2. The Enterprise Manager wizard and screenshot might be slightly different for your Oracle Database, Release 10.2.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<p>To start the patching wizard:</p>
+<ol type="1" start="1">
+<li>
+<p>From the home page, click <span class="bold">Maintenance</span>.</p>
+</li>
+<li>
+<p>In the Database Software Patching section, click <span class="bold">Apply Patch</span>.</p>
+<p>The Patch: Select Patch page appears, as shown in <a href="#g1086002">Figure 11-5</a>.</p>
+<div class="figure"><a id="g1086002" name="g1086002"></a><a id="sthref764" name="sthref764"></a>
+<p class="titleinfigure">Figure 11-5 Patch: Select Patch page</p>
+<img src="./select_patch.gif" alt="Description of select_patch.gif follows" title="Description of select_patch.gif follows" /><br />
+<a id="sthref765" name="sthref765" href="./img_text/select_patch.htm">Description of the illustration select_patch.gif</a></div>
+<!-- class="figure" --></li>
+<li>
+<p>Enterprise Manager automatically fills in values for <span class="bold">Product Family</span> , <span class="bold">Product</span> , <span class="bold">Release</span>, and <span class="bold">Platform</span>. The search results that match the criteria are displayed by most recent patch (or patch set) at the top of the list.</p>
+<p>Note that you can limit your search by entering values for <span class="bold">Begin Date</span> and <span class="bold">End Date</span> and then clicking <span class="bold">Search</span>.</p>
+</li>
+<li>
+<p>Select a patch and click <span class="bold">View Details</span> to view the patch details. Select a patch and click <span class="bold">View ReadMe</span> to view the README, which includes a description of the bug fixes.</p>
+</li>
+<li>
+<p>In <span class="bold">Destination Type</span>, specify your target database or a host or directory location to stage your patch. In this example, you accept the default database target, listed under Selected Targets. Click <span class="bold">Next</span>.</p>
+<p>The Patch: Set Credentials page appears.</p>
+</li>
+<li>
+<p>In <span class="bold">Username</span> and <span class="bold">Password</span> boxes, enter the operating system username and password to enable Enterprise Manager to stage the patch to your Oracle home. Enterprise Manager requires these credentials for job scheduling. Click <span class="bold">Next</span>.</p>
+<p>The Patch: Stage or Apply page appears.</p>
+</li>
+<li>
+<p>By default Enterprise Manager downloads the patch to the stage directory that is listed in the main box. Typically, this location is an Oracle home subdirectory called <code>EMStagedPatches</code><code><span class="codeinlineitalic">patchnumber</span></code>.</p>
+<p>By default, Enterprise Manager stages the patch only. You can then manually apply the patch by following the directions given in the README. The directions include shutting down the database and your applications and then running the Oracle Universal Installer.</p>
+<p>You can optionally have Oracle run an operating system script to apply the patch automatically. To do so, you check the option <span class="bold">Run Script to Apply Patch</span>, which runs the script template listed in the window. Note that if you choose this option, you must edit the template to have it shut down the database and your application processes. Oracle does not recommend this option unless you have significant experience in shell scripting.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+<p>The Patch: Schedule page appears.</p>
+</li>
+<li>
+<p>In the Schedule Patch Job section, select <span class="bold">Immediately</span> to download and stage the patch immediately. Click <span class="bold">Next</span>.</p>
+<p>The Patch: Summary page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Finish</span>.</p>
+<p>A confirmation page confirms that your job was submitted.</p>
+</li>
+<li>
+<p>Confirm that the patch was staged by viewing the patch cache. Navigate to the Maintenance page, and in the <span class="bold">Database Software Patching</span> section, click <span class="bold">View Patch Cache</span>.</p>
+<p>The Patch Cache appears. The downloaded patch should appear in the table.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="g1085271" name="g1085271"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref766" name="sthref766"></a>
+<h3>Installing the Patch Release</h3>
+<p>After you have downloaded the latest patch or patch set release, you can install it. Before you install, you must shut down your database instances, listeners, and dependent applications as well as back up your current Oracle home installation.</p>
+<p>Because of these preliminary steps, Oracle recommends applying patches during off-peak hours, when the system is not actively being used. It is also helpful to notify database users in advance of any planned downtime.</p>
+<p>When your system is down as such, you can apply the patch by unzipping the downloaded file and running the Oracle Universal Installer.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+The patchset README for further instructions on installing the patch.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref767" name="sthref767"></a>
+<h4>Installing the Patch Release: General Steps</h4>
+<p>This section describes the general steps to take after downloading the patch release:</p>
+<ol type="1" start="1">
+<li>
+<p>Read the README included with the patch release for patch-specific installation instructions.</p>
+</li>
+<li>
+<p>Shut down all dependent applications.</p>
+</li>
+<li>
+<p>Shut down your database instances. See <a href="instance.htm#CACCCCBC">"Shutting Down and Restarting the Instance and Database"</a> in <a href="instance.htm#CACFBJED">Chapter 5, "Managing the Oracle Instance"</a>.</p>
+</li>
+<li>
+<p>Optionally, shut down the database listener. This step is optional because your database listener automatically reconnects to the database when you restart the database. Keeping the listener up can enable a client to log in to the database during the upgrade process, however, which might be undesirable. See <a href="network.htm#CIHHJEDF">"Starting and Shutting Down the Listener"</a> in <a href="network.htm#CHDFHIFE">Chapter 4, "Configuring the Network Environment"</a>.</p>
+</li>
+<li>
+<p>Shut down Enterprise Manager. See <a href="em_manage.htm#BABBAIHD">"Starting and Stopping the Oracle Enterprise Manager Console"</a> in <a href="em_manage.htm#CACHGFFI">Chapter 3, "Getting Started with Oracle Enterprise Manager"</a>.</p>
+</li>
+<li>
+<p>Apply the patch by following the instructions in the README.</p>
+</li>
+<li>
+<p>Start up Enterprise Manager. See <a href="em_manage.htm#BABBAIHD">"Starting and Stopping the Oracle Enterprise Manager Console"</a> in <a href="em_manage.htm#CACHGFFI">Chapter 3, "Getting Started with Oracle Enterprise Manager"</a>.</p>
+</li>
+<li>
+<p>Start up your applications.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CACJFCDZ" name="CACJFCDZ"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref768" name="sthref768"></a>
+<h2>Managing Oracle Software: Oracle by Example Series</h2>
+<p>Oracle by Example (OBE) has a series on the <span class="italic">Oracle Database 2 Day DBA</span> book. This OBE steps you through the tasks in this chapter, and includes annotated screen shots.</p>
+<p>To view the Managing Oracle Software OBE, point your browser to the following location:</p>
+<pre xml:space="preserve" class="oac_no_warn"><a href="http://www.oracle.com/technology/obe/10gr2_2day_dba/managing/managingsoftware.htm">http://www.oracle.com/technology/obe/10gr2_2day_dba/managing/managingsoftware.htm</a>
+</pre></div>
+<!-- class="sect1" --></div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="montune.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="asm.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;2004, 2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

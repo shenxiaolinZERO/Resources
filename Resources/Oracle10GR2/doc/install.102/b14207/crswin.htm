@@ -1,0 +1,466 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>4 Installing Oracle Clusterware on Windows-Based Systems</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.1.3 Build 116" />
+<meta name="Date" content="August 18, 2005 11:44:23" />
+<meta name="doctitle" content="Oracle&reg; Database Oracle Clusterware and Oracle Real Application Clusters Installation Guide 10g Release 2 (10.2) for Microsoft Windows" />
+<meta name="partno" content="B14207-01" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="part3.htm" title="Previous" type="text/html" />
+<link rel="Next" href="racinstl.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14207.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database Oracle Clusterware and Oracle Real Application Clusters Installation Guide<br />
+10<i>g</i> Release 2 (10.2) for Microsoft Windows</b><br />
+Part Number B14207-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="part3.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="racinstl.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top"><a href="../b14207.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="BABCHCED" name="BABCHCED"></a><a id="sthref397" name="sthref397"></a>
+<h1><span class="secnum">4</span> Installing Oracle Clusterware on Windows-Based Systems</h1>
+<p>This chapter describes the procedures for<a id="sthref398" name="sthref398"></a> installing Oracle Clusterware on Windows, phase one of the Oracle Database 10g Real Application Clusters installation on Windows-based systems. The topics in this chapter are:</p>
+<ul>
+<li type="disc">
+<p><a href="#BEHHHGIE">Verifying Oracle Clusterware Requirements with CVU</a></p>
+</li>
+<li type="disc">
+<p><a href="#BEHIHBBF">Preparing to Install Oracle Clusterware with the OUI</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1054730">Using Oracle Universal Installer to Install Oracle Clusterware on Windows</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1054816">Formatting Drives to Use Oracle Cluster File System after Installation</a></p>
+</li>
+</ul>
+<a id="BEHHHGIE" name="BEHHHGIE"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref399" name="sthref399"></a>
+<h2><span class="secnum">4.1</span> Verifying Oracle Clusterware Requirements with CVU<a id="sthref400" name="sthref400"></a></h2>
+<p>Using the following command syntax, start the Cluster Verification Utility (CVU) to check system requirements for installing Oracle Clusterware:</p>
+<pre xml:space="preserve" class="oac_no_warn">cluvfy stage -pre crsinst -n <span class="italic">node_list</span>
+
+</pre>
+<p>In the preceding syntax, replace the <code>cluvfy</code> command with the path and name for the command on the installation media and the variable <code><span class="codeinlineitalic">node_list</span></code> with the names of the nodes in your cluster, separated by commas.</p>
+<p>For example, with the installation files in a stage directory on the C: drive, enter the following command for a cluster with nodes node1, node2, and node3:</p>
+<pre xml:space="preserve" class="oac_no_warn">C:\&gt; stage\clusterware\cluvfy\runcluvfy.bat stage -pre crsinst -n node1,node2,node3
+
+</pre>
+<p>The Cluster Verification Utility Oracle Clusterware stage check verifies the following:</p>
+<ul>
+<li type="disc">
+<p>User Equivalence: User equivalence exists on all the specified nodes</p>
+</li>
+<li type="disc">
+<p>Node Reachability: All the specified nodes are reachable from the local node</p>
+</li>
+<li type="disc">
+<p>Node Connectivity: Connectivity exists between all the specified nodes through the public and private network interconnections</p>
+</li>
+<li type="disc">
+<p>Administrative Privileges: The <code>oracle</code> user has proper administrative privileges to install Oracle Clusterware on the specified nodes</p>
+</li>
+<li type="disc">
+<p>Shared Storage Accessibility: If specified, the Oracle Cluster Registry (OCR) device and voting disk are shared across all the specified nodes</p>
+</li>
+<li type="disc">
+<p>System Requirements: All system requirements are met for installing Oracle Clusterware software, including kernel version, kernel parameters, software packages, memory, swap directory space, temp directory space, and required users and groups</p>
+</li>
+<li type="disc">
+<p>Node Applications: The VIP, ONS, and GSD node applications are created for all the nodes</p>
+</li>
+</ul>
+<div class="sect2"><a id="sthref401" name="sthref401"></a>
+<h3><span class="secnum">4.1.1</span> Troubleshooting Clusterware Setup for Windows</h3>
+<p>If the CVU report indicates that your system fails to meet the requirements for Oracle Clusterware installation, then use the topics in this section to correct the problem or problems indicated in the report, and run the CVU command again.</p>
+<div class="msgset"><a id="tahiti32552150" name="tahiti32552150"></a>
+<div class="msgentry">
+<dl>
+<dt><span class="msg">User Equivalence Check Failed</span> <!-- class="msg" --></dt>
+<dd>
+<div class="msgexplan"><span class="msgexplankw">Cause:</span> Failure to establish user equivalency across all nodes. This can be due to not providing the administrative user on each node with the same password.</div>
+<!-- class="msgexplan" --></dd>
+<dd>
+<div class="msgaction"><span class="msgactionkw">Action:</span> When you install Oracle Clusterware, each member node of the cluster must have user equivalency for the Administrative privileges account that installs the database. This means that the administrative privileges user account and password must be the same on all nodes.CVU provides a list of nodes on which user equivalence failed. For each node listed as a failure node, review the Oracle user configuration to ensure that the user configuration is properly completed.</div>
+<!-- class="msgaction" --></dd>
+</dl>
+</div>
+<!-- class="msgentry" -->
+<a id="tahiti32555350" name="tahiti32555350"></a>
+<div class="msgentry">
+<dl>
+<dt><span class="msg">Node Reachability Check</span> <!-- class="msg" --></dt>
+<dd>
+<div class="msgexplan"><span class="msgexplankw">Cause:</span> One or more nodes in the cluster cannot be reached using TCP/IP protocol, through either the public or private interconnects.</div>
+<!-- class="msgexplan" --></dd>
+<dd>
+<div class="msgaction"><span class="msgactionkw">Action:</span> Use the command ping <span class="italic">address</span> to check each node address. When you find an address that cannot be reached, check your list of public and private addresses to make sure that you have them correctly configured. Ensure that the public and private network interfaces have the same interface names on each node of your cluster.</div>
+<!-- class="msgaction" --></dd>
+</dl>
+</div>
+<!-- class="msgentry" -->
+<a id="tahiti32555580" name="tahiti32555580"></a>
+<div class="msgentry">
+<dl>
+<dt><span class="msg">Administrative Privileges <a id="sthref402" name="sthref402"></a>Check Failed<a id="sthref403" name="sthref403"></a><a id="sthref404" name="sthref404"></a></span> <!-- class="msg" --></dt>
+<dd>
+<div class="msgexplan"><span class="msgexplankw">Cause:</span> The administrative privileges required for installation are missing or incorrect.</div>
+<!-- class="msgexplan" --></dd>
+<dd>
+<div class="msgaction"><span class="msgactionkw">Action:</span> From the node where you intend to run the OUI, verify that you have administrative privileges on the other nodes. To do this, enter the following command for each node that is a part of the cluster:
+<pre xml:space="preserve" class="oac_no_warn">net use \\<span class="italic">node_name</span>\C$
+
+</pre>
+<p>where <code><span class="codeinlineitalic">node_name</span></code> is the node name.</p>
+<p>If you find a node where you are not able to log on, then you must correct the user information on that node. Oracle recommends that you use the same user name and password on each node in a cluster, or use a domain user name. If you use a domain user name, then log on under a domain with a username and password that has administrative privileges on each node.</p>
+<p>When you have corrected the path configuration information on the node, run the CVU check again.</p>
+</div>
+<!-- class="msgaction" --></dd>
+</dl>
+</div>
+<!-- class="msgentry" --></div>
+<!-- class="msgset" --></div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BEHIHBBF" name="BEHIHBBF"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref405" name="sthref405"></a>
+<h2><span class="secnum">4.2</span> Preparing to Install Oracle Clusterware with the OUI</h2>
+<p>Before you install Oracle Clusterware, use the following checklist to ensure that you have all the information you will need during installation, and you have completed all tasks that must be done before starting to install Oracle Clusterware. Mark the check box for each task as you complete it, and write down the information needed, so that you can provide it during installation.</p>
+<ul>
+<li type="square">
+<p><span class="bold">Verify Cluster Privileges</span></p>
+<p>Before running the Oracle Universal Installer, from the node where you intend to run the Installer, verify that you have administrative privileges on the other nodes. To do this, enter the following command for each node that is a part of the cluster:</p>
+<pre xml:space="preserve" class="oac_no_warn">net use \\<span class="italic">node_name</span>\C$
+
+</pre>
+<p>where <code><span class="codeinlineitalic">node_name</span></code> is the node name.</p>
+</li>
+<li type="square">
+<p><span class="bold">Shut Down Running Oracle Processes</span></p>
+<p>If you are installing Oracle Clusterware on a node that already has a single-instance Oracle Database 10g installation, then stop the existing ASM instances. After Oracle Clusterware is installed, start up the ASM instances again. After Oracle Clusterware is installed, when you restart the ASM instances, they use the cluster CSS daemon<a id="sthref406" name="sthref406"></a><a id="sthref407" name="sthref407"></a><a id="sthref408" name="sthref408"></a><a id="sthref409" name="sthref409"></a> instead of the daemon for the single-instance Oracle database.</p>
+<p>If a GSD from Oracle9<span class="italic">i</span>, Release 9.2 or earlier is running, then stop it before installing Oracle Database 10<span class="italic">g</span> Oracle Clusterware by stopping the OracleGSDService in the Services window.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+If you receive a warning to stop all Oracle services after starting the OUI, then run the command
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">Oracle_home</span>\bin\localconfig delete
+</pre>
+<p>where <code><span class="codeinlineitalic">Oracle_home</span></code> is the home that is running CSS.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</li>
+<li type="square">
+<p><span class="bold">Determine your cluster name, public node names, private node names, and virtual node names for each node in the cluster</span></p>
+<p>If you install the clusterware during installation, and are not using third-party vendor clusterware, then you are asked to provide a public node name and a private node name for each node. Use your third-party vendor documentation to complete setup of your public and private domain addresses.</p>
+<p>When you enter the <a id="sthref410" name="sthref410"></a>public node name, use the primary host name of each node. In other words, use the name displayed by the <code>hostname</code> command but without any portion of the domain name that may be returned by the command.</p>
+<p>In addition, ensure that the following are true:</p>
+<ul>
+<li type="circle">
+<p>Determine a <a id="sthref411" name="sthref411"></a>cluster name with the following characteristics:</p>
+<ul>
+<li type="square">
+<p>It must be globally unique throughout your host domain</p>
+</li>
+<li type="square">
+<p>It must be at least one character long and less than 15 characters long</p>
+</li>
+<li type="square">
+<p>It must consist of the same character set used for host names: underscores (_), hyphens (-), and single-byte alphanumeric characters (a to z, A to Z, and 0 to 9). If you use third-party vendor clusterware, then Oracle recommends that you use the vendor cluster name</p>
+</li>
+</ul>
+</li>
+<li type="circle">
+<p>Determine a <a id="sthref412" name="sthref412"></a>private node name or private IP address for each node. The private IP address is an address that is only accessible by the other nodes in this cluster. Oracle uses private IP addresses for inter-node, or instance-to-instance Cache Fusion traffic. Oracle recommends that you provide a name in the format <span class="italic">public_hostname</span>-priv. Example: myclstr2-priv.</p>
+</li>
+<li type="circle">
+<p>Determine a <a id="sthref413" name="sthref413"></a>virtual host name for each node. A virtual host name is a public node name that is used to reroute client requests sent to the node if the node is down. Oracle uses virtual IP addresses (VIPs) for client to database connections, so the VIP address must be publicly accessible. Oracle recommends that you provide a name in the format <span class="italic">public_hostname</span>-vip. Example: myclstr2-vip</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+The following is a list of additional information about node IP addresses:
+<ul>
+<li type="square">
+<p>The IP addresses that you use for all of the nodes in the current installation process must be from the same subnet.</p>
+</li>
+<li type="square">
+<p>If you create private and virtual host names in the format <span class="italic">nodename</span>-priv and <span class="italic">nodename</span>-vip, then OUI looks up these addresses and fills them in by default during the installation. If the OUI does not find these addresses, then you must fill in addresses during installation.</p>
+</li>
+<li type="square">
+<p>Host names, private names, and virtual host names are not domain-qualified. If you provide a domain in the address field during installation, then the OUI removes the domain from the address.</p>
+</li>
+<li type="square">
+<p>Private IP addresses should not be accessible as public interfaces. Using public interfaces for Cache Fusion can cause performance problems.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</li>
+</ul>
+</li>
+<li type="square">
+<p><span class="bold">Determine the complete path for the raw devices or shared file systems, and set up the voting disk and Oracle Cluster Registry partitions</span></p>
+<p>During installation, at the Cluster Configuration Storage page, you are asked to provide paths for two files that must be shared across all nodes of the cluster, either on a shared raw device, or a shared file system file:</p>
+<ul>
+<li type="circle">
+<p>The Cluster Synchronization Services (CSS) <a id="sthref414" name="sthref414"></a>voting disk is a partition that Oracle Clusterware uses to verify cluster node membership and status. Provide at least 20 MB disk space for the voting disk.</p>
+</li>
+<li type="circle">
+<p>The <a id="sthref415" name="sthref415"></a>Oracle Cluster Registry (OCR) contains cluster and database configuration information for the RAC database and for Oracle Clusterware, including the node list, and other information about cluster configuration and profiles. Provide at least 100 MB disk space for the OCR.</p>
+</li>
+</ul>
+<p>In addition, if you intend to use Oracle Cluster File System (OCFS) then you are prompted to indicate which of the available disks you want to format with OCFS, what format type you want to use, and to what drive letter the formatted OCFS disk is mounted.</p>
+<p>Ensure that you create at least the minimum required drives for installation.</p>
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+The pre-installation chapters in <a href="part2.htm#CHDGFBJF">Part II</a> for information about the minimum raw device sizes</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></li>
+</ul>
+</div>
+<!-- class="sect1" -->
+<a id="i1054730" name="i1054730"></a>
+<div class="sect1"><a id="sthref416" name="sthref416"></a>
+<h2><span class="secnum">4.3</span> Using Oracle Universal Installer to Install Oracle Clusterware on Windows</h2>
+<p>Perform the following <a id="sthref417" name="sthref417"></a>procedures to complete phase one, install Oracle Clusterware with the <a id="sthref418" name="sthref418"></a>Oracle Universal Installer, of the installation of the Oracle Database 10<span class="italic">g</span> with Real Application Clusters (RAC):</p>
+<ol type="1" start="1">
+<li>
+<p>Log in to Windows with Administrative privileges and run the <code>setup.exe</code> command on the Oracle Clusterware media. This will open the Oracle Universal Installer (OUI) Welcome page.</p>
+</li>
+<li>
+<p>After you click Next on the <a id="sthref419" name="sthref419"></a><a id="sthref420" name="sthref420"></a>Welcome page, the <a id="sthref421" name="sthref421"></a><a id="sthref422" name="sthref422"></a>Specify File Locations page will allow you to accept the displayed path name for the Oracle Clusterware products or select a different one. You may also accept default directory and path name for the location of your <a id="sthref423" name="sthref423"></a>Oracle Clusterware home or browse for an alternate directory and destination. You must select a destination that exists on each cluster node that is part of this installation. Click Next to confirm your choices.</p>
+</li>
+<li>
+<p>The installer verifies that your environment meets all of the minimum requirements for installing and configuring the products that you have chosen to install. The results are displayed on the Product-Specific Prerequisite Checks page. Verify and confirm the items that are flagged with warnings and items that require manual checks. After you confirm your configuration, the OUI proceeds to the Cluster Configuration page.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+If the check identifies an existing, local CSS, you must shutdown the Oracle database and ASM instance from the Oracle home where CSS is running. To accomplish this, run the following command, using the existing <code><span class="codeinlineitalic">Oracle home</span></code>, in a separate window before you continue with the installation:
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">Oracle home</span>\bin\localconfig delete
+
+</pre></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</li>
+<li>
+<p>The <a id="sthref424" name="sthref424"></a><a id="sthref425" name="sthref425"></a>Cluster Configuration page contains predefined node information if the OUI detects that your system has the Oracle9<span class="italic">i</span> Release 2 clusterware. Otherwise, the OUI displays the Cluster Configuration page without predefined node information.</p>
+<p>Provide your own <a id="sthref426" name="sthref426"></a>cluster name if you do not wish to use the name provided by the OUI. Note that the selected cluster name must be globally unique throughout the enterprise and its allowable character set is the same as that for hostnames, that is, underscores (_), hyphens (-), and single-byte alphanumeric characters (a to z, A to Z, and 0 to 9).</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+If your cluster has Oracle9<span class="italic">i</span> Release 2 clusterware installed, then you must enter the same cluster name that you used for the Oracle9<span class="italic">i</span> Release 2 installation or else the installation will fail.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<p>Enter a public, a virtual, and a private host name for each node. Do not include a domain qualifier with the host names. When you enter the public host name, use the primary host name of each node, that is, the name displayed by the <code>hostname</code> command. The virtual node name is the name to be associated with the VIP for the node. The private node refers to an address that is only accessible by the other nodes in this cluster, and which Oracle uses for Cache Fusion processing. You should enter the private host name for each node.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+You may provide the cluster configuration information in a text file instead of entering it in the individual fields on the Cluster Configuration page. The contents of your <a id="sthref427" name="sthref427"></a>cluster configuration file should be similar to the following example:
+<pre xml:space="preserve" class="oac_no_warn">Cluster configuration file:
+--------------------------------------------------
+# Cluster Name
+  cluster_10g
+ 
+# Node Information
+  # Public Node Name      Private Node Name      Virtual Host Name
+    rac1                  rac1-priv              rac1-vip
+    rac2                  rac2-priv              rac2-vip
+
+</pre></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<p>Click Next after you have entered the cluster configuration information. This saves your entries and opens the Specify Network Interface Usage page.</p>
+</li>
+<li>
+<p>In the <a id="sthref428" name="sthref428"></a><a id="sthref429" name="sthref429"></a>Specify Network Interface Usage page the OUI displays a list of cluster-wide interfaces. Use the drop-down menus on this page to classify each interface as <code>Public</code>, <code>Private</code>, or <code>Do Not Use</code>. The default setting for each interface is <code>Do Not Use</code>. You <span class="italic">must</span> classify at least one interconnect as <code>Public</code> and one as <code>Private</code>. Click Next when you have made your selections to open the Select Disk Formatting Options page.</p>
+</li>
+<li><a id="i1054651" name="i1054651"></a>
+<p>On the <a id="sthref430" name="sthref430"></a><a id="sthref431" name="sthref431"></a>Cluster Configuration Storage page, identify the disks that you want to use for the Oracle Clusterware files and, optionally, Oracle Cluster File System (OCFS) storage. Highlight each of these disks one at a time and click Edit to open the Specify Disk Configuration page where you define the details for the selected disk.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Notes:</p>
+<p>The OUI page described in this step displays logical drives from which you must make your selections.</p>
+<p>If you are installing on a cluster with an existing cluster file system from an earlier release of Oracle, then the OCR and voting disk will be stored in that file system. In this case, you do not require new partitions for the OCR and voting disk, even if you do not format a logical drive for data file storage.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</li>
+<li>
+<p>On the Specify Disk Configuration page, designate whether you want to place a copy of the OCR, a copy of the voting disk, or a copy of both files on the partition. If you plan to use OCFS, then indicate whether you plan to store software, database files, or both software and database files on selected disk. For OCFS, disks, select an available drive letter to be used to mount the partition once formatted.</p>
+</li>
+<li>
+<p>After you click Next, the OUI checks whether the remote inventories are set. If they are not set, then the OUI sets up the remote inventories by setting registry keys. The OUI also verifies the permissions to enable writing to the inventory directories on the remote nodes. After completing these actions, the OUI displays a <a id="sthref432" name="sthref432"></a><a id="sthref433" name="sthref433"></a>Summary page that shows the cluster node information along with the space requirements and availability. Verify the installation that the OUI is about to perform and click Finish.</p>
+</li>
+<li>
+<p>When you click Finish, the OUI installs the OCFS and Oracle Clusterware software on the local node and validates the installation again. The OUI will also create any required OCFS file systems. After validating the installation, the OUI completes the Oracle Clusterware software installation and configuration on the remote nodes.</p>
+</li>
+<li>
+<p>For installations of Oracle Clusterware on a system that also contains Oracle9<span class="italic">i</span> Real Application Clusters, note these additional considerations and complete the steps as necessary:</p>
+<ul>
+<li type="disc">
+<p>Restart all of the newly installed Oracle Database 10<span class="italic">g</span> cluster member nodes. You can restart one node at a time so that availability of the Oracle9<span class="italic">i</span> databases is not disrupted.</p>
+</li>
+<li type="disc">
+<p>If there will be a significant delay before you perform phase two of the RAC installation to install Oracle Database 10<span class="italic">g</span> with RAC software, then execute the command <code><span class="codeinlineitalic">CRS_home</span></code><code>\bin\gsdctl start</code> to start the GSD manually to service the 9.2 SRVCTL tool and assistants. Then, before configuring the Oracle Database 10g with RAC software, run the command <code><span class="codeinlineitalic">CRS_home</span></code><code>\bin\gsdctl stop</code> to stop the GSD.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>At this point, you have completed phase one, the Oracle Clusterware installation, and are ready to install the Oracle Database 10<span class="italic">g</span> with RAC as described in <a href="racinstl.htm#CIHHEHBF">Chapter 5, "Installing Oracle Database 10<span class="italic">g</span> with Real Application Clusters"</a>. If you intend to use Oracle Clusterware by itself, then refer to the single-instance Oracle Database installation guide.</p>
+</div>
+<!-- class="sect1" -->
+<a id="i1054816" name="i1054816"></a>
+<div class="sect1"><a id="sthref434" name="sthref434"></a>
+<h2><span class="secnum">4.4</span> Formatting Drives to Use Oracle Cluster File System after Installation</h2>
+<p>If you install Oracle Database 10<span class="italic">g</span> with RAC, and later you want to <a id="sthref435" name="sthref435"></a><a id="sthref436" name="sthref436"></a>install OCFS, then run the <code>ocfsformat.exe</code> command from the <code><span class="codeinlineitalic">crs_home</span></code><code>\cfs</code> directory using the following syntax:</p>
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">crs_home</span>\cfs\ocfsformat.exe /l <span class="italic">drive_letter </span>/c <span class="italic">clustersize </span>[/v <span class="italic">volume_label</span>] [/f]
+
+</pre>
+<p>where:</p>
+<ul>
+<li type="disc">
+<p><code><span class="codeinlineitalic">drive_letter</span></code> is the drive on which you want to format the OCFS</p>
+</li>
+<li type="disc">
+<p><code><span class="codeinlineitalic">clustersize</span></code> is the size of the partition in kilobytes</p>
+</li>
+<li type="disc">
+<p><code><span class="codeinlineitalic">volume_label</span></code> is an optional volume label</p>
+</li>
+</ul>
+</div>
+<!-- class="sect1" --></div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="part3.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="racinstl.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

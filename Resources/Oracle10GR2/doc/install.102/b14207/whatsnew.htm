@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>What's New in Oracle Database 10 g RAC Installation and Configuration?</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.1.3 Build 116" />
+<meta name="Date" content="August 18, 2005 11:44:23" />
+<meta name="doctitle" content="Oracle&reg; Database Oracle Clusterware and Oracle Real Application Clusters Installation Guide 10g Release 2 (10.2) for Microsoft Windows" />
+<meta name="partno" content="B14207-01" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="preface.htm" title="Previous" type="text/html" />
+<link rel="Next" href="part1.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14207.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database Oracle Clusterware and Oracle Real Application Clusters Installation Guide<br />
+10<i>g</i> Release 2 (10.2) for Microsoft Windows</b><br />
+Part Number B14207-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="preface.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="part1.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top"><a href="../b14207.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="sthref33" name="sthref33"></a>
+<h1>What's New in Oracle Database 10<span class="italic">g</span> RAC Installation and Configuration?</h1>
+<p><a id="sthref34" name="sthref34"></a><a id="sthref35" name="sthref35"></a>This section describes the new features in Oracle Database 10<span class="italic">g</span> as they pertain to the installation and configuration of Oracle Clusterware and Oracle Real Application Clusters (RAC). The topic in this section is:</p>
+<ul>
+<li type="disc">
+<p><a href="#BGGGBHJE">Oracle Database 10g Release 1 (10.1) New Features</a></p>
+</li>
+<li type="disc">
+<p><a href="#i973255">Oracle Database 10<span class="italic">g</span> Release 2 (10.2) New Features</a></p>
+</li>
+</ul>
+<a id="BGGGBHJE" name="BGGGBHJE"></a><a id="sthref36" name="sthref36"></a>
+<h2>Oracle Database 10g Release 1 (10.1) New Features</h2>
+<p>This section describes features introduced in Oracle Database 10g Release 1 (10.1) that affect the installation and configuration of RAC.</p>
+<ul>
+<li type="disc">
+<p>Oracle Database 10<span class="italic">g</span> with RAC is available on both Standard Edition and Enterprise Edition.</p>
+</li>
+<li type="disc">
+<p>There are new and changed pages and dialogs for the Oracle Universal Installer (OUI), the Database Configuration Assistant (DBCA), and the Database Upgrade Assistant. The Virtual Internet Protocol Configuration Assistant (VIPCA) is a new tool for this release. These enhancements are described in the following:</p>
+<ul>
+<li type="circle">
+<p>OUI Cluster Installation Mode Page&#x2014;This page enables you to select whether to perform a cluster or a single-instance Oracle Database 10<span class="italic">g</span> installation.</p>
+</li>
+<li type="circle">
+<p><code>SYS</code> and <code>SYSTEM</code> Passwords Page&#x2014;This page has fields for entering and confirming the <code>SYS</code> and <code>SYSTEM</code> user passwords. This includes <code>SYSMAN</code> and <code>DBSNMP</code> if you use Oracle Enterprise Manager Database Control.</p>
+</li>
+<li type="circle">
+<p>Storage Options Page&#x2014;This page has storage options for selecting the storage type for the database files such as control files, datafiles, and redo logs.</p>
+</li>
+<li type="circle">
+<p>DBCA Services Page&#x2014;This page enables you to create and configure services for your RAC environment.</p>
+</li>
+<li type="circle">
+<p>DBCA Initialization Parameters Page&#x2014;This page has two dialogs to display both Basic and Advanced parameter settings.</p>
+</li>
+<li type="circle">
+<p>VIPCA&#x2014;The pages for this assistant enable you to configure virtual internet protocol addresses for your RAC database.</p>
+</li>
+</ul>
+</li>
+<li type="disc">
+<p>A new auxiliary, system-managed tablespace called <code>SYSAUX</code> contains performance data and combines content that was stored in different tablespaces (some of which are no longer required) in earlier releases. This is a required tablespace for which you must plan disk space.</p>
+</li>
+<li type="disc">
+<p>The <code>gsdctl</code> commands should only be used with Oracle9<span class="italic">i</span> databases. The Oracle cluster software installation process stops any existing GSD processes. To start or stop the GSD processed manually, use <code>srvctl start nodeapps</code> or <code>srvctl stop nodeapps</code> respectively.</p>
+</li>
+<li type="disc">
+<p>On some platforms, versions of cluster manager previous to Oracle Database 10<span class="italic">g</span> were referred to as "Cluster Manager". On all platforms in Oracle Database 10<span class="italic">g,</span> this function is performed by an Oracle cluster software component known as Cluster Synchronization Services (CSS). The Oracle Cluster Synchronization Service Daemon (OCSSD) performs this function. On Windows-based platforms, the OracleCSService, OracleCRService, and OracleEVMService replace the service known previous to Oracle Database 10<span class="italic">g</span> as OracleCMService9<span class="italic">i</span>.</p>
+</li>
+<li type="disc">
+<p>Oracle Database 10<span class="italic">g</span> provides cluster file system support for Windows-based platforms.</p>
+</li>
+<li type="disc">
+<p>RAC and Database Configuration Assistant (DBCA) support Automatic Storage Management (ASM) and Oracle Managed Files (OMF).</p>
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p><span class="italic">Oracle Database Administrator's Guide</span> for information about Automatic Storage Management, a new database file management feature</p>
+</li>
+<li type="disc">
+<p><span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span> for more information about administering services and storage in RAC</p>
+</li>
+<li type="disc">
+<p><span class="italic">Oracle Database Upgrade Guide</span> for information about using the DBUA</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></li>
+<li type="disc">
+<p>The Oracle Database 10<span class="italic">g</span> version of the <code>srvConfig.loc</code> file is the <code>ocr.loc</code> file. The Oracle9<span class="italic">i</span> version of <code>srvConfig.loc</code> still exists for backward compatibility.</p>
+</li>
+<li type="disc">
+<p>In Windows-based environments using raw partitions, you can use a newly-introduced DBCA raw device mapping file to associate database objects with their partition symbolic link names. This removes the Oracle Database DBCA requirement in previous versions to always prefix raw partition symbolic links with a database name. This enables you to reuse the same raw partition symbolic links for any database name if that partition is not a part of any existing database.</p>
+</li>
+</ul>
+<a id="i973255" name="i973255"></a><a id="sthref37" name="sthref37"></a>
+<h2>Oracle Database 10<span class="italic">g</span> Release 2 (10.2) New Features</h2>
+<p>This section describes features introduced in Oracle Database 10g Release 2 (10.2) that affect the installation and configuration of Oracle Clusterware and RAC.</p>
+<ul>
+<li type="disc">
+<p>With this release, Cluster Ready Services, or CRS, is now called Oracle Clusterware.</p>
+</li>
+<li type="disc">
+<p>This release of Oracle Database 10<span class="italic">g</span> is provided with Cluster Verification Utility (CVU)<a id="sthref38" name="sthref38"></a>. CVU is a validation tool that you can use to check whether your cluster is properly configured, to avoid installation failures and database creation failures. It provides the following cluster setup checks:</p>
+<ul>
+<li type="circle">
+<p>The cluster configuration meets the requirements for installing Oracle Clusterware</p>
+</li>
+<li type="circle">
+<p>The cluster configuration meets the requirements for Real Application Clusters installation</p>
+</li>
+<li type="circle">
+<p>The cluster configuration meets the requirements for creating a database with Oracle Real Application Clusters, or meets the requirements for a change in database configuration</p>
+</li>
+</ul>
+<p>You can use the CVU command-line interface:</p>
+<ul>
+<li type="circle">
+<p>To validate cluster components individually, including node connectivity, administrative privileges, and the proper configuration of Oracle Cluster Registry (OCR), Oracle Clusterware, and other required components for Real Application Clusters.</p>
+</li>
+<li type="circle">
+<p>To validate a pre-defined set of requirements, including the proper setup for node connectivity, user equivalence, shared storage accessibility, integrity of the Oracle Clusterware stack, and other requirements that a system must have for a specific stage of RAC deployment like Oracle Clusterware or database installation and database configuration.</p>
+</li>
+</ul>
+<p>CVU is available on the Oracle Clusterware media and is installed by OUI as part of the Oracle Clusterware installation. You can run CVU directly from the media, before installing Oracle software, to perform configuration checks. CVU commands to perform installation checks are provided in this installation guide.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a class="olinkSRC RACAD" href="http://www.oracle.com/pls/db102/to_bookid?id=RACAD"><span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span></a> for detailed information about the CVU.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</li>
+<li type="disc">
+<p>With Oracle Database 10<span class="italic">g</span> Release 2 (10.2), you can create duplicates of a cluster node (or "clone" a node) using an image file. In addition, cloning is now the preferred method for adding nodes to a cluster. The process for cloning, as well as details about using non-interactive (silent) installation scripts, is described in the manual Oracle Universal Installer and OPatch User's Guide.</p>
+<p>Both Oracle Clusterware and Oracle Real Application Clusters can be cloned.</p>
+</li>
+<li type="disc">
+<p>Oracle Database 10<span class="italic">g</span> Release 2 (10.2) enables rolling upgrades from Oracle Database 10<span class="italic">g</span> Release 1 (10.1) Cluster Ready Services to Oracle Database 10<span class="italic">g</span> Release 2 (10.2) Oracle Clusterware.</p>
+<p>During Oracle Clusterware installation, if Oracle Universal Installer (OUI) detects a 10<span class="italic">g</span> Release 1 (10.1) Cluster Ready Services installation, then OUI provides the option to install Oracle Clusterware across all nodes in the cluster, or across a subset of nodes in the cluster. During Oracle Clusterware installation, the Oracle Database 10<span class="italic">g</span> Release 1 (10.1) Cluster Ready Services remains available on nodes that are not being upgraded.</p>
+</li>
+<li type="disc">
+<p>Starting with Oracle Database 10<span class="italic">g</span> Release 2 (10.2), Oracle Clusterware should be installed in a separate Oracle Clusterware home directory. This is a change to the <a id="sthref39" name="sthref39"></a><a id="sthref40" name="sthref40"></a><a id="sthref41" name="sthref41"></a>Optimal Flexible Architecture (OFA) rules. You should not install Oracle Clusterware in an Oracle Clusterware directory in the release-specific mount point, as succeeding versions of Oracle Clusterware will overwrite the Oracle Clusterware installation in the same path. Also, If Oracle Clusterware 10<span class="italic">g</span> Release 2 (10.2) detects an existing Oracle Cluster Ready Services installation, then it overwrites the existing installation in the same path.</p>
+</li>
+<li type="disc">
+<p>Oracle Database 10<span class="italic">g</span> Release 2 (10.2) Oracle Clusterware installation provides the option to use a Cluster Configuration File. The Cluster Configuration File simplifies Oracle Clusterware installation in situations such as installing in test environments, or installing Oracle Clusterware on a large number of nodes.</p>
+</li>
+<li type="disc">
+<p>The Database Configuration Assistant (DBCA) provides a simplified procedure for creating an Automatic Storage Management (ASM) instance and for configuring disk groups.</p>
+</li>
+<li type="disc">
+<p>ASM should be installed in a separate ASM home directory. This is a change to the OFA rules.</p>
+</li>
+<li type="disc">
+<p>With Oracle Database 10<span class="italic">g</span> Release 2 (10.2), a single ASM instance is able to serve disk groups to all the database instances on the node, whether they are for single-instance or RAC databases. This change simplifies managing the cluster, as you do not need to distribute disks across multiple ASM instances statically. Instead, you can manage all disks with one ASM instance on each node.</p>
+</li>
+<li type="disc">
+<p>With Oracle Database 10<span class="italic">g</span> Release 2 (10.2), an ASM disk group defined with normal redundancy can have its individual files defined with three-way redundancy (high redundancy) and, by default, the control file is created with three-way mirroring. You still have the option to create files in a normal redundancy group with the default two-way mirroring or with no mirroring.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Database Administrator's Guide</span> for more information about the use of ASM disk groups and their options</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</li>
+<li type="disc">
+<p>Oracle cluster software, which was known as CRS in Oracle Database 10<span class="italic">g</span> Release 1 (10.1), has been renamed to Oracle Clusterware in Oracle Database 10<span class="italic">g</span> Release 2 (10.2). Oracle Clusterware contains the cluster management software required to support Oracle Database 10<span class="italic">g</span> RAC databases. Oracle Clusterware also provides high availability components that provide many system management features, including determining node availability, cluster group membership, and locking services for Oracle processes. The components of Oracle Clusterware interact with third-party vendor clusterware, if present, to coordinate cluster membership information.</p>
+<p>In addition, while continuing to be required for RAC databases, the Oracle Clusterware is also available for use with single-instance databases and applications that you deploy on clusters. The API libraries required for use with single-instance databases are provided with the Oracle Client installation media.</p>
+<p>With this release, the following updates have been made to Oracle Clusterware:</p>
+<ul>
+<li type="circle">
+<p>The Oracle Database cluster manager on database versions previous to 10<span class="italic">g</span> Release 1 was referred to as "Cluster Manager." In Oracle Database 10<span class="italic">g</span>, the cluster manager role is performed by Cluster Synchronization Services (CSS)<a id="sthref42" name="sthref42"></a><a id="sthref43" name="sthref43"></a>, a component of Oracle Clusterware, on all platforms. The Cluster Synchronization Service Daemon (OCSSD)<a id="sthref44" name="sthref44"></a><a id="sthref45" name="sthref45"></a><a id="sthref46" name="sthref46"></a> performs this function</p>
+</li>
+<li type="circle">
+<p>With this release of Oracle Clusterware, CSS has been modified to allow you to configure CSS with <a id="sthref47" name="sthref47"></a><a id="sthref48" name="sthref48"></a>multiple voting disks. In the 10g Release 1 (10.1) version, you could configure only one voting disk. By enabling multiple voting disk configuration, the redundant voting disks allow you to configure a RAC cluster with multiple voting disks on independent shared physical disks. This option facilitates the use of the iSCSI network protocol, and other Network Attached Storage (NAS) storage solutions.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+To obtain the benefits of multiple voting disks, you must configure three voting disks.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</li>
+<li type="circle">
+<p>Oracle Clusterware is available for use with single-instance databases and applications that you deploy on clusters.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span> for more information about the Oracle Clusterware, the Oracle Clusterware API, and the Oracle Clusterware API commands</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</li>
+</ul>
+</li>
+<li type="disc">
+<p>Oracle Database 10<span class="italic">g</span> installation requires you to perform a two-phase process in which you run OUI twice. The first phase installs Oracle Clusterware 10<span class="italic">g</span> Release 2 (10.2) and the second phase installs the Oracle Database 10<span class="italic">g</span> software with RAC. The installation also enables you to create and configure services for your RAC environment.</p>
+<p>If you have a previous Oracle cluster database version, then the OUI activates the Database Upgrade Assistant (DBUA) to automatically upgrade your pre-Oracle Database 10<span class="italic">g</span> cluster database. DBUA can upgrade 9.x and 10.1 RAC databases, and can upgrade 10.1 RAC databases using ASM to 10.2. It can also upgrade ASM 10.1 to ASM 10.2 The Oracle Database 10<span class="italic">g</span> installation process provides single system image, ease of use, and accuracy for RAC installations and patches.</p>
+</li>
+<li type="disc">
+<p>Oracle Clusterware contains the cluster management software required to support Oracle Database 10<span class="italic">g</span> RAC databases. Oracle Clusterware also provides high availability components that provide many system management features, including determining node availability, cluster group membership, and locking services for Oracle processes. With this release, the following updates have been made to Oracle Clusterware:</p>
+<ul>
+<li type="circle">
+<p>The Oracle Database cluster manager on database versions previous to 10<span class="italic">g</span> Release 1 was referred to as "Cluster Manager." In Oracle Database 10<span class="italic">g</span>, the cluster manager role is performed by Cluster Synchronization Services (CSS)<a id="sthref49" name="sthref49"></a><a id="sthref50" name="sthref50"></a>, a component of Oracle Clusterware, on all platforms. The Cluster Synchronization Service Daemon (OCSSD)<a id="sthref51" name="sthref51"></a><a id="sthref52" name="sthref52"></a><a id="sthref53" name="sthref53"></a> performs this function</p>
+</li>
+<li type="circle">
+<p>With this release of Oracle Database 10<span class="italic">g</span> Release 2 (10.2) with RAC, CSS has been modified to allow you to configure CSS with <a id="sthref54" name="sthref54"></a><a id="sthref55" name="sthref55"></a>multiple voting disks. In the 10g Release 1 (10.1) version, you could configure only one voting disk. By enabling multiple voting disk configuration, the redundant voting disk enables you to configure a RAC cluster with a voting disk that is mirrored on multiple independent shared physical disks. This option facilitates the use of the iSCSI network protocol, and other Network Attached Storage (NAS) storage solutions.</p>
+</li>
+</ul>
+</li>
+<li type="disc">
+<p>There are new and changed pages and dialogs for OUI, the Database Configuration Assistant (DBCA), and the Database Upgrade Assistant.</p>
+</li>
+<li type="disc">
+<p>The Virtual Internet Protocol Configuration Assistant (VIPCA) is a new tool for this release. These enhancements are described in the following:</p>
+</li>
+<li type="disc">
+<p>On some platforms, versions of cluster manager previous to Oracle Database 10<span class="italic">g</span> were referred to as "Cluster Manager". On all platforms in Oracle Database 10<span class="italic">g,</span> this function is performed by a Oracle Clusterware component known as Cluster Synchronization Services (CSS). The Oracle Cluster Synchronization Service Daemon (OCSSD) performs this function. On Windows-based platforms, the OracleCSService, OracleCRService, and OracleEVMService replace the service known previous to Oracle Database 10<span class="italic">g</span> as OracleCMService9<span class="italic">i</span>.</p>
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p><span class="italic">Oracle Database Administrator's Guide</span> for information about Automatic Storage Management, a new database file management feature</p>
+</li>
+<li type="disc">
+<p><span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span> for more information about administering services and storage in RAC</p>
+</li>
+<li type="disc">
+<p><span class="italic">Oracle Database Upgrade Guide</span> for information about using the DBUA</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></li>
+</ul>
+</div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="preface.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="part1.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

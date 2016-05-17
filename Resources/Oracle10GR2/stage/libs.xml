@@ -1,0 +1,81 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 2005 Oracle Corporation. All rights Reserved -->
+<!-- Do not modify the contents of this file by hand. -->
+<LIB_LIST>
+<QUERY_LIST>
+<LIB NAME="areasQueries" VER="10.2.0.1.0" REP_VER="0.0" MIN_INST_VER="10.2.0.0.0" INV_LOC="Queries/areasQueries/10.2.0.1.0/1/areasQueries.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="ASMQueries" VER="10.2.0.1.0" REP_VER="10.2.0.0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/ASMQueries/10.2.0.1.0/1/ASMQueries.jar" PLAT="Solaris W95 W98 NT_IA64 NT_X86 HP_UX IBM_AIX UNIX_Alpha Linux IBM_MVS"/>
+<LIB NAME="cfsprereqQueries" VER="10.2.0.1.0" REP_VER="10.2.0.0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/cfsprereqQueries/10.2.0.1.0/1/cfsprereqQueries.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="ClusterPreinstQueries" VER="1.2.1" REP_VER="10.2.0.0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/ClusterPreinstQueries/1.2.1/1/ClusterPreinstQueries.jar" PLAT="NT_X86"/>
+<LIB NAME="ClusterQueries" VER="10.2.0.1.0" REP_VER="10.2.0.0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/ClusterQueries/10.2.0.1.0/1/ClusterQueries.jar" PLAT="NT_X86 Solaris Linux IBM_MVS"/>
+<LIB NAME="clusterQueriesEx" VER="10.1.0.3.0" REP_VER="0.0" MIN_INST_VER="10.1.0.2.0" INV_LOC="Queries/clusterQueriesEx/10.1.0.3.0/1/clusterQuery.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="dbQueries" VER="10.1.0.2.0" REP_VER="0.0" MIN_INST_VER="10.1.0.2.0" INV_LOC="Queries/dbQueries/10.1.0.2.0/1/dbQueries.jar" PLAT="Solaris HP_UX Linux IBM_AIX UNIX_Alpha Linux_IA64"/>
+<LIB NAME="DLLQueries" VER="1.1" REP_VER="10.2.0.0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/DLLQueries/1.1/1/DllQueries.jar" PLAT="NT_X86 W95 W98 Solaris IBM_MVS"/>
+<LIB NAME="EmQueries" VER="4.2.2" REP_VER="4.1.5" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/EmQueries/4.2.2/1/EmQueries.jar" PLAT="Solaris NT_X86 W95 W98 NT_IA64 HP_UX IBM_AIX UNIX_Alpha Linux HP_IA64 Linux_IA64 Linux_S390"/>
+<LIB NAME="encryptionQueries" VER="1.1" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/encryptionQueries/1.1/1/encryptionQueries.jar" PLAT="NT_X86 W98 W95 Solaris HP_UX IBM_AIX UNIX_Alpha Linux"/>
+<LIB NAME="fileQueries" VER="10.1.0.2.0" REP_VER="0.0" MIN_INST_VER="10.1.0.2.0" INV_LOC="Queries/fileQueries/10.1.0.2.0/1/fileQueries.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="generalPortQueries" VER="2.1.0.19.8" REP_VER="0.0.0.0.0" MIN_INST_VER="2.0.0.0.0" INV_LOC="Queries/generalPortQueries/2.1.0.19.8/1/generalPortQueries.jar" PLAT="Solaris IBM_AIX HP_IA64 Linux_IA64 HP_UX UNIX_Alpha Linux Intel_Solaris NT_X86"/>
+<LIB NAME="generalQueries" VER="10.1.0.2.0" REP_VER="0.0" MIN_INST_VER="10.1.0.2.0" INV_LOC="Queries/generalQueries/10.1.0.2.0/1/generalQueries.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="globalVarQueries" VER="2.1.0.4.1" REP_VER="10.2.0.0.0" MIN_INST_VER="2.0.0.0.0" INV_LOC="Queries/globalVarQueries/2.1.0.4.1/1/globalVarQueries.jar" PLAT="NT_X86 Solaris IBM_AIX HP_UX UNIX_Alpha Linux Intel_Solaris Linux_IA64 HP_IA64 IBM_MVS"/>
+<LIB NAME="HealthCheckQueries" VER="10.2.0.1.0" REP_VER="10.2.0.0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/HealthCheckQueries/10.2.0.1.0/1/HealthCheckQueries.jar" PLAT="Solaris W95 W98 NT_IA64 NT_X86 HP_UX IBM_AIX UNIX_Alpha Linux IBM_MVS"/>
+<LIB NAME="HTMLDBQueries" VER="10.2.0.1.0" REP_VER="10.2.0.0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/HTMLDBQueries/10.2.0.1.0/1/HTMLDBQueries.jar" PLAT="NT_X86 Solaris Linux IBM_MVS"/>
+<LIB NAME="IP_DBQueries" VER="1.0" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/IP_DBQueries/1.0/1/IPQuery.jar" PLAT="NT_X86 W95 Solaris IBM_AIX HP_UX Linux UNIX_Alpha Intel_Solaris"/>
+<LIB NAME="JDevOUIQueries" VER="0.01.00.12" REP_VER="0.01.00.00" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/JDevOUIQueries/0.01.00.12/1/JDevOUIQueries.jar" PLAT="NT_X86 W95 W98 Linux Solaris NT_Alpha Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX Dynix UnixWare OpenVMS DG_UX HP_UX IBM_MVS NetWare_411 NetWare_500 NEC Hitachi_UX Iris NCOS"/>
+<LIB NAME="LangQueries" VER="1.3.6.4" REP_VER="1.3.6" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/LangQueries/1.3.6.4/1/LangQueries.jar" PLAT="NT_X86 W95 W98 NT_IA64 Solaris HP_UX UNIX_Alpha Linux Intel_Solaris"/>
+<LIB NAME="LDAPGlobalQueries" VER="1.2.1" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/LDAPGlobalQueries/1.2.1/1/LDAPGlobalQueries.jar" PLAT="NT_X86 NT_IA64 W95 W98 Solaris NT_Alpha Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX Dynix UnixWare OpenVMS DG_UX HP_UX Linux Linux_S390 HP_IA64 Linux_IA64 IBM_MVS NetWare_411 NetWare_500 NEC Hitachi_UX Iris NCOS"/>
+<LIB NAME="LDAPQueries" VER="1.1.2" REP_VER="0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/LDAPQueries/1.1.2/1/LDAPQueries.jar" PLAT="NT_X86 W95 W98 Solaris"/>
+<LIB NAME="MemorySizeQuery" VER="1.2.8.0.5" REP_VER="10.2.0.0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/MemorySizeQuery/1.2.8.0.5/1/MemorySizeQuery.jar" PLAT="Solaris HP_UX IBM_AIX UNIX_Alpha Linux Linux_S390 Linux_IA64 HP_IA64 IBM_MVS W95 W98 NT_IA64 NT_X86"/>
+<LIB NAME="netQueries" VER="10.2.0.1.0" REP_VER="0.0" MIN_INST_VER="10.2.0.0.0" INV_LOC="Queries/netQueries/10.2.0.1.0/1/netQueries.jar" PLAT="NT_X86 W95 W98 NT_IA64 Solaris Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX Dynix UnixWare DG_UX HP_UX NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_S390 HP_IA64 Linux_IA64"/>
+<LIB NAME="NtServicesQueries" VER="10.2.0.2.0" REP_VER="0.0" MIN_INST_VER="10.2.0.0.0" INV_LOC="Queries/NtServicesQueries/10.2.0.2.0/1/NtServiceQueries.jar" PLAT="NT_X86 NT_IA64"/>
+<LIB NAME="OCAQueries" VER="1.0.1" REP_VER="10.2.0.0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/OCAQueries/1.0.1/1/OCAQueries.jar" PLAT="Solaris NT_X86 W95 W98 NT_IA64 HP_UX IBM_AIX UNIX_Alpha Linux HP_IA64 Linux_IA64 Linux_S390 IBM_MVS"/>
+<LIB NAME="OraBase_Queries" VER="1.2.1" REP_VER="10.2.0.0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/OraBase_Queries/1.2.1/1/OraBaseQueries.jar" PLAT="NT_X86 W95 W98 NT_IA64"/>
+<LIB NAME="PasswordQueries" VER="0.0.3" REP_VER="0.0" MIN_INST_VER="1.0.0.0.0" INV_LOC="Queries/PasswordQueries/0.0.3/1/PasswordQueries.jar" PLAT="NT_X86 NT_IA64 W95 W98 Solaris NT_Alpha Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX Dynix UnixWare OpenVMS DG_UX HP_UX Linux Linux_S390 HP_IA64 Linux_IA64 IBM_MVS NetWare_411 NetWare_500 NEC Hitachi_UX Iris NCOS"/>
+<LIB NAME="portQueries" VER="2.1.0.16.4" REP_VER="0.0.0.0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/portQueries/2.1.0.16.4/1/portQueries.jar" PLAT="Solaris IBM_AIX HP_IA64 Linux_IA64 HP_UX UNIX_Alpha Linux Intel_Solaris NT_X86"/>
+<LIB NAME="PrerequisiteQueries" VER="1.1.12" REP_VER="10.2.0.0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/PrerequisiteQueries/1.1.12/1/PrerequisiteQueries.jar" PLAT="Solaris NT_X86 W95 W98 NT_IA64 HP_UX IBM_AIX UNIX_Alpha Linux IBM_MVS"/>
+<LIB NAME="Protocol_Queries" VER="1.1.4" REP_VER="10.2.0.0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/Protocol_Queries/1.1.4/1/ProtocolQueries.jar" PLAT="NT_X86 W95 W98 Solaris NT_IA64 IBM_MVS"/>
+<LIB NAME="RepositoryQueries" VER="3.0.0.2.17" REP_VER="1.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/RepositoryQueries/3.0.0.2.17/1/Queries.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="rgsQueries" VER="10.1.0.2.0" REP_VER="0.0" MIN_INST_VER="10.1.0.2.0" INV_LOC="Queries/rgsQueries/10.1.0.2.0/1/rgsQueries.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="RunningProcessQuery" VER="1.5.2" REP_VER="10.2.0.0.0" MIN_INST_VER="1.5.2.0.0" INV_LOC="Queries/RunningProcessQuery/1.5.2/1/RunningProcessesQuery.jar" PLAT="Solaris NT_X86 HP_UX IBM_AIX UNIX_Alpha Linux Linux_S390 Linux_IA64 HP_IA64 IBM_MVS"/>
+<LIB NAME="SIDQueries" VER="1.2.7" REP_VER="10.2.0.0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/SIDQueries/1.2.7/1/SidQueries.jar" PLAT="NT_X86 W95 W98 NT_IA64 Solaris HP_UX HP_IA64 UNIX_Alpha Linux Linux_S390 Linux_IA64 IBM_AIX IBM_MVS"/>
+<LIB NAME="SpawnQueries" VER="1.1.4" REP_VER="10.2.0.0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/SpawnQueries/1.1.4/1/SpawnQueries.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="textFileQueries" VER="2.1.0.4.0" REP_VER="0.0" MIN_INST_VER="2.0.0.0.0" INV_LOC="Queries/textFileQueries/2.1.0.4.0/1/textFileQueries.jar" PLAT="NT_X86 Solaris IBM_AIX HP_UX UNIX_Alpha Linux Intel_Solaris Linux_IA64 HP_IA64"/>
+<LIB NAME="unixQueries" VER="10.1.0.2.0" REP_VER="0.0" MIN_INST_VER="10.1.0.2.0" INV_LOC="Queries/unixQueries/10.1.0.2.0/1/unixQueries.jar" PLAT="Solaris Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX Dynix UnixWare DG_UX HP_UX NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_S390 HP_IA64 Linux_IA64"/>
+<LIB NAME="UtilQueries" VER="10.2.0.1.0" REP_VER="10.2.0.0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/UtilQueries/10.2.0.1.0/1/UtilQueries.jar" PLAT="Solaris W95 W98 NT_IA64 NT_X86 HP_UX IBM_AIX UNIX_Alpha Linux IBM_MVS"/>
+<LIB NAME="w32RegQueries" VER="10.2.0.0.0" REP_VER="0.0" MIN_INST_VER="10.2.0.0.0" INV_LOC="Queries/w32RegQueries/10.2.0.0.0/1/w32RegQueryLib.jar" PLAT="NT_X86 W95 W98 NT_IA64"/>
+<LIB NAME="WindowsGeneralQueries" VER="10.2.0.0.0" REP_VER="0.0" MIN_INST_VER="10.2.0.0.0" INV_LOC="Queries/WindowsGeneralQueries/10.2.0.0.0/1/WindowsGeneralQueries.jar" PLAT="NT_X86 W95 W98 NT_IA64"/>
+<LIB NAME="WinSetAclQuery" VER="1.0.7" REP_VER="10.2.0.0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Queries/WinSetAclQuery/1.0.7/1/WinSetAclQuery.jar" PLAT="NT_X86 NT_IA64"/>
+<LIB NAME="XMLFileQueries" VER="2.1.0.4.2" REP_VER="10.2.0.0.0" MIN_INST_VER="2.0.0.0.0" INV_LOC="Queries/XMLFileQueries/2.1.0.4.2/1/XMLFileQueries.jar" PLAT="NT_X86 Solaris IBM_AIX HP_UX UNIX_Alpha Linux Intel_Solaris Linux_IA64 HP_IA64 IBM_MVS"/>
+<LIB NAME="generalQueries" VER="10.1.0.3.0" REP_VER="0.0" MIN_INST_VER="10.1.0.2.0" INV_LOC="Queries/generalQueries/10.1.0.3.0/1/generalQueries.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="areasQueries" VER="10.1.0.3.0" REP_VER="0.0" MIN_INST_VER="10.1.0.3.0" INV_LOC="Queries/areasQueries/10.1.0.3.0/1/areasQueries.jar" PLAT="ALL_PLATFORMS"/>
+</QUERY_LIST>
+<DIALOG_LIST>
+<LIB NAME="customDialogs" VER="10.2.0.1.0" REP_VER="10.2.0.0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Dialogs/customDialogs/10.2.0.1.0/1/customDialogs.jar" PLAT="Solaris Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX Dynix UnixWare DG_UX HP_UX NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_S390 HP_IA64 Linux_IA64 NT_X86 NT_IA64"/>
+<LIB NAME="HTMLDBDialogs" VER="10.2.0.1.0" REP_VER="10.2.0.0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Dialogs/HTMLDBDialogs/10.2.0.1.0/1/HTMLDBDialogs.jar" PLAT="Solaris Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX Dynix UnixWare DG_UX HP_UX NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_S390 HP_IA64 Linux_IA64 NT_X86 NT_IA64"/>
+<LIB NAME="OiDynamicXYSpreadTable" VER="2.5.0.2.5" REP_VER="2.3" MIN_INST_VER="1.5.0.0.0" INV_LOC="Dialogs/OiDynamicXYSpreadTable/2.5.0.2.5/1/OiDynamicXYSpreadTable.jar" PLAT="Solaris Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX Dynix UnixWare DG_UX HP_UX NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_S390 HP_IA64 Linux_IA64 NT_X86"/>
+<LIB NAME="standardDialogs" VER="10.2.0.1.0" REP_VER="1.0" MIN_INST_VER="10.1.0.2.0" INV_LOC="Dialogs/standardDialogs/10.2.0.1.0/1/standardDialogs.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="TwoRadioStaticDynamicDialogs" VER="2.5.0.0.27" REP_VER="2.3" MIN_INST_VER="1.5.0.0.0" INV_LOC="Dialogs/TwoRadioStaticDynamicDialogs/2.5.0.0.27/1/TwoRadioStaticDynamic.jar" PLAT="Solaris Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX Dynix UnixWare DG_UX HP_UX NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_S390 HP_IA64 Linux_IA64 NT_X86"/>
+</DIALOG_LIST>
+<ACTION_LIST>
+<LIB NAME="clusterActions" VER="10.1.0.2.0" REP_VER="0.0" MIN_INST_VER="10.1.0.2.0" INV_LOC="Actions/clusterActions/10.1.0.2.0/1/clusterActionLib.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="customFileActions" VER="1.2.1" REP_VER="10.2.0.0.0" MIN_INST_VER="1.1" INV_LOC="Actions/customFileActions/1.2.1/1/customFileActions.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="dbActions" VER="10.1.0.2.0" REP_VER="0.0" MIN_INST_VER="10.1.0.2.0" INV_LOC="Actions/dbActions/10.1.0.2.0/1/dbActions.jar" PLAT="Solaris HP_UX Linux IBM_AIX UNIX_Alpha Linux_IA64"/>
+<LIB NAME="docActionLib" VER="2.2" REP_VER="10.2.0.0.0" MIN_INST_VER="1.1" INV_LOC="Actions/docActionLib/2.2/1/docActionLib.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="fileActions" VER="10.2.0.0.0" REP_VER="0.0" MIN_INST_VER="10.2.0.0.0" INV_LOC="Actions/fileActions/10.2.0.0.0/1/fileActionLib.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="generalActions" VER="10.2.0.3.0" REP_VER="0.0" MIN_INST_VER="10.2.0.0.0" INV_LOC="Actions/generalActions/10.2.0.3.0/1/generalActions.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="jarActions" VER="10.2.0.0.0" REP_VER="0.0" MIN_INST_VER="10.2.0.0.0" INV_LOC="Actions/jarActions/10.2.0.0.0/1/jarActionLib.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="launchPadActions" VER="10.1.0.2.0" REP_VER="0.0" MIN_INST_VER="10.1.0.2.0" INV_LOC="Actions/launchPadActions/10.1.0.2.0/1/launchpadaction.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="ntCrsActionLib" VER="10.2.0.1.0" REP_VER="10.2.0.0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Actions/ntCrsActionLib/10.2.0.1.0/1/ntCrsActionLib.jar" PLAT="NT_X86"/>
+<LIB NAME="ntServicesActions" VER="10.2.0.2.0" REP_VER="0.0" MIN_INST_VER="10.2.0.0.0" INV_LOC="Actions/ntServicesActions/10.2.0.2.0/1/ntServicesActions.jar" PLAT="NT_X86 NT_IA64"/>
+<LIB NAME="OEMRegistry" VER="1.5.6" REP_VER="1.5.0" MIN_INST_VER="1.5.5.0.0" INV_LOC="Actions/OEMRegistry/1.5.6/1/oemRegistryActions.jar" PLAT="NT_X86 W95 W98 Solaris NT_Alpha Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX Dynix UnixWare OpenVMS DG_UX HP_UX IBM_MVS NetWare_411 NetWare_500 NEC Hitachi_UX Iris NCOS Linux"/>
+<LIB NAME="oradim" VER="10.1.0.2.0" REP_VER="0.0" MIN_INST_VER="10.1.0.2.0" INV_LOC="Actions/oradim/10.1.0.2.0/1/oradim.jar" PLAT="NT_X86 NT_IA64"/>
+<LIB NAME="rgsActions" VER="10.1.0.2.0" REP_VER="0.0" MIN_INST_VER="10.1.0.2.0" INV_LOC="Actions/rgsActions/10.1.0.2.0/1/rgsActions.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="ServiceProcessActions" VER="1.0" REP_VER="10.2.0.0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Actions/ServiceProcessActions/1.0/1/ServiceProcessActions.jar" PLAT="NT_X86 Solaris IBM_MVS"/>
+<LIB NAME="SpawnActions" VER="10.1.0.2.0" REP_VER="0.0" MIN_INST_VER="10.1.0.2.0" INV_LOC="Actions/SpawnActions/10.1.0.2.0/1/spawnActions.jar" PLAT="ALL_PLATFORMS"/>
+<LIB NAME="textFileActions" VER="2.1.0.3.1" REP_VER="10.2.0.0.0" MIN_INST_VER="1.5.0.0.0" INV_LOC="Actions/textFileActions/2.1.0.3.1/1/textFileActions.jar" PLAT="NT_X86 Solaris IBM_AIX HP_UX UNIX_Alpha Linux Intel_Solaris Linux_IA64 HP_IA64 IBM_MVS"/>
+<LIB NAME="unixActions" VER="10.2.0.1.0" REP_VER="0.0" MIN_INST_VER="10.2.0.0.0" INV_LOC="Actions/unixActions/10.2.0.1.0/1/unixActions.jar" PLAT="Solaris Intel_Solaris SINIX_Y ReliantUNIX_M UNIX_Alpha IBM_AIX Dynix UnixWare DG_UX HP_UX NEC Hitachi_UX Iris NCOS OpenVMS IBM_MVS Linux Linux_S390 HP_IA64 Linux_IA64"/>
+<LIB NAME="w32OcxRegActions" VER="10.2.0.0.0" REP_VER="0.0" MIN_INST_VER="10.2.0.0.0" INV_LOC="Actions/w32OcxRegActions/10.2.0.0.0/1/w32OcxLib.jar" PLAT="NT_X86 W95 W98 NT_IA64"/>
+<LIB NAME="w32RegActions" VER="10.2.0.0.0" REP_VER="0.0" MIN_INST_VER="10.2.0.0.0" INV_LOC="Actions/w32RegActions/10.2.0.0.0/1/w32RegActionLib.jar" PLAT="NT_X86 W95 W98 NT_IA64"/>
+<LIB NAME="ntw32FoldersActions" VER="10.2.0.0.0" REP_VER="0.0" MIN_INST_VER="10.2.0.0.0" INV_LOC="Actions/ntw32FoldersActions/10.2.0.0.0/1/WindowsFolders.jar" PLAT="NT_X86 W95 W98 NT_IA64"/>
+<LIB NAME="wingeneralActions" VER="10.2.0.1.0" REP_VER="0.0" MIN_INST_VER="10.1.0.2.0" INV_LOC="Actions/wingeneralActions/10.2.0.1.0/1/wingeneralActionLib.jar" PLAT="NT_X86 W95 W98 NT_IA64"/>
+</ACTION_LIST>
+</LIB_LIST>

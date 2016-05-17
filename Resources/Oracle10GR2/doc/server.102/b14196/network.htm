@@ -1,0 +1,380 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>4 Configuring the Network Environment</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.1.3 Build 116" />
+<meta name="Date" content="June 22, 2005 15:47:53" />
+<meta name="doctitle" content="Oracle&reg; Database 2 Day DBA 10g Release 2 (10.2)" />
+<meta name="partno" content="B14196-01" />
+<meta name="docid" content="ADMQS" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="em_manage.htm" title="Previous" type="text/html" />
+<link rel="Next" href="instance.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14196.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database 2 Day DBA<br />
+10<i>g</i> Release 2 (10.2)</b><br />
+Part Number B14196-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="em_manage.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="instance.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top"><a href="../b14196.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="CHDFHIFE" name="CHDFHIFE"></a><a id="sthref157" name="sthref157"></a>
+<h1><span class="secnum">4</span> <a name="ADMQS004" id="ADMQS004"></a>Configuring the Network Environment</h1>
+<p>After installing your Oracle software and database, you have a fully functional database with a client/server network environment that has been minimally configured.</p>
+<p>This chapter contains the following topics to help you completely configure your client/server network:</p>
+<ul>
+<li type="disc">
+<p><a href="#CHDBHJGJ">Understanding Network Configuration</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDJDJGD">Tools for Network Configuration</a></p>
+</li>
+<li type="disc">
+<p><a href="#BHCGGHDA">Viewing Listener Configuration</a></p>
+</li>
+<li type="disc">
+<p><a href="#CIHHJEDF">Starting and Shutting Down the Listener</a></p>
+</li>
+<li type="disc">
+<p><a href="#CIHJHJGJ">Configuring Oracle Networking on Client Machines</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABIGFGD">Networking: Oracle by Example Series</a></p>
+</li>
+</ul>
+<a id="CHDBHJGJ" name="CHDBHJGJ"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref158" name="sthref158"></a>
+<h2>Understanding Network Configuration</h2>
+<p>A client is any application that needs to connect to the Oracle database to send or retrieve data. An Oracle client application can reside on any machine provided it has Oracle client software installed.</p>
+<p><a id="sthref159" name="sthref159"></a><a id="sthref160" name="sthref160"></a>Oracle Net is a software component that resides on the client and the Oracle database server. It is responsible for establishing and maintaining the connection between the client application and the server, as well as exchanging messages between them, using industry standard protocols.</p>
+<p>For the client application and a database to communicate, the client application must specify location details for the database it wants to connect to and the database must provide some sort of identification, or address.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic"><a class="olinkSRC NETAG" href="http://www.oracle.com/pls/db102/to_bookid?id=NETAG">Oracle Database Net Services Administrator's Guide</a></span> for more guidance in understanding Net Services and for more configuration details.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref161" name="sthref161"></a>
+<h3>Oracle Net Listener Configuration</h3>
+<p>On the database server side, the Oracle Ne<a id="sthref162" name="sthref162"></a>t listener, commonly known as the listener, is a process that listens for client <a id="sthref163" name="sthref163"></a>connection requests. It is configured in a file named <code><a id="sthref164" name="sthref164"></a>listener.ora</code>, located in your <code><span class="codeinlineitalic">ORACLE_HOME</span></code><code>/network/admin</code> directory. The file contains a protocol address that identifies the database. This address defines the protocol the listener is listening on and any other protocol specific information. For example, the listener could be configured to listen at the following protocol address:</p>
+<pre xml:space="preserve" class="oac_no_warn">(DESCRIPTION=
+   (ADDRESS=(PROTOCOL=tcp)(HOST=my-server) (PORT=1521)))
+
+</pre>
+<p>This example shows a TCP/IP protocol address that specifies the host machine of the listener and a port number.</p>
+<p>The <code>listener.ora</code> file is automatically configured during installation, but can be configured with Enterprise Manager. For more information, see <a href="#BHCGGHDA">"Viewing Listener Configuration"</a> and <a href="#CIHHJEDF">"Starting and Shutting Down the Listener"</a> .</p>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref165" name="sthref165"></a>
+<h3>Client Configuration</h3>
+<p>When a client configured with the same protocol address broadcasts a request for a connection, the listener on the server machine brokers the request and forwards it to the Oracle database.</p>
+<p>The client uses a con<a id="sthref166" name="sthref166"></a><a id="sthref167" name="sthref167"></a>nect descriptor to specify the database it wants to connect to. This connect descriptor contains a protocol address and a database service name. A database can have multiple services defined, so a specific one must be specified for the connection. In the case of the preconfigured database that you installed, there is only one service, the name of which defaults to the global database name.</p>
+<p>The following example shows a connect descriptor that enables clients to connect to a database service called <code>mydb.us.acme.com</code>:</p>
+<pre xml:space="preserve" class="oac_no_warn">(DESCRIPTION=
+   (ADDRESS=(PROTOCOL=tcp)(HOST=my-server) PORT=1521))
+   (CONNECT_DATA=
+      (SERVICE_NAME=mydb.us.acme.com)))
+
+</pre>
+<p>You can define your connect descriptors in your <a id="CodeInline" name="CodeInline"></a><code>tnsnames.ora</code> file on the client machine, located in the <code><span class="codeinlineitalic">ORACLE_HOME</span></code><code>/network/admin</code> directory. You can use Oracle Net Manager to configure this file as described in <a href="#CIHJHJGJ">"Configuring Oracle Networking on Client Machines"</a> .</p>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref168" name="sthref168"></a>
+<h3>Connection Requests</h3>
+<p>Users initiate a connection request by providing a conne<a id="sthref169" name="sthref169"></a><a id="sthref170" name="sthref170"></a>ct string. A connect string includes a username and password, along with a connect identifier. This connect identifier can be the connect descriptor itself, or a name that resolves to the connect descriptor. One of the most common connect identifiers is a net service name, a simple name for a service. The following example shows a connect string that uses net service name <code>mydb</code> as the connect identifier.</p>
+<pre xml:space="preserve" class="oac_no_warn">CONNECT hr/hr@mydb
+
+</pre>
+<p>While the connect identifier is relatively simple as shown, it can be long and inconvenient to use if your environment configuration is more complex. With long connect identifiers, you can use a mapping method that maps the net service name to the connect descriptor. This mapping information is stored in one or more repositories of information that are accessed with naming methods.</p>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref171" name="sthref171"></a>
+<h3>Naming Methods</h3>
+<p><a id="sthref172" name="sthref172"></a>Oracle Net provides support for the following mapping methods:</p>
+<ul>
+<li type="disc">
+<p><a href="#CHDCECJF">Local Naming</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDHGGID">Directory Naming</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDBCFFD">Easy Connect Naming</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDIEFCH">External Naming</a></p>
+</li>
+</ul>
+<p>The preconfigured database uses local naming. Only this form of naming is used in this book.</p>
+<a id="CHDCECJF" name="CHDCECJF"></a>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref173" name="sthref173"></a>
+<h4>Local Naming</h4>
+<p><a id="sthref174" name="sthref174"></a>The local naming method stores connect descriptors, identified by their net service name, in a local (on the client) configuration file named <code>tnsnames.ora</code> located in the <code><span class="codeinlineitalic">ORACLE_HOME</span></code><code>/network/admin</code> directory.</p>
+</div>
+<!-- class="sect3" -->
+<a id="CHDHGGID" name="CHDHGGID"></a>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref175" name="sthref175"></a>
+<h4>Directory Naming</h4>
+<p><a id="sthref176" name="sthref176"></a>The directory naming method stores connect identifiers in a centralized LDAP-compliant directory server to access a database service.</p>
+</div>
+<!-- class="sect3" -->
+<a id="CHDBCFFD" name="CHDBCFFD"></a>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref177" name="sthref177"></a>
+<h4>Easy Connect Naming</h4>
+<p><a id="sthref178" name="sthref178"></a>The easy connect naming method enables clients to connect to an Oracle database server by using a TCP/IP connect string consisting of a host name and optional port and service name:</p>
+<pre xml:space="preserve" class="oac_no_warn">CONNECT <span class="italic">username</span>/<span class="italic">password</span>@<span class="italic">host</span>[:<span class="italic">port</span>][/<span class="italic">service_name</span>]
+
+</pre>
+<p>For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">CONNECT hr/hr@my-server:1521/mydb
+
+</pre>
+<p>The easy connect naming method requires no configuration.</p>
+</div>
+<!-- class="sect3" -->
+<a id="CHDIEFCH" name="CHDIEFCH"></a>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref179" name="sthref179"></a>
+<h4>External Naming</h4>
+<p><a id="sthref180" name="sthref180"></a>The external naming method stores net service names in a supported non-Oracle naming service. These supported third-party services include:</p>
+<ul>
+<li type="disc">
+<p>Network Information Service (NIS) External Naming</p>
+</li>
+<li type="disc">
+<p>Distributed Computing Environment (DCE) Cell Directory Services (CDS)</p>
+</li>
+</ul>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CHDJDJGD" name="CHDJDJGD"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref181" name="sthref181"></a>
+<h2>Tools for Network Configuration</h2>
+<p>Oracle enables you to manage your network configuration with the following tools: Oracle Net Configuration Assistant, Enterprise Manager, and Oracle Net Manager.</p>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref182" name="sthref182"></a>
+<h3>Oracle Net Configuration Assistant</h3>
+<p>The Oracle Universal Installer launches Or<a id="sthref183" name="sthref183"></a>acle Net Configuration Assistant after the database is installed. Oracle Net Configuration Assistant enables you to configure the listening protocol address and service information for an Oracle database.</p>
+<p>During a typical database install (as opposed to client install), Oracle Net Configuration Assistant automatically configures a listener with a name of <code>LISTENER</code> that has a TCP/IP listening protocol address for the Oracle database that you install. If you do a custom install, Oracle Net Configuration Assistant prompts you to configure a listener name and protocol address of your choice.</p>
+<p>Oracle Net Configuration Assistant is primarily a post installation tool. Thereafter, Oracle provides other means for network configuration, which are the Oracle Enterprise Manager and Oracle Net Manager.</p>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref184" name="sthref184"></a>
+<h3>Enterprise Manager</h3>
+<p>Enterprise Manager enables you to manage your server-side network configuration with two pages: the Listener page and the Net Services Administration page.</p>
+<p>The Listener page displays the listener status and enables you to shut it down. You can navigate to this page from the Home page by clicking the <span class="bold">Listener</span> link under General. See <a href="#BHCGGHDA">"Viewing Listener Configuration"</a> in this chapter.</p>
+<p>You can navigate to the Net Services page from the Home page by clicking <span class="bold">Listener</span> under General. The Listener page appears. Under Related Links, click <span class="bold">Net Services Administration</span>.</p>
+<p>The Net Services Administration page enables you to do the following:</p>
+<ul>
+<li type="disc">
+<p>Perform the following administrative tasks for a selected listener:</p>
+<ul>
+<li type="circle">
+<p>Show current status</p>
+</li>
+<li type="circle">
+<p>Change status (start/stop listener)</p>
+</li>
+<li type="circle">
+<p>Change tracing settings</p>
+</li>
+<li type="circle">
+<p>Change logging settings</p>
+</li>
+</ul>
+</li>
+<li type="disc">
+<p>Configure the following:</p>
+<ul>
+<li type="circle">
+<p>Listener</p>
+</li>
+<li type="circle">
+<p>Local naming (<code>tnsnames.ora</code> files) on the machine running the database</p>
+</li>
+<li type="circle">
+<p>Directory naming</p>
+</li>
+</ul>
+</li>
+<li type="disc">
+<p>Search and sort local and directory naming entries</p>
+</li>
+<li type="disc">
+<p>Export directory naming entries to <code>tnsnames.ora</code> file</p>
+</li>
+</ul>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref185" name="sthref185"></a>
+<h3>Oracle Net Manager</h3>
+<p>You can access Oracle Net Manager from the command line or for Windows platforms through the Start menu.</p>
+<ul>
+<li type="disc">
+<p>For command line (UNIX, Linux, or Windows) run <code>netmgr</code>.</p>
+</li>
+<li type="disc">
+<p>On Windows click the <span class="bold">Start</span> button and select <span class="bold">Programs</span>, <span class="bold">Oracle -</span> <span class="bolditalic">oracle_home</span>, <span class="bold">Configuration and Migration Tools</span>, and then <span class="bold">Net Manager</span></p>
+</li>
+</ul>
+<p>Oracle Net Manager provides the same features as Oracle Enterprise Manager with the addition of configuring profiles. To learn how to use this tool, see <a href="#CIHJHJGJ">"Configuring Oracle Networking on Client Machines"</a>.</p>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BHCGGHDA" name="BHCGGHDA"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref186" name="sthref186"></a>
+<h2>Viewing Listener Configuration</h2>
+<p>The listener runs on your database server machine and brokers incoming client requests. With Enterprise Manager, you can view the status of the listener, which is set to start automatically whenever your server machine is restarted.</p>
+<p>To view the status of the listener, navigate to the Enterprise Manager home page. Under General, click <span class="bold">Listener</span>. The Listener: <span class="italic">listener_name</span> page appears. Under General, note the listener status, which is either Up or Down.</p>
+<p>This page also gives the listener version, its net address, and start time.</p>
+<p>You can additionally view the listener status at the command line using</p>
+<pre xml:space="preserve" class="oac_no_warn">lsnrctl status
+</pre></div>
+<!-- class="sect1" -->
+<a id="CIHHJEDF" name="CIHHJEDF"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref187" name="sthref187"></a>
+<h2>Starting and Shutting Down the Listener</h2>
+<p><a id="sthref188" name="sthref188"></a><a id="sthref189" name="sthref189"></a>The Oracle listener is set up to start automatically whenever your server machine is restarted. However, when your system encounters unforeseen circumstances, or when you have manually stopped the listener, you can restart it at the command line. To do so, use the following:</p>
+<pre xml:space="preserve" class="oac_no_warn">lsnrctl start
+
+</pre>
+<p>You can use Enterprise Manager to stop the listener. To do so, navigate to the Listener: listener_name page by clicking <span class="bold">Listener</span> on the Home page. To shut down the listener, click <span class="bold">Stop</span>.</p>
+<p>You can also stop it at the command line using the following:</p>
+<pre xml:space="preserve" class="oac_no_warn">lsnrctl stop
+</pre></div>
+<!-- class="sect1" -->
+<a id="CIHJHJGJ" name="CIHJHJGJ"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref190" name="sthref190"></a>
+<h2>Configuring Oracle Networking on Client Machines</h2>
+<p><a id="sthref191" name="sthref191"></a><a id="sthref192" name="sthref192"></a><a id="sthref193" name="sthref193"></a>Client machines need to be configured before they can connect to an Oracle database. To configure the client machine, you must first install Oracle client software, which includes Oracle Net software.</p>
+<p>This example shows you how to configure a Windows client with local naming, which involves adding a connect descriptor entry to the local <code>tnsnames.ora</code> file. The connect descriptor specifies the host name, protocol address, and service name of the database to connect to.</p>
+<p>On Windows, you can use the <a id="sthref194" name="sthref194"></a>Oracle Net Manager program to create a new net service entry in your <code>tsnames.ora</code> file as follows:</p>
+<ol type="1" start="1">
+<li>
+<p>Start Oracle Net Manager by clicking the <span class="bold">Start</span> button and then selecting <span class="bold">Programs</span>, <span class="bold">Oracle</span>, <span class="bold">Configuration and Migration Tools</span>, and <span class="bold">Net Manager</span>.</p>
+</li>
+<li>
+<p>From the Local tree, select <span class="bold">Service Naming</span> and click the plus (+) on the left hand side of the page.</p>
+<p>The Net Service Name Wizard appears.</p>
+</li>
+<li>
+<p>Enter a net service name to identify it. The name you choose will appear under the Service Naming folder. Click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Select the protocol to use to connect to your database. For example, you can accept the default of <span class="bold">TCP/IP (Internet Protocol)</span>. The database listener must be configured to use the same network protocol. Click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Enter the host name of the database machine, such as <code>coconuts.island.com</code>, and the port number. Click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Enter either the database service name or the database SID. In the <span class="bold">Connection Type</span> list, select either <span class="bold">Shared Server</span>, <span class="bold">Dedicated Server</span>, or <span class="bold">Database Default</span>. Shared connections require your database to be running in shared mode. If you choose Dedicated, then the database dedicates a single server process to serve your connection. If you are unsure or would like to use the default database connection type, select <span class="bold">Database Default.</span> Click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>The last screen of the wizard enables you to test the connection by using the information you entered. To do so, click <span class="bold">Test</span>. To log in to the database, you can use the <code>SYS</code> user and the password you specified when you configured your database. The wizard tells you if the connection test succeed or not.</p>
+</li>
+<li>
+<p>Click <span class="bold">Finish</span>. The new service appears under the Service Naming folder. You can view or modify the configuration for the highlighted service in the Service Identification and Address Configuration sections.</p>
+</li>
+</ol>
+<p>Note that you can additionally run Oracle Net Manager from the command line using <code>netmgr</code> on Windows, Linux, and Unix platforms.</p>
+</div>
+<!-- class="sect1" -->
+<a id="BABIGFGD" name="BABIGFGD"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref195" name="sthref195"></a>
+<h2>Networking: Oracle by Example Series</h2>
+<p>Oracle by Example (OBE) has a series on the <span class="italic">Oracle Database 2 Day DBA</span> book. This OBE steps you through the tasks in this chapter and includes annotated screen shots.</p>
+<p>To view the Networking OBE, point your browser to the following location:</p>
+<pre xml:space="preserve" class="oac_no_warn"><a href="http://www.oracle.com/technology/obe/10gr2_2day_dba/network/network.htm">http://www.oracle.com/technology/obe/10gr2_2day_dba/network/network.htm</a>
+</pre></div>
+<!-- class="sect1" --></div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="em_manage.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="instance.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;2004, 2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

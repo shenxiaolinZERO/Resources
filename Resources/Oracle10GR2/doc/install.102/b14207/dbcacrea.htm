@@ -1,0 +1,611 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>6 Creating RAC Databases with the Database Configuration Assistant</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.1.3 Build 116" />
+<meta name="Date" content="August 18, 2005 11:44:24" />
+<meta name="doctitle" content="Oracle&reg; Database Oracle Clusterware and Oracle Real Application Clusters Installation Guide 10g Release 2 (10.2) for Microsoft Windows" />
+<meta name="partno" content="B14207-01" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="racinstl.htm" title="Previous" type="text/html" />
+<link rel="Next" href="postinst.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14207.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database Oracle Clusterware and Oracle Real Application Clusters Installation Guide<br />
+10<i>g</i> Release 2 (10.2) for Microsoft Windows</b><br />
+Part Number B14207-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="racinstl.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="postinst.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top"><a href="../b14207.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="BGBIJGDA" name="BGBIJGDA"></a><a id="i1041317" name="i1041317"></a>
+<h1><span class="secnum">6</span> <a id="sthref490" name="sthref490"></a>Creating RAC Databases with the Database Configuration Assistant</h1>
+<p>This chapter describes how to use the Database Configuration Assistant (DBCA) in standalone mode to create and delete Real Application Clusters (RAC) databases. The topics in this chapter include:</p>
+<ul>
+<li type="disc">
+<p><a href="#i1040739">Using Database Configuration Assistant with Oracle Real Application Clusters</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1035497">Benefits of Using Database Configuration Assistant</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1046030">Oracle Real Application Clusters High Availability Services</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABDABIJ">Verifying Requirements for DBCA</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1023417">Creating the Database after Installation Using Database Configuration Assistant</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1033601">Creating an Oracle Real Application Clusters Database with DBCA</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1032562">Deleting a Real Application Clusters Database with DBCA</a></p>
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span> for procedures on using Database Configuration Assistant (DBCA) to add and delete instances</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></li>
+</ul>
+<a id="i1040739" name="i1040739"></a>
+<div class="sect1"><a id="sthref491" name="sthref491"></a>
+<h2><span class="secnum">6.1</span> Using Database Configuration Assistant with Oracle Real Application Clusters</h2>
+<p><a id="sthref492" name="sthref492"></a><a id="sthref493" name="sthref493"></a><a id="sthref494" name="sthref494"></a>DBCA has the following primary functions:</p>
+<ul>
+<li type="disc">
+<p>Create the database and its instances</p>
+</li>
+<li type="disc">
+<p>Set up network configuration for database, instances and database services</p>
+</li>
+<li type="disc">
+<p>Configure Enterprise Manager Grid Control</p>
+</li>
+<li type="disc">
+<p>Start up the database, its instances, services, and any other <a id="sthref495" name="sthref495"></a>node applications</p>
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p><a href="#i1023417">"Creating the Database after Installation Using Database Configuration Assistant"</a> for more information about using DBCA in standalone mode</p>
+</li>
+<li type="disc">
+<p><span class="italic">Oracle Database Net Services Administrator's Guide</span> if you experience problems, for example, with the listener configuration, and for further information about Lightweight Directory Access Protocol (LDAP)-compliant directory support</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></li>
+</ul>
+</div>
+<!-- class="sect1" -->
+<a id="i1035497" name="i1035497"></a>
+<div class="sect1"><a id="sthref496" name="sthref496"></a>
+<h2><span class="secnum">6.2</span> Benefits of Using Database Configuration Assistant</h2>
+<p>Oracle recommends that you use Database Configuration Assistant (DBCA) to create your RAC database, because DBCA's preconfigured databases optimize your environment for features such as ASM, the server parameter file, and automatic undo management. DBCA also provides pages to create new ASM disk groups if they are needed; if you use ASM or cluster file system storage, then DBCA also configures recovery and backup disk space.</p>
+<p>With DBCA, you can create site-specific tablespaces as part of database creation. If you have datafile requirements that differ from those offered by DBCA templates, then create your database with DBCA and modify the datafiles later. You can also run user-specified scripts as part of your database creation process.</p>
+<p>DBCA also configures your RAC environment for various Oracle high availability features, such as services and cluster administration tools. It also starts any database instances required to support your defined configuration.</p>
+</div>
+<!-- class="sect1" -->
+<a id="i1046030" name="i1046030"></a>
+<div class="sect1"><a id="sthref497" name="sthref497"></a>
+<h2><span class="secnum">6.3</span> Oracle Real Application Clusters High Availability Services</h2>
+<p><a id="sthref498" name="sthref498"></a><a id="sthref499" name="sthref499"></a>When you configure high availability services with the DBCA Database Services page, you can also configure service <a id="sthref500" name="sthref500"></a>instance preferences and <a id="sthref501" name="sthref501"></a>Transparent Application Failover (TAF) policies.</p>
+<a id="i1045866" name="i1045866"></a>
+<div class="sect2"><a id="sthref502" name="sthref502"></a>
+<h3><span class="secnum">6.3.1</span> Service Configuration and Instance Preferences</h3>
+<p>Use the Database Services page button in the column labeled Not Used, Preferred, or Available to configure <a id="sthref503" name="sthref503"></a>service instance preferences as described in the following list:</p>
+<ul>
+<li type="disc">
+<p><a id="sthref504" name="sthref504"></a>Preferred&#x2014;The service runs primarily on the selected instance</p>
+</li>
+<li type="disc">
+<p><a id="sthref505" name="sthref505"></a>Available&#x2014;The service may run on the instance if a preferred instance fails</p>
+</li>
+<li type="disc">
+<p><a id="sthref506" name="sthref506"></a>Not Used&#x2014;The service never runs on the instance</p>
+</li>
+</ul>
+</div>
+<!-- class="sect2" -->
+<a id="i1045876" name="i1045876"></a>
+<div class="sect2"><a id="sthref507" name="sthref507"></a>
+<h3><span class="secnum">6.3.2</span> Transparent Application Failover Policies</h3>
+<p><a id="sthref508" name="sthref508"></a>Use the DBCA Database Services page to configure TAF failover policies. The DBCA Database Services page also has a TAF policy selector row under the instance preference display. Select one of the following options in this row for your failover and reconnection policy preference:</p>
+<ul>
+<li type="disc">
+<p><a id="sthref509" name="sthref509"></a><a id="sthref510" name="sthref510"></a>None&#x2014;Do not use TAF</p>
+</li>
+<li type="disc">
+<p><a id="sthref511" name="sthref511"></a><a id="sthref512" name="sthref512"></a>Basic&#x2014;Establish connections at failover time</p>
+</li>
+</ul>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BABDABIJ" name="BABDABIJ"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref513" name="sthref513"></a>
+<h2><span class="secnum">6.4</span> Verifying Requirements for DBCA<a id="sthref514" name="sthref514"></a></h2>
+<p>To help to verify that your system is prepared to create the Oracle Database with RAC successfully, enter a Cluster Verification Utility command using the following command syntax:</p>
+<pre xml:space="preserve" class="oac_no_warn">cluvfy stage -pre dbcfg -n <span class="italic">node_list</span> -d <span class="italic">oracle_home </span>[-verbose]
+
+</pre>
+<p>In the preceding syntax example, the variable <code><span class="codeinlineitalic">node_list</span></code> is the list of nodes in your cluster, separated by commas, and the variable <code><span class="codeinlineitalic">oracle_home</span></code> is the path for the Oracle home under which the database is to be created or its configuration is to modified.</p>
+<p>For example, to perform a check to determine if your system is prepared for an Oracle Database with RAC on a two-node cluster with nodes node1 and node2, and with the Oracle home path c:\oracle\product\10.2.0, enter the following command:</p>
+<pre xml:space="preserve" class="oac_no_warn">cluvfy stage -pre dbcfg -n node1,node2 -d c:\oracle\product\10.2.0
+
+</pre>
+<p>You can select the option <code>-verbose</code> to receive progress updates as the CVU performs its system checks, and detailed reporting of the test results.</p>
+<p>If the Cluster Verification Utility summary indicates that the cluster verification check fails, then review and correct the relevant system configuration steps, and run the test again.</p>
+<p>The command <code>cluvfy stage -pre dbcfg</code> verifies the following:</p>
+<ul>
+<li type="disc">
+<p>Node Reachability: All the specified nodes are reachable from the local node</p>
+</li>
+<li type="disc">
+<p>User Equivalence: User equivalence exists on all the specified nodes</p>
+</li>
+<li type="disc">
+<p>Node Connectivity: The connectivity exists between all the specified nodes through the available public and private network interfaces</p>
+</li>
+<li type="disc">
+<p>Administrative Privileges: The <code>oracle</code> user has proper administrative privileges on the specified nodes for creating a RAC database</p>
+</li>
+<li type="disc">
+<p>Oracle Clusterware Integrity: All the components of the Oracle Clusterware stack are operational</p>
+</li>
+</ul>
+</div>
+<!-- class="sect1" -->
+<a id="i1023417" name="i1023417"></a>
+<div class="sect1"><a id="sthref515" name="sthref515"></a>
+<h2><span class="secnum">6.5</span> Creating the Database after Installation Using Database Configuration Assistant</h2>
+<p>To create a database with DBCA in standalone mode without ASM or a cluster file system, you must already have configured each raw device as described in <a href="rawdev.htm#BABBHDHD">Appendix C</a>. In addition, you must already have run Oracle Net Configuration Assistant to configure your Oracle Net <code>listener.ora</code> file.</p>
+<p>If you plan to use ASM storage, then you must already have created logical partitions without primary partitions on the same drive, and deleted the drive letters for these partitions on all nodes, or used DBCA to mark partitions.</p>
+<p>If you select DBCA templates that use preconfigured datafiles and if you do not use ASM or a cluster file system, then during database creation, DBCA first verifies that you created the raw devices for each tablespace.<a id="sthref516" name="sthref516"></a><a id="sthref517" name="sthref517"></a> If you have not configured the raw devices, then you must configure the raw devices and replace the default datafile names that DBCA provides with raw device names on the DBCA Storage page to continue database creation.</p>
+<p>To s<a id="sthref518" name="sthref518"></a><a id="sthref519" name="sthref519"></a>tart DBCA, click <span class="bold">Start</span>, and select <span class="bold">Programs</span>, <span class="bold">Oracle -</span> <span class="bolditalic">Oracle_home name</span>, <span class="bold">Configuration and Migration Tools</span>, then <span class="bold">Database Configuration Assistant</span></p>
+</div>
+<!-- class="sect1" -->
+<a id="i1033601" name="i1033601"></a>
+<div class="sect1"><a id="sthref520" name="sthref520"></a>
+<h2><span class="secnum">6.6</span> Creating an Oracle Real Application Clusters Database with DBCA</h2>
+<p>When you start DBCA, the first page it displays is the Welcome page for RAC, which includes the option to select an Oracle Real Application Clusters (RAC) database. Note that you will not see this page if the Oracle home from which you are running DBCA was not installed in a cluster environment.<a id="sthref521" name="sthref521"></a><a id="sthref522" name="sthref522"></a></p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+DBCA online help for more information</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<a id="i1037229" name="i1037229"></a>
+<p>If DBCA does not display the Welcome page for RAC, then DBCA was unable to detect whether the Oracle home is cluster-installed. In this case, check that the OUI inventory is correctly located in <code>c:\Program Files\oracle\Inventory</code>, and that the files in the Oracle inventory directory are not corrupted. Also, perform clusterware diagnostics by running the CVU command cluvfy stage -post crsinst -n <span class="italic">nodename</span>.</p>
+<p>If the RAC welcome page opens, then complete the following steps to create a RAC database:</p>
+<ol type="1" start="1">
+<li>
+<p>On the Welcome page, select <span class="bold">Real Application Clusters database</span> and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>DBCA displays the <a id="sthref523" name="sthref523"></a><a id="sthref524" name="sthref524"></a>Operations page.</p>
+<p>Note that DBCA enables the options <span class="bold">Configure Database Options</span>, <span class="bold">Delete a Database</span>, <span class="bold">Instance Management</span>, <span class="bold">Configure Automatic Storage Management</span>, and <span class="bold">Services Management</span> options only if there is at least one RAC database configured on your cluster that runs from the Oracle home.</p>
+<p>Select <span class="bold">Create a Database</span>, and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>DBCA displays the <a id="sthref525" name="sthref525"></a>Node Selection page. DBCA highlights the local node by default. Select the other nodes that you want to configure as members of your cluster database, and click <span class="bold">Next</span>.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+If nodes that are part of your cluster installation do not appear on the Node Selection page, then run the CVU to perform inventory diagnostics and clusterware diagnostics.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</li>
+<li><a id="BABDEGED" name="BABDEGED"></a>
+<p>DBCA displays the <a id="sthref526" name="sthref526"></a>Database Templates page. The predefined template choices on the Database Templates page are Custom Database, Data Warehouse, General Purpose, and Transaction Processing.</p>
+<p>Use one of the predefined templates, which include datafiles, if you want to create database with specifically configured options. The Custom Database template does not include datafiles or options specially configured for a particular type of application.</p>
+<p>Select the template from which you wish to create your cluster database, and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>DBCA displays the <a id="sthref527" name="sthref527"></a><a id="sthref528" name="sthref528"></a><a id="sthref529" name="sthref529"></a><a id="sthref530" name="sthref530"></a><a id="sthref531" name="sthref531"></a>Database Identification page. Provide a unique global database domain name for your database (typically in the form of "database.acme.com.") The Oracle system identifier (SID) prefix<a id="sthref532" name="sthref532"></a><a id="sthref533" name="sthref533"></a> is generated automatically from the name you provide. You can either use the automatically generated SID, or create your own. When you are finished, click <span class="bold">Next</span>.</p>
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+The global database name can be up to 30 characters in length, and must begin with an alphabetical character. The SID prefix must begin with an alphabetical character.
+<p>The maximum number of characters you can use for the SID prefix depends on the number of nodes in the RAC database. If the RAC database contains from one to nine nodes, then the SID prefix can be no more than 61 characters on Windows-based systems. If the RAC database contains from 10 to 99 nodes, then the SID prefix can be no more than 6 characters. DBCA uses the SID prefix to generate a unique value for the variable <code>ORACLE_SID</code> for each instance.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></li>
+<li>
+<p>The Management Options<a id="sthref534" name="sthref534"></a> page appears. Select whether you will enable management through Oracle Enterprise Manager.</p>
+<p>If you select Enterprise Manager with the Grid Control option and DBCA discovers agents running on the local node, then you can select the preferred agent from a list.</p>
+<p>After you select the Database Control option, you can set up E-mail notification and enable daily backups. For E-mail notifications, you provide the outgoing mail server and E-mail address. For daily backups, you enter the backup time and operating system credentials for the user that performs backup.</p>
+<p>When you have finished, click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>The Database Credentials page appears. Enter the passwords for your database on the <a id="sthref535" name="sthref535"></a>Database Credentials page. You can enter the same or different passwords for the administrative users <code>SYS</code> and <code>SYSTEM</code>, and also, if you selected Enterprise Manager on the Management Options page, the monitoring accounts <code>DBSNMP</code> and <code>SYSMAN</code>. Select the option <span class="bold">Use the Same Password for All Accounts</span> to assign the same password to all of the listed users, or provide a different password for each of these users by selecting the option <span class="bold">Use Different Passwords</span>.</p>
+<p>When you have entered the password information, click <span class="bold">Next</span>. DBCA displays the Storage Options page.</p>
+</li>
+<li>
+<p>The Storage Options page appears. <a id="sthref536" name="sthref536"></a>Use the <a id="sthref537" name="sthref537"></a>Storage Options page to select a storage type for database creation. The Cluster File System option is the default. Select a storage option and click <span class="bold">Next</span> to proceed to the next page.</p>
+<p>If you selected Cluster File System, then the next page that appears is the Database File Locations page, described in Step <a href="#BABBDEAF">9</a>.</p>
+<p>If you select Raw Devices, then the next page that appears is the Recovery Configuration page, described in Step <a href="#BABDIBEJ">10</a>.</p>
+<p>If you select Automatic Storage Management (ASM), then provide additional information as follows:</p>
+<ol type="a">
+<li>
+<p>If there is not an ASM instance on any of the cluster nodes, then DBCA displays the <a id="sthref538" name="sthref538"></a>Create ASM Instance page for you, described in Step <a href="#CBBCJFEJ">c</a>. Otherwise DBCA displays the ASM Disk Groups page, described in Step <a href="#CBBIJGJJ">d</a>.</p>
+</li>
+<li>
+<p>If an ASM instance exists on the local node, then DBCA displays a dialog asking you to enter the password for the <code>SYS</code> user for ASM.</p>
+</li>
+<li><a id="CBBCJFEJ" name="CBBCJFEJ"></a>
+<p>To initiate the creation of the required ASM instance, supply the password for the <code>SYS</code> user of the ASM instance. If your Oracle home is installed on cluster file system, then the ASM instance uses an SPFILE; otherwise, you can select either an IFILE or an SPFILE on shared storage for the instances. After you enter the required information, click <span class="bold">Next</span> to create the ASM instance. When the instance is created, DBCA proceeds to the ASM Disk Groups page described in Step <a href="#CBBIJGJJ">d</a>.</p>
+</li>
+<li><a id="CBBIJGJJ" name="CBBIJGJJ"></a>
+<p>From the <a id="sthref539" name="sthref539"></a>ASM Disk Groups page, you can create a new disk group, add disks to an existing disk group, or select a disk group for your database storage.</p>
+<p>If you have just created a new ASM instance, then there will be no disk groups from which to select, so you must create a new one by clicking <span class="bold">Create New</span> to open the Create Disk Group page, described in Step <a href="#CBBDEGIC">e</a>.</p>
+<p>Similarly, if one or more disk groups are displayed but you want to add a new one, then click <span class="bold">Create New</span> and follow the procedure described in Step <a href="#CBBDEGIC">e</a> to complete the <a id="sthref540" name="sthref540"></a>Create Disk Group page.</p>
+<p>If you want to use an existing disk group but wish to add more disks to it, click <span class="bold">Add Disks</span> and follow the instructions in Step <a href="#CBBFJDHE">f</a>.</p>
+<p>Once you are satisfied with the ASM disk groups available to you, select the one you wish to use for your database files and click <span class="bold">Next</span> to proceed to the Database File Locations page, described in step <a href="#BABBDEAF">9</a>.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+To use a flash recovery area, Oracle recommends that you create two separate ASM disk groups: one for the database area and one for the recovery area.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Database Concepts</span> for more information about using a flash recovery area</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</li>
+<li><a id="CBBDEGIC" name="CBBDEGIC"></a>
+<p>Enter the disk group name and then click the redundancy level for the group if you do not wish to use the default value (Normal). Create your disk group by selecting from the list of candidate disks. Continue by following the process described in Step <a href="#CBBFAJCH">g</a>.</p>
+</li>
+<li><a id="CBBFJDHE" name="CBBFJDHE"></a>
+<p>If there is a disk group that you want to use but you want to add more disks to it, then select the group and click <span class="bold">Add Disks</span>. Add to the disk group by selecting from the list of candidate disks. Continue by following the process described in Step <a href="#CBBFAJCH">g</a>.</p>
+</li>
+<li><a id="CBBFAJCH" name="CBBFAJCH"></a>
+<p>If you do not see the disks you wish to add, click <span class="bold">Change Disk Discovery Path</span> to alter the search path used by DBCA to find available disks. You can select disks with a status of <code>Candidate</code> or <code>Former</code> (never used in an ASM disk group or no longer in a group) by checking the select box. If you select a disk that has an ASM disk header, but the disk group is no longer in use (because of an aborted install, a de-install, and so on), then you must also check the Force column to override the header. When you have selected the desired disks, click <span class="bold">OK</span> to add them to your disk group and return to the ASM Disk Groups Page. To proceed, see the instructions described earlier in Step <a href="#CBBIJGJJ">d</a>.</p>
+</li>
+<li>
+<p>If DBCA displays the following message:</p>
+<pre xml:space="preserve" class="oac_no_warn">The file <span class="italic">oracle_home</span>\bin\oracle does not exist on nodes node_list. 
+Make sure that file exists on these nodes before proceeding.
+
+</pre>
+<p>then the Oracle home from which the first ASM instance in the cluster runs is not installed on these cluster nodes. You must extend the ASM Oracle home to these nodes by performing the procedure documented in "Step 4: Adding Nodes at the Oracle RAC Database Layer" in the <span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span>. However, do not perform Step 5 in that section. The OUI extends the ASM Oracle home to the selected nodes and performs any configuration required for running an ASM instance on these nodes.</p>
+</li>
+<li>
+<p>If DBCA displays the message <code>Please run the DBCA from one of the nodes that has an existing ASM instance</code> <code><span class="codeinlineitalic">node_list.</span></code>, then you are attempting to create a RAC database using ASM storage and the ASM instance does not exist on the node from which you ran DBCA. However, ASM instances do exist on the remote nodes that appear in the message node list. In this case, DBCA cannot clone the existing ASM instance from the remote node to the local node. To correct this, start DBCA from one of the nodes shown in the node list to create your RAC database using ASM storage. This copies the local node's ASM instance and modifies its parameters and attributes to create ASM instances on the nodes in your cluster that do not have ASM instances.</p>
+</li>
+<li>
+<p>If DBCA displays the message <code>ORACLE_BASE for ASM home</code> <code><span class="codeinlineitalic">asm_home</span></code> <code>does not match the value for database home</code> <code><span class="codeinlineitalic">db_home</span></code><code>. Please set ORACLE_BASE to asm_home and restart DBCA.</code>, then this means that you selected a node to be part of your RAC database that does not have an ASM instance. In addition, the ASM instance on the local node is running from an Oracle home that is different from the Oracle home for the database to be created. Both the ASM home and the database home must be under a common <code>ORACLE_BASE</code>. If you created the original ASM instance without setting <code>ORACLE_BASE</code>, then set the <code>ORACLE_BASE</code> to the <code><span class="codeinlineitalic">asm_home</span></code> and restart DBCA to proceed.</p>
+</li>
+</ol>
+</li>
+<li><a id="BABBDEAF" name="BABBDEAF"></a>
+<p>The Database File Locations page appears. The <a id="sthref541" name="sthref541"></a>Database File Locations page enables you to specify a location where the database datafiles are created. Select one of the following options:</p>
+<ul>
+<li type="disc">
+<p><span class="bold">Use Database File Locations from Template</span>: Select this option to allow the database file location to be determined by the Oracle database template type that you selected in step <a href="#BABDEGED">4</a>.</p>
+</li>
+<li type="disc">
+<p><span class="bold">Use Common Location for All Database Files</span>: Select this option if you want to use a file system. The files will not be managed by Oracle. You can enter a path on which you want database datafiles to be placed, or click <span class="bold">Browse</span> to locate a path.</p>
+</li>
+<li type="disc">
+<p><span class="bold">Use Oracle-Managed Files</span>: Select this option if you want your files to be managed using ASM. If you do not select the Database File Locations from Template option, then you can enter an existing ASM disk group name or directory path name in the Database Area field, or click <span class="bold">Browse</span> to open a selection list.</p>
+</li>
+</ul>
+<a id="CBBFJAAH" name="CBBFJAAH"></a>
+<p>If you want to multiplex the database redo log files and control files, then click <span class="bold">Multiplex Redo Logs and Control Files</span>, and provide the location for each copy you want. Click <span class="bold">OK</span> when you have defined the multiplex locations to return to the Database File Locations page.</p>
+<p>You may also define your own variables for the file locations if you plan to use the Database Storage page, explained in Step <a href="#CBBDBBFG">14</a>, to define individual file locations.</p>
+</li>
+<li><a id="BABDIBEJ" name="BABDIBEJ"></a>
+<p>The <a id="sthref542" name="sthref542"></a>Recovery Configuration page appears. If you are using ASM or NAS storage, then you can also select the flash recovery area and size on the Recovery Configuration page. If you are using ASM, then the flash recovery area defaults to the ASM Disk Group. If you are using OCFS, then the flash recovery area defaults to <code>%ORACLE_BASE%\flash_recovery_area</code>.</p>
+<p>You can select redo log archiving by clicking the <span class="bold">Enable Archiving</span> check box.</p>
+<p>You may also define your own variables for the file locations if you plan to use the Database Storage page, explained in Step <a href="#CBBDBBFG">14</a>, to define individual file locations.</p>
+<p>When you have completed your entries, click <span class="bold">Next</span>. The Database Content page is displayed.</p>
+</li>
+<li>
+<p>The Database Content page appears. On the <a id="sthref543" name="sthref543"></a>Database Content page, if you chose the Custom Database option, you can select or deselect the database components and their corresponding tablespace assignment. For a seed database, you can select whether to include the sample schemas in your database and to run custom scripts as part of the database creation processing. After completing your selections, click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>The Database Services page appears. To create services on the <a id="sthref544" name="sthref544"></a>Database Services page, expand the Services tree. Oracle displays the global database name in the top left-hand corner of the page. Select the global database name and click <span class="bold">Add</span> to add services to the database. Enter a service name in the Add a Service dialog and click <span class="bold">OK</span> to add the service and return to the Database Services page.</p>
+<p>The service name appears under the global database name. Select the service name and DBCA displays the service preferences for the service on the right-hand side of the DBCA Database Services page. Change the instance preference (Not Used, Preferred, or Available) and TAF policies for the service as needed.</p>
+<p>Repeat this procedure for each service and when you are done configuring services for your database, click <span class="bold">Next</span>. DBCA displays the Initialization Parameters page.</p>
+</li>
+<li><a id="CBBJEFFB" name="CBBJEFFB"></a>
+<p>The Initialization Parameters page appears. By default, the <a id="sthref545" name="sthref545"></a>Initialization Parameters page shows only the basic parameters, and only enables you to change the parameter file definition if you are using raw storage. Each tab on the Initialization Parameters page provides different sets of information that you can add or modify as follows:</p>
+<ol type="a">
+<li>
+<p>Memory Tab: Click <span class="bold">Typical</span> for default values based on the database type you selected or Custom to set your own values for the memory parameters. You can also see values for the advanced parameters by clicking <span class="bold">All Initialization Parameters</span>. This causes the All Initialization Parameters table to appear</p>
+<p>Carefully review the parameter settings displayed in the table, as DBCA configures these settings in your server parameter file. Instance-specific parameter settings for your RAC database appear at the bottom of the table. The SID prefixes for these entries appear in the Instance column, on the left side of the table.</p>
+<p>To review the instance-specific parameter settings, scroll downward using the scroll bar on the right side of the table. Use the check box in the Override Default column to indicate whether DBCA should place the parameter setting in your server parameter file. DBCA only places a parameter entry into the server parameter file if the entry displays a check mark in the Override Default column of the All Initialization Parameters table.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Notes:</p>
+<ul>
+<li type="disc">
+<p>You cannot modify the SID in the Instance columnYou can alter self-tuning parameters with this dialog. However, setting these parameters to inappropriate values may disable the Oracle self-tuning features.You cannot specify instance-specific values for global parameters with DBCA.</p>
+</li>
+<li type="disc">
+<p>You should set the value of the <code>CLUSTER_DATABASE_INSTANCES</code> parameter to the number of instances you intend to use in the cluster if you are not including all the related nodes during the current execution of DBCA.</p>
+</li>
+<li type="disc">
+<p>If your global database name is longer than eight characters, then the database name value (in the <code>db_name</code> parameter) is truncated to the first eight characters and the <code>DB_UNIQUE_NAME</code> parameter value is set to the global name.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</li>
+<li>
+<p>Sizing Tab: Use this page to select the database standard block size and process count.</p>
+</li>
+<li>
+<p>Character Sets Tab: Use this page to set the database character set value.</p>
+</li>
+<li>
+<p>Connection Mode Tab: You can use this tab to select either dedicated or shared database connections to your database.</p>
+</li>
+<li>
+<p>Parameter File Tab: This tab will only appear if you are using raw storage. Use this tab to enter a raw device name for the location of the server parameter file.</p>
+</li>
+</ol>
+<p>When you have completed all your work on the Initialization Parameters page, click <span class="bold">Next</span>.</p>
+</li>
+<li><a id="CBBDBBFG" name="CBBDBBFG"></a>
+<p>The Database Storage page appears.</p>
+<p>If you selected a preconfigured database template, such as the General Purpose template, then DBCA displays the control files, datafiles, and redo logs on the <a id="sthref546" name="sthref546"></a>Database Storage page. Select the folder and the file name underneath the folder to edit the file name.</p>
+<p>If you selected the Custom Database template (the template without datafiles), then DBCA displays the control files, tablespaces, datafiles, and redo logs. To change the tablespace properties, such as the datafile or the tablespace size, click the tablespaces icon to expand the object tree on the left-hand side of the page and click the tablespace. The tablespace property dialog appears on the right-hand side. Make your changes and click <span class="bold">OK</span>.</p>
+<p>When entering file names in the Database Storage page for raw storage, note the following</p>
+<ul>
+<li type="disc">
+<p>If you have not set the DBCA_RAW_CONFIG environment variable, then DBCA displays default datafile names. You must override these names to provide raw device names on this page for each control file, datafile, and redo log group file.</p>
+</li>
+<li type="disc">
+<p>For Windows-based platforms, if the default symbolic links exist and you have not set the DBCA_RAW_CONFIG environment variable, then DBCA replaces the default datafiles with these symbolic link names and displays them in the Database Storage page. If the symbolic links do not exist, then DBCA displays the default file system datafile file names on the Database Storage page. In this case, replace the default datafile file names with the symbolic link names.</p>
+</li>
+</ul>
+<p>After you complete your entries on the Database Storage page, click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>The <a id="sthref547" name="sthref547"></a>Creation Options page appears. Select one of the following database options, and click <span class="bold">Finish</span>.</p>
+<ul>
+<li type="disc">
+<p><a id="sthref548" name="sthref548"></a>Create Database&#x2014;Creates the database</p>
+</li>
+<li type="disc">
+<p><a id="sthref549" name="sthref549"></a>Save as a Database Template&#x2014;Creates a template that records the database structure, including user-supplied inputs, initialization parameters, and so on. You can later use this template to create a database. DBCA only displays this option if you selected the Custom Database template.</p>
+</li>
+<li type="disc">
+<p><a id="sthref550" name="sthref550"></a>Generate Database Creation Scripts&#x2014;Generates database creation scripts.</p>
+</li>
+</ul>
+<p>After you click <span class="bold">Finish</span>, DBCA displays a <a id="sthref551" name="sthref551"></a><a id="sthref552" name="sthref552"></a>Summary dialog.</p>
+</li>
+<li><a id="CBBIDCJH" name="CBBIDCJH"></a>
+<p>Review the Summary dialog information and click <span class="bold">OK</span> to create the database.</p>
+</li>
+</ol>
+<p>After you complete Step <a href="#CBBIDCJH">16</a> DBCA:</p>
+<ul>
+<li type="disc">
+<p>Creates an operative RAC database and its instances</p>
+</li>
+<li type="disc">
+<p>Creates the RAC data dictionary views</p>
+</li>
+<li type="disc">
+<p>Configures the network for the cluster database</p>
+</li>
+<li type="disc">
+<p>Starts the Oracle services if you are on a Windows-based platform</p>
+</li>
+<li type="disc">
+<p>Starts the listeners and database instances and then starts the high availability services</p>
+</li>
+</ul>
+</div>
+<!-- class="sect1" -->
+<a id="i1032562" name="i1032562"></a>
+<div class="sect1"><a id="sthref553" name="sthref553"></a>
+<h2><span class="secnum">6.7</span> Deleting a Real Application Clusters Database with DBCA<a id="sthref554" name="sthref554"></a><a id="sthref555" name="sthref555"></a></h2>
+<p><a id="sthref556" name="sthref556"></a>This section explains how to delete a RAC database with DBCA. This process deletes a database and removes a database's initialization parameter files, instances, OFA structure, and Oracle network configuration. However, this process does not remove datafiles if you placed the files on raw devices or on raw partitions.</p>
+<p>To <a id="sthref557" name="sthref557"></a><a id="sthref558" name="sthref558"></a>delete a database with DBCA:</p>
+<ol type="1" start="1">
+<li>
+<p>Start DBCA on one of the nodes:</p>
+<p>On Windows-based platforms, click <span class="bold">Start</span>, and select <span class="bold">Programs</span>, <span class="bold">Oracle -</span> <span class="bolditalic">Oracle_home name</span>, <span class="bold">Configuration and Migration Tools</span>, then <span class="bold">Database Configuration Assistant</span></p>
+<p>The DBCA Welcome page appears.</p>
+</li>
+<li>
+<p>Select Oracle Real Application Clusters and click <span class="bold">Next</span>.</p>
+<p>After you click <span class="bold">Next</span>, DBCA displays the <a id="sthref559" name="sthref559"></a>Operations page.</p>
+</li>
+<li>
+<p>Select Delete a database, click <span class="bold">Next</span>. DBCA displays the <a id="sthref560" name="sthref560"></a><a id="sthref561" name="sthref561"></a>List of Cluster Databases page.</p>
+</li>
+<li>
+<p>If your user ID and password are not operating-system authenticated, then the List of Cluster Databases page displays the user name and password fields. If these fields appear, then enter a user ID and password that has SYSDBA privileges.</p>
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+"Database Password and Role Management in Real Application Clusters" on page&nbsp;B-19</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></li>
+<li>
+<p>Select the database to delete and click <span class="bold">Finish</span>.</p>
+<p>After you click <span class="bold">Finish</span>, DBCA displays a <a id="sthref562" name="sthref562"></a><a id="sthref563" name="sthref563"></a>dialog to confirm the database and instances that DBCA is going to delete.</p>
+</li>
+<li>
+<p>Click <span class="bold">OK</span> to begin the deletion of the database and its associated files, services, and environment settings, or click <span class="bold">Cancel</span> to stop the operation.</p>
+</li>
+</ol>
+<p>When you click <span class="bold">OK</span>, DBCA continues the operation and deletes all of the associated instances for this database. DBCA also removes the parameter files, password files, and oratab entries.</p>
+<p>At this point, you have accomplished the following:</p>
+<ul>
+<li type="disc">
+<p>Deleted the selected database from the cluster</p>
+</li>
+<li type="disc">
+<p>Deleted the selected database's Oracle services for Windows-based platforms</p>
+</li>
+<li type="disc">
+<p>Deleted high availability services that were assigned to the database</p>
+</li>
+<li type="disc">
+<p>Deleted the Oracle Net configuration for the database</p>
+</li>
+<li type="disc">
+<p>Deleted the OFA directory structure from the cluster</p>
+</li>
+<li type="disc"><a id="i1031801" name="i1031801"></a>
+<p>Deleted the datafiles if the datafiles were not on raw devices</p>
+</li>
+</ul>
+</div>
+<!-- class="sect1" --></div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="racinstl.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="postinst.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

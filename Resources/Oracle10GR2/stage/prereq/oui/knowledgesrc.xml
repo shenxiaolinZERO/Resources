@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<!-- Copyright (c) 2004 Oracle. All rights reserved.-->
+<SOURCE_LIST>
+  <SOURCE name="refhost" builder="oracle.sysman.oip.oipc.oipch.OipchRefHostBuilder" ref="true"/>
+  <SOURCE name="host" builder="oracle.sysman.oip.oipc.oipch.OipchHostBuilder" ref="false"/>
+  <SOURCE name="genrefhost" builder="oracle.sysman.oip.oipc.oipch.OipchGenericRefBuilder" ref="true"/>
+  <SOURCE name="sessioncontext" builder="oracle.sysman.oip.oipc.oipcc.OipccPrereqContextBuilder" ref="false"/>
+</SOURCE_LIST>

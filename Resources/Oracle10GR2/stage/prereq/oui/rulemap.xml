@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<!-- Copyright (c) 2004 Oracle. All rights reserved.-->
+<!-- 
+Modified
+06/01/04 gmanglik - compatibility and glibc
+07/11/03 bpaliwal - created
+-->
+<RULEMAP>
+  <RULESET name="OSChecks" class="oracle.sysman.oip.oipc.oipcz.OipczOSChecks">
+    <RULE name="CertifiedVersions" method="checkCertifiedOSVersions"/>
+  </RULESET>
+  <RULESET name="GLIBCChecks" class="oracle.sysman.oip.oipc.oipcz.OipczGlibcChecks">
+    <RULE name="CheckGLIBC" method="checkGlibc"/>
+  </RULESET>
+  <RULESET name="PatchesChecks" class="oracle.sysman.oip.oipc.oipcz.OipczPatchesChecks">
+    <RULE name="CheckPatches" method="checkPatches"/>
+  </RULESET>
+  <RULESET name="PackagesChecks" class="oracle.sysman.oip.oipc.oipcz.OipczPackagesChecks">
+    <RULE name="CheckPackages" method="checkPackages"/>
+  </RULESET>
+  <RULESET name="KernelChecks" class="oracle.sysman.oip.oipc.oipcz.OipczKernelChecks">
+    <RULE name="CheckParameters" method="checkParameters"/>
+  </RULESET>
+  <RULESET name="SystemChecks" class="oracle.sysman.oip.oipc.oipcz.OipczSystemChecks">
+    <RULE name="CheckMinCPUSpeed" method="checkMinCPUSpeed"/>
+    <RULE name="CheckPhysicalMemory" method="checkPhysicalMemory"/>
+    <RULE name="CheckAvailableMemory" method="checkAvailableMemory"/>
+    <RULE name="CheckSwapTwicePhysicalMemory" method="checkSwapSpaceTwicePhysical"/>
+    <RULE name="CheckSwapSpace" method="checkSwapSpace"/>
+  </RULESET>
+  <RULESET name="ServicePackChecks" class="oracle.sysman.oip.oipc.oipcz.OipczServicePackChecks">
+    <RULE name="CheckServicePack" method="checkServicePack"/>
+  </RULESET>
+  <RULESET name="CompatibilityChecks" class="oracle.sysman.oip.oipc.oipcz.OipczCompatibilityChecks">
+    <RULE name="CheckCompatibility" method="checkProductCompatibility"/>
+  </RULESET>
+</RULEMAP>
+
+

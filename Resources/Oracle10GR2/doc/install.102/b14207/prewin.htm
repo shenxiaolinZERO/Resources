@@ -1,0 +1,1027 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>2 Server and Network Pre-Installation Tasks</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.1.3 Build 116" />
+<meta name="Date" content="August 18, 2005 11:44:23" />
+<meta name="doctitle" content="Oracle&reg; Database Oracle Clusterware and Oracle Real Application Clusters Installation Guide 10g Release 2 (10.2) for Microsoft Windows" />
+<meta name="partno" content="B14207-01" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="part2.htm" title="Previous" type="text/html" />
+<link rel="Next" href="storage.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14207.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database Oracle Clusterware and Oracle Real Application Clusters Installation Guide<br />
+10<i>g</i> Release 2 (10.2) for Microsoft Windows</b><br />
+Part Number B14207-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="part2.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="storage.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top"><a href="../b14207.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header -->
+<script type="text/javascript" xml:space="preserve">
+<!-- // <![CDATA[
+window.name='prewin'
+// ]]> -->
+</script> <script type="text/javascript" xml:space="preserve">
+// <![CDATA[
+function footdisplay(footnum,footnote) {
+    var msg = window.open('', 'NewWindow' + footnum,
+        'directories=no,height=120,location=no,menubar=no,resizable=yes,' +
+        'scrollbars=yes,status=no,toolbar=no,width=598');
+    msg.document.open('text/html');
+    msg.document.write('<!DOCTYPE html ');
+    msg.document.write('PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" ');
+
+    msg.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
+    msg.document.write('<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><title>');
+    msg.document.write('Footnote ' + footnum);
+    msg.document.write('<\/title><meta http-equiv="Content-Type" ');
+    msg.document.write('content="text/html; charset=utf-8" />');
+    msg.document.write('<meta http-equiv="Content-Script-Type" ');
+    msg.document.write('content="text/javascript" />');
+    msg.document.write('<style type="text/css"> <![CDATA[ ');
+    msg.document.write('h1 {text-align: center; font-size: 14pt;}');
+    msg.document.write('fieldset {border: none;}');
+    msg.document.write('form {text-align: center;}');
+    msg.document.write(' ]]\u003e <\/style>');
+    msg.document.write('<\/head><body><h1>Footnote ' + footnum + '<\/h1><p>');
+    msg.document.write(footnote);
+    msg.document.write('<\/p><form action="" method="post"><fieldset>');
+    msg.document.write('<input type="button" value="OK" ');
+    msg.document.write('onclick="window.close();" />');
+    msg.document.write('<\/fieldset><\/form><\/body><\/html>');
+    msg.document.close();
+    msg.focus();
+}
+// ]]>
+</script> <noscript>
+<p>The script content on this page is for navigation purposes only and does not alter the content in any way.</p>
+</noscript><a id="BCFHFECH" name="BCFHFECH"></a><a id="sthref154" name="sthref154"></a>
+<h1><span class="secnum">2</span> Server and Network Pre-Installation Tasks</h1>
+<p>This chapter describes the tasks that you must complete before you start the Oracle Universal Installer (OUI) to install Oracle Clusterware and Oracle Real Application Clusters (RAC) on 32-bit Microsoft Windows systems. <a id="sthref155" name="sthref155"></a><a id="sthref156" name="sthref156"></a><a id="sthref157" name="sthref157"></a>This chapter includes the following topics:</p>
+<ul>
+<li type="disc">
+<p><a href="#BEHJBFFH">Understanding and Using Cluster Verification Utility</a></p>
+</li>
+<li type="disc">
+<p><a href="#CACHCCCG">Installation Differences Between Windows and UNIX</a></p>
+</li>
+<li type="disc">
+<p><a href="#BGBEEGCB">Checking Hardware and Software Certification</a></p>
+</li>
+<li type="disc">
+<p><a href="#BCFDACBF">Checking Hardware Requirements</a></p>
+</li>
+<li type="disc">
+<p><a href="#BCFDHDBF">Verifying Hardware Requirements</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1101808">Checking Software Requirements</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABHHDIJ">Checking the Hardware and Operating System Setup with CVU</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDEBGHB">Checking Network Requirements</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABDCDFA">Checking the Network Setup</a></p>
+</li>
+<li type="disc">
+<p><a href="#BCFBIDDB">Checking Individual Component Requirements</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABHCEFI">Stopping Existing Oracle Processes</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABCFEHC">Verifying Cluster Privileges</a></p>
+</li>
+</ul>
+<a id="BEHJBFFH" name="BEHJBFFH"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref158" name="sthref158"></a>
+<h2><span class="secnum">2.1</span> Understanding and Using Cluster Verification Utility</h2>
+<p>The<a id="sthref159" name="sthref159"></a> Cluster Verification Utility (CVU) is a tool that performs system checks related to Oracle Clusterware and RAC requirements. The CVU can assist you with confirming that your system is properly configured for Oracle Clusterware and Oracle Real Application Clusters installation. You will find CVU commands, along with information on how to respond to the CVU output, in this chapter and the following chapters. Look for these commands at the start or the end of each major step in the pre-installation and installation processes.</p>
+<p>This section tells you how to run the CVU from your installation media and provides an overview of CVU commands. The section is divided into the following topics:</p>
+<ul>
+<li type="disc">
+<p><a href="#BABECHBE">Entering Cluster Verification Utility Commands</a></p>
+</li>
+<li type="disc">
+<p><a href="#BEHFJIFG">Using the Cluster Verification Utility Help</a></p>
+</li>
+<li type="disc">
+<p><a href="#BEHHGDFE">Verbose Mode and "Unknown" Output</a></p>
+</li>
+</ul>
+<a id="BABECHBE" name="BABECHBE"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref160" name="sthref160"></a>
+<h3><span class="secnum">2.1.1</span> Entering Cluster Verification Utility <a id="sthref161" name="sthref161"></a>Commands</h3>
+<p>Once you have installed Oracle Clusterware, you can use CVU by entering <code>cluvfy</code> commands on the command line. To use CVU before you install Oracle Clusterware, you must run the commands using a command file available on the Oracle Clusterware installation media. Use the following syntax to run a CVU command run from the installation media, where <code><span class="codeinlineitalic">media</span></code> is the location of the Oracle Clusterware installation media and <code><span class="codeinlineitalic">options</span></code> is a list of one or more CVU command options:</p>
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">media</span>\clusterware\cluvfy\runcluvfy.bat <span class="italic">options</span>
+
+</pre>
+<p>The value of <code><span class="codeinlineitalic">media</span></code> depends on where your installation media is located, such as on physical media inserted in a local ROM drive or downloaded onto a local disk drive from the Oracle Technology Network (OTN) Web site. The available CVU options are listed in the CVU help system, described in the next section.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Database Installation Guide for Microsoft Windows (32-Bit)</span> for further information about options for locating your installation media.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<p>The following code example is of a CVU help command, run from a staged copy of the Oracle Clusterware directory downloaded from OTN into a directory called <code>stage</code> on your C: drive:</p>
+<pre xml:space="preserve" class="oac_no_warn">C:\&gt; stage\clusterware\cluvfy\runcluvfy.bat comp nodereach -n node1,node2 -verbose
+
+</pre>
+<p>By default, when you enter a CVU command, CVU provides a summary of the test and its results. During pre-installation, Oracle recommends that you obtain detailed output by using the <code>-verbose</code> argument with the CVU command as shown in example. When you use the <code>-verbose</code> argument, the command's output includes detailed information about each individual check. Where applicable, the output shows results for each node in a tabular layout.</p>
+<p>For a quick test, you can run the following CVU command that you would normally use after you have completed the basic hardware and software configuration:</p>
+<pre xml:space="preserve" class="oac_no_warn">prompt&gt; <span class="italic">media</span>\clusterware\cluvfy\runcluvfy.bat stage &#x2013;post hwos &#x2013;n <span class="italic">node_list</span>
+
+</pre>
+<p>Use the location of your Oracle Clusterware installation media for the <code><span class="codeinlineitalic">media</span></code> value and a list of the nodes, separated by commas, in your cluster for <code><span class="codeinlineitalic">node_list</span></code>. Expect to see many errors if you run this command before you or your system administrator complete the cluster pre-installation steps.</p>
+</div>
+<!-- class="sect2" -->
+<a id="BEHFJIFG" name="BEHFJIFG"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref162" name="sthref162"></a>
+<h3><span class="secnum">2.1.2</span> Using the Cluster Verification Utility <a id="sthref163" name="sthref163"></a>Help</h3>
+<p>The <code>cluvfy</code> commands have context-sensitive help that shows correct syntax usage based on the command line arguments that you enter.</p>
+<p>If you enter an invalid CVU command, then CVU shows the correct usage for that command. For example, if you enter <code>runcluvfy.bat stage -pre dbinst</code> with the appropriate directory prefix, then CVU shows the correct syntax for the database pre-installation checks that CVU performs with the <code>dbinst</code> stage option. The following is a list of context help commands, shown with the normal, post-installation command line syntax:</p>
+<ul>
+<li type="disc">
+<p><code>cluvfy</code>: CVU displays high-level generic usage text describing the stage and component syntax.</p>
+</li>
+<li type="disc">
+<p><code>cluvfy -help</code>: CVU displays detailed CVU command information.</p>
+</li>
+<li type="disc">
+<p><code>cluvfy comp -list</code>: CVU displays a list of components that can be checked, and brief descriptions of how each component is checked.</p>
+</li>
+<li type="disc">
+<p><code>cluvfy comp -help</code>: CVU displays detailed syntax for each of the valid component checks.</p>
+</li>
+<li type="disc">
+<p><code>cluvfy stage -list</code>: CVU displays a list of valid stages.</p>
+</li>
+<li type="disc">
+<p><code>cluvfy stage -help</code>: CVU displays detailed syntax for each of the valid stage checks.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect2" -->
+<a id="BEHHGDFE" name="BEHHGDFE"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref164" name="sthref164"></a>
+<h3><span class="secnum">2.1.3</span> Verbose Mode and "Unknown" Output</h3>
+<p>If you run CVU using the <code>-verbose</code> argument and a CVU command responds with <code>UNKNOWN</code> for a particular node, then this is because the CVU cannot determine whether a check passed or failed. The following is a list of possible causes for an "Unknown" response:</p>
+<ul>
+<li type="disc">
+<p>The node is down</p>
+</li>
+<li type="disc">
+<p>CVU executables are missing in the Oracle Clusterware home or Oracle home directory</p>
+</li>
+<li type="disc">
+<p>The user account starting CVU does not have privileges to run common operating system executables on the node</p>
+</li>
+<li type="disc">
+<p>The node is missing an operating system patch, or a required package</p>
+</li>
+<li type="disc">
+<p>The node has exceeded the maximum number of processes or maximum number of open files, or there is a problem with problem with IPC segments, such as shared memory or semaphores</p>
+</li>
+</ul>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CACHCCCG" name="CACHCCCG"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref165" name="sthref165"></a>
+<h2><span class="secnum">2.2</span> Installation Differences Between Windows and UNIX</h2>
+<p>If you are experienced with installing Oracle components in UNIX environments, note that many manual setup tasks required on UNIX are not required on Windows. The key differences between UNIX and Windows installations are:</p>
+<ul>
+<li type="disc">
+<p>Startup and shutdown services</p>
+<p>In Windows, Oracle Universal Installer creates and sets startup and shutdown services at installation time. In UNIX systems, administrators are responsible for creating these services.</p>
+</li>
+<li type="disc">
+<p>Environment variables</p>
+<p>In Windows, Oracle Universal Installer sets environment variables such as <code>PATH</code>, <code>ORACLE_BASE</code>, <code>ORACLE_HOME</code>, and <code>ORACLE_SID</code> in the registry. In UNIX systems, you must manually set these environment variables.</p>
+</li>
+<li type="disc">
+<p>DBA account for database administrators</p>
+<p>In Windows, Oracle Universal Installer creates the <code>ORA_DBA</code> group. In UNIX systems, you must create the DBA account manually.</p>
+</li>
+<li type="disc">
+<p>Account for running Oracle Universal Installer</p>
+<p>In Windows, you log in with Administrator privileges. You do not need a separate account. In UNIX systems, you must create this account manually.</p>
+<p>On Oracle Real Application Clusters systems, each member node of the cluster must have user equivalency for the Administrative privileges account that installs the database. This means that the administrative privileges user account and password must be the same on all nodes.</p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+"Oracle Database Windows/UNIX Differences," in <span class="italic">Oracle Database Platform Guide for Microsoft Windows (32-Bit)</span></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect1" -->
+<a id="BGBEEGCB" name="BGBEEGCB"></a>
+<div class="sect1"><a id="sthref166" name="sthref166"></a>
+<h2><span class="secnum">2.3</span> <a id="sthref167" name="sthref167"></a><a id="sthref168" name="sthref168"></a><a id="sthref169" name="sthref169"></a>Checking Hardware and Software Certification<a id="sthref170" name="sthref170"></a><a id="sthref171" name="sthref171"></a><a id="sthref172" name="sthref172"></a><a id="sthref173" name="sthref173"></a></h2>
+<p><a id="sthref174" name="sthref174"></a><a id="sthref175" name="sthref175"></a><a id="sthref176" name="sthref176"></a><a id="sthref177" name="sthref177"></a>The hardware and software requirements included in this installation guide were current at the time this guide was published. However, because new platforms and operating system software versions might be certified after this guide is published, review the certification matrix on the Oracle<span class="italic">MetaLink</span> Web site for the most up-to-date list of certified hardware platforms and operating system versions. This Web site also provides compatible client and database versions, patches, and workaround information for bugs. The Oracle<span class="italic">MetaLink</span> Web site is available at the following URL:</p>
+<p><code><a href="http://metalink.oracle.com/">http://metalink.oracle.com/</a></code></p>
+<p>You must register online before using Oracle<span class="italic">MetaLink</span>. After logging in, select <span class="bold">Certify &amp; Availability</span> from the left-hand column. From the Product Lifecycle page, select the <span class="bold">Certifications</span> button. Other Product Lifecycle options include <span class="bold">Product Availability</span>, <span class="bold">Desupport Notices</span>, and <span class="bold">Alerts</span>.</p>
+<p>The following sections list the following certification information:</p>
+<ul>
+<li type="disc">
+<p><a href="#CFHEEEBJ">Web Browser Support</a></p>
+</li>
+<li type="disc">
+<p><a href="#BCFBBHAE">Telnet and Terminal Services Support</a></p>
+</li>
+</ul>
+<a id="CFHEEEBJ" name="CFHEEEBJ"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref178" name="sthref178"></a>
+<h3><span class="secnum">2.3.1</span> Web Browser Support<a id="sthref179" name="sthref179"></a><a id="sthref180" name="sthref180"></a></h3>
+<p>The following Web browsers are supported for <span class="italic">i</span>SQL*Plus and Oracle Enterprise Manager Database Control:</p>
+<ul>
+<li type="disc">
+<p><a id="sthref181" name="sthref181"></a><a id="sthref182" name="sthref182"></a>Netscape Navigator 7.0 and higher</p>
+</li>
+<li type="disc">
+<p><a id="sthref183" name="sthref183"></a><a id="sthref184" name="sthref184"></a>Microsoft Internet Explorer 5.5, 6.0, and higher with service pack 1</p>
+</li>
+<li type="disc">
+<p><a id="sthref185" name="sthref185"></a><a id="sthref186" name="sthref186"></a>Mozilla version 1.3.1 and higher</p>
+</li>
+</ul>
+<p><a id="sthref187" name="sthref187"></a><a id="sthref188" name="sthref188"></a>Microsoft Internet Explorer 6.0 Web browser is supported.</p>
+<p><a id="sthref189" name="sthref189"></a><a id="sthref190" name="sthref190"></a>Microsoft Internet Explorer 6.0 Web browser is supported.</p>
+<p>The following Web browsers are supported for <span class="italic">i</span>SQL*Plus and Oracle Enterprise Manager Database Control:</p>
+<ul>
+<li type="disc">
+<p>Netscape Navigator 7.0 and higher</p>
+</li>
+<li type="disc">
+<p>Microsoft Internet Explorer 5.5, 6.0, and higher with service pack 1</p>
+</li>
+<li type="disc">
+<p>Mozilla version 1.3.1 and higher</p>
+</li>
+</ul>
+</div>
+<!-- class="sect2" -->
+<a id="BCFBBHAE" name="BCFBBHAE"></a>
+<div class="sect2"><a id="sthref191" name="sthref191"></a>
+<h3><span class="secnum">2.3.2</span> Telnet and Terminal Services Support</h3>
+<p>This section contains these topics:</p>
+<ul>
+<li type="disc">
+<p><a href="#BCFIJFHH">Windows Telnet Services Support</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1069320">Windows Terminal Services and Remote Desktop Support</a></p>
+</li>
+</ul>
+<a id="BCFIJFHH" name="BCFIJFHH"></a>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref192" name="sthref192"></a>
+<h4><span class="secnum">2.3.2.1</span> Windows Telnet Services Support</h4>
+<p>Windows 2000 and Windows Server 2003 includes a Telnet Service that allows remote users to log on to the operating system and run console programs using the command line. Oracle supports the use of database command line utilities such as <code>sqlplus</code>, <code>export</code>, <code>import</code> and <code>sqlldr</code> using this feature, but does not support the database GUI tools such as Oracle Universal Installer, Database Configuration Assistant, and Oracle Net Configuration Assistant.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Ensure that the Telnet service is started on the Services control panel.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</div>
+<!-- class="sect3" -->
+<a id="i1069320" name="i1069320"></a>
+<div class="sect3"><a id="sthref193" name="sthref193"></a>
+<h4><span class="secnum">2.3.2.2</span> Windows Terminal Services and <a id="sthref194" name="sthref194"></a>Remote Desktop Support</h4>
+<p><a id="sthref195" name="sthref195"></a><a id="sthref196" name="sthref196"></a>Oracle supports installing, configuring, and running Oracle Database through Terminal Services, on Windows 2000 and Windows 2003 Server. If you encounter problems with the installation through Terminal Server, Oracle recommends that you try connecting to the Terminal Services console session of the server (using <code>mstsc/console</code>).</p>
+<p>Platform-specific support information is as follows:</p>
+<ul>
+<li type="disc">
+<p>Windows 2000: Oracle supports installing, configuring, and running Oracle Database from a remote Terminal Services Client.</p>
+</li>
+<li type="disc">
+<p>Windows Server 2003: You can configure Windows Server 2003 to use Terminal Services in Remote Desktop for Administration Mode or Terminal Server Mode.</p>
+</li>
+</ul>
+<p>The following products and features are not supported with Windows Terminal Services:</p>
+<ul>
+<li type="disc">
+<p><a id="sthref197" name="sthref197"></a>Oracle Connection a Manager</p>
+</li>
+<li type="disc">
+<p><a id="sthref198" name="sthref198"></a>Oracle Object Link Manager</p>
+</li>
+<li type="disc">
+<p><a id="sthref199" name="sthref199"></a>Oracle Services for Microsoft Transaction Server</p>
+</li>
+<li type="disc">
+<p><a id="sthref200" name="sthref200"></a>Server Management (SRVM) (You need to use a Windows Terminal Services console in order to use SRVM.)</p>
+</li>
+</ul>
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p>The Microsoft Web site for more information about terminal servers</p>
+<p><code><a href="http://www.microsoft.com/">http://www.microsoft.com/</a></code></p>
+</li>
+<li type="disc">
+<p>The Oracle<span class="italic">MetaLink</span> Web site for the latest Terminal Server certification information</p>
+<p><code><a href="http://metalink.oracle.com">http://metalink.oracle.com</a></code></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BCFDACBF" name="BCFDACBF"></a>
+<div class="sect1"><a id="sthref201" name="sthref201"></a>
+<h2><span class="secnum">2.4</span> Checking Hardware Requirements</h2>
+<p>You must have at least the following hardware component values for installing Oracle Database:</p>
+<ul>
+<li type="disc">
+<p>RAM: 512 MB</p>
+</li>
+<li type="disc">
+<p>Virtual memory: double the amount of RAM</p>
+</li>
+<li type="disc">
+<p>Hard disk space: See <a href="#CACHIJGH">Table 2-1</a></p>
+</li>
+<li type="disc">
+<p>Temp disk space: 125 MB for 32-bit systems</p>
+</li>
+<li type="disc">
+<p>Video adapter: 256 color</p>
+</li>
+<li type="disc">
+<p>Processor: 500 MHz minimum</p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p><a href="storage.htm#BABDBFCH">"Preliminary Shared Disk Preparation"</a></p>
+</li>
+<li type="disc">
+<p><a href="storage.htm#BABHIJDF">"Reviewing Storage Options for Oracle Clusterware, Database, and Recovery Files"</a></p>
+</li>
+<li type="disc">
+<p><a href="storage.htm#CDEHICAB">"Storage Configuration Steps for Real Application Clusters"</a></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<a id="i1101938" name="i1101938"></a>
+<div class="sect2"><a id="sthref202" name="sthref202"></a>
+<h3><span class="secnum">2.4.1</span> Hard Disk Space Requirements<a id="sthref203" name="sthref203"></a><a id="sthref204" name="sthref204"></a><a id="sthref205" name="sthref205"></a><a id="sthref206" name="sthref206"></a><a id="sthref207" name="sthref207"></a><a id="sthref208" name="sthref208"></a></h3>
+<p>This section lists space requirements for both the Enterprise and Standard Editions of Oracle Database 10<span class="italic">g</span> RAC. Oracle recommends storing Oracle components on NTFS.</p>
+<p>The NTFS system requirements listed in this section are more accurate than the hard disk values reported by the Oracle Universal Installer Summary screen. The Summary screen does not include accurate values for disk space, the space required to create a database (over 700 MB), or the size of compressed files that are expanded on the hard drive.</p>
+<p>Data files are not placed on NTFS partitions, because they cannot be shared. Data files can be placed on Oracle Cluster File System (OCFS), on raw disks using ASM, or on raw disks.</p>
+<p>The hard disk requirements for Oracle Database components include 32&nbsp;MB required to install Java Runtime Environment (JRE) and Oracle Universal Installer on the partition where the operating system is installed<a id="sthref209" name="sthref209"></a><a id="sthref210" name="sthref210"></a>.<a id="sthref211" name="sthref211"></a><a id="sthref212" name="sthref212"></a> If sufficient space is not detected, then installation fails and an error message appears. <a href="#CACHIJGH">Table 2-1</a> lists the hard disk space requirements, including the requirement for the starter database. The starter database requires 720 MB of disk space.</p>
+<div class="tblFormal"><a id="sthref213" name="sthref213"></a><a id="CACHIJGH" name="CACHIJGH"></a>
+<p class="titleintable">Table 2-1 Hard Disk Space Requirements</p>
+<table class="Formal" title="Hard Disk Space Requirements" summary="Table listing required space in TEMP, in C:Program Filesracle, in the Oracle home, and for data files for the initial database installation." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t7">Installation Type</th>
+<th align="left" valign="bottom" id="r1c2-t7">TEMP space</th>
+<th align="left" valign="bottom" id="r1c3-t7">C:\Program Files\Oracle</th>
+<th align="left" valign="bottom" id="r1c4-t7">Oracle Home</th>
+<th align="left" valign="bottom" id="r1c5-t7">Data Files<a id="sthref214" name="sthref214" href="#sthref214" onclick='footdisplay(1,"Refers to the contents of the admin, flash_recovery_area, and oradata directories in the ORACLE_BASE directory")'><sup class="tablefootnote">Foot&nbsp;1&nbsp;</sup></a></th>
+<th align="left" valign="bottom" id="r1c6-t7">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t7" headers="r1c1-t7">Standard Edition</td>
+<td align="left" headers="r2c1-t7 r1c2-t7">125 MB</td>
+<td align="left" headers="r2c1-t7 r1c3-t7">100 MB</td>
+<td align="left" headers="r2c1-t7 r1c4-t7">4 GB</td>
+<td align="left" headers="r2c1-t7 r1c5-t7">1.05 GB</td>
+<td align="left" headers="r2c1-t7 r1c6-t7">6 GB</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t7" headers="r1c1-t7">Enterprise Edition</td>
+<td align="left" headers="r3c1-t7 r1c2-t7">125 MB</td>
+<td align="left" headers="r3c1-t7 r1c3-t7">100 MB</td>
+<td align="left" headers="r3c1-t7 r1c4-t7">4 GB</td>
+<td align="left" headers="r3c1-t7 r1c5-t7">1.05 GB<a id="sthref215" name="sthref215" href="#sthref215" onclick='footdisplay(2,"This size can be higher, depending on the installation options selected, such as languages or additional components. If you choose to install Oracle Database and Oracle Real Application Clusters with automated backups enabled, then include at least 2 GB extra for data file disk space.")'><sup class="tablefootnote">Foot&nbsp;2&nbsp;</sup></a></td>
+<td align="left" headers="r3c1-t7 r1c6-t7">6 GB</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblFormal" -->
+<sup class="tablefootnote">Footnote&nbsp;1&nbsp;</sup>Refers to the contents of the admin, flash_recovery_area, and oradata directories in the ORACLE_BASE directory<br />
+<sup class="tablefootnote">Footnote&nbsp;2&nbsp;</sup>This size can be higher, depending on the installation options selected, such as languages or additional components. If you choose to install Oracle Database and Oracle Real Application Clusters with automated backups enabled, then include at least 2 GB extra for data file disk space.<br /></div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BCFDHDBF" name="BCFDHDBF"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref216" name="sthref216"></a>
+<h2><span class="secnum">2.5</span> Verifying Hardware Requirements</h2>
+<p>To ensure that the system meets these requirements, follow these steps:</p>
+<ol type="1" start="1">
+<li>
+<p>Determine the physical RAM size. For a computer using Windows 2000, for example, open <span class="bold">System</span> in the control panel and select the <span class="bold">General</span> tab. If the size of the physical RAM installed in the system is less than the required size, then you must install more memory before continuing.</p>
+</li>
+<li>
+<p>Determine the size of the configured swap space (also known as paging file size). For a computer using Windows 2000, for example, open <span class="bold">System</span> in the control panel, select the <span class="bold">Advanced</span> tab, and click <span class="bold">Performance Options</span>.</p>
+<p><a id="sthref217" name="sthref217"></a><a id="sthref218" name="sthref218"></a><a id="sthref219" name="sthref219"></a><a id="sthref220" name="sthref220"></a><a id="sthref221" name="sthref221"></a>If necessary, refer to your operating system documentation for information about how to configure additional swap space.</p>
+</li>
+<li>
+<p><a id="sthref222" name="sthref222"></a>Determine the amount of free disk space on the system. For a computer using Windows 2000, for example, open <span class="bold">My Computer</span>, right-click the drive where the Oracle software is to be installed, and choose <span class="bold">Properties</span>.</p>
+</li>
+<li>
+<p>Determine the amount of disk space available in the <code>temp</code> directory. This is equivalent to the total amount of free disk space, minus what will be needed for the Oracle software to be installed.</p>
+<p><a id="sthref223" name="sthref223"></a><a id="sthref224" name="sthref224"></a><a id="sthref225" name="sthref225"></a>You require 125 MB of disk space available in the <code>temp</code> directory. If you do not have sufficient space, then first delete all unnecessary files. If the temp disk space is still less than the required amount, then set the <code>TEMP</code> or <code>TMP</code> environment variable to point to a different hard drive. For a computer using Windows 2000, for example, open the <span class="bold">System</span> control panel, select the <span class="bold">Advanced</span> tab, and click <span class="bold">Environment Variables</span>.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+The temporary directory must reside in the same directory path on each node in the cluster.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</li>
+</ol>
+</div>
+<!-- class="sect1" -->
+<a id="i1101808" name="i1101808"></a>
+<div class="sect1"><a id="sthref226" name="sthref226"></a>
+<h2><span class="secnum">2.6</span> Checking Software Requirements <a id="sthref227" name="sthref227"></a><a id="sthref228" name="sthref228"></a><a id="sthref229" name="sthref229"></a><a id="sthref230" name="sthref230"></a></h2>
+<p><a href="#BCFJJGBB">Table 2-2</a> lists the software requirements for Oracle Database 10<span class="italic">g</span> Real Application Clusters.</p>
+<div class="tblFormal"><a id="sthref231" name="sthref231"></a><a id="BCFJJGBB" name="BCFJJGBB"></a>
+<p class="titleintable">Table 2-2 Software Requirements</p>
+<table class="Formal" title="Software Requirements" summary="This table lists the software requirements for Oracle Database. The first column lists the requirement the second column lists the value for that requirement." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t9">Requirement</th>
+<th align="left" valign="bottom" id="r1c2-t9">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t9" headers="r1c1-t9">System Architecture</td>
+<td align="left" headers="r2c1-t9 r1c2-t9">Processor: Intel (x86), AMD64, and Intel EM64T
+<p><span class="bold">Note:</span> The 32-bit version of the database must run on the 32-bit version of the operating system.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t9" headers="r1c1-t9">Operating System<a id="sthref232" name="sthref232"></a><a id="sthref233" name="sthref233"></a></td>
+<td align="left" headers="r3c1-t9 r1c2-t9">Oracle Real Application Clusters for 32-bit Windows is supported on the following operating systems:
+<ul>
+<li type="disc">
+<p>Windows&nbsp;2000 with service pack 1 or higher. All editions, including Terminal Services and Windows 2000 MultiLanguage Edition (MLE), are supported.</p>
+</li>
+<li type="disc">
+<p>Windows&nbsp;Server&nbsp;2003</p>
+</li>
+</ul>
+<p>Windows Multilingual User Interface Pack is supported on Windows Server&nbsp;2003.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t9" headers="r1c1-t9">Compiler</td>
+<td align="left" headers="r4c1-t9 r1c2-t9">Pro*Cobol has been tested and certified with the following two compilers:
+<ul>
+<li type="disc">
+<p>ACUCOBOL-GT version 6.2</p>
+</li>
+<li type="disc">
+<p>Micro Focus Net Express 4.0</p>
+</li>
+</ul>
+<p>Object Oriented COBOL (OOCOBOL) specifications are not supported.</p>
+<p>The following components are supported with the Microsoft Visual C++ .NET 2002 7.0 and Microsoft Visual C++ .NET 2003 7.1 compilers:</p>
+<ul>
+<li type="disc">
+<p>Oracle C++ Call Interface</p>
+</li>
+<li type="disc">
+<p>Oracle Call Interface</p>
+</li>
+<li type="disc">
+<p>GNU Compiler Collection (GCC)</p>
+</li>
+<li type="disc">
+<p>External callouts</p>
+</li>
+<li type="disc">
+<p>PL/SQL native compilation</p>
+</li>
+<li type="disc">
+<p>XDK</p>
+</li>
+</ul>
+<p>If you plan to use GNU Compiler Collection as your primary compiler, see <span class="italic">Oracle Database Installation Guide for Microsoft Windows (32-Bit)</span> for configuration instructions.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t9" headers="r1c1-t9">Network Protocol</td>
+<td align="left" headers="r5c1-t9 r1c2-t9">The Oracle Net foundation layer uses Oracle protocol support to communicate with the following industry-standard network protocols:
+<ul>
+<li type="disc">
+<p>TCP/IP</p>
+</li>
+<li type="disc">
+<p>TCP/IP with SSL</p>
+</li>
+<li type="disc">
+<p>Named Pipes</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblFormal" -->
+<p>If you are currently running a cluster version of Oracle on an operating system version that is no longer supported, such as Windows NT Server 4.0, then you must first upgrade your operating system before upgrading to Oracle Database 10<span class="italic">g</span> Real Application Clusters.</p>
+<p>If you are currently running a cluster with Oracle9<span class="italic">i</span> clusterware and wish to continue to use it, then you must upgrade to Oracle9<span class="italic">i</span>, version 9.2.0.4 to ensure compatibility between the Cluster Manager Services in Oracle9<span class="italic">i</span> and Oracle Database 10<span class="italic">g</span>.</p>
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p><a href="#BCFBBHAE">"Telnet and Terminal Services Support"</a></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<!-- class="sect1" -->
+<a id="BABHHDIJ" name="BABHHDIJ"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref234" name="sthref234"></a>
+<h2><span class="secnum">2.7</span> Checking the Hardware and Operating System Setup with CVU<a id="sthref235" name="sthref235"></a></h2>
+<p>You can use two different CVU commands to check your hardware and operating system configuration. The first is a general check of the configuration and the second specifically checks for the components required to install Oracle Clusterware.</p>
+<p>The syntax of the more general CVU command is:</p>
+<pre xml:space="preserve" class="oac_no_warn">cluvfy stage &#x2013;post hwos &#x2013;n <span class="italic">node_list</span> [-verbose]
+
+</pre>
+<p>where <code><span class="codeinlineitalic">node_list</span></code> is the names of the nodes in your cluster, separated by commas. However, because you have not yet installed the Oracle Clusterware, you must execute the CVU command from the installation media using a command like the one following. In this example, the command checks the hardware and operating system of a two-node cluster with nodes named node1 and node2, using a staged copy of the installation media in a directory called stage on the C: drive:</p>
+<pre xml:space="preserve" class="oac_no_warn">C:\&gt; stage\clusterware\cluvfy\runcluvfy.bat stage &#x2013;post hwos &#x2013;n node1,node2 -verbose
+
+</pre>
+<p>You can omit the <code>-verbose</code> keyword if you do not wish to see detailed results listed as CVU performs each individual test.</p>
+<p>The following example is a command, without the <code>-verbose</code> keyword, to check for the readiness of the cluster for installing Oracle Clusterware:</p>
+<pre xml:space="preserve" class="oac_no_warn">C:\&gt; stage\clusterware\cluvfy\runcluvfy.bat comp sys -n node1,node2 -p crs
+
+</pre></div>
+<!-- class="sect1" -->
+<a id="CHDEBGHB" name="CHDEBGHB"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref236" name="sthref236"></a>
+<h2><span class="secnum">2.8</span> Checking Network Requirements</h2>
+<p>Check that you have the networking hardware and internet protocol (IP) addresses required for an Oracle Real Application Clusters installation.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+For the most up-to-date information about supported network protocols and hardware for RAC installations, refer to the Certify pages on the Oracle<span class="italic">MetaLink</span> Web site:
+<pre xml:space="preserve" class="oac_no_warn"><a href="http://metalink.oracle.com">http://metalink.oracle.com</a>
+</pre></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref237" name="sthref237"></a>
+<h3><span class="secnum">2.8.1</span> Network Hardware Requirements</h3>
+<p>Each node in the cluster must meet the following requirements:</p>
+<ul>
+<li type="disc">
+<p>Each node must have at least two network adapters; one for the public network interface and one for the private network interface (the interconnect).</p>
+</li>
+<li type="disc">
+<p>The private and public network interface names must be different from each other and cannot contain any multibyte language characters. The names are case-sensitive.</p>
+</li>
+<li type="disc">
+<p>The private network interface name must be the same on all nodes.</p>
+</li>
+<li type="disc">
+<p>The public network interface name must be the same on all nodes.</p>
+</li>
+<li type="disc">
+<p>The public interface on each node must be listed first in the bind order (the order in which network services access the node).</p>
+</li>
+<li type="disc">
+<p>Oracle supports the TCP/IP protocol for the public and private networks.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref238" name="sthref238"></a>
+<h3><span class="secnum">2.8.2</span> IP Address Requirements</h3>
+<p>Before starting the installation, you must identify or obtain the following IP addresses for each node:</p>
+<ul>
+<li type="disc">
+<p>An IP address and an associated host name registered in the domain name service (DNS) for each public network interface</p>
+</li>
+<li type="disc">
+<p>One unused virtual IP address and an associated virtual host name registered in DNS that you will configure for the primary public network interface</p>
+<p>The virtual <a id="sthref239" name="sthref239"></a>IP address must be in the same subnet as the associated public interface. After installation, you should configure clients to use the virtual host name or IP address. If a node fails, its virtual IP address fails over to another node.</p>
+</li>
+<li type="disc">
+<p>A private IP address and host name for each private interface</p>
+<p>Oracle recommends that you use private network IP addresses for these interfaces, for example: 10.*.*.* or 192.168.*.*. You can use the <code>%SystemRoot%\system32\drivers\etc\hosts</code> file on each node to associate private host names with private IP addresses.</p>
+</li>
+</ul>
+<p>For example, in a two node cluster where each node has one public and one private interface, you might have the following host names and IP addresses:</p>
+<div class="inftblInformal">
+<table class="Informal" title="Host Names and IP Addresses Required for a RAC Node" summary="This table shows sample host names and IP Addresses for the public, private, and virtual networks" dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t12">Host Name</th>
+<th align="left" valign="bottom" id="r1c2-t12">Type</th>
+<th align="left" valign="bottom" id="r1c3-t12">IP Address</th>
+<th align="left" valign="bottom" id="r1c4-t12">Registered In</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t12" headers="r1c1-t12">rac1.mydomain.com</td>
+<td align="left" headers="r2c1-t12 r1c2-t12">Public</td>
+<td align="left" headers="r2c1-t12 r1c3-t12">143.46.43.100</td>
+<td align="left" headers="r2c1-t12 r1c4-t12">DNS (optionally)</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t12" headers="r1c1-t12">rac2.mydomain.com</td>
+<td align="left" headers="r3c1-t12 r1c2-t12">Public</td>
+<td align="left" headers="r3c1-t12 r1c3-t12">143.46.43.101</td>
+<td align="left" headers="r3c1-t12 r1c4-t12">DNS (optionally)</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t12" headers="r1c1-t12">rac1-vip.mydomain.com</td>
+<td align="left" headers="r4c1-t12 r1c2-t12">Virtual</td>
+<td align="left" headers="r4c1-t12 r1c3-t12">143.46.43.104</td>
+<td align="left" headers="r4c1-t12 r1c4-t12">DNS (optionally)</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t12" headers="r1c1-t12">rac2-vip.mydomain.com</td>
+<td align="left" headers="r5c1-t12 r1c2-t12">Virtual</td>
+<td align="left" headers="r5c1-t12 r1c3-t12">143.46.43.105</td>
+<td align="left" headers="r5c1-t12 r1c4-t12">DNS (optionally)</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t12" headers="r1c1-t12">rac1-priv</td>
+<td align="left" headers="r6c1-t12 r1c2-t12">Private</td>
+<td align="left" headers="r6c1-t12 r1c3-t12">10.0.0.1</td>
+<td align="left" headers="r6c1-t12 r1c4-t12">
+<pre xml:space="preserve" class="oac_no_warn">%SystemRoot%\system32\drivers\etc\hosts
+</pre></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t12" headers="r1c1-t12">rac2-priv</td>
+<td align="left" headers="r7c1-t12 r1c2-t12">Private</td>
+<td align="left" headers="r7c1-t12 r1c3-t12">10.0.0.2</td>
+<td align="left" headers="r7c1-t12 r1c4-t12">
+<pre xml:space="preserve" class="oac_no_warn">%SystemRoot%\system32\drivers\etc\hosts
+</pre></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblInformal --></div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref240" name="sthref240"></a>
+<h3><span class="secnum">2.8.3</span> Checking the Network Requirements</h3>
+<p>To verify that each node meets the requirements, follow these steps:</p>
+<ol type="1" start="1">
+<li>
+<p>If necessary, install the network adapters for the public and private networks and configure them with either public or private IP addresses.</p>
+</li>
+<li>
+<p>Register the host names and IP addresses for the public network interfaces in DNS.</p>
+</li>
+<li>
+<p>For each node, register one virtual host name and IP address in DNS.</p>
+</li>
+<li>
+<p>For each private interface on every node, add a line similar to the following to the <code>%SystemRoot%\system32\drivers\etc\hosts</code> file on all nodes, specifying the private IP address and associated private host name:</p>
+<pre xml:space="preserve" class="oac_no_warn">10.0.0.1     rac1-priv
+
+</pre></li>
+</ol>
+<p>If you need to change a network interface name, follow these steps:</p>
+<ol type="1" start="1">
+<li>
+<p>Click <span class="bold">Start</span>, then <span class="bold">Settings</span>, then <span class="bold">Control Panel</span>, and then <span class="bold">Network and Dial-up Connections</span></p>
+</li>
+<li>
+<p>Right click the icon of the network interface for which you need to change the name</p>
+</li>
+<li>
+<p>Select Rename</p>
+</li>
+<li>
+<p>Enter and save the new name</p>
+</li>
+</ol>
+<p>To ensure that your public interface is first in the bind order<a id="sthref241" name="sthref241"></a><a id="sthref242" name="sthref242"></a><a id="sthref243" name="sthref243"></a>, follow these steps:</p>
+<ol type="1" start="1">
+<li>
+<p>Click <span class="bold">Start</span>, then <span class="bold">Settings</span>, then <span class="bold">Control Panel</span>, and then <span class="bold">Network and Dial-up Connections</span></p>
+</li>
+<li>
+<p>In the <span class="bold">Advanced</span> menu, click <span class="bold">Advanced Settings...</span></p>
+</li>
+<li>
+<p>If the public interface name is not the first name listed under the <span class="bold">Adapters and Bindings</span> tab, then select it and click the arrow to move it to the top of list</p>
+</li>
+<li>
+<p>Click <span class="bold">OK</span> to save the setting and then exit network setup dialog</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BABDCDFA" name="BABDCDFA"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref244" name="sthref244"></a>
+<h2><span class="secnum">2.9</span> Checking the Network Setup</h2>
+<p>Enter a command using the following syntax to verify node connectivity between all of the nodes for which your cluster is configured:</p>
+<pre xml:space="preserve" class="oac_no_warn">cluvfy comp nodecon -n <span class="italic">node_list</span> [-verbose]
+
+</pre>
+<p>In the preceding command, the variable <code><span class="codeinlineitalic">node_list</span></code> is a list of nodes, separated by commas, in your cluster. This command detects all the network interfaces available on the cluster nodes, and verifies the connectivity between all the nodes through the network interfaces it finds. This command also lists all the interfaces available on the nodes that are suitable for use as virtual IPs. If you have defined the IP addresses for your private interconnects as suggested earlier in this section, the command will also show the interfaces to the private interconnects that are successfully connected.</p>
+<p>Include the option <code>-verbose</code> to receive progress updates as the CVU performs its system checks, and detailed reporting of the test results. You will need to provide the full path name to the CVU executable on the installation, just as before.</p>
+<p>In the following example, the media is in the staging area on the C: drive and the two-node cluster consists of nodes named node1 and node2:</p>
+<pre xml:space="preserve" class="oac_no_warn">C:\&gt; stage\clusterware\cluvfy\runcluvfy.bat comp nodecon -n node1,node2 -verbose
+
+</pre></div>
+<!-- class="sect1" -->
+<a id="BCFBIDDB" name="BCFBIDDB"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref245" name="sthref245"></a>
+<h2><span class="secnum">2.10</span> Checking Individual Component Requirements</h2>
+<p>This section contains these topics:</p>
+<ul>
+<li type="disc">
+<p><a href="#BCFFAFBB">Oracle Advanced Security Requirements</a></p>
+</li>
+<li type="disc">
+<p><a href="#BCFDJJJG">Oracle Enterprise Manager Requirements</a></p>
+</li>
+</ul>
+<a id="BCFFAFBB" name="BCFFAFBB"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref246" name="sthref246"></a>
+<h3><span class="secnum">2.10.1</span> Oracle Advanced Security Requirements<a id="sthref247" name="sthref247"></a><a id="sthref248" name="sthref248"></a><a id="sthref249" name="sthref249"></a></h3>
+<p>Satisfy hardware and software requirements to use authentication support with Oracle components. Some Oracle Advanced Security components can use a Lightweight Directory Access Protocol (LDAP) directory such as Oracle Internet Directory.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Advanced Security Administrator's Guide</span></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect2" -->
+<a id="BCFDJJJG" name="BCFDJJJG"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref250" name="sthref250"></a>
+<h3><span class="secnum">2.10.2</span> Oracle Enterprise Manager Requirements<a id="sthref251" name="sthref251"></a><a id="sthref252" name="sthref252"></a><a id="sthref253" name="sthref253"></a></h3>
+<p>All Oracle Enterprise Manager products must be of the same release. Older versions of Enterprise Manager are not supported with the current release.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+All Oracle Enterprise Manager products, except Oracle Enterprise Manager Database Control and the Enterprise Manager Java Console, are released on the Enterprise Manager Grid Control installation media. Enterprise Manager Database Control is available on the Oracle Database installation media and Enterprise Manager Java Console is available on the Oracle Client installation media.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Enterprise Manager Grid Control Installation and Basic Configuration</span> available on the Enterprise Manager Grid Control installation media</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BABHCEFI" name="BABHCEFI"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref254" name="sthref254"></a>
+<h2><span class="secnum">2.11</span> Stopping Existing Oracle Processes<a id="sthref255" name="sthref255"></a></h2>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a caution" title="This is a layout table to format a caution" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Caution:</p>
+If you are installing additional Oracle Database 10<span class="italic">g</span> products in an existing Oracle home, stop <span class="italic">all</span> processes running in the Oracle home. You must complete this task to enable Oracle Universal Installer to relink certain executables and libraries.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<p>If you are installing Oracle Clusterware on a node that already has a single-instance Oracle Database 10g installation, then stop the existing ASM instances. After Oracle Clusterware is installed, start up the ASM instances again. After Oracle Clusterware is installed, when you restart the ASM instances, they use the cluster CSS daemon instead of the daemon for the single-instance Oracle database.</p>
+<p>If a GSD from Oracle9i, Release 9.2 or earlier, is running, then stop it before installing Oracle Database 10g Oracle Clusterware by stopping OracleGSDService. The procedure to stop Oracle services in the Services window appears at the end of this section.</p>
+<p><a id="sthref256" name="sthref256"></a><a id="sthref257" name="sthref257"></a><a id="sthref258" name="sthref258"></a>If you choose to create a database during the installation, then most installation types configure and start a default Oracle Net listener using TCP/IP port 1521 and the IPC key value EXTPROC. However, if an existing Oracle Net listener process is using the same port or key value, then Oracle Universal Installer can only configure the new listener; it cannot start it. To ensure that the new listener process starts during the installation, you must shut down any existing listeners and stop their related services before starting Oracle Universal Installer.</p>
+<p>To stop an Oracle service, perform one of the following procedures<a id="sthref259" name="sthref259"></a><a id="sthref260" name="sthref260"></a><a id="sthref261" name="sthref261"></a></p>
+<ul>
+<li type="disc">
+<p>Using the GUI:</p>
+<ol type="1" start="1">
+<li>
+<p>Click <span class="bold">Start</span>, then click <span class="bold">Settings</span>, <span class="bold">Control Panel</span>, <span class="bold">Administrative Tools</span>, and then <span class="bold">Services</span>.</p>
+</li>
+<li>
+<p>Right click the service you want to stop</p>
+</li>
+<li>
+<p>Click <span class="bold">Stop</span></p>
+</li>
+</ol>
+</li>
+<li type="disc">
+<p>Using command line, enter the command:</p>
+<pre xml:space="preserve" class="oac_no_warn">C:\&gt;net stop <span class="italic">service</span>
+
+</pre>
+<p>where <code><span class="codeinlineitalic">service</span></code> is the name of the service you want to stop</p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+If you receive a warning to stop all Oracle services after starting the OUI, then run the command
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">Oracle_home</span>\bin\localconfig delete
+</pre>
+<p>where <code><span class="codeinlineitalic">Oracle_home</span></code> is the home that is running CSS.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</div>
+<!-- class="sect1" -->
+<a id="BABCFEHC" name="BABCFEHC"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref262" name="sthref262"></a>
+<h2><span class="secnum">2.12</span> Verifying Cluster Privileges<a id="sthref263" name="sthref263"></a><a id="sthref264" name="sthref264"></a></h2>
+<p>Before running the Oracle Universal Installer, from the node where you intend to run the Installer, verify that you have administrative privileges on the other nodes. To do this, enter the following command for each node that is a part of the cluster:</p>
+<pre xml:space="preserve" class="oac_no_warn">net use \\<span class="italic">node_name</span>\C$
+
+</pre>
+<p>where <code><span class="codeinlineitalic">node_name</span></code> is the node name.</p>
+<p>Oracle Corporation recommends using the same user name and password on each node in a cluster or use a domain user name. If you use a domain user name, log on under a domain with a user name and password that has administrative privileges on each node.</p>
+</div>
+<!-- class="sect1" --></div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="part2.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="storage.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,564 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>B Overview of Real Application Clusters</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.1.3 Build 116" />
+<meta name="Date" content="June 22, 2005 15:47:54" />
+<meta name="doctitle" content="Oracle&reg; Database 2 Day DBA 10g Release 2 (10.2)" />
+<meta name="partno" content="B14196-01" />
+<meta name="docid" content="ADMQS" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="asm.htm" title="Previous" type="text/html" />
+<link rel="Next" href="index.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14196.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database 2 Day DBA<br />
+10<i>g</i> Release 2 (10.2)</b><br />
+Part Number B14196-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="asm.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top"><a href="../b14196.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="BABJIBHC" name="BABJIBHC"></a><a name="ADMQS2500" id="ADMQS2500"></a><a id="sthref810" name="sthref810"></a>
+<h1><span class="secnum">B</span> Overview of Real Application Clusters</h1>
+<p>This appendix provides an overview of Oracle Real Application Clusters (RAC). It contains the following sections:</p>
+<ul>
+<li type="disc">
+<p><a href="#BHCIHCCD">What is Real Application Clusters?</a></p>
+</li>
+<li type="disc">
+<p><a href="#BHCBFBIA">Real Application Clusters Database Configuration Scenario</a></p>
+</li>
+<li type="disc">
+<p><a href="#BHCIGEGD">Differences in Administering RAC and Single-Instance Databases</a></p>
+</li>
+<li type="disc">
+<p><a href="#BHCDGCFA">Monitoring RAC with Enterprise Manager</a></p>
+</li>
+<li type="disc">
+<p><a href="#BHCEIHGA">Starting and Stopping the RAC Database and Database Instances</a></p>
+</li>
+<li type="disc">
+<p><a href="#BHCIFFHD">Managing RAC Backup and Recovery</a></p>
+</li>
+</ul>
+<a id="BHCIHCCD" name="BHCIHCCD"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref811" name="sthref811"></a>
+<h2>What is Real Application Clusters?</h2>
+<p>Real Application Clusters (RAC) is a technology that links together several individual computers so that they function as one computer. RAC enables each computer (or "node") that is a member of the cluster database to share access to the Oracle database. If one cluster node fails, or is taken offline, then the other nodes of the cluster continue operating, and the entire RAC database remains available for applications. This means that two or more inexpensive computers appear to applications as if they were a much more powerful (and more expensive) computer.</p>
+<p>To increase performance of a two-node RAC database, you can add cluster nodes. Each additional node can help speed up application processing, support more users or process, or both.</p>
+<p>To increase availability and reliability of a two-node RAC database, you can add cluster nodes. The more nodes that your RAC database has, the less impact the loss of any individual node has on the database.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+You can include up to four single-processor nodes or two dual-processor nodes in an Oracle Database Standard Edition installation with Real Application Clusters. If you want to add additional nodes, then you must upgrade to Oracle Database Enterprise Edition.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</div>
+<!-- class="sect1" -->
+<a id="BHCBFBIA" name="BHCBFBIA"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref812" name="sthref812"></a>
+<h2>Real Application Clusters Database Configuration Scenario</h2>
+<p>A RAC database requires three basic components: cluster nodes, shared storage, and Oracle Clusterware. Although you can choose how many nodes to include your cluster and what type of shared storage to use, this appendix is based on one specific configuration, which is the recommended configuration for two-computer (or "two-node") clusters. This recommended two-node configuration uses Automatic Storage Management (ASM) for storage and Recovery Manager for the backup and recovery strategy. In addition, instructions for Enterprise Edition interface tasks use the Enterprise Manager Database Control console. This appendix does not provide information about cluster database installation and configuration.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p><a class="xlinkSRC RACAD067" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span></a> and the Oracle Real Application Clusters installation guide for your operating system</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect1" -->
+<a id="BHCIGEGD" name="BHCIGEGD"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref813" name="sthref813"></a>
+<h2>Differences in Administering RAC and Single-Instance Databases</h2>
+<p>Most of the administration tasks are the same for single-instance and RAC databases. This appendix provides additional instructions for administrative tasks specific to RAC databases, as well as some recommendations for managing RAC databases.</p>
+</div>
+<!-- class="sect1" -->
+<a id="BHCDGCFA" name="BHCDGCFA"></a>
+<div class="sect1"><a id="sthref814" name="sthref814"></a>
+<h2>Monitoring RAC with Enterprise Manager</h2>
+<p>Oracle Enterprise Manager Console enables you to monitor your RAC database at the cluster level, for a high-level view of activity, and at the instance level, where tuning is similar to single-instance database tuning.</p>
+<p>This section contains the following topics:</p>
+<ul>
+<li type="disc">
+<p><a href="#BHCFJADA">Overview of the Cluster Database Home Page</a></p>
+</li>
+<li type="disc">
+<p><a href="#BHCHIDBC">Viewing RAC Database Targets</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDIGFBI">Navigating to Oracle Enterprise Manager Cluster-Related Pages</a></p>
+</li>
+<li type="disc">
+<p><a href="#BHCBHCGH">Viewing and Modifying RAC Database Initialization Parameters</a></p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a class="olinkSRC RACAD" href="http://www.oracle.com/pls/db102/to_bookid?id=RACAD"><span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span></a> for more detailed information about RAC database management and administration</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<a id="BHCFJADA" name="BHCFJADA"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref815" name="sthref815"></a>
+<h3>Overview of the Cluster Database Home Page</h3>
+<p>You log in to the RAC database Oracle Enterprise Manager Console from a client browser, as described in the section <a href="em_manage.htm#BABBAIHD">"Starting and Stopping the Oracle Enterprise Manager Console"</a> in <a href="em_manage.htm#CACHGFFI">Chapter 3, "Getting Started with Oracle Enterprise Manager"</a>.</p>
+<p>When you log in to the Oracle Enterprise Manager Console, the Cluster Database Home Page for the RAC database opens.</p>
+<p>The Cluster Database Home page looks similar to a single-instance Database Control Home Page. However, on the Cluster Database Home Page, Oracle Enterprise Manager displays the system state and availability of the entire RAC database.</p>
+<p>In the General Heading section, a traffic signal light image shows the state of the RAC database. If the database is up, then there is a green arrow pointing up in the image. Also, next to the General section, there is a <span class="bold">Shutdown</span> button. If the database is down, then there is a red arrow pointing down in the image, and there is a <span class="bold">Startup</span> button. Red x mark icons indicate system states that need attention; green check mark icons indicate system states that are within normal expectations. You can also see detailed metric displays of the RAC database state by clicking the <span class="bold">Performance</span> tab.</p>
+<img src="./racdb_hp.gif" alt="Description of racdb_hp.gif follows" title="Description of racdb_hp.gif follows" /><br />
+<a id="sthref816" name="sthref816" href="./img_text/racdb_hp.htm">Description of the illustration racdb_hp.gif</a><br />
+<br />
+<p>The <span class="bold">Alerts</span> table is displayed under the metrics section on the Cluster Database Home Page. It lists clusterwide database alerts in order of severity, and sorted by database components. For more information about the alert, click the text in the <span class="bold">Message</span> column. This takes you to the specific page that measures the system state of the process that triggered the alert.</p>
+<p>On the Cluster Database Home Page level, you can select the <span class="bold">Performance</span>, <span class="bold">Administration</span>, and <span class="bold">Maintenance</span> tabs to perform clusterwide administration tasks. You can obtain assistance in understanding the options for each task, or the meanings for each metric, by clicking the Help link next to the <span class="bold">Database</span> tab. After you navigate to individual metrics displays, when you want to return to the Cluster Database Home Page, click the <span class="bold">Database</span> tab in the top right corner of the page.</p>
+</div>
+<!-- class="sect2" -->
+<a id="BHCHIDBC" name="BHCHIDBC"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref817" name="sthref817"></a>
+<h3>Viewing RAC Database Targets</h3>
+<p>On the Cluster Database Page, a <span class="bold">target</span> is a cluster, a database instance, or an Oracle utility, such as a listener. The console obtains metrics that provide information about the current state of targets. These metrics are presented in separate section headings for each target. On the Cluster Database Cluster Home Page, Oracle Enterprise Manager shows high-level metrics about the state of the cluster. By clicking the names of individual targets on the page, you can navigate to more detailed pages that display metrics about the target you have selected.</p>
+<p>You can review all targets in the RAC database by navigating to the cluster database Targets page. To view all targets, complete the following procedure:</p>
+<ol type="1" start="1">
+<li>
+<p>Log in to Oracle Enterprise Manager Database Control.</p>
+</li>
+<li>
+<p>On the Cluster Database Home Page, in the General heading section, click the <span class="bold">Cluster</span> name link.</p>
+</li>
+<li>
+<p>On the Cluster Home Page, click the <span class="bold">Targets</span> tab.</p>
+<p>The Targets page provides an overview of the current state of each target. By clicking the name of the target, you can navigate to detailed metrics pages for each target. For database and ASM instances, clicking the target name opens the Home Page for that target, so that you can monitor individual database states.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="CHDIGFBI" name="CHDIGFBI"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref818" name="sthref818"></a>
+<h3>Navigating to Oracle Enterprise Manager Cluster-Related Pages</h3>
+<p>You can monitor various activities in your cluster database environment with the other pages in Oracle Enterprise Manager described in this section.</p>
+<p>The Cluster Database Performance page, which you access by clicking the Performance tab from the Cluster Database Home page, a quick glimpse of the performance statistics for a database. Statistics are rolled up across all of the instances in a RAC database. Using links that are next to the charts at the bottom of the page you can drill down to:</p>
+<ul>
+<li type="disc">
+<p>Identify the causes of performance issues</p>
+</li>
+<li type="disc">
+<p>Decide whether resources need to be added or redistributed</p>
+</li>
+<li type="disc">
+<p>Tune your SQL plan and schema for better optimization</p>
+</li>
+<li type="disc">
+<p>Resolve performance issues</p>
+</li>
+</ul>
+<p>For performance information about individual instances, you can use the Cluster Database Instance Performance page. To reach this page for a particular instance, click the Performance tab on the Cluster Database Home page, then click the name of the instance you want to monitor name at the bottom of the page. You can drill down from links beside the charts or at the bottom of the Database Instance Performance page to do the following:</p>
+<ul>
+<li type="disc">
+<p>Identify the cause of performance issues</p>
+</li>
+<li type="disc">
+<p>Decide whether resources need to be added or redistributed to resolve performance issues</p>
+</li>
+<li type="disc">
+<p>Tune your SQL plan and schema for better optimization</p>
+</li>
+<li type="disc">
+<p>Resolve performance issues</p>
+</li>
+</ul>
+<p>Use the Cluster Performance Page to see utilization statistics, such as CPU, Memory, and Disk reads and writes, during the past hour for all nodes of your cluster. You access the Cluster Performance page by clicking the Cluster link in the General section of the Cluster Database Performance page, then clicking the Performance tab from the Cluster Home page. With this information, you can determine whether resources need to be added, suspended, or redistributed. From this page, you can view the CPU, Memory, and Disk I/O charts for each node individually by clicking the host name in the legend to the right of the charts. The resulting Host page also shows statistics for CPU load, memory scan page rate, and longest service time.</p>
+<p>The Cluster Interconnects page enables you to monitor the interconnect interfaces, determine configuration issues, and identify transfer rate-related issues including excess traffic. This page helps determine the load added by individual instances and databases on the interconnect. Sometimes you can immediately identify interconnect delays that are due to applications that are outside of the Oracle database. To access Cluster Interconnects page, click the Cluster link in the General section of the Cluster Database Home page, then click the Interconnects tab. The tables on this page enable you to do the following:</p>
+<ul>
+<li type="disc">
+<p>View all interfaces that are configured across the cluster</p>
+</li>
+<li type="disc">
+<p>View statistics for the interfaces, such as absolute transfer rates and errors</p>
+</li>
+<li type="disc">
+<p>Determine the type of interfaces, such as private or public</p>
+</li>
+<li type="disc">
+<p>Determine whether the instance is using a public or private network</p>
+</li>
+<li type="disc">
+<p>Determine which database instance is currently using which interface</p>
+</li>
+<li type="disc">
+<p>Determine how much the instance is contributing to the transfer rate on the interface</p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a class="olinkSRC RACAD" href="http://www.oracle.com/pls/db102/to_bookid?id=RACAD"><span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span></a> for details about the use and interpretation of the Oracle Enterprise Manager pages discussed in this section</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect2" -->
+<a id="BHCBHCGH" name="BHCBHCGH"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref819" name="sthref819"></a>
+<h3>Viewing and Modifying RAC Database Initialization Parameters</h3>
+<p>Managing initialization parameters across the RAC database is essentially the same as managing them for a single-instance database. Note the following differences for parameters in a RAC database:</p>
+<ul>
+<li type="disc">
+<p>Parameters that are cluster-specific parameters are identified in the <span class="bold">Category</span> column with the designation <span class="bold">Cluster Database</span></p>
+</li>
+<li type="disc">
+<p>Parameters that are duplicated on each instance in the RAC database are identified in the Instance column with an asterisk (<span class="bold">*</span>)</p>
+</li>
+<li type="disc">
+<p>Parameters that can be set differently on each instance of the RAC database are listed by instance number</p>
+</li>
+</ul>
+<p>Note that RAC database parameters are different from single-instance database parameters. If you change a parameter setting marked by an asterisk, or designated as a Cluster Database parameter, then this changes that setting for each instance of your RAC database. If you change a numbered instance parameter, that is, a parameter for one instance of the RAC Database, it does not change parameter settings on other database instances in the RAC database.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p><a class="xlinkSRC RACAD020" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span></a> and <a href="install.htm#CHDJAJAG">"Initialization Parameters"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BHCEIHGA" name="BHCEIHGA"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref820" name="sthref820"></a>
+<h2>Starting and Stopping the RAC Database and Database Instances</h2>
+<p>To start or stop RAC databases using Enterprise Manager, you must first ensure that the Enterprise Manager console is up. If you are not sure how to access the console, then review the section <a href="em_manage.htm#BABBAIHD">"Starting and Stopping the Oracle Enterprise Manager Console"</a> in <a href="em_manage.htm#CACHGFFI">Chapter 3, "Getting Started with Oracle Enterprise Manager"</a>.</p>
+<p>Typically, you start up and shut down the cluster from the Enterprise Manager Cluster Database Home Page. By using the Cluster Database Home page for cluster database startup and shutdown operations, you ensure that all instances that belong to the RAC database are in a consistent state. This enables you to more easily manage the RAC database. You can start and stop individual instances in the RAC database. Keep in mind that starting and stopping one instance on the RAC database does not stop other instances. To stop a RAC database completely, you must shut down all of its instances.</p>
+<p>You can use Oracle Enterprise Manager to start and stop the entire RAC database, or to start and stop individual instances on the database, as described in the following sections:</p>
+<ul>
+<li type="disc">
+<p><a href="#BHCGGFCJ">Starting and Stopping RAC Databases</a></p>
+</li>
+<li type="disc">
+<p><a href="#BHCEHDAG">Starting and Stopping Individual Instances in a RAC Database</a></p>
+</li>
+</ul>
+<a id="BHCGGFCJ" name="BHCGGFCJ"></a>
+<div class="sect2"><a id="sthref821" name="sthref821"></a>
+<h3>Starting and Stopping RAC Databases</h3>
+<p>The following instructions describe the process of starting and stopping the entire RAC database, including each cluster database instance:</p>
+<ol type="1" start="1">
+<li>
+<p>Log in to Oracle Enterprise Manager Database Control</p>
+</li>
+<li>
+<p>On the Cluster Database page, and in the General view, click <span class="bold">Startup</span> (if the database is down) or <span class="bold">Shutdown</span> (if the database is up)</p>
+</li>
+<li>
+<p>On the Specify Credentials page, enter the cluster database host credentials for the database nodes. The <a id="sthref822" name="sthref822"></a>host credentials are the username and password for a user who is a member of the <a id="sthref823" name="sthref823"></a>OSDBA or OSOPER system privileges group.</p>
+</li>
+<li>
+<p>On the Startup/Shutdown: Select Operation page, click <span class="bold">Startup All</span> to start all instances, or click <span class="bold">Shutdown All</span> to close all instances</p>
+</li>
+<li>
+<p>On the Startup/Shutdown: Confirmation page, click <span class="bold">Yes</span></p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="BHCEHDAG" name="BHCEHDAG"></a>
+<div class="sect2"><a id="sthref824" name="sthref824"></a>
+<h3>Starting and Stopping Individual Instances in a RAC Database</h3>
+<p>The following instructions describe how to navigate to a single instance on a RAC database, and start or stop it:</p>
+<ol type="1" start="1">
+<li>
+<p>Log in to Oracle Enterprise Manager Database Control</p>
+</li>
+<li>
+<p>On the Cluster Database Home Page, in the General heading section, click the Cluster name link</p>
+</li>
+<li>
+<p>On the Cluster:<span class="italic">name</span> Home Page (where <code><span class="codeinlineitalic">name</span></code> is the name of the cluster), click the Targets tab</p>
+</li>
+<li>
+<p>On the Cluster:<span class="italic">name</span> Target page (where <code><span class="codeinlineitalic">name</span></code> is the name of the cluster), in the Name column of the targets table, click the name of the instance that you want to start up or shut down.</p>
+</li>
+<li>
+<p>On the Cluster Database Instance: <span class="italic">name</span> page (where <code><span class="codeinlineitalic">name</span></code> is the name of the instance), click <span class="bold">Startup</span> (if the database is down) or <span class="bold">Shutdown</span> (if the database is up)</p>
+</li>
+<li>
+<p>On the Startup/Shutdown: Specify Host and Target Database Credentials page, provide host (OSDBA) credentials and database (SYSDBA) credentials, and click <span class="bold">OK</span></p>
+</li>
+<li>
+<p>On the Startup/Shutdown: Confirmation page, click <span class="bold">Yes</span></p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BHCIFFHD" name="BHCIFFHD"></a>
+<div class="sect1"><a id="sthref825" name="sthref825"></a>
+<h2>Managing RAC Backup and Recovery</h2>
+<p>Managing backup and recovery in RAC database environments is similar to single-instance environments. This section provides an overview of some of the additional concepts and procedures for backup and recovery.</p>
+<p>This section contains the following topics:</p>
+<ul>
+<li type="disc">
+<p><a href="#BHCEHDFB">Redo Log Groups and Redo Threads in Real Application Cluster Databases</a></p>
+</li>
+<li type="disc">
+<p><a href="#BHCBIEDI">Backing Up RAC Databases</a></p>
+</li>
+<li type="disc">
+<p><a href="#BHCBFIDH">Overview of Restore and Recovery Operations for a RAC Database</a></p>
+</li>
+<li type="disc">
+<p><a href="#BHCBAFGF">Using a Flash Recovery Area with a RAC Database</a></p>
+</li>
+</ul>
+<a id="BHCEHDFB" name="BHCEHDFB"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref826" name="sthref826"></a>
+<h3>Redo Log Groups and Redo Threads in Real Application Cluster Databases</h3>
+<p>Redo logs contain a record of changes that have been made to datafiles. In a single-instance database environment, redo logs generated by database datafile changes are stored in two or more redo log file groups. Each of these groups contains a redo log file, and, possibly, one or more mirrored copies of that file. In a RAC database, each instance requires its own set of redo log groups, known as its "thread" of redo. Mirrored copies of the redo log files provide your system with an extra layer of protection against hardware failures or data corruption.</p>
+<p>Each redo log thread must contain at least two redo log groups. Oracle recommends that each of your instances has a redo thread containing the same number of redo log groups and, as with single-instance databases, each group should contain the same number of members. For example, in a RAC database with two instances, each instance could have a thread of redo containing five redo log groups, for a total of ten redo log groups for the database. Each of these groups could contain two members: a redo log and its mirrored copy. If you create the RAC database with DBCA, then it automatically implements a configuration that meets Oracle recommendations.</p>
+<p>In a RAC database, each instance writes and archives the redo log groups in its own thread in the same manner single-instance databases do, as described in <a href="storage.htm#CHDIFFDC">Chapter 6, "Managing Database Storage Structures"</a>. However, when in recovery mode, the instance performing the recovery is able to read and process all of the redo threads for the database, no matter which instance generated them. This enables a running instance to recover the work completed by a failed instance, so that end users can continue with their interrupted work without waiting for the failed instance to be restarted. For example, assume that you have a RAC database with two instances, instance A and instance B. If instance A is down, then instance B can read the redo log files both for instance A and B to ensure successful recovery.</p>
+<p>In a RAC database using ASM, all redo log files are stored on shared storage, and each instance has transparent access to the redo log files for all other instances in the cluster.</p>
+<p>To access the redo log file groups:</p>
+<ol type="1" start="1">
+<li>
+<p>Go to the Cluster Database Home Page, and click the <span class="bold">Administration</span> tab</p>
+</li>
+<li>
+<p>On the Cluster Database Administration page, under the Storage column, select <span class="bold">Redo Log Groups</span></p>
+</li>
+</ol>
+<p>At the Redo Log Groups page, you can add redo log groups and add members to the redo log group. The <span class="bold">Thread</span> column identifies the instance thread to which a redo log file belongs</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a class="olinkSRC RACAD" href="http://www.oracle.com/pls/db102/to_bookid?id=RACAD"><span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span></a> for additional information about redo log threads in a RAC database environment, and <a href="storage.htm#CHDBABIE">"Online Redo Log Files"</a>.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect2" -->
+<a id="BHCBIEDI" name="BHCBIEDI"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref827" name="sthref827"></a>
+<h3>Backing Up RAC Databases</h3>
+<p>When you use Automatic Storage Management (ASM) to manage database files, Oracle recommends that you use Recovery Manager (RMAN) for backup.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+You must have both database (SYSDBA or SYSOPER) credentials and host operating system (OSDBA) credentials to perform backup and recovery.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<p>To back up a RAC database:</p>
+<ol type="1" start="1">
+<li>
+<p>Go to the Cluster Database Home Page, and click the <span class="bold">Maintenance</span> tab</p>
+</li>
+<li>
+<p>On the Cluster Database Maintenance page, under the Backup/Recovery column, select <span class="bold">Schedule Backup</span></p>
+</li>
+<li>
+<p>Follow the backup procedures outlined in <a href="backrest.htm#CIHEHFJJ">Chapter 9, "Performing Backup and Recovery"</a></p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a class="olinkSRC RACAD" href="http://www.oracle.com/pls/db102/to_bookid?id=RACAD"><span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span></a> for additional information about backing up a RAC database</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect2" -->
+<a id="BHCBFIDH" name="BHCBFIDH"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref828" name="sthref828"></a>
+<h3>Overview of Restore and Recovery Operations for a RAC Database</h3>
+<p>This section discusses both instance recovery and media recovery.</p>
+<p>Instance recovery is automatic. It can take place while the database is running. If a RAC instance fails, then a surviving database instance processes the online redo logs generated by the failed instance to ensure the database contents are in a consistent state. With the addition of more nodes, the performance of the RAC database during automatic instance recovery becomes progressively faster. When recovery is complete, Oracle clusterware attempts to restart the failed instance automatically.</p>
+<p>Media recovery is a manual process that takes place while the database is closed, typically to recover and restore database files after catastrophic disk failures, block corruption, or user errors. Media recovery is always done by one instance in the cluster.</p>
+<p>With RMAN, the process of recovering and restoring a RAC database is essentially the same as for a single-instance database, except that you access RMAN from the <span class="bold">Maintenance</span> page at the cluster database level, instead of the instance level.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a class="olinkSRC BRBSC" href="http://www.oracle.com/pls/db102/to_bookid?id=BRBSC"><span class="italic">Oracle Database Backup and Recovery Basics</span></a> for additional information about basic recover and restoration procedures and <a class="xlinkSRC RACAD320" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span></a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<p>To recover a RAC database:</p>
+<ol type="1" start="1">
+<li>
+<p>Go to the Cluster Database Home Page, and click the <span class="bold">Maintenance</span> tab</p>
+</li>
+<li>
+<p>On the Cluster Database Maintenance page, under the Backup/Recovery column, select <span class="bold">Perform Recovery</span></p>
+</li>
+<li>
+<p>Follow the recovery procedures outlined in <a href="backrest.htm#CIHHBDDG">"Performing Restore and Recovery Operations"</a> in <a href="backrest.htm#CIHEHFJJ">Chapter 9, "Performing Backup and Recovery"</a></p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="BHCBAFGF" name="BHCBAFGF"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref829" name="sthref829"></a>
+<h3>Using a Flash Recovery Area with a RAC Database</h3>
+<p>To use a flash recovery area with a RAC database, the recovery area must be shared among all instances. To accomplish this, Oracle recommends that you place the flash recovery area on the shared ASM disks. In addition, the parameters DB_RECOVERY_FILE_DEST and DB_RECOVERY_FILE_DEST_SIZE must be set to the same values on all instances.</p>
+<p>To use Flash Recovery, you must first configure the flash recovery area, as described in <a href="backrest.htm#CHDGABCI">"Configuring the Flash Recovery Area"</a> in <a href="backrest.htm#CIHEHFJJ">Chapter 9, "Performing Backup and Recovery"</a>.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also<a class="xlinkSRC RACAD059" href="../../dcommon/html/noexist.htm">:</a></p>
+<span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="ZZCJFCDI" name="ZZCJFCDI"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref830" name="sthref830"></a>
+<h2>Real Application Clusters: Oracle by Example Series</h2>
+<p>Oracle by Example (OBE) has a series on the <span class="italic">Oracle Database 2 Day DBA</span> book. This OBE steps you through the tasks in this appendix and includes annotated screen shots.</p>
+<p>To view the Real Application Clusters OBE, point your browser to the following location:</p>
+<pre xml:space="preserve" class="oac_no_warn"><a href="http://www.oracle.com/technology/obe/10gr2_2day_dba/rac/rac.htm">http://www.oracle.com/technology/obe/10gr2_2day_dba/rac/rac.htm</a>
+</pre></div>
+<!-- class="sect1" --></div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="asm.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;2004, 2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

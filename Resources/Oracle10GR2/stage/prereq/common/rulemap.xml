@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<!-- 
+Modified
+07/11/03 bpaliwal - created
+07/13/04 gmanglik - modified for 10gR2
+-->
+<RULEMAP>
+  <RULESET name="OracleHomeChecks" class="oracle.install.prereqs.core.OracleHomeChecks">
+    <RULE name="CheckOracleBase" method="checkOracleBase"/>
+    <RULE name="CheckForSpaces" method="checkForSpace"/>
+    <RULE name="CheckIfInstallOnRoot" method="checkIfInstallOnRoot"/>
+  </RULESET>
+
+  <RULESET name="ExistingEnvChecks" class="oracle.install.prereqs.core.ExistingEnvChecks">
+    <RULE name="CheckEnvVars" method="checkEnvVars"/>
+  </RULESET>
+
+  <RULESET name="StaticIPCheck" class="oracle.install.prereqs.core.StaticIPCheck">
+    <RULE name="CheckIfStaticIP" method="checkIfStaticIP"/>
+  </RULESET>
+
+  <RULESET name="RAC92ClusterChecks" class="oracle.install.prereqs.core.RAC92ClusterChecks">
+    <RULE name="CheckWin92RACexists" method="checkWin92RACexists"/>
+  </RULESET>
+
+  <RULESET name="CRS101Checks" class="oracle.install.prereqs.core.CRS101Checks">
+    <RULE name="CheckWin101SIexists" method="checkWin101SIexists"/>
+  </RULESET>
+
+  <RULESET name="CRS102Checks" class="oracle.install.prereqs.core.CRS102Checks">
+    <RULE name="CheckFor102CRS" method="checkFor102CRS"/>
+    <RULE name="CheckIfCSSStackIsDown" method="checkIfCSSStackIsDown"/>
+  </RULESET>
+
+  <RULESET name="InplaceInstallChecks" class="oracle.install.prereqs.core.InplaceInstallChecks">
+    <RULE name="CheckASMInstanceExists" method="checkASMInstanceExists"/>
+  </RULESET>
+
+  <RULESET name="ASMChecks" class="oracle.install.prereqs.core.ASMChecks">
+    <RULE name="CheckIfValidASMHome" method="checkIfValidASMHome"/>
+  </RULESET>
+
+  <RULESET name="HTMLDBChecks" class="oracle.install.prereqs.core.HTMLDBChecks">
+      <RULE name="CheckOHSConf" method="CheckOHSConf"/>
+  </RULESET>
+
+</RULEMAP>

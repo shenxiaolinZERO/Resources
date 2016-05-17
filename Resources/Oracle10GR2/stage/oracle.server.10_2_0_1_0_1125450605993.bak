@@ -1,0 +1,8 @@
+<?xml version="1.0" standalone="yes" ?>
+<!-- Copyright (c) 2005 Oracle Corporation. All rights Reserved -->
+<!-- Do not modify the contents of this file by hand. -->
+<agg:Descriptions version="1.0.0" xmlns:agg="http://www.oracle.com/sysman/emCfg/AggregateDescriptions" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.oracle.com/sysman/emCfg/AggregateDescriptions" platform="NT_X86">
+   <agg:ComplexAggregate id="oracle.server">
+      <agg:SimplestAggregateRef idref="OuiConfigVariables"/>
+   </agg:ComplexAggregate>
+</agg:Descriptions>

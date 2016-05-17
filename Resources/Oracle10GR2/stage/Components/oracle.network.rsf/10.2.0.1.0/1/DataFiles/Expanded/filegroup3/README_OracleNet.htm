@@ -1,0 +1,1611 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML lang="EN">
+<HEAD>
+
+<META NAME="Generator" CONTENT="Quadralay WebWorks Publisher 5.0.4">
+<META NAME="WDT" CONTENT="2.1.1.5.4ID">
+<META NAME="Page" CONTENT="Default">
+<META NAME="Title" CONTENT="">
+<META NAME="Date" CONTENT="01/07/04 06:26PM PST">
+
+<TITLE></TITLE>
+	   
+
+
+
+
+
+
+
+
+
+</HEAD>
+       
+<BODY BGCOLOR="#ffffff">
+
+<A NAME="top"></A>
+
+
+
+
+<A HREF="#BEGIN">Skip Headers</A><BR><BR>
+<TABLE CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+<TR>
+
+ 
+<TD ALIGN="LEFT" VALIGN="TOP"><FONT COLOR="#330099" FACE="Helvetica, Arial, sans-serif"><STRONG>Oracle Net Services README<BR>Release 1 (10.1)</STRONG></FONT></TD>
+<TD VALIGN="BOTTOM" ALIGN="RIGHT" WIDTH="144">
+<TABLE CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+<TR>
+
+
+
+
+
+
+
+
+
+
+<TD ALIGN="CENTER" VALIGN="TOP" WIDTH="25%"></TD>
+<TD ALIGN="CENTER" VALIGN="TOP" WIDTH="25%"></TD>
+<TD ALIGN="CENTER" VALIGN="TOP" WIDTH="25%"></TD>
+<TD ALIGN="CENTER" VALIGN="TOP" WIDTH="25%"></TD>
+
+
+
+
+
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+<HR>
+<P>
+
+
+
+    
+
+
+<A NAME="BEGIN"></A>
+
+
+
+<DIV CLASS="IND">
+<!-- End Header -->
+
+
+
+
+
+
+<STRONG CLASS="Bold">Oracle Net Services README Release 1 (10.1)</STRONG>
+<DL CLASS="A1">
+
+<DT CLASS="A1"><FONT SIZE="-1" FACE="Arial, Helvetica, sans-serif"><A NAME="477196"></A><STRONG>Copyright &#169; 2003 Oracle Corporation. All rights reserved. </STRONG></FONT>
+</DL>
+<A NAME="567289"></A>
+<P CLASS="BP">
+The Programs (which include both the software and documentation) contain proprietary information of Oracle Corporation; they are provided under a license agreement containing restrictions on use and disclosure and are also protected by copyright, patent and other intellectual and industrial property laws. Reverse engineering, disassembly or decompilation of the Programs, except to the extent required to obtain interoperability with other independently created software or as specified by law, is prohibited.
+</P>
+<A NAME="567290"></A>
+<P CLASS="BP">
+The information contained in this document is subject to change without notice. If you find any problems in the documentation, please report them to us in writing. Oracle Corporation does not warrant that this document is error-free. Except as may be expressly permitted in your license agreement for these Programs, no part of these Programs may be reproduced or transmitted in any form or by any means, electronic or mechanical, for any purpose, without the express written permission of Oracle Corporation.
+</P>
+<A NAME="567291"></A>
+<P CLASS="BP">
+If the Programs are delivered to the U.S. Government or anyone licensing or using the programs on behalf of the U.S. Government, the following notice is applicable:
+</P>
+
+<DL CLASS="A1">
+<BR><FONT SIZE="-1" FACE="Arial, Helvetica, sans-serif"><A NAME="506484"></A><STRONG>RESTRICTED RIGHTS NOTICE                                                              </STRONG></FONT>
+</DL>
+ <A NAME="567295"></A>
+<P CLASS="BP">
+Programs delivered subject to the DOD FAR Supplement are "commercial computer software" and use, duplication, and disclosure of the Programs, including documentation, shall be subject to the licensing restrictions set forth in the applicable Oracle license agreement. Otherwise, Programs delivered subject to the Federal Acquisition Regulations are "restricted computer software" and use, duplication, and disclosure of the Programs shall be subject to the restrictions in FAR 52.227-19, Commercial Computer Software - Restricted Rights (June, 1987). Oracle Corporation, 500 Oracle Parkway, Redwood City, CA 94065.
+</P>
+<A NAME="567296"></A>
+<P CLASS="BP">
+The Programs are not intended for use in any nuclear, aviation, mass transit, medical, or other inherently dangerous applications. It shall be the licensee's responsibility to take all appropriate fail-safe, backup, redundancy, and other measures to ensure the safe use of such applications if the Programs are used for such purposes, and Oracle Corporation disclaims liability for any damages caused by such use of the Programs. 
+</P>
+
+<DL CLASS="A1">
+<BR><FONT SIZE="-1" FACE="Arial, Helvetica, sans-serif"><A NAME="561792"></A><STRONG>TRADEMARKS</STRONG></FONT>
+</DL>
+ <A NAME="567306"></A>
+<P CLASS="BP">
+Oracle is a registered trademark, and Oracle9<EM CLASS="Italic">i</EM> and Oracle8<EM CLASS="Italic">i</EM> are trademarks or registered trademarks of Oracle Corporation. Other names may be trademarks of their respective owners.
+</P>
+<A NAME="557851"></A><FONT FACE="Arial, Helvetica, sans-serif"><STRONG CLASS="NH">Documentation Accessibility:</STRONG></FONT>
+<A NAME="557852"></A>
+<P CLASS="BP">
+
+</P>
+<A NAME="567379"></A>
+<P CLASS="BP">
+Our goal is to make Oracle products, services, and supporting documentation accessible, with good usability, to the disabled community. To that end, our documentation includes features that make information available to users of assistive technology. This documentation is available in HTML format, and contains markup to facilitate access by the disabled community. Standards will continue to evolve over time, and Oracle Corporation is actively engaged with other market-leading technology vendors to address technical obstacles so that our documentation can be accessible to all of our customers. For additional information, visit the Oracle Accessibility Program Web site at
+</P>
+    
+<PRE CLASS="CE">
+<A NAME="567382"></A><A HREF="http://www.oracle.com/accessibility/">http://www.oracle.com/accessibility/</a>
+<A NAME="567383"></A>
+</PRE>    <A NAME="557827"></A><FONT FACE="Arial, Helvetica, sans-serif"><STRONG CLASS="NH">Accessibility of Code Examples in Documentation:</STRONG></FONT>
+<A NAME="557828"></A>
+<P CLASS="BP">
+
+</P>
+<A NAME="557829"></A>
+<P CLASS="BP">
+JAWS, a Windows screen reader, may not always correctly read the code examples in this document. The conventions for writing code require that closing braces should appear on an otherwise empty line; however, JAWS may not always read a line of text that consists solely of a bracket or brace.
+</P>
+<A NAME="557834"></A><FONT FACE="Arial, Helvetica, sans-serif"><STRONG CLASS="NH">Accessibility of Links to External Web Sites in Documentation:</STRONG></FONT>
+<A NAME="557835"></A>
+<P CLASS="BP">
+
+</P>
+<A NAME="557836"></A>
+<P CLASS="BP">
+his documentation may contain links to Web sites of other companies or organizations that Oracle Corporation does not own or control. Oracle Corporation neither evaluates nor makes any representations regarding the accessibility of these Web sites.
+</P>
+<A NAME="516936"></A>
+<P CLASS="BP">
+-----------------------------------------------
+</P>
+<A NAME="515579"></A>
+<P CLASS="BP">
+<STRONG CLASS="Bold">CONTENTS</STRONG>
+</P>
+
+<DL CLASS="LS">
+
+<DT CLASS="LSF"><A NAME="556584"></A><A HREF="readme.htm#556736">1  INTRODUCTION</a>
+
+<DT CLASS="LSF"><A NAME="549491"></A><A HREF="readme.htm#555971">2  INSTALLATION</a>
+
+<DT CLASS="LSF"><A NAME="568192"></A><A HREF="readme.htm#568162">3  ORACLE NAMES</a>
+
+<DT CLASS="LSF"><A NAME="561753"></A><A HREF="readme.htm#560164">4  DIRECTORY NAMING</a>
+
+<DT CLASS="LSF"><A NAME="561763"></A><A HREF="readme.htm#564235">5  CONFIGURATION TOOLS</a>
+
+<DT CLASS="LSF"><A NAME="562233"></A><A HREF="readme.htm#562190">6  ORACLE CONNECTION MANAGER</a>
+
+<DT CLASS="LSF"><A NAME="568216"></A><A HREF="readme.htm#563472">7  LISTENER AUTHENTICATION</a>
+
+<DT CLASS="LSF"><A NAME="568526"></A><A HREF="readme.htm#568519">8  LISTENER CONTROL STATUS AND SERVICES</a>
+
+<DT CLASS="LSF"><A NAME="564058"></A><A HREF="readme.htm#568205">9  TRCROUTE UTILITY</a>
+
+<DT CLASS="LSF"><A NAME="560716"></A><A HREF="readme.htm#561267">10  NEW FEATURES AND OBSOLESCENCE</a>
+</DL>
+
+<A NAME="556736"></A>
+<!--TOC=h1-"556736"-->
+<H2 CLASS="H1"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">1&#32; INTRODUCTION</FONT></H2>
+
+
+<!--/TOC=h1-->
+<A NAME="561872"></A>
+<P CLASS="BP">
+This README is relevant only to Oracle Net Services release 1 (10.1). It identifies differences between Oracle Net Services and its documented functionality. It also identifies problems with the product and provides workarounds for these problems. 
+</P>
+<A NAME="503885"></A>
+<P CLASS="BP">
+For information about upgrades, downgrades, and migration, see <EM CLASS="Italic">Oracle Database Upgrade Guide</EM>.
+</P>
+<A NAME="560014"></A>
+<P CLASS="BP">
+Oracle Net Services encompasses the Oracle family of networking products. It provides a comprehensive data access solution for heterogeneous distributed computing environments. It enables client-to-server and server-to-server communication across any network. Oracle Net Services offers the following benefits: 
+</P>
+
+<UL CLASS="LB1">
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="560015"></A>Network scalability and performance 
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="560016"></A>Network load balancing 
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="560017"></A>Integrated administration with graphical configuration tools 
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="560018"></A>Directory naming solutions 
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="560019"></A>Flexible Configuration
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="560020"></A>Comprehensive platform support 
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="560021"></A>Multiple protocol support
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="560022"></A>Comprehensive tracing and diagnostics 
+<P>
+</UL>
+
+<A NAME="555971"></A>
+<!--TOC=h1-"555971"-->
+<H2 CLASS="H1"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">2&#32; INSTALLATION</FONT></H2>
+
+
+<!--/TOC=h1-->
+<A NAME="560096"></A>
+<P CLASS="BP">
+A release 1 (10.1) listener is required for an Oracle10<EM CLASS="Italic">g</EM> release 1 (10.1) database. This release does not support previous versions of the listener. To learn more about installation, see documentation specific to different operating systems.
+</P>
+
+<A NAME="568162"></A>
+<!--TOC=h1-"568162"-->
+<H2 CLASS="H1"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">3&#32; ORACLE NAMES</FONT></H2>
+
+
+<!--/TOC=h1-->
+<A NAME="568163"></A>
+<P CLASS="BP">
+This section discusses issues associated with Oracle Names usage. The following topics are covered:
+</P>
+
+<UL CLASS="LB1">
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="568167"></A><A HREF="readme.htm#568177">Section&nbsp;3.1, "Oracle Names Support for Prior Release Clients"</a>
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="568171"></A><A HREF="readme.htm#568181">Section&nbsp;3.2, "Global Database Links and Oracle Names"</a>
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="568174"></A><A HREF="readme.htm#568186">Section&nbsp;3.3, "Oracle9i Release 2 Oracle Names LDAP Proxy and Oracle Internet Directory release 9.0.4."</a>
+<P>
+</UL>
+
+<A NAME="568177"></A>
+<!--TOC=h2-"568177"-->
+<H3 CLASS="H2"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">3.1&#32; Oracle Names Support for Prior Release Clients</FONT></H3>
+<!--/TOC=h2-->
+<A NAME="568178"></A>
+<P CLASS="BP">
+Oracle Names and Oracle Names LDAP Proxy are no longer supported as a naming method in 10g Release 1 (10.1). For centralized storage of connect identifiers, you must migrate to directory naming. Neither Oracle10<EM CLASS="Italic">g</EM> clients nor Oracle10<EM CLASS="Italic">g</EM> databases can use an Oracle Names server or an Oracle Names LDAP Proxy server to resolve a connect identifier. Oracle9<EM CLASS="Italic">i</EM> and Oracle8<EM CLASS="Italic">i</EM> clients can still use the 9.2 version of Oracle Names or Oracle Names LDAP Proxy to resolve net service names that point to an Oracle10<EM CLASS="Italic">g</EM> database. Customers are, however, strongly urged to migrate Oracle8<EM CLASS="Italic">i</EM> and later release clients to directory naming.
+</P>
+<A NAME="568179"></A>
+<P CLASS="BP">
+Oracle9<EM CLASS="Italic">i</EM> or Oracle8<EM CLASS="Italic">i</EM> customers who want to use Oracle Names to resolve net service names for Oracle10<EM CLASS="Italic">g</EM> databases should upgrade Oracle Names or Oracle Names LDAP Proxy servers to version 9.2. See <EM CLASS="Italic">Oracle9i Net Services Administrator's Guide</EM> Release 2 (9.2) for upgrade procedures.
+</P>
+
+<A NAME="568181"></A>
+<!--TOC=h2-"568181"-->
+<H3 CLASS="H2"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">3.2&#32; Global Database Links and Oracle Names</FONT></H3>
+<!--/TOC=h2-->
+<A NAME="568182"></A>
+<P CLASS="BP">
+Oracle10<EM CLASS="Italic">g</EM> no longer uses Oracle Names for accessing global database links. Global database links are now resolved through directory naming using Oracle Internet Directory. 
+</P>
+<A NAME="568183"></A>
+<P CLASS="BP">
+Before migrating a database to 10<EM CLASS="Italic">g</EM>, you must migrate global database links stored in an Oracle9<EM CLASS="Italic">i</EM> Release 2 (9.2) Oracle Names server to Oracle Internet Directory. Once global database links are migrated to directory naming, then Oracle10<EM CLASS="Italic">g</EM> can resolve the global database links through directory naming upon migrating your database to Oracle10<EM CLASS="Italic">g</EM>. 
+</P>
+<A NAME="568184"></A>
+<P CLASS="BP">
+Directions for migrating global database links are part of Oracle Names to directory migration documented in <EM CLASS="Italic">Oracle9i Net Services Administrator's Guide</EM> Release 2 (9.2).
+</P>
+
+<A NAME="568186"></A>
+<!--TOC=h2-"568186"-->
+<H3 CLASS="H2"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">3.3&#32; Oracle9<EM CLASS="Italic">i</EM> Release 2 Oracle Names LDAP Proxy and Oracle Internet Directory release 9.0.4.</FONT></H3>
+<!--/TOC=h2-->
+<A NAME="568187"></A>
+<P CLASS="BP">
+Oracle9<EM CLASS="Italic">i</EM> Release 2 (9.2) Oracle Names LDAP Proxy server has been tested and certified for use with the Oracle Internet Directory release 9.0.4.
+</P>
+
+<A NAME="560164"></A>
+<!--TOC=h1-"560164"-->
+<H2 CLASS="H1"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">4&#32; DIRECTORY NAMING</FONT></H2>
+
+
+<!--/TOC=h1-->
+<A NAME="568478"></A>
+<P CLASS="BP">
+This section discusses issues associated with using directory naming to resolve a connect identifier when connecting to a database. It contains the following topics:
+</P>
+
+<UL CLASS="LB1">
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="563049"></A><A HREF="readme.htm#567584">Section&nbsp;4.1, "Tool Support for Directory Usage Configuration"</a>
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="567131"></A><A HREF="readme.htm#566712">Section&nbsp;4.2, "Oracle Internet Directory Configuration Assistant (OIDCA)"</a>
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="563655"></A><A HREF="readme.htm#561856">Section&nbsp;4.3, "Notation for DEFAULT_ADMIN_CONTEXT Parameter"</a>
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="567582"></A><A HREF="readme.htm#567540">Section&nbsp;4.4, "Use of Parentheses to Enclose Host List in ldap.ora File"</a>
+<P>
+</UL>
+
+<A NAME="567584"></A>
+<!--TOC=h2-"567584"-->
+<H3 CLASS="H2"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">4.1&#32; Tool Support for Directory Usage Configuration</FONT></H3>
+<!--/TOC=h2-->
+<A NAME="567482"></A>
+<P CLASS="BP">
+In release 1 (10.1), clients may locate an Oracle Internet Directory dynamically with DNS or statically with the <CODE>ldap.ora</CODE> file. Oracle recommends using Oracle Internet Directory Configuration Assistant (OIDCA) for all directory usage configuration. OIDCA provides a command-line interface to create, upgrade, and delete an Oracle Context, configure the file <CODE>ldap.ora</CODE>, and convert an Oracle Context to an Identity Management Realm. OIDCA creates file <CODE>ldap.ora</CODE> in either the location of the directory specified by the <CODE>$LDAP_ADMIN</CODE> environment variable or the <CODE>$ORACLE_HOME/ldap/admin</CODE> directory. 
+</P>
+<A NAME="567495"></A>
+<P CLASS="BP">
+If you prefer a graphical user interface, you can use Oracle Net Configuration Assistant to create file <CODE>ldap.ora</CODE> in either the location of the directory specified by the <CODE>$TNS_ADMIN</CODE> environment variable or the <CODE>$ORACLE_HOME/network/admin</CODE> directory. You cannot use the Oracle Net Configuration Assistant to create, upgrade, or delete an Oracle Context. You must use OIDCA to perform these functions. 
+</P>
+<A NAME="562395"></A>
+<P CLASS="BP">
+For a previous release of Oracle Internet Directory, use the Oracle Net Configuration Assistant provided with that release of the directory.
+</P>
+   
+<A NAME="561371">
+<DIV ALIGN="CENTER">
+<P>
+<TABLE CLASS="NoteAlso" BORDER="0" WIDTH="80%" CELLPADDING="0" CELLSPACING="0" dir="ltr" summary="This is a layout table to format a note" title="This is a layout table to format a note">
+<TR CLASS="NoteAlso"><TD CLASS="NoteAlso">
+<A NAME="568372"></A><FONT FACE="Arial, Helvetica, sans-serif"><STRONG CLASS="NH">See Also:</STRONG></FONT>
+<A NAME="568373"></A>
+<P CLASS="BP">
+
+</P>
+
+<UL CLASS="NL">
+
+<LI CLASS="NL" TYPE="DISC"><A NAME="568377"></A><A HREF="readme.htm#566712">Section&nbsp;4.2, "Oracle Internet Directory Configuration Assistant (OIDCA)"</a> for syntax usage
+<P>
+
+<LI CLASS="NL" TYPE="DISC"><A NAME="568356"></A>Wizard pages in Oracle Net Configuration Assistant
+<P>
+</UL>
+</TD>
+</TR>
+
+</TABLE>
+
+
+</DIV>
+
+</A>
+   
+<A NAME="566712"></A>
+<!--TOC=h2-"566712"-->
+<H3 CLASS="H2"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">4.2&#32; Oracle Internet Directory Configuration Assistant (OIDCA)</FONT></H3>
+<!--/TOC=h2-->
+<A NAME="567060"></A>
+<P CLASS="BP">
+OIDCA enables you to create, upgrade, and delete an Oracle Context, configure the file <CODE>ldap.ora</CODE>, and convert an Oracle Context to an Identity Management Realm.
+</P>
+<A NAME="566716"></A>
+<P CLASS="BP">
+The OIDCA syntax is:
+</P>
+    
+<PRE CLASS="CE">
+<A NAME="566717"></A>oidca oidhost=&lt;host&gt; 
+<A NAME="566718"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nonsslport=&lt;port&gt; |
+<A NAME="566719"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sslport=&lt;SSL Port&gt;
+<A NAME="566720"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dn=&lt;binddn&gt; 
+<A NAME="566721"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pwd=&lt;bindpwd&gt; 
+<A NAME="566722"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-silent &lt;list of properties&gt; |
+<A NAME="566723"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;propfile=&lt;prop_file&gt;
+<A NAME="566724"></A>
+</PRE>    <A NAME="566725"></A>
+<P CLASS="BP">
+The following table lists properties of the OIDCA. These properties can also be specified as part of the command line directly. To see the usage of OIDCA, enter <CODE>oidca -help</CODE> at the command prompt.
+</P>
+   
+<A NAME="566755">
+<P>
+<TABLE CLASS="Informal" BORDER="1" FRAME="HSIDES" RULES="GROUPS" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" dir="ltr" title="">
+<THEAD>
+<TR CLASS="Informal"><TH CLASS="Informal" align="left" valign="bottom" scope="col">
+<A NAME="566728"></A>
+<FONT FACE="Arial, Helvetica, sans-serif"><STRONG>Properties</STRONG></FONT></TH>
+<TH CLASS="Informal" align="left" valign="bottom" scope="col">
+<A NAME="566730"></A>
+<FONT FACE="Arial, Helvetica, sans-serif"><STRONG>Description</STRONG></FONT></TH>
+</TR>
+<TBODY>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566732"></A>host
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566734"></A>
+<P CLASS="TB">
+Oracle Internet Directory server host; default is <CODE>localhost</CODE></TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566736"></A>port
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566738"></A>
+<P CLASS="TB">
+Oracle Internet Directory server port; default is <CODE>389</CODE></TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566740"></A>sslport
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566742"></A>
+<P CLASS="TB">
+Oracle Internet Directory SSL port; default is <CODE>636</CODE></TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566744"></A>binddn
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566746"></A>
+<P CLASS="TB">
+Oracle Internet Directory user, such as <CODE>cn=orcladmin</CODE></TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566748"></A>bindpwd
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566750"></A>
+<P CLASS="TB">
+Oracle Internet Directory user password</TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566752"></A>prop_file
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566754"></A>
+<P CLASS="TB">
+File containing a list of properties to determine the mode of operation and the required operation-specific parameters</TD>
+</TR>
+
+</TABLE>
+
+
+</A>
+   
+<A NAME="566756"></A>
+<!--TOC=h3-"566756"-->
+<H4 CLASS="H3"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">4.2.1&#32; Creating an Oracle Context</FONT></H4>
+<!--/TOC=h3-->
+<A NAME="566757"></A>
+<P CLASS="BP">
+The following syntax is used to create an Oracle Context in OIDCA; the properties are described in the subsequent table.
+</P>
+    
+<PRE CLASS="CE">
+<A NAME="566758"></A>
+<A NAME="566759"></A>oidca [oidhost=&lt;host&gt;] 
+<A NAME="566760"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[nonsslport=&lt;port&gt;] 
+<A NAME="566761"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[sslport=&lt;SSL Port&gt;]
+<A NAME="566762"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dn=&lt;binddn&gt; 
+<A NAME="566763"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pwd=&lt;bindpwd&gt; 
+<A NAME="566764"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mode=CREATECTX 
+<A NAME="566765"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contextdn=&lt;OracleContext DN&gt;
+</PRE> 
+<A NAME="566795">
+<P>
+<TABLE CLASS="Informal" BORDER="1" FRAME="HSIDES" RULES="GROUPS" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" dir="ltr" title="">
+<THEAD>
+<TR CLASS="Informal"><TH CLASS="Informal" align="left" valign="bottom" scope="col">
+<A NAME="566768"></A>
+<FONT FACE="Arial, Helvetica, sans-serif"><STRONG>Properties</STRONG></FONT></TH>
+<TH CLASS="Informal" align="left" valign="bottom" scope="col">
+<A NAME="566770"></A>
+<FONT FACE="Arial, Helvetica, sans-serif"><STRONG>Description</STRONG></FONT></TH>
+</TR>
+<TBODY>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566772"></A>host
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566774"></A>
+<P CLASS="TB">
+Oracle Internet Directory server host; default is <CODE>localhost</CODE></TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566776"></A>port
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566778"></A>
+<P CLASS="TB">
+Oracle Internet Directory server port; default is <CODE>389</CODE></TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566780"></A>sslport
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566782"></A>
+<P CLASS="TB">
+Oracle Internet Directory SSL port; default is <CODE>636</CODE></TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566784"></A>binddn
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566786"></A>
+<P CLASS="TB">
+Oracle Internet Directory user, such as <CODE>cn=orcladmin</CODE></TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566788"></A>bindpwd
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566790"></A>
+<P CLASS="TB">
+Oracle Internet Directory user password</TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566792"></A>contextdn
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566794"></A>
+<P CLASS="TB">
+DN under which <CODE>OracleContext</CODE> must be created, such as <CODE>dc=acme</CODE>, <CODE>dc=com</CODE></TD>
+</TR>
+
+</TABLE>
+
+
+</A>
+   <A NAME="566796"></A>
+<P CLASS="BP">
+Note the following points:
+</P>
+
+<UL CLASS="LB1">
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="566797"></A>The <CODE>contextdn</CODE> must exist for this operation to be successful.
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="566798"></A>These DNs are valid:
+<P>
+
+<UL CLASS="LB2">
+
+<LI CLASS="LB2" TYPE="DISC"><A NAME="566799"></A><CODE>cn=oraclecontext, dc=acme, dc=com</CODE> 
+<P>
+
+<A NAME="566800"></A>
+<P CLASS="BP2">
+This DN should not exist in OID.
+</P>
+ 
+
+<LI CLASS="LB2" TYPE="DISC"><A NAME="566801"></A><CODE>dc=acme, dc=com</CODE>
+<P>
+
+<A NAME="566802"></A>
+<P CLASS="BP2">
+This DN must exist in OID.
+</P>
+ 
+</UL>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="566803"></A>The parameters <CODE>mode</CODE> and <CODE>contextdn</CODE> can also be passed as a properties file.
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="566804"></A>Specify the parameter <CODE>nonsslport=port</CODE> if you want to perform the operation using non-SSL mode.
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="566805"></A>Specify the parameter <CODE>sslport=sslport</CODE> if you want to perform the operation using SSL mode.
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="566806"></A>Either the <CODE>port</CODE> or the <CODE>sslport</CODE> parameter must be specified, but not both.
+<P>
+</UL>
+
+<A NAME="566807"></A>
+<H5 CLASS="SH2"><FONT FACE="Arial, Helvetica, sans-serif">Functionality</FONT></H5>
+
+<OL CLASS="LN1" TYPE="1">
+
+<LI CLASS="LN1" TYPE="1" VALUE="1"><A NAME="566808"></A>The OIDCA verifies that <CODE>contextdn</CODE> has a valid DN syntax and that the entry exists in Oracle Internet Directory. Note that the OIDCA cannot create a root <CODE>OracleContext</CODE> explicitly. If there is no root Oracle Context, then OIDCA exits with an error.
+<P>
+
+
+<LI CLASS="LN1" TYPE="1" VALUE="2"><A NAME="566809"></A>If DN exists, then OIDCA verifies that the Oracle Context already exists.
+<P>
+ 
+
+<UL CLASS="LB2">
+
+<LI CLASS="LB2" TYPE="DISC"><A NAME="566810"></A>If the Oracle Context already exists and is up-to-date, then OIDCA exits with the message "<CODE>Oracle Context already exists and is up to date.</CODE>"
+<P>
+
+<LI CLASS="LB2" TYPE="DISC"><A NAME="566811"></A>If the Oracle Context already exists, but it is an older version, then OIDCA exits with the message "<CODE>Oracle Context already exists and is of an older version.</CODE>"
+<P>
+
+<LI CLASS="LB2" TYPE="DISC"><A NAME="566812"></A>If the Oracle Context does not exist, then OIDCA creates the Oracle Context under this DN.
+<P>
+</UL>
+</OL>
+
+<A NAME="566813"></A>
+<!--TOC=h3-"566813"-->
+<H4 CLASS="H3"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">4.2.2&#32; Upgrading an OracleContext</FONT></H4>
+<!--/TOC=h3-->
+<A NAME="566814"></A>
+<P CLASS="BP">
+To upgrade an OracleContext, use the following syntax; the properties are listed in the subsequent table.
+</P>
+    
+<PRE CLASS="CE">
+<A NAME="566815"></A>oidca [oidhost=&lt;host&gt;] 
+<A NAME="566816"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[nonsslport=&lt;port&gt;] 
+<A NAME="566817"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[sslport=&lt;SSL Port&gt;] 
+<A NAME="566818"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dn=&lt;binddn&gt; 
+<A NAME="566819"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pwd=&lt;bindpwd&gt; 
+<A NAME="566820"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mode=UPGRADECTX
+<A NAME="566821"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contextdn=&lt;OracleContext DN&gt;
+</PRE> 
+<A NAME="566851">
+<P>
+<TABLE CLASS="Informal" BORDER="1" FRAME="HSIDES" RULES="GROUPS" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" dir="ltr" title="">
+<THEAD>
+<TR CLASS="Informal"><TH CLASS="Informal" align="left" valign="bottom" scope="col">
+<A NAME="566824"></A>
+<FONT FACE="Arial, Helvetica, sans-serif"><STRONG>Properties</STRONG></FONT></TH>
+<TH CLASS="Informal" align="left" valign="bottom" scope="col">
+<A NAME="566826"></A>
+<FONT FACE="Arial, Helvetica, sans-serif"><STRONG>Description</STRONG></FONT></TH>
+</TR>
+<TBODY>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566828"></A>host
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566830"></A>
+<P CLASS="TB">
+Oracle Internet Directory server host; default is <CODE>localhost</CODE></TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566832"></A>port
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566834"></A>
+<P CLASS="TB">
+Oracle Internet Directory server port; default is <CODE>389</CODE></TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566836"></A>sslport
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566838"></A>
+<P CLASS="TB">
+Oracle Internet Directory SSL port; default is <CODE>636</CODE></TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566840"></A>binddn
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566842"></A>
+<P CLASS="TB">
+Oracle Internet Directory user, such as <CODE>cn=orcladmin</CODE></TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566844"></A>bindpwd
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566846"></A>
+<P CLASS="TB">
+Oracle Internet Directory user password</TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566848"></A>contextdn
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566850"></A>
+<P CLASS="TB">
+DN under which OracleContext must be created, such as <CODE>dc=acme</CODE>, <CODE>dc=com</CODE></TD>
+</TR>
+
+</TABLE>
+
+
+</A>
+   <A NAME="566852"></A>
+<P CLASS="BP">
+Note the following points:
+</P>
+
+<UL CLASS="LB1">
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="566853"></A>The <CODE>contextdn</CODE> must contain an <CODE>OracleContext</CODE> for this operation to be successful.
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="566854"></A>The DNs <CODE>cn=oraclecontext</CODE>, <CODE>dc=acme</CODE>, and <CODE>dc=com</CODE> are valid DNs.
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="566855"></A>The parameters <CODE>mode</CODE> and <CODE>contextdn</CODE> can also be passed as a properties file.
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="566856"></A>Specify the parameter <CODE>nonsslport=port</CODE> if you want to perform the operation using a non-SSL mode.
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="566857"></A>Specify the parameter <CODE>sslport=sslport</CODE> if you want to perform the operation using SSL mode.
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="566858"></A>Either the <CODE>port</CODE> or the <CODE>sslport</CODE> parameter must be specified, but not both.
+<P>
+</UL>
+
+<A NAME="566859"></A>
+<H5 CLASS="SH2"><FONT FACE="Arial, Helvetica, sans-serif">Functionality</FONT></H5>
+
+<OL CLASS="LN1" TYPE="1">
+
+<LI CLASS="LN1" TYPE="1" VALUE="1"><A NAME="566860"></A>OIDCA verifies that the <CODE>contextdn</CODE> has valid DN syntax and that <CODE>OracleContext</CODE> exists in Oracle Internet Directory. OIDCA cannot upgrade a root <CODE>OracleContext</CODE> explicitly. If there is no root <CODE>OracleContext</CODE>, then OIDCA sends an error message.
+<P>
+
+
+<LI CLASS="LN1" TYPE="1" VALUE="2"><A NAME="566861"></A>If <CODE>OracleContext</CODE> exists under <CODE>contextdn</CODE>,
+<P>
+ 
+
+<UL CLASS="LB2">
+
+<LI CLASS="LB2" TYPE="DISC"><A NAME="566862"></A>The OIDCA checks if the <CODE>OracleContext</CODE> belongs to a realm, in which case it exits with the appropriate message. Note that <CODE>OracleContext</CODE> instances that belong to a realm cannot be upgraded.
+<P>
+
+<LI CLASS="LB2" TYPE="DISC"><A NAME="566863"></A>The OIDCA verifies that the OracleContext is up-to-date, then exits with the message "<CODE>Oracle Context already exists and is up to date.</CODE>"
+<P>
+
+<LI CLASS="LB2" TYPE="DISC"><A NAME="566864"></A>If the <CODE>OracleContext</CODE> is not up-to-date, then the OIDCA upgrades the <CODE>OracleContext</CODE> under this DN.
+<P>
+</UL>
+</OL>
+
+<A NAME="566865"></A>
+<!--TOC=h3-"566865"-->
+<H4 CLASS="H3"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">4.2.3&#32; Deleting an OracleContext</FONT></H4>
+<!--/TOC=h3-->
+<A NAME="566866"></A>
+<P CLASS="BP">
+To delete an <CODE>OracleContext</CODE>, use the following syntax; the properties are listed in the subsequent table.
+</P>
+    
+<PRE CLASS="CE">
+<A NAME="566867"></A>oidca [oidhost=&lt;host&gt;] 
+<A NAME="566868"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[nonsslport=&lt;port&gt;] 
+<A NAME="566869"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[sslport=&lt;SSL Port&gt;]
+<A NAME="566870"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dn=&lt;binddn&gt; 
+<A NAME="566871"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pwd=&lt;bindpwd&gt; 
+<A NAME="566872"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mode=DELETECTX 
+<A NAME="566873"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contextdn=&lt;OracleContext DN&gt;
+</PRE> 
+<A NAME="566903">
+<P>
+<TABLE CLASS="Informal" BORDER="1" FRAME="HSIDES" RULES="GROUPS" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" dir="ltr" title="">
+<THEAD>
+<TR CLASS="Informal"><TH CLASS="Informal" align="left" valign="bottom" scope="col">
+<A NAME="566876"></A>
+<FONT FACE="Arial, Helvetica, sans-serif"><STRONG>Properties</STRONG></FONT></TH>
+<TH CLASS="Informal" align="left" valign="bottom" scope="col">
+<A NAME="566878"></A>
+<FONT FACE="Arial, Helvetica, sans-serif"><STRONG>Description</STRONG></FONT></TH>
+</TR>
+<TBODY>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566880"></A>host
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566882"></A>
+<P CLASS="TB">
+Oracle Internet Directory server host; default is <CODE>localhost</CODE></TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566884"></A>port
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566886"></A>
+<P CLASS="TB">
+Oracle Internet Directory server port; default is <CODE>389</CODE></TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566888"></A>sslport
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566890"></A>
+<P CLASS="TB">
+Oracle Internet Directory SSL port; default is <CODE>636</CODE></TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566892"></A>binddn
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566894"></A>
+<P CLASS="TB">
+Oracle Internet Directory user, such as <CODE>cn=orcladmin</CODE></TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566896"></A>bindpwd
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566898"></A>
+<P CLASS="TB">
+Oracle Internet Directory user password</TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566900"></A>contextdn
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566902"></A>
+<P CLASS="TB">
+DN under which OracleContext must be created, such as <CODE>dc=acme</CODE>, <CODE>dc=com</CODE></TD>
+</TR>
+
+</TABLE>
+
+
+</A>
+   <A NAME="566904"></A>
+<P CLASS="BP">
+Note the following points:
+</P>
+
+<UL CLASS="LB1">
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="566905"></A>The <CODE>contextdn</CODE> must contain an <CODE>OracleContext</CODE> for this operation to be successful.
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="566906"></A>The DNs <CODE>cn=oraclecontext</CODE>, <CODE>dc=acme</CODE>, and <CODE>dc=com</CODE> are valid DNs.
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="566907"></A>The parameters <CODE>mode</CODE> and <CODE>contextdn</CODE> can also be passed as a properties file.
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="566908"></A>Specify the parameter <CODE>nonsslport=port</CODE> if you want to perform the operation using a non-SSL mode.
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="566909"></A>Specify the parameter <CODE>sslport=sslport</CODE> if you want to perform the operation using SSL mode.
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="566910"></A>Either the <CODE>port</CODE> or the <CODE>sslport</CODE> parameter must be specified, but not both.
+<P>
+</UL>
+
+<A NAME="566911"></A>
+<H5 CLASS="SH2"><FONT FACE="Arial, Helvetica, sans-serif">Functionality</FONT></H5>
+
+<OL CLASS="LN1" TYPE="1">
+
+<LI CLASS="LN1" TYPE="1" VALUE="1"><A NAME="566912"></A>OIDCA verifies that the <CODE>contextdn</CODE> has valid DN syntax and that <CODE>OracleContext</CODE> exists in Oracle Internet Directory.
+<P>
+
+
+<LI CLASS="LN1" TYPE="1" VALUE="2"><A NAME="566913"></A>If <CODE>OracleContext</CODE> exists under <CODE>contextdn</CODE>,
+<P>
+ 
+
+<UL CLASS="LB2">
+
+<LI CLASS="LB2" TYPE="DISC"><A NAME="566914"></A>The OIDCA checks if the <CODE>OracleContext</CODE> belongs to a realm, in which case it exits with the appropriate message. Note that <CODE>OracleContext</CODE> instances that belong to a realm cannot be deleted.
+<P>
+
+<LI CLASS="LB2" TYPE="DISC"><A NAME="566915"></A>If <CODE>OracleContext</CODE> does not belong to a realm, OIDCA deletes it.
+<P>
+</UL>
+</OL>
+
+<A NAME="566916"></A>
+<!--TOC=h3-"566916"-->
+<H4 CLASS="H3"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">4.2.4&#32; Configuring the File ldap.ora</FONT></H4>
+<!--/TOC=h3-->
+<A NAME="566917"></A>
+<P CLASS="BP">
+To configure the file <CODE>ldap.ora</CODE>, use the following syntax; the properties are listed in the subsequent table.
+</P>
+    
+<PRE CLASS="CE">
+<A NAME="566918"></A>oidca mode=LDAPORA  
+<A NAME="566919"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[host=&lt;host&gt;] 
+<A NAME="566920"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[nonsslport=&lt;port&gt;] 
+<A NAME="566921"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[sslport=&lt;SSL Port&gt;] 
+<A NAME="566922"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[adminctx=&lt;Admin Context&gt;] 
+<A NAME="566923"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dirtype=&lt;OID|AD&gt; [-update]
+</PRE> 
+<A NAME="566953">
+<P>
+<TABLE CLASS="Informal" BORDER="1" FRAME="HSIDES" RULES="GROUPS" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" dir="ltr" title="">
+<THEAD>
+<TR CLASS="Informal"><TH CLASS="Informal" align="left" valign="bottom" scope="col">
+<A NAME="566926"></A>
+<FONT FACE="Arial, Helvetica, sans-serif"><STRONG>Properties</STRONG></FONT></TH>
+<TH CLASS="Informal" align="left" valign="bottom" scope="col">
+<A NAME="566928"></A>
+<FONT FACE="Arial, Helvetica, sans-serif"><STRONG>Description</STRONG></FONT></TH>
+</TR>
+<TBODY>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566930"></A>host
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566932"></A>
+<P CLASS="TB">
+Oracle Internet Directory server host; default is <CODE>localhost</CODE></TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566934"></A>port
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566936"></A>
+<P CLASS="TB">
+Oracle Internet Directory server port; if not specified, determined using discovery</TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566938"></A>sslport
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566940"></A>
+<P CLASS="TB">
+Oracle Internet Directory SSL port; if not specified, determined using discovery</TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566942"></A>dirtype
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566944"></A>
+<P CLASS="TB">
+Directory Type; possible values are OID, AD; mandatory attribute</TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566946"></A>adminctx
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566948"></A>
+<P CLASS="TB">
+Default administrative context, such as <CODE>cn=OracleContext</CODE>; if not specified, determined using discovery</TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566950"></A>-update
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566952"></A>
+<P CLASS="TB">
+If this flag is specified, then overwrite existing <CODE>ldap.ora</CODE>; if not, then create <CODE>ldap.ora</CODE> only if it does not already exist</TD>
+</TR>
+
+</TABLE>
+
+
+</A>
+   <A NAME="566954"></A>
+<P CLASS="BP">
+Note the following points:
+</P>
+
+<UL CLASS="LB1">
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="566955"></A>At least either non-SSL or SSL port must be specified. The other port will be discovered.
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="566956"></A>The parameters <CODE>mode</CODE>, <CODE>dirtype</CODE>, and <CODE>adminctx</CODE> can also be passed as a properties file.
+<P>
+</UL>
+
+<A NAME="566957"></A>
+<H5 CLASS="SH2"><FONT FACE="Arial, Helvetica, sans-serif">Functionality</FONT></H5>
+
+<OL CLASS="LN1" TYPE="1">
+
+<LI CLASS="LN1" TYPE="1" VALUE="1"><A NAME="566958"></A>Using the Discovery API, the OIDCA determines all the properties not specified on the command line.
+<P>
+
+
+<LI CLASS="LN1" TYPE="1" VALUE="2"><A NAME="566959"></A>The OIDCA checks for <CODE>ldap.ora</CODE> location using the Discovery API.
+<P>
+ 
+
+<UL CLASS="LB2">
+
+<LI CLASS="LB2" TYPE="DISC"><A NAME="566960"></A>If <CODE>ldap.ora</CODE> exists and the <CODE>-update</CODE> parameter is not specified, then exit with message "<CODE>ldap.ora exists</CODE>."
+<P>
+
+<LI CLASS="LB2" TYPE="DISC"><A NAME="566961"></A>If <CODE>ldap.ora</CODE> exists and the -update parameter is not specified, then update the existing <CODE>ldap.ora</CODE> using Discovery API.
+<P>
+
+<LI CLASS="LB2" TYPE="DISC"><A NAME="566962"></A>If <CODE>ldap.ora</CODE> does not exist, create a new <CODE>ldap.ora</CODE> file in a location in the following order:
+<P>
+   
+<PRE CLASS="CE2">
+<A NAME="566963"></A>LDAP_ADMIN
+<A NAME="566964"></A>$ORACLE_HOME/ldap/admin
+</PRE>
+   </UL>
+</OL>
+
+<A NAME="566965"></A>
+<!--TOC=h3-"566965"-->
+<H4 CLASS="H3"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">4.2.5&#32; Converting an Oracle Context to an Identity Management Realm</FONT></H4>
+<!--/TOC=h3-->
+<A NAME="566966"></A>
+<P CLASS="BP">
+This section describes how to use Oracle Internet Directory Configuration Assistant to upgrade an Oracle Context Release 9.2 to an Identity Management Realm Release 9.0.4. Oracle Database 10<EM CLASS="Italic">g</EM> entries must be stored in Oracle Internet Directory Release 9.0.4 server. An Identity Management Realm Release 9.0.4 is also required for Enterprise User Security, a feature of the Oracle Database 10<EM CLASS="Italic">g</EM>.
+</P>
+<A NAME="566967"></A>
+<P CLASS="BP">
+You can use the Oracle Internet Directory Configuration Assistant to convert an existing Oracle Context to a realm with the exception of root.
+</P>
+<A NAME="566968"></A>
+<P CLASS="BP">
+To convert an existing Oracle Context to a realm, use the following syntax; the properties are listed in the subsequent table.
+</P>
+    
+<PRE CLASS="CE">
+<A NAME="566969"></A>oidca [oidhost=&lt;host&gt;]
+<A NAME="566970"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[nonsslport=&lt;port&gt;] 
+<A NAME="566971"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[sslport=&lt;SSL Port&gt;]
+<A NAME="566972"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dn=&lt;binddn&gt; 
+<A NAME="566973"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pwd=&lt;bindpwd&gt; 
+<A NAME="566974"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mode=CTXTOIMR 
+<A NAME="566975"></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contextdn=&lt;OracleContext DN&gt;
+</PRE> 
+<A NAME="567005">
+<P>
+<TABLE CLASS="Informal" BORDER="1" FRAME="HSIDES" RULES="GROUPS" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" dir="ltr" title="">
+<THEAD>
+<TR CLASS="Informal"><TH CLASS="Informal" align="left" valign="bottom" scope="col">
+<A NAME="566978"></A>
+<FONT FACE="Arial, Helvetica, sans-serif"><STRONG>Properties</STRONG></FONT></TH>
+<TH CLASS="Informal" align="left" valign="bottom" scope="col">
+<A NAME="566980"></A>
+<FONT FACE="Arial, Helvetica, sans-serif"><STRONG>Description</STRONG></FONT></TH>
+</TR>
+<TBODY>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566982"></A>host
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566984"></A>
+<P CLASS="TB">
+Oracle Internet Directory server host; default is <CODE>localhost</CODE></TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566986"></A>port
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566988"></A>
+<P CLASS="TB">
+Oracle Internet Directory server port; default is <CODE>389</CODE></TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566990"></A>sslport
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566992"></A>
+<P CLASS="TB">
+Oracle Internet Directory SSL port; default is <CODE>636</CODE></TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566994"></A>binddn
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="566996"></A>
+<P CLASS="TB">
+Oracle Internet Directory user, such as <CODE>cn=orcladmin</CODE></TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="566998"></A>bindpwd
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="567000"></A>
+<P CLASS="TB">
+Oracle Internet Directory user password</TD>
+</TR>
+<TR CLASS="Informal" ALIGN="LEFT" VALIGN="TOP"><TD CLASS="Informal">    
+<PRE CLASS="CE">
+<A NAME="567002"></A>contextdn
+</PRE>    </TD>
+<TD CLASS="Informal">
+<A NAME="567004"></A>
+<P CLASS="TB">
+DN under which OracleContext must be created, such as <CODE>dc=acme</CODE>, <CODE>dc=com</CODE></TD>
+</TR>
+
+</TABLE>
+
+
+</A>
+   <A NAME="567006"></A>
+<P CLASS="BP">
+Note the following points:
+</P>
+
+<UL CLASS="LB1">
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="567007"></A>The <CODE>OracleContext</CODE> must exist under the specified <CODE>contextdn</CODE>.
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="567008"></A>The DNs <CODE>cn=oraclecontext</CODE>, <CODE>dc=acme</CODE>, and <CODE>dc=com</CODE> are valid DNs.
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="567009"></A>The parameters <CODE>mode</CODE> and <CODE>contextdn</CODE> can also be passed as a properties file.
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="567010"></A>Specify the parameter <CODE>nonsslport=port</CODE> if you want to perform the operation using a non-SSL mode.
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="567011"></A>Specify the parameter <CODE>sslport=sslport</CODE> if you want to perform the operation using SSL mode.
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="567012"></A>Either the <CODE>port</CODE> or the <CODE>sslport</CODE> parameter must be specified, but not both.
+<P>
+</UL>
+
+<A NAME="567013"></A>
+<H5 CLASS="SH2"><FONT FACE="Arial, Helvetica, sans-serif">Functionality</FONT></H5>
+
+<OL CLASS="LN1" TYPE="1">
+
+<LI CLASS="LN1" TYPE="1" VALUE="1"><A NAME="567014"></A>The OIDCA checks if<CODE> contextdn</CODE> has valid DN syntax, and if it contains a valid <CODE>OracleContext</CODE>.
+<P>
+
+
+<LI CLASS="LN1" TYPE="1" VALUE="2"><A NAME="567015"></A>If <CODE>OracleContext</CODE> exists under <CODE>contextdn,</CODE>
+<P>
+ 
+
+<UL CLASS="LB2">
+
+<LI CLASS="LB2" TYPE="DISC"><A NAME="567016"></A>The OIDCA checks if the <CODE>OracleContext</CODE> belongs to a realm. If it does, then it exits with an appropriate error message.
+<P>
+
+<LI CLASS="LB2" TYPE="DISC"><A NAME="567017"></A>If <CODE>OracleContext</CODE> does not belong to a realm, OIDCA upgrades it to the latest version, and converts it to a realm.
+<P>
+</UL>
+</OL>
+<A NAME="567018"></A>
+<P CLASS="BP">
+Note also:
+</P>
+
+<UL CLASS="LB1">
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="567019"></A>If the nickname attribute is an attribute other than <CODE>cn</CODE>, then configure it as a user configuration attribute by using the Oracle Internet Directory Self-Service Console.
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="567020"></A>If you wish to use the Oracle Internet Directory Self-Service Console to manage the users and groups in the converted realm, you must set up the administrative privileges appropriately. For more details on the appropriate privilege assignment, please refer to the chapter on "Delegation of Privileges for an Oracle Technology Deployment" in <EM CLASS="Italic">Oracle Internet Directory Administrator's Guide</EM>, 10<EM CLASS="Italic">g</EM> AS (9.0.4).
+<P>
+</UL>
+
+<A NAME="561856"></A>
+<!--TOC=h2-"561856"-->
+<H3 CLASS="H2"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">4.3&#32; Notation for DEFAULT_ADMIN_CONTEXT Parameter</FONT></H3>
+<!--/TOC=h2-->
+<A NAME="561460"></A>
+<P CLASS="BP">
+The <CODE>DEFAULT_ADMIN_CONTEXT</CODE> parameter in the <CODE>ldap.ora</CODE> file specifies the default directory entry that contains the Oracle Context that you use to create, modify, or search connect identifiers. In prior releases, the parameter value in this entry did not require quotation marks. Here is an example:
+</P>
+    
+<PRE CLASS="CE">
+<A NAME="561406"></A>DEFAULT_ADMIN_CONTEXT=dc=us,dc=acme,dc=com
+<A NAME="568517"></A>
+</PRE>    <A NAME="561408"></A>
+<P CLASS="BP">
+In release 1 (10.1), you must enclose the parameter value in single or double quotation marks. Here is the same example, but with quotation marks:
+</P>
+    
+<PRE CLASS="CE">
+<A NAME="561494"></A>DEFAULT_ADMIN_CONTEXT="dc=us,dc=acme,dc=com"
+<A NAME="568011"></A>
+</PRE>    <A NAME="561500"></A>
+<P CLASS="BP">
+Oracle Net Configuration Assistant encloses the value of the <CODE>DEFAULT_ADMIN_CONTEXT</CODE> parameter within double quotation marks. If you used another method to create an <CODE>ldap.ora</CODE> file and then migrated it to release 1 (10.1) minus the quotation marks, release 1 (10.1) clients see this message when trying to connect to a database:
+</P>
+    
+<PRE CLASS="CE">
+<A NAME="563160"></A><CODE>ORA-12154 TNS:could not resolve the connect identifier specified</CODE> 
+<A NAME="568014"></A>
+</PRE>    <A NAME="563162"></A>
+<P CLASS="BP">
+After migrating to release 1 (10.1), check that quotation marks are included in <CODE>DEFAULT_ADMIN_CONTEXT</CODE>.
+</P>
+
+<A NAME="567540"></A>
+<!--TOC=h2-"567540"-->
+<H3 CLASS="H2"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">4.4&#32; Use of Parentheses to Enclose Host List in ldap.ora File</FONT></H3>
+<!--/TOC=h2-->
+<A NAME="567541"></A>
+<P CLASS="BP">
+In the Oracle10<EM CLASS="Italic">g</EM> Beta releases only, parentheses could be omitted from the <CODE>DIRECTORY_SERVERS</CODE> parameter in the <CODE>ldap.ora</CODE> file. In the production release and all prior releases, these parentheses must be included. Here is the correct syntax for the parameter:
+</P>
+    
+<PRE CLASS="CE">
+<A NAME="567542"></A>DIRECTORY_SERVERS=(<EM><CODE>host</CODE></EM>:<EM><CODE>port</CODE></EM>[:<EM><CODE>sslport</CODE></EM>])
+</PRE>    
+<A NAME="564235"></A>
+<!--TOC=h1-"564235"-->
+<H2 CLASS="H1"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">5&#32; CONFIGURATION TOOLS</FONT></H2>
+
+
+<!--/TOC=h1-->
+<A NAME="563265"></A>
+<P CLASS="BP">
+This section discusses issues associated with Oracle Net configuration and administration tools. The following topics are covered:
+</P>
+
+<UL CLASS="LB1">
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="563701"></A><A HREF="readme.htm#560210">Section&nbsp;5.1, "Support for Root Oracle Context"</a>
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="563702"></A><A HREF="readme.htm#561239">Section&nbsp;5.2, "Deleting a Listener"</a>
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="563703"></A><A HREF="readme.htm#560235">Section&nbsp;5.3, "Directory Entries with Multibyte Characters"</a>
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="563708"></A><A HREF="readme.htm#563407">Section&nbsp;5.4, "Viewing Naming Entries"</a>
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="567710"></A><A HREF="readme.htm#567554">Section&nbsp;5.5, "Configuring Buffer Size Parameters"</a>
+<P>
+
+<LI CLASS="LB1" TYPE="DISC"><A NAME="568274"></A><A HREF="readme.htm#568264">Section&nbsp;5.6, "Online Help for Directory Usage Configuration"</a>
+<P>
+</UL>
+
+<A NAME="560210"></A>
+<!--TOC=h2-"560210"-->
+<H3 CLASS="H2"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">5.1&#32; Support for Root Oracle Context</FONT></H3>
+<!--/TOC=h2-->
+<A NAME="560211"></A>
+<P CLASS="BP">
+In the current release of Oracle Internet Directory, a root Oracle Context (<CODE>dn:cn=OracleContext</CODE>) is created by default. In release 8.1.7, the Net8 Configuration Assistant returns an error when you attempt to use a root Oracle Context. 
+</P>
+<A NAME="560212"></A>
+<P CLASS="BP">
+To configure Oracle8<EM CLASS="Italic">i</EM> clients to use a root Oracle Context: 
+</P>
+
+<OL CLASS="LN1" TYPE="1">
+
+<LI CLASS="LN1" TYPE="1" VALUE="1"><A NAME="560213"></A>Configure file <CODE>ldap.ora</CODE> with OIDCA or Oracle Net Configuration Assistant.
+<P>
+  
+<A NAME="567635">
+<DIV ALIGN="CENTER">
+<P>
+<TABLE CLASS="NoteAlso" BORDER="0" WIDTH="80%" CELLPADDING="0" CELLSPACING="0" dir="ltr" summary="This is a layout table to format a note" title="This is a layout table to format a note">
+<TR CLASS="NoteAlso"><TD CLASS="NoteAlso">
+<A NAME="567639"></A><FONT FACE="Arial, Helvetica, sans-serif"><STRONG CLASS="NH">See Also:</STRONG></FONT>
+
+<A NAME="567642"></A>
+<P CLASS="NB">
+<A HREF="readme.htm#567584">Section&nbsp;4.1, "Tool Support for Directory Usage Configuration"</a>
+</TD>
+</TR>
+
+</TABLE>
+
+
+</DIV>
+
+</A>
+  </OL>
+<A NAME="568549"></A>
+<P CLASS="BP">
+
+</P>
+
+<OL CLASS="LN1" TYPE="1">
+
+
+<LI CLASS="LN1" TYPE="1" VALUE="2"><A NAME="560214"></A>Copy the <CODE>ldap.ora</CODE> file that you created in Step 1 to the Oracle8<EM CLASS="Italic">i</EM> client directory <CODE>$ORACLE_HOME/network/admin</CODE> on UNIX or <EM><CODE>ORACLE_HOME</CODE></EM><CODE>\network\admin</CODE> on Windows operating systems the Oracle8<EM CLASS="Italic">i</EM> clients.
+<P>
+ 
+</OL>
+<A NAME="567972"></A>
+<P CLASS="BP">
+
+</P>
+<A NAME="561226"></A>
+<P CLASS="BP">
+[Reference Bug 1777306]
+</P>
+
+<A NAME="561239"></A>
+<!--TOC=h2-"561239"-->
+<H3 CLASS="H2"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">5.2&#32; Deleting a Listener</FONT></H3>
+<!--/TOC=h2-->
+<A NAME="567668"></A>
+<P CLASS="BP">
+Oracle Enterprise Manager 10<EM CLASS="Italic">g</EM> attempts to first stop a listener before deleting the configuration. If Enterprise Manager fails to stop a listener, it still deletes the configuration for that listener. For this reason, Oracle recommends stopping the listener prior to deleting the configuration.
+</P>
+<A NAME="567689"></A>
+<P CLASS="BP">
+Oracle Net Configuration Assistant and Oracle Net Manager do not first attempt to stop the listener. You must stop the listener before deleting the configuration. You cannot stop the listener once its configuration information is deleted. 
+</P>
+
+<A NAME="560235"></A>
+<!--TOC=h2-"560235"-->
+<H3 CLASS="H2"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">5.3&#32; Directory Entries with Multibyte Characters</FONT></H3>
+<!--/TOC=h2-->
+<A NAME="560236"></A>
+<P CLASS="BP">
+When using Enterprise Manager or Oracle Net Manager for directory usage configuration, it is not possible to specify directory entries that use multibyte characters. 
+</P>
+<A NAME="560237"></A>
+<P CLASS="BP">
+[Reference Bug 1102675]
+</P>
+
+<A NAME="563407"></A>
+<!--TOC=h2-"563407"-->
+<H3 CLASS="H2"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">5.4&#32; Viewing Naming Entries</FONT></H3>
+<!--/TOC=h2-->
+<A NAME="560238"></A>
+<P CLASS="BP">
+Enterprise Manager and Oracle Net Manager do not display all entries stored in a <CODE>tnsnames.ora</CODE> file or in a directory server. A net service name must contain a complete connect descriptor, including description, protocol address, and connect data information.
+</P>
+<A NAME="560239"></A>
+<P CLASS="BP">
+The following example shows a net service name called <CODE>sales</CODE> that contains a protocol address and connection information to a database named <CODE>sales.us.acme.com</CODE>. This information displays correctly in Enterprise Manager and Oracle Net Manager.
+</P>
+    
+<PRE CLASS="CE">
+<A NAME="560241"></A>sales= 
+<A NAME="560242"></A>(DESCRIPTION= 
+<A NAME="560243"></A>  (ADDRESS=(PROTOCOL=tcp)(HOST=sales-server)(PORT=1521))
+<A NAME="560244"></A>  (CONNECT_DATA=
+<A NAME="560245"></A>    (SERVICE_NAME=sales.us.acme.com)))
+<A NAME="568008"></A>
+</PRE>    <A NAME="560247"></A>
+<P CLASS="BP">
+Some entries contain only address information. The following example shows an entry that is not a net service name, but rather a named address. The named address of <CODE>listener1</CODE> only contains listener protocol address information. This named address does not display in Enterprise Manager and Oracle Net Manager, but can still be used to resolve <CODE>listener1</CODE> to a list of protocol addresses. Named addresses are used mainly to identify nondefault local listeners or remote listeners. 
+</P>
+    
+<PRE CLASS="CE">
+<A NAME="560249"></A>listener1= 
+<A NAME="560250"></A> (ADDRESS_LIST=
+<A NAME="560251"></A>   (ADDRESS=(PROTOCOL=tcp)(HOST=sales1-server)(PORT=1521))
+<A NAME="560252"></A>   (ADDRESS=(PROTOCOL=tcp)(HOST=sales2-server)(PORT=1521)))
+</PRE> 
+<A NAME="561240">
+<DIV ALIGN="CENTER">
+<P>
+<TABLE CLASS="NoteAlso" BORDER="0" WIDTH="80%" CELLPADDING="0" CELLSPACING="0" dir="ltr" summary="This is a layout table to format a note" title="This is a layout table to format a note">
+<TR CLASS="NoteAlso"><TD CLASS="NoteAlso">
+<A NAME="560256"></A><FONT FACE="Arial, Helvetica, sans-serif"><STRONG CLASS="NH">See Also:</STRONG></FONT>
+
+<A NAME="560257"></A>
+<P CLASS="NB">
+Chapter "Configuring and Administering the Listener," in <EM CLASS="Italic">Oracle Net Services Administrator's Guide</EM> for further information about configuring a listener that uses a nondefault address
+</TD>
+</TR>
+
+</TABLE>
+
+
+</DIV>
+
+</A>
+   
+<A NAME="567554"></A>
+<!--TOC=h2-"567554"-->
+<H3 CLASS="H2"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">5.5&#32; Configuring Buffer Size Parameters</FONT></H3>
+<!--/TOC=h2-->
+<A NAME="567555"></A>
+<P CLASS="BP">
+You can configure the <CODE>RECV_BUF_SIZE</CODE> and <CODE>SEND_BUF_SIZE</CODE> parameters within the connect descriptor of a net service name or a listener. You either specify the buffer space parameters for a particular protocol address or description. In this release, Enterprise Manager and Oracle Net Manager enable you to configure these parameters for each protocol address but not for the entire <CODE>DESCRIPTION</CODE>. If you want to configure these parameters for the entire description, you must perform this manually.
+</P>
+<A NAME="567557"></A>
+<P CLASS="BP">
+[Reference Bug 3074357]
+</P>
+
+<A NAME="568264"></A>
+<!--TOC=h2-"568264"-->
+<H3 CLASS="H2"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">5.6&#32; Online Help for Directory Usage Configuration</FONT></H3>
+<!--/TOC=h2-->
+<A NAME="568265"></A>
+<P CLASS="BP">
+The online help for Oracle Net Configuration Assistant does not describe that you can create file <CODE>ldap.ora</CODE> for configurations supporting Oracle Internet Directory. While Oracle recommends OIDCA, you can still use Oracle Net Configuration Assistant to configure an <CODE>ldap.ora</CODE> file.
+</P>
+   
+<A NAME="568303">
+<DIV ALIGN="CENTER">
+<P>
+<TABLE CLASS="NoteAlso" BORDER="0" WIDTH="80%" CELLPADDING="0" CELLSPACING="0" dir="ltr" summary="This is a layout table to format a note" title="This is a layout table to format a note">
+<TR CLASS="NoteAlso"><TD CLASS="NoteAlso">
+<A NAME="568307"></A><FONT FACE="Arial, Helvetica, sans-serif"><STRONG CLASS="NH">See Also:</STRONG></FONT>
+
+<A NAME="568308"></A>
+<P CLASS="NB">
+<A HREF="readme.htm#567584">Section&nbsp;4.1, "Tool Support for Directory Usage Configuration"</a>
+</TD>
+</TR>
+
+</TABLE>
+
+
+</DIV>
+
+</A>
+   
+<A NAME="562190"></A>
+<!--TOC=h1-"562190"-->
+<H2 CLASS="H1"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">6&#32; ORACLE CONNECTION MANAGER</FONT></H2>
+
+
+<!--/TOC=h1-->
+<A NAME="562172"></A>
+<P CLASS="BP">
+Chapter 11, "Configuring and Administering Oracle Connection Manager" in <EM CLASS="Italic">Oracle Net Services Administrator's Guide</EM>, states that Oracle Connection Manager refuses all client connections if no access rules are included in the rule list section of <CODE>cman.ora</CODE>, the tool's configuration file. The intention here is to encourage the administrator to choose rules carefully before starting Oracle Connection Manager. 
+</P>
+<A NAME="568408"></A>
+<P CLASS="BP">
+What the chapter does not state is that connections from the <CODE>cmctl</CODE> control utility to CMADMIN, the administrative process, also require access rules in <CODE>cman.ora</CODE>. If these are absent, the listener rejects all <CODE>cmctl</CODE> connections, treating <CODE>cmctl</CODE> like any other client. To allow <CODE>cmctl</CODE> connections, you can configure a catch-all rule as follows:
+</P>
+    
+<PRE CLASS="CE">
+<A NAME="568415"></A>(rule=(src=*)(dst=127.0.0.1)(srv=cmon)(act=accept))
+<A NAME="568410"></A>
+</PRE>    <A NAME="568424"></A>
+<P CLASS="BP">
+This rule allows <CODE>cmctl</CODE> to be used from any computer. The <CODE>srv=cmon</CODE> parameter setting is mandatory. 
+</P>
+<A NAME="568432"></A>
+<P CLASS="BP">
+If you want to restrict <CODE>cmctl</CODE> usage to only the computer on which Connection Manager is located, use the following rule instead:
+</P>
+    
+<PRE CLASS="CE">
+<A NAME="562178"></A>(rule=(src=127.0.0.1)(dst=127.0.0.1)(srv=cmon)(act=accept))
+</PRE>    
+<A NAME="563472"></A>
+<!--TOC=h1-"563472"-->
+<H2 CLASS="H1"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">7&#32; LISTENER AUTHENTICATION</FONT></H2>
+
+
+<!--/TOC=h1-->
+<A NAME="566631"></A>
+<P CLASS="BP">
+In an ongoing effort to strengthen the security of our products, the 10<EM CLASS="Italic">g</EM> Oracle Net Listener has a new local OS authentication security mechanism, which is automatically enabled for every installed listener. This mechanism allows the listener to determine the OS user credentials of the user running the <CODE>lsnrctl</CODE> control utility on the same host where the listener is running. A privileged command will only be allowed if it was issued by the same OS user as the user running the listener or a system administrator (for example the root user on UNIX). Administrative commands originating from a remote host will be rejected unless password security is configured. 
+</P>
+<A NAME="566681"></A>
+<P CLASS="BP">
+Only the <CODE>lsnrctl</CODE> control utility of a version greater or equal to the version of the running listener can be used to administer it, with the exception of <CODE>VERSION</CODE> command. The <CODE>VERSION</CODE> command does not require authorization and may be issued from an older <CODE>lsnrctl</CODE> control utility program.
+</P>
+
+<A NAME="568519"></A>
+<!--TOC=h1-"568519"-->
+<H2 CLASS="H1"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">8&#32; LISTENER CONTROL STATUS AND SERVICES</FONT></H2>
+
+
+<!--/TOC=h1-->
+<A NAME="568522"></A>
+<P CLASS="BP">
+The listener control status and services commands always return results when executed on the host where the listener is running.
+</P>
+<A NAME="568525"></A>
+<P CLASS="BP">
+[Reference Bug 3359259]<br>
+</P>
+<A NAME="568518"></A>
+<P CLASS="BP">
+
+</P>
+
+<A NAME="568205"></A>
+<!--TOC=h1-"568205"-->
+<H2 CLASS="H1"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">9&#32; TRCROUTE UTILITY</FONT></H2>
+
+
+<!--/TOC=h1-->
+<A NAME="568206"></A>
+<P CLASS="BP">
+The TRCROUTE utility for UNIX operating systems enables administrators to discover what Oracle Net Services route a connection takes from a client to a database server. If there is an address list containing <CODE>SOURCE_ROUTE=on</CODE>, as is the case with older releases of Oracle Connection Manager when there is more than one hop to the database server, this utility does not work.
+</P>
+<A NAME="568207"></A>
+<P CLASS="BP">
+[Reference Bug 2147202]
+</P>
+
+<A NAME="561267"></A>
+<!--TOC=h1-"561267"-->
+<H2 CLASS="H1"><FONT FACE="Arial, Helvetica, sans-serif" COLOR="#330099">10&#32; NEW FEATURES AND OBSOLESCENCE</FONT></H2>
+
+
+<!--/TOC=h1-->
+<A NAME="560298"></A>
+<P CLASS="BP">
+The "What's New" section of <EM CLASS="Italic">Oracle Net Services Administrator's Guide</EM> describes new features of Oracle Net Services and provides pointers to additional information. It also describes features no longer supported. 
+</P>
+<A NAME="560299"></A>
+<P CLASS="BP">
+Appendix A, "Commands and Parameters Not Supported in This Release," of <EM CLASS="Italic">Oracle Net Services Reference Guide </EM>provides detailed information about control utility and networking parameters that are no longer supported. 
+</P>
+
+
+
+
+
+
+<!-- Start Footer -->
+</DIV>
+
+<DIV CLASS="OUTD">
+<HR>
+<TABLE CELLSPACING="0" CELLPADDING="0" WIDTH="100%">
+<TR>
+<TD VALIGN="BOTTOM" WIDTH="33%">
+<TABLE CELLSPACING="0" CELLPADDING="0">
+<TR>
+
+
+
+    
+</TR>
+</TABLE>
+</TD>
+<TD ALIGN="CENTER" WIDTH="34%">
+<A HREF=""><IMG SRC="../../dcommon/gifs/oracle.gif" ALT="Oracle" BORDER="0"><BR>
+<FONT SIZE="-2">Copyright &copy; 2004 Oracle Corporation.</FONT></A>
+<BR>
+<FONT SIZE="-2">All Rights Reserved.</FONT>
+</TD>
+<TD VALIGN="BOTTOM" ALIGN="RIGHT" WIDTH="33%"> 
+<TABLE CELLSPACING="0" CELLPADDING="0" WIDTH="144">
+<TR>
+
+
+
+<TD ALIGN="CENTER" VALIGN="TOP" WIDTH="25%"></TD>
+<TD ALIGN="CENTER" VALIGN="TOP" WIDTH="25%"></TD>
+<TD ALIGN="CENTER" VALIGN="TOP" WIDTH="25%"></TD>
+<TD ALIGN="CENTER" VALIGN="TOP" WIDTH="25%"></TD>
+
+
+
+
+
+</TR>
+</TABLE>
+</TD>
+</TR>
+</TABLE>
+  
+</DIV>
+
+</BODY>
+</HTML>
+

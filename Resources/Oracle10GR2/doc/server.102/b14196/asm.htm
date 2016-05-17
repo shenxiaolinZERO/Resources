@@ -1,0 +1,672 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>A Automatic Storage Management</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.1.3 Build 116" />
+<meta name="Date" content="June 22, 2005 15:47:54" />
+<meta name="doctitle" content="Oracle&reg; Database 2 Day DBA 10g Release 2 (10.2)" />
+<meta name="partno" content="B14196-01" />
+<meta name="docid" content="ADMQS" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="software.htm" title="Previous" type="text/html" />
+<link rel="Next" href="rac.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14196.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database 2 Day DBA<br />
+10<i>g</i> Release 2 (10.2)</b><br />
+Part Number B14196-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="software.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="rac.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top"><a href="../b14196.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="BABCAJCG" name="BABCAJCG"></a><a id="sthref769" name="sthref769"></a>
+<h1><span class="secnum">A</span> <a name="ADMQS2000" id="ADMQS2000"></a>Automatic Storage Management<a id="sthref770" name="sthref770"></a></h1>
+<p>This appendix discusses using Oracle Automatic Storage Management (ASM) to provision and manage storage for the Oracle Database datafiles. It includes the following topics:</p>
+<ul>
+<li type="disc">
+<p><a href="#CIADJDJF">What is Automatic Storage Management?</a></p>
+</li>
+<li type="disc">
+<p><a href="#CIACIEGC">Overview of Disks, Disk Groups, and Failure Groups</a></p>
+</li>
+<li type="disc">
+<p><a href="#CIAGIIDJ">Installing Automatic Storage Management</a></p>
+</li>
+<li type="disc">
+<p><a href="#CIAFIGDB">Accessing the Automatic Storage Management Home Page</a></p>
+</li>
+<li type="disc">
+<p><a href="#CIAFDEGF">Starting Up and Shutting Down the ASM Instance</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABIBEGJ">Monitoring Disk Group Space Usage</a></p>
+</li>
+<li type="disc">
+<p><a href="#CIADICDC">Creating a Disk Group</a></p>
+</li>
+<li type="disc">
+<p><a href="#CIACBDEJ">Dropping a Disk Group</a></p>
+</li>
+<li type="disc">
+<p><a href="#CIAEDBGF">Adding Disks to a Disk Group</a></p>
+</li>
+<li type="disc">
+<p><a href="#CIABDHEH">Dropping Disks from a Disk Group</a></p>
+</li>
+<li type="disc">
+<p><a href="#CIAJDCDF">Backing Up ASM-Managed Files</a></p>
+</li>
+</ul>
+<a id="CIADJDJF" name="CIADJDJF"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref771" name="sthref771"></a>
+<h2>What is Automatic Storage Management?</h2>
+<p>Automatic Storage Management (ASM) is an integrated, high-performance database file system and disk manager. ASM is based on the principle that the database should manage storage instead of requiring an administrator to do it. ASM eliminates the need for you to directly manage potentially thousands of Oracle database files.</p>
+<p>ASM groups the disks in your storage system into one or more <span class="bold">disk groups</span>. You manage a small set of disk groups and ASM automates the placement of the database files within those disk groups.</p>
+<p>ASM provides the following benefits:</p>
+<ul>
+<li type="disc">
+<p><span class="bold">Striping</span>&#x2014;ASM spreads data evenly across all disks in a disk group to optimize performance and utilization. This even distribution of database files eliminates the need for regular monitoring and I/O performance tuning.</p>
+<p>For example, if there are six disks in a disk group, pieces of each ASM file are written to all six disks. These pieces come in 1 MB chunks known as <span class="bold">extents</span>. When a database file is created, it is <span class="bold">striped</span> (divided into extents and distributed) across the six disks, and allocated disk space on all six disks grows evenly. When reading the file, file extents are read from all six disks in parallel, greatly increasing performance.</p>
+</li>
+<li type="disc">
+<p><span class="bold">Mir<a id="sthref772" name="sthref772"></a>roring</span>&#x2014;ASM can increase availability by optionally mirroring any file. ASM mirrors at the file level, unlike operating system mirroring, which mirrors at the disk level. Mirroring means keeping redundant copies, or <span class="bold">mirrored copies</span>, of each extent of the file, to help avoid data loss caused by disk failures. The mirrored copy of each file extent is always kept on a different disk from the original copy. If a disk fails, ASM can continue to access affected files by accessing mirrored copies on the surviving disks in the disk group.</p>
+<p>ASM supports 2-way mirroring, where each file extent gets one mirrored copy, and 3-way mirroring, where each file extent gets two mirrored copies.</p>
+</li>
+<li type="disc">
+<p><span class="bold">Online storage reconfiguration and dynamic rebalancing</span>&#x2014;ASM permits you to add or remove disks from your disk storage system while the database is operating. When you add a disk, ASM automatically redistributes the data so that it is evenly spread across all disks in the disk group, including the new disk. This redistribution is known as reba<a id="sthref773" name="sthref773"></a>lancing. It is done in the background and with minimal impact to database performance. When you request to remove a disk, ASM first rebalances by evenly relocating all file extents from the disk being removed to the other disks in the disk group.</p>
+</li>
+<li type="disc">
+<p><span class="bold">Managed file creation and deletion</span>&#x2014;ASM further reduces administration tasks by enabling files stored in ASM disk groups to be <span class="bold">Oracle-managed files</span>. ASM automatically assigns filenames when files are created, and automatically deletes files when they are no longer needed. For information about Oracle-managed files, see <a class="xlinkSRC ADMIN003" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Administrator's Guide</span></a>.</p>
+</li>
+</ul>
+<p>Oracle recommends that you use ASM for your database file storage, instead of raw devices or the operating system file system. However, databases can have a mixture of ASM files and non-ASM files. Oracle Enterprise Manager includes a wizard that enables you to migrate non-ASM database files to ASM.</p>
+<p class="subhead2">The ASM Instance</p>
+<p>ASM is implemented as a special kind of Oracle instance, with its own System Global Area and background processes. The ASM instance is tightly integrated with the database instance. Every server running one or more database instances that use ASM for storage has an ASM instance. In a Real Application Clusters environment, there is one ASM instance for each node, and the ASM instances communicate with each other on a peer-to-peer basis. Only one ASM instance is required for each node regardless of the number of database instances on the node.</p>
+<p class="subhead2">Administ<a id="sthref774" name="sthref774"></a>ering ASM</p>
+<p>You administer ASM with Oracle Enterprise Manager Database Control or Grid Control. This Appendix assumes that you are using Database Control.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>Refer to <a class="xlinkSRC ADMIN036" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Administrator's Guide</span></a> for additional information about ASM.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</div>
+<!-- class="sect1" -->
+<a id="CIACIEGC" name="CIACIEGC"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref775" name="sthref775"></a>
+<h2>Overview of Disks, Disk Groups, and Failure Groups</h2>
+<p>You configure ASM by creating disk gr<a id="sthref776" name="sthref776"></a>oups that become the default location for files created in the database. The disk group type determines how ASM mirrors files. When you create a disk group, you indicate whether the disk group is a <span class="bold">normal redundancy</span> disk group (2-way mirroring for most files by default), a <span class="bold">high redundancy</span> disk group (3-way mirroring), or an <span class="bold">external redundancy</span> disk group (no mirroring by ASM). You use an external redundancy disk group if your storage system already does mirroring at the hardware level, or if you have no need for redundant data. The default disk group type is normal redundancy.</p>
+<p>A disk group consists of a grouping of disks that are managed together as a unit. These disks are referred to as <span class="bold">ASM disks</span>. An ASM disk can be a disk device, a partition, or a network-attached file.</p>
+<p>When an ASM instance starts, it automatically <span class="bold">discovers</span> all available ASM disks. Disco<a id="sthref777" name="sthref777"></a><a id="sthref778" name="sthref778"></a>very is the process of finding all disks that have been prepared for ASM by your system administrator, examining their disk headers, and determining which disks belong to disk groups and which are available for assignment to disk groups. ASM discovers disks in the paths that are listed in an initialization parameter, or if the parameter is <code>NULL</code>, in an operating system&#x2013;dependent default path.</p>
+<p><span class="bold">Failure gro<a id="sthref779" name="sthref779"></a>ups</span> define ASM disks that share a common potential failure mechanism. An example of a failure group is a set of SCSI disks sharing the same SCSI controller. Failure groups are used to determine which ASM disks to use for storing redundant copies of data. For example, if 2-way mirroring is specified for a file, ASM automatically stores redundant copies of file extents in separate failure groups. Failure groups apply only to normal and high redundancy disk groups. You define the failure groups in a disk group when you create or alter the disk group.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+By default, when you create a disk group, every disk in the disk group belongs to exactly one failure group. For most systems, the default failure groups work well to prevent data loss.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p><a class="xlinkSRC ADMIN036" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Administrator's Guide</span></a> for additional information about failure groups, and for instructions on how to configure and use failure groups.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect1" -->
+<a id="CIAGIIDJ" name="CIAGIIDJ"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref780" name="sthref780"></a>
+<h2>Installing Automat<a id="sthref781" name="sthref781"></a>ic Storage Management</h2>
+<p>This appendix assumes that Automatic Storage Management (ASM) is already installed and configured on your single-instance server or on your Real Application Clusters (RAC) nodes. For information on installing and initially configuring ASM, see the following Oracle publications:</p>
+<ul>
+<li type="disc">
+<p>For a single-instance server, the Installation Guide for your operating system</p>
+</li>
+<li type="disc">
+<p>For RAC, the Real Application Clusters Installation and Configuration Guide for your operating system</p>
+</li>
+</ul>
+<p>In addition, see <a class="xlinkSRC ADMIN10181" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Administrator's Guide</span></a> for a list of installation tips.</p>
+</div>
+<!-- class="sect1" -->
+<a id="CIAFIGDB" name="CIAFIGDB"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref782" name="sthref782"></a>
+<h2>Accessing the Autom<a id="sthref783" name="sthref783"></a>atic Storage Management Home Page</h2>
+<p>All Automatic Storage Management (ASM) administration tasks begin with the ASM Home page in Enterprise Manager. The ASM Home page displays:</p>
+<ul>
+<li type="disc">
+<p>The status of the ASM instance</p>
+</li>
+<li type="disc">
+<p>A chart that shows the used and free space of each disk group</p>
+</li>
+<li type="disc">
+<p>A list of databases that are serviced by the ASM instance</p>
+</li>
+<li type="disc">
+<p>Alerts and metrics</p>
+</li>
+<li type="disc">
+<p>Links to the ASM Performance, Administration, and Configuration pages</p>
+</li>
+</ul>
+<img src="./asm_home_2.gif" alt="Description of asm_home_2.gif follows" title="Description of asm_home_2.gif follows" /><br />
+<a id="sthref784" name="sthref784" href="./img_text/asm_home_2.htm">Description of the illustration asm_home_2.gif</a><br />
+<br />
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref785" name="sthref785"></a>
+<h3>Accessing the ASM Home Page on a Single Instance System</h3>
+<p>To access the ASM Home page on a single instance system:</p>
+<ol type="1" start="1">
+<li>
+<p>Log in to Enterprise Manager Database Control as the <code>SYS</code> user, connecting as <code>SYSDBA</code>. Provide the <code>SYS</code> password that is stored in the password file for the ASM instance. This password was set up when the ASM instance was created.</p>
+<p>See <a href="em_manage.htm#BABHJAGE">"Accessing the Oracle Enterprise Manager"</a> for more information.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+You can also log in to Enterprise Manager as a user other than <code>SYS</code>. In this case, Enterprise Manager displays the Automatic Storage Management Login page when you attempt any ASM administration tasks. You must then log in to ASM as the <code>SYS</code> user, connecting as <code>SYSDBA</code>.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</li>
+<li>
+<p>On the Database Instance Home page, under the General heading, click the link next to the label <span class="bold">ASM</span>.</p>
+<img src="./asm_si.gif" alt="Description of asm_si.gif follows" title="Description of asm_si.gif follows" /><br />
+<a id="sthref786" name="sthref786" href="./img_text/asm_si.htm">Description of the illustration asm_si.gif</a><br />
+<br /></li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><a id="sthref787" name="sthref787"></a>
+<h3>Accessing the ASM Home Page On a Real Application Clusters System</h3>
+<p>To access the ASM Home page on a Real Application Clusters (RAC) system:</p>
+<ol type="1" start="1">
+<li>
+<p>Log in to Enterprise Manager Database Control on any node that is running the Oracle Management Service (OMS).</p>
+<p>OMS is automatically started on the node where Database Configuration Assistant (DBCA) was run to create the cluster database. Depending on your configuration, OMS may also be running on other nodes.</p>
+<p>See <a href="em_manage.htm#BABHJAGE">"Accessing the Oracle Enterprise Manager"</a> for more information.</p>
+</li>
+<li>
+<p>On the Cluster Database page, under the Instances heading, click the link for the desired ASM instance.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CIAFDEGF" name="CIAFDEGF"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref788" name="sthref788"></a>
+<h2>Starting Up and Sh<a id="sthref789" name="sthref789"></a>utting Down the ASM Instance</h2>
+<p>To start up or to shut down the ASM instance, all database instances that are serviced by the ASM instance must first be shut down, and you must have operating system user credentials and ASM <code>SYS</code> user credentials.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+The ASM instance must be started before you start any of the database instances that are serviced by it.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<p>To start or stop the ASM instance:</p>
+<ol type="1" start="1">
+<li>
+<p>Access the Automatic Storage Management Home page.</p>
+<p>See <a href="#CIAFIGDB">"Accessing the Automatic Storage Management Home Page"</a> for instructions.</p>
+</li>
+<li>
+<p>Under the General heading, click <span class="bold">Startup/Shutdown</span></p>
+</li>
+<li>
+<p>Enter the required operating system and ASM user names and passwords, and click <span class="bold">OK</span>.</p>
+</li>
+<li>
+<p>If you are prompted for the operation to perform, select the desired operation.</p>
+</li>
+<li>
+<p>Click <span class="bold">Yes</span> on the Startup/Shutdown Confirmation page.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect1" -->
+<a id="BABIBEGJ" name="BABIBEGJ"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref790" name="sthref790"></a>
+<h2>Monitoring Disk Gr<a id="sthref791" name="sthref791"></a><a id="sthref792" name="sthref792"></a>oup Space Usage</h2>
+<p>To view Automatic Storage Management (ASM) disk group usage and free space:</p>
+<ol type="1" start="1">
+<li>
+<p>Access the ASM Home page.</p>
+<p>See <a href="#CIAFIGDB">"Accessing the Automatic Storage Management Home Page"</a> for instructions.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Administration</span> tab.</p>
+</li>
+<li>
+<p>If the Automatic Storage Management Login page appears, log in as the <code>SYS</code> user, connecting as <code>SYSDBA</code>. Provide the <code>SYS</code> password that is stored in the password file for the ASM instance. This password was set up when the ASM instance was created.</p>
+</li>
+</ol>
+<p>The ASM Administration page displays all disk groups with their space usage information.</p>
+<img src="./asm_administration_page.gif" alt="Description of asm_administration_page.gif follows" title="Description of asm_administration_page.gif follows" /><br />
+<a id="sthref793" name="sthref793" href="./img_text/asm_administration_page.htm">Description of the illustration asm_administration_page.gif</a><br />
+<br />
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>The Usable Free column displays the space in MB that is actually available in the disk group. It takes into account the redundancy level of the disk group, and excludes the space that the disk group reserves for restoring full redundancy for all files in the disk group after a disk failure. See <a class="xlinkSRC ADMIN10201" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Administrator's Guide</span></a> for more information.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</div>
+<!-- class="sect1" -->
+<a id="CIADICDC" name="CIADICDC"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref794" name="sthref794"></a>
+<h2>Creating a Dis<a id="sthref795" name="sthref795"></a>k Group</h2>
+<p>You may want to create additional Automatic Storage Management (ASM) disk groups to:</p>
+<ul>
+<li type="disc">
+<p>Have disk groups with different redundancy levels (normal, high, or external), depending on availability requirements and storage system capabilities.</p>
+</li>
+<li type="disc">
+<p>Separate different classes of storage (for example, SCSI drives and SATA drives) into different disk groups. (Disks in a disk group should have similar size and performance characteristics.)</p>
+</li>
+<li type="disc">
+<p>Store the flash recovery area in a separate disk group from the database.</p>
+</li>
+</ul>
+<p>To create a disk group:</p>
+<ol type="1" start="1">
+<li>
+<p>Access the ASM Home page.</p>
+<p>See <a href="#CIAFIGDB">"Accessing the Automatic Storage Management Home Page"</a> for instructions.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Administration</span> tab.</p>
+</li>
+<li>
+<p>If the Automatic Storage Management Login page appears, log in as the <code>SYS</code> user, connecting as <code>SYSDBA</code>. Provide the <code>SYS</code> password that is stored in the password file for the ASM instance. This password was set up when the ASM instance was created.</p>
+</li>
+<li>
+<p>On the ASM Administration page, under the Disk Groups heading, click <span class="bold">Create</span>.</p>
+<p>The Create Disk Group page appears. It displays a list of ASM disks that are available to be added to a disk group. This includes disks with the header status of <code>CANDIDATE</code>, <code>PROVISIONED</code>, or <code>FORMER</code>.</p>
+<img src="./create_disk_group.gif" alt="Description of create_disk_group.gif follows" title="Description of create_disk_group.gif follows" /><br />
+<a id="sthref796" name="sthref796" href="./img_text/create_disk_group.htm">Description of the illustration create_disk_group.gif</a><br />
+<br /></li>
+<li>
+<p>If you want to display not only disks that are available to be added to a disk group, but all ASM disks, including disks that already belong to a disk group (header status = <code>MEMBER</code>), select <span class="bold">All Disks</span> from the Select Member Disks drop-down list.</p>
+<p>The page is redisplayed with the complete list of ASM disks that were discovered by the ASM instance.</p>
+</li>
+<li>
+<p>Enter the disk group name, and select redundancy type (high, normal, or external).</p>
+</li>
+<li>
+<p>Select disks as follows:</p>
+<ul>
+<li type="disc">
+<p>Select the check box to the left of each disk that you want to include in the new disk group.</p>
+</li>
+<li type="disc">
+<p>If you want to force the inclusion of a disk in the disk group, select the <span class="bold">Force Usage</span> check box for that disk.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a caution" title="This is a layout table to format a caution" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Caution:</p>The Force Usage check box causes the disk to be added to the new disk group even if the disk already belongs to another disk group and has valid database data. This data will be lost. You must be certain that you are selecting a disk that can legitimately be added to the disk group. See <a class="xlinkSRC ADMIN10202" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Administrator's Guide</span></a> for a discussion of the <code>FORCE</code> option.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</li>
+<li type="disc">
+<p>Optionally enter an ASM name for each selected disk. (ASM provides a name if you do not.)</p>
+</li>
+</ul>
+<img src="./create_disk_group_all.gif" alt="Description of create_disk_group_all.gif follows" title="Description of create_disk_group_all.gif follows" /><br />
+<a id="sthref797" name="sthref797" href="./img_text/create_disk_group_all.htm">Description of the illustration create_disk_group_all.gif</a><br />
+<br /></li>
+<li>
+<p>Click <span class="bold">OK</span> to create the disk group.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+The discussion of the <code>V$ASM_DISK</code> view in <a class="olinkSRC REFRN" href="http://www.oracle.com/pls/db102/to_bookid?id=REFRN"><span class="italic">Oracle Database Reference</span></a> for information on the various header statuses of ASM disks.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect1" -->
+<a id="CIACBDEJ" name="CIACBDEJ"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref798" name="sthref798"></a>
+<h2>Dropping a Dis<a id="sthref799" name="sthref799"></a>k Group</h2>
+<p>When you drop a disk group, you delete the disk group, and optionally all of its files. You cannot drop a disk group if any of its database files are open. After dropping a disk group, you can add its member disks to other disk groups or use them for other purposes.</p>
+<p>One reason to drop a disk group is to change redundancy (normal, high, or external). Because you cannot change the redundancy of a disk group, you must drop the disk group and then re-create it with the proper redundancy. In this case, you must back up or move disk group data before you drop the disk group.</p>
+<p>To drop a disk group:</p>
+<ol type="1" start="1">
+<li>
+<p>Access the ASM Home page.</p>
+<p>See <a href="#CIAFIGDB">"Accessing the Automatic Storage Management Home Page"</a> for instructions.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Administration</span> tab.</p>
+</li>
+<li>
+<p>If the Automatic Storage Management Login page appears, log in as the <code>SYS</code> user, connecting as <code>SYSDBA</code>. Provide the <code>SYS</code> password that is stored in the password file for the ASM instance. This password was set up when the ASM instance was created.</p>
+</li>
+<li>
+<p>On the ASM Administration page, under the Disk Groups heading, click in the <span class="bold">Select</span> column to select the disk group that you want to drop.</p>
+</li>
+<li>
+<p>Click <span class="bold">Delete</span>.</p>
+<p>A confirmation page appears.</p>
+</li>
+<li>
+<p>If you want to delete the contents of the disk group, click <span class="bold">Advanced Options</span>, ensure that the <code>INCLUDING CONTENTS</code> option is selected, and then click <span class="bold">OK</span>.</p>
+</li>
+<li>
+<p>On the confirmation page, click <span class="bold">Yes</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect1" -->
+<a id="CIAEDBGF" name="CIAEDBGF"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref800" name="sthref800"></a>
+<h2>Adding Disks to a <a id="sthref801" name="sthref801"></a><a id="sthref802" name="sthref802"></a>Disk Group</h2>
+<p>You add disks to a disk group to increase the total amount of storage space in a disk group. You can add one or multiple disks in a single operation. ASM then rebalances the disk group so that data is evenly distributed on all disks, including the newly added disks.</p>
+<p>You can control the <span class="bold">power</span> of the rebalance operation, which is a number from 0 to 11. The higher the number, the faster the rebalance operation completes. Lower numbers cause rebalancing to take longer, but consume fewer processing and I/O resources. This leaves these resources available for the database. The default value of 1 minimizes disruption to the database. A value of 0 blocks the rebalance operation altogether. Manual or automatic rebalance can then occur at a later time. (You may want to postpone rebalancing because you want to wait for a time when there are fewer demands on the database, or because you want to add more disks or drop disks later and want the rebalancing to be done only once for all disk group changes.)</p>
+<p>See <a class="xlinkSRC ADMIN10221" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Administrator's Guide</span></a> for more information about controlling rebalance operations.</p>
+<p>To add one or more disks to a disk group:</p>
+<ol type="1" start="1">
+<li>
+<p>Access the ASM Home page.</p>
+<p>See <a href="#CIAFIGDB">"Accessing the Automatic Storage Management Home Page"</a> for instructions.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Administration</span> tab.</p>
+</li>
+<li>
+<p>If the Automatic Storage Management Login page appears, log in as the <code>SYS</code> user, connecting as <code>SYSDBA</code>. Provide the <code>SYS</code> password that is stored in the password file for the ASM instance. This password was set up when the ASM instance was created.</p>
+</li>
+<li>
+<p>On the ASM Administration page, under the Disk Groups heading, click a link in the Name column to select the disk group to which you want to add disks.</p>
+<p>The Disk Group page appears, displaying a list of disks that are already in the disk group.</p>
+<img src="./disk_group_page.gif" alt="Description of disk_group_page.gif follows" title="Description of disk_group_page.gif follows" /><br />
+<a id="sthref803" name="sthref803" href="./img_text/disk_group_page.htm">Description of the illustration disk_group_page.gif</a><br />
+<br /></li>
+<li>
+<p>Click <span class="bold">Add</span>.</p>
+<p>The Add Disks page appears. It displays a list of ASM disks that are available to be added to the disk group. This includes disks with the header status of <code>CANDIDATE</code>, <code>PROVISIONED</code>, or <code>FORMER</code>.</p>
+</li>
+<li>
+<p>If you want to display not only disks that are available to be added to a disk group, but all ASM disks, including disks that already belong to a disk group (header status = <code>MEMBER</code>), select <span class="bold">All Disks</span> from the Select Member Disks drop-down list.</p>
+<p>The page is redisplayed with the complete list of ASM disks that were discovered by the ASM instance.</p>
+</li>
+<li>
+<p>Optionally change the rebalance power by selecting from the Rebalance Power drop-down list.</p>
+</li>
+<li>
+<p>Select disks as follows:</p>
+<ul>
+<li type="disc">
+<p>Select the check box to the left of each disk that you want to add to the disk group.</p>
+</li>
+<li type="disc">
+<p>If you want to force the inclusion of a disk in the disk group, select the <span class="bold">Force Usage</span> check box at the right.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a caution" title="This is a layout table to format a caution" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Caution:</p>The Force Usage check box causes the disk to be added to the disk group even if the disk already belongs to another disk group and has valid database data. This data will be lost. You must be certain that you are selecting a disk that can legitimately be added to the disk group. See <a class="xlinkSRC ADMIN10202" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Administrator's Guide</span></a> for a discussion of the <code>FORCE</code> option.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</li>
+<li type="disc">
+<p>Optionally enter an ASM name for each disk. (ASM provides a name if you do not.)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Click <span class="bold">OK</span> to add the selected disks.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect1" -->
+<a id="CIABDHEH" name="CIABDHEH"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref804" name="sthref804"></a>
+<h2>Dropping Disks fro<a id="sthref805" name="sthref805"></a><a id="sthref806" name="sthref806"></a>m a Disk Group</h2>
+<p>When you drop a disk from the disk group, the disk group is rebalanced by moving all of the file extents from the dropped disk to other disks in the disk group. ASM then releases the disk, and you can then add it to another disk group or use it for other purposes. You can drop one or multiple disks in a single operation. You can also optionally set rebalance power for the drop operation.</p>
+<p>The following is a list of possible reasons for dropping a disk:</p>
+<ul>
+<li type="disc">
+<p>A disk is starting to fail, and you need to replace it.</p>
+</li>
+<li type="disc">
+<p>You want to upgrade a disk.</p>
+</li>
+<li type="disc">
+<p>You want to reallocate the disk to a different disk group, or reallocate the disk to a different storage system.</p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Dropping disks from a disk group only logically deletes the disks from the disk group. It does not delete the disk contents. However, the contents are lost when you add the disk to a new disk group.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<p>To drop one or more disks from a disk group:</p>
+<ol type="1" start="1">
+<li>
+<p>Access the ASM Home page.</p>
+<p>See <a href="#CIAFIGDB">"Accessing the Automatic Storage Management Home Page"</a> for instructions.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Administration</span> tab.</p>
+</li>
+<li>
+<p>If the Automatic Storage Management Login page appears, log in as the <code>SYS</code> user, connecting as <code>SYSDBA</code>. Provide the <code>SYS</code> password that is stored in the password file for the ASM instance. This password was set up when the ASM instance was created.</p>
+</li>
+<li>
+<p>On the ASM Administration page, under the Disk Groups heading, click a link in the <span class="bold">Name</span> column to select the disk group from which you want to drop disks.</p>
+<p>The Disk Group page appears.</p>
+</li>
+<li>
+<p>Under the Member Disks heading, in the Select column, select the check boxes for the disks that you want to drop, and then click <span class="bold">Remove</span>.</p>
+<p>A confirmation page appears.</p>
+</li>
+<li>
+<p>If you want to change rebalance power, or if you want set the <code>FORCE</code> option for dropping disks, do the following:</p>
+<ul>
+<li type="disc">
+<p>Click <span class="bold">Advanced Options</span>.</p>
+</li>
+<li type="disc">
+<p>On the Advanced Options page, optionally select the <code>FORCE</code> option or select a rebalance power in the drop-down list.</p>
+</li>
+<li type="disc">
+<p>Click <span class="bold">OK</span> to return to the confirmation page.</p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+You may need the <code>FORCE</code> option if ASM cannot read from or write to the disk. See <a class="xlinkSRC ADMIN10222" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Administrator's Guide</span></a> for more information on the <code>FORCE</code> option.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</li>
+<li>
+<p>Click <span class="bold">Yes</span> to drop the disks.</p>
+<p>The Disk Group page returns, and displays a state of <code>DROPPING</code> for each disk being dropped.</p>
+</li>
+<li>
+<p>Refresh the page until the dropped disks no longer appear in the disk group.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a caution" title="This is a layout table to format a caution" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Caution:</p>You cannot reuse or disconnect the dropped disks until the drop and rebalance operations are complete&#x2014;that is, until the dropped disks no longer appear in the disk group. See <a class="xlinkSRC ADMIN10222" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Administrator's Guide</span></a> for more information, and for other caveats for dropping disks.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</div>
+<!-- class="sect1" -->
+<a id="CIAJDCDF" name="CIAJDCDF"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref807" name="sthref807"></a>
+<h2>Backing Up AS<a id="sthref808" name="sthref808"></a>M-Managed Files</h2>
+<p>Oracle recommends that you use RMAN to back up files managed by ASM. The procedures for using RMAN are documented in <a href="backrest.htm#CIHEHFJJ">Chapter 9, "Performing Backup and Recovery"</a>.</p>
+</div>
+<!-- class="sect1" -->
+<a id="CACJFCZZ" name="CACJFCZZ"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref809" name="sthref809"></a>
+<h2>Automatic Storage Management: Oracle by Example Series</h2>
+<p>Oracle by Example (OBE) has a series on the <span class="italic">Oracle Database 2 Day DBA</span> book. This OBE steps you through the tasks in this appendix and includes annotated screen shots.</p>
+<p>To view the Automatic Storage Management OBE, point your browser to the following location:</p>
+<pre xml:space="preserve" class="oac_no_warn"><a href="http://www.oracle.com/technology/obe/10gr2_2day_dba/asm/asm.htm">http://www.oracle.com/technology/obe/10gr2_2day_dba/asm/asm.htm</a>
+</pre></div>
+<!-- class="sect1" --></div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="software.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="rac.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;2004, 2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

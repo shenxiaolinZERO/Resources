@@ -1,0 +1,857 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>7 Administering Users and Security</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.1.3 Build 116" />
+<meta name="Date" content="June 22, 2005 15:47:53" />
+<meta name="doctitle" content="Oracle&reg; Database 2 Day DBA 10g Release 2 (10.2)" />
+<meta name="partno" content="B14196-01" />
+<meta name="docid" content="ADMQS" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="storage.htm" title="Previous" type="text/html" />
+<link rel="Next" href="schema.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14196.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database 2 Day DBA<br />
+10<i>g</i> Release 2 (10.2)</b><br />
+Part Number B14196-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="storage.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="schema.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top"><a href="../b14196.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="CHDJBHHI" name="CHDJBHHI"></a><a id="sthref348" name="sthref348"></a>
+<h1><span class="secnum">7</span> <a name="ADMQS007" id="ADMQS007"></a>Administering Users and Security</h1>
+<p><a id="sthref349" name="sthref349"></a><a id="sthref350" name="sthref350"></a>For users to access your database, you must create user accounts and grant appropriate database access privileges to those accounts. Some user accounts are automatically included in the preconfigured database, but for security reasons, most of these accounts are locked and expired. This chapter describes how to create and manage user accounts.</p>
+<p>This chapter contains the following topics:</p>
+<ul>
+<li type="disc">
+<p><a href="#CHDDDEBI">Overview of Users and Security</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDBHDCF">Administering Roles</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDFFFCB">Administering Profiles</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDEBHDE">Administering Database Users</a></p>
+</li>
+<li type="disc">
+<p><a href="#CFHGEBDE">Users: Oracle by Example Series</a></p>
+</li>
+</ul>
+<a id="CHDDDEBI" name="CHDDDEBI"></a>
+<div class="sect1"><a id="sthref351" name="sthref351"></a>
+<h2>Overview of Users and Security</h2>
+<p>Before users are allowed to connect to the database, you must create user accounts for them. A user account is identified by a username and defines the user's attributes, including the following:</p>
+<ul>
+<li type="disc">
+<p>Authentication method</p>
+</li>
+<li type="disc">
+<p>Password (encrypted) for database authentication</p>
+</li>
+<li type="disc">
+<p>Tablespace access</p>
+</li>
+<li type="disc">
+<p>Tablespace quotas</p>
+</li>
+<li type="disc">
+<p>Whether the account is locked or not</p>
+</li>
+</ul>
+<p>These accounts are usually created by a database administrator or a person specifically assigned to create accounts and administer security.</p>
+<p>After a user account is created, you must grant basic privileges to the account to enable the user to connect to the database and to view and create database objects, known as schema objects. The name of the schema is identical to the name of the user.</p>
+<p>Certain user accounts are automatically included when you create your database. All databases created by the Database Configuration Assistant (DBCA) include the <code>SYS</code>, <code>SYSTEM</code>, <code>SYSMAN</code>, and <code>DBSNMP</code> user accounts. Other accounts are included depending upon what features or options are installed.</p>
+<p>Most of the included accounts are administrative accounts, but user <code>scott</code> and Sample Schema accounts are also present. User <code>scott</code> has long been used by Oracle in database documentation to present examples that allow users to experiment with their databases. The use of <code>scott</code> is gradually being phased out in favor of using the Sample Schemas.</p>
+<p>The Oracle Database Sample Schemas are a set of interlinked schemas. This set of schemas provides a layered approach to complexity:</p>
+<ul>
+<li type="disc">
+<p>The <code>hr</code> (human resources) schema is useful for introducing basic topics. An extension to this schema supports Oracle Internet Directory demos.</p>
+</li>
+<li type="disc">
+<p>The <code>oe</code> (order entry) schema is useful for dealing with matters of intermediate complexity. Many datatypes are available in this schema, including nonscalar datatypes.</p>
+</li>
+<li type="disc">
+<p>The <code>oc</code> (online catalog) subschema is a collection of object-relational database objects built inside the <code>oe</code> schema.</p>
+</li>
+<li type="disc">
+<p>The <code>pm</code> (product media) schema is dedicated to multimedia datatypes.</p>
+</li>
+<li type="disc">
+<p>The <code>ix</code> (information exchange) schemas demonstrate Oracle Advanced Queuing capabilities.</p>
+</li>
+<li type="disc">
+<p>The <code>sh</code> (sales history) schema is designed for demos with large amounts of data. An extension to this schema provides support for advanced analytic processing.</p>
+</li>
+</ul>
+<p>The administrative accounts provided by Oracle Database should be used only by authorized individuals. To protect these accounts from unauthorized access, these accounts are initially locked with their passwords expired. As the database administrator, you are responsible for the unlocking and resetting of these accounts as described in <a href="#CFHIIBCB">"Unlocking Accounts and Resetting Passwords"</a>. <a href="#CHDIAJFH">Table 7-1</a> contains descriptions of some of these accounts. <a id="sthref352" name="sthref352"></a></p>
+<div class="tblHRuleFormalWideMax"><a id="sthref353" name="sthref353"></a><a id="CHDIAJFH" name="CHDIAJFH"></a>
+<p class="titleintable">Table 7-1 Administrative User Accounts Provided by Oracle Database</p>
+<table class="HRuleFormalWideMax" title="Administrative User Accounts Provided by Oracle Database" summary="This table describes the administrative user accounts provided by Oracle." dir="ltr" border="1" width="100%" frame="hsides" rules="rows" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t2">Username</th>
+<th align="left" valign="bottom" id="r1c2-t2">Password</th>
+<th align="left" valign="bottom" id="r1c3-t2">Description</th>
+<th align="left" valign="bottom" id="r1c4-t2">See Also</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t2" headers="r1c1-t2">CTXSYS<a id="sthref354" name="sthref354"></a><a id="sthref355" name="sthref355"></a></td>
+<td align="left" headers="r2c1-t2 r1c2-t2">CTXSYS</td>
+<td align="left" headers="r2c1-t2 r1c3-t2">The Oracle Text account</td>
+<td align="left" headers="r2c1-t2 r1c4-t2"><a class="olinkSRC CCREF" href="http://www.oracle.com/pls/db102/to_bookid?id=CCREF"><span class="italic">Oracle Text Reference</span></a><br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t2" headers="r1c1-t2">DBSNMP<a id="sthref356" name="sthref356"></a><a id="sthref357" name="sthref357"></a></td>
+<td align="left" headers="r3c1-t2 r1c2-t2">DBSNMP</td>
+<td align="left" headers="r3c1-t2 r1c3-t2">The account used by the Management Agent component of Oracle Enterprise Manager to monitor and manage the database</td>
+<td align="left" headers="r3c1-t2 r1c4-t2"><a class="olinkSRC OEMIG" href="http://www.oracle.com/pls/db102/to_bookid?id=OEMIG"><span class="italic">Oracle Enterprise Manager Grid Control Installation and Basic Configuration</span></a><br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t2" headers="r1c1-t2">MDDATA<a id="sthref358" name="sthref358"></a><a id="sthref359" name="sthref359"></a></td>
+<td align="left" headers="r4c1-t2 r1c2-t2">MDDATA</td>
+<td align="left" headers="r4c1-t2 r1c3-t2">The schema used by Oracle Spatial for storing Geocoder and router data</td>
+<td align="left" headers="r4c1-t2 r1c4-t2"><a class="olinkSRC SPATL" href="http://www.oracle.com/pls/db102/to_bookid?id=SPATL"><span class="italic">Oracle Spatial User's Guide and Reference</span></a><br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t2" headers="r1c1-t2">MDSYS<a id="sthref360" name="sthref360"></a><a id="sthref361" name="sthref361"></a></td>
+<td align="left" headers="r5c1-t2 r1c2-t2">MDSYS</td>
+<td align="left" headers="r5c1-t2 r1c3-t2">The Oracle Spatial and Oracle <span class="italic">inter</span>Media Locator administrator account</td>
+<td align="left" headers="r5c1-t2 r1c4-t2"><a class="olinkSRC SPATL" href="http://www.oracle.com/pls/db102/to_bookid?id=SPATL"><span class="italic">Oracle Spatial User's Guide and Reference</span></a><br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t2" headers="r1c1-t2">DMSYS<a id="sthref362" name="sthref362"></a><a id="sthref363" name="sthref363"></a></td>
+<td align="left" headers="r6c1-t2 r1c2-t2">DMSYS</td>
+<td align="left" headers="r6c1-t2 r1c3-t2">The data mining account. <code>DMSYS</code> performs data mining operations.</td>
+<td align="left" headers="r6c1-t2 r1c4-t2"><a class="olinkSRC DMADM" href="http://www.oracle.com/pls/db102/to_bookid?id=DMADM"><span class="italic">Oracle Data Mining Administrator's Guide</span></a>
+<p><a class="olinkSRC DMCON" href="http://www.oracle.com/pls/db102/to_bookid?id=DMCON"><span class="italic">Oracle Data Mining Concepts</span></a></p>
+<br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t2" headers="r1c1-t2">OLAPSYS<a id="sthref364" name="sthref364"></a><a id="sthref365" name="sthref365"></a></td>
+<td align="left" headers="r7c1-t2 r1c2-t2">MANAGER</td>
+<td align="left" headers="r7c1-t2 r1c3-t2">The account used to create OLAP metadata structures. This account owns the OLAP Catalog (CWMLite).</td>
+<td align="left" headers="r7c1-t2 r1c4-t2"><a class="olinkSRC OLAUG" href="http://www.oracle.com/pls/db102/to_bookid?id=OLAUG"><span class="italic">Oracle OLAP Application Developer's Guide</span></a><br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t2" headers="r1c1-t2">ORDPLUGINS<a id="sthref366" name="sthref366"></a><a id="sthref367" name="sthref367"></a></td>
+<td align="left" headers="r8c1-t2 r1c2-t2">ORDPLUGINS</td>
+<td align="left" headers="r8c1-t2 r1c3-t2">The Oracle <span class="italic">inter</span>Media user. Plugins supplied by Oracle and third party format plugins are installed in this schema.</td>
+<td align="left" headers="r8c1-t2 r1c4-t2"><a class="olinkSRC IMURG" href="http://www.oracle.com/pls/db102/to_bookid?id=IMURG"><span class="italic">Oracle interMedia User's Guide</span></a><br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t2" headers="r1c1-t2">ORDSYS<a id="sthref368" name="sthref368"></a><a id="sthref369" name="sthref369"></a></td>
+<td align="left" headers="r9c1-t2 r1c2-t2">ORDSYS</td>
+<td align="left" headers="r9c1-t2 r1c3-t2">The Oracle <span class="italic">inter</span>Media administrator account</td>
+<td align="left" headers="r9c1-t2 r1c4-t2"><a class="olinkSRC IMURG" href="http://www.oracle.com/pls/db102/to_bookid?id=IMURG"><span class="italic">Oracle interMedia User's Guide</span></a><br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r10c1-t2" headers="r1c1-t2">OUTLN<a id="sthref370" name="sthref370"></a><a id="sthref371" name="sthref371"></a></td>
+<td align="left" headers="r10c1-t2 r1c2-t2">OUTLN</td>
+<td align="left" headers="r10c1-t2 r1c3-t2">The account that supports plan stability. Plan stability enables you to maintain the same execution plans for the same SQL statements. <code>OUTLN</code> acts as a role to centrally manage metadata associated with stored outlines.</td>
+<td align="left" headers="r10c1-t2 r1c4-t2"><a class="olinkSRC PFGRF" href="http://www.oracle.com/pls/db102/to_bookid?id=PFGRF"><span class="italic">Oracle Database Performance Tuning Guide</span></a><br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r11c1-t2" headers="r1c1-t2">SI_INF<a id="sthref372" name="sthref372"></a><a id="sthref373" name="sthref373"></a>ORMTN_SCHEMA</td>
+<td align="left" headers="r11c1-t2 r1c2-t2">SI_INFORMTN_SCHEMA</td>
+<td align="left" headers="r11c1-t2 r1c3-t2">The account that stores the information views for the SQL/MM Still Image Standard</td>
+<td align="left" headers="r11c1-t2 r1c4-t2"><a class="olinkSRC IMURG" href="http://www.oracle.com/pls/db102/to_bookid?id=IMURG"><span class="italic">Oracle interMedia User's Guide</span></a><br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r12c1-t2" headers="r1c1-t2">SYS<a id="sthref374" name="sthref374"></a><a id="sthref375" name="sthref375"></a></td>
+<td align="left" headers="r12c1-t2 r1c2-t2">CHANGE_ON_INSTALL</td>
+<td align="left" headers="r12c1-t2 r1c3-t2">The account used to perform database administration tasks</td>
+<td align="left" headers="r12c1-t2 r1c4-t2"><a class="olinkSRC ADMIN" href="http://www.oracle.com/pls/db102/to_bookid?id=ADMIN"><span class="italic">Oracle Database Administrator's Guide</span></a><br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r13c1-t2" headers="r1c1-t2">SYSMAN<a id="sthref376" name="sthref376"></a><a id="sthref377" name="sthref377"></a></td>
+<td align="left" headers="r13c1-t2 r1c2-t2">CHANGE_ON_INSTALL</td>
+<td align="left" headers="r13c1-t2 r1c3-t2">The account used to perform Oracle Enterprise Manager database administration tasks. Note that <code>SYS</code> and <code>SYSTEM</code> can also perform these tasks.</td>
+<td align="left" headers="r13c1-t2 r1c4-t2"><a class="olinkSRC OEMIG" href="http://www.oracle.com/pls/db102/to_bookid?id=OEMIG"><span class="italic">Oracle Enterprise Manager Grid Control Installation and Basic Configuration</span></a><br /></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r14c1-t2" headers="r1c1-t2">SYSTEM<a id="sthref378" name="sthref378"></a><a id="sthref379" name="sthref379"></a></td>
+<td align="left" headers="r14c1-t2 r1c2-t2">MANAGER</td>
+<td align="left" headers="r14c1-t2 r1c3-t2">Another account used to perform database administration tasks</td>
+<td align="left" headers="r14c1-t2 r1c4-t2"><a class="olinkSRC ADMIN" href="http://www.oracle.com/pls/db102/to_bookid?id=ADMIN"><span class="italic">Oracle Database Administrator's Guide</span></a><br /></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblHRuleFormalWideMax" -->
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a class="olinkSRC COMSC" href="http://www.oracle.com/pls/db102/to_bookid?id=COMSC"><span class="italic">Oracle Database Sample Schemas</span></a> for a description of the Sample Schemas that are used for examples in Oracle Database documentation and educational materials.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref380" name="sthref380"></a>
+<h3>Database Administrative Accounts</h3>
+<p>The following administrative accounts are automatically created when Oracle Database is installed:</p>
+<ul>
+<li type="disc">
+<p><a href="#CFHDAJHG">SYS</a></p>
+</li>
+<li type="disc">
+<p><a href="#CFHBDEAB">SYSTEM</a></p>
+</li>
+</ul>
+<a id="CFHDAJHG" name="CFHDAJHG"></a>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref381" name="sthref381"></a>
+<h4>SYS</h4>
+<p>When you create an Oracle database, the user <code>SYS</code> is automatically created and granted the <code>DBA</code> role.</p>
+<p>All base tables and views for the database data dictionary are stored in the schema <code>SYS</code>. These base tables and views are critical for the operation of Oracle Database. To maintain the integrity of the data dictionary, tables in the <code>SYS</code> schema are manipulated only by the database. They should never be modified by any user or database administrator. Also, you should not create any tables in the schema of user <code>SYS</code>, although you can change the storage parameters of the data dictionary settings if necessary.</p>
+<p>Ensure that most database users are never able to connect to Oracle Database with the <code>SYS</code> account.</p>
+</div>
+<!-- class="sect3" -->
+<a id="CFHBDEAB" name="CFHBDEAB"></a>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref382" name="sthref382"></a>
+<h4>SYSTEM</h4>
+<p>When you create an Oracle Database, the user <code>SYSTEM</code> is also automatically created and granted the <code>DBA</code> role.</p>
+<p>The <code>SYSTEM</code> username is used to create additional tables and views that display administrative information as well as internal tables and views used by various Oracle Database options and tools. Never use the <code>SYSTEM</code> schema to store tables of interest to nonadministrative users.</p>
+<p>A predefined <code>DBA</code> role is automatically created with every Oracle Database installation. This role contains most database system privileges. Therefore, you should grant the <code>DBA</code> role only to actual database administrators. The <code>DBA</code> role does not include the <code>SYSDBA</code> or <code>SYSOPER</code> system privileges.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref383" name="sthref383"></a>
+<h4>Administrative Privileges</h4>
+<p><code>SYSDBA</code> and <code>SYSOPER</code> are administrative privileges required to perform basic database operations such as creating the database and instance startup and shutdown. Depending upon the level of authorization you require, you must have one of these privileges granted to you.</p>
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+The <code>SYSDBA</code> and <code>SYSOPER</code> system privileges allow access to a database instance even when the database is not open. Control of these privileges is totally outside of the database itself.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote -->
+<p>You can also think of the <code>SYSDBA</code> and <code>SYSOPER</code> privileges as types of connections that enable you to perform certain database operations for which privileges cannot be granted in any other way. For example, you if you have the <code>SYSDBA</code> privilege, then you can connect to the database by specifying <code>CONNECT</code> <code>AS</code> <code>SYSDBA</code>.</p>
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a class="olinkSRC ADMIN" href="http://www.oracle.com/pls/db102/to_bookid?id=ADMIN"><span class="italic">Oracle Database Administrator's Guide</span></a> for more the operations authorized with each privilege and an example</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CHDBHDCF" name="CHDBHDCF"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref384" name="sthref384"></a>
+<h2>Administering Roles</h2>
+<p><a id="sthref385" name="sthref385"></a>System privileges, object privileges, and roles provide a basic level of database security. They are designed to control user access to data and to limit the kinds of SQL statements that users can execute.</p>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref386" name="sthref386"></a>
+<h3>About Privileges and Roles</h3>
+<p>Privileges and roles can be granted to other users by users who possess the necessary privilege. The granting of roles and privileges starts at the administrator level. At database creation, the administrative user <code>SYS</code> is created and granted all system privileges and predefined Oracle roles. User <code>SYS</code> can then grant privileges and roles to other users and also grant those users the right to grant specific privileges to others.</p>
+<p><a href="#BGBIBDFC">Table 7-2</a> provides descriptions and examples of privileges and roles.</p>
+<div class="tblRuleFormalWide"><a id="sthref387" name="sthref387"></a><a id="BGBIBDFC" name="BGBIBDFC"></a>
+<p class="titleintable">Table 7-2 Privileges and Roles</p>
+<table class="RuleFormalWide" title="Privileges and Roles" summary="This table describes roles and privileges." dir="ltr" border="1" width="100%" frame="border" rules="all" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t6">Privilege or Role</th>
+<th align="left" valign="bottom" id="r1c2-t6">Description</th>
+<th align="left" valign="bottom" id="r1c3-t6">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t6" headers="r1c1-t6">System priv<a id="sthref388" name="sthref388"></a>ilege</td>
+<td align="left" headers="r2c1-t6 r1c2-t6">An Oracle-defined privilege usually granted only to and by administrators. System privileges enable users to perform specific database operations.</td>
+<td align="left" headers="r2c1-t6 r1c3-t6">The following are examples of system privileges that can be granted to users:
+<ul>
+<li type="disc">
+<p><code>CREATE</code> <code>TABLE</code> allows grantee to create tables in the grantee's schema.</p>
+</li>
+<li type="disc">
+<p><code>CREATE</code> <code>USER</code> allows grantee to create users in the database.</p>
+</li>
+<li type="disc">
+<p><code>CREATE</code> <code>SESSION</code> allows grantee to connect to an Oracle database to create a user session.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t6" headers="r1c1-t6">Object pri<a id="sthref389" name="sthref389"></a>vilege</td>
+<td align="left" headers="r3c1-t6 r1c2-t6">A privilege that controls access to a specific object.</td>
+<td align="left" headers="r3c1-t6 r1c3-t6">The following examples are object privileges that can be granted to users:
+<ul>
+<li type="disc">
+<p><code>SELECT ON hr.employees TO myuser</code></p>
+</li>
+<li type="disc">
+<p><code>INSERT ON hr.employees TO myuser</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t6" headers="r1c1-t6">Role<a id="sthref390" name="sthref390"></a></td>
+<td align="left" headers="r4c1-t6 r1c2-t6">A group of privileges or other roles</td>
+<td align="left" headers="r4c1-t6 r1c3-t6">The following examples are Oracle-defined roles:
+<ul>
+<li type="disc">
+<p><code>CONNECT</code> is a role that Enterprise Manager automatically grants to a user when you create a user as shown in <a href="#CHDDCIGA">"Creating Users"</a>. This role has the <code>CREATE</code> <code>SESSION</code> privilege.</p>
+</li>
+<li type="disc">
+<p><code>RESOURCE</code> extends the privileges of a user beyond those granted by the <code>CONNECT</code> role. It includes <code>CREATE</code> <code>PROCEDURE</code>, <code>CREATE</code> <code>TRIGGER</code>, and other system privileges.</p>
+</li>
+<li type="disc">
+<p><code>DBA</code> is the standard role that can be granted by an administrator to another administrator. It includes all system privileges and should only be granted to the most trusted and qualified of users. Assigning this role to a user enables the user to administer the database.</p>
+</li>
+</ul>
+<p>You can create your own roles if you have been granted this privilege.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblRuleFormalWide" -->
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a class="olinkSRC SQLRF" href="http://www.oracle.com/pls/db102/to_bookid?id=SQLRF"><span class="italic">Oracle Database SQL Reference</span></a> for a list of Oracle-defined privileges and roles</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref391" name="sthref391"></a>
+<h3>Viewing Roles</h3>
+<p><a id="sthref392" name="sthref392"></a>You can use Enterprise Manager to view existing roles as follows:</p>
+<ol type="1" start="1">
+<li>
+<p>In the Users &amp; Privileges section of the Administration home page, click <span class="bold">Roles</span>.</p>
+<div class="figure"><a id="BGBEEFCB" name="BGBEEFCB"></a><a id="sthref393" name="sthref393"></a>
+<p class="titleinfigure">Figure 7-1 Users &amp; Privileges</p>
+<img src="./users_and_privs.gif" alt="Pointer to the Roles link." title="Pointer to the Roles link." /></div>
+<!-- class="figure" -->
+<p>The Roles page appears. From this page you can create, edit, view, or delete roles. The structure and functionality of the Roles page is similar to that of the Users page shown in <a href="#BGBGBDBG">Figure 7-2</a>.</p>
+</li>
+<li>
+<p>Select the <code>CONNECT</code> role.</p>
+</li>
+<li>
+<p>Click <span class="bold">View</span>.</p>
+<p>The View page appears. In this page you can see all of the privileges and roles associated with the <code>CONNECT</code> role.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="g1101992" name="g1101992"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref394" name="sthref394"></a>
+<h3>Creating Roles</h3>
+<p>You can create a secure role with the privileges necessary for application development. You can then grant the role to other roles or users depending on the level of data access required by the user.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a class="olinkSRC DBSEG" href="http://www.oracle.com/pls/db102/to_bookid?id=DBSEG"><span class="italic">Oracle Database Security Guide</span></a> for more information on administering user security, roles, and privileges</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<p>In this exercise, you create an application developer role called <code>APPDEV</code>.</p>
+<p>To create the <code>APPDEV</code> role:</p>
+<ol type="1" start="1">
+<li>
+<p>In the Users &amp; Privileges section of the Administration home page, click <span class="bold">Roles</span>.</p>
+<p>The Roles page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+<p>The Create Role General page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">OK</span>.</p>
+<p>A page appears with a list of all roles, including the <code>APPDEV</code> role that you just created. You can now modify this new role by adding the required privileges.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref395" name="sthref395"></a>
+<h3>Modifying Roles</h3>
+<p>You can add roles, privileges, and consumer groups to roles. In this exercise, you add the basic system privileges shown in <a href="#BGBBIBHI">Table 7-3</a>, which allow the creation of various objects in this schema, to the <code>APPDEV</code> role that you created previously. These objects are described in <a href="schema.htm#CFHJAHAA">Chapter 8, "Managing Schema Objects"</a>.</p>
+<div class="tblFormal"><a id="sthref396" name="sthref396"></a><a id="BGBBIBHI" name="BGBBIBHI"></a>
+<p class="titleintable">Table 7-3 APPDEV Privileges</p>
+<table class="Formal" title="APPDEV Privileges" summary="Schema creation" dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t9">Privilege</th>
+<th align="left" valign="bottom" id="r1c2-t9">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t9" headers="r1c1-t9">CREATE TABLE</td>
+<td align="left" headers="r2c1-t9 r1c2-t9">Allows user to create tables in his schema.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t9" headers="r1c1-t9">CREATE VIEW</td>
+<td align="left" headers="r3c1-t9 r1c2-t9">Allows user to create views in his schema.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t9" headers="r1c1-t9">CREATE PROCEDURE</td>
+<td align="left" headers="r4c1-t9 r1c2-t9">Allows user to create procedures in his schema.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t9" headers="r1c1-t9">CREATE TRIGGER</td>
+<td align="left" headers="r5c1-t9 r1c2-t9">Allows user to create triggers in his schema.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t9" headers="r1c1-t9">CREATE SEQUENCE</td>
+<td align="left" headers="r6c1-t9 r1c2-t9">Allows user to create sequences in his schema.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t9" headers="r1c1-t9">CREATE SYNONYM</td>
+<td align="left" headers="r7c1-t9 r1c2-t9">Allows user to create synonyms in his schema.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblFormal" -->
+<p>To modify the <code>APPDEV</code> role:</p>
+<ol type="1" start="1">
+<li>
+<p>In the Users &amp; Privileges section of the Administration home page, click <span class="bold">Roles</span>.</p>
+<p>The Roles page appears.</p>
+</li>
+<li>
+<p>From the list of roles, select <span class="bold">APPDEV</span> and click <span class="bold">Edit</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">System Privileges</span> to navigate to the System Privileges property page.</p>
+<p>The System Privilege column should display no items.</p>
+</li>
+<li>
+<p>Click <span class="bold">Edit List</span>.</p>
+<p>The Modify System Privileges page appears.</p>
+</li>
+<li>
+<p>In the <span class="bold">Available System Privileges</span> list, double-click the privileges listed in <a href="#BGBBIBHI">Table 7-3</a> to add them to the <span class="bold">Selected System Privileges</span> list.</p>
+</li>
+<li>
+<p>Click <span class="bold">OK</span>.</p>
+<p>You are returned to the Edit Role: APPDEV page.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply</span>.</p>
+<p>A confirmation message should appear saying that the role has been modified successfully.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="BGBEABDI" name="BGBEABDI"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref397" name="sthref397"></a>
+<h3>Dropping Roles</h3>
+<p>In this exercise, you drop to the <code>APPDEV</code> role that you created in <a href="#BGBEABDI">"Dropping Roles"</a>.</p>
+<p>To drop the <code>APPDEV</code> role:</p>
+<ol type="1" start="1">
+<li>
+<p>In the Users &amp; Privileges section of the Administration home page, click <span class="bold">Roles</span>.</p>
+<p>The Roles page appears.</p>
+</li>
+<li>
+<p>Select the <code>APPDEV</code> role and click <span class="bold">Delete</span>.</p>
+<p>A confirmation page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Yes</span>.</p>
+<p>You should get a confirmation message that the role has been deleted successfully.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CHDFFFCB" name="CHDFFFCB"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref398" name="sthref398"></a>
+<h2>Administering Profiles</h2>
+<p><a id="sthref399" name="sthref399"></a>A user profile establishes the password management policy for a user and defines and limits the user's access to certain database resources. When you create the user in <a href="#CHDDCIGA">"Creating Users"</a>, you assign the user the Oracle-supplied default profile. This default profile is liberal in its resource specifications and does not provide tight restrictions on password usage. Until you are more familiar with your database and its users, it is not necessary to be concerned about creating new profiles.</p>
+<p>To display the attributes of the default profile:</p>
+<ol type="1" start="1">
+<li>
+<p>In the Users &amp; Privileges section of the Administration home page, click <span class="bold">Profiles</span>.</p>
+<p>The Profiles page appears. From this page you can create, edit, view, or delete profiles. The structure and functionality of the Profiles page is similar to that of the Users page shown in <a href="#BGBGBDBG">Figure 7-2</a>.</p>
+</li>
+<li>
+<p>Select the <code>DEFAULT</code> profile and click <span class="bold">View</span>.</p>
+<p>The View page appears. In this page you can view all of the attributes associated with the <code>DEFAULT</code> profile.</p>
+</li>
+</ol>
+<p>Database resource usage and limits are managed by the Database Resource Manager. You can read about the Database Resource manager in online Help and view its pages when you click the links in the Resource Manager section of the Database Administration page.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a class="olinkSRC ADMIN" href="http://www.oracle.com/pls/db102/to_bookid?id=ADMIN"><span class="italic">Oracle Database Administrator's Guide</span></a> as well as the Database Resource Manager online Help for a description of the Database Resource Manager and its use</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect1" -->
+<a id="CHDEBHDE" name="CHDEBHDE"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref400" name="sthref400"></a>
+<h2>Administering Database Users</h2>
+<p>You can use Enterprise Manager to administer database users. You might create specific users to enable access to the database based on roles and privileges. For example, you might create a specific user MYUSER with the necessary privileges (which you can assign to roles) to develop applications. You might create other users specifically to administer the database. Every user</p>
+<p>In the Users &amp; Privileges section of the Administration home page, click <span class="bold">Users</span>. The Users page appears, as shown in <a href="#BGBGBDBG">Figure 7-2</a>. From this page you can view, add, edit, or delete database users.</p>
+<div class="figure"><a id="BGBGBDBG" name="BGBGBDBG"></a><a id="sthref401" name="sthref401"></a>
+<p class="titleinfigure">Figure 7-2 Users Page</p>
+<img src="./users_page.gif" alt="Users page." title="Users page." /><br />
+<a id="sthref402" name="sthref402" href="./img_text/users_page.htm">Description of the illustration users_page.gif</a></div>
+<!-- class="figure" -->
+<a id="CHDDCIGA" name="CHDDCIGA"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref403" name="sthref403"></a>
+<h3>Creating Users</h3>
+<p><a id="sthref404" name="sthref404"></a><a id="sthref405" name="sthref405"></a>In this section, you create a user named <code>MYUSER</code>, set the password, and assign <code>MYUSER</code> to the <code>USERS</code> tablespace. This series of tasks enables <code>myuser</code> to log in to the database. Later, you learn how to edit and assign roles to this user.</p>
+<p>To create a database user, perform the following tasks as user <code>SYS</code> or <code>SYSTEM</code>:</p>
+<ol type="1" start="1">
+<li>
+<p>On the Users page, click <span class="bold">Create</span>.</p>
+<p>The Create Users General page shown in <a href="#CHDCGDBF">Figure 7-3</a> is displayed. The General page is one of a series of pages in the Users property page.</p>
+<div class="figure"><a id="CHDCGDBF" name="CHDCGDBF"></a><a id="sthref406" name="sthref406"></a>
+<p class="titleinfigure">Figure 7-3 Create User General Page</p>
+<img src="./create_user.gif" alt="Create User General Page" title="Create User General Page" /><br />
+<a id="sthref407" name="sthref407" href="./img_text/create_user.htm">Description of the illustration create_user.gif</a></div>
+<!-- class="figure" --></li>
+<li>
+<p>In the <span class="bold">Name</span> box, enter a user name. For example, enter <code>MYUSER</code>.</p>
+</li>
+<li>
+<p>In the <span class="bold">Profile</span> list, accept the value <code>DEFAULT</code>. The profile specifies the resource limit.</p>
+<p>Note that this profile does not allow the user to log in to Enterprise Manager, which would require the user to be assigned the <code>DBA</code> role. For more information, see <a href="#CHDBHDCF">"Administering Roles"</a>.</p>
+</li>
+<li>
+<p>In the <span class="bold">Authentication</span> list, accept the value <code>Password</code>. For advanced authentication schemes, see <a class="olinkSRC DBSEG" href="http://www.oracle.com/pls/db102/to_bookid?id=DBSEG"><span class="italic">Oracle Database Security Guide</span></a>.</p>
+</li>
+<li>
+<p>In the <span class="bold">Enter Password</span> and <span class="bold">Confirm Password</span> boxes, enter your password.</p>
+</li>
+<li>
+<p>Do not check <span class="bold">Expire Password</span> now. If the account status to set to expired, then the user or the database administrator must change the password before the user can log in to the database.</p>
+</li>
+<li>
+<p>For the <span class="bold">Default Tablespace</span> field, click the browse button (flashlight) and select the <code>USERS</code> tablespace. While users can specify different defaults for each user, it is easiest to define a default permanent tablespace and a default temporary tablespace at the database level, instead of the user level. For more information on the <code>USERS</code> tablespace, see <a href="storage.htm#CACDDIIC">"Some Tablespaces in the Database"</a>.</p>
+</li>
+<li>
+<p>For the <span class="bold">Temporary Tablespace</span> field, click the browse button (flashlight) and select the <code>TEMP</code> tablespace. For more information on the <code>TEMP</code> tablespace, see <a href="storage.htm#CACDDIIC">"Some Tablespaces in the Database"</a>.</p>
+</li>
+<li>
+<p>In <span class="bold">Status</span>, select <span class="bold">Unlocked</span>.</p>
+<p>You can later lock an account to keep a user out of the database. Locking an account is preferable to deleting a user, which removes all associated tables and data.</p>
+</li>
+<li>
+<p>Click <span class="bold">OK</span>.</p>
+<p>The Users page appears. You can now see an entry for the new user <code>myuser</code>.</p>
+</li>
+</ol>
+<p>The Users General page has links to several other property pages. For example, you can specify user roles, privileges, quotas, consumer groups, and proxy users. Consumer groups are groups of users, or sessions, that are grouped together based on their processing needs.</p>
+<div align="center">
+<div class="inftblInformal"><br />
+<table class="Informal oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr align="left" valign="top">
+<td align="left">
+<p class="notep1">Note:</p>
+This section creates a regular database user. To grant the user system administrator privileges, complete additional steps described in <a href="em_manage.htm#CACHGFFI">Chapter 3, "Getting Started with Oracle Enterprise Manager"</a>.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblInformal --></div>
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a class="olinkSRC ADMIN" href="http://www.oracle.com/pls/db102/to_bookid?id=ADMIN"><span class="italic">Oracle Database Administrator's Guide</span></a> and <a class="olinkSRC DBSEG" href="http://www.oracle.com/pls/db102/to_bookid?id=DBSEG"><span class="italic">Oracle Database Security Guide</span></a> for more information on roles, privileges, quotas, consumer groups and proxy authentication</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref408" name="sthref408"></a>
+<h3>Using a Shortcut to Create Users</h3>
+<p>If you later want to create other users similar to user <code>MYUSER</code>, or another existing user, Oracle provides a shortcut. On the Users page, you can create a user with the same attributes.</p>
+<p>To use a shortcut to create a new user:</p>
+<ol type="1" start="1">
+<li>
+<p>Select the user that you want to duplicate. For example, select <code>MYUSER</code>.</p>
+</li>
+<li>
+<p>From the <span class="bold">Actions</span> menu, select <span class="bold">Create Like</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Go</span>.</p>
+<p>The Create User General page appears. This page displays a new user with the same attributes as the duplicated user.</p>
+</li>
+</ol>
+<p>The <span class="bold">Actions</span> list also provides shortcuts for other actions, as well as providing a means to display the SQL DDL used to create a user.</p>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref409" name="sthref409"></a>
+<h3>Editing Users</h3>
+<p>You can change the user attributes by navigating to the Users page (<a href="#BGBGBDBG">Figure 7-2</a>) and clicking <span class="bold">Edit</span>. You can then select the properties page with the attributes that you want to change.</p>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref410" name="sthref410"></a>
+<h4>Changing the Tablespace Quota for a User</h4>
+<p>This procedure enables user <code>MYUSER</code> to save data.</p>
+<p>To change the tablespace quotas assigned to user <code>MYUSER</code>:</p>
+<ol type="1" start="1">
+<li>
+<p>From the Users page, select <code>MYUSER</code> in the results list, then click <span class="bold">Edit</span>.</p>
+<p>The Edit User General page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Quotas</span> to display the Quotas property page.</p>
+<p>This user has 0 Mbytes quota on all tablespaces, which means that <code>MYUSER</code> has no quota in any tablespace. Because <code>MYUSER</code> belongs to the <code>USERS</code> tablespace, he must have quota to create tables and other schema objects in this tablespace.</p>
+</li>
+<li>
+<p>In the <span class="bold">Quota</span> list for tablespace <code>USERS</code>, select <span class="bold">Value</span>.</p>
+</li>
+<li>
+<p>In the corresponding <span class="bold">Value</span> column, enter <code>100</code>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply</span>.</p>
+<p>User <code>MYUSER</code> can now create objects in the <code>USERS</code> tablespace.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Database</span> tab to return to the Administration home page.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CFHIIBCB" name="CFHIIBCB"></a>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref411" name="sthref411"></a>
+<h4>Unlocking Accounts and Resetting Passwords</h4>
+<p><a id="sthref412" name="sthref412"></a>Locked accounts cannot be accessed by the user. During installation, you can unlock and reset the Oracle-supplied database user accounts. If you did not choose to unlock those accounts at that time, then you can do so now.</p>
+<p>To unlock database account:</p>
+<ol type="1" start="1">
+<li>
+<p>From the Users page shown in <a href="#BGBGBDBG">Figure 7-2</a>, select a user whose <span class="bold">Account Status</span> is shown as <code>EXPIRED AND LOCKED</code>. For example, select <code>DMSYS</code>.</p>
+</li>
+<li>
+<p>From the <span class="bold">Actions</span> list, select <span class="bold">Unlock User</span> and click <span class="bold">Go</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Yes</span> to the confirm that you want to unlock the user.</p>
+<p>This action unlocks the user account. The <span class="bold">Account Status</span> is now <code>EXPIRED</code>. This action does not reset the password, so the user is still unable to log in to the database.</p>
+</li>
+<li>
+<p>From the Users page, select the same user and click <span class="bold">Edit</span>.</p>
+<p>The Edit User General page appears.</p>
+</li>
+<li>
+<p>Enter a password for the account and click <span class="bold">Apply</span>.</p>
+</li>
+</ol>
+<p>You must follow the preceding steps individually for each account that you want to unlock and reset.</p>
+<p>Locking an account is similar to unlocking it. You select the user and then choose <span class="bold">Lock User</span> from the <span class="bold">Actions</span> list. Locking an account denies access to the account.</p>
+<p>To better understand the ramifications of unlocking and resetting accounts, see the other property pages available on the Edit user page. Specifically, click the <span class="bold">Roles</span>, <span class="bold">System Privileges</span>, and <span class="bold">Object Privileges</span> links to see the privileges of the user whose account you are enabling.</p>
+</div>
+<!-- class="sect3" -->
+<a id="CFHJGDEA" name="CFHJGDEA"></a>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref413" name="sthref413"></a>
+<h4>Granting Roles</h4>
+<p><a id="sthref414" name="sthref414"></a>You can use Enterprise Manager to grant roles to users. For example, you can grant a user the <code>DBA</code> role, which allows the user to administer the database. You can also grant user-created roles, such as the <code>APPDEV</code> role you created in <a href="#g1101992">"Creating Roles"</a>.</p>
+<p>To grant the <code>DBA</code> role to <code>MYUSER</code>:</p>
+<ol type="1" start="1">
+<li>
+<p>In the Users page, select <code>MYUSER</code> and click <span class="bold">Edit</span>.</p>
+<p>The Edit User: <code>MYUSER</code> page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Roles</span>.</p>
+<p>A page appears with the list of roles for <code>MYUSER</code>. The only role should be <code>CONNECT</code>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Edit List</span>.</p>
+<p>The Modify Roles page appears.</p>
+</li>
+<li>
+<p>In the <span class="bold">Available Roles</span> list, select the <code>DBA</code> role and click <span class="bold">Move</span> to add it to the <span class="bold">Selected Roles</span> list. You can also move the role by double-clicking.</p>
+</li>
+<li>
+<p>Click <span class="bold">OK</span>.</p>
+<p>You are returned to the Roles property page.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply</span> to save your changes.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref415" name="sthref415"></a>
+<h4>Revoking Roles</h4>
+<p>You can also revoke roles from users.</p>
+<p>To revoke the <code>DBA</code> role from <code>MYUSER</code>:</p>
+<ol type="1" start="1">
+<li>
+<p>In the Users page, select <code>MYUSER</code> and click <span class="bold">Edit</span>.</p>
+<p>The Edit User: <code>MYUSER</code> page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Roles</span>.</p>
+<p>A page appears with the list of roles for <code>MYUSER</code>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Edit List</span>.</p>
+<p>The Modify Roles page appears.</p>
+</li>
+<li>
+<p>In the <span class="bold">Selected Roles</span> list, select the <code>DBA</code> role and click <span class="bold">Remove</span> to make it part of the <span class="bold">Available Roles</span> list.</p>
+</li>
+<li>
+<p>Click <span class="bold">OK</span>.</p>
+<p>You are returned to the Roles property page.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply</span> to save your changes.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref416" name="sthref416"></a>
+<h3>Dropping Users</h3>
+<p>Enterprise Manager enables you to drop users. You must exercise caution when dropping users, however, because this action drops all schema objects owned by the user including tables and indexes.To deny user access to the database, it is better to lock the user account or expire the user password. See <a href="#CFHIIBCB">"Unlocking Accounts and Resetting Passwords"</a>.</p>
+<p>To drop <code>MYUSER</code>:</p>
+<ol type="1" start="1">
+<li>
+<p>In the Users page, select <code>MYUSER</code>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Delete</span>.</p>
+<p>A confirmation page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Yes</span> to confirm the deletion.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CFHGEBDE" name="CFHGEBDE"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref417" name="sthref417"></a>
+<h2>Users: Oracle by Example Series</h2>
+<p>Oracle by Example (OBE) has a series on the <span class="italic">Oracle Database 2 Day DBA</span> book. This OBE steps you through the tasks in this chapter and includes annotated screen shots.</p>
+<p>To view the Users OBE, point your browser to the following location:</p>
+<pre xml:space="preserve" class="oac_no_warn"><a href="http://www.oracle.com/technology/obe/10gr2_2day_dba/users/users.htm">http://www.oracle.com/technology/obe/10gr2_2day_dba/users/users.htm</a>
+</pre></div>
+<!-- class="sect1" --></div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="storage.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="schema.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;2004, 2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

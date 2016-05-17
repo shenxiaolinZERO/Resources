@@ -1,0 +1,784 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>5 Installing Oracle Database 10 g with Real Application Clusters</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.1.3 Build 116" />
+<meta name="Date" content="August 18, 2005 11:44:24" />
+<meta name="doctitle" content="Oracle&reg; Database Oracle Clusterware and Oracle Real Application Clusters Installation Guide 10g Release 2 (10.2) for Microsoft Windows" />
+<meta name="partno" content="B14207-01" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="crswin.htm" title="Previous" type="text/html" />
+<link rel="Next" href="dbcacrea.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14207.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database Oracle Clusterware and Oracle Real Application Clusters Installation Guide<br />
+10<i>g</i> Release 2 (10.2) for Microsoft Windows</b><br />
+Part Number B14207-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="crswin.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="dbcacrea.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top"><a href="../b14207.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="CIHHEHBF" name="CIHHEHBF"></a><a id="i1051122" name="i1051122"></a>
+<h1><span class="secnum">5</span> Installing Oracle Database 10<span class="italic">g</span> with Real Application Clusters</h1>
+<p>This chapter describes phase two of the installation procedures for installing Oracle Database 10<span class="italic">g</span> with Real Application Clusters (RAC). This chapter also describes some of the Oracle Universal Installer (OUI) features. This chapter contains the following topics:</p>
+<ul>
+<li type="disc">
+<p><a href="#Wombats">Verifying System Readiness for Installing the Oracle Database with CVU</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1053828">Selecting a Database Configuration Type</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABBAFDD">Installation of Oracle Database 10<span class="italic">g</span> with RAC Using the Oracle Universal Installer</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABCJIFA">Installation on Windows-Based Systems with the Minimum Memory Requirements</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDFJFBG">De-Installing Real Application Clusters Software</a></p>
+</li>
+</ul>
+<a id="Wombats" name="Wombats"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref437" name="sthref437"></a>
+<h2><span class="secnum">5.1</span> Verifying System Readiness for Installing the Oracle Database with CVU<a id="sthref438" name="sthref438"></a></h2>
+<p>To help to verify that your system is prepared to install the Oracle Database with RAC successfully, enter a Cluster Verification Utility (CVU) command using the following command syntax:</p>
+<pre xml:space="preserve" class="oac_no_warn">cluvfy stage -pre dbinst stage -pre dbinst -n <span class="italic">node_list</span> [-r { 10gR1 | 10gR2 } ] [-verbose]
+
+</pre>
+<p>In the preceding syntax example:</p>
+<ul>
+<li type="disc">
+<p>The variable <code><span class="codeinlineitalic">node_list</span></code> is the list of nodes in your cluster, separated by commas</p>
+</li>
+</ul>
+<p>For example, to perform a pre-installation check for an Oracle Database with RAC installation on a two-node cluster with nodes node1 and node2, enter the following command:</p>
+<pre xml:space="preserve" class="oac_no_warn">cluvfy stage -pre dbinst -n node1,node2 -verbose
+
+</pre>
+<p>Oracle recommends that you select the option <code>-verbose</code> to receive progress updates as the CVU performs its system checks. The -verbose option provides detailed test reporting, which you can use to identify the cause of any checks that fail.</p>
+<p>If the cluster verification check fails, then review and correct the relevant system configuration steps, and run the test again. Use the system configuration checks described in <a href="#BABGJIHJ">"Troubleshooting Installation Setup for Windows"</a> to assist you.</p>
+<a id="BABGJIHJ" name="BABGJIHJ"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref439" name="sthref439"></a>
+<h3><span class="secnum">5.1.1</span> Troubleshooting Installation Setup for Windows</h3>
+<p>If you run the CVU and your system fails system configuration checks, then review the the CVU report, and use the output to resolve failed configuration checks.</p>
+<div class="msgset">
+<div class="msgentry">
+<dl>
+<dt><span class="msg">User Equivalence Check Failed</span> <!-- class="msg" --></dt>
+<dd>
+<div class="msgexplan"><span class="msgexplankw">Cause:</span> Failure to establish user equivalency across all nodes.</div>
+<!-- class="msgexplan" --></dd>
+<dd>
+<div class="msgaction"><span class="msgactionkw">Action:</span> From the node where you intend to run the OUI, verify that you have administrative privileges on the other nodes. To do this, enter the following command for each node that is a part of the cluster:
+<pre xml:space="preserve" class="oac_no_warn">net use \\<span class="italic">node_name</span>\C$
+
+</pre>
+<p>where <code><span class="codeinlineitalic">node_name</span></code> is the node name.</p>
+<p>If you find a node where you are not able to log on, then you must correct the user information on that node. Oracle recommends that you use the same user name and password on each node in a cluster, or use a domain user name. If you use a domain user name, then log on under a domain with a username and password that has administrative privileges on each node.</p>
+<p>When you have corrected the path configuration information on the node, run the CVU check again.</p>
+</div>
+<!-- class="msgaction" --></dd>
+</dl>
+</div>
+<!-- class="msgentry" -->
+<a id="tahiti32552291" name="tahiti32552291"></a>
+<div class="msgentry">
+<dl>
+<dt><span class="msg">Node Reachability Check Failed</span> <!-- class="msg" --></dt>
+<dd>
+<div class="msgexplan"><span class="msgexplankw">Cause:</span> Failure of one or more nodes to be properly connected for communication.</div>
+<!-- class="msgexplan" --></dd>
+<dd>
+<div class="msgaction"><span class="msgactionkw">Action:</span> Possible causes of this message include the following:
+<ul>
+<li type="disc">
+<p>Improper network configuration</p>
+</li>
+<li type="disc">
+<p>The node running CVU is unable to connect to one or more nodes in the cluster</p>
+</li>
+</ul>
+<p>Use the following command to check your current configuration on each node:</p>
+<pre xml:space="preserve" class="oac_no_warn">ipconfig /all 
+
+</pre>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="prewin.htm#CHDEBGHB">"Checking Network Requirements"</a> in <a href="prewin.htm#BCFHFECH">Chapter 2</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="msgaction" --></dd>
+</dl>
+</div>
+<!-- class="msgentry" -->
+<a id="tahiti32556632" name="tahiti32556632"></a>
+<div class="msgentry">
+<dl>
+<dt><span class="msg">Node Connectivity Check Failed</span> <!-- class="msg" --></dt>
+<dd>
+<div class="msgexplan"><span class="msgexplankw">Cause:</span> One or more of the cluster nodes is not able to be connected from all nodes in the cluster</div>
+<!-- class="msgexplan" --></dd>
+<dd>
+<div class="msgaction"><span class="msgactionkw">Action:</span> Check for firewalls preventing the nodes from communicating on their private network interfaces.</div>
+<!-- class="msgaction" --></dd>
+</dl>
+</div>
+<!-- class="msgentry" -->
+<a id="tahiti32557849" name="tahiti32557849"></a>
+<div class="msgentry">
+<dl>
+<dt><span class="msg">System Requirements Check Failed</span> <!-- class="msg" --></dt>
+<dd>
+<div class="msgexplan"><span class="msgexplankw">Cause:</span> insufficient system resources, missing software packages, or other operating system or hardware problem.</div>
+<!-- class="msgexplan" --></dd>
+<dd>
+<div class="msgaction"><span class="msgactionkw">Action:</span> If you did not run the CVU command with the <code>-verbose</code> flag, then run the command again using <code>-verbose</code>, and review the report to determine which system requirement failed. Correct the problem.
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="prewin.htm#BCFHFECH">Chapter 2, "Server and Network Pre-Installation Tasks"</a> contains instructions for completing any system requirement configuration that CVU lists as incomplete.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="msgaction" --></dd>
+</dl>
+</div>
+<!-- class="msgentry" --></div>
+<!-- class="msgset" --></div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="i1053828" name="i1053828"></a>
+<div class="sect1"><a id="sthref440" name="sthref440"></a>
+<h2><span class="secnum">5.2</span> Selecting a Database Configuration Type</h2>
+<p>This section describes OUI features that you should understand before beginning phase two of the RAC installation process. <a id="sthref441" name="sthref441"></a>When you run the OUI and select Oracle Database 10<span class="italic">g</span>, you can select the <a id="sthref442" name="sthref442"></a><a id="sthref443" name="sthref443"></a><span class="bold">General Purpose</span>, <span class="bold">Transaction Processing<a id="sthref444" name="sthref444"></a><a id="sthref445" name="sthref445"></a></span>, <span class="bold">Data Warehouse</span>, <a id="sthref446" name="sthref446"></a><a id="sthref447" name="sthref447"></a>or <a id="sthref448" name="sthref448"></a><a id="sthref449" name="sthref449"></a><span class="bold">Advanced</span> database configuration type.</p>
+<p>For the first three configuration types, you can complete additional procedures that are described later in this chapter. If you select Advanced configuration, then you can use Database Configuration Assistant (DBCA) to create the database as described in <a href="dbcacrea.htm#BGBIJGDA">Chapter 6</a>. Oracle recommends that you use DBCA to create your database.</p>
+<p>You can also select the Advanced configuration, select a preconfigured template, customize the template, and then use DBCA to create a database using the template. These preconfigured templates correspond to the General Purpose, Transaction Processing, and Data Warehouse configuration types. You can also use DBCA with the Advanced <a id="sthref450" name="sthref450"></a><a id="sthref451" name="sthref451"></a>template to create a database.</p>
+<p>Oracle recommends that you use one of the preconfigured database options, or use the Advanced option with DBCA to create your database. However, if you want to configure your environment and create your database manually, then select the <span class="bold">Do not create a <a id="sthref452" name="sthref452"></a><a id="sthref453" name="sthref453"></a>database</span> configuration option, and refer to the manual database creation procedures posted at the following Web site:</p>
+<p><a href="http://otn.oracle.com/"><code>http://otn.oracle.com</code>.</a></p>
+<div class="sect2"><a id="sthref454" name="sthref454"></a>
+<h3><span class="secnum">5.2.1</span> Configuration Type Descriptions</h3>
+<p><a id="sthref455" name="sthref455"></a>The configuration type that you select, as described in <a href="#CIHDJEFI">Table 5-1</a>, determines how you proceed.</p>
+<div class="tblFormalWide"><a id="sthref456" name="sthref456"></a><a id="CIHDJEFI" name="CIHDJEFI"></a>
+<p class="titleintable">Table 5-1 Oracle Universal Installer Database Configuration Types</p>
+<table class="FormalWide" title=" Oracle Universal Installer Database Configuration Types " summary="This table is described in the preceding text" dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t4">Configuration Type</th>
+<th align="left" valign="bottom" id="r1c2-t4">Description</th>
+<th align="left" valign="bottom" id="r1c3-t4">Advantages</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t4" headers="r1c1-t4"><a id="sthref457" name="sthref457"></a>General Purpose, <a id="sthref458" name="sthref458"></a>Transaction Processing, <a id="sthref459" name="sthref459"></a>and Data Warehouse</td>
+<td align="left" headers="r2c1-t4 r1c2-t4">Installs a preconfigured starter database, Oracle options (including Oracle Database 10<span class="italic">g</span> with RAC), networking services, Oracle Database 10<span class="italic">g</span> utilities, and online documentation. At the end of the installation, DBCA creates and configures your RAC database.</td>
+<td align="left" headers="r2c1-t4 r1c3-t4">Minimal input required. You can create your database more quickly than with the Advanced type.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t4" headers="r1c1-t4">Advanced<a id="sthref460" name="sthref460"></a><a id="sthref461" name="sthref461"></a></td>
+<td align="left" headers="r3c1-t4 r1c2-t4">Enables you to customize your database options and storage components.</td>
+<td align="left" headers="r3c1-t4 r1c3-t4">Enables you to create arbitrary tablespaces and datafiles and customize all aspects of your database.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t4" headers="r1c1-t4"><a id="sthref462" name="sthref462"></a>Do not create a starter database</td>
+<td align="left" headers="r4c1-t4 r1c2-t4">Installs only the software. Does not configure the listeners or network infrastructure and does not create a database.</td>
+<td align="left" headers="r4c1-t4 r1c3-t4"><br /></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblFormalWide" -->
+<a id="i1053140" name="i1053140"></a>
+<div class="sect3"><a id="sthref463" name="sthref463"></a>
+<h4><span class="secnum">5.2.1.1</span> General Purpose, Transaction Processing, and Data Warehouse Configuration Types</h4>
+<p><a id="sthref464" name="sthref464"></a>The General Purpose, Transaction Processing, and Data Warehouse configuration types use preconfigured database templates. During installation, if you select one of these preconfigured database types, then the OUI starts Oracle Network Configuration Assistant (NETCA) and DBCA, and installs the preconfigured database without further input. During database installation, the OUI displays a progress indicator.</p>
+<p>DBCA processing for these three configuration types creates a starter database, and configures the Oracle network services. If you choose raw devices on the Specify Database File Storage Option page, then DBCA verifies that you configured the raw devices for each tablespace.</p>
+<p>If you select Advanced configuration, then you must enter specific information as described in the next section.</p>
+</div>
+<!-- class="sect3" -->
+<a id="i1053162" name="i1053162"></a>
+<div class="sect3"><a id="sthref465" name="sthref465"></a>
+<h4><span class="secnum">5.2.1.2</span> Using the Advanced Configuration Type</h4>
+<p>If you select the <a id="sthref466" name="sthref466"></a>Advanced configuration type, then the OUI runs DBCA, which displays four preconfigured database template choices:</p>
+<ul>
+<li type="disc">
+<p>General Purpose</p>
+</li>
+<li type="disc">
+<p>Transaction Processing</p>
+</li>
+<li type="disc">
+<p>Data Warehouse</p>
+</li>
+<li type="disc">
+<p>Advanced</p>
+</li>
+</ul>
+<p>The first three templates create a database that is optimized for that environment. You also can customize these templates. The Advanced type, however, creates a database without using preconfigured options.</p>
+<p>The following section provides more detail about OUI and DBCA processing when creating a RAC database.</p>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="i1053175" name="i1053175"></a>
+<div class="sect2"><a id="sthref467" name="sthref467"></a>
+<h3><span class="secnum">5.2.2</span> Behavior of the OUI, DBCA, and Other Assistants During Installation</h3>
+<p>After installation, the OUI starts the NETCA. After the NETCA completes its processing, the OUI runs DBCA to create your database using Optimal Flexible Architecture (OFA)<a id="sthref468" name="sthref468"></a><a id="sthref469" name="sthref469"></a>. This means that DBCA creates your database files, including the default server parameter file (SPFILE), using standard file naming and file placement practices. <a id="sthref470" name="sthref470"></a><a id="sthref471" name="sthref471"></a>The primary phases of DBCA processing are:</p>
+<ul>
+<li type="disc">
+<p>Verify that you correctly configured the shared disks for each tablespace if you are using raw storage</p>
+</li>
+<li type="disc">
+<p>Create the database</p>
+</li>
+<li type="disc">
+<p>Configure the Oracle network services</p>
+</li>
+<li type="disc">
+<p>Start the listeners and database instances</p>
+</li>
+</ul>
+<p>You can also use DBCA in standalone mode to create a database.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+The <span class="italic">Oracle Database Net Services Administrator's Guide</span> if you experience problems, for example, with the listener configuration, and for further information about LDAP support</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<p>You can use your Oracle9<span class="italic">i</span> database language and territory definition files with Oracle Database 10<span class="italic">g</span> Release 2 (10.2) that you are about to install. To enable this functionality, you must run the OUI from a command line, as described in the following section, <a href="#BABBAFDD">"Installation of Oracle Database 10<span class="italic">g</span> with RAC Using the Oracle Universal Installer"</a>, but start the <code>runInstaller</code> command using the following arguments to set the <code>b_cr9idata</code> variable to <code>true</code>:</p>
+<pre xml:space="preserve" class="oac_no_warn">runInstaller oracle.rsf.nlsrtl_rsf:b_cr9idata=true
+
+</pre></div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BABBAFDD" name="BABBAFDD"></a>
+<div class="sect1"><a id="sthref472" name="sthref472"></a>
+<h2><span class="secnum">5.3</span> Installation of Oracle Database 10<span class="italic">g</span> with RAC Using the Oracle Universal Installer</h2>
+<p>Perform the following procedures to install the Oracle Database 10<span class="italic">g</span> software with RAC.</p>
+<ol type="1" start="1">
+<li>
+<p>Start the <code>setup.exe</code> command from the base directory of the Oracle Database 10<span class="italic">g</span> Release 2 (10.2) media. When the OUI displays the <a id="sthref473" name="sthref473"></a><a id="sthref474" name="sthref474"></a>Welcome page, click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Provide information when prompted by the OUI. If you need assistance during installation, click <span class="bold">Help</span>. If you encounter problems during installation, examine the OUI actions recorded in the installation log file. The log file is located in the Oracle Inventory directory with a name that includes the timestamp (<code><span class="codeinlineitalic">date_time</span></code>) of the install process, as shown in this example:</p>
+<pre xml:space="preserve" class="oac_no_warn">C:\Program Files\Oracle\Inventory\logs\installActions<span class="italic">date_time</span>.log 
+
+</pre>
+<p>In the preceding syntax example, the variables <code><span class="codeinlineitalic">date</span></code> and <code><span class="codeinlineitalic">time</span></code> represents the date and the time of the log file.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+The Oracle home name and path that you provide during database installation <span class="italic">must be</span> <span class="italic">different</span> from the home that you used during the Oracle Clusterware installation in phase one. You <span class="bold">must not</span> install Oracle Database 10<span class="italic">g</span> with RAC software into the same home in which you installed the Oracle Clusterware software.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<p>The following is a list of additional information to note about installation:</p>
+<ul>
+<li type="disc">
+<p>If you select Automatic Storage Management (ASM) during installation, then the default partitions for ASM disk partition locations from which you must select ASM disks are marked as follows:</p>
+<pre xml:space="preserve" class="oac_no_warn">\\.\orcldisk*
+
+</pre>
+<p>If you are installing RAC from the Standard Edition, then you must use ASM for your database storage. Even if you can click other database storage options, they are only supported by the Enterprise Edition and you should not select them.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+The only partitions that the OUI displays for Windows systems are logical drives that are on drives that do not contain a primary partition, and have been stamped with <code>asmtool</code>.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</li>
+</ul>
+</li>
+<li>
+<p>Ensure that the path name for your new Oracle home is defined across the cluster by completing the following procedure on each remote node that is part of your current cluster installation:</p>
+<ol type="a">
+<li>
+<p>On each remote node, navigate to <span class="bold">Start</span>, and select <span class="bold">Control Panel</span>, then <span class="bold">System</span>, then <span class="bold">Advanced</span>, and then <span class="bold">Environment Variables</span></p>
+</li>
+<li>
+<p>In the "System variables" dialog, select the Path variable and ensure that the value for the Path variable contains <code><span class="codeinlineitalic">oracle_home</span></code><code>\bin</code>, where <code><span class="codeinlineitalic">oracle_home</span></code> is your new Oracle home. If the variable does not contain this value, then click <span class="bold">Edit</span> and add this value to the start of the path variable definition in the Edit System Variable dialog. When you have added the value, click <span class="bold">OK</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">OK</span> in the Environment Variables page, click <span class="bold">OK</span> in the System Properties page, and then close the Control Panel</p>
+</li>
+</ol>
+</li>
+</ol>
+<p>When have completed all steps for the second and final phase of the installation, proceed to <a href="postinst.htm#g1011160">Chapter 7, "Real Application Clusters Post-Installation Procedures"</a> to perform the post-installation tasks.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+If you need to change the VIP on a RAC node, then you should change it using a SRVCTL command, using the following syntax:
+<pre xml:space="preserve" class="oac_no_warn">srvctl modify nodeapps -A new_address
+
+</pre>
+<p>Refer to <span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span> for additional information.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</div>
+<!-- class="sect1" -->
+<a id="BABCJIFA" name="BABCJIFA"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref475" name="sthref475"></a>
+<h2><span class="secnum">5.4</span> Installation on Windows-Based Systems with the <a id="sthref476" name="sthref476"></a>Minimum Memory Requirements</h2>
+<p>Installations of RAC on nodes in Windows-based systems with 512&nbsp;MB of RAM and 500&nbsp;MB of virtual memory have the following limitations:</p>
+<ul>
+<li type="disc">
+<p>Computers with 512&nbsp;MB of memory are not able to run Oracle Database Upgrade Assistant (DBUA), DBCA, or NETCA during an Oracle Universal Installer installation session.</p>
+</li>
+<li type="disc">
+<p>Depending on how many applications are running on the computer, you may need to further increase the paging file size or reduce the size of the System Global Area (SGA) if you run out of virtual memory. Note that if temporary files and the paging file are both stored on the same physical drive, then a situation can occur where the space requirements for one can limit the size of another. If your system has limited free space, then first install the Oracle Database software. After the installation is finished, run NETCA to configure listeners and then DBCA to create a database.</p>
+</li>
+</ul>
+<p>On computer systems that barely meet the minimum memory and virtual memory requirements, 512 MB and 500 MB respectively, do not install the database. Instead, follow these guidelines:</p>
+<ul>
+<li type="disc">
+<p>Select Enterprise Edition Installation and deselect "Do not create a starter database"</p>
+</li>
+<li type="disc">
+<p>Select Custom Installation, select "Do not create a starter database" from the Select Database Configuration page.</p>
+</li>
+<li type="disc">
+<p>Select Advanced Installation, select the Custom installation type from the Select Installation Type page, and select No on the Create Database page when prompted to create the database.</p>
+</li>
+<li type="disc">
+<p>Cancel DBCA from the Configuration Assistants page.</p>
+</li>
+</ul>
+<p>After installation, run the appropriate configuration assistant for your needs:</p>
+<ul>
+<li type="disc">
+<p>To create a new database, run DBCA from the Start Menu. Choose Start, then Programs, then Oracle - <span class="italic">HOME_NAME, then</span> Configuration and Migration Tools, and then Database Configuration Assistant.</p>
+</li>
+<li type="disc">
+<p>To upgrade an existing database, run DBUA from the Start Menu. Choose Start, then Programs, then Oracle - <span class="italic">HOME_NAME, then</span> Configuration and Migration Tools, and then Database Upgrade Configuration Assistant.</p>
+</li>
+</ul>
+<p>To ensure that all nodes in your cluster use the new Oracle home, ensure that the path name for the new Oracle home is defined on each node in the cluster by completing the following procedure:</p>
+<ol type="1" start="1">
+<li>
+<p>On each node, navigate to Start, then to Control Panel, then to System, then to Advanced and then to Environment Variables</p>
+</li>
+<li>
+<p>In the <a id="sthref477" name="sthref477"></a><a id="sthref478" name="sthref478"></a>"System variables" dialog, select the Path variable and ensure that the value for the Path variable contains <code><span class="codeinlineitalic">oracle_home</span></code><code>\bin</code>, where <code><span class="codeinlineitalic">oracle_home</span></code> is your new Oracle home. If the variable does not contain this value, then click Edit and add this value to the start of the path variable definition in the Edit System Variable dialog and click OK.</p>
+</li>
+<li>
+<p>Click OK in the <a id="sthref479" name="sthref479"></a><a id="sthref480" name="sthref480"></a>Environment Variables page, then click OK in the System Properties page, and then close the Control Panel.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect1" -->
+<a id="CHDFJFBG" name="CHDFJFBG"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref481" name="sthref481"></a>
+<h2><span class="secnum">5.5</span> De-Installing Real Application Clusters Software</h2>
+<p>If you need to de-install Real Application Cluster software, then you must run the OUI to de-install the software on the same node from which you performed the installation, and you must de-install the Oracle database software first before de-installing the Oracle Clusterware software.</p>
+<p>Perform the following procedures to de-install Oracle Database 10<span class="italic">g</span> RAC and Oracle Clusterware software, as described in the following sections:</p>
+<ul>
+<li type="disc">
+<p><a href="#BABDFCCB">De-Installing Oracle Database 10<span class="italic">g</span> RAC Software</a></p>
+</li>
+<li type="disc">
+<p><a href="#CBHGDCGD">De-Installing Oracle Clusterware from Windows Environments</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABHHIAA">De-Installing Automatic Storage Management</a></p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+These sections describe a complete de-installation of the RAC, ASM, and Oracle Clusterware software where RAC and ASM share the Oracle home and no other Oracle home exists.
+<p>If you have multiple Oracle homes on the cluster, then check for any dependencies that might affect your other databases. Such dependencies can include listeners, ASM instances, and so on that run in the Oracle home to be deleted. To identify dependencies, review the <code>oratab</code> file to identify common Oracle homes.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic"><a class="olinkSRC RACAD" href="http://www.oracle.com/pls/db102/to_bookid?id=RACAD">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</a></span> for more information about using RAC scalability features of adding and deleting nodes and instances from RAC databases, and for information about viewing OCR content</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></li>
+</ul>
+<a id="BABDFCCB" name="BABDFCCB"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref482" name="sthref482"></a>
+<h3><span class="secnum">5.5.1</span> De-Installing Oracle Database 10<span class="italic">g</span> RAC Software</h3>
+<p>This section describes the procedure to<a id="sthref483" name="sthref483"></a> de-install the Oracle Database 10<span class="italic">g</span> RAC software. Before you perform these steps, Oracle recommends that you make a backup of any databases that run from the Oracle home you are about to delete. You should then stop any instances and processes on all nodes, including services, that depend on the software that you are de-installing.</p>
+<ol type="1" start="1">
+<li>
+<p>Drop all of the databases that are dependent on the Oracle home that you are deleting by using DBCA "Delete a database" option and selecting the correct database or databases to be dropped.</p>
+</li>
+<li>
+<p>Drop any existing Oracle Database 10g with RAC software by using DBCA "Delete a database" option, and selecting the correct database or databases to be dropped.</p>
+</li>
+<li><a id="BABJJHFJ" name="BABJJHFJ"></a>
+<p>If the database is in the Oracle home from which the ASM database runs, then ensure that there are no other database dependencies on these group of ASM instances, and then remove the ASM configuration by logging on as the <code>oracle</code> user and completing the following steps:</p>
+<ol type="a">
+<li><a id="BABDEIGG" name="BABDEIGG"></a>
+<p>Connect to the ASM instance and run the following command to determine database instances using this ASM instance.:</p>
+<pre xml:space="preserve" class="oac_no_warn">SQL&gt; select INSTANCE_NAME from GV$ASM_CLIENT;
+
+</pre>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+This command only lists database instances that are running. It is possible that other instances are associated with the ASM instance, but they are not currently running. If you removed a database from this Oracle home but the output from the command shows that this ASM instance is supporting a database instance in another Oracle home, then do not remove the ASM instance or the Oracle home.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</li>
+<li>
+<p>For each instance listed in the output of the statement you run in Step <a href="#BABDEIGG">a</a>, stop the respective databases.</p>
+</li>
+<li>
+<p>Oracle recommends that you back up the database files for all of the databases that are currently using this ASM instance.</p>
+</li>
+<li><a id="BABHEFGH" name="BABHEFGH"></a>
+<p>Using your connection to the ASM instance, run the following command:</p>
+<pre xml:space="preserve" class="oac_no_warn">SQL&gt; select * from V$ASM_DISKGROUP;
+
+</pre></li>
+<li>
+<p>For each diskgroup listed in the output of the statement you run in Step <a href="#BABHEFGH">d</a>, run the following command:</p>
+<pre xml:space="preserve" class="oac_no_warn">SQL&gt; drop diskgroup <span class="italic">diskgroup_name</span> including contents;
+
+</pre>
+<p>where <code><span class="codeinlineitalic">diskgroup_name</span></code> is the name of the diskgroup.</p>
+</li>
+<li>
+<p>Shut down ASM on all RAC nodes, and verify that all ASM instances are stopped.</p>
+</li>
+<li>
+<p>Run the OUI. On the Welcome page, click <span class="bold">Deinstall Products</span> to de-install the Oracle home from which ASM was running.</p>
+</li>
+<li>
+<p>To remove the ASM entry from the OCR, run the following command for all nodes on which this Oracle home exists:</p>
+<pre xml:space="preserve" class="oac_no_warn">srvctl remove asm -n <span class="italic">nodename</span>
+
+</pre>
+<p>where <code><span class="codeinlineitalic">nodename</span></code> is the name of a node from which you want to remove the ASM instance.</p>
+</li>
+<li><a id="CIGEAICB" name="CIGEAICB"></a>
+<p>If you are using a shared cluster file system for your Oracle home, then run the following commands on the local node:</p>
+<pre xml:space="preserve" class="oac_no_warn">delete %ORACLE_HOME%\database\*ASM*
+delete %ORACLE_BASE%\admin\+ASM
+
+</pre>
+<p>You may need to remove subordinate files or directories before these commands complete successfully.</p>
+</li>
+<li>
+<p>If you are not using a shared cluster file system for your Oracle home, then run the commands from the previous step, Step <a href="#CIGEAICB">i</a>, on <span class="italic">each</span> node on which the Oracle home exists.</p>
+</li>
+<li>
+<p>Run the following command on each node that has an ASM instance:</p>
+<pre xml:space="preserve" class="oac_no_warn">oradim -delete -asmsid +ASM<span class="italic">node_number</span>
+
+</pre>
+<p>where <code><span class="codeinlineitalic">node_number</span></code> is the node identifier.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>If the listener runs from this Oracle home, then use NETCA to remove the listener and its configuration.</p>
+</li>
+<li>
+<p>If the RAC software you are deleting uses a different Oracle home from the Oracle home that your ASM environment uses, then start OUI. On the Welcome page, click <span class="bold">Deinstall Products</span> to display the list of installed products on which you can select the Oracle home to de-install.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+You cannot perform a RAC installation from the same OUI session in which you perform a RAC de-installation. In other words, if you de-install RAC with the OUI and want to perform another RAC installation. then you must start a new OUI session.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="CBHGDCGD" name="CBHGDCGD"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref484" name="sthref484"></a>
+<h3><span class="secnum">5.5.2</span> De-Installing Oracle Clusterware from Windows Environments</h3>
+<p>De-install each Oracle Database 10<span class="italic">g</span> RAC home by running the procedure in the previous section, <a href="#BABDFCCB">"De-Installing Oracle Database 10<span class="italic">g</span> RAC Software"</a>. Then complete the <a id="sthref485" name="sthref485"></a>de-installation by removing the Oracle Clusterware software using one of the following procedures:</p>
+<ul>
+<li type="disc">
+<p><a href="#BABEIEFI">De-Installing Oracle Clusterware with No Previous Cluster Software Versions</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABCIHAJ">De-Installing Oracle Clusterware, with Clusterware Downgrade to 9.2</a></p>
+</li>
+</ul>
+<a id="BABEIEFI" name="BABEIEFI"></a>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref486" name="sthref486"></a>
+<h4><span class="secnum">5.5.2.1</span> De-Installing Oracle Clusterware with No Previous Cluster Software Versions</h4>
+<p>Perform the following steps to <a id="sthref487" name="sthref487"></a>de-install Oracle 10<span class="italic">g</span> Oracle Clusterware software from a Windows environment:</p>
+<ol type="1" start="1">
+<li>
+<p>Stop and remove the Oracle Clusterware node applications on each node that is associated with the Oracle home that you are deleting. Do this by running the following command for all of the nodes that are affected by the deletion of the Oracle home:</p>
+<pre xml:space="preserve" class="oac_no_warn">srvctl stop nodeapps -n <span class="italic">node_name</span>
+
+</pre>
+<p>where <code><span class="codeinlineitalic">node_name</span></code> is the node name. Repeat this command for each node in the cluster.</p>
+<p>Then remove the Oracle Clusterware node applications by running the following commands:</p>
+<pre xml:space="preserve" class="oac_no_warn">svrctl remove nodeapps -n <span class="italic">node_name</span>
+
+</pre>
+<p>where <code><span class="codeinlineitalic">node_name</span></code> is the node name. Repeat this command for each node in the cluster, responding to any operating-system prompts to confirm your operations for each node.</p>
+</li>
+<li>
+<p>Click Start and navigate to Settings, then to Control Panel, then to Administrative Tools, and then to Services. Stop the <code>service OracleRemExecService</code>.</p>
+</li>
+<li>
+<p>Start OUI. On the Welcome page, click <span class="bold">Deinstall Products</span> to display the list of installed products. Select the Oracle Clusterware home you want to de-install.</p>
+</li>
+<li>
+<p>If you have services with names such as <code>OracleCRSToken</code><code><span class="codeinlineitalic">name</span></code>, then remove them by running the following command:</p>
+<pre xml:space="preserve" class="oac_no_warn">crsuser remove <span class="italic">user_name</span>
+
+</pre>
+<p>where <code><span class="codeinlineitalic">user_name</span></code> is a user name.</p>
+</li>
+<li>
+<p>Shut down and restart each node that is a member of your cluster.</p>
+</li>
+<li>
+<p>If you are not using a cluster file system, then on <span class="italic">each</span> node, use Windows Explorer to delete the Oracle directory, its subdirectories, and their contents.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="BABCIHAJ" name="BABCIHAJ"></a>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref488" name="sthref488"></a>
+<h4><span class="secnum">5.5.2.2</span> De-Installing Oracle Clusterware, with Clusterware Downgrade to 9.2</h4>
+<p>Perform the following procedures to de-install the Oracle 10<span class="italic">g</span> Oracle Clusterware software from a Windows environment that also has 9.2 RAC:</p>
+<ol type="1" start="1">
+<li>
+<p>Run <code><span class="codeinlineitalic">CRS_Home</span></code><code>\bin\GuiOracleOBJManager.exe</code> to make sure that the symbolic link named <code>srvcfg</code> exists and points to a disk partition, if you are not using OCFS to store the OCR.</p>
+</li>
+<li>
+<p>If Oracle9<span class="italic">i</span> release 9.2 clusterware uses OCFS, then ensure the following is true for all nodes:</p>
+<ul>
+<li type="disc">
+<p>The registry key <code>HKLM\SOFTWARE\Oracle\osd9i\ocr</code> exists</p>
+</li>
+<li type="disc">
+<p>The registry key <code>HKLM\SOFTWARE\Oracle\osd9i\ocr</code> has a string value <code>CfsOcrRoot</code> that points to a release 9.2 OCR (OCFS) location</p>
+</li>
+</ul>
+</li>
+<li>
+<p>On each node, use the following command to stop all node processes (virtual IPs, gsds, and ons):</p>
+<pre xml:space="preserve" class="oac_no_warn">srvctl stop nodeapps -n <span class="italic">nodename</span>
+
+</pre>
+<p>In the preceding syntax example, replace the variable <code><span class="codeinlineitalic">nodename</span></code> with the name of the node on which you want to stop node processes. Shut down all clusterware processes.</p>
+</li>
+<li>
+<p>Run <code><span class="codeinlineitalic">CRS_Home</span></code><code>\bin\ocrconfig -downgrade -version 9.2</code> to downgrade the Cluster Registry to a release 9.2 OCR.</p>
+</li>
+<li>
+<p>On each node, copy <code><span class="codeinlineitalic">CRS_Home</span></code><code>\cfs\OcfsFindVol.exe</code> to <code>%SYSTEMROOT%\system32\osd9i\cfs</code>.</p>
+</li>
+<li>
+<p>Run <code><span class="codeinlineitalic">CRS_Home</span></code><code>\oui\bin\setup.exe</code> to start OUI. On the Welcome page click <span class="bold">Deinstall products</span> to list all the installed products. Select the <span class="bold">Oracle Clusterware home name</span> from the displayed products, and click <span class="bold">Remove</span> to deconfigure and de-install the product.</p>
+</li>
+<li>
+<p>On each node, run <code>%SYSTEMROOT%\system32\osd9i\olm\OracleOBJService.exe /install</code> to re-install the Oracle 9.2 object service. Then start <code>Oracle Object Service</code>.</p>
+</li>
+<li>
+<p>On each node, run <code>%SYSTEMROOT%\system32\osd9i\cfs\OcfsFindVol.exe /i:%SYSTEMROOT%\system32\osd9i\cfs\OcfsFindVol.exe</code> to re-install the Oracle Cluster Volume service. Then start the <code>OracleClusterVolumeService</code>.</p>
+</li>
+<li>
+<p>From an Oracle9<span class="italic">i</span> Release 9.2 RAC Oracle home on each node run the command <code><span class="codeinlineitalic">ORACLE_HOME</span></code><code>\bin\gsdservice.exe -install</code>. Then start the <code>OracleGSDServic</code>e.</p>
+</li>
+<li>
+<p>On each node, copy <code>%SYSTEMROOT%\system32\osd9i\orafencedrv.sys %SYSTEMROOT%\system32\drivers\orafenceservice.sys</code></p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="BABHHIAA" name="BABHHIAA"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref489" name="sthref489"></a>
+<h3><span class="secnum">5.5.3</span> De-Installing Automatic Storage Management</h3>
+<p>To remove the Automatic Storage Management (ASM) instances, complete the following tasks:</p>
+<ol type="1" start="1">
+<li>
+<p>There is one listener for each node that Oracle Clusterware manages, and that is started and stopped with nodeapps. It is named <span class="italic">nodename</span>_LISTENER, and it is located in the Oracle home. Use NetCA to remove this listener and its Oracle Clusterware resources. If necessary, re-create this listener in another Oracle home.</p>
+</li>
+<li>
+<p>If this is the Oracle home from which the ASM instance runs, then enter the following commands to remove the ASM configuration:</p>
+<pre xml:space="preserve" class="oac_no_warn">$ srvctl stop asm -n node
+$ srvctl remove asm -n node
+
+</pre></li>
+<li>
+<p>If you are not using a cluster file system for your ASM Oracle home, then run the Server Control stop and remove commands listed in the previous step on each node on which the Oracle home exists.</p>
+</li>
+<li>
+<p>If you are using a shared cluster file system for your ASM Oracle home, then run the following commands on the local node:</p>
+<pre xml:space="preserve" class="oac_no_warn">delete %ORACLE_HOME%\database\*ASM*
+delete %ORACLE_BASE%\admin\+ASM
+
+</pre>
+<p>You may need to remove subordinate files or directories before these commands complete successfully.</p>
+</li>
+<li>
+<p>If you are not using a shared cluster file system for your ASM Oracle home, then run the commands from the previous step, step 4, on <span class="italic">each</span> node on which the Oracle home exists.</p>
+</li>
+<li>
+<p>Run the following command on each node:</p>
+<pre xml:space="preserve" class="oac_no_warn">%ORACLE_HOME%\bin\oradim.exe -delete -asmsid +ASM<span class="italic">node_number</span>
+
+</pre>
+<p>where <code><span class="codeinlineitalic">node_number</span></code> is the node identifier.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" --></div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="crswin.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="dbcacrea.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

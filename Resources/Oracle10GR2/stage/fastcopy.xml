@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="US-ASCII" standalone="yes"?>
+<!-- Copyright (c) 2005 Oracle Corporation. All Rights Reserved. -->
+<!-- Do not modify the contents of this file by hand. -->
+
+<FASTCOPY DISKS="1" DIR="fastcopy" VERSION="10.2" >
+
+  <TOPLEVEL_COMPONENT NAME="oracle.server" INSTALL_TYPE="EE" PLATFORM="NT_X86">
+    <DEFAULT_JARS_LIST DISK="1"> oracle.server_EE_1.xml </DEFAULT_JARS_LIST>
+    <EXPANDED_FILES_LIST DISK="1"> oracle.server_EE_exp_1.xml </EXPANDED_FILES_LIST>
+    <DIRS_LIST> oracle.server_EE_dirs.lst </DIRS_LIST>
+    <PREPROC_FILEMAP> oracle.server_EE_filemap.jar </PREPROC_FILEMAP>
+  </TOPLEVEL_COMPONENT>
+
+  <TOPLEVEL_COMPONENT NAME="oracle.server" INSTALL_TYPE="SE" PLATFORM="NT_X86">
+    <DEFAULT_JARS_LIST DISK="1"> oracle.server_SE_1.xml </DEFAULT_JARS_LIST>
+    <EXPANDED_FILES_LIST DISK="1"> oracle.server_SE_exp_1.xml </EXPANDED_FILES_LIST>
+    <DIRS_LIST> oracle.server_SE_dirs.lst </DIRS_LIST>
+    <PREPROC_FILEMAP> oracle.server_SE_filemap.jar </PREPROC_FILEMAP>
+  </TOPLEVEL_COMPONENT>
+
+  <TOPLEVEL_COMPONENT NAME="oracle.server" INSTALL_TYPE="PE" PLATFORM="NT_X86">
+    <DEFAULT_JARS_LIST DISK="1"> oracle.server_PE_1.xml </DEFAULT_JARS_LIST>
+    <EXPANDED_FILES_LIST DISK="1"> oracle.server_PE_exp_1.xml </EXPANDED_FILES_LIST>
+    <DIRS_LIST> oracle.server_PE_dirs.lst </DIRS_LIST>
+    <PREPROC_FILEMAP> oracle.server_PE_filemap.jar </PREPROC_FILEMAP>
+  </TOPLEVEL_COMPONENT>
+
+  <TOPLEVEL_COMPONENT NAME="oracle.server" INSTALL_TYPE="Custom" PLATFORM="NT_X86">
+    <DEFAULT_JARS_LIST DISK="1"> oracle.server_Custom_1.xml </DEFAULT_JARS_LIST>
+    <EXPANDED_FILES_LIST DISK="1"> oracle.server_Custom_exp_1.xml </EXPANDED_FILES_LIST>
+    <DIRS_LIST> oracle.server_Custom_dirs.lst </DIRS_LIST>
+    <PREPROC_FILEMAP> oracle.server_Custom_filemap.jar </PREPROC_FILEMAP>
+  </TOPLEVEL_COMPONENT>
+
+  <SETPERMS>
+    <SCRIPT DISK="1"> setperms1.sh </SCRIPT>
+  </SETPERMS>
+
+  <RACFILES> racfiles.jar </RACFILES>
+
+</FASTCOPY>

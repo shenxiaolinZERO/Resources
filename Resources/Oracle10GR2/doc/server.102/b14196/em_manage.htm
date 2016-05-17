@@ -1,0 +1,444 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>3 Getting Started with Oracle Enterprise Manager</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.1.3 Build 116" />
+<meta name="Date" content="June 22, 2005 15:47:53" />
+<meta name="doctitle" content="Oracle&reg; Database 2 Day DBA 10g Release 2 (10.2)" />
+<meta name="partno" content="B14196-01" />
+<meta name="docid" content="ADMQS" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="install.htm" title="Previous" type="text/html" />
+<link rel="Next" href="network.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14196.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database 2 Day DBA<br />
+10<i>g</i> Release 2 (10.2)</b><br />
+Part Number B14196-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="install.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="network.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top"><a href="../b14196.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="CACHGFFI" name="CACHGFFI"></a><a id="sthref113" name="sthref113"></a>
+<h1><span class="secnum">3</span> <a name="ADMQS003" id="ADMQS003"></a>Getting Started with Oracle Enterprise Manager</h1>
+<p><a id="sthref114" name="sthref114"></a>This chapter introduces you to the Oracle Enterprise Manager, the Web-based interface for managing an Oracle database. Understanding this tool is essential to managing the Oracle database as described in the rest of this book.</p>
+<p>This chapter contains the following topics:</p>
+<ul>
+<li type="disc">
+<p><a href="#BABCGBJF">Introduction to the Oracle Enterprise Manager</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABBAIHD">Starting and Stopping the Oracle Enterprise Manager Console</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABHJAGE">Accessing the Oracle Enterprise Manager</a></p>
+</li>
+<li type="disc">
+<p><a href="#CACFCDBE">Granting Database Control Administrative Privileges</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABDJJFF">Setting Up Enterprise Manager Preferences</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABCEIFE">SQL Statements and Other Management Tools: SQL*Plus and <span class="italic">i</span>SQL*Plus</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABDIGDJ">Managing Your Database: A Roadmap</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABDJFDJ">Getting Started: Oracle by Example Series</a></p>
+</li>
+</ul>
+<a id="BABCGBJF" name="BABCGBJF"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref115" name="sthref115"></a>
+<h2>Introduction <a id="sthref116" name="sthref116"></a>to the Oracle Enterprise Manager</h2>
+<p>When you install an Oracle database, the Oracle Universal Installer also installs the Oracle Enterprise Manager. The Web-based Database Control serves as the primary tool for managing your Oracle database and sets a new standard in ease-of-use.</p>
+<p>The following topics introduce you to the Oracle Enterprise Manager Database Control:</p>
+<ul>
+<li type="disc">
+<p><a href="#CACJBBJG">Database Management Features</a></p>
+</li>
+<li type="disc">
+<p><a href="#CACEEDDE">Online Help</a></p>
+</li>
+<li type="disc">
+<p><a href="#CACFFEDC">Navigational Features</a></p>
+</li>
+</ul>
+<a id="CACJBBJG" name="CACJBBJG"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref117" name="sthref117"></a>
+<h3>Database Management Features</h3>
+<p>From the <a id="sthref118" name="sthref118"></a>Oracle Enterprise Manager, you can perform administrative tasks such as creating schema objects (tablespaces, tables, and indexes), managing user security, backing up and recovering your database, and importing and exporting data. You can also view performance and status information about your database instance.</p>
+</div>
+<!-- class="sect2" -->
+<a id="CACEEDDE" name="CACEEDDE"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref119" name="sthref119"></a>
+<h3>Online Help</h3>
+<p><a id="sthref120" name="sthref120"></a>You can access context sensitive online Help by clicking <span class="bold">Help</span> displayed on every page. In addition to viewing the help specific to the task at hand, there is a <span class="bold">View Contents</span> link that takes you to top level Help where you can view a table of contents and link to topics. A search facility enables you to search the contents of Help.</p>
+</div>
+<!-- class="sect2" -->
+<a id="CACFFEDC" name="CACFFEDC"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref121" name="sthref121"></a>
+<h3>Navigational Features</h3>
+<p>Navigational features of Oracle Enterprise Manager include the following:</p>
+<ul>
+<li type="disc">
+<p>Property pages on each home page help you organize management tasks into distinct categories; for example, click Maintenance to perform tasks associated with backing up and maintaining your data.</p>
+<div class="figure"><a id="sthref122" name="sthref122"></a>
+<p class="titleinfigure">Figure 3-1 Database Home Page Navigational Property Pages</p>
+<img src="./hp-propertypages.gif" alt="Description of hp-propertypages.gif follows" title="Description of hp-propertypages.gif follows" /><br />
+<a id="sthref123" name="sthref123" href="./img_text/hp-propertypages.htm">Description of the illustration hp-propertypages.gif</a><br />
+<br /></div>
+<!-- class="figure" --></li>
+<li type="disc">
+<p>Drill down links that provide increasing levels of detail.</p>
+<div class="figure"><a id="BABJBJFA" name="BABJBJFA"></a><a id="sthref124" name="sthref124"></a>
+<p class="titleinfigure">Figure 3-2 Database Home Page Drill Down Links</p>
+<img src="./drilldownlink.gif" alt="Description of drilldownlink.gif follows" title="Description of drilldownlink.gif follows" /><br />
+<a id="sthref125" name="sthref125" href="./img_text/drilldownlink.htm">Description of the illustration drilldownlink.gif</a><br />
+<br /></div>
+<!-- class="figure" -->
+<p>Clicking a link shown in <a href="#BABJBJFA">Figure 3-2</a> provides additional levels of detail about the database host name or listener.</p>
+</li>
+<li type="disc">
+<p>Suggested related links for more information.</p>
+<div class="figure"><a id="sthref126" name="sthref126"></a>
+<p class="titleinfigure">Figure 3-3 Database Home Page Related Links</p>
+<img src="./hp_relatedlinks.gif" alt="Description of hp_relatedlinks.gif follows" title="Description of hp_relatedlinks.gif follows" /><br />
+<a id="sthref127" name="sthref127" href="./img_text/hp_relatedlinks.htm">Description of the illustration hp_relatedlinks.gif</a><br />
+<br /></div>
+<!-- class="figure" --></li>
+</ul>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BABBAIHD" name="BABBAIHD"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref128" name="sthref128"></a>
+<h2>Starting and Stopping the Oracle Enterprise Manager Console</h2>
+<p>To access the Oracle Enterprise<a id="sthref129" name="sthref129"></a><a id="sthref130" name="sthref130"></a><a id="sthref131" name="sthref131"></a> Manager Console from a client browser, the <code>dbconsole</code> process needs to be running on the server. This process is automatically started after installation.</p>
+<p>However, if the process is not running because of a system restart or other event, you can manually start it at the command line.</p>
+<p>To start the <code>dbconsole</code> process:</p>
+<ol type="1" start="1">
+<li>
+<p>Navigate into your <code>ORACLE_HOME/bin</code> directory</p>
+</li>
+<li>
+<p>Run the following statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">./emctl start dbconsole
+
+</pre></li>
+</ol>
+<p>Additionally, you can stop the process and view its status.</p>
+<p>To stop the <code>dbconsole</code> process:</p>
+<pre xml:space="preserve" class="oac_no_warn">./emctl stop dbconsole
+
+</pre>
+<p>To view the status of the <code>dbconsole</code> process:</p>
+<pre xml:space="preserve" class="oac_no_warn">./emctl status dbconsole
+</pre>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref132" name="sthref132"></a>
+<h3>Starting dbconsole in Windows</h3>
+<p>In Windows, in addition to using the command line, you can start the <code>dbconsole</code> process as a service.</p>
+<p>To start <code>dbconsole</code> as a service:</p>
+<ol type="1" start="1">
+<li>
+<p>Click Start, Control Panel, Administrative Tools, Services. The Services page appears.</p>
+</li>
+<li>
+<p>Oracle services begin with <code>Oracle</code>. The <code>dbconsole</code> service is listed as <code>OracleDBConsole</code><code><span class="codeinlineitalic">ORACLE_SID</span></code>, where <code><span class="codeinlineitalic">ORACLE_SID</span></code> is your SID. The status of this process is listed in the Status column, either Started or Stopped. Double click the service. The property page appears.</p>
+</li>
+<li>
+<p>In the properties page, ensure that the Startup Type is either Manual or Automatic and not Disabled. Click <span class="bold">Start</span>, if the process is not already started. Click <span class="bold">OK</span>.</p>
+</li>
+</ol>
+<p>You can also use the Services page to stop the process.</p>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BABHJAGE" name="BABHJAGE"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref133" name="sthref133"></a>
+<h2>Accessing<a id="sthref134" name="sthref134"></a> the Oracle Enterprise Manager</h2>
+<p>At the end of a successful database creation, Oracle Enterprise Manager is automatically launched and the database is started. At other times, provided the dbconsole process is running on the server, you can navigate to your Database Control from your client browser as follows:</p>
+<ol type="1" start="1">
+<li>
+<p>Point your Web browser to the following URL:</p>
+<p><code>http://hostname:portnumber/em</code></p>
+<p>For example, if you installed the database on a host computer named <code>comp42</code>, and the installer indicated that your Enterprise Manager Console HTTP port number is 5500 (also recorded in the <code>$ORACLE_HOME/install/portlist.ini</code> file), enter the following URL:</p>
+<p><code>http://comp42:5500/em</code></p>
+<p>If the database is up, Enterprise Manager displays the Database Control Login page.</p>
+<p>If the database is down and needs to be re-started, Enterprise Manager displays the Startup/Shutdown and Perform Recovery page. If this is the case, click Startup/Shutdown. You are then prompted for the host and target database login usernames and passwords, which you must enter. For the database user and password, use <code>SYS</code> and the password you specified during installation.</p>
+<p>Click <span class="bold">OK</span> to start the database. In the Confirmation screen, click <span class="bold">YES</span> to start the database in open mode.</p>
+</li>
+<li>
+<p>Log in to the database using a username that is authorized to access the Database Control. This initially could be <code>SYS</code> or <code>SYSTEM</code>. Use the password you specified for the account during the database installation.</p>
+<p>Enterprise Manager displays the Database Home page (<a href="#CACCHBGG">Figure 3-4</a>).</p>
+<p>The property pages across the top of the page enable you to access performance, administration, and maintenance pages for managing your database. The functionality provided by these pages is discussed in other chapters of this book.</p>
+<p>The various sections of the Database Home page and related links provide information about the database's environment and health. For example, the <span class="bold">Alerts</span>, <span class="bold">Related Alerts</span>, and <span class="bold">Diagnostic Summary</span> sections warn you of errors and performance problems that are impacting the operation of your database. You can click the provided links to see more detail about the problem area, and even to obtain recommendations for resolving the problem. This is discussed in <a href="montune.htm#CHDDAFBD">Chapter 10, "Monitoring and Tuning the Database"</a>.</p>
+<div class="figure"><a id="CACCHBGG" name="CACCHBGG"></a><a id="sthref135" name="sthref135"></a>
+<p class="titleinfigure">Figure 3-4 Database Home Page</p>
+<img src="./homepageR2.gif" alt="Description of homepageR2.gif follows" title="Description of homepageR2.gif follows" /><br />
+<a id="sthref136" name="sthref136" href="./img_text/homepageR2.htm">Description of the illustration homepageR2.gif</a><br />
+<br /></div>
+<!-- class="figure" --></li>
+</ol>
+</div>
+<!-- class="sect1" -->
+<a id="CACFCDBE" name="CACFCDBE"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref137" name="sthref137"></a>
+<h2>Granting Database Control<a id="sthref138" name="sthref138"></a> Administrative Privileges</h2>
+<p>When you log in to the Oracle Enterprise Manager using the <code>SYS</code> or <code>SYSTEM</code> user account, you are logging in as the Oracle Enterprise Manager super user. These are the only accounts that are automatically granted the roles and privileges required to access all the management functionality provided the Database Control.</p>
+<p>To grant management access to other database users, use the following procedure:</p>
+<ol type="1" start="1">
+<li>
+<p>Start your Web browser and log in to the Database Control as the <code>SYS</code> or <code>SYSTEM</code> database user.</p>
+</li>
+<li>
+<p>Click <span class="bold">Setup</span> at the top of the Database Home page.</p>
+</li>
+<li>
+<p>Click <span class="bold">Administrators</span> in the left navigation bar.</p>
+<p>If you need to create a new administrator, you must first create the user and then assign administrative privileges as described in this section. To create a new user, see <a href="users_secure.htm#CHDEBHDE">"Administering Database Users"</a></p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span> to create a new Enterprise Manager user by assigning the management privileges to an existing database user.</p>
+</li>
+<li>
+<p>Click the flashlight icon next to the Name field and select an existing database user from the pop-up window.</p>
+</li>
+<li>
+<p>Enter the password for the selected user and click <span class="bold">Finish</span>.</p>
+</li>
+</ol>
+<p>Enterprise Manager assigns the management privileges to the selected user. The selected database user is now included in the list of management users on the Setup Administrators page. All the users shown on this page can log in to the Database Control and perform database management tasks.</p>
+</div>
+<!-- class="sect1" -->
+<a id="BABDJJFF" name="BABDJJFF"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref139" name="sthref139"></a>
+<h2>Setting Up Enterprise Manager Preferences</h2>
+<p>Enterprise Manager enables you to set up preferences that help you manage the database. These include the following:</p>
+<ul>
+<li type="disc">
+<p>Notification&#x2014;<a id="sthref140" name="sthref140"></a>These are settings that enable Oracle to email you alert notifications. Alerts are notifications of when a database is in an undesirable state and needs your attention. By default, the Enterprise Manager home page lists all alerts. However, set up is required for e-mail notification. For more information about alerts and setting up notifications, see <a href="montune.htm#CBBDBJFI">"Setting up Notification"</a> in <a href="montune.htm#CHDDAFBD">Chapter 10, "Monitoring and Tuning the Database"</a>.</p>
+</li>
+<li type="disc">
+<p>Blackout Administration<a id="sthref141" name="sthref141"></a>&#x2014;When you have planned downtime for database maintenance, you can indicate to Oracle that you do not want false alerts to be sent to you. To do so, you define a blackout period. See <a href="#g1092839">"Defining Blackout Time Periods"</a> in this section.</p>
+</li>
+<li type="disc">
+<p>Preferred Credentials&#x2014;Enter<a id="sthref142" name="sthref142"></a>prise Manager can automatically execute many routine administrative tasks, such as backups, on your behalf. This is done using sophisticated job scheduling system built into the Enterprise. To keep your environment secure, setting up tasks for automatic execution in Enterprise Manger requires you to provide login information for the machine and database. To avoid having to enter this information every time you create a job or task, Enterprise Manager enables you to save this information as preferred credentials. Preferred credentials are stored in the database in encrypted mode to protect it from unauthorized use. See <a href="#g1092758">"Setting Preferred Credentials"</a> in this section.</p>
+</li>
+</ul>
+<a id="g1092839" name="g1092839"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref143" name="sthref143"></a>
+<h3>Defining Blackout Time Periods</h3>
+<p><a id="sthref144" name="sthref144"></a>When you plan to bring your database down for maintenance, you can indicate that you do not want alert notifications to be sent to you. Alerts are notifications of when the database is in an undesirable state and needs your attention. For more information about alerts, see <a href="montune.htm#CBBGDIBJ">"Alerts"</a>.</p>
+<p>To define a blackout time period, follow these steps</p>
+<ol type="1" start="1">
+<li>
+<p>From the home page, click <span class="bold">Setup</span> at the top of the page. The Setup page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Blackouts</span> in the left hand pane. The Blackouts page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>. This starts the Create Blackout wizard. On the Properties page, name your blackout, enter a reason, and select the target that has planned downtime. Click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>On the Schedule page, enter the start time of your planned blackout, or choose immediately if you are bringing the database down now. Also select the duration of the blackout, either as indefinite, as a length or time, or until a time in the future. Under Repeating, accept the default of Do Not Repeat. If you want to repeat the blackout periodically, you can select a repeat frequency in the pull down menu. Click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>The review page appears. Review what you have entered, and if satisfied, click <span class="bold">Finish</span>. If not, you can click Back to change a setting.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="g1092758" name="g1092758"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref145" name="sthref145"></a>
+<h3>Setting Preferred Credentials</h3>
+<p><a id="sthref146" name="sthref146"></a><a id="sthref147" name="sthref147"></a>You can have Enterprise Manager automatically fill in host and database login credentials for you, such as when you schedule jobs and tasks to perform administrative operations like backup and recovery. For security, Oracle stores preferred credentials in encrypted mode.</p>
+<p>To set preferred credentials for the database, do the following:</p>
+<ol type="1" start="1">
+<li>
+<p>From the home page, click <span class="bold">Preferences</span> at the top of the page. The Preferences page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Preferred Credentials</span> in the left hand pane. The Preferred Credentials page appears. For the Database target, click the icon under Set Credentials. The Database Preferred Credentials page appears.</p>
+</li>
+<li>
+<p>For your database, enter the credentials for Normal Username/Password, SYSDBA Username/Password, and Host Username/Password.</p>
+</li>
+<li>
+<p>Click <span class="bold">Test</span> to test your credentials. You should get a confirmation message if your credentials can be verified.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply</span> to apply the changes.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BABCEIFE" name="BABCEIFE"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref148" name="sthref148"></a>
+<h2>SQL Statements and Other Management Tools: SQL*Plus and <span class="italic">i</span>SQL*Plus</h2>
+<p>Enterprise Manager is a Web-based graphical interface that enables you to perform management operations on the database like startup and shutdown, object creation, and schema management.</p>
+<p>The underlying operations are performed using<a id="sthref149" name="sthref149"></a> Structured Query Language (SQL) statements. SQL is an English-like computer programming language for accessing and manipulating data contained in a database. It is an industry-standard language for accessing databases, including those provided by vendors other than Oracle.</p>
+<p>The following is an example of a SQL query:</p>
+<pre xml:space="preserve" class="oac_no_warn">SELECT COUNTRY_ID, COUNTRY_NAME FROM HR.COUNTRIES;
+
+</pre>
+<p>SQL is a powerful language and can be used to perform a variety of database administrative tasks. While performing these tasks, you can click Show SQL to see the underlying SQL statements being issued.</p>
+<p>For more details on this language, see <a class="olinkSRC SQLRF" href="http://www.oracle.com/pls/db102/to_bookid?id=SQLRF"><span class="italic">Oracle Database SQL Reference</span></a>.</p>
+<p>In addition to Enterprise Manager, you can use other Oracle tools to issue SQL statements such as SQL*Plus and its Web version <span class="italic">i</span>SQL*Plus. These tools enable you to perform the same database management operations, as well as to query, insert, update or delete data directly in the database.</p>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref150" name="sthref150"></a>
+<h3>Starting SQL*Plus</h3>
+<p><a id="sthref151" name="sthref151"></a>SQL*Plus is a command line program you use to issue SQL statements to an Oracle database. You can issue these statements interactively or in batch. SQL*Plus comes with your Oracle installation and is located in your <code>$ORACLE_HOME/bin</code> directory.</p>
+<p>To start SQL*Plus, enter the following at the command line on all platforms:</p>
+<pre xml:space="preserve" class="oac_no_warn">sqlplus username/password
+
+</pre>
+<p>You can use the <code>SYS</code> administrative user and password you set up during installation. SQL*Plus starts and connects you to the default database. At the SQL prompt, you can enter statements that perform administrative tasks such as database startup and shutdown. You can also query, insert, update and delete data.</p>
+<p>On Windows, you can use the SQL*Plus Windows GUI. To start this, select Start-&gt;Programs-&gt;Oracle-OraDB10g_home1-&gt;Application Development-&gt;SQL*Plus.</p>
+<p>For more information about SQL*Plus, see <a class="olinkSRC SQPUG" href="http://www.oracle.com/pls/db102/to_bookid?id=SQPUG"><span class="italic">SQL*Plus User's Guide and Reference</span></a>.</p>
+<p>For more information about SQL statements, see <a class="olinkSRC SQLRF" href="http://www.oracle.com/pls/db102/to_bookid?id=SQLRF"><span class="italic">Oracle Database SQL Reference</span></a>.</p>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref152" name="sthref152"></a>
+<h3>Starting <span class="italic">i</span>SQL*Plus</h3>
+<p><span class="italic">i</span>SQL*Plus is <a id="sthref153" name="sthref153"></a>the Web version of SQL*Plus. Before you can connect to it with a URL, you must start the <span class="italic">i</span>SQL*Plus application server. To do so, enter the following at the command line:</p>
+<pre xml:space="preserve" class="oac_no_warn">isqlplusctl start
+
+</pre>
+<p>After the server is started, you can connect to <span class="italic">i</span>SQL*Plus with a URL such as</p>
+<pre xml:space="preserve" class="oac_no_warn">http://<span class="italic">machine_name</span>:5560/isqlplus
+
+</pre>
+<p>Alternatively, you can connect to <span class="italic">i</span>SQL*Plus using Enterprise Manger. To do so from the home page, click <span class="bold">iSQL*Plus</span> under Related Links.</p>
+<p>For more information about <span class="italic">i</span>SQL*Plus, see <a class="olinkSRC SQPUG" href="http://www.oracle.com/pls/db102/to_bookid?id=SQPUG"><span class="italic">SQL*Plus User's Guide and Reference</span></a>.</p>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BABDIGDJ" name="BABDIGDJ"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref154" name="sthref154"></a>
+<h2>Managing Your Database: A Roadmap</h2>
+<p><a id="sthref155" name="sthref155"></a>The following are some specific tasks to perform to become familiar with your database. They are presented as links to the chapters that contain information about these tasks and other related database management tasks.</p>
+<ol type="1" start="1">
+<li>
+<p>Start up your instance and open the database. At the end of installation, your instance is already started and your database is open. In the future there will be times, perhaps for doing database maintenance or because of a power or media failure, that you shut down your database or instance and later restart it. See <a href="instance.htm#CACCCCBC">"Shutting Down and Restarting the Instance and Database"</a>.</p>
+</li>
+<li>
+<p>Optionally configure the network environment to enable clients to connect to your database. See <a href="network.htm#CHDFHIFE">Chapter 4, "Configuring the Network Environment"</a>.</p>
+</li>
+<li>
+<p>Review your database storage structure: tablespaces and datafiles, redo log files, and control files. See <a href="storage.htm#CHDIFFDC">Chapter 6, "Managing Database Storage Structures"</a>.</p>
+</li>
+<li>
+<p>Review, unlock, and reset passwords as necessary for initial database users. Create new users and assign privileges and roles to them. See <a href="users_secure.htm#CHDJBHHI">Chapter 7, "Administering Users and Security"</a>.</p>
+</li>
+<li>
+<p>Create users and necessary schema objects, including tablespaces and tables. Populate tables with data. See <a href="schema.htm#CFHJAHAA">Chapter 8, "Managing Schema Objects"</a>.</p>
+</li>
+<li>
+<p>Review a backup strategy for the database and back up the database. See <a href="backrest.htm#CIHEHFJJ">Chapter 9, "Performing Backup and Recovery"</a>.</p>
+</li>
+<li>
+<p>Enable archiving of redo logs, if not already done. See <a href="backrest.htm#i1006225">"Configuring Your Database for Basic Backup and Recovery"</a>.</p>
+</li>
+<li>
+<p>Monitor database performance, diagnose performance problems and tune the database as necessary. See <a href="montune.htm#CHDDAFBD">Chapter 10, "Monitoring and Tuning the Database"</a>.</p>
+</li>
+<li>
+<p>Keep Oracle software up-to-date with the latest patch releases. See <a href="software.htm#CHDBJFDC">Chapter 11, "Managing Oracle Software"</a>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect1" -->
+<a id="BABDJFDJ" name="BABDJFDJ"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref156" name="sthref156"></a>
+<h2>Getting Started: Oracle by Example Series</h2>
+<p>Oracle by Example (OBE) has a series on the <span class="italic">Oracle Database 2 Day DBA</span> book. This OBE steps you through the tasks in this chapter, and includes annotated screen shots.</p>
+<p>To view the Getting Started OBE, point your browser to the following location:</p>
+<pre xml:space="preserve" class="oac_no_warn"><a href="http://www.oracle.com/technology/obe/10gr2_2day_dba/gettingstarted/gettingstarted.htm">http://www.oracle.com/technology/obe/10gr2_2day_dba/gettingstarted/gettingstarted.htm</a>
+</pre></div>
+<!-- class="sect1" --></div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="install.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="network.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;2004, 2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

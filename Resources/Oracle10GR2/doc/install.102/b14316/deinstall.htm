@@ -1,0 +1,723 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>6 Removing Oracle Database Software</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.5 Build 272" />
+<meta name="Date" content="August 18, 2005 19:51:01" />
+<meta name="doctitle" content="Oracle&reg; Database Installation Guide 10g Release 2 (10.2) for Microsoft Windows (32-Bit)" />
+<meta name="partno" content="B14316-01" />
+<meta name="docid" content="NTDBI" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Glossary" href="glossary.htm" title="Glossary" type="text/html" />
+<link rel="Prev" href="startrdb.htm" title="Previous" type="text/html" />
+<link rel="Next" href="faq.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14316.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database Installation Guide<br />
+10<i>g</i> Release 2 (10.2) for Microsoft Windows (32-Bit)</b><br />
+Part Number B14316-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="startrdb.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="faq.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top"><a href="../b14316.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="CIHDGGJJ" name="CIHDGGJJ"></a><a id="sthref882" name="sthref882"></a>
+<h1 class="chapter"><span class="secnum">6</span> <span class="bold"><a name="NTDBI006" id="NTDBI006"></a></span> Removing Oracle Database Software</h1>
+<p><a id="ABC1638131" name="ABC1638131"></a><a id="ABC1638131SRI1" name="ABC1638131SRI1"></a><a id="ABC1638131SRI12" name="ABC1638131SRI12"></a><a id="ABC1638131SRI123" name="ABC1638131SRI123"></a>This chapter describes how to remove Oracle databases, instances, and software:</p>
+<ul>
+<li type="disc">
+<p><a href="#BCFBEEAJ">Removing Oracle Cluster Synchronization Services (CSS)</a></p>
+</li>
+<li type="disc">
+<p><a href="#CIHGAHFJ">Removing Oracle HTML DB from the Database</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1008427">Removing All Oracle Database Components</a></p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Always use Oracle Universal Installer to initially remove Oracle components. To avoid installation and configuration problems with new Oracle installations, follow the instructions in this chapter.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p><span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters (RAC) Installation Guide</span> for information about removing an Oracle Real Application Clusters installation</p>
+</li>
+<li type="disc">
+<p><span class="italic">Oracle Database Companion CD Installation Guide for Microsoft Windows (32-Bit)</span> for information about removing an Oracle HTML DB installation</p>
+</li>
+<li type="disc">
+<p>Component-specific documentation for individual requirements and restrictions</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+<a id="BCFBEEAJ" name="BCFBEEAJ"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref883" name="sthref883"></a>
+<h2 class="sect1"><span class="secnum">6.1</span> Removing Oracle Cluster Synchronization Services (CSS)</h2>
+<p><a id="sthref884" name="sthref884"></a>The first time you install Oracle Database, if you selected Automatic Storage Management as a storage and recovery option, Oracle Universal Installer configures and starts a single-instance version of the Oracle Cluster Synchronization Services (CSS) service.</p>
+<p>If you did not choose Automatic Storage Management as a storage/recovery option, you can delete <code>OracleCSService</code>. To delete this service without deleting the Oracle home, perform the following:</p>
+<ol type="1" start="1">
+<li>
+<p>Open a command prompt window.</p>
+</li>
+<li>
+<p>Temporarily set the <code>ORACLE_HOME</code> environment variable. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">set ORACLE_HOME=c:\oracle\product\10.2.0\db_1
+
+</pre></li>
+<li>
+<p>Run the <code>localconfig</code> batch file with the <code>delete</code> option to delete the OracleCSService service. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\&gt; oracle\product\10.2.0\db_1\bin\localconfig delete
+
+</pre></li>
+</ol>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+You do not need to complete this step if you are removing the Oracle home.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="postcfg.htm#BABEDEHD">"Running Oracle Cluster Synchronization Services (CSS) from a Different Oracle Home"</a> for information on configuring the service to use a different Oracle home</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect1" -->
+<a id="CIHGAHFJ" name="CIHGAHFJ"></a>
+<div class="sect1"><a id="sthref885" name="sthref885"></a>
+<h2 class="sect1"><span class="secnum">6.2</span> Removing Oracle HTML DB from the Database<a id="sthref886" name="sthref886"></a><a id="sthref887" name="sthref887"></a><a id="sthref888" name="sthref888"></a></h2>
+<p>This section describes how to remove the Oracle HTML DB <a id="sthref889" name="sthref889"></a>schema, synonyms, and users from the database without deleting the database. If you are going to delete the database, then you do not need to complete these steps.</p>
+<p>After using Oracle Universal Installer to remove Oracle HTML DB from its Oracle home, you can remove Oracle HTML DB components from the database. Perform the following steps:</p>
+<ol type="1" start="1">
+<li>
+<p>Use SQL*Plus to connect to the database as a privileged user, such as <code>SYS</code> or <code>SYSTEM</code>, for example:</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\&gt; sqlplus sys/<span class="italic">SYSpassword</span> as sysdba
+
+</pre></li>
+<li>
+<p>Execute the following commands:</p>
+<pre xml:space="preserve" class="oac_no_warn">SQL&gt; ALTER SESSION SET CURRENT_SCHEMA = flows_010500;
+SQL&gt; EXEC wwv_flow_upgrade.drop_public_synonyms;
+SQL&gt; ALTER SESSION SET CURRENT_SCHEMA = SYSTEM;
+SQL&gt; DROP USER flows_010500 CASCADE;
+SQL&gt; DROP USER flows_files CASCADE;
+SQL&gt; DROP USER htmldb_public_user CASCADE;
+</pre></li>
+</ol>
+</div>
+<!-- class="sect1" -->
+<a id="i1008427" name="i1008427"></a>
+<div class="sect1"><a id="sthref890" name="sthref890"></a>
+<h2 class="sect1"><span class="secnum">6.3</span> Removing All Oracle Database Components<a id="sthref891" name="sthref891"></a><a id="sthref892" name="sthref892"></a></h2>
+<p>Use Oracle Universal Installer to remove Oracle components from the inventory on the computer. Afterwards, you need to manually remove the remaining components.</p>
+<p>Do not delete Oracle home files or directories (for example, using Windows Explorer or the command prompt) without first using Oracle Universal Installer unless you exit Oracle Universal Installer during an installation. Otherwise, the components in the Oracle home remain registered in the Oracle Universal Installer inventory. If you manually delete Oracle home files and you attempt an installation in the same Oracle home, then some or all of the selected components may not be installed or properly configured.</p>
+<p>Oracle Universal Installer does not register the installation in its inventory if the installation is unexpectedly interrupted. However, files may have been copied to your Oracle home. Remove these files manually and restart the installation.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+You can use Database Configuration Assistant (DBCA) to remove an instance and related services. For information about Database Configuration Assistant, see "Installing Oracle and Building the Database" chapter of <span class="italic">Oracle Database 2 Day DBA</span>.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+<p>This section contains these steps:</p>
+<ol type="1" start="1">
+<li>
+<p><a href="#i1008369">Stopping Oracle Services</a></p>
+</li>
+<li>
+<p><a href="#BCFFAEHF">Removing Components with Oracle Universal Installer</a></p>
+</li>
+<li>
+<p><a href="#CIHGGGBB">Manually Removing the Remaining Oracle Database Components</a></p>
+</li>
+</ol>
+<a id="i1008369" name="i1008369"></a>
+<div class="sect2"><a id="sthref893" name="sthref893"></a>
+<h3 class="sect2"><span class="secnum">6.3.1</span> Stopping Oracle Services</h3>
+<p><a id="sthref894" name="sthref894"></a>You must first stop the Oracle services before removing Oracle components.</p>
+<p>Follow these steps:</p>
+<a id="i1019949" name="i1019949"></a>
+<ol type="1" start="1">
+<li>
+<p>Open the Windows <span class="bold">Services</span> utility: From the <span class="bold">Start</span> menu, select <span class="bold">Programs</span>, then then <span class="bold">Administrative Tools</span>, then <span class="bold">Services</span>.</p>
+</li>
+<li>
+<p>If any Oracle services (names begin with <code>Oracle</code> or <code>Ora</code>) exist and have the status <span class="italic">Started</span>, then select each of the services, and click <span class="bold">Stop</span>.</p>
+</li>
+<li>
+<p>Exit <span class="bold">Services</span>.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+The Microsoft online help for more information about stopping services</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect2" -->
+<a id="BCFFAEHF" name="BCFFAEHF"></a>
+<div class="sect2"><a id="sthref895" name="sthref895"></a>
+<h3 class="sect2"><span class="secnum">6.3.2</span> Removing Components with Oracle Universal Installer</h3>
+<p><a id="sthref896" name="sthref896"></a>To remove components with Oracle Universal Installer in interactive mode:</p>
+<ol type="1" start="1">
+<li>
+<p>Ensure that you first follow the instructions in the <a href="#i1008369">"Stopping Oracle Services"</a> section.</p>
+</li>
+<li><a id="i1008464" name="i1008464"></a>
+<p>Start Oracle Universal Installer: From the <span class="bold">Start</span> menu, select <span class="bold">Programs</span>, then <span class="bold">Oracle -</span> <span class="bolditalic">HOME_NAME</span>, then <span class="bold">Oracle Installation Products</span>, then <span class="bold">Universal Installer</span>.</p>
+<p>The Welcome window for Oracle Universal Installer appears.</p>
+</li>
+<li>
+<p>Click the <span class="bold">Deinstall Products</span> button.</p>
+<p>The Inventory window appears.</p>
+</li>
+<li>
+<p>Expand the tree of installed components until you find the components to remove.</p>
+<p>For example, if you installed a database with the Enterprise Edition option and later installed additional components with the Custom option, expand the Oracle home component to display all the components installed in the Oracle home.</p>
+</li>
+<li>
+<p>Select the components to remove.</p>
+</li>
+<li>
+<p>Click <span class="bold">Remove</span>.</p>
+<p>The Confirmation window appears.</p>
+</li>
+<li>
+<p>In the Confirmation dialog box, click <span class="bold">Yes</span> to remove the selected components to initiate the removal process.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+A message may appear indicating that removing some components may cause other components to not function properly.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+<p>After the components are removed from your computer, the Inventory window appears without the removed components.</p>
+</li>
+<li>
+<p>Click <span class="bold">Close</span> to close the Inventory window.</p>
+</li>
+<li>
+<p>Click <span class="bold">Cancel</span> to exit Oracle Universal Installer.</p>
+</li>
+<li>
+<p>Click <span class="bold">Yes</span> to confirm that you want to exit.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="CIHGGGBB" name="CIHGGGBB"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref897" name="sthref897"></a>
+<h3 class="sect2"><span class="secnum">6.3.3</span> Manually Removing the Remaining Oracle Database Components</h3>
+<p><a id="sthref898" name="sthref898"></a>Oracle Universal Installer does not remove all Oracle components. After using Oracle Universal Installer to remove Oracle components, you need to manually remove remaining registry keys, environment variables, <span class="bold">Start</span> menu options, and directories.</p>
+<ol type="1" start="1">
+<li>
+<p><a href="#CIHDEFAD">Removing an Automatic Storage Management Instance</a></p>
+</li>
+<li>
+<p><a href="#CIHIHDAD">Removing Oracle Keys from the Microsoft Registry Editor</a></p>
+</li>
+<li>
+<p><a href="#CIHCJBFE">Updating the System Variable Path</a></p>
+</li>
+<li>
+<p><a href="#CIHJGIDJ">Removing Oracle from the Start Menu</a></p>
+</li>
+<li>
+<p><a href="#CIHDEFBJ">Removing Oracle Directories</a></p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+In rare situations, you may want to correct serious system problems by completely removing Oracle components manually from the computer without first deinstalling with Oracle Universal Installer. Do this only as a last resort, and only if you want to remove all Oracle components from your system.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+<a id="CIHDEFAD" name="CIHDEFAD"></a>
+<div class="sect3"><a id="sthref899" name="sthref899"></a>
+<h4 class="sect3"><span class="secnum">6.3.3.1</span> Removing an Automatic Storage Management Instance<a id="sthref900" name="sthref900"></a><a id="sthref901" name="sthref901"></a></h4>
+<p>To remove an Automatic Storage Management (ASM) instance running in the Oracle home after the database has been removed, perform the following steps:</p>
+<ol type="1" start="1">
+<li>
+<p>At the Windows command prompt, set the <code>ORACLE_SID</code> environment variable to the SID for the Automatic Storage Management instance. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\&gt; set ORACLE_SID=+ASM
+
+</pre></li>
+<li>
+<p>Start SQL*Plus and connect to the Automatic Storage Management instance as the <code>SYS</code> user:</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\&gt; sqlplus sys/<span class="italic">sys_password</span> as sysdba
+
+</pre></li>
+<li>
+<p>Enter the following command to determine whether any Oracle database instance is using the Automatic Storage Management instance:</p>
+<pre xml:space="preserve" class="oac_no_warn">SQL&gt; SELECT INSTANCE_NAME FROM V$ASM_CLIENT;
+
+</pre>
+<p>This command lists all of the database instances that are using this Automatic Storage Management instance. This command only lists database instances that are running. It is possible that other instances are associated with the Automatic Storage Management instance, but they are not currently running.</p>
+<p>If you removed a database from this Oracle home but the output from the command shows that this Automatic Storage Management instance is supporting a database instance in another Oracle home, do not remove the Automatic Storage Management instance or the Oracle home.</p>
+</li>
+<li>
+<p>If there are no database instances associated with this Automatic Storage Management instance, drop the disk group associated with this instance.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Dropping the Automatic Storage Management disk group makes the disk device available for use with another Automatic Storage Management instance if required. However, all data in the disk group is lost. Make sure that no other database instance requires any data from this disk group before you drop it.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+<ol type="a">
+<li>
+<p>Identify the disk groups associated with the Automatic Storage Management instance:</p>
+<pre xml:space="preserve" class="oac_no_warn">SQL&gt; SELECT NAME FROM V$ASM_DISKGROUP;
+
+</pre></li>
+<li>
+<p>For each disk group that you want to delete, enter a command similar to the following:</p>
+<pre xml:space="preserve" class="oac_no_warn">SQL&gt; DROP DISKGROUP <span class="italic">disk_group_name</span> INCLUDING CONTENTS;
+
+</pre></li>
+</ol>
+</li>
+<li>
+<p>Shut down the Automatic Storage Management instance and exit SQL*Plus:</p>
+<pre xml:space="preserve" class="oac_no_warn">SQL&gt; SHUTDOWN
+SQL&gt; EXIT
+
+</pre></li>
+<li>
+<p>At the command prompt, enter the following command to remove the Automatic Storage Management service:</p>
+<pre xml:space="preserve" class="oac_no_warn">ORADIM -DELETE -ASMSID +ASM
+
+</pre></li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p><a href="intro.htm#CEGBDDFD">"Automatic Storage Management (ASM)"</a></p>
+</li>
+<li type="disc">
+<p><a href="reqs.htm#i1015143">"Preparing Disk Groups for an Automatic Storage Management Installation"</a></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect3" -->
+<a id="CIHIHDAD" name="CIHIHDAD"></a>
+<div class="sect3"><a id="sthref902" name="sthref902"></a>
+<h4 class="sect3"><span class="secnum">6.3.3.2</span> Removing Oracle Keys from the Microsoft Registry Editor</h4>
+<p><a id="sthref903" name="sthref903"></a><a id="sthref904" name="sthref904"></a>Oracle Universal Installer<a id="sthref905" name="sthref905"></a><a id="sthref906" name="sthref906"></a> creates Windows services for Oracle components during installation but it does not delete all the services created by Oracle Net Configuration Assistant and Database Configuration Assistant during deinstallation. In addition, Oracle Universal Installer does not delete several other <a id="sthref907" name="sthref907"></a><a id="sthref908" name="sthref908"></a>Registry Editor keys. You need to remove any existing registry keys manually by following the instructions in one of the following sections:</p>
+<ul>
+<li type="disc">
+<p><a href="#CIHCGDCJ">Removing Only the Oracle Net Service Registry Key</a></p>
+</li>
+<li type="disc">
+<p><a href="#CIHEBDAJ">Removing All Oracle Registry Keys</a></p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a caution" title="This is a layout table to format a caution" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Caution:</p>
+Use Microsoft Registry Editor at your own risk. Incorrectly using the Registry Editor can cause serious problems and may require reinstallation of your operating system.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+<a id="CIHCGDCJ" name="CIHCGDCJ"></a>
+<p class="subhead2">Removing Only the Oracle Net Service Registry Key</p>
+<p>To remove only the Oracle Net Service registry entry (if it exists):</p>
+<ol type="1" start="1">
+<li>
+<p>Log in as a member of the Administrators group.</p>
+</li>
+<li>
+<p>Make sure that you have stopped Oracle services by following the instructions in the <a href="#i1008369">"Stopping Oracle Services"</a> section.</p>
+</li>
+<li>
+<p>From the <span class="bold">Start</span> menu, choose <span class="bold">Run</span>, and in the <span class="bold">Open</span> field, enter the following command:</p>
+<pre xml:space="preserve" class="oac_no_warn">regedit
+
+</pre></li>
+<li>
+<p>Go to <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services</code> and delete the <code>Oracle</code><code><span class="codeinlineitalic">HOME_NAME</span></code><code>TNSListener</code> registry entry. Oracle Universal Installer automatically deletes all other Oracle Net services.</p>
+</li>
+<li>
+<p>Exit the Registry Editor.</p>
+</li>
+<li>
+<p>Restart your computer.</p>
+</li>
+</ol>
+<a id="CIHEBDAJ" name="CIHEBDAJ"></a>
+<p class="subhead2">Removing All Oracle Registry Keys</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a caution" title="This is a layout table to format a caution" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Caution:</p>
+These instructions remove <span class="italic">all</span> Oracle components, services, and registry entries from your computer. Use extreme care when removing registry entries. Removing incorrect entries can break your system.<a id="sthref909" name="sthref909"></a> Do not delete any database files under <code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\</code><code><span class="codeinlineitalic">ORACLE_HOME</span></code><code>\</code><code><span class="codeinlineitalic">DB_NAME</span></code> until you have completed these instructions.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+<p>To remove all Oracle registry keys from a computer:<a id="sthref910" name="sthref910"></a><a id="sthref911" name="sthref911"></a></p>
+<ol type="1" start="1">
+<li>
+<p>Log in as a member of the Administrators group.</p>
+</li>
+<li>
+<p>Make sure that you have stopped Oracle services by following the instructions in the <a href="#i1008369">"Stopping Oracle Services"</a> section.</p>
+</li>
+<li>
+<p>Start the registry editor at the command prompt:</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\&gt; regedit
+
+</pre></li>
+<li>
+<p>Go to <code>HKEY_CLASSES_ROOT</code>.</p>
+</li>
+<li>
+<p>Delete keys that begin with <code>Ora</code>, <code>Oracle</code>, <code>Orcl</code>, or <code>EnumOra</code>.</p>
+<p>This collection of keys includes those that begin with the following:</p>
+<ul>
+<li type="disc">
+<p>EnumOraHomes</p>
+</li>
+<li type="disc">
+<p>OracleConfig</p>
+</li>
+<li type="disc">
+<p>OracleDatabase</p>
+</li>
+<li type="disc">
+<p>OracleHome</p>
+</li>
+<li type="disc">
+<p>OracleInProcServer</p>
+</li>
+<li type="disc">
+<p>OracleProcess</p>
+</li>
+<li type="disc">
+<p>ORADC</p>
+</li>
+<li type="disc">
+<p>ORAMMCCFG10</p>
+</li>
+<li type="disc">
+<p>ORAMMCPMON10</p>
+</li>
+<li type="disc">
+<p>OraOLEDB</p>
+</li>
+<li type="disc">
+<p>OraPerfMon</p>
+</li>
+<li type="disc">
+<p>ORCLMMC</p>
+</li>
+<li type="disc">
+<p>ORCLSSO</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Go to <code>HKEY_CURRENT_USER</code>.</p>
+</li>
+<li>
+<p>Delete the <code>ORACLE</code> key.</p>
+</li>
+<li>
+<p>Go to <code>HKEY_CURRENT_USER\Software</code>.</p>
+</li>
+<li>
+<p>Delete all Oracle keys, including <code>Oracle-</code><code><span class="codeinlineitalic">HOME_NAME</span></code> entries under: <code>Microsoft\Windows\CurrentVersion\Explorer\MenuOrder\Start Menu\Programs</code>.</p>
+</li>
+<li><a id="CIHCGIEI" name="CIHCGIEI"></a>
+<p>Go to <code>HKEY_LOCAL_MACHINE\SOFTWARE</code> and search for the <code>ORACLE</code> Group key.</p>
+<p>Select <code>ORACLE</code> and note the value of the <code>inst_loc</code> key. This is the location of Oracle Universal Installer. The default location is <code>c:\Program Files\Oracle\Inventory</code>. If this value is different, make a note of it so that you can delete it later.</p>
+</li>
+<li>
+<p>Delete the <code>ORACLE</code> <code>Group</code> key.</p>
+</li>
+<li>
+<p>Go to <code>HKEY_LOCAL_MACHINE\SOFTWARE\ODBC</code>.</p>
+</li>
+<li>
+<p>Expand all the subkeys under <code>ODBC</code> and remove any Oracle-related ODBC driver keys, except for the <code>Microsoft ODBC for Oracle</code> key.</p>
+<p>For example, the <code>ODBC\ODBCINST.INI</code> directory lists keys for each Oracle home.</p>
+</li>
+<li>
+<p>Go to <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services</code>.</p>
+</li>
+<li>
+<p>Delete all keys under this branch that begin with <code>Oracle</code> or <code>OraWeb</code>.</p>
+</li>
+<li>
+<p>Go to <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ Eventlog\Application</code>.</p>
+</li>
+<li>
+<p>Delete all keys under this branch that begin with <code>Oracle</code>.</p>
+</li>
+<li>
+<p>Exit the registry editor.</p>
+</li>
+<li>
+<p>Restart your computer.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CIHCJBFE" name="CIHCJBFE"></a>
+<div class="sect3"><a id="sthref912" name="sthref912"></a>
+<h4 class="sect3"><span class="secnum">6.3.3.3</span> Updating the System Variable Path</h4>
+<p>Check the <code>Path</code> environmental variable and remove any Oracle entries.</p>
+<ol type="1" start="1">
+<li>
+<p>Open <span class="bold">System</span> from the Control Panel.</p>
+</li>
+<li>
+<p>In the System Properties dialog box, click the <span class="bold">Advanced</span> tab, then click the <span class="bold">Environment Variables</span> button.</p>
+</li>
+<li>
+<p>Select the system variable <code>Path</code> and edit the <code>Path</code> variable to remove any Oracle entries.</p>
+<p>For example, remove Oracle entries that contain <code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\</code><code><span class="codeinlineitalic">ORACLE_HOME</span></code> in the <code>Path</code> variable. You may see a <code>Path</code> variable that contains entries similar to the following:</p>
+<pre xml:space="preserve" class="oac_no_warn">C:\oracle\products\10.2.0\db_1\bin;C:\oracle\products\10.2.0\db_1\jre\1.4.2\bin\client;C:\oracle\products\10.2.0\db_1\jre\1.4.2\bin
+
+</pre>
+<p>If the JRE path was installed by Oracle, remove it.</p>
+</li>
+<li>
+<p>If there is a <code>CLASSPATH</code> variable that was set for Oracle, delete it.</p>
+</li>
+<li>
+<p>If there are any other Oracle variables set, remove them: <code>ORACLE_HOME</code>, <code>ORACLE_SID</code>, <code>TNS_ADMIN</code>, <code>JSERV</code>, or <code>WV_GATEWAY_CFG</code>.</p>
+</li>
+<li>
+<p>Save your changes and then exit the Control Panel.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CIHJGIDJ" name="CIHJGIDJ"></a>
+<div class="sect3"><a id="sthref913" name="sthref913"></a>
+<h4 class="sect3"><span class="secnum">6.3.3.4</span> Removing Oracle from the Start Menu</h4>
+<p>Check the <span class="bold">Start</span> menu for any Oracle entries and remove them.</p>
+<p>Follow these steps:</p>
+<ol type="1" start="1">
+<li>
+<p>Select Start, then Programs, then <span class="bold">Oracle -</span> <span class="bolditalic">HOME_NAME</span>.</p>
+</li>
+<li>
+<p>Right-click <span class="bold">Oracle -</span> <span class="bolditalic">HOME_NAME</span>, and from the menu, select <span class="bold">Delete</span>.</p>
+</li>
+</ol>
+<p>You can also remove Oracle menu entries by using the following method:</p>
+<ol type="1" start="1">
+<li>
+<p>Right-click the <span class="bold">Start</span> button to display the pop-up menu.</p>
+</li>
+<li>
+<p>Select the <span class="bold">Explore All Users</span> option.</p>
+</li>
+<li>
+<p>Under Documents and Settings, expand the <code>\Start</code> <code>Menu\Programs</code> folder.</p>
+</li>
+<li>
+<p>Right-click and delete the <span class="bold">Oracle -</span> <span class="bolditalic">HOME_NAME</span> folder.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CIHDEFBJ" name="CIHDEFBJ"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" --><a id="sthref914" name="sthref914"></a>
+<h4 class="sect3"><span class="secnum">6.3.3.5</span> Removing Oracle Directories</h4>
+<p>After removing all Oracle registry keys and restarting the computer, delete any existing Oracle directories and files.</p>
+<p>Use My Computer or Windows Explorer to delete the following directories:</p>
+<ol type="1" start="1">
+<li>
+<p>Delete the <code><span class="codeinlineitalic">SYSTEM</span></code><code>_</code><code><span class="codeinlineitalic">DRIVE</span></code><code>:\Program</code> <code>Files\Oracle</code> directory.</p>
+</li>
+<li>
+<p>Delete all <code><span class="codeinlineitalic">ORACLE</span></code><code>_</code><code><span class="codeinlineitalic">BASE</span></code> directories on your hard drive.<a id="sthref915" name="sthref915"></a><a id="sthref916" name="sthref916"></a><a id="sthref917" name="sthref917"></a><a id="sthref918" name="sthref918"></a></p>
+</li>
+<li>
+<p>If Oracle Universal Installer was installed in a location other than the default, delete this directory.</p>
+</li>
+<li>
+<p>Remove any Oracle temporary directory files from <code><span class="codeinlineitalic">SYSTEM_DRIVE</span></code><code>:\Documents and Settings\</code><code><span class="codeinlineitalic">username</span></code><code>\Local Settings\Temp</code>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" --></div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="startrdb.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="faq.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;1996, 2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,1343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>3 Storage Pre-Installation Tasks</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.1.3 Build 116" />
+<meta name="Date" content="August 18, 2005 11:44:23" />
+<meta name="doctitle" content="Oracle&reg; Database Oracle Clusterware and Oracle Real Application Clusters Installation Guide 10g Release 2 (10.2) for Microsoft Windows" />
+<meta name="partno" content="B14207-01" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="prewin.htm" title="Previous" type="text/html" />
+<link rel="Next" href="part3.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14207.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database Oracle Clusterware and Oracle Real Application Clusters Installation Guide<br />
+10<i>g</i> Release 2 (10.2) for Microsoft Windows</b><br />
+Part Number B14207-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="prewin.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="part3.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top"><a href="../b14207.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="CDECEBGH" name="CDECEBGH"></a><a id="sthref265" name="sthref265"></a>
+<h1><span class="secnum">3</span> Storage Pre-Installation Tasks</h1>
+<p>This chapter describes the storage configuration tasks that you must complete before you start Oracle Universal Installer. It includes information about the following tasks:</p>
+<ul>
+<li type="disc">
+<p><a href="#BABDBFCH">Preliminary Shared Disk Preparation</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABHIJDF">Reviewing Storage Options for Oracle Clusterware, Database, and Recovery Files</a></p>
+</li>
+<li type="disc">
+<p><a href="#CDEHICAB">Storage Configuration Steps for Real Application Clusters</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABBJIBF">Configuring Disks for Automatic Storage Management</a></p>
+</li>
+<li type="disc">
+<p><a href="#BGBDBAHH">Configuring Raw Logical Volumes or Raw Partitions</a></p>
+</li>
+<li type="disc">
+<p><a href="#CDEFEIGD">Oracle-Managed Files Requirements</a></p>
+</li>
+</ul>
+<a id="BABDBFCH" name="BABDBFCH"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref266" name="sthref266"></a>
+<h2><span class="secnum">3.1</span> Preliminary Shared Disk Preparation</h2>
+<p>Complete the following steps to prepare shared disks for storage:</p>
+<ul>
+<li type="disc">
+<p><a href="#CDEIIHEA">Disabling Write Caching</a></p>
+</li>
+<li type="disc">
+<p><a href="#CDEHHGBF">Enabling Automounting for Windows 2003</a></p>
+</li>
+</ul>
+<a id="CDEIIHEA" name="CDEIIHEA"></a>
+<div class="sect2"><a id="sthref267" name="sthref267"></a>
+<h3><span class="secnum">3.1.1</span> Disabling Write Caching</h3>
+<p>You must disable write caching on all disks that will be used to share data between nodes in your cluster. To disable write caching, perform these steps:</p>
+<ol type="1" start="1">
+<li>
+<p>Click Start, then click <span class="bold">Settings</span>, then <span class="bold">Control Panel</span>, then <span class="bold">Administrative Tools</span>, then <span class="bold">Computer Management</span>, then <span class="bold">Device Manager</span>, and then <span class="bold">Disk drives</span></p>
+</li>
+<li>
+<p>Expand the <span class="bold">Disk drives</span> and double-click the first drive listed</p>
+</li>
+<li>
+<p>Under the Disk Properties tab for the selected drive, uncheck the option that enables the write cache</p>
+</li>
+<li>
+<p>Double-click each of the other drives listed in the <span class="bold">Disk drives</span> hive and disable the write cache as described in the previous step</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a caution" title="This is a layout table to format a caution" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Caution:</p>
+Any disks that you use to store files, including database files, that will be shared between nodes, must have write caching disabled.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</div>
+<!-- class="sect2" -->
+<a id="CDEHHGBF" name="CDEHHGBF"></a>
+<div class="sect2"><a id="sthref268" name="sthref268"></a>
+<h3><span class="secnum">3.1.2</span> Enabling Automounting for Windows 2003<a id="sthref269" name="sthref269"></a><a id="sthref270" name="sthref270"></a><a id="sthref271" name="sthref271"></a><a id="sthref272" name="sthref272"></a></h3>
+<p>If you are using Windows 2003, then you must enable disk automounting, depending on the Oracle products you are installing and on other conditions.</p>
+<p>You must enable automounting when using:</p>
+<ul>
+<li>
+<p>Raw partitions for Oracle Real Application Clusters (RAC)</p>
+</li>
+<li>
+<p>Cluster file system for Oracle Real Application Clusters</p>
+</li>
+<li>
+<p>Oracle Clusterware</p>
+</li>
+<li>
+<p>Raw partitions for a single-node database installation</p>
+</li>
+<li>
+<p>Logical drives for Automatic Storage Management (ASM)</p>
+</li>
+</ul>
+<p>To enable automounting:</p>
+<ol type="1" start="1">
+<li>
+<p>Enter the following commands at a command prompt:</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\&gt; diskpart
+DISKPART&gt; automount enable
+Automatic mounting of new volumes enabled.
+
+</pre></li>
+<li>
+<p>Type <code>exit</code> to end the <code>diskpart</code> session</p>
+</li>
+<li>
+<p>Repeat steps 1 and 2 for each node in the cluster.</p>
+</li>
+<li>
+<p>When you have prepared all the cluster nodes in your Windows 2003 system as described in the previous steps, restart all of the nodes.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+All nodes in the cluster must have automatic mounting enabled in order to correctly install RAC and Oracle Clusterware. Oracle recommends that you enable automatic mounting before creating any logical partitions for use by the database, ASM, or the Cluster File System.
+<p>You must restart each node after enabling disk automounting. After it is enabled and the node is restarted, automatic mounting remains active until it is disabled.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BABHIJDF" name="BABHIJDF"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref273" name="sthref273"></a>
+<h2><span class="secnum">3.2</span> Reviewing Storage Options for Oracle Clusterware, Database, and Recovery Files</h2>
+<p>This section describes supported options for storing Oracle Clusterware files, Oracle Database software, and database files. It includes the following sections:</p>
+<ul>
+<li type="disc">
+<p><a href="#BABDDBFH">Overview of Storage Options</a></p>
+</li>
+<li type="disc">
+<p><a href="#CDEDGDEG">Checking for Available Shared Storage with CVU</a></p>
+</li>
+</ul>
+<a id="BABDDBFH" name="BABDDBFH"></a>
+<div class="sect2"><a id="sthref274" name="sthref274"></a>
+<h3><span class="secnum">3.2.1</span> Overview of Storage Options</h3>
+<p>Use the following overview to help you select your storage option:</p>
+<div class="sect3"><a id="sthref275" name="sthref275"></a>
+<h4><span class="secnum">3.2.1.1</span> Overview of Oracle Clusterware Storage Options</h4>
+<p>There are two ways to store Oracle Clusterware files:</p>
+<ul>
+<li type="disc">
+<p><span class="bold">Oracle Cluster File System (OCFS)</span>: The cluster file system Oracle provides for the Windows and Linux communities. If you intend to store Oracle Clusterware files on OCFS, then you must ensure that OCFS volume sizes are at least 500 MB each.</p>
+</li>
+<li type="disc">
+<p><span class="bold">Raw storage</span>: Raw logical volumes or raw partitions are created and managed by Microsoft Windows disk management tools or by tools provided by third party vendors.</p>
+</li>
+</ul>
+<p>Note that you must provide disk space for one mirrored Oracle Cluster Registry (OCR) file, and two mirrored voting disk files.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><a id="sthref276" name="sthref276"></a>
+<h4><span class="secnum">3.2.1.2</span> Overview of Oracle Database and Recovery File Options</h4>
+<p>There are three ways to store Oracle Database and recovery files on shared disks:</p>
+<ul>
+<li type="disc">
+<p><span class="bold">Automatic Storage Management (database files only)</span>: Automatic Storage Management (ASM) is an integrated, high-performance database file system and disk manager for Oracle files. Because ASM requires an Oracle Database instance, it cannot contain Oracle software, but you can use ASM to manage database and recovery files.</p>
+</li>
+<li type="disc">
+<p><span class="bold">Oracle Cluster File System (OCFS)</span>: Note that if you intend to use OCFS for your database files, then you should create partitions large enough for the database files when you create partitions for Oracle Clusterware</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+If you want to have a shared Oracle home directory for all nodes, then you must use OCFS.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</li>
+<li type="disc">
+<p><span class="bold">Raw storage:</span> Note that you cannot use raw storage to store Oracle database recovery files.</p>
+</li>
+</ul>
+<p>The storage option that you choose for recovery files can be the same as or different to the option you choose for the database files.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><a id="sthref277" name="sthref277"></a>
+<h4><span class="secnum">3.2.1.3</span> General Storage Considerations</h4>
+<p><a id="sthref278" name="sthref278"></a><a id="sthref279" name="sthref279"></a><a id="sthref280" name="sthref280"></a><a id="sthref281" name="sthref281"></a><a id="sthref282" name="sthref282"></a><a id="sthref283" name="sthref283"></a>For all installations, you must choose the storage option that you want to use for Oracle Clusterware files and Oracle Database files. If you want to enable automated backups during the installation, then you must also choose the storage option that you want to use for recovery files (the flash recovery area). You do not have to use the same storage option for each file type.</p>
+<p>For single-instance Oracle Database installations using Oracle Clusterware for failover, you must use OCFS, ASM, or shared raw disks if you do not want the failover processing to include dismounting and remounting the disks containing your database files.</p>
+<p>The following table shows the storage options supported for storing Oracle Clusterware files, Oracle Database files, and Oracle Database recovery files. Oracle Clusterware files include the Oracle Cluster Registry (OCR) and the Oracle Clusterware voting disk. Oracle Database files include data files, control files, redo log files, the server parameter file, and the password file.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+For the most up-to-date information about supported storage options for RAC installations, refer to the Certify pages on the Oracle<span class="italic">MetaLink</span> Web site:
+<pre xml:space="preserve" class="oac_no_warn"><a href="http://metalink.oracle.com">http://metalink.oracle.com</a>
+</pre></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<div class="inftblHRuleInformal">
+<table class="HRuleInformal" title="Suported Storage Options for CRS, Database, and Recovery Files" summary="This table shows the supported storage options for CRS, database, and recovery files on Linux" dir="ltr" border="1" width="100%" frame="hsides" rules="rows" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t6" rowspan="2">Storage Option</th>
+<th align="center" valign="bottom" id="r1c2-t6" colspan="3">File Types Supported</th>
+</tr>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r2c1-t6" headers="r1c1-t6 r1c1-t6">Oracle Clusterware</th>
+<th align="left" valign="bottom" id="r2c2-t6" headers="r1c1-t6 r2c1-t6 r1c2-t6">Database</th>
+<th align="left" valign="bottom" id="r2c3-t6" headers="r1c1-t6 r2c1-t6 r1c2-t6">Recovery</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t6" headers="r1c1-t6 r2c1-t6">Automatic Storage Management</td>
+<td align="left" headers="r3c1-t6 r1c2-t6 r2c2-t6">No</td>
+<td align="left" headers="r3c1-t6 r1c2-t6 r2c3-t6">Yes</td>
+<td align="left" headers="r3c1-t6 r1c2-t6">Yes</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t6" headers="r1c1-t6 r2c1-t6">Cluster file system (OCFS)</td>
+<td align="left" headers="r4c1-t6 r1c2-t6 r2c2-t6">Yes</td>
+<td align="left" headers="r4c1-t6 r1c2-t6 r2c3-t6">Yes</td>
+<td align="left" headers="r4c1-t6 r1c2-t6">Yes</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t6" headers="r1c1-t6 r2c1-t6">Shared raw storage</td>
+<td align="left" headers="r5c1-t6 r1c2-t6 r2c2-t6">Yes</td>
+<td align="left" headers="r5c1-t6 r1c2-t6 r2c3-t6">Yes</td>
+<td align="left" headers="r5c1-t6 r1c2-t6">No</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblHRuleInformal -->
+<p>Use the following guidelines when choosing the storage options that you want to use for each file type:</p>
+<ul>
+<li type="disc">
+<p>If you satisfy all of the requirements listed for the chosen storage options, then you can choose any combination of the supported storage options for each file type.</p>
+</li>
+<li type="disc">
+<p>Oracle recommends that you choose Automatic Storage Management (ASM) as the storage option for database and recovery files.</p>
+</li>
+<li type="disc">
+<p>For Standard Edition cluster installations, ASM is the only supported storage option for database or recovery files.</p>
+</li>
+<li type="disc">
+<p>You cannot use ASM to store Oracle Clusterware files, because these files must be accessible before any Oracle instance starts, which includes the ASM instances required to manage ASM access.</p>
+</li>
+<li type="disc">
+<p>If you intend to use ASM with RAC, and you are configuring a new ASM instance, then you must ensure that your system meets the following conditions:</p>
+<ul>
+<li type="circle">
+<p>All nodes on the cluster have the release 2 (10.2) version of Oracle Clusterware installed</p>
+</li>
+<li type="circle">
+<p>Any existing ASM instance on any node in the cluster is shut down</p>
+</li>
+</ul>
+</li>
+<li type="disc">
+<p>If you intend to upgrade an existing RAC database, or a RAC database with ASM instances, then you must ensure that your system meets the following conditions:</p>
+<ul>
+<li type="circle">
+<p>The RAC database or RAC database with ASM instance is running on the node from which the Oracle Universal Installer (OUI) and Database Configuration Assistant (DBCA) is run</p>
+</li>
+<li type="circle">
+<p>The RAC database or RAC database with ASM instance is running on the same nodes that you intend to make members of the new cluster installation. For example, if you have an existing RAC database running on a three node cluster, then you must install the upgrade on all three nodes. You cannot attempt to upgrade only 2 nodes of the cluster.</p>
+</li>
+</ul>
+</li>
+<li type="disc">
+<p>To obtain the benefits of voting disk redundancy, you must provide storage for three copies of the voting disk no matter which storage option you choose.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect3" -->
+<a id="BABHBBIC" name="BABHBBIC"></a>
+<div class="sect3"><a id="sthref284" name="sthref284"></a>
+<h4><span class="secnum">3.2.1.4</span> Guidelines for Placing Oracle Datafiles on a File System</h4>
+<p>If you decide to place the Oracle datafiles on OCFS, then use the following guidelines when deciding where to place them:</p>
+<ul>
+<li type="disc">
+<p><a id="sthref285" name="sthref285"></a><a id="sthref286" name="sthref286"></a><a id="sthref287" name="sthref287"></a><a id="sthref288" name="sthref288"></a>You can choose either a single cluster file system or more than one cluster file system to store the datafiles:</p>
+<ul>
+<li type="circle">
+<p>If you want to use a single cluster file system, then choose a cluster file system on a physical device that is dedicated to the database.</p>
+<p>For best performance and reliability, choose a RAID device or a logical volume on more than one physical device and implement the stripe-and-mirror-everything methodology, also known as SAME.</p>
+</li>
+<li type="circle">
+<p>If you want to use more than one cluster file system, then choose cluster file systems on separate physical devices or partitions that are dedicated to the database.</p>
+<p>This method enables you to distribute physical I/O and create separate control files on different devices for increased reliability. It also enables you to fully implement Oracle Optimal Flexible Architecture (OFA) guidelines. To implement this method, you must choose either the Advanced database creation option or choose the Custom installation type during installation.</p>
+</li>
+</ul>
+</li>
+<li type="disc">
+<p>If you intend to create a preconfigured database during the installation, then the cluster file system (or systems) that you choose must have at least 4 GB of free disk space.</p>
+<p><a id="sthref289" name="sthref289"></a><a id="sthref290" name="sthref290"></a><a id="sthref291" name="sthref291"></a>For production databases, you must estimate the disk space requirement depending on the use you want to make of the database.</p>
+</li>
+<li type="disc">
+<p>For optimum performance, the cluster file systems that you choose should be on physical devices that are used only by the database.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+You must not create an NTFS partition on a disk that you are using for OCFS.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</li>
+<li type="disc">
+<p>The default location suggested by Oracle Universal Installer for the database file directory is a subdirectory of the Oracle base directory. However, this default location is not appropriate for RAC production databases.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect3" -->
+<a id="BABJHEFB" name="BABJHEFB"></a>
+<div class="sect3"><a id="sthref292" name="sthref292"></a>
+<h4><span class="secnum">3.2.1.5</span> Guidelines for Placing Oracle Recovery Files on a File System</h4>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+You must choose a location for recovery files only if you intend to enable automated backups during the installation.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<p>If you choose to place the Oracle recovery files on a cluster file system, then use the following guidelines when deciding where to place them:</p>
+<ul>
+<li type="disc">
+<p>To prevent disk failure from making the database files as well as the recovery files unavailable, place the recovery files on a cluster file system that is on a different physical disk from the database files.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Alternatively use an ASM disk group with a normal or high redundancy level for either or both file types.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</li>
+<li type="disc">
+<p>The cluster file system that you choose should have at least 3 GB of free disk space.</p>
+<p>The disk space requirement is the default disk quota configured for the flash recovery area (specified by the <code>DB_RECOVERY_FILE_DEST_SIZE</code> initialization parameter).</p>
+<p>If you choose the Custom installation type or the Advanced database configuration option, then you can specify a different disk quota value. After you create the database, you can also use Oracle Enterprise Manager to specify a different value.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Backup and Recovery Basics</span> for more information about sizing the flash recovery area.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</li>
+<li type="disc">
+<p>The default location suggested by Oracle Universal Installer for the recovery area directory is a subdirectory of the Oracle base directory. However, this default location is not appropriate for RAC production databases.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref293" name="sthref293"></a>
+<h4><span class="secnum">3.2.1.6</span> After You Have Selected Disk Storage Options</h4>
+<p>When you have determined your disk storage options, you must perform the following tasks in the following order:</p>
+<p class="subhead2">1: Check for available storage with CVU</p>
+<p>Refer to <a href="#CDEDGDEG">"Checking for Available Shared Storage with CVU"</a></p>
+<p class="subhead2">2: Configure storage for Oracle Clusterware files</p>
+<ul>
+<li type="disc">
+<p><span class="bold">To use OCFS for Oracle Clusterware files</span>, refer to <a href="#BABHCHIB">Configuring Storage for Oracle Clusterware Files on a Shared File System</a></p>
+</li>
+<li type="disc">
+<p><span class="bold">To use raw devices (partitions) for Oracle Clusterware files</span>, refer to <a href="#BABFFBBA">"Configuring Storage for Oracle Clusterware Files on Raw Devices"</a></p>
+</li>
+</ul>
+<p class="subhead2">3: Configure storage for Oracle Database files and recovery files</p>
+<ul>
+<li type="disc">
+<p><span class="bold">To use a file system for database or recovery file storage</span>, refer to <a href="#BABHCHIB">Configuring Storage for Oracle Clusterware Files on a Shared File System</a>, and ensure that in addition to the volumes you create for Oracle Clusterware files, you also create additional volumes with sizes sufficient to store database files.</p>
+</li>
+<li type="disc">
+<p><span class="bold">To use Automatic Storage Management for database or recovery file storage</span>, refer to <a href="#BABBJIBF">"Configuring Disks for Automatic Storage Management"</a>.</p>
+</li>
+<li type="disc">
+<p><span class="bold">To use raw devices (partitions) for database file storage</span>, refer to <a href="#BGBDBAHH">"Configuring Raw Logical Volumes or Raw Partitions"</a>.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="CDEDGDEG" name="CDEDGDEG"></a>
+<div class="sect2"><a id="sthref294" name="sthref294"></a>
+<h3><span class="secnum">3.2.2</span> Checking for Available Shared Storage with CVU<a id="sthref295" name="sthref295"></a></h3>
+<p>To check for all shared file systems available across all nodes on the cluster, use the following CVU command:</p>
+<pre xml:space="preserve" class="oac_no_warn">cluvfy comp ssa -n <span class="italic">node_list</span>
+
+</pre>
+<p>Remember to use the full path name and the <code>runcluvfy.bat</code> command on the installation media and include the list of nodes in your cluster, separated by commas, for the <code><span class="codeinlineitalic">node_list</span></code>. The following example is for a system with two nodes, <code><span class="codeinlineitalic">node1</span></code> and <code><span class="codeinlineitalic">node2</span></code>, and the installation media on drive F:</p>
+<pre xml:space="preserve" class="oac_no_warn">F:\&gt; clusterware\cluvfy\runcluvfy.bat comp ssa -n node1,node2
+
+</pre>
+<p>If you want to check the shared accessibility of a specific shared storage type to specific nodes in your cluster, then use the following command syntax:</p>
+<pre xml:space="preserve" class="oac_no_warn">cluvfy comp ssa -n <span class="italic">node_list</span> -s <span class="italic">storageID_list</span>
+
+</pre>
+<p>In the preceding syntax, the variable <code><span class="codeinlineitalic">node_list</span></code> is the list of nodes you want to check, separated by commas, and the variable <code><span class="codeinlineitalic">storageID_list</span></code> is the list of storage device IDs for the storage devices managed by the file system type that you want to check.</p>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CDEHICAB" name="CDEHICAB"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref296" name="sthref296"></a>
+<h2><span class="secnum">3.3</span> Storage Configuration Steps for Real Application Clusters</h2>
+<p>Log in to Windows with Administrative privileges and perform the following steps depending on whether you use the Oracle Cluster File System (OCFS) or raw devices:</p>
+<ul>
+<li type="disc">
+<p><a href="#BABHCHIB">Configuring Storage for Oracle Clusterware Files on a Shared File System</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABFFBBA">Configuring Storage for Oracle Clusterware Files on Raw Devices</a></p>
+</li>
+</ul>
+<p>If you plan to use Automatic Storage Management (ASM) for your database files, then you only need to perform the actions related to the Oracle home and the Oracle Cluster Registry (OCR) and voting disk storage.</p>
+<a id="BABHCHIB" name="BABHCHIB"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref297" name="sthref297"></a>
+<h3><span class="secnum">3.3.1</span> Configuring Storage for Oracle Clusterware Files on a Shared File System</h3>
+<p>If you plan to use OCFS for your Oracle home and datafiles, then the following partitions must exist before you run OUI to install Oracle Clusterware:</p>
+<ul>
+<li type="disc">
+<p>3 GB, or larger, for the Oracle home</p>
+</li>
+<li type="disc">
+<p>3 GB, or larger, for the datafiles</p>
+</li>
+</ul>
+<p>The OCR and voting disk, required by Oracle Clusterware, are also stored in the OCFS datafile directory (<code><span class="codeinlineitalic">datafile_disk</span></code><code>\cdata\</code><code><span class="codeinlineitalic">clustername</span></code>) where <code><span class="codeinlineitalic">datafile_disk</span></code> is the OCFS partition and <code><span class="codeinlineitalic">clustername</span></code> is the name of your cluster.</p>
+<p>Oracle Universal Installer (OUI) does not suggest a default location for the Oracle Cluster Registry (OCR) or the Oracle Clusterware voting disk. If you choose to create these files on a file system, then perform the steps described in this section to set up the shared disk raw partitions for OCFS. Windows refers to raw partitions as logical drives. If you need more information about creating partitions, then refer to the Windows online help from within the disk administration tools.</p>
+<ol type="1" start="1">
+<li>
+<p>Run Windows Disk Management from one node to create an extended partition. Use a basic disk: dynamic disks are not supported.</p>
+</li>
+<li>
+<p>Create at least two partitions: one for the Oracle home and one for the Oracle database files.</p>
+<p>You do not need to create a partition for the voting disk if you plan to use OCFS. OCFS stores the voting device in a file.</p>
+<p>The number of partitions used for OCFS affects performance. Therefore, you should create the minimum number of partitions needed for the OCFS option you choose.</p>
+</li>
+</ol>
+<p>To create the required partitions, perform the following steps:</p>
+<ol type="1" start="1">
+<li>
+<p>From one of the existing nodes of the cluster, run the Windows disk administration tool as follows:</p>
+<ul>
+<li type="disc">
+<p>Click <span class="bold">Start</span>, then select <span class="bold">Settings</span>, <span class="bold">Control Panel</span>, <span class="bold">Administrative Tools</span>, and then <span class="bold">Computer Management</span></p>
+</li>
+<li type="disc">
+<p>Expand the Storage folder to Disk Management. Use a basic disk with a Master Boot Record (MBR) partition style as an extended partition for creating partitions.</p>
+</li>
+</ul>
+</li>
+<li><a id="CACDBAFG" name="CACDBAFG"></a>
+<p>Right click inside an unallocated part of an extended partition and choose Create Logical Drive. A wizard presents pages for configuring the logical drive. Select the select logical drive radio button and click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Enter the size that you want for the partition and click <span class="bold">Next</span>.</p>
+</li>
+<li><a id="CACCHHCD" name="CACCHHCD"></a>
+<p>Choose the option "Do not assign a drive letter or path", click <span class="bold">Next</span>, and then choose the option "Do not format this partition". Click <span class="bold">Finish</span> on the last page of the wizard.</p>
+</li>
+<li>
+<p>Repeat steps <a href="#CACDBAFG">2</a> through <a href="#CACCHHCD">4</a> for the second and any additional partitions. An optimal configuration is one partition for the Oracle home and one partition for Oracle database files.</p>
+</li>
+<li>
+<p>If you are preparing drives on a Windows 2003 system, then you should restart all nodes in the cluster after you have created the logical drives.</p>
+</li>
+<li>
+<p>Check all nodes in the cluster to ensure that the partitions are visible on all the nodes and to ensure that none of the Oracle partitions have drive letters assigned. If any partitions have drive letters assigned, then remove them by performing these steps:</p>
+<ul>
+<li type="disc">
+<p>Right-click the partition in the Windows disk administration tool</p>
+</li>
+<li type="disc">
+<p>Select "Change Drive Letters and Paths..." from the menu</p>
+</li>
+<li type="disc">
+<p>Click <span class="bold">Remove</span> in the "Change Drive Letter and Paths" window</p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="BABFFBBA" name="BABFFBBA"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref298" name="sthref298"></a>
+<h3><span class="secnum">3.3.2</span> Configuring Storage for Oracle Clusterware Files on Raw Devices</h3>
+<p>To use raw devices, create two partitions: One 20 MB partition for the <a id="sthref299" name="sthref299"></a>voting disk and one 100 MB partition for the <a id="sthref300" name="sthref300"></a>OCR. If you are not using OCFS for your datafiles, then you must also create raw partitions for your database files as described in <a href="#BGBDBAHH">"Configuring Raw Logical Volumes or Raw Partitions"</a>.</p>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BABBJIBF" name="BABBJIBF"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref301" name="sthref301"></a>
+<h2><span class="secnum">3.4</span> Configuring Disks for Automatic Storage Management</h2>
+<p>This section describes how to configure disks for use with ASM. Before you configure the disks, you must determine the number of disks and the amount of free disk space that you require.</p>
+<p>The following sections describe how to identify the requirements and configure the disks:</p>
+<ul>
+<li type="disc">
+<p><a href="#CDEJFBDC">General Steps for Configuring Automatic Storage Management</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABGFJHG">Step 1: Identifying Storage Requirements for Automatic Storage Management</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABEDFHA">Step 2 (Optional): Using an Existing Automatic Storage Management Disk Group</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABICCCC">Step 3: Creating DAS or SAN Disk Partitions for Automatic Storage Management</a></p>
+</li>
+<li type="disc">
+<p><a href="#CDEDIHCD">Step 4: Manually Configuring Disks for Automatic Storage Management</a></p>
+</li>
+</ul>
+<a id="CDEJFBDC" name="CDEJFBDC"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref302" name="sthref302"></a>
+<h3><span class="secnum">3.4.1</span> General Steps for Configuring Automatic Storage Management</h3>
+<p><a id="ABC40791597" name="ABC40791597"></a><a id="ABC40791597SRI1" name="ABC40791597SRI1"></a><a id="ABC40791597SRI12" name="ABC40791597SRI12"></a>You will follow these general steps to configure Automatic Storage Management:</p>
+<ol type="1" start="1">
+<li>
+<p>Identify your site's storage requirements.</p>
+</li>
+<li>
+<p>Optionally, use an existing Automatic Storage Management disk group.</p>
+</li>
+<li>
+<p>If you are creating a new Automatic Storage Management disk group, then create partitions for DAS or SAN disks.</p>
+</li>
+<li>
+<p>Use one of the following methods to complete the Automatic Storage Management configuration:</p>
+<ul>
+<li type="disc">
+<p>If you plan to install Oracle Database using interactive mode, then Oracle Universal Installer prompts you for the Automatic Storage Management disk configuration information during the installation.</p>
+</li>
+<li type="disc">
+<p>If you plan to install Oracle Database using noninteractive mode, then you must configure the disks manually before performing the installation.</p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="BABGFJHG" name="BABGFJHG"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref303" name="sthref303"></a>
+<h3><span class="secnum">3.4.2</span> Step 1: Identifying Storage Requirements for Automatic Storage Management</h3>
+<p>To identify the storage requirements for using Automatic Storage Management, you must determine how many devices and the amount of free disk space that you require. To complete this task, follow these steps:</p>
+<ol type="1" start="1">
+<li>
+<p>Determine whether you want to use Automatic Storage Management for Oracle datafiles, recovery files, or both.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+You do not have to use the same storage mechanism for datafiles and recovery files. One can use the file system, while the other uses Automatic Storage Management. If you plan to use Automatic Storage Management for both datafiles and recovery files, then you should create separate ASM disk groups for the datafiles and the recovery files.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<p>If you plan to enable automated backups during the installation, then you can choose Automatic Storage Management as the storage mechanism for recovery files by specifying an ASM disk group for the flash recovery area. Depending how you choose to create a database during the installation, you have the following options:</p>
+<ul>
+<li type="disc">
+<p>If you select an installation method that runs Database Configuration Assistant in interactive mode (for example, by choosing the Advanced database configuration option), then you can decide whether you want to use the same ASM disk group for datafiles and recovery files. You can also choose to use different disk groups for each file type. Ideally, you should create separate ASM disk groups for datafiles and recovery files.</p>
+<p>The same choice is available to you if you use Database Configuration Assistant after the installation to create a database.</p>
+</li>
+<li type="disc">
+<p>If you select an installation type that runs Database Configuration Assistant in non-interactive mode, then you must use the same Automatic Storage Management disk group for datafiles and recovery files.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Choose the Automatic Storage Management redundancy level that you want to use for the <a id="sthref304" name="sthref304"></a><a id="sthref305" name="sthref305"></a><a id="sthref306" name="sthref306"></a>Automatic Storage Management disk <a id="sthref307" name="sthref307"></a><a id="sthref308" name="sthref308"></a><a id="sthref309" name="sthref309"></a>group.<a id="sthref310" name="sthref310"></a><a id="sthref311" name="sthref311"></a></p>
+<p><a id="sthref312" name="sthref312"></a><a id="sthref313" name="sthref313"></a><a id="sthref314" name="sthref314"></a>The <a id="sthref315" name="sthref315"></a><a id="sthref316" name="sthref316"></a>redundancy level that you choose for the Automatic Storage Management disk group determines how ASM mirrors files in the disk group, and determines the number of disks and amount of disk space that you require. The redundancy levels are as follows:<a id="sthref317" name="sthref317"></a><a id="sthref318" name="sthref318"></a></p>
+<ul>
+<li type="disc">
+<p>External redundancy</p>
+<p>An external redundancy disk group requires a minimum of one disk device. The effective disk space in an external redundancy disk group is the sum of the disk space in all of its devices.</p>
+<p><a id="sthref319" name="sthref319"></a>Because Automatic Storage Management does not mirror data in an external redundancy disk group, Oracle recommends that you use only RAID or similar devices that provide their own data protection mechanisms as disk devices in this type of disk group.</p>
+</li>
+<li type="disc">
+<p>Normal redundancy</p>
+<p>In a normal redundancy disk group, Automatic Storage Management uses two-way mirroring by default (except for the control file, which is mirrored three ways), to increase performance and reliability. A normal redundancy disk group requires a minimum of two disk devices, or two failure groups. The effective disk space in a normal redundancy disk group is <span class="italic">half</span> the sum of the disk space in all of its devices.</p>
+<p>For most installations, Oracle recommends that you use normal redundancy disk groups.</p>
+</li>
+<li type="disc">
+<p>High redundancy</p>
+<p>In a high redundancy disk group, Automatic Storage Management uses three-way mirroring to increase performance and provide the highest level of reliability. A high redundancy disk group requires a minimum of three disk devices (or three failure groups). The effective disk space in a high redundancy disk group is <span class="italic">one-third</span> the sum of the disk space in all of its devices.</p>
+<p>While high redundancy disk groups do provide a high level of data protection, you must consider the higher cost of additional storage devices before deciding to use this redundancy level.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Determine the total amount of disk space that you require for the datafiles and <a id="sthref320" name="sthref320"></a><a id="sthref321" name="sthref321"></a>recovery files.<a id="sthref322" name="sthref322"></a><a id="sthref323" name="sthref323"></a><a id="sthref324" name="sthref324"></a></p>
+<p>Use the following table to determine the minimum number of disks and the minimum disk space requirements for the<a id="sthref325" name="sthref325"></a><a id="sthref326" name="sthref326"></a> installation:<a id="sthref327" name="sthref327"></a><a id="sthref328" name="sthref328"></a></p>
+<div class="inftblInformal">
+<table class="Informal" title="Disk Space Calculation Table" summary="This table provides information to help you determine the disk space requirements for ASM storage. Column 1 lists the redundancy level, column 2 lists the number of disks, column 3 lists the size of the datafiles, column four lists the size of the recovery files, and column 6 lists the combined total size for both the recovery and datafiles." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t12">Redundancy Level</th>
+<th align="left" valign="bottom" id="r1c2-t12">Minimum Number of Disks</th>
+<th align="left" valign="bottom" id="r1c3-t12">Datafiles</th>
+<th align="left" valign="bottom" id="r1c4-t12">Recovery FIles</th>
+<th align="left" valign="bottom" id="r1c5-t12">Both File Types</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t12" headers="r1c1-t12">External</td>
+<td align="left" headers="r2c1-t12 r1c2-t12">1</td>
+<td align="left" headers="r2c1-t12 r1c3-t12">1.15 GB</td>
+<td align="left" headers="r2c1-t12 r1c4-t12">2.3 GB</td>
+<td align="left" headers="r2c1-t12 r1c5-t12">3.45 GB</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t12" headers="r1c1-t12">Normal</td>
+<td align="left" headers="r3c1-t12 r1c2-t12">2</td>
+<td align="left" headers="r3c1-t12 r1c3-t12">2.3 GB</td>
+<td align="left" headers="r3c1-t12 r1c4-t12">4.6 GB</td>
+<td align="left" headers="r3c1-t12 r1c5-t12">6.9 GB</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t12" headers="r1c1-t12">High</td>
+<td align="left" headers="r4c1-t12 r1c2-t12">3</td>
+<td align="left" headers="r4c1-t12 r1c3-t12">3.45 GB</td>
+<td align="left" headers="r4c1-t12 r1c4-t12">6.9 GB</td>
+<td align="left" headers="r4c1-t12 r1c5-t12">10.35 GB</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblInformal -->
+<p>If an ASM instance already exists on the system, then you can use an existing disk group to meet these storage requirements. If necessary, you can add disks to an existing disk group during the installation.</p>
+<p>The following section describes how to identify existing disk groups and determine the free disk space that they contain.</p>
+</li>
+<li>
+<p>Optionally identify failure groups for the ASM disk group devices.<a id="sthref329" name="sthref329"></a><a id="sthref330" name="sthref330"></a><a id="sthref331" name="sthref331"></a></p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+You need to complete this step only if you intend to use an installation method that runs Database Configuration Assistant in interactive mode&#x2013;for example, if you intend to choose the Custom installation type, or the Advanced database configuration option. Other installation types do not enable you to specify failure groups.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<p><a id="sthref332" name="sthref332"></a><a id="sthref333" name="sthref333"></a>If <a id="sthref334" name="sthref334"></a><a id="sthref335" name="sthref335"></a><a id="sthref336" name="sthref336"></a>you intend to use a normal or high redundancy disk group, then you can further protect your database against hardware failure by associating a set of disk devices in a custom failure group. Failure groups define ASM disks that share a common potential failure mechanism. For more information about ASM failure groups, refer to <span class="italic">Oracle Database Administrator's Guide</span>.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+If you define custom failure groups, you must specify a minimum of two failure groups for normal redundancy disk groups and three failure groups for high redundancy disk groups.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</li>
+<li>
+<p>If you are sure that a suitable disk group does not exist on the system, then install or identify appropriate disk devices to add to a new disk group. Use the following guidelines when identifying appropriate disk devices:</p>
+<ul>
+<li type="disc">
+<p>All of the devices in an Automatic Storage Management disk group should be the same size and have the same performance characteristics.</p>
+</li>
+<li type="disc">
+<p>Do not specify two or more partitions on a single physical disk as ASM disks in the same disk group. Automatic Storage Management expects each device for a disk group to be on a separate physical disk.</p>
+</li>
+<li type="disc">
+<p>Although you can specify a logical volume as a device in an Automatic Storage Management disk group, Oracle does not recommend their use. Logical volume managers can hide the physical disk architecture, preventing Automatic Storage Management from optimizing I/O across the physical devices.</p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Tip:</p>
+As you progress through the following steps, make a list of the raw device names you intend to use and have it available during your database or ASM installation.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="BABEDFHA" name="BABEDFHA"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref337" name="sthref337"></a>
+<h3><span class="secnum">3.4.3</span> Step 2 (Optional): Using an Existing Automatic Storage Management Disk Group</h3>
+<p>If you want to use Automatic Storage Management as the storage option for either database or recovery files, and an existing Automatic Storage Management disk group already exists, then you have the following choices, depending on the installation method that you select:</p>
+<ul>
+<li type="disc">
+<p>If you select an installation method that runs Database Configuration Assistant in interactive mode (for example, by choosing the Advanced database configuration option for example), then you can decide whether you want to create a new disk group, or use an existing disk group.</p>
+<p>The same choice is available to you if you use Database Configuration Assistant after the installation to create a database.</p>
+</li>
+<li type="disc">
+<p>If you select an installation type that runs Database Configuration Assistant in non-interactive mode, then you must choose an existing disk group for the new database; you cannot create a new disk group. However, you can add disk devices to an existing disk group if the existing disk group has insufficient free space for your requirements.</p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+The Automatic Storage Management instance that manages the existing disk group can be running in a different Oracle home directory.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<p>To determine whether an existing ASM disk group exists, or to determine whether there is sufficient disk space in a disk group, you can use Oracle Enterprise Manager Database Grid Control or Database Control. Alternatively, you can use the following procedure:</p>
+<p>To determine whether an existing ASM disk group exists, or to determine whether there is sufficient disk space in a disk group, you can use Oracle Enterprise Manager Database Control. Alternatively, you can use the following procedure:</p>
+<p>To determine whether an existing ASM disk group exists, or to determine whether there is sufficient disk space in a disk group, you can use Oracle Enterprise Manager Database Control. Alternatively, you can use the following procedure:</p>
+<ol type="1" start="1">
+<li>
+<p>In the <span class="bold">Services</span> Control Panel, make sure that the <code>OracleASMService+ASM</code><code><span class="codeinlineitalic">n</span></code> service, where <code><span class="codeinlineitalic">n</span></code> is the node number, has started.</p>
+</li>
+<li>
+<p>Open a Windows command prompt and temporarily set the <code>ORACLE_SID</code> and <code>ORACLE_HOME</code> environment variables to specify the appropriate values for the ASM instance that you want to use.</p>
+<p>For example, if the ASM SID is named <code>OraDB10g+asm</code>, and it is located in the <code>asm</code> directory under the <code><span class="codeinlineitalic">ORACLE_BASE</span></code> directory, then enter settings similar to the following:</p>
+<pre xml:space="preserve" class="oac_no_warn">C:\ set ORACLE_SID = OraDB10g+asm
+C:\ set ORACLE_HOME = C:\oracle\product\10.1.0\asm
+
+</pre></li>
+<li>
+<p>Connect to the Automatic Storage Management instance as the <code>SYS</code> user with <code>AS</code> <code>SYSDBA</code> privilege and start the instance if necessary:</p>
+<pre xml:space="preserve" class="oac_no_warn">C:\&gt;<span class="italic">ORACLE_BASE</span>\<span class="italic">ORACLE_HOME</span>\bin\sqlplus "SYS/<span class="italic">SYS_password</span> as SYSDBA"
+SQL&gt; STARTUP
+
+</pre></li>
+<li>
+<p>Enter the following command to view the existing disk groups, their redundancy level, and the amount of free disk space in each disk group:</p>
+<pre xml:space="preserve" class="oac_no_warn">SQL&gt; SELECT NAME,TYPE,TOTAL_MB,FREE_MB FROM V$ASM_DISKGROUP;
+
+</pre></li>
+<li>
+<p>From the output, identify a disk group with the appropriate redundancy level and note the free space that it contains.</p>
+</li>
+<li>
+<p>If necessary, install, or identify the additional disk devices required to meet the storage requirements listed in the previous section.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+If you are adding devices to an existing disk group, then Oracle recommends that you use devices that have the same size and performance characteristics as the existing devices in that disk group.<a id="sthref338" name="sthref338"></a><a id="sthref339" name="sthref339"></a><a id="sthref340" name="sthref340"></a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="BABICCCC" name="BABICCCC"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref341" name="sthref341"></a>
+<h3><span class="secnum">3.4.4</span> Step 3: Creating DAS or SAN Disk Partitions for Automatic Storage Management</h3>
+<p><a id="sthref342" name="sthref342"></a><a id="sthref343" name="sthref343"></a><a id="sthref344" name="sthref344"></a>To <a id="sthref345" name="sthref345"></a><a id="sthref346" name="sthref346"></a><a id="sthref347" name="sthref347"></a><a id="sthref348" name="sthref348"></a>use a DAS or SAN disk in Automatic Storage Management, the disk must have a partition table. Oracle recommends creating exactly one partition for each disk containing the entire disk.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Y<a id="sthref349" name="sthref349"></a><a id="sthref350" name="sthref350"></a>ou can use any physical disk for Automatic Storage Management, as long as it is partitioned. However, you cannot use NAS or Microsoft dynamic disks.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<p>Use Microsoft Computer Management or the command line tool <code>diskpart</code> to create the partitions. Ensure that you create the partitions without drive letters. After you have created the partitions, the disks can be configured.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="#BCFDAGCB">"Assigning Logical Names"</a> for more information about using <code>diskpart</code> to create a partition</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect2" -->
+<a id="CDEDIHCD" name="CDEDIHCD"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref351" name="sthref351"></a>
+<h3><span class="secnum">3.4.5</span> Step 4: Manually Configuring Disks for Automatic Storage Management</h3>
+<p>To use Automatic Storage Management with direct attached storage (DAS) or storage area network (SAN) storage, the disks must be stamped with a header. If you install Oracle Database in interactive mode, then Oracle Universal Installer configures the disks' headers during the installation process.</p>
+<p>However, if you plan to install Oracle Database in noninteractive mode, then you need to configure the disks manually before installation either by using <code>asmtoolg</code> (GUI version) or using <code>asmtool</code> (command line version). You can also use these tools to reconfigure the disks after installation. The <code>asmtoolg</code> and <code>asmtool</code> utilities only work on partitioned disks; you cannot use Automatic Storage Management on unpartitioned disks.</p>
+<p>The following section describes the <code>asmtoolg</code> and <code>asmtool</code> functions and commands.</p>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref352" name="sthref352"></a>
+<h4><span class="secnum">3.4.5.1</span> Overview of asmtoolg and asmtool</h4>
+<p>The <code>asmtoolg</code> and <code>asmtool</code> tools associate meaningful, persistent names with disks to facilitate using those disks with Automatic Storage Management. Automatic Storage Management uses disk strings to operate more easily on groups of disks at once. The names that <code>asmtoolg</code> or <code>asmtool</code> create make this easier than using Windows drive letters.</p>
+<p>All disk names created by <code>asmtoolg</code> or <code>asmtool</code> begin with the prefix <code>ORCLDISK</code> followed by a user-defined prefix (the default is <code>DATA</code>), and by a disk number for identification purposes. You can use them as raw devices in the Automatic Storage Management instance by specifying a name <code>\\.\ORCLDISK</code><code><span class="codeinlineitalic">prefixn</span></code>, where <code><span class="codeinlineitalic">prefix</span></code> either can be <code>DATA</code>, or can be a value you supply, and where <code><span class="codeinlineitalic">n</span></code> represents the disk number.</p>
+<p>To configure your disks with asmtoolg, refer to the section <a href="#CDEBCGEB">"Using asmtoolg (Graphical User Interface)"</a>. To configure the disks with asmtool, refer to the section <a href="#CDEIEBBB">"Using asmtool (Command Line)"</a>.</p>
+</div>
+<!-- class="sect3" -->
+<a id="CDEBCGEB" name="CDEBCGEB"></a>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref353" name="sthref353"></a>
+<h4><span class="secnum">3.4.5.2</span> Using asmtoolg (Graphical User Interface)</h4>
+<p><a id="sthref354" name="sthref354"></a><a id="sthref355" name="sthref355"></a><a id="sthref356" name="sthref356"></a><code>asmtoolg</code> is a graphical interface for creating device names. Use <code>asmtoolg</code> to add, change, delete, and examine the devices available for use in Automatic Storage Management.</p>
+<p>To add or change disk stamps:</p>
+<ol type="1" start="1">
+<li>
+<p>In the installation media labeled Oracle Database 10<span class="italic">g</span> Release 2 (10.2), navigate to <code>db\asmtool</code>, and double-click <code>asmtoolg</code>.</p>
+<p>If Oracle Database is already installed, then go to <code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\</code><code><span class="codeinlineitalic">ORACLE_HOME</span></code><code>\</code><code>bin</code>, and double-click <code>asmtoolg</code>.</p>
+</li>
+<li>
+<p>Select the <span class="bold">Add or change label</span> option, and then click <span class="bold">Next</span>.</p>
+<p><code>asmtoolg</code> shows the devices available on the system. Unrecognized disks are labeled as a "Candidate device." Raw device files are labeled as "Oracle raw device file." Stamped Automatic Storage Management disks are labeled as "Stamped ASM disk," and unstamped Automatic Storage Management disks are labeled as "Unstamped ASM disks." The tool also shows disks that are recognized by Windows as a file system (such as NTFS). These disks are not available for use as ASM disks, and cannot be selected. In addition, Microsoft Dynamic disks are not available for use as ASM disks.</p>
+<p>If necessary, follow the steps under <a href="#CDEEFAFE">"Creating Partitions for Logical Volumes"</a> to create a disk partition for the ASM instance.</p>
+</li>
+<li>
+<p>On the Stamp Disks screen, select the disks to stamp.</p>
+<p>For ease of use, Automatic Storage Management can generate unique stamps for all of the devices selected for a given prefix. The stamps are generated by concatenating a number with the prefix specified. For example, if the prefix is <code>DATA</code>, then the first Automatic Storage Management link name is <code>ORCLDISKDATA0</code>.</p>
+<p>You can also specify the stamps of individual devices.</p>
+</li>
+<li>
+<p>Optionally, select a disk to edit the individual stamp (Automatic Storage Management link name).</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Finish</span>.</p>
+</li>
+</ol>
+<p>To delete disk stamps:</p>
+<ol type="1" start="1">
+<li>
+<p>Select the <span class="bold">Delete labels</span> option, then click <span class="bold">Next</span>.</p>
+<p>The delete option is only available if disks exist with stamps. The delete screen shows all stamped Automatic Storage Management disks.</p>
+</li>
+<li>
+<p>On the Delete Stamps screen, select the disks to unstamp.</p>
+</li>
+<li>
+<p>Click <span class="bold">Next</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Finish</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CDEIEBBB" name="CDEIEBBB"></a>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref357" name="sthref357"></a>
+<h4><span class="secnum">3.4.5.3</span> Using asmtool (Command Line)</h4>
+<p><a id="sthref358" name="sthref358"></a><a id="sthref359" name="sthref359"></a><a id="sthref360" name="sthref360"></a><code>asmtool</code> is a command-line interface for stamping disks. It has the following options:</p>
+<div class="inftblInformalWide">
+<table class="InformalWide" title="ASM command line options" summary="This table lists the asmtool command line options. column 1 lists the option, column 2 lists the description of the option, and column 3 gives an example." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t20">Option</th>
+<th align="left" valign="bottom" id="r1c2-t20">Description</th>
+<th align="left" valign="bottom" id="r1c3-t20">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t20" headers="r1c1-t20"><code>-add</code></td>
+<td align="left" headers="r2c1-t20 r1c2-t20">Adds or changes stamps. You must specify the hard disk, partition, and new stamp name. If the disk is a raw device or has an existing Automatic Storage Management stamp, then you must specify the <code>-force</code> option.
+<p>If necessary, follow the steps under <a href="#CDEEFAFE">"Creating Partitions for Logical Volumes"</a> to create a disk partition for the ASM instance.</p>
+</td>
+<td align="left" headers="r2c1-t20 r1c3-t20">
+<pre xml:space="preserve" class="oac_no_warn">asmtool -add [-force]
+\Device\Harddisk1\Partition1 ORCLDISKASM0
+\Device\Harddisk2\Partition1 ORCLDISKASM2...
+</pre></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t20" headers="r1c1-t20"><code>-addprefix</code></td>
+<td align="left" headers="r3c1-t20 r1c2-t20">Adds or changes stamps using a common prefix to generate stamps automatically. The stamps are generated by concatenating a number with the prefix specified. If the disk is a raw device or has an existing Automatic Storage Management stamp, then you must specify the <code>-force</code> option.</td>
+<td align="left" headers="r3c1-t20 r1c3-t20">
+<pre xml:space="preserve" class="oac_no_warn">asmtool -addprefix ORCLDISKASM [-force]
+\Device\Harddisk1\Partition1
+\Device\Harddisk2\Partition1...
+</pre></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t20" headers="r1c1-t20"><code>-list</code></td>
+<td align="left" headers="r4c1-t20 r1c2-t20">List available disks. The stamp, windows device name, and disk size in megabytes are shown. Some disks may be file systems, and cannot be stamped. If the disk is a raw device or has an existing ASM stamp, then you must specify the <code>-force</code> option.</td>
+<td align="left" headers="r4c1-t20 r1c3-t20">
+<pre xml:space="preserve" class="oac_no_warn">asmtool -list [-force]
+</pre></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t20" headers="r1c1-t20"><code>-delete</code></td>
+<td align="left" headers="r5c1-t20 r1c2-t20">Removes existing stamps from disks.</td>
+<td align="left" headers="r5c1-t20 r1c3-t20">
+<pre xml:space="preserve" class="oac_no_warn">asmtool -delete ORCLDISKASM0 ORCLDISKASM1...
+</pre></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblInformalWide -->
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+For <code>-add</code>, <code>-addprefix</code>, and <code>-delete</code>, <code>asmtool</code> will notify any Automatic Storage Management instances on the local machine and other nodes in the cluster if available, to rescan the available disks.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BGBDBAHH" name="BGBDBAHH"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref361" name="sthref361"></a>
+<h2><span class="secnum">3.5</span> Configuring Raw Logical Volumes or Raw Partitions<a id="sthref362" name="sthref362"></a><a id="sthref363" name="sthref363"></a><a id="sthref364" name="sthref364"></a></h2>
+<p>This section contains the following topics:</p>
+<ul>
+<li type="disc">
+<p><a href="#CDEEFAFE">Creating Partitions for Logical Volumes</a></p>
+</li>
+<li type="disc">
+<p><a href="#CDEFBCAC">Assigning Logical Names</a></p>
+</li>
+<li type="disc">
+<p><a href="#CDEIIBGJ">Creating the DBCA Raw Device Mapping File</a></p>
+</li>
+</ul>
+<a id="CDEEFAFE" name="CDEEFAFE"></a>
+<div class="sect2"><a id="sthref365" name="sthref365"></a>
+<h3><span class="secnum">3.5.1</span> Creating Partitions for Logical Volumes</h3>
+<p>Create the logical volumes listed in the following table. You must create these volumes to install an Oracle database.</p>
+<div class="inftblHRuleInformal">
+<table class="HRuleInformal" title="Raw Logical Volumes Required on Solaris" summary="This table lists the raw logical volumes required for Windows installations" dir="ltr" border="1" width="100%" frame="hsides" rules="rows" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t22">Number</th>
+<th align="left" valign="bottom" id="r1c2-t22">Partition Size (MB)</th>
+<th align="left" valign="bottom" id="r1c3-t22">Purpose and Sample Logical Volume Name</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t22" headers="r1c1-t22">1</td>
+<td align="left" headers="r2c1-t22 r1c2-t22">500</td>
+<td align="left" headers="r2c1-t22 r1c3-t22"><a id="sthref366" name="sthref366"></a><a id="sthref367" name="sthref367"></a><code>SYSTEM</code> tablespace: <code><span class="codeinlineitalic">dbname</span></code><code>_system_raw_500m</code></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t22" headers="r1c1-t22">1</td>
+<td align="left" headers="r3c1-t22 r1c2-t22">800</td>
+<td align="left" headers="r3c1-t22 r1c3-t22"><a id="sthref368" name="sthref368"></a><a id="sthref369" name="sthref369"></a><code>SYSAUX</code> tablespace: <code><span class="codeinlineitalic">dbname</span></code><code>_sysaux_raw_800m</code></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t22" headers="r1c1-t22">1 for each instance</td>
+<td align="left" headers="r4c1-t22 r1c2-t22">500</td>
+<td align="left" headers="r4c1-t22 r1c3-t22"><a id="sthref370" name="sthref370"></a><a id="sthref371" name="sthref371"></a><code>UNDOTBS1</code> tablespace: <code><span class="codeinlineitalic">dbname</span></code><code>_undotbs1_raw_500m</code></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t22" headers="r1c1-t22">1</td>
+<td align="left" headers="r5c1-t22 r1c2-t22">180</td>
+<td align="left" headers="r5c1-t22 r1c3-t22"><a id="sthref372" name="sthref372"></a><a id="sthref373" name="sthref373"></a><code>EXAMPLE</code> tablespace: <code><span class="codeinlineitalic">dbname</span></code><code>_example_raw_180m</code></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t22" headers="r1c1-t22">1</td>
+<td align="left" headers="r6c1-t22 r1c2-t22">120</td>
+<td align="left" headers="r6c1-t22 r1c3-t22"><a id="sthref374" name="sthref374"></a><a id="sthref375" name="sthref375"></a><code>USERS</code> tablespace: <code><span class="codeinlineitalic">dbname</span></code><code>_users_raw_120m</code></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t22" headers="r1c1-t22">2 for each instance</td>
+<td align="left" headers="r7c1-t22 r1c2-t22">120</td>
+<td align="left" headers="r7c1-t22 r1c3-t22"><a id="sthref376" name="sthref376"></a><a id="sthref377" name="sthref377"></a><a id="sthref378" name="sthref378"></a>Two online redo log files (where <span class="italic">m</span> is the thread number and <span class="italic">n</span> is the log number, 1 or 2): <code><span class="codeinlineitalic">dbname</span></code><code>_redo</code><code><span class="codeinlineitalic">m_n</span></code>_<code>raw_120m</code></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t22" headers="r1c1-t22">2</td>
+<td align="left" headers="r8c1-t22 r1c2-t22">110</td>
+<td align="left" headers="r8c1-t22 r1c3-t22"><a id="sthref379" name="sthref379"></a><a id="sthref380" name="sthref380"></a><a id="sthref381" name="sthref381"></a>First and second control files:
+<p><code><span class="codeinlineitalic">dbname</span></code><code>_control[1|2]_raw_110m</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r9c1-t22" headers="r1c1-t22">1</td>
+<td align="left" headers="r9c1-t22 r1c2-t22">250</td>
+<td align="left" headers="r9c1-t22 r1c3-t22"><a id="sthref382" name="sthref382"></a><a id="sthref383" name="sthref383"></a><code>TEMP</code> tablespace: <code><span class="codeinlineitalic">dbname</span></code><code>_temp_raw_250m</code></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r10c1-t22" headers="r1c1-t22">1</td>
+<td align="left" headers="r10c1-t22 r1c2-t22">5</td>
+<td align="left" headers="r10c1-t22 r1c3-t22"><a id="sthref384" name="sthref384"></a><a id="sthref385" name="sthref385"></a><a id="sthref386" name="sthref386"></a><a id="sthref387" name="sthref387"></a><a id="sthref388" name="sthref388"></a><a id="sthref389" name="sthref389"></a>Server parameter file (SPFILE): <code><span class="codeinlineitalic">dbname</span></code><code>_spfile_raw_5m</code></td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r11c1-t22" headers="r1c1-t22">1</td>
+<td align="left" headers="r11c1-t22 r1c2-t22">5</td>
+<td align="left" headers="r11c1-t22 r1c3-t22">Password file: <code><span class="codeinlineitalic">dbname</span></code><code>_pwdfile_raw_5m</code></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblHRuleInformal -->
+<p>To create and configure raw volumes or partitions, use the disk administration tools provided by the operating system or third party vendors. The following administration tools are provided by the operating system:</p>
+<ul>
+<li type="disc">
+<p>Windows 2000 and Windows Server 2003 provide Disk Management snap-in to manage disks.</p>
+<p>To access this tool, type <code>diskmgmt.msc</code> at the command prompt. Alternatively, from the <span class="bold">Start</span> menu, select <span class="bold">Programs</span>, then <span class="bold">Administrative Tools</span>, then <span class="bold">Computer Management</span>. Then select the <span class="bold">Disk Management</span> node in the Storage tree.</p>
+</li>
+<li type="disc">
+<p>Windows Server 2003 provides a command line tool to manage disks.</p>
+<p>To access this tool, type <code>diskpart.exe</code> at the command prompt.</p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+If you need to download the <code>diskmgmt.msc</code> tool, consult Microsoft documentation on the Microsoft Web site
+<pre xml:space="preserve" class="oac_no_warn"><a href="http://www.microsoft.com/">http://www.microsoft.com/</a>
+</pre></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+The online help or documentation for the administration tool you are using</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<p>You can use the <code>diskpart</code> tool command <code>create partition</code> to create primary or extended partitions, or create logical drives.</p>
+<p>The following example uses the <code>diskpart</code> tool to create a 32 MB primary partition on disk 100. In this syntax, <code>diskpart.exe</code> is the command line tool for managing disks.</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\&gt; diskpart.exe
+DISKPART&gt; select disk 100
+DISKPART&gt; create partition primary size=32
+
+</pre>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Be aware of the following restrictions for partitions:
+<ul>
+<li type="disc">
+<p>You cannot use partitions defined on disks with primary partitions for storage defined while running the OUI to install Oracle Clusterware as described in <a href="crswin.htm#BABCHCED">Chapter 4, "Installing Oracle Clusterware on Windows-Based Systems"</a>.</p>
+</li>
+<li type="disc">
+<p>With 32-bit Windows, you cannot create more than four primary disk partitions for each disk. With 64-bit and x64 Windows, you can create up to 128 primary partitions. However, Oracle recommends that you limit the number of partitions you create to prevent disk contention.</p>
+</li>
+<li type="disc">
+<p>You can assign mount points only to primary partitions and logical drives.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</div>
+<!-- class="sect2" -->
+<a id="CDEFBCAC" name="CDEFBCAC"></a>
+<div class="sect2"><a id="BCFDAGCB" name="BCFDAGCB"></a>
+<h3><span class="secnum">3.5.2</span> Assigning Logical Names</h3>
+<p>After creating volumes, assign logical names for the Oracle Database. You can assign names to partitions by using <code>importSYMLinks</code> from the command line, or by using Oracle Object Link Manager. To use Oracle Object Link Manager to create persistent symbolic links to the corresponding raw partitions, run the command <code><span class="codeinlineitalic">CRS_home</span></code><code>\bin\GUIOracleObjManager.exe</code></p>
+</div>
+<!-- class="sect2" -->
+<a id="CDEIIBGJ" name="CDEIIBGJ"></a>
+<div class="sect2"><a id="sthref390" name="sthref390"></a>
+<h3><span class="secnum">3.5.3</span> Creating the DBCA Raw Device Mapping File<a id="sthref391" name="sthref391"></a><a id="sthref392" name="sthref392"></a><a id="sthref393" name="sthref393"></a><a id="sthref394" name="sthref394"></a></h3>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+You must complete this procedure only if you are using raw devices for database files. You do not specify the raw devices for the Oracle Clusterware files in the DBCA raw device mapping file.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<p>To enable Database Configuration Assistant (DBCA) to identify the appropriate raw partition symbolic links for each database file, you must create a raw device mapping file, as follows:</p>
+<ol type="1" start="1">
+<li>
+<p>Set the ORACLE_BASE environment variable to specify the Oracle base directory that you identified or created previously, as in this example:</p>
+<pre xml:space="preserve" class="oac_no_warn">C:\&gt;set ORACLE_BASE = E:\oracle
+
+</pre></li>
+<li>
+<p>Create a database subdirectory under the Oracle base directory as in this example:</p>
+<pre xml:space="preserve" class="oac_no_warn">C:\&gt;mkdir E:\oracle\<span class="italic">dbname</span>
+
+</pre>
+<p>where <code><span class="codeinlineitalic">dbname</span></code> is the name of the database that you chose previously.</p>
+</li>
+<li>
+<p>Change directory to the <code>%ORACLE_BASE%\</code><code><span class="codeinlineitalic">dbname</span></code> directory.</p>
+</li>
+<li>
+<p>Using any text editor, create a file called <code>conf.txt</code>. The file should have the following characteristics:</p>
+<ul>
+<li type="disc">
+<p>Each line in the file must have the following format:</p>
+<pre xml:space="preserve" class="oac_no_warn">database_object_identifier = symbolic link name
+
+</pre></li>
+<li type="disc">
+<p>For your RAC database, the file must specify one automatic undo tablespace datafile (<code>undotbs</code><code><span class="codeinlineitalic">n</span></code>) and two redo log files (<code>redo</code><code><span class="codeinlineitalic">n</span></code><code>_1</code>, <code>redo</code><code><span class="codeinlineitalic">n</span></code><code><span class="codeinlineitalic">_2</span></code>) for each instance where <code><span class="codeinlineitalic">n</span></code> is the instance number.</p>
+</li>
+<li type="disc">
+<p>Specify at least two control files (<code>control1</code>, <code>control2</code>).</p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+In Windows, by default, <code>\</code> represents the escape key. To enter a backslash as part of a script, you must enter it in as a string literal. This means that when configuring the mapping file, for Windows to read the mapping file with the path <code>\\.\</code>, you must enter the path as <code>\\\\.\\</code>. Windows reads this as "escape backslash escape backslash. escape backslash."</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<p>The following syntax example is for a mapping file for a two-instance RAC cluster:</p>
+<pre xml:space="preserve" class="oac_no_warn">system=\\\\.\\<span class="italic">dbname</span>_SYSTEM 
+sysaux=\\\\.\\<span class="italic">dbname</span>_SYSAUX 
+spfile=\\\\.\\<span class="italic">dbname</span>_SPFILE 
+users=\\\\.\\<span class="italic">dbname</span>_USERS 
+temp=\\\\.\\<span class="italic">dbname</span>_TEMP 
+undotbs1=\\\\.\\<span class="italic">dbname</span>_UNDOTBS1 
+undotbs2=\\\\.\\<span class="italic">dbname</span>_UNDOTBS2 
+control1=\\\\.\\<span class="italic">dbname</span>_CONTROL1 
+control2=\\\\.\\<span class="italic">dbname</span>_CONTROL2 
+redo1_1=\\\\.\\<span class="italic">dbname</span>_REDO1_1 
+redo1_2=\\\\.\\<span class="italic">dbname</span>_REDO1_2 
+redo2_1=\\\\.\\<span class="italic">dbname</span>_REDO2_1 
+redo2_2=\\\\.\\<span class="italic">dbname</span>_REDO2_2 
+example=\\\\.\\<span class="italic">dbname</span>_EXAMPLE 
+pwdfile=\\\\.\\<span class="italic">dbname</span>_pwdfile
+
+</pre></li>
+<li>
+<p>Save the file and note the file name that you specified.</p>
+</li>
+<li>
+<p>You may optionally set an environment variable, DBCA_RAW_CONFIG, to specify the full path to this file. For the Oracle base defined in Step 1, you would use the following command:</p>
+<pre xml:space="preserve" class="oac_no_warn">C:\&gt;set DBCA_RAW_CONFIG=E:\oracle\dbname\conf.txt
+
+</pre></li>
+</ol>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CDEFEIGD" name="CDEFEIGD"></a>
+<div class="sect1"><a id="sthref395" name="sthref395"></a>
+<h2><span class="secnum">3.6</span> Oracle-Managed Files Requirements</h2>
+<p>If you use OCFS or ASM for your database files, then your database will be created with Oracle-managed files by default. You may also elect to use files managed by Oracle if you choose the Custom installation type or the Advanced database creation option. If you use this feature, you need only specify the database object name instead of file names when creating or deleting database files.</p>
+<p>Configuration procedures are required in order to enable Oracle Managed Files.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+"Using Oracle-Managed Files" in <span class="italic">Oracle Database Administrator's Guide</span></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect1" --></div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="prewin.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="part3.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

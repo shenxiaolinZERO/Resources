@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>8 Parameter Management for Real Application Clusters Databases</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.1.3 Build 116" />
+<meta name="Date" content="August 18, 2005 11:44:24" />
+<meta name="doctitle" content="Oracle&reg; Database Oracle Clusterware and Oracle Real Application Clusters Installation Guide 10g Release 2 (10.2) for Microsoft Windows" />
+<meta name="partno" content="B14207-01" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="part4.htm" title="Previous" type="text/html" />
+<link rel="Next" href="undrstnd.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14207.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database Oracle Clusterware and Oracle Real Application Clusters Installation Guide<br />
+10<i>g</i> Release 2 (10.2) for Microsoft Windows</b><br />
+Part Number B14207-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="part4.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="undrstnd.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top"><a href="../b14207.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="g36065" name="g36065"></a><a id="i3001" name="i3001"></a>
+<h1><span class="secnum">8</span> Parameter Management for Real Application Clusters Databases</h1>
+<p><a id="sthref583" name="sthref583"></a><a id="sthref584" name="sthref584"></a>This chapter describes server parameter file (SPFILE) placement and configuration in Real Application Clusters (RAC) environments. The topics in this chapter are:</p>
+<ul>
+<li type="disc">
+<p><a href="#i31804">Parameter Files and Real Application Clusters</a></p>
+</li>
+<li type="disc">
+<p><a href="#i27000">Using Server Parameter Files in Real Application Clusters</a></p>
+</li>
+<li type="disc">
+<p><a href="#i31773">Parameter File Search Order in Oracle Real Application Clusters</a></p>
+</li>
+<li type="disc">
+<p><a href="#i20488">Server Parameter File Errors in Real Application Clusters</a></p>
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span> for more information about parameters and <span class="italic">Oracle Real Application Clusters Deployment and Performance Guide</span> for a discussion of parallel execution-related parameters in RAC data warehouse environments</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></li>
+</ul>
+<a id="i31804" name="i31804"></a>
+<div class="sect1"><a id="sthref585" name="sthref585"></a>
+<h2><span class="secnum">8.1</span> Parameter Files and Real Application Clusters</h2>
+<p><a id="sthref586" name="sthref586"></a><a id="sthref587" name="sthref587"></a>Oracle uses parameter settings in parameter files to determine how to control various database resources. You can use two types of files for parameter administration: the server parameter file (SPFILE) or one or more traditional client-side parameter files.</p>
+<p>Oracle recommends that you manage parameters using an SPFILE. If you use client-side parameter files, then Oracle does not preserve parameter changes made for self-tuning after shutdown.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+Oracle Database 10<span class="italic">g</span> Real Application Clusters documentation for more information about using client-side parameter files</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect1" -->
+<a id="i27000" name="i27000"></a>
+<div class="sect1"><a id="sthref588" name="sthref588"></a>
+<h2><span class="secnum">8.2</span> Using Server Parameter Files in Real Application Clusters</h2>
+<p>By default, Oracle creates <a id="sthref589" name="sthref589"></a>the server parameter file based on one <a id="sthref590" name="sthref590"></a><code>SPFILE</code>. You can change parameter settings in the server parameter file only by using Oracle Enterprise Manager or <code>ALTER SYSTEM SET</code> SQL statements; the server parameter file is a binary file that you should not edit.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Oracle recommends that you avoid modifying the values for self-tuning parameters; overriding these settings can adversely affect performance.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<p>If you are upgrading from a previous Oracle release, then create and configure the server parameter file for RAC using the procedures described in the following section.</p>
+<div class="sect2"><a id="sthref591" name="sthref591"></a>
+<h3><span class="secnum">8.2.1</span> Location of The Server Parameter File</h3>
+<p>The <a id="sthref592" name="sthref592"></a>default location of the server parameter file (SPFILE) when the database creates it from a <code>PFILE</code> is:</p>
+<pre xml:space="preserve" class="oac_no_warn">%ORACLE_HOME%\database\SPFILE<span class="italic">%ORACLE_SID%</span>.ORA 
+
+</pre>
+<p>The default location of the server parameter file is inappropriate for RAC databases if you use <a id="sthref593" name="sthref593"></a>ASM or <a id="sthref594" name="sthref594"></a>raw devices because all instances must use the same server parameter file.</p>
+<p>For Windows-based platforms Oracle recommends that you use a <code>PFILE</code> in this directory:</p>
+<pre xml:space="preserve" class="oac_no_warn">%ORACLE_HOME%\database\init<span class="italic">%ORACLE_SID%</span>.ora
+
+</pre>
+<p>This path is valid for each instance and it refers to a single, shared initialization parameter file. If you use raw storage, then the file must contain the following entry on a Windows-based platform:</p>
+<pre xml:space="preserve" class="oac_no_warn">SPFILE='\\.\<span class="italic">dbname</span>_SPFILE'
+
+</pre>
+<p>However, if you use a cluster file system, then use the following file location:</p>
+<pre xml:space="preserve" class="oac_no_warn">SPFILE=%ORACLE_HOME%\database\spfile.ora
+
+</pre>
+<p>If you use ASM, then the SPFILE value will be:</p>
+<pre xml:space="preserve" class="oac_no_warn">SPFILE='+disk_group_name/<span class="italic">dbunique_name</span>/spfile<span class="italic">dbname</span>.ora'
+
+</pre>
+<p>where <code><span class="codeinlineitalic">dbunique_name</span></code> is the unique database name and <code><span class="codeinlineitalic">dbname</span></code> is the database name.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+The SPFILE for an ASM instance cannot be stored in ASM disks groups.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<p>You must use the same value of <code>SPFILE</code> so that all instances use the same server parameter file at startup.</p>
+<p>To use DBCA to create your database and to use the server parameter file, on the Initialization Parameters page select Create server parameter file (SPFILE) under the File Locations tab which is visible only if you are using raw storage. Then enter either a shared file system filename or the raw device path name in the <code>Server Parameters Filename</code> field.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+When you use DBCA to create the server parameter file, the default <code>PFILE</code> file name is:
+<p><code>%ORACLE_HOME%\database\init</code><code><span class="codeinlineitalic">%ORACLE_SID%</span></code><code>.ora</code></p>
+<p>This is the default PFILE name.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="i31773" name="i31773"></a>
+<div class="sect1"><a id="sthref595" name="sthref595"></a>
+<h2><span class="secnum">8.3</span> Parameter File Search Order in Oracle Real Application Clusters</h2>
+<p>Oracle searches for your <a id="sthref596" name="sthref596"></a>parameter file in a particular order depending on your platform.</p>
+<p>The search order on Windows-based platforms is:</p>
+<ol type="1" start="1">
+<li>
+<p><kbd>%ORACLE_HOME%\database\spfile<span class="italic">sid</span>.ora</kbd></p>
+</li>
+<li>
+<p><kbd>%ORACLE_HOME%\database\spfile.ora</kbd></p>
+</li>
+<li>
+<p><kbd>%ORACLE_HOME%\database\init<span class="italic">sid</span>.ora</kbd></p>
+</li>
+</ol>
+</div>
+<!-- class="sect1" -->
+<a id="i20488" name="i20488"></a>
+<div class="sect1"><a id="sthref597" name="sthref597"></a>
+<h2><span class="secnum">8.4</span> Server Parameter File Errors in Real Application Clusters</h2>
+<p>Oracle reports errors that occur during <a id="sthref598" name="sthref598"></a>server parameter file creation or while reading the file during startup. If an error occurs during a parameter update, then Oracle records the error in your <code>ALERT.LOG</code> file and ignores subsequent parameter updates to the file. If this happens, then do either of the following:</p>
+<ul>
+<li type="disc">
+<p>Shut down the instance, recover the server parameter file, and restart the instance.</p>
+</li>
+<li type="disc">
+<p>Restart the instance using a PFILE instead of the SPFILE.</p>
+</li>
+</ul>
+<p>Oracle displays errors for parameter changes that you attempt when you incorrectly use the <code>ALTER SYSTEM SET</code> statement. Oracle does this when an error occurs while reading from or writing to the server parameter file.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters Administration and Deployment Guide</span> for more information about backing up the SPFILE</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect1" --></div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="part4.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="undrstnd.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

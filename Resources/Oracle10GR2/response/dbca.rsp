@@ -1,0 +1,1028 @@
+##############################################################################
+##                                                                          ##
+##                            DBCA response file                            ##
+##                            ------------------                            ##
+## Copyright   1998, 2004, Oracle Corporation. All Rights Reserved.         ##
+##                                                                          ##
+## Specify values for the variables listed below to customize Oracle        ##
+## Database Configuration installation.                                     ##
+##                                                                          ##
+## Each variable is associated with a comment. The comment identifies the   ##
+## variable type.                                                           ##
+##                                                                          ##
+## Please specify the values in the following format :                      ##
+##          Type       :  Example                                           ##
+##          String     :  "<value>"                                         ##
+##          Boolean    :  True or False                                     ##
+##          Number     :  <numeric value>                                   ##
+##          StringList :  {"<value1>","<value2>"}                           ##
+##                                                                          ##
+## Examples :                                                               ##
+##     1. dbca -progress_only -responseFile <response file>                 ##
+##        Display a progress bar depicitng progress of database creation    ##
+##        process.                                                          ##
+##                                                                          ##
+##     2. dbca -silent -responseFile <response file>                        ##
+##        Creates database silently. No user interface is displayed.        ##
+##                                                                          ##
+##     3. dbca -silent -createDatabase -cloneTemplate                       ##
+##			 -responseFile <response file>                      ##
+##        Creates database silently with clone template. The template in    ##
+##	  reponsefile is a clone template. 			            ##
+##                                                                          ##
+##     4. dbca -silent -deleteDatabase -responseFile <response file>        ##
+##        Deletes database silently.                                        ##
+##############################################################################
+
+#-----------------------------------------------------------------------------
+# GENERAL section is required for all types of database creations.
+#-----------------------------------------------------------------------------
+[GENERAL]
+
+#-----------------------------------------------------------------------------
+# Name          : RESPONSEFILE_VERSION
+# Datatype      : String
+# Description   : Version of the database to create
+# Valid values  : "10.0.0"
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+RESPONSEFILE_VERSION = "10.0.0"
+
+#-----------------------------------------------------------------------------
+# Name          : OPERATION_TYPE
+# Datatype      : String
+# Description   : Type of operation
+# Valid values  : "createDatabase" \ "createTemplateFromDB" \ "createCloneTemplate" \ "deleteDatabase" \ "configureDatabase" \ "configureASM" \ "addInstance" (RAC-only) \ "deleteInstance" (RAC-only)
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+OPERATION_TYPE = "createDatabase"
+
+#-----------------------*** End of GENERAL section ***------------------------
+
+#-----------------------------------------------------------------------------
+# CREATEDATABASE section is used when OPERATION_TYPE is defined as "createDatabase". 
+#-----------------------------------------------------------------------------
+[CREATEDATABASE]
+
+#-----------------------------------------------------------------------------
+# Name          : GDBNAME
+# Datatype      : String
+# Description   : Global database name of the database
+# Valid values  : <db_name>.<db_domain> - when database domain isn't NULL
+#                 <db_name>             - when database domain is NULL
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+GDBNAME = "orcl10g.us.oracle.com"
+
+#-----------------------------------------------------------------------------
+# Name          : SID
+# Datatype      : String
+# Description   : System identifier (SID) of the database
+# Valid values  : Check Oracle10g Administrator's Guide
+# Default value : <db_name> specified in GDBNAME
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+SID = "orcl10g"
+
+#-----------------------------------------------------------------------------
+# Name          : NODELIST
+# Datatype      : String
+# Description   : Comma-separated list of cluster nodes
+# Valid values  : Cluster node names
+# Default value : None
+# Mandatory     : No (Yes for RAC)
+#-----------------------------------------------------------------------------
+#NODELIST=
+
+#-----------------------------------------------------------------------------
+# Name          : TEMPLATENAME
+# Datatype      : String
+# Description   : Name of the template
+# Valid values  : Template name as seen in DBCA
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+TEMPLATENAME = "General Purpose"
+
+#-----------------------------------------------------------------------------
+# Name          : OBFUSCATEDPASSWORDS
+# Datatype      : Boolean
+# Description   : Set to true if passwords are encrypted
+# Valid values  : TRUE\FALSE
+# Default value : FALSE
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#OBFUSCATEDPASSWORDS = FALSE
+
+
+#-----------------------------------------------------------------------------
+# Name          : SYSPASSWORD
+# Datatype      : String
+# Description   : Password for SYS user
+# Valid values  : Check Oracle10g Administrator's Guide
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+#SYSPASSWORD = "password"
+
+#-----------------------------------------------------------------------------
+# Name          : SYSTEMPASSWORD
+# Datatype      : String
+# Description   : Password for SYSTEM user
+# Valid values  : Check Oracle10g Administrator's Guide
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+#SYSTEMPASSWORD = "password"
+
+#-----------------------------------------------------------------------------
+# Name          : EMCONFIGURATION
+# Datatype      : String
+# Description   : Enterprise Manager Configuration Type
+# Valid values  : CENTRAL|LOCAL|ALL|NOBACKUP|NOEMAIL|NONE
+# Default value : NONE
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#EMCONFIGURATION = "NONE"
+
+#-----------------------------------------------------------------------------
+# Name          : SYSMANPASSWORD
+# Datatype      : String
+# Description   : Password for SYSMAN user
+# Valid values  : Check Oracle10g Administrator's Guide
+# Default value : None
+# Mandatory     : Yes, if LOCAL specified for EMCONFIGURATION
+#-----------------------------------------------------------------------------
+#SYSMANPASSWORD = "password"
+
+#-----------------------------------------------------------------------------
+# Name          : DBSNMPPASSWORD
+# Datatype      : String
+# Description   : Password for DBSNMP user
+# Valid values  : Check Oracle10g Administrator's Guide
+# Default value : None
+# Mandatory     : Yes, if EMCONFIGURATION is specified
+#-----------------------------------------------------------------------------
+#DBSNMPPASSWORD = "password"
+
+#-----------------------------------------------------------------------------
+# Name          : CENTRALAGENT
+# Datatype      : String
+# Description   : Grid Control Central Agent Oracle Home
+# Default value : None
+# Mandatory     : Yes, if CENTRAL is specified for EMCONFIGURATION
+#-----------------------------------------------------------------------------
+#CENTRALAGENT = 
+
+#-----------------------------------------------------------------------------
+# Name          : HOSTUSERNAME
+# Datatype      : String
+# Description   : Host user name for EM backup job
+# Default value : None
+# Mandatory     : Yes, if ALL or NOEMAIL are specified for EMCONFIGURATION
+#-----------------------------------------------------------------------------
+#HOSTUSERNAME = 
+
+#-----------------------------------------------------------------------------
+# Name          : HOSTUSERPASSWORD
+# Datatype      : String
+# Description   : Host user password for EM backup job
+# Default value : None
+# Mandatory     : Yes, if ALL or NOEMAIL are specified for EMCONFIGURATION
+#-----------------------------------------------------------------------------
+#HOSTUSERPASSWORD= 
+
+#-----------------------------------------------------------------------------
+# Name          : BACKUPSCHEDULE
+# Datatype      : String
+# Description   : Daily backup schedule in the form of hh:mm
+# Default value : 2:00
+# Mandatory     : Yes, if ALL or NOEMAIL are specified for EMCONFIGURATION
+#-----------------------------------------------------------------------------
+#BACKUPSCHEDULE=
+
+#-----------------------------------------------------------------------------
+# Name          : SMTPSERVER
+# Datatype      : String
+# Description   : Outgoing mail (SMTP) server for email notifications
+# Default value : None
+# Mandatory     : Yes, if ALL or NOBACKUP are specified for EMCONFIGURATION
+#-----------------------------------------------------------------------------
+#SMTPSERVER =
+
+#-----------------------------------------------------------------------------
+# Name          : EMAILADDRESS
+# Datatype      : String
+# Description   : Email address for email notifications
+# Default value : None
+# Mandatory     : Yes, if ALL or NOBACKUP are specified for EMCONFIGURATION
+#-----------------------------------------------------------------------------
+#EMAILADDRESS =
+
+#-----------------------------------------------------------------------------
+# Name          : DATAFILEJARLOCATION 
+# Datatype      : String
+# Description   : Location of the data file jar 
+# Valid values  : Directory containing compressed datafile jar
+# Default value : None
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#DATAFILEJARLOCATION =
+
+#-----------------------------------------------------------------------------
+# Name          : DATAFILEDESTINATION 
+# Datatype      : String
+# Description   : Location of the data file's
+# Valid values  : Directory for all the database files
+# Default value : $ORACLE_BASE/oradata
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#DATAFILEDESTINATION =
+
+#-----------------------------------------------------------------------------
+# Name          : RECOVERYAREADESTINATION
+# Datatype      : String
+# Description   : Location of the data file's
+# Valid values  : Recovery Area location
+# Default value : $ORACLE_BASE/flash_recovery_area
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#RECOVERYAREADESTINATION=
+
+#-----------------------------------------------------------------------------
+# Name          : STORAGETYPE
+# Datatype      : String
+# Description   : Specifies the storage on which the database is to be created
+# Valid values  : FS (CFS for RAC), ASM, RAW
+# Default value : FS
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#STORAGETYPE=FS
+
+#-----------------------------------------------------------------------------
+# Name          : RAWMAPPINGFILE
+# Datatype      : String
+# Description   : Specifies mapping file for RAW storage
+# Default value : None
+# Mandatory     : YES, if the value of storageType is RAW
+#-----------------------------------------------------------------------------
+#RAWMAPPINGFILE=
+
+#-----------------------------------------------------------------------------
+# Name          : DISKLIST
+# Datatype      : String
+# Description   : Comma seperated list of OS disk paths to be used (eg. /dev/rdsk/disk1,/dev/rdsk/disk2)
+# Default value : None
+# Mandatory     : YES, if the value of storageType is ASM
+#-----------------------------------------------------------------------------
+#DISKLIST=
+
+#-----------------------------------------------------------------------------
+# Name          : DISKGROUPNAME
+# Datatype      : String
+# Description   : Specifies the disk group name for the storage
+# Default value : DATA
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#DISKGROUPNAME=DATA
+
+#-----------------------------------------------------------------------------
+# Name          : REDUNDANCY
+# Datatype      : String
+# Description   : Specifies the redundancy level for the diskgroup
+# Valid values  : HIGH/NORMAL/EXTRENAL
+# Default value : NORMAL
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#REDUNDANCY=NORMAL
+
+#-----------------------------------------------------------------------------
+# Name          : DISKSTRING
+# Datatype      : String
+# Description   : Specifies disk discovery path for ASM
+# Default value : OS specific, eg. /dev/rdsk/* on Solaris
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#DISKSTRING=""
+
+#-----------------------------------------------------------------------------
+# Name          : ASM_SYS_PASSWORD
+# Datatype      : String
+# Description   : Specifies password for ASM instance to be created
+# Default value : None
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#ASM_SYS_PASSWORD=""
+
+#-----------------------------------------------------------------------------
+# Name          : RECOVERYDISKLIST
+# Datatype      : String
+# Description   : Comma seperated list of OS disk paths to be used (eg. /dev/rdsk/disk1,/dev/rdsk/disk2)
+# Default value : None
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#RECOVERYDISKLIST=
+
+#-----------------------------------------------------------------------------
+# Name          : RECOVERYGROUPNAME
+# Datatype      : String
+# Description   : Specifies the disk group name for the recovery area
+# Default value : RECOVERY
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#RECOVERYGROUPNAME=RECOVERY
+
+#-----------------------------------------------------------------------------
+# Name          : RECOVERYGROUPREDUNDANCY
+# Datatype      : String
+# Description   : Specifies the redundancy level for the recovery diskgroup
+# Valid values  : HIGH/NORMAL/EXTRENAL
+# Default value : NORMAL
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#RECOVERYGROUPREDUNDANCY=NORMAL
+
+# Name          : CHARACTERSET
+# Datatype      : String
+# Description   : Character set of the database
+# Valid values  : Check Oracle9i National Language Support Guide
+# Default value : "US7ASCII"
+# Mandatory     : NO
+#-----------------------------------------------------------------------------
+#CHARACTERSET = "US7ASCII"
+
+#-----------------------------------------------------------------------------
+# Name          : NATIONALCHARACTERSET
+# Datatype      : String
+# Description   : National Character set of the database
+# Valid values  : "UTF8" or "AL16UTF16". For details, check Oracle9i National Language Support Guide
+# Default value : "AL16UTF16"
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#NATIONALCHARACTERSET= "UTF8"
+
+#-----------------------------------------------------------------------------
+# Name          : REGISTERWITHDIRSERVICE
+# Datatype      : Boolean
+# Description   : Specifies whether to register with Directory Service.
+# Valid values  : TRUE \ FALSE
+# Default value : FALSE
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#REGISTERWITHDIRSERVICE= TRUE
+
+#-----------------------------------------------------------------------------
+# Name          : DIRSERVICEUSERNAME
+# Datatype      : String
+# Description   : Specifies the name of the directory service user
+# Mandatory     : YES, if the value of registerWithDirService is TRUE
+#-----------------------------------------------------------------------------
+#DIRSERVICEUSERNAME= "name"
+
+#-----------------------------------------------------------------------------
+# Name          : DIRSERVICEPASSWORD
+# Datatype      : String
+# Description   : The password of the directory service user.
+#		  You can also specify the password at the command prompt instead of here.
+# Mandatory     : YES, if the value of registerWithDirService is TRUE
+#-----------------------------------------------------------------------------
+#DIRSERVICEPASSWORD= "password"
+
+#-----------------------------------------------------------------------------
+# Name          : WALLETPASSWORD
+# Datatype      : String
+# Description   : The password for wallet to created or modified.
+#		  You can also specify the password at the command prompt instead of here.
+# Mandatory     : YES, if the value of registerWithDirService is TRUE
+#-----------------------------------------------------------------------------
+#WALLETPASSWORD= "password"
+
+#-----------------------------------------------------------------------------
+# Name          : LISTENERS
+# Datatype      : String
+# Description   : Specifies list of listeners to register the database with.
+#		  By default the database is configured for all the listeners specified in the 
+#		  $ORACLE_HOME/network/admin/listener.ora 	
+# Valid values  : The list should be space separated names like "listener1 listener2".
+# Mandatory     : NO
+#-----------------------------------------------------------------------------
+#LISTENERS = "listener1 listener2"
+
+#-----------------------------------------------------------------------------
+# Name          : VARIABLESFILE 
+# Datatype      : String
+# Description   : Location of the file containing variable value pair
+# Valid values  : A valid file-system file. The variable value pair format in this file 
+#		  is <variable>=<value>. Each pair should be in a new line.
+# Default value : None
+# Mandatory     : NO
+#-----------------------------------------------------------------------------
+#VARIABLESFILE =
+
+#-----------------------------------------------------------------------------
+# Name          : VARIABLES
+# Datatype      : String
+# Description   : comma seperated list of name=value pairs. Overrides variables defined in variablefile and templates
+# Default value : None
+# Mandatory     : NO
+#-----------------------------------------------------------------------------
+#VARIABLES =
+
+#-----------------------------------------------------------------------------
+# Name          : INITPARAMS
+# Datatype      : String
+# Description   : comma seperated list of name=value pairs. Overrides initialization paramters defined in templates
+# Default value : None
+# Mandatory     : NO
+#-----------------------------------------------------------------------------
+#INITPARAMS =
+
+#-----------------------------------------------------------------------------
+# Name          : MEMORYPERCENTAGE
+# Datatype      : String
+# Description   : percentage of physical memory for Oracle
+# Default value : None
+# Mandatory     : NO
+#-----------------------------------------------------------------------------
+#MEMORYPERCENTAGE = "40"
+
+#-----------------------------------------------------------------------------
+# Name          : DATABASETYPE
+# Datatype      : String
+# Description   : used for memory distribution when MEMORYPERCENTAGE specified
+# Valid values  : MULTIPURPOSE|DATA_WAREHOUSING|OLTP
+# Default value : MULTIPURPOSE
+# Mandatory     : NO
+#-----------------------------------------------------------------------------
+#DATABASETYPE = "MULTIPURPOSE"
+
+
+#-----------------------*** End of CREATEDATABASE section ***------------------------
+
+#-----------------------------------------------------------------------------
+# createTemplateFromDB section is used when OPERATION_TYPE is defined as "createTemplateFromDB". 
+#-----------------------------------------------------------------------------
+[createTemplateFromDB]
+#-----------------------------------------------------------------------------
+# Name          : SOURCEDB 
+# Datatype      : String
+# Description   : The source database from which to create the template
+# Valid values  : The format is <host>:<port>:<sid>
+# Default value : none
+# Mandatory     : YES
+#-----------------------------------------------------------------------------
+SOURCEDB = "myhost:1521:orcl"
+
+#-----------------------------------------------------------------------------
+# Name          : SYSDBAUSERNAME 
+# Datatype      : String
+# Description   : A user with DBA role.
+# Default value : none
+# Mandatory     : YES
+#-----------------------------------------------------------------------------
+SYSDBAUSERNAME = "system"
+
+#-----------------------------------------------------------------------------
+# Name          : SYSDBAPASSWORD 
+# Datatype      : String
+# Description   : The password of the DBA user.
+#		  You can also specify the password at the command prompt instead of here.
+# Default value : none
+# Mandatory     : YES
+#-----------------------------------------------------------------------------
+#SYSDBAPASSWORD = "password"
+
+#-----------------------------------------------------------------------------
+# Name          : TEMPLATENAME
+# Datatype      : String
+# Description   : Name for the new template.
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+TEMPLATENAME = "My Copy TEMPLATE"
+
+#-----------------------*** End of createTemplateFromDB section ***------------------------
+
+#-----------------------------------------------------------------------------
+# createCloneTemplate section is used when OPERATION_TYPE is defined as "createCloneTemplate". 
+#-----------------------------------------------------------------------------
+[createCloneTemplate]
+#-----------------------------------------------------------------------------
+# Name          : SOURCEDB
+# Datatype      : String
+# Description   : The source database is the SID from which to create the template. 
+#		  This database must be local and on the same ORACLE_HOME.
+# Default value : none
+# Mandatory     : YES
+#-----------------------------------------------------------------------------
+SOURCEDB = "orcl"
+
+#-----------------------------------------------------------------------------
+# Name          : SYSDBAUSERNAME
+# Datatype      : String
+# Description   : A user with DBA role.
+# Default value : none
+# Mandatory     : YES, if no OS authentication
+#-----------------------------------------------------------------------------
+#SYSDBAUSERNAME = "sys"
+
+#-----------------------------------------------------------------------------
+# Name          : SYSDBAPASSWORD
+# Datatype      : String
+# Description   : The password of the DBA user.
+#		  You can also specify the password at the command prompt instead of here.
+# Default value : none
+# Mandatory     : YES
+#-----------------------------------------------------------------------------
+#SYSDBAPASSWORD = "password"
+
+#-----------------------------------------------------------------------------
+# Name          : TEMPLATENAME
+# Datatype      : String
+# Description   : Name for the new template.
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+TEMPLATENAME = "My Clone TEMPLATE"
+
+#-----------------------------------------------------------------------------
+# Name          : DATAFILEJARLOCATION
+# Datatype      : String
+# Description   : Location of the data file jar 
+# Valid values  : Directory where the new compressed datafile jar will be placed
+# Default value : $ORACLE_HOME/assistants/dbca/templates
+# Mandatory     : NO
+#-----------------------------------------------------------------------------
+#DATAFILEJARLOCATION = 
+
+#-----------------------*** End of createCloneTemplate section ***------------------------
+
+#-----------------------------------------------------------------------------
+# DELETEDATABASE section is used when DELETE_TYPE is defined as "deleteDatabase". 
+#-----------------------------------------------------------------------------
+[DELETEDATABASE]
+#-----------------------------------------------------------------------------
+# Name          : SOURCEDB
+# Datatype      : String
+# Description   : The source database is the SID 
+#		  This database must be local and on the same ORACLE_HOME.
+# Default value : none
+# Mandatory     : YES
+#-----------------------------------------------------------------------------
+SOURCEDB = "orcl"
+
+#-----------------------------------------------------------------------------
+# Name          : SYSDBAUSERNAME
+# Datatype      : String
+# Description   : A user with DBA role.
+# Default value : none
+# Mandatory     : YES, if no OS authentication
+#-----------------------------------------------------------------------------
+#SYSDBAUSERNAME = "sys"
+
+#-----------------------------------------------------------------------------
+# Name          : SYSDBAPASSWORD
+# Datatype      : String
+# Description   : The password of the DBA user.
+#		  You can also specify the password at the command prompt instead of here.
+# Default value : none
+# Mandatory     : YES, if no OS authentication
+#-----------------------------------------------------------------------------
+#SYSDBAPASSWORD = "password"
+#-----------------------*** End of deleteDatabase section ***------------------------
+
+#-----------------------------------------------------------------------------
+# GENERATESCRIPTS section 
+#-----------------------------------------------------------------------------
+[generateScripts]
+#-----------------------------------------------------------------------------
+# Name          : TEMPLATENAME
+# Datatype      : String
+# Description   : Name of the template
+# Valid values  : Template name as seen in DBCA
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+TEMPLATENAME = "New Database"
+
+#-----------------------------------------------------------------------------
+# Name          : GDBNAME
+# Datatype      : String
+# Description   : Global database name of the database
+# Valid values  : <db_name>.<db_domain> - when database domain isn't NULL
+#                 <db_name>             - when database domain is NULL
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+GDBNAME = "orcl10i.us.oracle.com"
+
+#-----------------------------------------------------------------------------
+# Name          : SCRIPTDESTINATION 
+# Datatype      : String
+# Description   : Location of the scripts
+# Valid values  : Directory for all the scripts
+# Default value : None
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#SCRIPTDESTINATION =
+
+#-----------------------*** End of deleteDatabase section ***------------------------
+
+#-----------------------------------------------------------------------------
+# CONFIGUREDATABASE section is used when OPERATION_TYPE is defined as "configureDatabase". 
+#-----------------------------------------------------------------------------
+[CONFIGUREDATABASE]
+
+#-----------------------------------------------------------------------------
+# Name          : SOURCEDB
+# Datatype      : String
+# Description   : The source database is the SID 
+#		  This database must be local and on the same ORACLE_HOME.
+# Default value : none
+# Mandatory     : YES
+#-----------------------------------------------------------------------------
+SOURCEDB = "orcl"
+
+#-----------------------------------------------------------------------------
+# Name          : SYSDBAUSERNAME
+# Datatype      : String
+# Description   : A user with DBA role.
+# Default value : none
+# Mandatory     : YES, if no OS authentication
+#-----------------------------------------------------------------------------
+#SYSDBAUSERNAME = "sys"
+
+#-----------------------------------------------------------------------------
+# Name          : SYSDBAPASSWORD
+# Datatype      : String
+# Description   : The password of the DBA user.
+#		  You can also specify the password at the command prompt instead of here.
+# Default value : none
+# Mandatory     : YES, if no OS authentication
+#-----------------------------------------------------------------------------
+#SYSDBAPASSWORD =
+#-----------------------------------------------------------------------------
+# Name          : REGISTERWITHDIRSERVICE
+# Datatype      : Boolean
+# Description   : Specifies whether to register with Directory Service.
+# Valid values  : TRUE \ FALSE
+# Default value : FALSE
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#REGISTERWITHDIRSERVICE= TRUE
+
+#-----------------------------------------------------------------------------
+# Name          : UNREGISTERWITHDIRSERVICE
+# Datatype      : Boolean
+# Description   : Specifies whether to unregister with Directory Service.
+# Valid values  : TRUE \ FALSE
+# Default value : FALSE
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#UNREGISTERWITHDIRSERVICE= TRUE
+
+#-----------------------------------------------------------------------------
+# Name          : REGENERATEDBPASSWORD
+# Datatype      : Boolean
+# Description   : Specifies whether regenrate database password in OID/Wallet
+# Valid values  : TRUE \ FALSE
+# Default value : FALSE
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#REGENERATEDBPASSWORD= TRUE
+
+#-----------------------------------------------------------------------------
+# Name          : DIRSERVICEUSERNAME
+# Datatype      : String
+# Description   : Specifies the name of the directory service user
+# Mandatory     : YES, if the any of the reg/unreg/regenPasswd options specified
+#-----------------------------------------------------------------------------
+#DIRSERVICEUSERNAME= "name"
+
+#-----------------------------------------------------------------------------
+# Name          : DIRSERVICEPASSWORD
+# Datatype      : String
+# Description   : The password of the directory service user.
+#		  You can also specify the password at the command prompt instead of here.
+# Mandatory     : YES, if the any of the reg/unreg/regenPasswd options specified
+#-----------------------------------------------------------------------------
+#DIRSERVICEPASSWORD= "password"
+
+#-----------------------------------------------------------------------------
+# Name          : WALLETPASSWORD
+# Datatype      : String
+# Description   : The password for wallet to created or modified.
+#		  You can also specify the password at the command prompt instead of here.
+# Mandatory     : YES, if the any of the reg/unreg/regenPasswd options specified
+#-----------------------------------------------------------------------------
+#WALLETPASSWORD= "password"
+
+#-----------------------------------------------------------------------------
+# Name          : EMCONFIGURATION
+# Datatype      : String
+# Description   : Enterprise Manager Configuration Type
+# Valid values  : CENTRAL|LOCAL|ALL|NOBACKUP|NOEMAIL|NONE
+# Default value : NONE
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#EMCONFIGURATION = "NONE"
+
+#-----------------------------------------------------------------------------
+# Name          : SYSMANPASSWORD
+# Datatype      : String
+# Description   : Password for SYSMAN user
+# Valid values  : Check Oracle10g Administrator's Guide
+# Default value : None
+# Mandatory     : Yes, if LOCAL specified for EMCONFIGURATION
+#-----------------------------------------------------------------------------
+#SYSMANPASSWORD = "password"
+
+#-----------------------------------------------------------------------------
+# Name          : DBSNMPPASSWORD
+# Datatype      : String
+# Description   : Password for DBSNMP user
+# Valid values  : Check Oracle10g Administrator's Guide
+# Default value : None
+# Mandatory     : Yes, if EMCONFIGURATION is specified
+#-----------------------------------------------------------------------------
+#DBSNMPPASSWORD = "password"
+
+#-----------------------------------------------------------------------------
+# Name          : CENTRALAGENT
+# Datatype      : String
+# Description   : Grid Control Central Agent Oracle Home
+# Default value : None
+# Mandatory     : Yes, if CENTRAL is specified for EMCONFIGURATION
+#-----------------------------------------------------------------------------
+#CENTRALAGENT = 
+
+#-----------------------------------------------------------------------------
+# Name          : HOSTUSERNAME
+# Datatype      : String
+# Description   : Host user name for EM backup job
+# Default value : None
+# Mandatory     : Yes, if ALL or NOEMAIL are specified for EMCONFIGURATION
+#-----------------------------------------------------------------------------
+#HOSTUSERNAME = 
+
+#-----------------------------------------------------------------------------
+# Name          : HOSTUSERPASSWORD
+# Datatype      : String
+# Description   : Host user password for EM backup job
+# Default value : None
+# Mandatory     : Yes, if ALL or NOEMAIL are specified for EMCONFIGURATION
+#-----------------------------------------------------------------------------
+#HOSTUSERPASSWORD= 
+
+#-----------------------------------------------------------------------------
+# Name          : BACKUPSCHEDULE
+# Datatype      : String
+# Description   : Daily backup schedule in the form of hh:mm
+# Default value : 2:00
+# Mandatory     : Yes, if ALL or NOEMAIL are specified for EMCONFIGURATION
+#-----------------------------------------------------------------------------
+#BACKUPSCHEDULE=
+
+#-----------------------------------------------------------------------------
+# Name          : SMTPSERVER
+# Datatype      : String
+# Description   : Outgoing mail (SMTP) server for email notifications
+# Default value : None
+# Mandatory     : Yes, if ALL or NOBACKUP are specified for EMCONFIGURATION
+#-----------------------------------------------------------------------------
+#SMTPSERVER =
+
+#-----------------------------------------------------------------------------
+# Name          : EMAILADDRESS
+# Datatype      : String
+# Description   : Email address for email notifications
+# Default value : None
+# Mandatory     : Yes, if ALL or NOBACKUP are specified for EMCONFIGURATION
+#-----------------------------------------------------------------------------
+#EMAILADDRESS =
+
+#-----------------------*** End of CONFIGUREDATABASE section ***------------------------
+
+
+#-----------------------------------------------------------------------------
+# ADDINSTANCE section is used when OPERATION_TYPE is defined as "addInstance". 
+#-----------------------------------------------------------------------------
+[ADDINSTANCE]
+
+#-----------------------------------------------------------------------------
+# Name          : DB_UNIQUE_NAME
+# Datatype      : String
+# Description   : DB Unique Name of the RAC database
+# Valid values  : <db_unique_name>
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+DB_UNIQUE_NAME = "orcl10g.us.oracle.com"
+
+#-----------------------------------------------------------------------------
+# Name          : INSTANCENAME
+# Datatype      : String
+# Description   : RAC instance name to be added
+# Valid values  : Check Oracle10g Administrator's Guide
+# Default value : <sid_prefix>+<highest_current_thread+1>
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#INSTANCENAME = "orcl1"
+
+#-----------------------------------------------------------------------------
+# Name          : NODELIST
+# Datatype      : String
+# Description   : Node on which to add new instance 
+#                 (in 10gR2, instance addition is supported on 1 node at a time)
+# Valid values  : Cluster node name
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+NODELIST=
+
+#-----------------------------------------------------------------------------
+# Name          : OBFUSCATEDPASSWORDS
+# Datatype      : Boolean
+# Description   : Set to true if passwords are encrypted
+# Valid values  : TRUE\FALSE
+# Default value : FALSE
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#OBFUSCATEDPASSWORDS = FALSE
+
+#-----------------------------------------------------------------------------
+# Name          : SYSDBAUSERNAME 
+# Datatype      : String
+# Description   : A user with DBA role.
+# Default value : none
+# Mandatory     : YES
+#-----------------------------------------------------------------------------
+SYSDBAUSERNAME = "sys"
+
+#-----------------------------------------------------------------------------
+# Name          : SYSDBAPASSWORD 
+# Datatype      : String
+# Description   : The password of the DBA user.
+# Default value : none
+# Mandatory     : YES
+#-----------------------------------------------------------------------------
+#SYSDBAPASSWORD = "password"
+
+#-----------------------*** End of ADDINSTANCE section ***------------------------
+
+
+#-----------------------------------------------------------------------------
+# DELETEINSTANCE section is used when OPERATION_TYPE is defined as "deleteInstance". 
+#-----------------------------------------------------------------------------
+[DELETEINSTANCE]
+
+#-----------------------------------------------------------------------------
+# Name          : DB_UNIQUE_NAME
+# Datatype      : String
+# Description   : DB Unique Name of the RAC database
+# Valid values  : <db_unique_name>
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+DB_UNIQUE_NAME = "orcl10g.us.oracle.com"
+
+#-----------------------------------------------------------------------------
+# Name          : INSTANCENAME
+# Datatype      : String
+# Description   : RAC instance name to be deleted
+# Valid values  : Check Oracle10g Administrator's Guide
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+INSTANCENAME = "orcl10g"
+
+#-----------------------------------------------------------------------------
+# Name          : NODELIST
+# Datatype      : String
+# Description   : Node on which instance to be deleted (SID) is located
+# Valid values  : Cluster node name
+# Default value : None
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#NODELIST=
+
+#-----------------------------------------------------------------------------
+# Name          : OBFUSCATEDPASSWORDS
+# Datatype      : Boolean
+# Description   : Set to true if passwords are encrypted
+# Valid values  : TRUE\FALSE
+# Default value : FALSE
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#OBFUSCATEDPASSWORDS = FALSE
+
+#-----------------------------------------------------------------------------
+# Name          : SYSDBAUSERNAME 
+# Datatype      : String
+# Description   : A user with DBA role.
+# Default value : none
+# Mandatory     : YES
+#-----------------------------------------------------------------------------
+SYSDBAUSERNAME = "sys"
+
+#-----------------------------------------------------------------------------
+# Name          : SYSDBAPASSWORD 
+# Datatype      : String
+# Description   : The password of the DBA user.
+# Default value : none
+# Mandatory     : YES
+#-----------------------------------------------------------------------------
+#SYSDBAPASSWORD = "password"
+
+
+#-----------------------*** End of DELETEINSTANCE section ***------------------------
+
+#-----------------------------------------------------------------------------
+# CONFIGUREASM section is used when OPERATION_TYPE is defined as "configureASM". 
+#-----------------------------------------------------------------------------
+[CONFIGUREASM]
+#-----------------------------------------------------------------------------
+# Name          : DISKLIST
+# Datatype      : String
+# Description   : Comma seperated list of OS disk paths to be used (eg. /dev/rdsk/disk1,/dev/rdsk/disk2)
+# Default value : None
+# Mandatory     : No (YES to create new diskgroup or add disks to existing diskgroup)
+#-----------------------------------------------------------------------------
+#DISKLIST=
+
+#-----------------------------------------------------------------------------
+# Name          : NODELIST
+# Datatype      : String
+# Description   : Comma-separated list of cluster nodes
+# Valid values  : Cluster node names
+# Default value : None
+# Mandatory     : No (YES for RAC)
+#-----------------------------------------------------------------------------
+#NODELIST=
+
+#-----------------------------------------------------------------------------
+# Name          : DISKGROUPNAME
+# Datatype      : String
+# Description   : Specifies the disk group name for the storage
+# Default value : DATA
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#DISKGROUPNAME=DATA
+
+#-----------------------------------------------------------------------------
+# Name          : REDUNDANCY
+# Datatype      : String
+# Description   : Specifies the redundancy level for the diskgroup
+# Valid values  : HIGH/NORMAL/EXTRENAL
+# Default value : NORMAL
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#REDUNDANCY=NORMAL
+
+#-----------------------------------------------------------------------------
+# Name          : DISKSTRING
+# Datatype      : String
+# Description   : Specifies disk discovery path for ASM
+# Default value : OS specific, eg. /dev/rdsk/* on Solaris
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#DISKSTRING=""
+
+#-----------------------------------------------------------------------------
+# Name          : ASM_SYS_PASSWORD
+# Datatype      : String
+# Description   : Specifies password for ASM instance to be created
+# Default value : None
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#ASM_SYS_PASSWORD=""
+
+#-----------------------------------------------------------------------------
+# Name          : RECOVERYDISKLIST
+# Datatype      : String
+# Description   : Comma seperated list of OS disk paths to be used (eg. /dev/rdsk/disk1,/dev/rdsk/disk2)
+# Default value : None
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#RECOVERYDISKLIST=
+
+#-----------------------------------------------------------------------------
+# Name          : RECOVERYGROUPNAME
+# Datatype      : String
+# Description   : Specifies the disk group name for the recovery area
+# Default value : RECOVERY
+# Mandatory     : No
+#-----------------------------------------------------------------------------
+#RECOVERYGROUPNAME=RECOVERY
+
+#-----------------------------------------------------------------------------
+# Name          : RECOVERYREDUNDANCY
+# Datatype      : String
+# Description   : Specifies the redundancy level for the recovery diskgroup
+# Valid values  : HIGH/NORMAL/EXTRENAL
+# Default value : NORMAL
+# Mandatory     : No
+#-----------------------*** End of CONFIGUREDISKGROUPS section ***------------------------

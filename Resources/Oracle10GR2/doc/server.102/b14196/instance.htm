@@ -1,0 +1,513 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>5 Managing the Oracle Instance</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.1.3 Build 116" />
+<meta name="Date" content="June 22, 2005 15:47:53" />
+<meta name="doctitle" content="Oracle&reg; Database 2 Day DBA 10g Release 2 (10.2)" />
+<meta name="partno" content="B14196-01" />
+<meta name="docid" content="ADMQS" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="network.htm" title="Previous" type="text/html" />
+<link rel="Next" href="storage.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14196.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database 2 Day DBA<br />
+10<i>g</i> Release 2 (10.2)</b><br />
+Part Number B14196-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="network.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="storage.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top"><a href="../b14196.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="CACFBJED" name="CACFBJED"></a><a id="sthref196" name="sthref196"></a>
+<h1><span class="secnum">5</span> <a name="ADMQS005" id="ADMQS005"></a>Managing the Oracle Instance</h1>
+<p>This chapter discusses the Oracle instance and database.</p>
+<p>The following topics are covered:</p>
+<ul>
+<li type="disc">
+<p><a href="#CACEIBFA">Overview of an Instance and Instance Management</a></p>
+</li>
+<li type="disc">
+<p><a href="#CACCCCBC">Shutting Down and Restarting the Instance and Database</a></p>
+</li>
+<li type="disc">
+<p><a href="#CACDDIID">Viewing and Modifying Initialization Parameters</a></p>
+</li>
+<li type="disc">
+<p><a href="#CACBFIED">Managing Memory Parameters</a></p>
+</li>
+<li type="disc">
+<p><a href="#CIABDFIH">Instances: Oracle by Example Series</a></p>
+</li>
+</ul>
+<a id="CACEIBFA" name="CACEIBFA"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref197" name="sthref197"></a>
+<h2>Overview of an Instance and Instance Management</h2>
+<p><a id="sthref198" name="sthref198"></a>Your Oracle database is comprised of a set of operating system files containing data entered by users or applications and structural information about the database itself called database metadata. Information is stored persistently in these files.</p>
+<p>In order for you to view or update the data contained in the database, Oracle needs to start a set of processes, called background processes, and needs to allocate some memory to be used during database operation. The background processes and memory allocated by Oracle together make up an instance. Therefore before the database can be used, the database instance must be started. When the database instance is not available, your data is safe in the database but it cannot be accessed by any user or application.</p>
+<p>The properties of a database instance are specified using instance initialization parameters. When the instance is started, an initialization parameter file is read and the instance is configured accordingly.</p>
+<p><a id="sthref199" name="sthref199"></a><a id="sthref200" name="sthref200"></a>The Oracle instance and the Oracle database are separate entities, although the term instance is often used to mean one or the other or both. Technically, they are distinguished as follows:</p>
+<ul>
+<li type="disc">
+<p>An Oracle instance consists of the shared memory structures and background processes that run the Oracle database. You can have an instance without a database (for example, when you have not yet created a database), and if a database exists, it can be open or not.</p>
+</li>
+<li type="disc">
+<p>A Oracle database refers to the physical and logical components of a specific database, and its operation.</p>
+</li>
+</ul>
+<p><a id="sthref201" name="sthref201"></a>This section presents some of the concepts of an instance and its functioning. It is intended that these concepts can provide a basis for understanding instance management. The following topics are discussed:</p>
+<ul>
+<li type="disc">
+<p><a href="#CIHJHIJD">Instance Memory Structure</a></p>
+</li>
+<li type="disc">
+<p><a href="#CIHIICAI">Oracle Background Processes</a></p>
+</li>
+<li type="disc">
+<p><a href="#CACGGCJJ">About Initialization Parameters</a></p>
+</li>
+<li type="disc">
+<p><a href="#CIHJIJGE">Accessing the Database</a></p>
+</li>
+</ul>
+<a id="CACGGCJJ" name="CACGGCJJ"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref202" name="sthref202"></a>
+<h3>About Initialization Parameters</h3>
+<p><a id="sthref203" name="sthref203"></a><a id="sthref204" name="sthref204"></a><a id="sthref205" name="sthref205"></a>Instance management involves configuring parameters that affect the basic operation of the database instance. These parameters are called initialization parameters. The Oracle database server reads these parameters at database startup and monitors them while the database is running. They are stored in memory, where many of them can be changed dynamically. There are two types of parameter files, and whether these dynamic changes are persistent across database shutdown and startup depends upon the type of parameter file you are using.</p>
+<ul>
+<li type="disc">
+<p>Server parameter file</p>
+<p>This, the preferred form of initialization parameter file, is contained in a binary file that can be written to and read by the database server. It <span class="italic">must not</span> be edited manually. It resides on the machine that Oracle is running on, and is persistent across shutdown and startup.</p>
+</li>
+<li type="disc">
+<p>Text initialization parameter file</p>
+<p>This type of initialization parameter file can be read by the database server, but it is not written to by the server. In this file, you can set initialization parameters with a text editor for them to be persistent across shutdown and startup.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect2" -->
+<a id="CIHJHIJD" name="CIHJHIJD"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref206" name="sthref206"></a>
+<h3>Instance Memory Structure</h3>
+<p><a id="sthref207" name="sthref207"></a>This section briefly describes the memory structures of an instance. The size of these structures affects the performance of the Oracle database server and is controlled by initialization parameters. These initialization parameters can be categorized as memory parameters.</p>
+<p>When a database is created with DBCA, the memory parameters are automatically set to optimal values based on your specification of the database workload, such as Data Warehouse, General Purpose, or Transaction Processing. However, as your database usage expands, you might find it necessary to alter the settings of the memory parameters.</p>
+<p>Oracle provides alerts and advisors to identify memory sizing problems and to help you determine appropriate values for memory parameters.</p>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref208" name="sthref208"></a>
+<h4>The System Global Area (SGA)</h4>
+<p><a id="sthref209" name="sthref209"></a>The SGA is a shared memory area that contains data and control information for the instance. Multiple users can share data within this memory area (controlled by Oracle) and information stored in the SGA can avoid repeated access from physical disk, a time consuming operation.</p>
+<p>For optimal performance, the SGA should be large enough to avoid frequent disk reads and writes.</p>
+<p><a id="sthref210" name="sthref210"></a>The SGA has several subcomponents as listed in the following table:</p>
+<div class="inftblInformal">
+<table class="Informal" title="SGA Components" summary="Components of the system global ares (SGA)" dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t2">Component</th>
+<th align="left" valign="bottom" id="r1c2-t2">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t2" headers="r1c1-t2">Buffer Cache</td>
+<td align="left" headers="r2c1-t2 r1c2-t2">Before any data stored in the database can be queried or modified, it must be read from disk and stored in memory. The buffer cache is the component of the SGA that acts as the buffer to store any data being queried or modified. All user processes connected to the database share access to the buffer cache.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t2" headers="r1c1-t2">Shared Pool</td>
+<td align="left" headers="r3c1-t2 r1c2-t2">The shared pool caches information that can be shared among users. Some examples:
+<ul>
+<li type="disc">
+<p>SQL statements are cached so that they can be reused</p>
+</li>
+<li type="disc">
+<p>Information from the data dictionary such as user account data, table and index descriptions, and privileges is cached for quick access and reusability</p>
+</li>
+<li type="disc">
+<p>Stored procedures, which are executable code that is stored in the database, can be cached for faster access</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t2" headers="r1c1-t2">Redo Log Buffer</td>
+<td align="left" headers="r4c1-t2 r1c2-t2">This buffer improves performance by caching redo information (used for instance recovery) until it can be written at once and at a more opportune time to the physical redo log files that are stored on disk. Redo information and redo log files are discussed in <a href="storage.htm#CHDBABIE">"Online Redo Log Files"</a>.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t2" headers="r1c1-t2">Large Pool</td>
+<td align="left" headers="r5c1-t2 r1c2-t2">This is an optional area that is used for buffering large I/O requests for various server processes.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t2" headers="r1c1-t2">Java Pool</td>
+<td align="left" headers="r6c1-t2 r1c2-t2">The Java pool memory is used for all session-specific Java code and data within the Java Virtual Machine (JVM)</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t2" headers="r1c1-t2">Streams Pool</td>
+<td align="left" headers="r7c1-t2 r1c2-t2">The Streams pool is used by the Oracle Streams product.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblInformal --></div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref211" name="sthref211"></a>
+<h4>Program Global Area (PGA)</h4>
+<p>A pr<a id="sthref212" name="sthref212"></a>ogram global area (PGA) is a memory area used by a single Oracle server process. A server process is a process that services a client's requests. Each server process has its own private PGA area that is a nonshared area of memory created by Oracle when a server process is started.</p>
+<p>The PGA is used to process SQL statements and to hold logon and other session information.</p>
+<p><a id="sthref213" name="sthref213"></a>The amount of PGA memory used and its content depends on the instance configuration, that is, whether the instance is running in dedicated server or shared server mode.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="#CACBFIED">"Managing Memory Parameters"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="CIHIICAI" name="CIHIICAI"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref214" name="sthref214"></a>
+<h3>Oracle Background Processes</h3>
+<p><a id="sthref215" name="sthref215"></a>Oracle creates a set of background processes for an instance that interact with each other and with the operating system to manage memory structure, asynchronously perform I/O to write data to disk, and do general housekeeping. The background processes consolidate functions that would otherwise be handled by multiple Oracle programs running for each user process. They asynchronously perform I/O and monitor other Oracle processes to provide increased parallelism for better performance and reliability.</p>
+<p>There are many background processes and not all may be present depending upon the features that are being used in the database. The most common background processes, and ones that most directly affect you, are the following:</p>
+<div class="inftblInformal">
+<table class="Informal" title="Background processes" summary="Table describing background processes" dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t4">Background Process</th>
+<th align="left" valign="bottom" id="r1c2-t4">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t4" headers="r1c1-t4">Database Writer (DBW<span class="italic">n</span>)</td>
+<td align="left" headers="r2c1-t4 r1c2-t4">The database writer writes modified blocks from the database buffer cache to the files on disk. Oracle allows a maximum of 20 database writer processes.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t4" headers="r1c1-t4">Log Writer (LGWR)</td>
+<td align="left" headers="r3c1-t4 r1c2-t4">The log writer process writes redo log entries to disk. Redo log entries are generated in the redo log buffer of the SGA and the log writer process writes the redo log entries sequentially into an online redo log file.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t4" headers="r1c1-t4">Checkpoint</td>
+<td align="left" headers="r4c1-t4 r1c2-t4">At specific times, all modified database buffers in the SGA are written to the datafiles by a database writer process (DBW<span class="italic">n</span>). This event is called a checkpoint. The checkpoint process is responsible for signalling DBW<span class="italic">n</span> at checkpoints and updating all of the datafiles and control files of the database to indicate the most recent checkpoint.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t4" headers="r1c1-t4">System Monitor (SMON)</td>
+<td align="left" headers="r5c1-t4 r1c2-t4">The system monitor performs crash recovery when a failed instance starts up again.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t4" headers="r1c1-t4">Process Monitor (PMON)</td>
+<td align="left" headers="r6c1-t4 r1c2-t4">The process monitor performs process recovery when a user process fails. It is responsible for cleaning up the cache and freeing resources that the failed process was using.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t4" headers="r1c1-t4">Archiver (ARC<span class="italic">n</span>)</td>
+<td align="left" headers="r7c1-t4 r1c2-t4">When the database is running in archive log mode, one or more archiver processes copy the redo log files to archival storage when the log files are full or a log switch occurs. For more information, see <a href="backrest.htm#CIHEHFJJ">Chapter 9, "Performing Backup and Recovery"</a>.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblInformal --></div>
+<!-- class="sect2" -->
+<a id="CIHJIJGE" name="CIHJIJGE"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref216" name="sthref216"></a>
+<h3>Accessing the Database</h3>
+<p>The database instance can be started (made available) only by an authorized database administrator who has a special type of connection privilege to the Oracle instance. After the database instance has been started, it is usually open for access by normal users for whom database user accounts have been created. Later, you will learn how to start up and shut down an Oracle instance and database in <a href="#CACCCCBC">"Shutting Down and Restarting the Instance and Database"</a>.</p>
+<p>This section describes the process of starting the Oracle instance and database and the creation of server processes that enable user access.</p>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref217" name="sthref217"></a>
+<h4>How the Oracle Instance and Database are Started</h4>
+<p><a id="sthref218" name="sthref218"></a><a id="sthref219" name="sthref219"></a><a id="sthref220" name="sthref220"></a>The administrator who starts up the Oracle instance and database must connect to the instance with a special kind of connection privilege. There are two of these privileges: <code>SYSDBA</code> for fully empowered database administrators and <code>SYSOPER</code> for users who operate the database, but have no privileges to access user objects. Authorization to use these privileges occurs either through the operating system or through a special password file.</p>
+<p>When you create an Oracle database, there are two primary a<a id="sthref221" name="sthref221"></a><a id="sthref222" name="sthref222"></a><a id="sthref223" name="sthref223"></a><a id="sthref224" name="sthref224"></a>dministrative user accounts that are automatically created: <code>SYS</code> and <code>SYSTEM</code>. Both of these users have full database administration privileges granted to them, but only user <code>SYS</code> can initially connect with the <code>SYSDBA</code> privilege.</p>
+<a id="CIHEDGEA" name="CIHEDGEA"></a>
+<div class="sect4"><!-- infolevel=all infotype=General --><a id="sthref225" name="sthref225"></a>
+<h5>The Startup Process</h5>
+<p><a id="sthref226" name="sthref226"></a>The process of starting the instance and database is as follows:</p>
+<ol type="1" start="1">
+<li>
+<p>You start the instance in one of the following ways:</p>
+<ul>
+<li type="disc">
+<p>Use Oracle Enterprise Manager. See <a href="#CACCCCBC">"Shutting Down and Restarting the Instance and Database"</a>.</p>
+</li>
+<li type="disc">
+<p>Use the <code>STARTUP</code> statement using SQL*Plus. See <a class="olinkSRC ADMIN" href="http://www.oracle.com/pls/db102/to_bookid?id=ADMIN"><span class="italic">Oracle Database Administrator's Guide</span></a>.</p>
+</li>
+<li type="disc">
+<p>On Windows, you can start the Oracle services. See <a href="#CHDEFDDI">"Starting and Shutting Down the Database Instance on Windows"</a>.</p>
+</li>
+</ul>
+<p>Oracle reads the initialization parameter file, allocates SGA memory, and starts the background processes for the instance.</p>
+</li>
+<li>
+<p>If you also specify that the database is to be mounted, then the instance opens the database control file. The database is now said to be in the mount state. This state enables administrators to perform certain administrative functions that cannot be performed when other users are accessing the database.</p>
+</li>
+<li>
+<p>If you specify that the database is to be opened, then the instance opens the redo log files and datafiles for the database. The database is now open and available for all user access.</p>
+<p>The default startup behavior is to complete the three stages as described earlier. Unless you explicitly specified otherwise, the instance will be started, and the database mounted and opened.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect4" -->
+<div class="sect4"><!-- infolevel=all infotype=General --><a id="sthref227" name="sthref227"></a>
+<h5>The Shutdown Process</h5>
+<p>T<a id="sthref228" name="sthref228"></a>he process is reversed when you shut down the database.</p>
+<ol type="1" start="1">
+<li>
+<p>You issue the statement to shut down the database by similar means as explained in <a href="#CIHEDGEA">"The Startup Process"</a>. Any modified data blocks that are cached in the SGA that have not been written to disk are now written to disk. The redo log buffer is similarly flushed. Datafiles are checkpointed and their headers are marked current as of the time the database was closed. Datafiles and log files are closed. Users can no longer access the database.</p>
+</li>
+<li>
+<p>The Oracle instance dismounts the database and updates relevant entries in the control file to record a clean shutdown. The control file is closed. The database is now closed and only the instance remains.</p>
+</li>
+<li>
+<p>The Oracle instance stops the background processes of the instance and deallocates the shared memory used by the SGA.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" -->
+<a id="CIHIEBEB" name="CIHIEBEB"></a>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref229" name="sthref229"></a>
+<h4>Server and Client Processes</h4>
+<p>In addition to background processes, Oracle creates <a id="sthref230" name="sthref230"></a>server processes that handle the requests of user or client processes that connect to the instance. A user connection is composed of two distinct pieces:</p>
+<ul>
+<li type="disc">
+<p>A client program acting on behalf of the user, such as Oracle Enterprise Manager, SQL*Plus, or an application</p>
+</li>
+<li type="disc">
+<p>A server process that handles the connection to the database on behalf of the client program</p>
+</li>
+</ul>
+<p>In some situations when the client and Oracle operate on the same machine, it is possible to combine the user process and corresponding server process into a single process to reduce system overhead. However, when the client and Oracle operate on different machines, a user process always communicates with Oracle through a separate server process.</p>
+<p>Server <a id="sthref231" name="sthref231"></a><a id="sthref232" name="sthref232"></a>processes can be either dedicated or shared. In dedicated server mode, each client process has its own server process. While a dedicated server process is good for long running queries and administrative tasks, an idle process or too many dedicated processes can result in an inefficient use of resources.</p>
+<p>Shared server mode eliminates the need for a dedicated server process for each connection. A dispatcher directs multiple incoming network session requests to a pool of shared server processes. An idle shared server process from a shared pool of server processes picks up a request from a common queue, which means a small number of shared servers can perform the same amount of processing as many dedicated servers. Also, because the amount of memory required for each user is relatively small, less memory and process management are required, and more users can be supported.</p>
+<p>Shared server mode is more efficient at supporting multiple users and clients making frequent short-running queries.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref233" name="sthref233"></a>
+<h4>Network Connections</h4>
+<p><a id="sthref234" name="sthref234"></a>Oracle Net is a layer of software that allows different physical machines to communicate to access an Oracle database. Oracle Net runs on the client machine and on the database server. The client machine and the database server are often the same machine.</p>
+<p>Oracle Net enables the client and server to communicate over a network using many popular network protocols, and it provides location transparency such that the client machine does not need to know the server's location. When the database is moved to another location, you only need to reconfigure Oracle Net. No changes are necessary to client applications.</p>
+<p>Oracle Net must be separately configured and started for it to handle client connections to the database. You can configure Oracle Net using Oracle Enterprise Manager or with a separately launched GUI tool called the Oracle Net Manager. To learn more, see <a href="network.htm#CHDFHIFE">Chapter 4, "Configuring the Network Environment"</a>.</p>
+<p>When an instance starts, a listener process establishes a communication pathway to Oracle. When a user process makes a connection request, the listener determines whether it should use a shared server dispatcher process or a dedicated server process and establishes an appropriate connection.</p>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CACCCCBC" name="CACCCCBC"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref235" name="sthref235"></a>
+<h2>Shutting Down and Restarting the Instance and Database</h2>
+<p><a id="sthref236" name="sthref236"></a><a id="sthref237" name="sthref237"></a><a id="sthref238" name="sthref238"></a>If you need to shut down and later restart your instance or database, you can do this by clicking the <span class="bold">Shutdown</span> or <span class="bold">Startup</span> button, under the General heading on the Database Home page as shown in <a href="#g1097274">Figure 5-1, "Shutdown/Startup Button on Home Page"</a>.</p>
+<div class="figure"><a id="g1097274" name="g1097274"></a><a id="sthref239" name="sthref239"></a>
+<p class="titleinfigure">Figure 5-1 Shutdown/Startup Button on Home Page</p>
+<img src="./hp-shutdownR2.gif" alt="General section of the home page." title="General section of the home page." /><br />
+<a id="sthref240" name="sthref240" href="./img_text/hp-shutdownR2.htm">Description of the illustration hp-shutdownR2.gif</a><br />
+<br /></div>
+<!-- class="figure" -->
+<p>The first page to appear is Startup/Shutdown: Specify Host and Target Database Credentials. This page requires you to log in to the machine that Oracle is running on, and into the database itself with <code>SYSDBA</code> or <code>SYSOPER</code> privileges. The next screen enables you to shut down the database, or start up the database, specifying options.</p>
+<a id="CHDEFDDI" name="CHDEFDDI"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref241" name="sthref241"></a>
+<h3>Starting and Shutting Down the Database Instance on Windows</h3>
+<p><a id="sthref242" name="sthref242"></a><a id="sthref243" name="sthref243"></a><a id="sthref244" name="sthref244"></a>You can start and shut down your Oracle database with the Windows Services program. To start Oracle, you must start the following services:</p>
+<ul>
+<li type="disc">
+<p><code>OracleService</code><code><span class="codeinlineitalic">SID</span></code>, which is your Oracle Database instance</p>
+</li>
+<li type="disc">
+<p><code>Oracle</code><code><span class="codeinlineitalic">ORACLE_HOME</span></code><code>TNSListener</code>, which is your listener; required to allow clients to connect to your database</p>
+</li>
+<li type="disc">
+<p><code>Oracle</code><code>DBConsole</code><code><span class="codeinlineitalic">SID</span></code>, which enables clients to connect to Enterprise Manager</p>
+</li>
+</ul>
+<p>In the preceding service names, <code><span class="codeinlineitalic">SID</span></code> refers to the system identifier for the instance and <code><span class="codeinlineitalic">ORACLE_HOME</span></code> refers to the Oracle home.</p>
+<p>To start these services:</p>
+<ol type="1" start="1">
+<li>
+<p>Click the <span class="bold">Start</span> button and then select <span class="bold">Settings</span>, <span class="bold">Control Panel</span>, <span class="bold">Administrative Tools</span>, and <span class="bold">Services</span>.</p>
+<p>A list of all available services on your system appears.</p>
+</li>
+<li>
+<p>Locate the Oracle services listed at the beginning of this section. For example, if your SID is <code>orcl</code>, then locate the following services:</p>
+<ul>
+<li type="disc">
+<p><code>OracleServiceORCL</code></p>
+</li>
+<li type="disc">
+<p><code>OracleOraDb10g_home1TNSListener</code></p>
+</li>
+<li type="disc">
+<p><code>OracleDBConsoleorcl</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Start all three services. You can use the following techniques:</p>
+<ul>
+<li type="disc">
+<p>Right-clicking the service and select <span class="bold">Start</span>.</p>
+</li>
+<li type="disc">
+<p>In the <span class="bold">Action</span> menu, select <span class="bold">Start</span>.</p>
+</li>
+<li type="disc">
+<p>Double-click the service to open a dialog box and then click <span class="bold">Start</span>.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>To shut down the database, select or click <span class="bold">Stop</span> instead of <span class="bold">Start</span>.</p>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CACDDIID" name="CACDDIID"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref245" name="sthref245"></a>
+<h2>Viewing and Modifying Initialization Parameters</h2>
+<p><a id="sthref246" name="sthref246"></a>When you install one of the preconfigured databases provided by Oracle, the initialization parameters are optimized for normal use in the environment that you specified. It is not necessary for you to alter any initialization parameters at this time. The steps described in this section will familiarize you with the initial parameter setting for your database and indicate how to modify parameters.</p>
+<p>To view or modify the initialization parameters for your database:</p>
+<ol type="1" start="1">
+<li>
+<p>From the Database Home page, click the <span class="bold">Administration</span> property page. The Administration home page appears as shown in <a href="#CACJHAJE">Figure 5-2</a>.</p>
+<div class="figure"><a id="CACJHAJE" name="CACJHAJE"></a><a id="sthref247" name="sthref247"></a>
+<p class="titleinfigure">Figure 5-2 Database Administration Page</p>
+<img src="./adminpageR2.gif" alt="This image is described in the text." title="This image is described in the text." /><br />
+<a id="sthref248" name="sthref248" href="./img_text/adminpageR2.htm">Description of the illustration adminpageR2.gif</a><br />
+<br /></div>
+<!-- class="figure" --></li>
+<li>
+<p>Click <span class="bold">All Initialization Parameters</span> under the Database Configuration heading.</p>
+<p>Enterprise Manager displays the Initialization Parameters page. This page lists the current value of each initialization parameter as seen by the database instance. You can also use this page to alter initialization parameter values, using the <span class="bold">Show SQL</span>, <span class="bold">Revert</span>, and <span class="bold">Apply</span> buttons.</p>
+<p>There are two property pages shown on the Initialization Parameters page:</p>
+<ul>
+<li type="disc">
+<p><span class="bold">Current</span>&#x2014;The table on this property page displays all of the initialization parameter values currently seen by the database instance (in memory).</p>
+<p>You can use this page to make dynamic changes to parameters in the current running instance. Only parameters marked dynamic can be changed. To do so, enter a new value and click <span class="bold">Apply</span>.</p>
+</li>
+<li type="disc">
+<p><span class="bold">SPFile</span>&#x2014;This property page is present when you are using a server parameter file, whose location is displayed a the top of the table. This property page shows parameter settings in the server parameter file.</p>
+<p>Changes to parameter settings in this file are persistent across instance startup and shutdown. To make persistent changes to an initialization parameter, enter the new value and click <span class="bold">Apply</span>. You can optionally apply changes to the current running instance by checking <span class="bold">Apply changes in SPFile to the current running instance</span>. If you do not check this box, your changes will not take effect until the database is shut down and restarted.</p>
+</li>
+</ul>
+<p>Parameters marked as <span class="bold">Basic</span> represent a small subset of all initialization parameters, and are considered necessary to keeping the database running smoothly.</p>
+<p>As the number of database users grows and workload increases, you might need to alter some initialization parameters. You can make these changes directly using the Initialization Parameter page as described, or indirectly using one of the advisors provided by Oracle. One such advisor, the memory advisor, is described in <a href="#CACBFIED">"Managing Memory Parameters"</a>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect1" -->
+<a id="CACBFIED" name="CACBFIED"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref249" name="sthref249"></a>
+<h2>Managing Memory Parameters</h2>
+<p>Some<a id="sthref250" name="sthref250"></a><a id="sthref251" name="sthref251"></a><a id="sthref252" name="sthref252"></a><a id="sthref253" name="sthref253"></a> initialization parameters, referred to here as memory parameters, determine the total size of the system global area (SGA) and the program global area (PGA), and of the subcomponents of the SGA. The settings of memory parameters can affect the performance of your database. When you install your database, these parameters are tuned to meet the requirements of the environment that you specify.</p>
+<p>If you enabled Automatic Shared Memory Configuration when you configured your database, Oracle automatically sizes the subcomponents of the SGA, which include the shared pool and buffer cache. Oracle recommends that you enable memory auto tuning.</p>
+<p>If Automatic Shared Memory Management is disabled, you can enable it on the Memory Parameters page. You can navigate to this page from the Administration page by clicking <span class="bold">Memory Parameters</span> under the Instance heading. From this page you can enable or disable Automatic Shared Memory Management and view your SGA and PGA memory settings from their property pages.</p>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref254" name="sthref254"></a>
+<h3>Modifying Memory Parameters</h3>
+<p>To modify the size of an SGA subcomponent without shutting down your instance, you can disable Automatic Shared Memory Management on the Memory Parameters page. With the Advice button on the Memory Parameters page, the Memory Advisor (discussed in <a href="montune.htm#CBBGHHJI">"Using the Memory Advisor"</a> in <a href="montune.htm#CHDDAFBD">Chapter 10, "Monitoring and Tuning the Database"</a>) gives you advice on optimal memory settings. If you choose to modify your memory settings manually, you can enter new sizes and apply changes dynamically while the instance is up. You can also do so from the Current property page on the Initialization Parameters page. However, there are some restrictions on dynamic modification of memory parameters. For more information, see <a class="xlinkSRC ADMIN002" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Administrator's Guide</span></a>.</p>
+<p>To make changes to memory parameters persistent across instance startup and shutdown, you must alter your parameter file. You can do so by navigating to SPFile property page from the Memory Parameters page and making your changes there.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p><a class="xlinkSRC PFGRF014" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Performance Tuning Guide</span></a> for more information about memory parameters and their tuning</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CIABDFIH" name="CIABDFIH"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref255" name="sthref255"></a>
+<h2>Instances: Oracle by Example Series</h2>
+<p>Oracle by Example (OBE) has a series on the <span class="italic">Oracle Database 2 Day DBA</span> book. This OBE steps you through the tasks in this chapter, and includes annotated screen shots.</p>
+<p>To view the Instances OBE, point your browser to the following location:</p>
+<pre xml:space="preserve" class="oac_no_warn"><a href="http://www.oracle.com/technology/obe/10gr2_2day_dba/instance/instance.htm">http://www.oracle.com/technology/obe/10gr2_2day_dba/instance/instance.htm</a>
+</pre></div>
+<!-- class="sect1" --></div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="network.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="storage.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;2004, 2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

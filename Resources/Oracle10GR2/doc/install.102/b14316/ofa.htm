@@ -1,0 +1,810 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>C Optimal Flexible Architecture</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.5 Build 272" />
+<meta name="Date" content="August 18, 2005 19:51:01" />
+<meta name="doctitle" content="Oracle&reg; Database Installation Guide 10g Release 2 (10.2) for Microsoft Windows (32-Bit)" />
+<meta name="partno" content="B14316-01" />
+<meta name="docid" content="NTDBI" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Glossary" href="glossary.htm" title="Glossary" type="text/html" />
+<link rel="Prev" href="jbridge.htm" title="Previous" type="text/html" />
+<link rel="Next" href="advance.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14316.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database Installation Guide<br />
+10<i>g</i> Release 2 (10.2) for Microsoft Windows (32-Bit)</b><br />
+Part Number B14316-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="jbridge.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="advance.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top"><a href="../b14316.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="CBBEDHEB" name="CBBEDHEB"></a><a id="sthref1044" name="sthref1044"></a>
+<h1 class="appendix"><span class="secnum">C</span> <span class="bold"><a name="NTDBI010" id="NTDBI010"></a></span> Optimal Flexible Architecture</h1>
+<p><a id="sthref1045" name="sthref1045"></a>This appendix describes the Optimal Flexible Architecture (OFA) standard:</p>
+<ul>
+<li type="disc">
+<p><a href="#i633068">Overview of the Optimal Flexible Architecture Standard</a></p>
+</li>
+<li type="disc">
+<p><a href="#CBBGJJAG">Changes to the Optimal Flexible Architecture for Oracle Database 10<span class="italic">g</span></a></p>
+</li>
+<li type="disc">
+<p><a href="#i1006203">Differences Between Directory Trees by Release</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1006238">Optimal Flexible Architecture Directory Naming Conventions</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1006345">Optimal Flexible Architecture and Multiple Oracle Home Configurations</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1006569">Increasing Reliability and Performance</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1006606">Comparison Between Optimal Flexible Architecture on Windows and UNIX</a></p>
+</li>
+</ul>
+<a id="i633068" name="i633068"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref1046" name="sthref1046"></a>
+<h2 class="sect1"><span class="secnum">C.1</span> Overview of the Optimal Flexible Architecture Standard</h2>
+<p>The Optimal Flexible Architecture standard is a set of file naming and configuration guidelines created to ensure reliable Oracle installations that require little maintenance.</p>
+<p><a id="sthref1047" name="sthref1047"></a>When you install Oracle Database, you are installing one of the largest applications that your computer can support. Using multiple Oracle homes and Optimal Flexible Architecture provides many advantages when administering large databases. The Optimal Flexible Architecture standard is designed to:</p>
+<ul>
+<li type="disc">
+<p>Organize large amounts of complicated software and data on disk, to avoid device bottlenecks and poor performance</p>
+</li>
+<li type="disc">
+<p>Facilitate routine administrative tasks such as software and data backup, which are often vulnerable to data corruption</p>
+</li>
+<li type="disc">
+<p>Facilitate switching between multiple Oracle databases</p>
+</li>
+<li type="disc">
+<p>Adequately manage and administer database growth</p>
+</li>
+<li type="disc">
+<p>Help eliminate fragmentation of free space in the data dictionary, isolate other fragmentation, and minimize resource contention</p>
+</li>
+</ul>
+<p>You can think of Optimal Flexible Architecture as a set of good habits to adopt when organizing Oracle directories and files on your computer. All Oracle components on the installation media are Optimal Flexible Architecture-compliant; that is, Oracle Universal Installer places Oracle components in directory locations that follow Optimal Flexible Architecture guidelines. Although using Optimal Flexible Architecture is not a requirement, Oracle recommends that you use it if your database will grow in size, or if you plan to have multiple databases.</p>
+<p>The aim of Optimal Flexible Architecture is to prevent an entire class of problems that can occur when you have different releases of Oracle software and multiple, growing databases on your computer.</p>
+<p>Oracle Universal Installer separates Oracle software executables from database files. Previously, database files were placed in <code><span class="codeinlineitalic">ORACLE_HOME</span></code><code>\database</code>, a subdirectory of the Oracle home directory that also contained Oracle software.</p>
+<p>Using Optimal Flexible Architecture, Oracle Universal Installer puts Oracle software in <code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\</code><code><span class="codeinlineitalic">ORACLE_HOME</span></code> and database files in <code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\oradata</code>. When you upgrade a database to the latest release, the new Oracle software executables will be placed in a different Oracle home directory. After you judge the upgrade successful, you can easily remove the old Oracle home directory and reclaim space, because the database does not reside there.</p>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref1048" name="sthref1048"></a>
+<h3 class="sect2"><span class="secnum">C.1.1</span> Characteristics of an Optimal Flexible Architecture-Compliant Installation</h3>
+<p>An Optimal Flexible Architecture-compliant database has the following characteristics:</p>
+<ul>
+<li type="disc">
+<p>Independent subdirectories</p>
+<p>Categories of files are separated into independent subdirectories so that files in one category are minimally affected by operations on files in other categories.</p>
+</li>
+<li type="disc">
+<p>Consistent naming conventions for database files</p>
+<p>Database files are easily distinguishable from all other files. Files of one database are easily distinguishable from files of another database. Datafiles, <a href="glossary.htm#CHDJAFAB"><span class="xrefglossterm">redo log files</span></a>, and <a href="glossary.htm#i432217"><span class="xrefglossterm">control files</span></a> are easily identifiable. Datafiles are clearly associated with a particular <a href="glossary.htm#i432555"><span class="xrefglossterm">tablespace</span></a>.</p>
+</li>
+<li type="disc">
+<p>Integrity of Oracle home directories</p>
+<p>You can add, move, or delete Oracle home directories without having to revise applications that refer to them.</p>
+</li>
+<li type="disc">
+<p>Separation of administrative information for each database</p>
+<p>The ability to distinguish administrative information about one database from that of another ensures a reasonable structure for the organization and storage of administrative data.</p>
+</li>
+<li type="disc">
+<p>Separation of tablespace contents</p>
+<p>Tablespace free space fragmentation and I/O request contention are minimized, while administrative flexibility is maximized.</p>
+</li>
+<li type="disc">
+<p>Tuning I/O loads across all disks</p>
+<p>I/O loads are tuned across all disks, including disks storing Oracle data in raw devices, if needed.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CBBGJJAG" name="CBBGJJAG"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref1049" name="sthref1049"></a>
+<h2 class="sect1"><span class="secnum">C.2</span> Changes to the Optimal Flexible Architecture for Oracle Database 10<span class="italic">g</span></h2>
+<p><a id="sthref1050" name="sthref1050"></a>For previous releases of Oracle Database, the Optimal Flexible Architecture recommended Oracle home path was similar to the following:</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\&gt; oracle\ora92
+
+</pre>
+<p>In Oracle Database 10<span class="italic">g</span> release 1 (10.1), the Optimal Flexible Architecture recommended Oracle home path changed. The Optimal Flexible Architecture recommended path is now similar to the following:</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\&gt; oracle\product\10.2.0\<span class="italic">type_n</span>
+
+</pre>
+<p>In this example, <code><span class="codeinlineitalic">type</span></code> is the type of Oracle home, for example Oracle Database (<code>database</code>) or Oracle Database Client (<code>client</code>), and <code><span class="codeinlineitalic">n</span></code> is an optional counter. This syntax provides the following benefits:</p>
+<ul>
+<li type="disc">
+<p>You can install different products with the same release number in the same Oracle base directory, for example:</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\&gt; oracle\product\10.2.0\db_1
+c:\&gt; oracle\product\10.2.0\client_1
+
+</pre></li>
+<li type="disc">
+<p>You can install the same product more than once in the same Oracle base directory, for example:</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\&gt; oracle\product\10.2.0\db_1
+c:\&gt; oracle\product\10.2.0\db_2
+</pre></li>
+</ul>
+</div>
+<!-- class="sect1" -->
+<a id="i1006203" name="i1006203"></a>
+<div class="sect1"><a id="sthref1051" name="sthref1051"></a>
+<h2 class="sect1"><span class="secnum">C.3</span> <a id="sthref1052" name="sthref1052"></a>Differences Between Directory Trees by Release</h2>
+<p><a id="sthref1053" name="sthref1053"></a><a id="sthref1054" name="sthref1054"></a>Optimal Flexible Architecture has necessitated changes to the Oracle Database directory tree. This section lists the differences:</p>
+<ul>
+<li type="disc">
+<p><a href="#BABHJGIA">Top-Level Oracle Directory</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABEICFC">Database Filenames</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABDFICF">Database Filename Extensions</a></p>
+</li>
+</ul>
+<a id="BABHJGIA" name="BABHJGIA"></a>
+<div class="sect2"><a id="sthref1055" name="sthref1055"></a>
+<h3 class="sect2"><span class="secnum">C.3.1</span> Top-Level Oracle Directory</h3>
+<p>In an Oracle8<span class="italic">i</span> release 8.1.3 or earlier release, all subdirectories are located under a top-level <code><span class="codeinlineitalic">ORACLE_HOME</span></code> directory that by default is <code>c:\orant</code>.</p>
+<p>When you install an Oracle8<span class="italic">i</span> release 8.1.4 or later Optimal Flexible Architecture-compliant database, all subdirectories are no longer under a top-level <code><span class="codeinlineitalic">ORACLE_HOME</span></code> directory. There is now a new top-level Oracle base directory of the form <code><span class="codeinlineitalic">DRIVE_LETTER</span></code><code>:\oracle\product\10.2.0</code>, where <code><span class="codeinlineitalic">DRIVE_LETTER</span></code> is any hard drive.</p>
+<p>The Oracle base directory contains <code>\</code><code><span class="codeinlineitalic">ORACLE_HOME</span></code> directories, <code>\oradata</code> directories (for database files), <code>\flash_recovery_area</code> (for recovery operations), and <code>\admin</code> directories (for database administration files).</p>
+</div>
+<!-- class="sect2" -->
+<a id="BABEICFC" name="BABEICFC"></a>
+<div class="sect2"><a id="sthref1056" name="sthref1056"></a>
+<h3 class="sect2"><span class="secnum">C.3.2</span> Database Filenames</h3>
+<p>In Oracle8<span class="italic">i</span> release 8.1.3 and earlier releases, database files have the SID in the database filename. For example, the first control file is named <code>ctl1</code><code><span class="codeinlineitalic">SID</span></code><code>.ora</code>.</p>
+<p>Beginning with Oracle8<span class="italic">i</span> release 8.1.4, database files no longer have the SID in the database filename. For example, the first control file is named <code>control01.ctl.</code> There is no need for the presence of the SID in the filename, because all the database files for a particular database are placed in <code>\oradata</code> under a directory called <code><span class="codeinlineitalic">DB_NAME</span></code> that is named for that database.</p>
+</div>
+<!-- class="sect2" -->
+<a id="BABDFICF" name="BABDFICF"></a>
+<div class="sect2"><a id="sthref1057" name="sthref1057"></a>
+<h3 class="sect2"><span class="secnum">C.3.3</span> Database Filename Extensions</h3>
+<p>In Oracle8<span class="italic">i</span> release 8.1.3 and earlier releases, all database files have the same <code>".ORA"</code> extension.</p>
+<p>In an Optimal Flexible Architecture-compliant release, the convention of having <code>".ora"</code> as the filename extension for database files is no longer used. Database filenames now have more meaningful extensions. These are:</p>
+<ul>
+<li type="disc">
+<p><code>.ctl</code> for control files</p>
+</li>
+<li type="disc">
+<p><code>.log</code> for log files</p>
+</li>
+<li type="disc">
+<p><code>.dbf</code> for datafiles</p>
+</li>
+</ul>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="i1006238" name="i1006238"></a>
+<div class="sect1"><a id="sthref1058" name="sthref1058"></a>
+<h2 class="sect1"><span class="secnum">C.4</span> Optimal Flexible Architecture Directory Naming Conventions</h2>
+<p><a id="sthref1059" name="sthref1059"></a>Optimal Flexible Architecture uses directory naming conventions that make it easy to identify the precise Oracle home and database name that is associated with a set of files. This section describes the naming conventions used for top-level directories of an Optimal Flexible Architecture-compliant database directory tree:</p>
+<ul>
+<li type="disc">
+<p><a href="#i1010000">ORACLE_BASE Directory</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1010016">ORACLE_HOME Directory</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1006296">ADMIN Directory</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1006306">ORADATA Directory</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABIFGAD">FLASH_RECOVERY_AREA Directory</a></p>
+</li>
+</ul>
+<a id="i1010000" name="i1010000"></a>
+<div class="sect2"><a id="sthref1060" name="sthref1060"></a>
+<h3 class="sect2"><span class="secnum">C.4.1</span> ORACLE_BASE Directory <a id="sthref1061" name="sthref1061"></a></h3>
+<p><code><span class="codeinlineitalic">ORACLE_BASE</span></code> is the root of the Oracle directory tree. If you install an Optimal Flexible Architecture-compliant database using Oracle Universal Installer defaults, then <code><span class="codeinlineitalic">ORACLE_BASE</span></code> is <code><span class="codeinlineitalic">SYSTEM_DRIVE</span></code><code>:\oracle\product\10.2.0</code>.</p>
+<p>If you are installing Oracle Database for Windows on a computer with no other Oracle software installed, then you can change <code><span class="codeinlineitalic">ORACLE_BASE</span></code> before running Oracle Universal Installer. Most users will not need or want to do this.</p>
+<p>Do not change the value of <code><span class="codeinlineitalic">ORACLE_BASE</span></code> after you run Oracle Universal Installer for the first time. If there is an existing <code><span class="codeinlineitalic">ORACLE_BASE</span></code> and you change it, then there will be a conflict of Oracle base directories. If you create another <code><span class="codeinlineitalic">ORACLE_BASE</span></code> when the original <code><span class="codeinlineitalic">ORACLE_BASE</span></code> already exists, then certain tools and the database will not be able to find previously created files. They will look for them in the new <code><span class="codeinlineitalic">ORACLE_BASE</span></code> instead of the original <code><span class="codeinlineitalic">ORACLE_BASE</span></code>.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+Your operating system documentation for instructions on editing environment variables</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect2" -->
+<a id="i1010016" name="i1010016"></a>
+<div class="sect2"><a id="sthref1062" name="sthref1062"></a>
+<h3 class="sect2"><span class="secnum">C.4.2</span> ORACLE_HOME Directory<a id="sthref1063" name="sthref1063"></a></h3>
+<p>The <code>\ORACLE_HOME</code> directory is located under <code><span class="codeinlineitalic">SYSTEM_DRIVE:\ORACLE_BASE</span></code>, where is any hard drive, and contains subdirectories for Oracle software executables and network files.</p>
+<p>If you install Oracle Database for Windows on a computer with no other Oracle software installed and you use default settings, then the first Oracle home directory that you create is called <code>\db_1</code>.</p>
+</div>
+<!-- class="sect2" -->
+<a id="i1006296" name="i1006296"></a>
+<div class="sect2"><a id="sthref1064" name="sthref1064"></a>
+<h3 class="sect2"><span class="secnum">C.4.3</span> <a id="sthref1065" name="sthref1065"></a>ADMIN Directory</h3>
+<p>Database administration files are stored in subdirectories of <code><span class="codeinlineitalic">ORACLE_BASE</span></code><span class="italic">\</span> <code>\admin\</code><code><span class="codeinlineitalic">DB_NAME</span></code>. Names and brief descriptions of some of these subdirectories are:</p>
+<pre xml:space="preserve" class="oac_no_warn">\bdump     --background process trace files
+\cdump     --core dump files
+\create    --database creation files
+\exp       --database export files
+\pfile     --initialization parameter files
+\udump     --user SQL trace files
+</pre></div>
+<!-- class="sect2" -->
+<a id="i1006306" name="i1006306"></a>
+<div class="sect2"><a id="sthref1066" name="sthref1066"></a>
+<h3 class="sect2"><span class="secnum">C.4.4</span> <a id="sthref1067" name="sthref1067"></a>ORADATA Directory</h3>
+<p>Database files are stored in <code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\oradata\</code><code><span class="codeinlineitalic">DB_NAME</span></code>. Names and brief descriptions of these files are:</p>
+<pre xml:space="preserve" class="oac_no_warn">CONTROL01.CTL    --control file 1
+CONTROL02.CTL    --control file 2
+CONTROL02.CTL    --control file 3
+EXAMPLE01.DBF    --EXAMPLE tablespace datafiles
+SYSAUX01.DBF     --SYSAUX tablespace datafiles
+SYSTEM01.DBF     --SYSTEM tablespace datafile
+TEMP01.DBF       --TEMP tablespace datafile
+USERS01.DBF      --USERS tablespace datafile
+*.dbf            --datafiles corresponding to each tablespace in your database
+REDO01.LOG       --redo log file group one, member one
+REDO02.LOG       --redo log file group two, member one
+REDO03.LOG       --redo log file group three, member one
+</pre>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+This directory structure allows for disk striping only on UNIX platforms. See <a href="#i1006634">"Support for Symbolic Links on Windows"</a>.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+</div>
+<!-- class="sect2" -->
+<a id="BABIFGAD" name="BABIFGAD"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref1068" name="sthref1068"></a>
+<h3 class="sect2"><span class="secnum">C.4.5</span> FLASH_RECOVERY_AREA Directory<a id="sthref1069" name="sthref1069"></a><a id="sthref1070" name="sthref1070"></a></h3>
+<p>The <code>flash_recovery_area</code> directory stores and manages files related to backup and recovery. It contains a subdirectory for each database on the system. A flash recovery area is optional disk location that you can use to store recovery-related files such as control file and online redo log copies, archived logs, flashback logs, and Oracle Database Recovery Manager (RMAN) backups. Oracle and RMAN manage the files in the flash recovery area automatically.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Database Backup and Recovery Basics</span> to learn how to create and use a flash recovery area</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="i1006345" name="i1006345"></a>
+<div class="sect1"><a id="sthref1071" name="sthref1071"></a>
+<h2 class="sect1"><span class="secnum">C.5</span> Optimal Flexible Architecture and Multiple Oracle Home Configurations</h2>
+<p>The following sections describe various Optimal Flexible Architecture and multiple Oracle homes configurations.</p>
+<div class="sect2"><a id="sthref1072" name="sthref1072"></a>
+<h3 class="sect2"><span class="secnum">C.5.1</span> <a id="sthref1073" name="sthref1073"></a>Specifying an ORACLE_HOME Directory</h3>
+<p><a id="sthref1074" name="sthref1074"></a><a id="sthref1075" name="sthref1075"></a>To install an Optimal Flexible Architecture-compliant database, you must specify an Oracle home directory in the Path field of Oracle Universal Installer. It is of the form:</p>
+<pre xml:space="preserve" class="oac_no_warn">X:\[<span class="italic">PATHNAME</span>]\oracle\product\10.2.0\<span class="italic">ORACLE_HOME</span> 
+
+</pre>
+<p>where:</p>
+<ul>
+<li type="disc">
+<p><code>X:\</code> is any hard drive. For example, <code>c:\</code></p>
+</li>
+<li type="disc">
+<p><code><span class="codeinlineitalic">PATHNAME</span></code> is an optional directory path name</p>
+</li>
+<li type="disc">
+<p><code>\oracle</code> is a mandatory directory path name, unless you changed the value of registry key <code>ORACLE_BASE</code> before performing the installation</p>
+</li>
+<li type="disc">
+<p><code><span class="codeinlineitalic">ORACLE_HOME</span></code> is the name of the Oracle home</p>
+</li>
+</ul>
+<p>The following are examples of Optimal Flexible Architecture-compliant Oracle home directories:</p>
+<ul>
+<li type="disc">
+<p><code>c:\test\oracle\product\10.2.0\db_1</code></p>
+</li>
+<li type="disc">
+<p><code>d:\oracle\product\10.2.0\db_1</code></p>
+</li>
+</ul>
+</div>
+<!-- class="sect2" -->
+<a id="i1006361" name="i1006361"></a>
+<div class="sect2"><a id="sthref1076" name="sthref1076"></a>
+<h3 class="sect2"><span class="secnum">C.5.2</span> <a id="sthref1077" name="sthref1077"></a>Installing a Default Optimal Flexible Architecture Database: Example</h3>
+<p><a id="sthref1078" name="sthref1078"></a><a id="sthref1079" name="sthref1079"></a>This example shows how to create all Oracle homes within one Oracle base.</p>
+<ol type="1" start="1">
+<li>
+<p>Install any Oracle Database that supports Optimal Flexible Architecture (Oracle Database 8.1.6 or later) on a computer with no other Oracle software installed and make sure that you accept default settings for the Oracle home (for example, <code>c:\oracle\ora81</code>).</p>
+</li>
+<li>
+<p>Install any Oracle Database (for example, Oracle Database) in a second Oracle home accepting the default settings.</p>
+</li>
+</ol>
+<p><a href="#g1010767">Table C-1</a> shows the default Optimal Flexible Architecture database settings.</p>
+<div class="tblhruleformal"><a id="sthref1080" name="sthref1080"></a><a id="g1010767" name="g1010767"></a>
+<p class="titleintable">Table C-1 Default Optimal Flexible Architecture Database Settings</p>
+<table class="HRuleFormal" title="Default Optimal Flexible Architecture Database Settings" summary="Rows are database settings. For each setting, the first column identifies it, and the second column shows its default value." dir="ltr" border="1" width="100%" frame="hsides" rules="rows" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t5">Setting</th>
+<th align="left" valign="bottom" id="r1c2-t5">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t5" headers="r1c1-t5">
+<p><code><span class="codeinlineitalic">ORACLE_BASE</span></code></p>
+</td>
+<td align="left" headers="r2c1-t5 r1c2-t5">
+<p><code>c:\oracle\product\10.2.0</code> (same for all Oracle homes)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t5" headers="r1c1-t5">
+<p>Oracle home 1</p>
+</td>
+<td align="left" headers="r3c1-t5 r1c2-t5">
+<p><code>c:\oracle\product\10.2.0\db_1</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t5" headers="r1c1-t5">
+<p>Oracle home 2</p>
+</td>
+<td align="left" headers="r4c1-t5 r1c2-t5">
+<p><code>c:\oracle\product\10.2.0\db_2</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblhruleformal" --></div>
+<!-- class="sect2" -->
+<a id="i1006409" name="i1006409"></a>
+<div class="sect2"><a id="sthref1081" name="sthref1081"></a>
+<h3 class="sect2"><span class="secnum">C.5.3</span> Installing a Nondefault Optimal Flexible Architecture Database: <a id="sthref1082" name="sthref1082"></a>Example 1</h3>
+<p>In this example, you install Oracle Database so that each Oracle home has its own Oracle base.</p>
+<ol type="1" start="1">
+<li>
+<p>Install any Oracle Database that supports Optimal Flexible Architecture (Oracle Database 8.1.6 or later) on a computer with no other Oracle software installed and change the default Oracle Universal Installer settings for the first Oracle home (for example, from <code>c:\oracle\ora81</code> to <code>X:\xyz</code>).</p>
+</li>
+<li>
+<p>Install any Oracle Database (for example, Oracle Database 10<span class="italic">g</span> release 1 (10.2)) in a second Oracle home and change the default Oracle Universal Installer settings for the second Oracle home (for example, from <code>X:\xyz</code> to <code>Y:\abc</code>).</p>
+</li>
+</ol>
+<p><a href="#g1010783">Table C-2</a> shows the nondefault Optimal Flexible Architecture database settings for example 1.</p>
+<div class="tblhruleformal"><a id="sthref1083" name="sthref1083"></a><a id="g1010783" name="g1010783"></a>
+<p class="titleintable">Table C-2 Nondefault Optimal Flexible Architecture Database Settings: Example 1</p>
+<table class="HRuleFormal" title="Nondefault Optimal Flexible Architecture Database Settings: Example 1" summary="Rows are database directories. For each directory, the first column identifies it, and the second column shows the nondefault value referred to in the text." dir="ltr" border="1" width="100%" frame="hsides" rules="rows" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t6">Directory</th>
+<th align="left" valign="bottom" id="r1c2-t6">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t6" headers="r1c1-t6">
+<p><code><span class="codeinlineitalic">ORACLE_BASE</span></code></p>
+</td>
+<td align="left" headers="r2c1-t6 r1c2-t6">
+<p><code>X:\xyz</code> for first Oracle home; <code>Y:\abc</code> for second Oracle home</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t6" headers="r1c1-t6">
+<p>Oracle home 1</p>
+</td>
+<td align="left" headers="r3c1-t6 r1c2-t6">
+<p><code>X:\xyz</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t6" headers="r1c1-t6">
+<p>Oracle home 2</p>
+</td>
+<td align="left" headers="r4c1-t6 r1c2-t6">
+<p><code>Y:\abc</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblhruleformal" -->
+<p>The resulting directory tree would look similar to this:</p>
+<pre xml:space="preserve" class="oac_no_warn">X:\xyz                                -- Oracle home 1
+     \admin
+          \<span class="italic">DB_NAME1</span>
+          \<span class="italic">DB_NAME2</span>
+     \bin
+     \network
+     \oradata
+          \<span class="italic">DB_NAME1</span>
+               CONTROL01.CTL
+               CONTROL02.CTL
+               CONTROL03.CTL
+               EXAMPLE01.DBF
+               SYSAUX01.DBF
+               SYSTEM01.DBF
+               TEMP01.DBF
+               USERS01.DBF
+               REDO01.LOG
+               REDO02.LOG
+               REDO03.LOG
+          \<span class="italic">DB_NAME2</span>
+ Y:\abc                                -- Oracle home 2
+     \admin
+          \<span class="italic">DB_NAME1</span>
+          \<span class="italic">DB_NAME2</span>
+     \bin
+     \network
+     \oradata
+          \<span class="italic">DB_NAME1</span>
+               CONTROL01.CTL
+               CONTROL02.CTL
+               CONTROL03.CTL
+               EXAMPLE01.DBF
+               SYSAUX01.DBF
+               SYSTEM01.DBF
+               TEMP01.DBF
+               USERS01.DBF
+               REDO01.LOG
+               REDO02.LOG
+               REDO03.LOG
+          \<span class="italic">DB_NAME2</span>
+</pre></div>
+<!-- class="sect2" -->
+<a id="i1006492" name="i1006492"></a>
+<div class="sect2"><a id="sthref1084" name="sthref1084"></a>
+<h3 class="sect2"><span class="secnum">C.5.4</span> Installing a Nondefault Optimal Flexible Architecture Database: Example 2<a id="sthref1085" name="sthref1085"></a></h3>
+<p>In this example, you install each Oracle home into its own directory, but they all share the same Oracle base.</p>
+<ol type="1" start="1">
+<li>
+<p>Install any Oracle Database that supports Optimal Flexible Architecture (Oracle Database 8.1.6 or later) on a computer with no other Oracle software installed and change the default Oracle Universal Installer settings for the first Oracle home (for example, from <code>c:\oracle\ora81</code> to <code>X:\xyz\oracle\abc</code>).</p>
+</li>
+<li>
+<p>Install any Oracle Database and change the default Oracle Universal Installer settings for the second Oracle home (for example, from <code>c:\oracle\ora10</code> to <code>X:\pqr</code>).</p>
+</li>
+</ol>
+<p><a href="#g1010799">Table C-3</a> shows the nondefault Optimal Flexible Architecture database settings for example 2.</p>
+<div class="tblhruleformal"><a id="sthref1086" name="sthref1086"></a><a id="g1010799" name="g1010799"></a>
+<p class="titleintable">Table C-3 Nondefault Optimal Flexible Architecture Database Settings: Example 2</p>
+<table class="HRuleFormal" title="Nondefault Optimal Flexible Architecture Database Settings: Example 2" summary="Rows are database settings. For each setting, the first column identifies it, and the second column shows the nondefault value referred to in the text." dir="ltr" border="1" width="100%" frame="hsides" rules="rows" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t7">Setting</th>
+<th align="left" valign="bottom" id="r1c2-t7">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t7" headers="r1c1-t7">
+<p><code><span class="codeinlineitalic">ORACLE_BASE</span></code></p>
+</td>
+<td align="left" headers="r2c1-t7 r1c2-t7">
+<p><code>X:\xyz\oracle</code></p>
+<p>(same for both Oracle homes)</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t7" headers="r1c1-t7">
+<p>Oracle home 1</p>
+</td>
+<td align="left" headers="r3c1-t7 r1c2-t7">
+<p><code>X:\xyz\oracle\abc</code></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t7" headers="r1c1-t7">
+<p>Oracle home 2</p>
+</td>
+<td align="left" headers="r4c1-t7 r1c2-t7">
+<p><code>X:\pqr</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblhruleformal" -->
+<p>The resulting directory tree would look similar to this:</p>
+<pre xml:space="preserve" class="oac_no_warn">X:\pqr                         --Oracle home 2
+  \bin
+  \network
+X:\xyz
+    \oracle                    --ORACLE_BASE for both Oracle homes
+      \abc                     --Oracle home 1
+        \bin
+        \network
+      \admin
+        \<span class="italic">DB_NAME1</span>
+          \adhoc
+          \bdump
+          \cdump
+          \create
+          \exp
+          \pfile
+          \udump
+        \<span class="italic">DB_NAME2</span>
+          \...
+      \oradata
+        \<span class="italic">DB_NAME1</span>
+          CONTROL01.CTL
+          CONTROL02.CTL
+          CONTROL03.CTL
+          EXAMPLE01.DBF
+          SYSAUX01.DBF
+          SYSTEM01.DBF
+          TEMP01.DBF
+          USERS01.DBF
+          REDO01.LOG
+          REDO02.LOG
+          REDO03.LOG
+        \<span class="italic">DB_NAME2</span>
+</pre></div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="i1006569" name="i1006569"></a>
+<div class="sect1"><a id="sthref1087" name="sthref1087"></a>
+<h2 class="sect1"><span class="secnum">C.6</span> <a id="sthref1088" name="sthref1088"></a><a id="sthref1089" name="sthref1089"></a>Increasing Reliability and Performance</h2>
+<p><a id="sthref1090" name="sthref1090"></a><a id="sthref1091" name="sthref1091"></a>One of the goals of Optimal Flexible Architecture is to increase reliability and performance by distributing I/O loads across different physical drives. Two ways to do that are:</p>
+<ul>
+<li type="disc">
+<p><a href="#i1006581">Disk Mirroring</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1006587">Disk Striping</a></p>
+</li>
+</ul>
+<a id="i1006581" name="i1006581"></a>
+<div class="sect2"><a id="sthref1092" name="sthref1092"></a>
+<h3 class="sect2"><span class="secnum">C.6.1</span> Disk Mirroring<a id="sthref1093" name="sthref1093"></a><a id="sthref1094" name="sthref1094"></a></h3>
+<p>You can separate and treat Oracle Database log files and database files with different levels of hardware reliability. Oracle Database log files are highly reliable to start with, because they are stored redundantly. Creating similar reliability for database files may require you to duplicate all of your data, using disk mirrors.</p>
+<p>Disk mirroring usually involves two or more identical drives and either a hardware controller or Windows Disk Administrator. If one disk fails, then the other disk(s) can recover data that would otherwise be lost. Using one of the disks to recover lost data may involve "breaking" the mirror. If the mirror breaks, then you must build a new mirror.</p>
+<p>Disk mirroring is part of some levels of Redundant Array of Independent Disks (RAID) configurations, provided by the disk controller. The RAID level determines the amount of redundancy. Some RAID levels can use the "hot swapping" feature, which means that you can replace a bad disk with a good one without turning off the computer or losing functionality.</p>
+</div>
+<!-- class="sect2" -->
+<a id="i1006587" name="i1006587"></a>
+<div class="sect2"><a id="sthref1095" name="sthref1095"></a>
+<h3 class="sect2"><span class="secnum">C.6.2</span> Disk Striping<a id="sthref1096" name="sthref1096"></a><a id="sthref1097" name="sthref1097"></a><a id="sthref1098" name="sthref1098"></a></h3>
+<p>How you set up disks for use in a database depends on the number of disks and the type of hard disk controllers available. If the hard disk controllers support both striping and mirroring, then Oracle recommends you configure the controllers to support striping.</p>
+<p>You can configure some controllers at system startup time by issuing a keyboard sequence that brings up configuration programs written by the controller manufacturer. One goal is to stripe as many drives together as possible by configuring the controllers. Each stripe shows up as one logical device.</p>
+<p>Striping provides significant performance advantages. All the space from the striped drives appears as a single logical drive. Furthermore, the space is used by interlacing "stripes" of space from all of the disks in the stripe. This means that a large file uses some space from the first disk, then some from the second disk and so on to the last disk, and then starting back at the first disk again. Each file can be spread over all of the striped disks. Multiple CPUs can access data randomly in such a file without contention.</p>
+<p>Controllers that support striping usually provide caching as well. This means that data can be written to the controller and cached and saved for a time in storage not on the disk. Data that is read can be cached on the controller in a similar fashion. Read caching should not be used with Oracle Database, because all database reads are cached already in the <a href="glossary.htm#CHDHCDJC"><span class="xrefglossterm">System Global Area</span></a> (SGA). The value of parameter <code>DB_CACHE_SIZE</code> in the initialization parameter file (<code>init.ora</code>) determines the buffer size that can be used in the SGA. This value also configures Oracle Database on startup.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+<ul>
+<li type="disc">
+<p>Read caching should be disabled.</p>
+</li>
+<li type="disc">
+<p>Disk write caching should be disabled on disks containing Oracle datafiles and redo log files where the contents of the write cache are not flushed to disk on power failures or operating system failure. Consult your vendor documentation for additional information.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><a id="sthref1099" name="sthref1099"></a>
+<h3 class="sect2"><span class="secnum">C.6.3</span> Using Raw Partitions for Tablespaces<a id="sthref1100" name="sthref1100"></a><a id="sthref1101" name="sthref1101"></a><a id="sthref1102" name="sthref1102"></a></h3>
+<p>A raw partition is a portion of a physical disk that is accessed at the lowest possible level. I/O of a raw partition improves performance by approximately 5 percent to 10 percent compared to I/O of a partition containing a file system. Therefore, Oracle encourages you to use <a href="glossary.htm#i432460"><span class="xrefglossterm">raw partitions</span></a> for your tablespace files.</p>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="i1006606" name="i1006606"></a>
+<div class="sect1"><a id="sthref1103" name="sthref1103"></a>
+<h2 class="sect1"><span class="secnum">C.7</span> Comparison Between Optimal Flexible Architecture on Windows and UNIX<a id="sthref1104" name="sthref1104"></a></h2>
+<p>You implement Optimal Flexible Architecture on Windows and UNIX in the same way. However, differences exist with regard to the following:</p>
+<ul>
+<li type="disc">
+<p><a href="#i1006627">Directory Naming</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1009754">ORACLE_BASE Directory</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1006634">Support for Symbolic Links on Windows</a></p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+Your UNIX operating system-specific administrator's reference for information about Optimal Flexible Architecture on UNIX</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</li>
+</ul>
+<a id="i1006627" name="i1006627"></a>
+<div class="sect2"><a id="sthref1105" name="sthref1105"></a>
+<h3 class="sect2"><span class="secnum">C.7.1</span> Directory Naming</h3>
+<p>Top-level names of the Optimal Flexible Architecture directory tree differ between Windows and UNIX. However, main subdirectory and filenames are the same on both operating systems.</p>
+</div>
+<!-- class="sect2" -->
+<a id="i1009754" name="i1009754"></a>
+<div class="sect2"><a id="sthref1106" name="sthref1106"></a>
+<h3 class="sect2"><span class="secnum">C.7.2</span> ORACLE_BASE Directory</h3>
+<p><a id="sthref1107" name="sthref1107"></a><a id="sthref1108" name="sthref1108"></a><a id="sthref1109" name="sthref1109"></a>On Windows, <code>ORACLE_BASE</code> is associated with an Oracle home directory. <code>ORACLE_BASE</code> is defined in the registry (for example, in <code>HKEY_LOCAL_MACHINE\SOFTWARE\ORACLE\KEY_</code><code><span class="codeinlineitalic">HOME_NAME</span></code>).</p>
+<p>On UNIX, <code>ORACLE_BASE</code> is associated with a UNIX user's environment.</p>
+</div>
+<!-- class="sect2" -->
+<a id="i1006634" name="i1006634"></a>
+<div class="sect2"><a id="sthref1110" name="sthref1110"></a>
+<h3 class="sect2"><span class="secnum">C.7.3</span> Support for Symbolic Links on Windows<a id="sthref1111" name="sthref1111"></a><a id="sthref1112" name="sthref1112"></a></h3>
+<p>The goal of Optimal Flexible Architecture is to place all Oracle software under one <code>ORACLE_BASE</code> directory and to spread files across different physical drives as your databases increase in size.</p>
+<p>On UNIX, although everything seems to be in one directory on the same hard drive, files can be on different hard drives if they are symbolically linked or have that directory as a mount point.</p>
+<p>Windows currently does not support symbolic links, so datafiles will not all show up under a single directory like on UNIX. Instead, you may have <code>oradata</code> directories on multiple drives, with datafiles in each one. In this way, you still get Optimal Flexible Architecture benefits, even though datafiles are not all visible in a single directory.</p>
+<p>Oracle recommends that you use one logical drive to store your database administration files and that you place other files, as needed, on other logical drives in an <code>oradata\</code><code><span class="codeinlineitalic">DB_NAME</span></code> directory.</p>
+<p>In the following example, there are four logical drives for a database named <code>prod</code>:</p>
+<ul>
+<li type="disc">
+<p><code>c:\</code> contains an Oracle home and database administration files.</p>
+</li>
+<li type="disc">
+<p><code>f:\</code> contains redo log files. (<code>F:\</code> drive could also represent two physical drives that have been striped to increase performance.)</p>
+</li>
+<li type="disc">
+<p><code>g:\</code> contains one of the control files and all <a href="glossary.htm#i432555"><span class="xrefglossterm">tablespace</span></a> files. (<code>G:\</code> drive could also use a RAID Level-5 configuration to increase reliability.)</p>
+</li>
+<li type="disc">
+<p><code>h:\</code> contains the second control file.</p>
+</li>
+</ul>
+<p>The directory structure would look similar to this:</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\oracle\product\10.2.0   --First logical drive
+    \db_1                  --Oracle home
+      \bin                 --Subtree for Oracle binaries
+      \network             --Subtree for Oracle Net
+      \...
+    \admin                 --Subtree for database administration files
+      \prod                --Subtree for prod database administration files
+        \adhoc             --Ad hoc SQL scripts
+        \adump             --Audit files
+        \bdump             --Background process trace files
+        \cdump             --Core dump files
+        \create            --Database creation files
+        \exp               --Database export files
+        \pfile             --Initialization parameter file
+        \udump             --User SQL trace files
+
+f:\oracle\product\10.2.0   --Second logical drive (two physical drives, striped)
+    \oradata               --Subtree for Oracle Database files
+      \prod                --Subtree for prod database files
+        redo01.log         --Redo log file group one, member one
+        redo02.log         --Redo log file group two, member one
+        redo03.log         --Redo log file group three, member one
+
+g:\oracle\product\10.2.0   --Third logical drive (RAID level 5 configuration)
+    \oradata               --Subtree for Oracle Database files
+      \prod                --Subtree for prod database files
+        CONTROL01.CTL      --Control file 1
+        EXAMPLE01.DBF      --EXAMPLE tablespace datafiles
+        SYSAUX01.DBF       --SYSAUX tablespace datafiles
+        SYSTEM01.DBF       --System tablespace datafile
+        TEMP01.DBF         --Temporary tablespace datafile
+        USERS01.DBF        --Users tablespace datafile
+
+h:\oracle\product\10.2.0   --Fourth logical drive
+    \oradata               --Subtree for Oracle Database files
+      \prod                --Subtree for prod database files
+        CONTROL02.CTL      --Control file 2
+
+</pre></div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" --></div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="jbridge.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="advance.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;1996, 2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

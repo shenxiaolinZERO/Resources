@@ -1,0 +1,1338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>8 Managing Schema Objects</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.1.3 Build 116" />
+<meta name="Date" content="June 22, 2005 15:47:53" />
+<meta name="doctitle" content="Oracle&reg; Database 2 Day DBA 10g Release 2 (10.2)" />
+<meta name="partno" content="B14196-01" />
+<meta name="docid" content="ADMQS" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="users_secure.htm" title="Previous" type="text/html" />
+<link rel="Next" href="backrest.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14196.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database 2 Day DBA<br />
+10<i>g</i> Release 2 (10.2)</b><br />
+Part Number B14196-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="users_secure.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="backrest.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top"><a href="../b14196.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="CFHJAHAA" name="CFHJAHAA"></a><a id="sthref418" name="sthref418"></a>
+<h1><span class="secnum">8</span> <a name="ADMQS008" id="ADMQS008"></a>Managing Schema Objects</h1>
+<p>This chapter discusses the management of schema objects. You are shown how to explore the schema objects in the preconfigured database. The chapter contains the following sections:</p>
+<ul>
+<li type="disc">
+<p><a href="#CFHHBEGH">Overview of Schemas and Common Schema Objects</a></p>
+</li>
+<li type="disc">
+<p><a href="#CFHEIBFG">Managing Tables</a></p>
+</li>
+<li type="disc">
+<p><a href="#BGBDBDFB">Managing Indexes</a></p>
+</li>
+<li type="disc">
+<p><a href="#BGBICDFE">Managing Views</a></p>
+</li>
+<li type="disc">
+<p><a href="#CFHEDEEI">Managing Database-Resident Program Units</a></p>
+</li>
+<li type="disc">
+<p><a href="#BGBBGEBF">Other Schema Objects</a></p>
+</li>
+<li type="disc">
+<p><a href="#CFHGBGCB">Loading Data Into Tables</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDJGIIH">Schemas: Oracle by Example Series</a></p>
+</li>
+</ul>
+<a id="CFHHBEGH" name="CFHHBEGH"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref419" name="sthref419"></a>
+<h2>Overview of Schemas and Common Schema Objects</h2>
+<p>A <a id="sthref420" name="sthref420"></a>schema is a collection of database objects. A schema is owned by a database user and has the same name as that user. Schema objects are logical structures created by users. Objects can define areas of the database to hold data, such as tables or indexes, or can consist just of a definition, such as a views or synonyms.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+There is no relationship between a tablespace and a schema. Objects in the same schema can use storage in different tablespaces, and a tablespace can contain data from different schemas.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+<p>You can create and manipulate schema objects with SQL or with Oracle Enterprise Manager. The underlying SQL is generated for you by Oracle Enterprise Manager.</p>
+<p>This section contains the following topics:</p>
+<ul>
+<li type="disc">
+<p><a href="#BGBECBGA">Exploring Your Database's Schema Objects</a></p>
+</li>
+<li type="disc">
+<p><a href="#BGBFHIDJ">Managing Database Objects</a></p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p><a class="xlinkSRC SQLRF002" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database SQL Reference</span></a> for more detailed information about schema objects, object names, and data types</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<a id="BGBECBGA" name="BGBECBGA"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref421" name="sthref421"></a>
+<h3>Exploring Your Database's Schema Objects</h3>
+<p><a id="sthref422" name="sthref422"></a>To explore and manage the schema objects in your database, open the Database Administration property page (see <a href="instance.htm#CACJHAJE">Figure 5-2, "Database Administration Page"</a>) and click one of the links in the Database Objects section. <a href="#CFHIIBAD">Figure 8-1</a> shows these links.</p>
+<div class="figure"><a id="CFHIIBAD" name="CFHIIBAD"></a><a id="sthref423" name="sthref423"></a>
+<p class="titleinfigure">Figure 8-1 Database Objects Links</p>
+<img src="./db_objects.gif" alt="Description of db_objects.gif follows" title="Description of db_objects.gif follows" /><br />
+<a id="sthref424" name="sthref424" href="./img_text/db_objects.htm">Description of the illustration db_objects.gif</a></div>
+<!-- class="figure" -->
+<p>Click each link in the Database Objects heading in turn to see display all of the objects in your database. You can also access any type of schema object from the Search section of any database object home page.</p>
+<p>When you select a schema link, a standard <span class="italic">Object_Name</span> page appears. As shown in <a href="#CFHCBBIE">Figure 8-2</a>, you can search for objects by entering values in the <span class="bold">Schema</span> and <span class="bold">Object Name</span> boxes.</p>
+<div class="figure"><a id="CFHCBBIE" name="CFHCBBIE"></a><a id="sthref425" name="sthref425"></a>
+<p class="titleinfigure">Figure 8-2 Search Section for Database Object Pages</p>
+<img src="./search_dbo.gif" alt="This image is described in the surrounding text." title="This image is described in the surrounding text." /><br />
+<a id="sthref426" name="sthref426" href="./img_text/search_dbo.htm">Description of the illustration search_dbo.gif</a></div>
+<!-- class="figure" -->
+<p>You can also access other schema objects, including those with no direct link under the Database Objects heading. To select a specific database object, select an option from the <span class="bold">Object Type</span> list.</p>
+</div>
+<!-- class="sect2" -->
+<a id="BGBFHIDJ" name="BGBFHIDJ"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref427" name="sthref427"></a>
+<h3>Managing Database Objects</h3>
+<p>Some object types have many more management options than others, but most have a number of similarities. Every object in the database belongs to just one schema and has a unique name within that schema. Therefore, when you create an object, you must ensure it is in the schema where you intend to store it. Generally, you place all of the objects that belong to a single application in the same schema.</p>
+<p><a id="sthref428" name="sthref428"></a>A database object name must abide by certain rules, including the rule that it must be unique within its schema. For example, object names cannot be longer than 30 bytes and must begin with a letter. If you attempt to create an object with a name that violates any of these rules, then Oracle raises an error.</p>
+<p>The following sections describe how to view, create, and manage the various types of objects in your database schemas.</p>
+<div align="center">
+<div class="inftblInformal"><br />
+<table class="Informal oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr align="left" valign="top">
+<td align="left">
+<p class="notep1">See Also:</p>For more information about naming database objects, see <a class="xlinkSRC SQLRF002" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database SQL Reference</span></a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblInformal --></div>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CFHEIBFG" name="CFHEIBFG"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref429" name="sthref429"></a>
+<h2>Managing Tables</h2>
+<p><a id="sthref430" name="sthref430"></a><a id="sthref431" name="sthref431"></a>Tables are the basic unit of data storage in an Oracle database. They hold all user-accessible data. Each table has columns and rows. In an <code>employees</code> table, for example, there can be (vertical) columns called <code>last_name</code> and <code>employee_id</code>. Each (horizontal) row in the table would contain a value for employee name and number.</p>
+<a id="BGBBAHAG" name="BGBBAHAG"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref432" name="sthref432"></a>
+<h3>Viewing Tables</h3>
+<p>You can use Enterprise Manager to view all of the tables in a specified schema. You can also view the table definitions.</p>
+<p>To view tables:</p>
+<ol type="1" start="1">
+<li>
+<p>In the Administration page, click <span class="bold">Tables</span>.</p>
+<p>The Tables property page appears.</p>
+</li>
+<li>
+<p>In the <span class="bold">Schema</span> box, enter the name of a schema. For example, enter <code>SYS</code>. Alternatively, click the flashlight icon adjacent to the <span class="bold">Schema</span> box to search for a schema.</p>
+</li>
+<li>
+<p>Leave <span class="bold">Object Name</span> blank to search for all tables in a schema. Alternatively, enter an object name or click the flashlight icon to search for one.</p>
+</li>
+<li>
+<p>Click <span class="bold">Go</span>.</p>
+<p>The tables in the specified schema are displayed. Some of the tables in the <code>SYS</code> schema are shown in <a href="#BGBEDJIH">Figure 8-3</a>.</p>
+<div class="figure"><a id="BGBEDJIH" name="BGBEDJIH"></a><a id="sthref433" name="sthref433"></a>
+<p class="titleinfigure">Figure 8-3 Tables Property Page</p>
+<img src="./sys_tables.gif" alt="This image shows the Tables page." title="This image shows the Tables page." /><br />
+<a id="sthref434" name="sthref434" href="./img_text/sys_tables.htm">Description of the illustration sys_tables.gif</a></div>
+<!-- class="figure" --></li>
+<li>
+<p>In the results list, select a table. Click <span class="bold">View</span> or click the link in the <span class="bold">Table Name</span> column to view a table definition.</p>
+<p>The View Table: <span class="italic">table_name</span> page appears.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref435" name="sthref435"></a>
+<h3>Viewing Table Data</h3>
+<p>Besides viewing table names and table definitions, you can view the data stored in the table as well as the SQL statement used to display the data. You can also change the SQL statement to alter the result set.</p>
+<p>To view table data:</p>
+<ol type="1" start="1">
+<li>
+<p>Search for a table as explained in <a href="#BGBBAHAG">"Viewing Tables"</a>. For example, search for the tables in the <code>hr</code> schema.</p>
+</li>
+<li>
+<p>In the results list, select the table whose data you want to view. For example, select <code>EMPLOYEES</code>.</p>
+</li>
+<li>
+<p>In the <span class="bold">Actions</span> list, select <span class="bold">View Data</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Go</span>.</p>
+<p>The View Data for Table: <span class="italic">table_name</span> page appears. Part of the page for <code>hr.employees</code> is shown in <a href="#BEAGCIJF">Figure 8-4</a>. The <span class="bold">Query</span> box displays the SQL query that was executed in order to view the data for the table. The Result section shows the data in the table.</p>
+<div class="figure"><a id="BEAGCIJF" name="BEAGCIJF"></a><a id="sthref436" name="sthref436"></a>
+<p class="titleinfigure">Figure 8-4 View Data for Table Page</p>
+<img src="./view_employees.gif" alt="This image is described in the text." title="This image is described in the text." /><br />
+<a id="sthref437" name="sthref437" href="./img_text/view_employees.htm">Description of the illustration view_employees.gif</a></div>
+<!-- class="figure" --></li>
+<li>
+<p>Click a column name to sort the data in a column.</p>
+</li>
+<li>
+<p>Click <span class="bold">Refine Query</span> to change the query.</p>
+<p>The Refine Query for Table: <span class="italic">table_name</span> page appears. This page enables you to select the columns to display. It also enables you to specify a <code>WHERE</code> clause for the SQL statement to limit the results.</p>
+</li>
+</ol>
+<p>You can also write your own SQL query using a <code>SELECT</code> statement to see the contents of a table. You can execute SQL statements by starting an <span class="italic">i</span>SQL*Plus session by clicking <span class="bold">iSQL*Plus</span> in the Related Links section of any of the Database property pages. A detailed description of the <code>SELECT</code> statement and its options is contained in the <a class="olinkSRC SQLRF" href="http://www.oracle.com/pls/db102/to_bookid?id=SQLRF"><span class="italic">Oracle Database SQL Reference</span></a>.</p>
+</div>
+<!-- class="sect2" -->
+<a id="BEABGHHE" name="BEABGHHE"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref438" name="sthref438"></a>
+<h3>Creating Tables</h3>
+<p>You can use Enterprise Manager to create tables. You can do so as a database administrator or user with the <code>CONNECT</code> role.<a id="sthref439" name="sthref439"></a></p>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref440" name="sthref440"></a>
+<h4>Types of Table</h4>
+<p>The most common type of table in an Oracle database is a relational table, structured like the <code>employees</code> table described at the beginning of this section, <a href="#CFHEIBFG">"Managing Tables"</a>. Two other types of table are supported: object tables and <code>XMLType</code> tables. Any of the three table types can be defined as permanent or temporary, the latter with the option of making the table structure available to multiple users or only to the user who creates the table.</p>
+<p>You can build relational tables in either heap or index-organized structures. In the former, the rows are not stored in any particular order. In index-organized tables, the row order is determined by the values in one of more selected columns.</p>
+<p>This chapter concentrates on permanent, heap-organized tables. For information about other table types and when to use them, see the <a class="olinkSRC ADMIN" href="http://www.oracle.com/pls/db102/to_bookid?id=ADMIN"><span class="italic">Oracle Database Administrator's Guide</span></a>, <a class="olinkSRC CNCPT" href="http://www.oracle.com/pls/db102/to_bookid?id=CNCPT"><span class="italic">Oracle Database Concepts</span></a>, and the <a class="olinkSRC PFGRF" href="http://www.oracle.com/pls/db102/to_bookid?id=PFGRF"><span class="italic">Oracle Database Performance Tuning Guide</span></a>. For the syntax required to create and alter tables, see the <a class="olinkSRC SQLRF" href="http://www.oracle.com/pls/db102/to_bookid?id=SQLRF"><span class="italic">Oracle Database SQL Reference</span></a>.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref441" name="sthref441"></a>
+<h4>Column Attributes</h4>
+<p>Each column in a table is defined with one or more characteristics as follows:</p>
+<ul>
+<li type="disc">
+<p>Data type</p>
+<p>This is a required element that defines the nature of the data to be stored in the column and may include a value to indicate the longest value that can be placed in the column.</p>
+</li>
+<li type="disc">
+<p>Constraint</p>
+<p>This is an optional element that determines what values are valid in the column. Some constraints can be defined at the column level or at the table level. In Enterprise Manager, the only constraint defined at the column level on the Create Table property page is the <code>NOT NULL</code> constraint, which requires that a value is included in this column for every row in the table.</p>
+</li>
+<li type="disc">
+<p>Default value</p>
+<p>This is a value that is automatically stored into the column whenever a new row is inserted without a value being provided for the column.</p>
+</li>
+</ul>
+<p>These column characteristics are described in more detail in the following sections.</p>
+<div class="sect4"><!-- infolevel=all infotype=General --><a id="sthref442" name="sthref442"></a>
+<h5>NOT NULL Column Constraint</h5>
+<p>The <code>NOT NULL</code> constraint on a column requires that the column must contain a value whenever a row is inserted or updated. Unlike other constraints described in <a href="#BGBDDJDG">"Table-Level Constraints"</a>, which may be defined as part of the column definition or part of the table definition, the <code>NOT NULL</code> constraint must be defined as part of the column definition.</p>
+<p>Use a <code>NOT NULL</code> constraint when the data is required for the integrity of the database. For example, if all employees must belong to a specific department, then the column that contains the department identifier should be defined with a <code>NOT NULL</code> constraint. On the other hand, do not define a column as <code>NOT NULL</code> if the data may be unknown or may not exist when rows are added or changed, for example, the second, optional line in a mailing address.</p>
+<p>A primary key constraint automatically adds a <code>NOT NULL</code> constraint to the column or columns included in the primary key.</p>
+</div>
+<!-- class="sect4" -->
+<div class="sect4"><!-- infolevel=all infotype=General --><a id="sthref443" name="sthref443"></a>
+<h5>Default Values</h5>
+<p>When you define a column with a default value, any new rows inserted into the table store the default value unless the row contains an alternate value for the column.</p>
+</div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" -->
+<a id="BGBDDJDG" name="BGBDDJDG"></a>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref444" name="sthref444"></a>
+<h4>Table-Level Constraints</h4>
+<p><a id="sthref445" name="sthref445"></a>In an Oracle database, you can apply rules to preserve the integrity of your data. For example, in a table containing employee data, the employee name column cannot accept <code>NULL</code> as a value. Similarly, in this table you cannot have two employees with the same ID.</p>
+<p><a id="sthref446" name="sthref446"></a>Oracle Database enables you to apply data integrity rules called constraints to tables at the column level or, with the exception of the <code>NOT NULL</code> constraint discussed earlier, at the table level. Any attempt to insert or update a row that violates a constraint results in an error and the statement is rolled back. Likewise, any attempt to apply a new constraint to a populated table also results in an error if any existing row violates the new constraint.</p>
+<p><a id="sthref447" name="sthref447"></a>The types of constraints you can apply at the table level are as follows:</p>
+<ul>
+<li type="disc">
+<p><span class="bold">Primary Key</span>&#x2014;Requires that a column (or combination of columns) be the unique identifier of the row. A primary key column does not allow NULL values.</p>
+</li>
+<li type="disc">
+<p><span class="bold">Unique Key</span>&#x2014;Requires that every value in a column be unique. That is, no two rows can have duplicate values in a specified column or combination of columns. The set of columns is said to be the unique key.</p>
+</li>
+<li type="disc">
+<p><span class="bold">Check</span>&#x2014;Requires that a column (or combination of columns) satisfy a condition for every row in the table. A check constraint must be a boolean expression that is evaluated using the column value about to be inserted or updated to the row.</p>
+</li>
+<li type="disc">
+<p><span class="bold">Foreign</span>&#x2014;Requires that all column values in the child table exist in the parent table. The table that includes the foreign key is called the dependent or child table. The table that is referenced is called the parent table. An example of a foreign key constraint is when the department column of the employees table (child) must contain a department ID that exists in the parent department table.</p>
+</li>
+</ul>
+<p>Constraints can be created and, in most cases, modified with a number of different status values. The options include enabled or disabled, which determine if the constraint is checked when rows are added or modified, and deferred or immediate, which cause constraint validation to occur at the end of a transaction or at the end of a statement, respectively.</p>
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a class="olinkSRC CNCPT" href="http://www.oracle.com/pls/db102/to_bookid?id=CNCPT"><span class="italic">Oracle Database Concepts</span></a> for more information on constraints.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref448" name="sthref448"></a>
+<h4>Other Table Creation Considerations</h4>
+<p>When creating a table with the Create Table page, you can click the <span class="bold">Show SQL</span> button to display the SQL statement that has been constructed. This option shows the statement even if it is incomplete, so you need to complete your input to see the complete SQL statement when using this option.</p>
+<p>You can also create a new table with the same the structure and contents as an existing table. This technique can be useful to build a test table that resembles a production table. To do this, select <span class="bold">SQL</span> in the <span class="bold">Define Using</span> list and complete the statement that is begun for you in the <span class="bold">CREATE TABLE AS</span> box. Your query can include all columns and rows from the original table or use the full power of the SQL <code>SELECT</code> statement to identify which rows you want, rename columns with column aliases, or exclude certain columns.</p>
+<p>Your new table may include a column defined with an abstract data type (ADT). ADTs are created with the <code>CREATE TYPE</code> statement and are described in detail in the <a class="olinkSRC SQLRF" href="http://www.oracle.com/pls/db102/to_bookid?id=SQLRF"><span class="italic">Oracle Database SQL Reference</span></a>.</p>
+<p>If you are creating a table containing one or more <a id="sthref449" name="sthref449"></a><a id="sthref450" name="sthref450"></a>LOB columns, then you may define different storage options for the LOB components of the table. In most cases, you should use the default settings. If you want to override them, click <span class="bold">Set Default LOB Attributes</span> and complete the entries in the Set Default LOB Attributes page. Additionally, you can set LOB attributes for a single column by selecting the column name and clicking the Advanced Attributes button.</p>
+<p>You may also create tables with multiple <a id="sthref451" name="sthref451"></a>partitions. Each <a id="sthref452" name="sthref452"></a>partition is a separate database object with many of the characteristics of an individual table, although each partition contains the same column definitions as its parent table. Partitioning a very large table can simplify the management of the table because each partition can be configured independently of the other partitions. Also, some operations against a partitioned table may be more efficient than against the table if it were not partitioned. This is because the partitions may be spread across more disk drives than a non-partitioned table and because the optimizer may be able to avoid processing the contents of every partition when processing certain SQL statements.</p>
+<p>For some applications, particularly data warehousing, with large tables that are frequently queried but very rarely updated, you may create <a id="sthref453" name="sthref453"></a>compressed <a id="sthref454" name="sthref454"></a>tables. These require less disk storage than uncompressed tables (which are the default). To create a compressed table, you will need to write your own <code>CREATE TABLE</code> statement because the option is not available in Enterprise Manager.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p><a class="xlinkSRC CNCPT011" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Concepts</span></a> and <a class="xlinkSRC ADMIN017" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Administrator's Guide</span></a> for design and management considerations of different table types and <a class="olinkSRC SQLRF" href="http://www.oracle.com/pls/db102/to_bookid?id=SQLRF"><span class="italic">Oracle Database SQL Reference</span></a> for the syntax to create tables</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref455" name="sthref455"></a>
+<h4>Estimating the Size of New Tables</h4>
+<p><a id="sthref456" name="sthref456"></a>During table creation with Enterprise Manager, you can estimate the size of the table. This action enables you to determine whether you have sufficient room in your database or on the available disks to store the table. If you do not have room, then you can still create the table but not populate it until you have obtained the necessary storage.</p>
+<p>To estimate the table size:</p>
+<ol type="1" start="1">
+<li>
+<p>In the Database Objects section of the Administration page, click <span class="bold">Tables</span>.</p>
+<p>The Tables page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+<p>The Create Table: Table Organization page appears.</p>
+</li>
+<li>
+<p>Select <span class="bold">Standard, Heap Organized</span> and click <span class="bold">Continue</span>.</p>
+<p>The Create Table page appears.</p>
+</li>
+<li>
+<p>Enter the table and schema names as well as your column names and datatypes, then click <span class="bold">Estimate Table Size</span>.</p>
+<p>The Estimate Table Size page appears.</p>
+</li>
+<li>
+<p>In <span class="bold">Projected Row Count</span>, enter the projected number of rows in the table and click <span class="bold">Estimate Table Size</span></p>
+<p>Enterprise Manager returns its estimate in MB.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="BEAECFCG" name="BEAECFCG"></a>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref457" name="sthref457"></a>
+<h4>Creating a Table: Example</h4>
+<p>In the following example, you create a table called <code>purchase_orders</code> in the <code>MYUSER</code> schema that you created in <a href="users_secure.htm#CHDJBHHI">Chapter 7, "Administering Users and Security"</a>. The table will have columns <code>po_number</code>, <code>po_description</code>, <code>po_date</code>, and <code>po_item</code>.</p>
+<p>To create a table in the <code>MYUSER</code> schema:</p>
+<ol type="1" start="1">
+<li>
+<p>In the Database Objects section of the Administration page, click <span class="bold">Tables</span>.</p>
+<p>The Tables page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+<p>The Create Table: Table Organization page appears.</p>
+</li>
+<li>
+<p>Select <span class="bold">Standard, Heap Organized</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Continue</span>.</p>
+<p>The Create Table page appears. See <a href="#CFHFIJHD">Figure 8-5, "Create Table Page"</a>.</p>
+<div class="figure"><a id="CFHFIJHD" name="CFHFIJHD"></a><a id="sthref458" name="sthref458"></a>
+<p class="titleinfigure">Figure 8-5 Create Table Page</p>
+<img src="./purchase_orders.gif" alt="Description of purchase_orders.gif follows" title="Description of purchase_orders.gif follows" /><br />
+<a id="sthref459" name="sthref459" href="./img_text/purchase_orders.htm">Description of the illustration purchase_orders.gif</a></div>
+<!-- class="figure" --></li>
+<li>
+<p>In the <span class="bold">Name</span> box, enter <code>purchase_orders</code> as the table name. In the <span class="bold">Schema</span> box, enter <code>MYUSER</code>. In the <span class="bold">Tablespace</span> box, accept <span class="bold">Default</span>.</p>
+</li>
+<li>
+<p>In the Columns section, enter the following columns with the datatypes:</p>
+<ul>
+<li type="disc">
+<p><code>po_id</code> as <code>NUMBER</code></p>
+</li>
+<li type="disc">
+<p><code>po_date</code> as <code>DATE</code></p>
+</li>
+<li type="disc">
+<p><code>po_desc</code> as <code>VARCHAR2(200)</code></p>
+</li>
+<li type="disc">
+<p><code>po_item</code> as <code>VARCHAR2(100)</code></p>
+</li>
+</ul>
+<p>You can leave <span class="bold">Scale</span>, <span class="bold">Not NULL</span>, and <span class="bold">Default Value</span> blank.</p>
+<div align="center">
+<div class="inftblInformal"><br />
+<table class="Informal oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr align="left" valign="top">
+<td align="left">
+<p class="notep1">Note:</p>
+If you want to the create table with partitions, you can do so at this step by clicking <span class="bold">Partitions</span>.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblInformal --></div>
+</li>
+<li>
+<p>Click <span class="bold">OK</span>.</p>
+<p>An update message appears indicating that the table has been successfully created.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref460" name="sthref460"></a>
+<h3>Modifying Table Attributes</h3>
+<p><a id="sthref461" name="sthref461"></a><a id="sthref462" name="sthref462"></a>You can use Enterprise Manager to modify tables, such as adding and deleting columns or adding constraints. The following sections show how to add and delete a column, and how to add, change the status of, and drop a table constraint.</p>
+<a id="BGBCIIJE" name="BGBCIIJE"></a>
+<div class="sect3"><a id="sthref463" name="sthref463"></a>
+<h4>Adding a Column</h4>
+<p>In this example, you modify the <code>purchase_orders</code> table by adding a new column called <code>po_item2</code>.</p>
+<p>To add the <code>po_item2</code> column:</p>
+<ol type="1" start="1">
+<li>
+<p>On the <span class="bold">Tables</span> page, enter <code>MYUSER</code> in the <span class="bold">Schema</span> box and click <span class="bold">Go</span>.</p>
+<p>The result list should shows the <code>PURCHASE_ORDERS</code> table that you created previously.</p>
+</li>
+<li>
+<p>Select the <code>PURCHASE_ORDERS</code> table and click <span class="bold">Edit</span>.</p>
+<p>The Edit Table: MYUSER.PURCHASE_ORDERS page appears.</p>
+</li>
+<li>
+<p>In the first available <span class="bold">Name</span> box that is blank, enter <code>po_item2</code> as the new column name. In the <span class="bold">Data Type</span> list, select <span class="bold">VARCHAR2</span>. In the <span class="bold">Size</span> box, enter <code>100</code>. You can leave <span class="bold">Scale</span>, <span class="bold">Not NULL</span>, and <span class="bold">Default Value</span> blank.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply</span>.</p>
+<p>An Update Message appears indicating that the table has been modified successfully.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref464" name="sthref464"></a>
+<h4>Dropping a Column</h4>
+<p>This example shows you how to drop a column, in this case, the <code>po_item2</code> column that was added to the <code>PURCHASE_ORDERS</code> table in <a href="#BGBCIIJE">"Adding a Column"</a>.</p>
+<p>To delete the <code>po_item2</code> column:</p>
+<ol type="1" start="1">
+<li>
+<p>On the <span class="bold">Tables</span> page, enter <code>MYUSER</code> in the <span class="bold">Schema</span> box and click <span class="bold">Go</span>.</p>
+<p>The result list should shows the <code>PURCHASE_ORDERS</code> table that you created previously.</p>
+</li>
+<li>
+<p>Select the <code>PURCHASE_ORDERS</code> table and click <span class="bold">Edit</span>.</p>
+<p>The Edit Table: MYUSER.PURCHASE_ORDERS page appears.</p>
+</li>
+<li>
+<p>In the Columns section, select the column you want to delete. In this case, select <code>po_item2</code>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Delete</span>.</p>
+<p>The row that contained the information for the deleted column, <code>po_item2</code>, becomes blank to indicate that the table has been successfully modified.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CBBEEEAJ" name="CBBEEEAJ"></a>
+<div class="sect3"><a id="sthref465" name="sthref465"></a>
+<h4>Creating a New Table Constraint</h4>
+<p>You can add constraints to a table with Enterprise Manager. In the current example, assume that you want to enforce the rules that our purchase orders are always entered with an ID and that the purchase order ID (<code>po_id</code>) is the primary key of the table. You will add the <code>NOT NULL</code> and primary key constraints to this column.</p>
+<div align="center">
+<div class="inftblInformal"><br />
+<table class="Informal oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr align="left" valign="top">
+<td align="left">
+<p class="notep1">Note:</p>
+You can also add constraints during table creation.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblInformal --></div>
+<p>To add these constraints to the <code>purchase_orders</code> table:</p>
+<ol type="1" start="1">
+<li>
+<p>On the <span class="bold">Tables</span> page, enter <code>MYUSER</code> in the <span class="bold">Schema</span> box and click <span class="bold">Go</span>.</p>
+<p>The result list should shows the <code>PURCHASE_ORDERS</code> table that you created previously.</p>
+</li>
+<li>
+<p>Select the <code>PURCHASE_ORDERS</code> table and click <span class="bold">Edit</span>.</p>
+<p>The Edit Table: MYUSER.PURCHASE_ORDERS page appears.</p>
+</li>
+<li>
+<p>Select the <code>po_id</code> column and check <span class="bold">Not NULL</span> to apply the <code>NOT NULL</code> constraint to the column.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply</span></p>
+<p>A confirmation message appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Constraints</span>.</p>
+<p>The Constraints property page appears.</p>
+</li>
+<li>
+<p>Select <span class="bold">PRIMARY</span> from the drop-down menu and click <span class="bold">Add</span>. This action applies the primary key constraint.</p>
+<p>The Add Primary Constraint page appears.</p>
+</li>
+<li>
+<p>In the <span class="bold">Available Columns</span> list, select <span class="bold">PO_ID</span> and move it to the <span class="bold">Selected Columns</span> list. To keep the default settings for the constraints, do not change the check boxes in the Attributes area of the page.</p>
+</li>
+<li>
+<p>Click <span class="bold">Continue</span></p>
+<p>The new constraint appears on the Constraints page.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply</span>.</p>
+<p>A confirmation message appears. You can view the new constraints by navigating to the View Table page.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref466" name="sthref466"></a>
+<h4>Modifying an Existing Constraint</h4>
+<p>You can change the status of an existing constraint, for example, from an enabled to a disabled state. This example uses the primary key constraint created in the previous section, <a href="#CBBEEEAJ">"Creating a New Table Constraint"</a>.</p>
+<p>To disable a constraint:</p>
+<ol type="1" start="1">
+<li>
+<p>On the <span class="bold">Tables</span> page, enter <code>MYUSER</code> in the <span class="bold">Schema</span> box and click <span class="bold">Go</span>.</p>
+<p>The result list should shows the <code>PURCHASE_ORDERS</code> table that you created previously.</p>
+</li>
+<li>
+<p>Select the <code>PURCHASE_ORDERS</code> table and click <span class="bold">Edit</span>.</p>
+<p>The Edit Table: MYUSER.PURCHASE_ORDERS page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Constraints</span>.</p>
+<p>The Constraints property page appears.</p>
+</li>
+<li>
+<p>Select the row containing the <code>PRIMARY</code> constraint from the Constraints table and click <span class="bold">Edit</span>.</p>
+<p>The Edit PRIMARY Constraint page appears.</p>
+</li>
+<li>
+<p>In the Attributes section, check <span class="bold">Disabled</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Continue</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply</span>.</p>
+<p>A confirmation message appears. The Disabled column shows that the primary key constraint has been disabled.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref467" name="sthref467"></a>
+<h4>Dropping a Constraint</h4>
+<p>You can drop constraints from a table with Enterprise Manager. Although you do not have to disable a constraint before dropping it, you can determine whether the constraint can be dropped by attempting to disable it first. If a constraint in a parent table enforces a foreign key constraint in a child table, and if the child table contains dependent rows, then the constraint cannot always be disabled or dropped.</p>
+<p>Continuing the current example, you drop the primary key constraint that you created earlier in the section, <a href="#CBBEEEAJ">"Creating a New Table Constraint"</a>.</p>
+<p>To drop a constraint:</p>
+<ol type="1" start="1">
+<li>
+<p>On the <span class="bold">Tables</span> page, enter <code>MYUSER</code> in the <span class="bold">Schema</span> box and click <span class="bold">Go</span>.</p>
+<p>The result list should shows the <code>PURCHASE_ORDERS</code> table that you created previously.</p>
+</li>
+<li>
+<p>Select the <code>PURCHASE_ORDERS</code> table and click <span class="bold">Edit</span>.</p>
+<p>The Edit Table: MYUSER.PURCHASE_ORDERS page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Constraints</span>.</p>
+<p>The Constraints property page appears.</p>
+</li>
+<li>
+<p>Select the row containing the <code>PRIMARY</code> constraint from the Constraints table and click <span class="bold">Delete</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply</span>.</p>
+<p>A confirmation message appears.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref468" name="sthref468"></a>
+<h3>Dropping a Table</h3>
+<p>If you no longer need a table or its contents, then you can drop the table using Enterprise Manager. Be certain that you really do not need the data in the table before you drop it. It may be difficult and time-consuming to retrieve the records, if they can be retrieved, after you execute the drop statement.</p>
+<p>To test this procedure, follow the procedure in <a href="#BEABGHHE">"Creating Tables"</a> to create a table named <code>test</code> in the <code>MYUSER</code> schema. Create the <code>test</code> table with one column called <code>col</code> of type <code>VARCHAR2(1)</code>.</p>
+<p>To drop a table:</p>
+<ol type="1" start="1">
+<li>
+<p>On the <span class="bold">Tables</span> page, enter <code>MYUSER</code> in the <span class="bold">Schema</span> box and click <span class="bold">Go</span>.</p>
+<p>The result list should show the <code>test</code> table that you just created.</p>
+</li>
+<li>
+<p>Select the <code>TEST</code> table and click <span class="bold">Delete With Options</span>.</p>
+<p>The Delete With Options page appears.</p>
+</li>
+<li>
+<p>Select <span class="bold">Delete the table definition, all its data, and dependent objects (DROP)</span>.</p>
+</li>
+<li>
+<p>Check <span class="bold">Delete all referential integrity constraints (CASCADE CONTRAINTS)</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Yes</span>.</p>
+<p>The Edit table page displays a confirmation message when the table is successfully deleted.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BGBDBDFB" name="BGBDBDFB"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref469" name="sthref469"></a>
+<h2>Managing Indexes</h2>
+<p><a id="sthref470" name="sthref470"></a><a id="sthref471" name="sthref471"></a>Indexes are optional structures associated with tables. You can create them to improve query performance. Just as the index in this book helps you to quickly locate specific information, an Oracle index provides a quick access path to table data.</p>
+<p>You can create indexes on one or more columns of a table. After an index is created, it is automatically maintained and used by Oracle. Changes to a table's data or structure, such as adding new rows, updating rows, or deleting rows, are automatically incorporated into all relevant indexes with complete transparency to the user.</p>
+<p>Some indexes are created implicitly through constraints that are placed on a table. For example, a column with the constraint that its values be unique causes Oracle to create a unique key index.</p>
+<p>When you click the <span class="bold">Indexes</span> link in the Database Objects section of the Administration page, an Indexes page appears. This page is similar in content and functionality to the Tables page shown in <a href="#BGBEDJIH">Figure 8-3</a>.</p>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref472" name="sthref472"></a>
+<h3>Viewing Indexes</h3>
+<p>To find out which indexes exist in your database, use the search options on the Indexes page.</p>
+<p>To view indexes:</p>
+<ol type="1" start="1">
+<li>
+<p>In the Administration page, click <span class="bold">Indexes</span>.</p>
+<p>The Indexes page appears.</p>
+</li>
+<li>
+<p>In the <span class="bold">Search By</span> list, select <span class="bold">Index Name</span> to search for indexes by name.</p>
+<p>Alternatively, you can select <span class="bold">Table Name</span> to search for the name of the table on which the index is built.</p>
+</li>
+<li>
+<p>In the <span class="bold">Schema</span> box, enter the name of a schema. For example, enter <code>SYS</code>. Alternatively, click the flashlight icon adjacent to the <span class="bold">Schema</span> box to search for a schema.</p>
+</li>
+<li>
+<p>Leave <span class="bold">Object Name</span> blank to search for all indexes in a schema. Alternatively, enter an object name or click the flashlight icon to search for one.</p>
+</li>
+<li>
+<p>Click <span class="bold">Go</span>.</p>
+<p>The indexes in the specified schema are displayed.</p>
+</li>
+<li>
+<p>In the results list, select a table and then click <span class="bold">View</span> or the link in the <span class="bold">Index</span> column to view a table definition.</p>
+<p>The View Index: <span class="italic">index_name</span> page appears. In the General area, you can find basic information about the index, such as its status and the column or columns on which it is built. Other areas include information about the space consumed by the index and the options used in its definition.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref473" name="sthref473"></a>
+<h3>Creating Indexes</h3>
+<p>Oracle automatically creates the indexes necessary to support data integrity defined with constraints when you add or enable those constraints. For performance purposes, you might want to add an index to the columns you define in a child table when adding a foreign key constraint. Before you add additional indexes, you should examine the performance of your database. You can then compare performance after the new indexes are added.</p>
+<p>After index creation, Oracle automatically synchronizes the index with any subsequent inserts, updates, or deletes to the base table.</p>
+<p>Indexes are generally of value to queries and to SQL statements that need to operate on a single, existing row or a small number of existing rows. Too many indexes can cause serious problems by increasing the processing overhead for statements that add, modify, or delete rows. In some cases, a statement could use two or more indexes and the optimizer picks just one of them. Unless other statements can take advantage of the unused indexes, they are not providing any benefit. Therefore, you might find yourself deleting indexes if you create too many.</p>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref474" name="sthref474"></a>
+<h4>Index Types</h4>
+<p>Indexes can be categorized in a number of ways. The primary options are listed in the following sections.</p>
+<div class="sect4"><!-- infolevel=all infotype=General --><a id="sthref475" name="sthref475"></a>
+<h5>Standard (B-tree) and Bitmap</h5>
+<p>A standard, B-tree index contains an entry for each value in the index key along with an address to the row where the value is stored. A B-tree index is the default and most common type of index in an Oracle database.</p>
+<p>A bitmap index uses strings of bits to encapsulate values and potential row addresses. It is more compact than a B-tree and can perform some types of retrieval more efficiently. For general use, however, a bitmap index requires more overhead during row operations on the table and should be used primarily for data warehouse environments as described in the <a class="olinkSRC DWHSG" href="http://www.oracle.com/pls/db102/to_bookid?id=DWHSG"><span class="italic">Oracle Database Data Warehousing Guide</span></a>.</p>
+</div>
+<!-- class="sect4" -->
+<div class="sect4"><!-- infolevel=all infotype=General --><a id="sthref476" name="sthref476"></a>
+<h5>Ascending and Descending</h5>
+<p>The default search through an index is from lowest to highest value, where character data is sorted by ASCII values, numeric data from smallest to largest number, and date from the earliest to the latest value. This default behavior is performed in indexes created as ascending indexes. You can cause index searches to reverse the search order by creating the related index with the descending option.</p>
+</div>
+<!-- class="sect4" -->
+<div class="sect4"><!-- infolevel=all infotype=General --><a id="sthref477" name="sthref477"></a>
+<h5>Column and Functional</h5>
+<p>Typically, an index entry is based on the value or values found in the table's column or columns. This is a column index. Alternatively, you can create a function-based index in which the indexed value is derived from the table data. For example, to find character data that can be in mixed case, you could use a function-based index to look for the values as if they were all in uppercase characters.</p>
+</div>
+<!-- class="sect4" -->
+<div class="sect4"><!-- infolevel=all infotype=General --><a id="sthref478" name="sthref478"></a>
+<h5>Single Column and Concatenated</h5>
+<p>You can create an index on just one column, which is called a single column index, or on multiple columns, which is called a concatenated index. Concatenated indexes are useful when all of the columns are likely to be included in the <code>WHERE</code> clause of frequently executed SQL statements.</p>
+<p>For concatenated indexes, you should define the columns used in the index carefully so that the column with the fewest duplicate values is named first, the column with next fewest duplicate values is second, and so on. Columns with many duplicate values or many rows with <code>NULL</code> values should not be included or should be the last-named columns in the index definition.</p>
+</div>
+<!-- class="sect4" -->
+<div class="sect4"><!-- infolevel=all infotype=General --><a id="sthref479" name="sthref479"></a>
+<h5>Non-partitioned and <a id="sthref480" name="sthref480"></a>Partitioned</h5>
+<p>As with tables, you can create your <a id="sthref481" name="sthref481"></a>indexes with or without partitions. In most situations, it is useful to partition an index when the associated table is also partitioned and the index uses the same partitioning scheme as the table, known as a <a id="sthref482" name="sthref482"></a><a id="sthref483" name="sthref483"></a>local index. You need not partition an index like the underlying table. You may even create a non-partitioned, or <a id="sthref484" name="sthref484"></a>global, <a id="sthref485" name="sthref485"></a>index on a partitioned table.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p><a class="xlinkSRC CNCPT011" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Concepts</span></a> and <a class="xlinkSRC ADMIN017" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Administrator's Guide</span></a> for design and management considerations of different index types and <a class="olinkSRC SQLRF" href="http://www.oracle.com/pls/db102/to_bookid?id=SQLRF"><span class="italic">Oracle Database SQL Reference</span></a> for the syntax to create tables</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect4" --></div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref486" name="sthref486"></a>
+<h4>Creating an Index: Example</h4>
+<p><a id="sthref487" name="sthref487"></a><a id="sthref488" name="sthref488"></a>You can create indexes with Enterprise Manager. To create an index, you specify one or more columns to be indexed and the type of index you want to create.</p>
+<p>The following example creates a standard B-tree index on the <code>SUPPLIER_ID</code> column in the <code>SH.PRODUCTS</code> table, which is part of the sample schema.</p>
+<p>To create an index:</p>
+<ol type="1" start="1">
+<li>
+<p>In the Database Objects section of the Administration page, click <span class="bold">Tables</span>.</p>
+<p>The Tables page appears.</p>
+</li>
+<li>
+<p>Enter <code>sh</code> in the <span class="bold">Schema</span> box and click <span class="bold">Go</span>.</p>
+<p>The result list shows the tables in the <code>sh</code> schema.</p>
+</li>
+<li>
+<p>Select the <code>PRODUCTS</code> table and select <span class="bold">Create Index</span> from the <span class="bold">Actions</span> list. Click <span class="bold">Go</span>.</p>
+<p>The Create Index page appears.</p>
+</li>
+<li>
+<p>Enter the following information:</p>
+<ul>
+<li type="disc">
+<p>In the <span class="bold">Name</span> box, enter <code>PRODUCTS_SUPPLIER_IDX</code>.</p>
+</li>
+<li type="disc">
+<p>For <span class="bold">Tablespace</span>, accept the default.</p>
+</li>
+<li type="disc">
+<p>For <span class="bold">Index Type</span>, select <span class="bold">Standard - B-tree</span>.</p>
+</li>
+<li type="disc">
+<p>In the <span class="bold">Table Columns</span> list, select the <code>SUPPLIER_ID</code> column by entering <code>1</code> in the <span class="bold">Order</span> column.</p>
+</li>
+<li type="disc">
+<p>For <span class="bold">Sorting Order</span>, accept the default selection of <span class="bold">ASC</span>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Click <span class="bold">OK</span> to create the index.</p>
+<p>The Indexes page appears with a confirmation message. The new index is listed under Results.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref489" name="sthref489"></a>
+<h3>Dropping Indexes</h3>
+<p>If you no longer need an index, you can drop it by using Enterprise Manager.</p>
+<p>In this example, you drop the <code>PRODUCTS_SUPPLIER_IDX</code> index that you created previously.</p>
+<p>To drop an index:</p>
+<ol type="1" start="1">
+<li>
+<p>In the Administration page, click <span class="bold">Indexes</span>.</p>
+<p>The Indexes page appears.</p>
+</li>
+<li>
+<p>In the <span class="bold">Search By</span> list, select <span class="bold">Index Name</span> to search for indexes by name. In <span class="bold">Schema</span>, enter <code>sh</code>. In <span class="bold">Object Name</span>, enter <code>PRODUCTS_SUPPLIER_IDX</code>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Go</span>.</p>
+<p>The results page should display the <code>PRODUCTS_SUPPLIER_IDX</code> index.</p>
+</li>
+<li>
+<p>Select the <code>PRODUCTS_SUPPLIER_IDX</code> index and click <span class="bold">Delete</span>.</p>
+<p>A Confirmation page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Yes</span> to delete the index.</p>
+<p>The Edit table page displays a confirmation message if the index is successfully deleted.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+You cannot drop an index that is currently used to enforce a constraint. You must disable or drop the constraint and then, if the index is not dropped as a result of that action, drop the index.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BGBICDFE" name="BGBICDFE"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref490" name="sthref490"></a>
+<h2>Managing Views</h2>
+<p><a id="sthref491" name="sthref491"></a><a id="sthref492" name="sthref492"></a>Views are customized presentations of data in one or more tables or other views. You can think of them as stored queries. Views do not actually contain data, but instead derive their data from the tables upon which they are based. These tables are referred to as the base tables of the view.</p>
+<p>Like tables, views can be queried, updated, inserted into, and deleted from, with some restrictions. All operations performed on a view actually affect the base tables of the view. Views provide an additional level of security by restricting access to a predetermined set of rows and columns of a table. They also hide data complexity and store complex queries.</p>
+<p>Many important views are in the <code>SYS</code> schema. The data dictionary views are called static because they change only when a change is made to the data dictionary, for example, when a new table is created or a user is granted new privileges.</p>
+<p>Many data dictionary tables have three corresponding views:</p>
+<ul>
+<li type="disc">
+<p>A <code>DBA_</code> view displays all relevant information in the entire database. <code>DBA_</code> views are intended only for administrators.</p>
+</li>
+<li type="disc">
+<p>An <code>ALL_</code> view displays all the information accessible to the current user, including information from the current user's schema as well as information from objects in other schemas, if the current user has access to those objects through privileges or roles.</p>
+</li>
+<li type="disc">
+<p>A <code>USER_</code> view displays all the information from the schema of the current user. No special privileges are required to query these views.</p>
+</li>
+</ul>
+<p>The columns of the <code>ALL_</code>, <code>DBA_</code>, and <code>USER_</code> views corresponding to a single data dictionary table are usually nearly identical.</p>
+<p>The views that monitor ongoing database activity are called dynamic performance views. The names of dynamic performance views, available only to administrators, start with the characters <code>V$</code> and are often referred to as the <code>V$</code> views.</p>
+<p>Complete descriptions of the views in the <code>SYS</code> schema are contained in the <a class="olinkSRC REFRN" href="http://www.oracle.com/pls/db102/to_bookid?id=REFRN"><span class="italic">Oracle Database Reference</span></a>.</p>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref493" name="sthref493"></a>
+<h3>Displaying Views</h3>
+<p>You can use Enterprise Manager to display the views in a specified schema. You can also display the view definitions.</p>
+<p>To display views:</p>
+<ol type="1" start="1">
+<li>
+<p>In the Administration page, click <span class="bold">Views</span>.</p>
+<p>The Views property page appears.</p>
+</li>
+<li>
+<p>In the <span class="bold">Schema</span> box, enter the name of a schema. For example, enter <code>SYS</code>. Alternatively, click the flashlight icon adjacent to the <span class="bold">Schema</span> box to search for a schema.</p>
+</li>
+<li>
+<p>Leave <span class="bold">Object Name</span> blank to search for all views in a schema. Alternatively, enter an object name or click the flashlight icon to search for one.</p>
+</li>
+<li>
+<p>Click <span class="bold">Go</span>.</p>
+<p>The views in the <code>SYS</code> schema are displayed. These views enable you to look at data dictionary information or ongoing database activity. The views in the <code>SYS</code> schema are also the source of information for many of the Oracle Enterprise Manager pages.</p>
+</li>
+<li>
+<p>In the results list, select a view and then click <span class="bold">View</span> or the link in the <span class="bold">View Name</span> column to display a view definition.</p>
+<p>The View: <span class="italic">view_name</span> page appears.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref494" name="sthref494"></a>
+<h3>Creating a View: Example</h3>
+<p>The following example creates a view derived from the <code>hr.employees</code> table, which is part of the sample schema. The view filters all direct reports for the manager Stephen King, whose <code>employee_id</code> is 100. In an application scenario, this view adds an additional level of security to the <code>hr.employees</code> table while providing a suitable presentation of relevant information for manager Stephen King.</p>
+<p>To create a view:</p>
+<ol type="1" start="1">
+<li>
+<p>In the Administration page, click <span class="bold">Views</span>.</p>
+<p>The Views property page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+<p>The Create View page appears.</p>
+</li>
+<li>
+<p>Enter the following information:</p>
+<ul>
+<li type="disc">
+<p>In <span class="bold">Name</span>, enter <code>SKING_VIEW</code>.</p>
+</li>
+<li type="disc">
+<p>In <span class="bold">Schema</span>, enter <code>HR</code>.</p>
+</li>
+<li type="disc">
+<p>In <span class="bold">Query Text</span>, enter the following SQL statement:</p>
+<pre xml:space="preserve" class="oac_no_warn">SELECT employee_id, first_name, last_name, email, phone_number, hire_date, 
+       job_id, salary, commission_pct, manager_id, department_id FROM   hr.employees 
+WHERE  manager_id = 100
+
+</pre></li>
+</ul>
+</li>
+<li>
+<p>Click <span class="bold">OK</span>.</p>
+<p>The Views page appears with a confirmation message. The new view is listed in the results section.</p>
+</li>
+<li>
+<p>Select <code>SKING_VIEW</code> and then select <span class="bold">View Data</span> from the <span class="bold">Actions</span> list.</p>
+</li>
+<li>
+<p>Click <span class="bold">Go</span>.</p>
+<p>The View Data for View: HR.SKING_VIEW page appears. The selected data in the view appears in the Result section.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref495" name="sthref495"></a>
+<h3>Dropping Views</h3>
+<p>If you no longer need a view, then you can drop it using Enterprise Manager.</p>
+<p>In this example, you drop the <code>HR.SKING_VIEW</code> view that you created previously.</p>
+<p>To drop a view:</p>
+<ol type="1" start="1">
+<li>
+<p>In the Administration page, click <span class="bold">Views</span>.</p>
+<p>The Views page appears.</p>
+</li>
+<li>
+<p>In the <span class="bold">Schema</span> box, enter <code>hr</code>. In <span class="bold">Object Name</span>, enter <code>SKING_VIEW</code>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Go</span>.</p>
+<p>The results page should display the <code>SKING_VIEW</code> view.</p>
+</li>
+<li>
+<p>Select <code>SKING_VIEW</code> and click <span class="bold">Delete</span>.</p>
+<p>A Confirmation page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Yes</span> to delete the view.</p>
+<p>The Views page displays a confirmation message if the view is successfully deleted.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CFHEDEEI" name="CFHEDEEI"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref496" name="sthref496"></a>
+<h2>Managing <a id="sthref497" name="sthref497"></a>Database-Resident Program Units</h2>
+<p>Oracle offers the capability to store programs in the database. This functionality enables commonly required code to be written and tested once and then accessed by any application that requires the code. Database-resident program units also ensure that the same processing is applied to the data when the code is invoked, making the development of applications easier and providing consistency between developers.</p>
+<p>You can write database-resident programs in PL/SQL or Java. You can use Enterprise Manager to manage sou<a id="sthref498" name="sthref498"></a><a id="sthref499" name="sthref499"></a>rce types such as PL/SQL packages, procedures, triggers, functions, and Java sources and classes. The actions include creating, compiling, creating synonyms for, granting privileges on, and showing dependencies for these source types. You can perform these actions by clicking the links in the Programs section of the Administration page, as shown in <a href="#BEABEHJB">Figure 8-6</a>.</p>
+<div class="figure"><a id="BEABEHJB" name="BEABEHJB"></a><a id="sthref500" name="sthref500"></a>
+<p class="titleinfigure">Figure 8-6 Programs Section</p>
+<img src="./programs.gif" alt="Programs section" title="Programs section" /><br />
+<a id="sthref501" name="sthref501" href="./img_text/programs.htm">Description of the illustration programs.gif</a></div>
+<!-- class="figure" -->
+<p>This book describes the main types of PL/SQL program units. The following sections cover:</p>
+<ul>
+<li type="disc">
+<p><a href="#BGBJIHGG">Managing Packages</a></p>
+</li>
+<li type="disc">
+<p><a href="#BGBGJCFH">Managing Package Bodies</a></p>
+</li>
+<li type="disc">
+<p><a href="#BGBBIBHZ">Managing Standalone Subprograms</a></p>
+</li>
+<li type="disc">
+<p><a href="#BGBBCDDA">Managing Triggers</a></p>
+</li>
+</ul>
+<p>Note that creating and managing program units is the primary responsibility of an application developer. However, as a DBA you might be called upon to assist in managing these objects, since they might become invalidated through schema changes.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a class="olinkSRC LNPLS" href="http://www.oracle.com/pls/db102/to_bookid?id=LNPLS"><span class="italic">Oracle Database PL/SQL User's Guide and Reference</span></a> to learn about PL/SQL code and program units.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<a id="BGBJIHGG" name="BGBJIHGG"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref502" name="sthref502"></a>
+<h3>Managing Packages</h3>
+<p>A package is a structure that contains definitions, blocks of PL/SQL code, or both in a single unit. The contents of the package are invoked by naming the package and the element within it by means of a dot notation. For example, to execute the procedure called <code>STORE_SQE</code> in the <code>CTX_QUERY</code> package owned by the <code>CTXSYS</code> user, you would invoke it with the statement <code>CTXSYS.CTX_QUERY.STORE_SQE(</code><code><span class="codeinlineitalic">arg1,arg2</span></code><code>)</code> where <code><span class="codeinlineitalic">arg1</span></code> and <code><span class="codeinlineitalic">arg2</span></code> are the values for the two procedure arguments. To hide the complexity of packaged element names, you might want to use synonyms, described later in <a href="#BGBBGEBF">"Other Schema Objects"</a>.</p>
+<a id="BEAJJCHA" name="BEAJJCHA"></a>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref503" name="sthref503"></a>
+<h4>Viewing Packages</h4>
+<p>To find out which packages exist in your database, use the search options on the Packages page.</p>
+<p>To view packages:</p>
+<ol type="1" start="1">
+<li>
+<p>In the Programs sections of the Administration page, click <span class="bold">Packages</span>.</p>
+<p>The Packages page appears.</p>
+</li>
+<li>
+<p>In the <span class="bold">Schema</span> box, enter the name of a schema. For example, enter <code>SYS</code>. Alternatively, click the flashlight icon adjacent to the <span class="bold">Schema</span> box to search for a schema.</p>
+</li>
+<li>
+<p>Leave <span class="bold">Object Name</span> blank to search for all packages in the specified schema. Alternatively, enter an object name or click the flashlight icon to search for one.</p>
+</li>
+<li>
+<p>Click <span class="bold">Go</span>.</p>
+<p>The packages in the specified schema are displayed.</p>
+</li>
+<li>
+<p>In the results list, select a package and then click <span class="bold">View</span> or the link in the <span class="bold">Package Name</span> column to view a package definition. For example, click the link for <code>DBMS_ALERT</code>.</p>
+<p>The View Package: <span class="italic">package_name</span> page appears. This page contains the package name, schema, status, methods, and source. The source contains the code for a <a id="sthref504" name="sthref504"></a>package and may contain the following elements:</p>
+<ul>
+<li type="disc">
+<p>Authentication information&#x2014;Determines which security schema is used when the package contents are executed</p>
+</li>
+<li type="disc">
+<p>Procedure definitions&#x2014;Specifies the name and list of arguments for one or more procedures.</p>
+</li>
+<li type="disc">
+<p>Function definitions&#x2014;Specify the name, list of arguments, and return data type for one or more functions.</p>
+</li>
+<li type="disc">
+<p>Variable definitions&#x2014;Specify variables that globally available to the user of the package.</p>
+</li>
+<li type="disc">
+<p>Other public elements&#x2014;Defines such structures as types, constants, and exceptions that are needed by package users.</p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref505" name="sthref505"></a>
+<h4>Creating Packages</h4>
+<p>As with the other database objects, you can use Enterprise Manager to create packages. This section explains how to create a package definition.</p>
+<p>To create a package definition:</p>
+<ol type="1" start="1">
+<li>
+<p>In the Programs sections of the Administration page, click <span class="bold">Packages</span>.</p>
+<p>The Packages page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span>.</p>
+<p>The Create Package page appears.</p>
+</li>
+<li>
+<p>In the <span class="bold">Name</span>, <span class="bold">Schema</span>, and <span class="bold">Source</span> boxes, enter the desired data. For example, enter the following information:</p>
+<ul>
+<li type="disc">
+<p>In <span class="bold">Name</span>, enter <code>test_package</code>.</p>
+</li>
+<li type="disc">
+<p>In <span class="bold">Schema</span>, enter <code>hr</code>.</p>
+</li>
+<li type="disc">
+<p>In <span class="bold">Source</span>, enter a package definition. For more information on package definitions, see <a class="olinkSRC LNPLS" href="http://www.oracle.com/pls/db102/to_bookid?id=LNPLS"><span class="italic">Oracle Database PL/SQL User's Guide and Reference</span></a>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Click <span class="bold">OK</span>.</p>
+<p>An Update Message confirms the creation of the package definition.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref506" name="sthref506"></a>
+<h4>Editing Packages</h4>
+<p>As with the other database objects, you can use Enterprise Manager to edit packages. This example edits the <code>test_package</code> package that you created in the previous section.</p>
+<p>To edit packages:</p>
+<ol type="1" start="1">
+<li>
+<p>In the Programs sections of the Administration page, click <span class="bold">Packages</span>.</p>
+<p>The Packages page appears.</p>
+</li>
+<li>
+<p>Enter search criteria in the <span class="bold">Schema</span> and <span class="bold">Object Name</span> boxes and click <span class="bold">Go</span>. For example, search for packages in the <code>hr</code> schema.</p>
+<p>The packages in the specified schema are displayed.</p>
+</li>
+<li>
+<p>In the results list, select a package and then click <span class="bold">Edit</span>. For example, select <code>TEST_PACKAGE</code>.</p>
+<p>The Edit Package: <span class="italic">package_name</span> page appears. You can perform the following actions:</p>
+<ul>
+<li type="disc">
+<p>Modify the package definition by typing new contents in the <span class="bold">Methods</span> and <span class="bold">Source</span> box and clicking <span class="bold">Apply</span>.<a id="sthref507" name="sthref507"></a></p>
+</li>
+<li type="disc">
+<p>Compile the package by clicking <span class="bold">Compile</span>, an action that may be required if the package status has become invalid for some reason.<a id="sthref508" name="sthref508"></a></p>
+</li>
+<li type="disc">
+<p>Modify the package body (see next section) by clicking <span class="bold">Modify Package Body</span>.</p>
+</li>
+</ul>
+</li>
+</ol>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+You can also navigate to the Edit Package property page from the Edit Package Body property page, described in the next section, by clicking <span class="bold">Edit Package</span>.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref509" name="sthref509"></a>
+<h4>Dropping Packages</h4>
+<p>Under exceptional circumstances, such as when advised by Oracle support or an application developer, you might be required to drop a package. As with the other database objects, you can use Enterprise Manager to do so. This example drops the <code>test_package</code> package.</p>
+<p>To drop packages:</p>
+<ol type="1" start="1">
+<li>
+<p>In the Programs sections of the Administration page, click <span class="bold">Packages</span>.</p>
+<p>The Packages page appears.</p>
+</li>
+<li>
+<p>Enter search criteria in the <span class="bold">Schema</span> and <span class="bold">Object Name</span> boxes and click <span class="bold">Go</span>. For example, search for packages in the <code>hr</code> schema.</p>
+<p>The packages in the specified schema are displayed.</p>
+</li>
+<li>
+<p>In the results list, select a package and then click <span class="bold">Delete</span>. For example, select <code>TEST_PACKAGE</code>.</p>
+<p>A Confirmation page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Yes</span> to delete the package</p>
+<p>The Update Message confirms the deletion.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="BGBGJCFH" name="BGBGJCFH"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref510" name="sthref510"></a>
+<h3>Managing Package Bodies</h3>
+<p><a id="sthref511" name="sthref511"></a>Package bodies contain the PL/SQL code for the procedures and functions defined in the definitions of the packages to which they belong. The same navigation paths and options for <a id="sthref512" name="sthref512"></a>adding (creating), <a id="sthref513" name="sthref513"></a>editing (modifying), <a id="sthref514" name="sthref514"></a>compiling, and <a id="sthref515" name="sthref515"></a>deleting package bodies are available in Enterprise Manager as for packages, as described in the previous section. These paths enable direct navigation between the <span class="bold">Edit Package Body</span> and the <span class="bold">Edit Package</span> property pages as mentioned in the previous section.</p>
+<p>In some cases, the developer of the package may have wrapped one or more of the individual procedures or functions. Wrapping converts the code into non-readable strings which makes it difficult for other developers to misuse the application or for competitors to see the algorithms. Wrapped code cannot be edited. The Source box in the <span class="bold">Edit Package Body</span> page will contain a message such as <code>Source code could not be displayed, because it is wrapped</code> and will not be available for modification.</p>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref516" name="sthref516"></a>
+<h4>Viewing Package Bodies</h4>
+<p>To find out which package bodies exist in your database, use the search options on the Package Bodies page.</p>
+<p>To view package bodies:</p>
+<ol type="1" start="1">
+<li>
+<p>In the Programs sections of the Administration page, click <span class="bold">Package Bodies</span>.</p>
+<p>The Packages page appears.</p>
+</li>
+<li>
+<p>In the <span class="bold">Schema</span> box, enter the name of a schema. For example, enter <code>SYS</code>.</p>
+<p>Alternatively, click the flashlight icon adjacent to the <span class="bold">Schema</span> box to search for a schema.</p>
+</li>
+<li>
+<p>Leave <span class="bold">Object Name</span> blank to search for all packages in the specified schema.</p>
+<p>Alternatively, enter an object name or click the flashlight icon to search for one.</p>
+</li>
+<li>
+<p>Click <span class="bold">Go</span>.</p>
+<p>The packages in the specified schema are displayed.</p>
+</li>
+<li>
+<p>In the results list, select a package and then click <span class="bold">View</span> or the link in the <span class="bold">Package Body Name</span> column to view a package body. For example, click the link for <code>CONNECTIONINTERFACE</code>.</p>
+<p>The View Package Body: <span class="italic">package_name</span> page appears. This page contains the package name, schema, status, and source. The source contains the code for a <a id="sthref517" name="sthref517"></a>package. Note that the <span class="bold">Source</span> box for the <code>CONNECTIONINTERFACE</code> package indicates that the package is <code>wrapped</code>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="BGBBIBHZ" name="BGBBIBHZ"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref518" name="sthref518"></a>
+<h3>Managing <a id="sthref519" name="sthref519"></a><a id="sthref520" name="sthref520"></a><a id="sthref521" name="sthref521"></a>Standalone Subprograms<a id="sthref522" name="sthref522"></a></h3>
+<p>Procedures and functions do not have to belong to a package. Program units that are created outside of a package are called standalone subprograms. To <a id="sthref523" name="sthref523"></a><a id="sthref524" name="sthref524"></a><a id="sthref525" name="sthref525"></a>execute a standalone subprogram, you only need to include its schema name and object name: there is no package name. Even so, you may want to create synonyms for subprograms that are used regularly.</p>
+<p>A PL/SQL procedure is a subprogram that performs a specific action. You specify the name of the procedure, its parameters, its local variables, and the <code>BEGIN-END</code> block that contains its code and handles any exceptions. A function is a subprogram that computes a value. Functions and procedures are structured alike, except that functions return a value.</p>
+<p>You can use Enterprise Manager to <a id="sthref526" name="sthref526"></a><a id="sthref527" name="sthref527"></a><a id="sthref528" name="sthref528"></a>create, <a id="sthref529" name="sthref529"></a><a id="sthref530" name="sthref530"></a><a id="sthref531" name="sthref531"></a>modify, <a id="sthref532" name="sthref532"></a><a id="sthref533" name="sthref533"></a><a id="sthref534" name="sthref534"></a>compile, and <a id="sthref535" name="sthref535"></a><a id="sthref536" name="sthref536"></a><a id="sthref537" name="sthref537"></a>delete standalone subprograms just like packaged subprograms except that they do not have a parent package (and, consequently, no navigation path in Enterprise Manager from or to the package property pages). In the Programs section of the Administration page, click the links for <span class="bold">Procedures</span> and <span class="bold">Functions</span> to navigate to the relevant property pages.</p>
+</div>
+<!-- class="sect2" -->
+<a id="BGBBCDDA" name="BGBBCDDA"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref538" name="sthref538"></a>
+<h3>Managing <a id="sthref539" name="sthref539"></a>Triggers</h3>
+<p>A database trigger is a stored subprogram associated with a database table, view, or event. For instance, you can have Oracle fire a trigger automatically before or after an <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code> statement that affects a table.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a class="olinkSRC ADFNS" href="http://www.oracle.com/pls/db102/to_bookid?id=ADFNS"><span class="italic">Oracle Database Application Developer's Guide - Fundamentals</span></a> and <a class="olinkSRC LNPLS" href="http://www.oracle.com/pls/db102/to_bookid?id=LNPLS"><span class="italic">Oracle Database PL/SQL User's Guide and Reference</span></a> for more information about the uses for and creation of triggers</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<p>Triggers are another type of schema object that you can manage through Enterprise Manager. They have their own property page which you can open by clicking <span class="bold">Triggers</span> in the Programs section of the Administration page. From the Triggers property page, you can <a id="sthref540" name="sthref540"></a>create new triggers or view, edit, and delete existing triggers.</p>
+<p>The <span class="bold">Create Triggers</span> and <span class="bold"><a id="sthref541" name="sthref541"></a>Edit Triggers</span> property pages look very similar to the corresponding pages for packages, package bodies, and standalone subprograms. Note the following differences:</p>
+<ul>
+<li type="disc">
+<p>The <span class="bold">Replace If Exists</span> checkbox enables you to replace an existing trigger; the Enable trigger enables you to immediately enable a trigger after it is created or edited.</p>
+</li>
+<li type="disc">
+<p>The box containing the PL/SQL code is labeled <span class="bold">Trigger Body</span> instead of <span class="bold">Source</span>.</p>
+</li>
+</ul>
+<p>Otherwise, the creation, editing, and <a id="sthref542" name="sthref542"></a>compilation of triggers is exactly the same as for other database PL/SQL units. Because triggers run automatically as a result of the triggering DML on the table, there is no way to run them directly.</p>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BGBBGEBF" name="BGBBGEBF"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref543" name="sthref543"></a>
+<h2>Other Schema Objects</h2>
+<p>Other schema objects are not discussed in detail in this book, but are described in Oracle Enterprise Manager online Help. As with the schema objects described in the preceding sections, you can manage them from Enterprise Manager by clicking the relevant link in the Schema section of the Administration property page.</p>
+<p>The schema object pages provide:</p>
+<ul>
+<li type="disc">
+<p>Search capabilities to find existing objects</p>
+</li>
+<li type="disc">
+<p>Links to drill down to individual objects, with further links to drill down to details as appropriate</p>
+</li>
+<li type="disc">
+<p>Navigation to screens where you can add, edit, or delete an object</p>
+</li>
+</ul>
+<p>Other schema objects include the following:</p>
+<ul>
+<li type="disc">
+<p>Syn<a id="sthref544" name="sthref544"></a><a id="sthref545" name="sthref545"></a>onyms</p>
+<p>A synonym is an alias for any schema object such as a table or view. Synonyms provide an easy way to hide the underlying database structure from an application or a user. For example, you can create a synonym named <code>personnel</code> as an alias for the <code>employees</code> table in the <code>hr</code> schema. For example, assume that you create the following query:</p>
+<pre xml:space="preserve" class="oac_no_warn">SELECT   employee_id, salary
+FROM     hr.employees
+ORDER BY salary
+
+</pre>
+<p>With the synonym in place, you can rewrite the query more simply as:</p>
+<pre xml:space="preserve" class="oac_no_warn">SELECT   employee_id, salary
+FROM     personnel
+ORDER BY salary
+
+</pre>
+<p>An additional benefit of synonyms is that you can use the same synonym in a development database as in the production database, even if the schema names are different. This technique allows the application code to run unmodified in both environments. For example, the second version of the preceding query would work in a development database where the <code>employees</code> table was in the <code>dev1</code> schema if the <code>personnel</code> synonym were defined.</p>
+<p>Because a synonym is simply an alias, it requires no storage other than its definition in the data dictionary.</p>
+</li>
+<li type="disc">
+<p>Seq<a id="sthref546" name="sthref546"></a><a id="sthref547" name="sthref547"></a>uences</p>
+<p>A sequence is a database object from which multiple users can generate unique integers. Using a sequence generator to provide the value for a primary key in a table is an easy way to guarantee that the key value is unique.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect1" -->
+<a id="CFHGBGCB" name="CFHGBGCB"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref548" name="sthref548"></a>
+<h2>Loading Data Into Tables</h2>
+<p><a id="sthref549" name="sthref549"></a><a id="sthref550" name="sthref550"></a><a id="sthref551" name="sthref551"></a>You can use Enterprise Manager to load data into tables in batch. Batch loading is useful when you have a lot of data. You can load data from the file system. You can also export data into files.</p>
+<p>For loading data with Enterprise Manager, you can use a comma-delimited data file. Enterprise Manager can also create your control file automatically. This SQL*Loader control file tells Oracle how the data is to be loaded.</p>
+<p>The following example loads data into the <code>purchase_orders</code> table we created with <code>MYUSER</code> in <a href="#BEAECFCG">"Creating a Table: Example"</a>. For simplicity, this example loads only three rows. Your control and data files can be different, but the idea is the same for this method of loading.</p>
+<p>This example requires you to create a data named <code>load4.dat</code> on the file system of the database host or on your client host. The contents of the file should be as follows:</p>
+<pre xml:space="preserve" class="oac_no_warn">1, 25-MAY-2005, Office Equipment, Optical Mouse
+2, 18-JUN-2005, Computer System, Dell Laptop
+3, 26-JUN-2005, Travel Expense, Car Rental
+
+</pre>
+<p>To load the data file into the <code>myuser.purchase_orders</code> table:</p>
+<ol type="1" start="1">
+<li>
+<p>From the Move Row Data section of the Maintenance page, click <span class="bold">Load Data from User Files</span>.</p>
+<p>The Load Data: Generate Or Use Existing Control File page appears.</p>
+</li>
+<li>
+<p>Select <span class="bold">Automatically Generate Control File</span>. Also enter the Host Credentials (username and password) for the host machine. Click <span class="bold">Continue</span>.</p>
+<p>The Load Data: Data Files page appears.</p>
+</li>
+<li>
+<p>Select <span class="bold">Data File is Located on Database Server Machine</span> and enter the path to your data file. Alternatively, if you created the data file on your client host, select <span class="bold">Data File is Located on Your Browser Machine</span> and enter the file path. Click <span class="bold">Next</span>.</p>
+<p>The Load Data: Table and File Format page appears. This page displays the contents of your data file.</p>
+</li>
+<li>
+<p>In <span class="bold">Table Name</span>, specify the destination table for your data. Enter <code>myuser.purchase_orders</code> and click <span class="bold">Next</span>.</p>
+<p>The Load Data: File Format Attributes page appears.</p>
+</li>
+<li>
+<p>Accept all defaults. In this example, we use the comma character as the delimiter. Click <span class="bold">Next</span>.</p>
+<p>The Load Data: Load Method page appears.</p>
+</li>
+<li>
+<p>Accept the default <span class="bold">Conventional Path</span> as the loading method. If you have a lot of data, you can select <span class="bold">Direct Path</span>. Click <span class="bold">Next</span>.</p>
+<p>The Load Data: Options page appears.</p>
+</li>
+<li>
+<p>In the Optional Files section, leave <span class="bold">Generate log file where logging information is to be stored</span> checked. You can accept the default file name and path or enter a different one. Note that this page gives you the option of limiting the number of rows loaded. Because we are only loading three rows in this example, we leave this box unchecked. Click <span class="bold">Next</span>.</p>
+<p>The Load Data: Schedule page appears.</p>
+</li>
+<li>
+<p>Enter values for <span class="bold">Job Name</span> and <span class="bold">Description</span>. Select <span class="bold">Immediately</span> to run the job now. Click <span class="bold">Next</span>.</p>
+<p>The Load Data: Review page appears. This page lets you review your file names and loading methods. You can also view your loading control file. If you want to change something, you can click the <span class="bold">Back</span> button.</p>
+</li>
+<li>
+<p>Click <span class="bold">Submit Job</span> to start the loading.</p>
+<p>The Job Activity page appears, confirming that your job was created successfully.</p>
+</li>
+<li>
+<p>Search for your job name to view its status.</p>
+<p>The Job Activity page should display your job information and show that your job succeeded. You can get more information by clicking the link under <span class="bold">Status</span>.</p>
+</li>
+</ol>
+<div class="figure"><a id="CFHGCFGB" name="CFHGCFGB"></a><a id="sthref552" name="sthref552"></a>
+<p class="titleinfigure">Figure 8-7 View Data: MYUSER.PURCHASE_ORDERS</p>
+<img src="./view_data_po.gif" alt="Description of view_data_po.gif follows" title="Description of view_data_po.gif follows" /><br />
+<a id="sthref553" name="sthref553" href="./img_text/view_data_po.htm">Description of the illustration view_data_po.gif</a></div>
+<!-- class="figure" --></div>
+<!-- class="sect1" -->
+<a id="CHDJGIIH" name="CHDJGIIH"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref554" name="sthref554"></a>
+<h2>Schemas: Oracle by Example Series</h2>
+<p>Oracle by Example (OBE) has a series on the <span class="italic">Oracle Database 2 Day DBA</span> book. This OBE steps you through the tasks in this chapter and includes annotated screen shots.</p>
+<p>To view the Schemas OBE, point your browser to the following location:</p>
+<pre xml:space="preserve" class="oac_no_warn"><a href="http://www.oracle.com/technology/obe/10gr2_2day_dba/schema/schema.htm">http://www.oracle.com/technology/obe/10gr2_2day_dba/schema/schema.htm</a>
+</pre></div>
+<!-- class="sect1" --></div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="users_secure.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="backrest.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;2004, 2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

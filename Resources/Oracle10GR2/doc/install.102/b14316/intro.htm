@@ -1,0 +1,1141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>1 Overview of Oracle Database Installation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.5 Build 272" />
+<meta name="Date" content="August 18, 2005 19:51:00" />
+<meta name="doctitle" content="Oracle&reg; Database Installation Guide 10g Release 2 (10.2) for Microsoft Windows (32-Bit)" />
+<meta name="partno" content="B14316-01" />
+<meta name="docid" content="NTDBI" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Glossary" href="glossary.htm" title="Glossary" type="text/html" />
+<link rel="Prev" href="whatsnew.htm" title="Previous" type="text/html" />
+<link rel="Next" href="reqs.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14316.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database Installation Guide<br />
+10<i>g</i> Release 2 (10.2) for Microsoft Windows (32-Bit)</b><br />
+Part Number B14316-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="whatsnew.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="reqs.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top"><a href="../b14316.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="BABHDHHA" name="BABHDHHA"></a><a id="i1006491" name="i1006491"></a>
+<h1 class="chapter"><span class="secnum">1</span> <span class="bold"><a name="NTDBI001" id="NTDBI001"></a></span> Overview of Oracle Database Installation</h1>
+<p><a id="ABC4336899" name="ABC4336899"></a>This chapter describes the different installation types of Oracle Database for Microsoft Windows (32-Bit), and issues to consider before you install Oracle Database:</p>
+<ul>
+<li type="disc">
+<p><a href="#BABIDCGG">Planning Your Installation</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1005984">Oracle Database Installation Types</a></p>
+</li>
+<li type="disc">
+<p><a href="#CEGDACJD">Oracle Database Installation Methods</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1005728">Installation Considerations</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABGDEHD">Database Configuration Options</a></p>
+</li>
+<li type="disc">
+<p><a href="#CEGBGDFE">Database Storage Options</a></p>
+</li>
+<li type="disc">
+<p><a href="#BGEDFBEA">Database Management Options</a></p>
+</li>
+<li type="disc">
+<p><a href="#BGEGHEIC">Database Backup and Recovery Options</a></p>
+</li>
+<li type="disc">
+<p><a href="#BGEGDGGE">E-mail Notification Options</a></p>
+</li>
+<li type="disc">
+<p><a href="#CIHHGABI">Upgrade Considerations</a></p>
+</li>
+</ul>
+<a id="BABIDCGG" name="BABIDCGG"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref68" name="sthref68"></a>
+<h2 class="sect1"><span class="secnum">1.1</span> Planning Your Installation</h2>
+<p><a id="sthref69" name="sthref69"></a>The Oracle Database installation process consists of six steps:</p>
+<ol type="1" start="1">
+<li>
+<p><span class="bold">Read the release notes</span>: Read the Oracle Database 10g release 2 (10.2) <a id="sthref70" name="sthref70"></a>release notes before you begin the installation. The release notes are available with the platform-specific documentation. The latest version of the release notes is available on Oracle Technology Network at:</p>
+<p><code><a href="http://www.oracle.com/technology/documentation">http://www.oracle.com/technology/documentation</a></code></p>
+</li>
+<li>
+<p><span class="bold">Plan the installation</span>: This overview chapter describes the Oracle products that you can install and issues that you must consider before starting the installation.</p>
+<p>You also may want to refer to <a href="faq.htm#CBAGIJDJ">Appendix A</a>, which covers frequently asked questions about installing Oracle Database components, such as how to install Oracle Database if your site uses Oracle applications or if you need multiple Oracle Database client connections.</p>
+<p>If you plan to perform multiple installations, see <a href="advance.htm#CHDICDJA">Appendix D</a> for information about silent or noninteractive installations using response files, and cloning the Oracle home.</p>
+</li>
+<li>
+<p><span class="bold">Complete preinstallation tasks</span>: <a href="reqs.htm#BCFHFECH">Chapter 2</a> describes preinstallation tasks that you must complete before installing Oracle Database.</p>
+</li>
+<li>
+<p><span class="bold">Install the software</span>: Use the following sections to install Oracle Database:</p>
+<ul>
+<li type="disc">
+<p><a href="install.htm#CIHIFHCB">Chapter 3</a> describes how to use Oracle Universal Installer (OUI) to install Oracle Database and Automatic Storage Management (ASM), as well as how to clone an Oracle home.</p>
+</li>
+<li type="disc">
+<p><a href="advance.htm#CHDICDJA">Appendix D</a> describes how to perform silent or noninteractive installations using response files, which you may want to use if you need to perform multiple installations of Oracle Database.</p>
+</li>
+<li type="disc">
+<p><a href="jbridge.htm#BABFBBFE">Appendix B</a> describes how to install Java Access Bridge, which enables a screen reader with Oracle components.</p>
+</li>
+<li type="disc">
+<p><a href="gblsupp.htm#CEGEAADF">Appendix E</a> describes how to install and use Oracle components in different languages.</p>
+</li>
+<li type="disc">
+<p><a href="ts.htm#BABFDJDB">Appendix G</a> provides troubleshooting advice in case you encounter problems with the installation.</p>
+</li>
+<li type="disc">
+<p><a href="deinstall.htm#CIHDGGJJ">Chapter 6</a> describes how to remove Oracle Database.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><span class="bold">Complete postinstallation tasks</span>: <a href="postcfg.htm#CEGGCJGH">Chapter 4</a> describes postinstallation tasks.</p>
+</li>
+<li>
+<p><span class="bold">Get started using Oracle Database</span>: Use the following sections to get started using Oracle Database:</p>
+<ul>
+<li type="disc">
+<p><a href="startrdb.htm#BDCCGFFA">Chapter 5</a> describes how to check the contents of the installed Oracle Database, how to start the database and various other Oracle tools, and how to locate various files.</p>
+</li>
+<li type="disc">
+<p><a href="install.htm#BBAIFCGB">"Cloning an Oracle Home"</a> describes how you can clone an existing Oracle Database home.</p>
+</li>
+<li type="disc">
+<p><a href="ofa.htm#CBBEDHEB">Appendix C</a> on the Optimal Flexible Architecture, which is a set of guidelines that ensure reliable Oracle installations that require little maintenance.</p>
+</li>
+<li type="disc">
+<p><a href="gblsupp.htm#CEGEAADF">Appendix E</a> describes globalization support information.</p>
+</li>
+<li type="disc">
+<p><a href="ports.htm#BABECFJF">Appendix F</a> explains how to manage Oracle Database port numbers.</p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<!-- class="sect1" -->
+<a id="i1005984" name="i1005984"></a>
+<div class="sect1"><a id="sthref71" name="sthref71"></a>
+<h2 class="sect1"><span class="secnum">1.2</span> Oracle Database Installation Types</h2>
+<p><a id="sthref72" name="sthref72"></a>You can choose one of the following installation types when installing Oracle Database 10<span class="italic">g</span>:</p>
+<ul>
+<li type="disc">
+<p><span class="bold"><a id="sthref73" name="sthref73"></a>Enterprise Edition:</span> Installs licensable Oracle Database options, and database configuration and management tools in addition to all of the products that are installed during a Standard Edition installation. It also installs products most commonly used for <a id="sthref74" name="sthref74"></a>data warehousing and <a id="sthref75" name="sthref75"></a>transaction processing.</p>
+</li>
+<li type="disc">
+<p><span class="bold"><a id="sthref76" name="sthref76"></a>Standard Edition:</span> Installs an integrated set of management tools, full distribution, replication, Web features, and facilities for building business-critical applications.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+If you purchased a Standard Edition license, and you perform a Custom installation, ensure that you install only the components covered by the Standard Edition license.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+</li>
+<li type="disc">
+<p><span class="bold"><a id="sthref77" name="sthref77"></a>Personal Edition:</span> Installs the same software as the Enterprise Edition installation type, but supports only a single user development and deployment environment that requires full compatibility with Enterprise Edition and Standard Edition. <a id="sthref78" name="sthref78"></a>Oracle Real Application Clusters is not installed with Personal Edition.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Oracle9<span class="italic">i</span> release 1 (9.0.1.1.1) was the terminal release for Personal Edition on Windows&nbsp;98.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+</li>
+<li type="disc">
+<p><span class="bold"><a id="sthref79" name="sthref79"></a>Custom:</span> Enables you to select the individual components that you want to install from the list of all available components.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Oracle Database Client is installed separately. You cannot install Oracle Database Client during an Oracle Database installation.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p><span class="italic">Oracle Database Client Installation Guide for Microsoft Windows (32-Bit)</span> for Oracle Database Client installation instructions</p>
+</li>
+<li type="disc">
+<p><span class="italic">Oracle Database Licensing Information</span> for more information about the features available with each Oracle Database edition and for information about licensing</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</li>
+</ul>
+</div>
+<!-- class="sect1" -->
+<a id="CEGDACJD" name="CEGDACJD"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref80" name="sthref80"></a>
+<h2 class="sect1"><span class="secnum">1.3</span> Oracle Database Installation Methods</h2>
+<p>There are two methods that you can use to install Oracle Database:</p>
+<ul>
+<li type="disc">
+<p><a id="sthref81" name="sthref81"></a><span class="bold">Basic</span>: Select this installation method if you want to quickly install Oracle Database. This installation method requires minimal user input. It installs the software and optionally creates a general-purpose database using the information that you specify on this screen. It is the default installation method.</p>
+</li>
+<li type="disc">
+<p><a id="sthref82" name="sthref82"></a><span class="bold">Advanced</span>: Select this installation method if you want to complete any of the following tasks:</p>
+<ul>
+<li type="circle">
+<p>Perform a <a id="sthref83" name="sthref83"></a><a id="sthref84" name="sthref84"></a>custom software installation, in which you choose components individually, or choose a different database configuration</p>
+<p>The Available Product Components installation screen automatically selects the components most customers need in their Oracle Database installation. It also lists several components that are not selected by default, but which you may want to include. To find the listing of available components, select <span class="bold">Advanced</span>, and then in the Installation Type screen, select <span class="bold">Custom</span>.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="install.htm#BABFDDEA">"Reviewing Component-Specific Installation Guidelines"</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</li>
+<li type="circle">
+<p>Install <a id="sthref85" name="sthref85"></a>Oracle Real Application Clusters</p>
+</li>
+<li type="circle">
+<p><a id="sthref86" name="sthref86"></a>Upgrade an existing database</p>
+</li>
+<li type="circle">
+<p><a id="sthref87" name="sthref87"></a>Select a database character set or different product languages</p>
+</li>
+<li type="circle">
+<p><a id="sthref88" name="sthref88"></a><a id="sthref89" name="sthref89"></a>Create the EXAMPLE tablespace during the installation</p>
+</li>
+<li type="circle">
+<p><a id="sthref90" name="sthref90"></a><a id="sthref91" name="sthref91"></a>Create a database on a different file system from the software</p>
+</li>
+<li type="circle">
+<p><a id="sthref92" name="sthref92"></a>Configure Automatic Storage Management (ASM) for database storage</p>
+</li>
+<li type="circle">
+<p>Specify different <a id="sthref93" name="sthref93"></a>passwords for administrative schemas</p>
+</li>
+<li type="circle">
+<p>Configure <a id="sthref94" name="sthref94"></a><a id="sthref95" name="sthref95"></a><a id="sthref96" name="sthref96"></a><a id="sthref97" name="sthref97"></a>automated backups or <a id="sthref98" name="sthref98"></a>Oracle Enterprise Manager notifications</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<!-- class="sect1" -->
+<a id="i1005728" name="i1005728"></a>
+<div class="sect1"><a id="sthref99" name="sthref99"></a>
+<h2 class="sect1"><span class="secnum">1.4</span> Installation Considerations</h2>
+<p>This section provides information about Oracle Universal Installer and other concepts you should be aware of when you plan the installation.</p>
+<ul>
+<li type="disc">
+<p><a href="#i1006073">Licensing Information</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1005689">Installation Differences Between Windows and UNIX</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABBIEGB">Oracle Cluster Synchronization Services (CSS)</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1005848">Oracle Universal Installer Overview</a></p>
+</li>
+<li type="disc">
+<p><a href="#CCHFHHFI">Oracle Base Directory</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABFHEHD">Oracle Home Directory</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABHHAJC">Multiple Oracle Home Support</a></p>
+</li>
+</ul>
+<a id="i1006073" name="i1006073"></a>
+<div class="sect2"><a id="sthref100" name="sthref100"></a>
+<h3 class="sect2"><span class="secnum">1.4.1</span> Licensing Information<a id="sthref101" name="sthref101"></a></h3>
+<p>Although the installation media in your media pack contain many Oracle components, you are permitted to use only those components for which you have purchased licenses.</p>
+<p>Oracle Support Services does not provide support for components for which licenses have not been purchased.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Database Licensing Information</span></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect2" -->
+<a id="i1005689" name="i1005689"></a>
+<div class="sect2"><a id="sthref102" name="sthref102"></a>
+<h3 class="sect2"><span class="secnum">1.4.2</span> Installation Differences Between Windows and UNIX<a id="sthref103" name="sthref103"></a><a id="sthref104" name="sthref104"></a><a id="sthref105" name="sthref105"></a></h3>
+<p><a id="sthref106" name="sthref106"></a>If you are experienced with installing Oracle components in UNIX environments, note that many manual setup tasks required on UNIX are not required on Windows. The key differences between UNIX and Windows installations are:</p>
+<ul>
+<li type="disc">
+<p>Start-up and shutdown services</p>
+<p>In Windows, Oracle Universal Installer creates and sets start-up and shutdown services at installation time. In UNIX systems, administrators are responsible for creating these services.</p>
+</li>
+<li type="disc">
+<p>Environment variables</p>
+<p><a id="sthref107" name="sthref107"></a>In Windows, Oracle Universal Installer sets environment variables such as <a id="sthref108" name="sthref108"></a><a id="sthref109" name="sthref109"></a><code>PATH</code>, <code><a id="sthref110" name="sthref110"></a><a id="sthref111" name="sthref111"></a>ORACLE_BASE</code>, <code><a id="sthref112" name="sthref112"></a><a id="sthref113" name="sthref113"></a>ORACLE_HOME</code>, and <code><a id="sthref114" name="sthref114"></a><a id="sthref115" name="sthref115"></a>ORACLE_SID</code> in the registry. In UNIX systems, you must manually set these environment variables.</p>
+</li>
+<li type="disc">
+<p>DBA account for database administrators</p>
+<p>In Windows, Oracle Universal Installer creates the <code>ORA_DBA</code> group. In UNIX systems, you must create the DBA account manually.</p>
+</li>
+<li type="disc">
+<p>Account for running Oracle Universal Installer</p>
+<p>In Windows, you log in with Administrator privileges. You do not need a separate account. In UNIX systems, you must create this account manually.</p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+"Oracle Database Windows/UNIX Differences" of <span class="italic">Oracle Database Platform Guide for Microsoft Windows (32-Bit)</span></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect2" -->
+<a id="BABBIEGB" name="BABBIEGB"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref116" name="sthref116"></a>
+<h3 class="sect2"><span class="secnum">1.4.3</span> Oracle Cluster Synchronization Services (CSS)</h3>
+<p>The Oracle Cluster Synchronization Services (CSS) service synchronizes an Automatic Storage Management (ASM) <a id="sthref117" name="sthref117"></a>instance and the database instances that rely on it for database file storage. By default, Oracle Universal Installer does not configure Oracle Cluster Synchronization Services; it only configures it if you select Automatic Storage Management as a storage or recovery option. Because Oracle Cluster Synchronization Services must be running before any Automatic Storage Management instance starts, Oracle Universal Installer configures it to start automatically when the system starts.</p>
+<p>For <a id="sthref118" name="sthref118"></a>Oracle Real Application Clusters installations, Oracle Universal Installer installs the CSS service with Oracle Clusterware in a separate Oracle home directory (also called the Oracle Clusterware home directory). For non-Real Application Clusters single-instance installations, you can install and run the CSS service from either a separate Oracle home for Automatic Storage Management, or from the same Oracle home as Oracle Database. For a single-instance Oracle Database installation, you can install Oracle Clusterware either before or after the database installation.</p>
+<p>If you have installed Oracle Cluster Synchronization Services from the same Oracle home as Oracle Database, use caution when removing Oracle Database software from the system. Before you remove an Oracle home directory that contains Oracle Database, you must either delete the CSS service configuration, or if necessary, reconfigure the CSS service to run from another Oracle home directory.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+If you plan to have more than one Oracle Database installation on a single system and you want to use Automatic Storage Management for database file storage, Oracle recommends that you run the CSS service and the Automatic Storage Management instance from the same Oracle home directory and use different Oracle home directories for the database instances.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p><a href="#CEGBDDFD">"Automatic Storage Management (ASM)"</a></p>
+</li>
+<li type="disc">
+<p><a href="postcfg.htm#BABEDEHD">"Running Oracle Cluster Synchronization Services (CSS) from a Different Oracle Home"</a></p>
+</li>
+<li type="disc">
+<p><a href="deinstall.htm#BCFBEEAJ">"Removing Oracle Cluster Synchronization Services (CSS)"</a></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect2" -->
+<a id="i1005848" name="i1005848"></a>
+<div class="sect2"><a id="sthref119" name="sthref119"></a>
+<h3 class="sect2"><span class="secnum">1.4.4</span> Oracle Universal Installer Overview</h3>
+<p><a id="sthref120" name="sthref120"></a><a id="sthref121" name="sthref121"></a>Oracle Universal Installer is a Java-based graphical user interface (GUI) tool that enables you to install and remove Oracle software. Oracle Universal Installer provides the following capabilities:</p>
+<ul>
+<li type="disc">
+<p>Component and suite installations</p>
+</li>
+<li type="disc">
+<p>Globalization Support</p>
+</li>
+<li type="disc">
+<p>Distributed installation support</p>
+</li>
+<li type="disc">
+<p>Unattended silent installations using response files</p>
+</li>
+<li type="disc">
+<p>Removal of installed components</p>
+</li>
+<li type="disc">
+<p>Multiple Oracle homes support</p>
+</li>
+</ul>
+<p>Oracle Universal Installer can run a silent or noninteractive installation of Oracle software using response files. See <a href="advance.htm#CHDICDJA">Appendix D, " Installing and Configuring Oracle Database Using Response Files"</a> for more information.</p>
+<p>You cannot use the earlier Oracle Installer (shipped with releases 7.<span class="italic">x</span> and 8.0.<span class="italic">x</span>) to install components into an Oracle Database 10g release 2 (10.2) Oracle home directory. Likewise, you cannot install 10g release 2 (10.2) components into a release 7.<span class="italic">x</span>, 8.0.<span class="italic">x</span>, 8.1.3, 8.1.4, or 9.<span class="italic">x</span> Oracle home.<a id="sthref122" name="sthref122"></a><a id="sthref123" name="sthref123"></a><a id="sthref124" name="sthref124"></a></p>
+<p>Oracle Universal Installer automatically installs the Oracle version of the Java Runtime Environment (JRE). This version is required to run Oracle Universal Installer and several Oracle assistants. Do <span class="italic">not</span> modify the JRE, unless doing so with a patch provided by Oracle<span class="italic">MetaLink</span>. <a id="sthref125" name="sthref125"></a><a id="sthref126" name="sthref126"></a>Visit the following site to find Oracle patches to download:</p>
+<pre xml:space="preserve" class="oac_no_warn"><a href="http://metalink.oracle.com/">http://metalink.oracle.com/</a>
+
+</pre>
+<p>When Oracle Universal Installer runs, it creates an <code><span class="codeinlineitalic">OraHome_n</span></code> directory, which keeps track of the components you are installing. Do not modify the contents of this directory. By default, this directory is located in on the same directory level as <code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\</code><code><span class="codeinlineitalic">ORACLE_HOME</span></code>.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+Oracle Universal Installer and OPatch User's Guide
+<p><span class="italic">Oracle Universal Installer and OPatch User's Guide</span> is included in your Oracle Documentation Library and is automatically installed on your hard drive during installation. <a id="sthref127" name="sthref127"></a><a id="sthref128" name="sthref128"></a>To access this guide, from the <span class="bold">Start</span> menu, select <span class="bold">Programs</span>, then <span class="bold">Oracle -</span> <span class="bolditalic">ORACLE_HOME</span>, then <span class="bold">Oracle Installation Products</span>, then <span class="bold">Universal Installer Concepts Guide</span>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect2" -->
+<a id="CCHFHHFI" name="CCHFHHFI"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref129" name="sthref129"></a>
+<h3 class="sect2"><span class="secnum">1.4.5</span> Oracle Base Directory</h3>
+<p><a id="sthref130" name="sthref130"></a><a id="sthref131" name="sthref131"></a>If you install Oracle Database 10g release 2 (10.2) on a computer with no other Oracle software installed, Oracle Universal Installer creates an Oracle base directory for you. If Oracle software is already installed, then one or more Oracle base directories already exist. In the latter case, Oracle Universal Installer offers you a choice of Oracle base directories into which to install Oracle Database. You should install this release of Oracle Database into the same release used to create the existing Oracle base directory.</p>
+<p>In a default Windows installation, the Oracle base directory would appears as follows:</p>
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">SYSTEM_DRIVE</span>:\&gt; oracle\product\10.2.0
+
+</pre>
+<p>You are not required to create an Oracle base directory before installation, but you can do so if you want. You can set the <code>ORACLE_BASE</code> environment directory to point to this directory, which Oracle Universal Installer will recognize.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+You can choose to create a new Oracle base directory, even if other Oracle base directories exist on the system.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+</div>
+<!-- class="sect2" -->
+<a id="BABFHEHD" name="BABFHEHD"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref132" name="sthref132"></a>
+<h3 class="sect2"><span class="secnum">1.4.6</span> Oracle Home Directory</h3>
+<p>This section covers the following topics:<a id="sthref133" name="sthref133"></a></p>
+<ul>
+<li type="disc">
+<p><a href="#CEGFIHHD">Contents of the Oracle Home Environment</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1005660">Multiple Oracle Home Components</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABHHAJC">Multiple Oracle Home Support</a></p>
+</li>
+</ul>
+<a id="CEGFIHHD" name="CEGFIHHD"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" --><a id="sthref134" name="sthref134"></a>
+<h4 class="sect3"><span class="secnum">1.4.6.1</span> Contents of the Oracle Home Environment</h4>
+<p>The Oracle home directory is located under the Oracle base directory. For example, in a default Windows installation, if you name the Oracle home directory <code>db_1</code>, it would appear in the Oracle base directory as follows:</p>
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">SYSTEM_DRIVE</span>:\&gt; oracle\product\10.2.0\db_1
+
+</pre>
+<p>An Oracle home corresponds to the environment in which Oracle components run. This environment includes the following:</p>
+<ul>
+<li type="disc">
+<p>Location of installed component files</p>
+</li>
+<li type="disc">
+<p><code>PATH</code> variable pointing to binary files of installed components</p>
+</li>
+<li type="disc">
+<p>Registry entries</p>
+</li>
+<li type="disc">
+<p>Service names</p>
+</li>
+<li type="disc">
+<p>Program groups</p>
+</li>
+</ul>
+<p>Oracle homes also have a name associated with them, which you specify along with their location during installation.</p>
+</div>
+<!-- class="sect3" -->
+<a id="i1005660" name="i1005660"></a>
+<div class="sect3"><a id="sthref135" name="sthref135"></a>
+<h4 class="sect3"><span class="secnum">1.4.6.2</span> Multiple Oracle Home Components<a id="sthref136" name="sthref136"></a><a id="sthref137" name="sthref137"></a><a id="sthref138" name="sthref138"></a><a id="sthref139" name="sthref139"></a><a id="sthref140" name="sthref140"></a></h4>
+<p><a id="sthref141" name="sthref141"></a>You can install all Oracle components in multiple Oracle homes on the same computer. However, some components can only support one active instance at a time. This means that the current (latest) installation renders the previous one inactive. These components are:</p>
+<ul>
+<li type="disc">
+<p>Oracle Administration Assistant for Windows<a id="sthref142" name="sthref142"></a></p>
+</li>
+<li type="disc">
+<p>Oracle Counters for Windows Performance Monitor<a id="sthref143" name="sthref143"></a></p>
+</li>
+<li type="disc">
+<p>Oracle Objects for OLE<a id="sthref144" name="sthref144"></a></p>
+</li>
+<li type="disc">
+<p>Oracle Provider for OLE DB<a id="sthref145" name="sthref145"></a></p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+All Oracle Database version 7 components and all Oracle Database release 8.0.3 components are non-multiple Oracle home products.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+</div>
+<!-- class="sect3" -->
+<a id="BABHHAJC" name="BABHHAJC"></a>
+<div class="sect3"><!-- infolevel="all" infotype="General" --><a id="sthref146" name="sthref146"></a>
+<h4 class="sect3"><span class="secnum">1.4.6.3</span> Multiple Oracle Home Support</h4>
+<p><a id="sthref147" name="sthref147"></a><a id="sthref148" name="sthref148"></a>Oracle Database supports multiple Oracle homes. This means that you can install this release or previous releases of the software more than once on the same system, in different Oracle home directories.</p>
+<p>You must install this product into a new Oracle home directory. You cannot install products from one release of Oracle Database into an Oracle home directory of a different release. For example, you cannot install 10g release 2 (10.2) software into an existing Oracle9<span class="italic">i</span> Oracle home directory. If you attempt to install this release into an Oracle home directory that contains software from an earlier Oracle release, the installation fails.</p>
+<p>You can install this release more than once on the same system as long as each installation is installed in a separate Oracle home directory.</p>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BABGDEHD" name="BABGDEHD"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref149" name="sthref149"></a>
+<h2 class="sect1"><span class="secnum">1.5</span> Database Configuration Options</h2>
+<p><a id="sthref150" name="sthref150"></a><a id="sthref151" name="sthref151"></a>During the installation, you can create an Oracle database during the installation process. If you choose to create an Oracle database, Oracle Universal Installer uses Database Configuration Assistant (DBCA) to create it. You can create one of the preconfigured database types, which are designed for a variety of different applications, modify one of the preconfigured database types, or create a customized database to suit your own requirements.</p>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref152" name="sthref152"></a>
+<h3 class="sect2"><span class="secnum">1.5.1</span> Preconfigured Database Types</h3>
+<p><a id="sthref153" name="sthref153"></a>Oracle provides the following preconfigured database types that you can create or customize during the installation:</p>
+<ul>
+<li type="disc">
+<p>General Purpose</p>
+</li>
+<li type="disc">
+<p><a id="sthref154" name="sthref154"></a>Transaction Processing</p>
+</li>
+<li type="disc">
+<p><a id="sthref155" name="sthref155"></a>Data Warehouse</p>
+</li>
+</ul>
+<p>See the online help provided by either Oracle Universal Installer or Database Configuration Assistant for a description of these preconfigured database types.</p>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref156" name="sthref156"></a>
+<h3 class="sect2"><span class="secnum">1.5.2</span> Database Configuration Assistant Behavior During Database Installation</h3>
+<p>Oracle Universal Installer runs <a id="sthref157" name="sthref157"></a>Database Configuration Assistant in one of two modes, depending on the choices that you make during the installation:</p>
+<ul>
+<li type="disc">
+<p>Noninteractive mode</p>
+<p>If you choose either the Enterprise Edition, Standard Edition, or Personal Edition installation type, and then choose a preconfigured database type, Oracle Universal Installer prompts you for the minimum amount of information required to create a database of the type you choose. It then runs Database Configuration Assistant as a background process, using the default settings for information not covered during the initial prompting session, to create the database after it installs the software.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Oracle recommends that you use this method to create a database if you have not previously created one.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+</li>
+<li type="disc">
+<p>Interactive mode</p>
+<p>If you choose the Custom installation type or the Advanced database configuration option, Oracle Universal Installer does not prompt you for database information. Instead, it installs the software and then runs Database Configuration Assistant in interactive mode. Using the screens in Database Configuration Assistant, you can either modify one of the preconfigured database types or create a custom database and specify precisely how you want to configure it.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+If you choose this method to create a database, click the <span class="bold">Help</span> button on any of the Database Configuration Assistant screens for a description of the information that you must specify on that screen.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+</li>
+</ul>
+</div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref158" name="sthref158"></a>
+<h3 class="sect2"><span class="secnum">1.5.3</span> Creating a Database After Installation</h3>
+<p>If you decide not to create a database during the installation, you can use Database Configuration Assistant to create one after you have installed the software.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Database 2 Day DBA</span> for more information about using Database Configuration Assistant to create a database after installation</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CEGBGDFE" name="CEGBGDFE"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref159" name="sthref159"></a>
+<h2 class="sect1"><span class="secnum">1.6</span> Database Storage Options</h2>
+<p><a id="sthref160" name="sthref160"></a>If you choose to create a database during the installation, you can specify one of three storage options for database files:</p>
+<ul>
+<li type="disc">
+<p><a href="#CEGFGHJF">File System</a></p>
+</li>
+<li type="disc">
+<p><a href="#CEGBDDFD">Automatic Storage Management (ASM)</a></p>
+</li>
+</ul>
+<a id="CEGFGHJF" name="CEGFGHJF"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref161" name="sthref161"></a>
+<h3 class="sect2"><span class="secnum">1.6.1</span> File System</h3>
+<p>If you choose the file system option, Database Configuration Assistant creates the database files in a directory on a file system on your computer. Oracle recommends that the file system you choose be separate from the file systems used by the operating system or the Oracle software. The file system that you choose can be any of the following:</p>
+<ul>
+<li type="disc">
+<p>A file system on a disk that is physically attached to the system.</p>
+<p>If you are creating a database on basic disks that are not logical volumes or RAID devices, Oracle recommends that you follow the Optimal Flexible Architecture (OFA) recommendations described in <a href="ofa.htm#CBBEDHEB">Appendix C</a> and distribute the database files over more than one disk.</p>
+</li>
+<li type="disc">
+<p>A file system on a logical volume manager <a id="sthref162" name="sthref162"></a>(LVM) volume or a RAID device.</p>
+<p>If you are using <a id="sthref163" name="sthref163"></a>multiple disks in an LVM or <a id="sthref164" name="sthref164"></a>RAID configuration, Oracle recommends that you use the stripe-and-mirror-everything (SAME) methodology to increase performance and reliability. Using this methodology, you do not need to specify more than one file system mount point for database storage.</p>
+</li>
+</ul>
+<p>If you choose the Custom installation type or the Advanced database creation option, you can also choose to use the Oracle-managed files feature with the new database. If you use this feature, you need only specify the database object name instead of file names when creating or deleting database files.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Database Administrator's Guide</span> for more information about Oracle-managed files</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect2" -->
+<a id="CEGBDDFD" name="CEGBDDFD"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref165" name="sthref165"></a>
+<h3 class="sect2"><span class="secnum">1.6.2</span> Automatic Storage Management (ASM)<a id="sthref166" name="sthref166"></a><a id="sthref167" name="sthref167"></a></h3>
+<p>Automatic Storage Management (ASM) is a high-performance storage management solution for Oracle database files that makes most manual I/O performance tuning tasks unnecessary. It simplifies the management of a dynamic database environment, such as creating and laying out databases and managing disk space.</p>
+<p>Automatic Storage Management works well with single database installations, multiple database installations, and in Oracle <a id="sthref168" name="sthref168"></a>Real Application Clusters (RAC) environments. It can be used with databases created in Oracle Database 10<span class="italic">g</span> release 1 (10.1); conversely, Oracle Database 10g release 2 (10.2) databases can use ASM from Oracle Database 10<span class="italic">g</span> release 1 (10.1.0.3 and later). If your site has multiple single-instance databases, you can use <a id="sthref169" name="sthref169"></a><a id="sthref170" name="sthref170"></a>Oracle Clusterware to consolidate multiple islands of databases into a single clustered pool of storage managed by Automatic Storage Management. ASM manages the storage of all database files, such as redo logs, control files, data pump export files, and so on. (However, it does not manage the Oracle Database executable binary files.)</p>
+<p>In a nutshell, to use Automatic Storage Management, you simply allocate partitioned disks to Oracle with preferences for striping and mirroring. Automatic Storage Management manages the disk space for you, thus eliminating the need for traditional disk management tools such as Logical Volume Managers (LVM), file systems, and the numerous commands necessary to manage both. The synchronization between Automatic Storage Management and the database instance is handled by <a id="sthref171" name="sthref171"></a>Oracle Cluster Synchronization Services (CSS).</p>
+<div class="sect3"><!-- infolevel="all" infotype="General" --><a id="sthref172" name="sthref172"></a>
+<h4 class="sect3"><span class="secnum">1.6.2.1</span> Automatic Storage Management Components</h4>
+<p>Automatic Storage Management uses the following components:</p>
+<ul>
+<li type="disc">
+<p><a href="#CEGIABDI">ASM Disk Groups</a></p>
+</li>
+<li type="disc">
+<p><a href="#CEGEFFFC">ASM Instance</a></p>
+</li>
+</ul>
+<a id="CEGIABDI" name="CEGIABDI"></a>
+<p class="subhead2">ASM Disk Groups</p>
+<p><a id="sthref173" name="sthref173"></a>A disk group is a set of disk devices that Automatic Storage Management manages as a single unit. <a id="sthref174" name="sthref174"></a><a id="sthref175" name="sthref175"></a>Each disk device can be an individual physical disk, a multiple disk device such as a RAID storage array or logical volume, or even a partition on a physical disk. However, in most cases, disk groups consist of one or more individual physical disks. To enable Automatic Storage Management to balance I/O and storage appropriately within the disk group, make sure that all devices in the disk group have similar, if not identical, storage capacity and performance.</p>
+<p><a id="sthref176" name="sthref176"></a><a id="sthref177" name="sthref177"></a>You can set the redundancy and striping attributes of individual file types within a disk group by using ASM disk group templates. When you create a disk group, Automatic Storage Management creates a set of default templates for that disk group. Default template settings depend on the disk group type. For example, the default template for control files for a normal redundancy disk group sets three-way mirroring. All other file templates are two-way mirrored. For a high redundancy disk group, the default mirroring cannot be changed; that is, all files are always three-way mirrored in a high redundancy disk group. You can modify the default templates to suit your site's needs. See <span class="italic">Oracle Database Administrator's Guide</span> for more information.</p>
+<p>Automatic Storage Management spreads data evenly across all of the devices in the disk group to optimize performance and utilization. You can add or remove disk devices from a disk group without shutting down the database. When you add or remove disks, Automatic Storage Management rebalances the files across the disk group. You can create multiple disk groups to handle specific tasks, such as backup and recovery operations, in addition to regular file storage activities.</p>
+<p><a id="sthref178" name="sthref178"></a>When you add a device to a disk group, you can specify a failure group for that device. Failure groups identify disk devices that have common failure characteristics, for example, devices that are attached to the same controller. If the controller fails, then all devices attached to it become unavailable. By default, each device also belongs to its own failure group. By using the failure groups you specify, Automatic Storage Management can distribute data among the devices in the disk group to help minimize the risk of data loss caused by component failures.</p>
+<a id="CEGEFFFC" name="CEGEFFFC"></a>
+<p class="subhead2">ASM Instance</p>
+<p>The <a id="sthref179" name="sthref179"></a>ASM instance is a special Oracle instance that manages ASM disk groups. This instance must be in its own home and running before you can start a database instance that uses Automatic Storage Management. When you choose Automatic Storage Management as your database storage mechanism, this instance is created and started, if necessary. For a single-instance Oracle Database installation, you only need one ASM instance, regardless of the number of database instances on the computer. The ASM instance on any given node in a single cluster can handle any combination of disk group types.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel="all" infotype="General" --><a id="sthref180" name="sthref180"></a>
+<h4 class="sect3"><span class="secnum">1.6.2.2</span> General Steps for Installing Automatic Storage Management</h4>
+<p>To install Automatic Storage Management, you use Oracle Universal Installer. This installation guide provides the following general steps for installing Automatic Storage Management:</p>
+<ol type="1" start="1">
+<li>
+<p>Determine your site's disk requirements and if necessary, create one or more disk partitions for Automatic Storage Management.</p>
+<p><a href="reqs.htm#i1015143">"Preparing Disk Groups for an Automatic Storage Management Installation"</a> provides guidelines on how to determine your site's disk requirements.</p>
+</li>
+<li>
+<p>Run Oracle Universal Installer to install and create an ASM instance and to create one or more ASM disk groups that the ASM instance will manage.</p>
+<p><a href="install.htm#BABFCEJB">"Step 1: Reviewing Automatic Storage Management (ASM) Installation Considerations"</a> provides advice on where to install ASM and other installation considerations. <a href="install.htm#BABFAFDH">"Step 2: Creating the ASM Instance and ASM Disk Groups"</a> describes how to create an ASM instance and disk groups.</p>
+<p>After you have created an ASM instance and its associated disk groups, subsequent databases that you create will be able to use Automatic Storage Management for file storage management. If you have databases that were created before you installed ASM, you can migrate them to ASM by using the Enterprise Manager Migrate Database wizard. This wizard is available in Enterprise Manager Grid Control or Database Control. Alternatively, you can use <a id="sthref181" name="sthref181"></a>Oracle Database Recovery Manager (RMAN) to perform the migration.</p>
+</li>
+<li>
+<p>Create the databases that will use Automatic Storage Management.</p>
+<p><a href="install.htm#BABECHIH">"Step 3: Installing Oracle Database to Use with Automatic Storage Management"</a> describes how to create and a database for Automatic Storage Management.</p>
+</li>
+<li>
+<p>Test the Automatic Storage Management installation.</p>
+<p><a href="install.htm#CBHICIBA">"Step 4: Testing the Automatic Storage Management Installation"</a> provides a simple test to check that the ASM installation was successful.</p>
+<p><a href="startrdb.htm#CHDFJABD">"Managing Automatic Storage Management (ASM)"</a> explains how to start and access ASM and which Oracle database tools you can use to manage it.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p><a href="#BABBIEGB">"Oracle Cluster Synchronization Services (CSS)"</a></p>
+</li>
+<li type="disc">
+<p><span class="italic">Oracle Database 2 Day DBA</span> for a general overview, from a non-platform perspective, of Automatic Storage Management</p>
+</li>
+<li type="disc">
+<p><span class="italic">Oracle Database New Features</span> for information on new features in this release of Automatic Storage Management</p>
+</li>
+<li type="disc">
+<p><span class="italic">Oracle Database Administrator's Guide</span> for a more detailed description of Automatic Storage Management</p>
+</li>
+<li type="disc">
+<p><code><a href="http://www.oracle.com/technology/products/database/asm">http://www.oracle.com/technology/products/database/asm</a></code> for additional information on Automatic Storage Management from Oracle Technology Network</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BGEDFBEA" name="BGEDFBEA"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref182" name="sthref182"></a>
+<h2 class="sect1"><span class="secnum">1.7</span> Database Management Options</h2>
+<p>Oracle provides several utilities you can use to manage Oracle databases:</p>
+<ul>
+<li type="disc">
+<p><a href="#CEGFICII">Oracle Enterprise Manager</a></p>
+</li>
+<li type="disc">
+<p><a href="#CEGCIJJA">Oracle Enterprise Manager Database Control</a></p>
+</li>
+<li type="disc">
+<p><a href="#CEGGIACC">Management Options for Preconfigured Databases</a></p>
+</li>
+<li type="disc">
+<p><a href="#CEGJFHBI">Management Options for Custom Databases</a></p>
+</li>
+</ul>
+<a id="CEGFICII" name="CEGFICII"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref183" name="sthref183"></a>
+<h3 class="sect2"><span class="secnum">1.7.1</span> Oracle Enterprise Manager</h3>
+<p><a id="sthref184" name="sthref184"></a>To <a id="sthref185" name="sthref185"></a><a id="sthref186" name="sthref186"></a>simplify database administration, Oracle provides a Web-based management tool called Oracle Enterprise Manager</p>
+<p>There are two ways that you can deploy Oracle Enterprise Manager, as follows:</p>
+<ul>
+<li type="disc">
+<p>Deploy Oracle Enterprise Manager centrally in your environment.</p>
+<p>To deploy Oracle Enterprise Manager centrally, you must install at least one Oracle Management Repository and one Oracle Management Service within your environment, then install an <a id="sthref187" name="sthref187"></a>Oracle Enterprise Management Agent on every computer that you want to manage. You then can use a single HTML interface to manage and monitor software and hardware targets on all of those systems. Targets can include Oracle databases, application servers, Net listeners, and third-party software. This single interface is called <a id="sthref188" name="sthref188"></a><a id="sthref189" name="sthref189"></a>Oracle Enterprise Manager Grid Control (or simply Grid Control).</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+Oracle Enterprise Manager 10<span class="italic">g</span> is available separately on the Oracle Enterprise Manager Grid Control installation media.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+</li>
+<li type="disc">
+<p>Deploy Oracle Enterprise Manager Database Control locally on the database system.</p>
+<p>Oracle Enterprise Manager Database Control software is installed by default with every Oracle Database installation except Custom. During a Custom installation, you can choose not to install Oracle Enterprise Manager Database Control. However, Oracle recommends that you do install it. This local installation provides a Web-based interface called Oracle Enterprise Manager Database Control. The Database Control is similar in function to the Grid Control, but it can manage only a single database. If you want to administer more than one database on this system, you must either configure a separate Database Control for each database, or install Oracle Enterprise Manager 10<span class="italic">g</span> Grid Control.</p>
+</li>
+</ul>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Enterprise Manager 10g Concepts</span> and <span class="italic">Oracle Enterprise Manager 10g Installation and Basic Configuration</span> for more information about Oracle Enterprise Manager 10<span class="italic">g</span></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect2" -->
+<a id="CEGCIJJA" name="CEGCIJJA"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref190" name="sthref190"></a>
+<h3 class="sect2"><span class="secnum">1.7.2</span> Oracle Enterprise Manager Database Control</h3>
+<p><a id="sthref191" name="sthref191"></a>Oracle Enterprise Manager Database Control, which is installed by default with Oracle Database, provides a Web-based user interface that you can use to monitor, administer, and maintain an Oracle database. You can use it to perform all of your database administration tasks. You can also use it to determine information about the database, such as:</p>
+<ul>
+<li type="disc">
+<p>Instance name, database version, Oracle home location, media recovery options, and other instance data</p>
+</li>
+<li type="disc">
+<p>Current instance availability</p>
+</li>
+<li type="disc">
+<p>Database alert information</p>
+</li>
+<li type="disc">
+<p>Automatic notification of security alerts</p>
+</li>
+<li type="disc">
+<p>Ability to apply patches</p>
+</li>
+<li type="disc">
+<p>Session and SQL-related performance information</p>
+</li>
+<li type="disc">
+<p>Space usage metrics</p>
+</li>
+</ul>
+</div>
+<!-- class="sect2" -->
+<a id="CEGGIACC" name="CEGGIACC"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref192" name="sthref192"></a>
+<h3 class="sect2"><span class="secnum">1.7.3</span> Management Options for Preconfigured Databases</h3>
+<p><a id="sthref193" name="sthref193"></a><a id="sthref194" name="sthref194"></a>When you choose to create a preconfigured database during the installation, you must select the Oracle Enterprise Manager interface that you want to use to manage the database. The following options are available:</p>
+<ul>
+<li type="disc">
+<p>Use Grid Control for central database management.</p>
+<p>This option is available only if an Oracle Management Agent is installed on the system. When Oracle Universal Installer detects Oracle Management Agent on the system, you can choose this option and specify the Oracle Management Service that you want to use to manage the database.</p>
+<p>If an Oracle Management Agent is not installed, you must choose to use Database Control to manage the database. However, if you install Oracle Management Agent after you install Oracle Database, you can then use Grid Control to manage this database.</p>
+</li>
+<li type="disc">
+<p>Use Database Control for local database management.</p>
+<p>This option is selected by default if an Oracle Management Agent is not installed on the system. However, even if a Management Agent is installed, you can still choose to configure Database Control to manage the database.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect2" -->
+<a id="CEGJFHBI" name="CEGJFHBI"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref195" name="sthref195"></a>
+<h3 class="sect2"><span class="secnum">1.7.4</span> Management Options for Custom Databases</h3>
+<p>If you choose the Advanced database configuration option or choose to create a database during a <a id="sthref196" name="sthref196"></a>Custom installation, Oracle Universal Installer runs Database Configuration Assistant (DBCA) in interactive mode. Use Database Configuration Assistant to specify the Oracle Enterprise Manager interface that you want to use to manage the database. Alternatively, you can choose not to configure the database with Enterprise Manager.</p>
+<p>Oracle recommends that you configure the database to use Enterprise Manager during installation. However, if you choose not to configure the database to use Enterprise Manager during the installation, you can use Database Configuration Assistant after the installation to configure the database to use it.</p>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BGEGHEIC" name="BGEGHEIC"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref197" name="sthref197"></a>
+<h2 class="sect1"><span class="secnum">1.8</span> Database Backup and Recovery Options</h2>
+<p><a id="sthref198" name="sthref198"></a><a id="sthref199" name="sthref199"></a><a id="sthref200" name="sthref200"></a><a id="sthref201" name="sthref201"></a>If you choose to use Oracle Enterprise Manager Database Control during the installation, you can optionally enable automated database backups that use the Oracle-suggested default backup strategy.</p>
+<p><a id="sthref202" name="sthref202"></a><a id="sthref203" name="sthref203"></a><a id="sthref204" name="sthref204"></a><a id="sthref205" name="sthref205"></a>However, you do not have to enable automated backups during the installation. If you prefer, you can use Oracle Enterprise Manager Database Control or Grid Control to configure automated backups after you install the software and create a database.</p>
+<p>This section covers the following topics:</p>
+<ul>
+<li type="disc">
+<p><a href="#CEGGCIHC">Enabling Automated Backups</a></p>
+</li>
+<li type="disc">
+<p><a href="#CEGEDJDD">Backup Job Default Settings</a></p>
+</li>
+</ul>
+<a id="CEGGCIHC" name="CEGGCIHC"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref206" name="sthref206"></a>
+<h3 class="sect2"><span class="secnum">1.8.1</span> Enabling Automated Backups</h3>
+<p>If you enable automated backups, Oracle Enterprise Manager schedules a daily backup job that uses <a id="sthref207" name="sthref207"></a>Oracle Database Recovery Manager (RMAN) to back up all of the database files to an on disk storage area called the <a id="sthref208" name="sthref208"></a><a id="sthref209" name="sthref209"></a>flash recovery area. The first time the backup job runs, it creates a full backup of the database. Subsequent backup jobs perform incremental back-ups, which enable you to recover the database to its state at any point during the preceding 24 hours.</p>
+<p>To enable automated backup jobs during installation, you must specify the following information:</p>
+<ul>
+<li type="disc">
+<p>The location of the flash recovery area.</p>
+<p>You can choose to use either a file system directory or an Automatic Storage Management disk group for the flash recovery area. The default disk quota configured for the flash recovery area is 2 GB. For Automatic Storage Management disk groups, the required disk space depends on the redundancy level of the disk group that you choose. <a href="reqs.htm#BCFHFECH">Chapter 2</a> describes how to choose the location of the flash recovery area and identifies its disk space requirements.</p>
+</li>
+<li type="disc">
+<p>An operating system username and password for the backup job.</p>
+<p>Oracle Enterprise Manager uses the operating system credentials that you specify when running the backup job. The username that you specify must belong to the Windows group that identifies database administrators (the <code>ORA_DBA</code> group).</p>
+</li>
+</ul>
+</div>
+<!-- class="sect2" -->
+<a id="CEGEDJDD" name="CEGEDJDD"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref210" name="sthref210"></a>
+<h3 class="sect2"><span class="secnum">1.8.2</span> Backup Job Default Settings</h3>
+<p>If you enable automated backups after choosing one of the preconfigured databases during the installation, automated backup is configured with the following default settings:</p>
+<ul>
+<li type="disc">
+<p>The backup job is scheduled to run nightly at 2 a.m.</p>
+</li>
+<li type="disc">
+<p>The disk quota for the flash recovery area is 2 GB.</p>
+</li>
+</ul>
+<p>If you enable automated backups by using Database Configuration Assistant, either during or after the installation, you can specify a different start time for the backup job and a different disk quota for the flash recovery area.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p><span class="italic">Oracle Database 2 Day DBA</span> for information about using Oracle Enterprise Manager Database Control to configure or customize automated backups or to recover a backed up database</p>
+</li>
+<li type="disc">
+<p><span class="italic">Oracle Database Backup and Recovery Basics</span> or <span class="italic">Oracle Database Backup and Recovery Advanced User's Guide</span> for more detailed information about defining a backup strategy and backing up and recovering Oracle databases</p>
+</li>
+<li type="disc">
+<p><span class="italic">Oracle Secure Backup Installation Guide</span> if you plan to use Oracle Backup for your backup and recovery operations</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BGEGDGGE" name="BGEGDGGE"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref211" name="sthref211"></a>
+<h2 class="sect1"><span class="secnum">1.9</span> E-mail Notification Options</h2>
+<p><a id="sthref212" name="sthref212"></a><a id="sthref213" name="sthref213"></a>If you choose to use Oracle Enterprise Manager Database Control during the installation, you can configure Enterprise Manager to send e-mail when specific events occur. These events can include occurrences such as disk space reaching a critical limit (a threshold), or a database shutting down unexpectedly.</p>
+<p>If you choose to enable e-mail notifications, you must specify the following information:</p>
+<ul>
+<li type="disc">
+<p>The host name of an simple mail transport protocol (SMTP) server.</p>
+</li>
+<li type="disc">
+<p>The e-mail address that should receive the alerts.</p>
+<p>The e-mail address that you specify could belong to an individual or it could be a shared e-mail account or a distribution list.</p>
+</li>
+</ul>
+<p>You can use Enterprise Manager Database Control to set-up, change, or customize e-mail notifications after you have created the database.</p>
+</div>
+<!-- class="sect1" -->
+<a id="CIHHGABI" name="CIHHGABI"></a>
+<div class="sect1"><a id="sthref214" name="sthref214"></a>
+<h2 class="sect1"><span class="secnum">1.10</span> Upgrade Considerations<a id="sthref215" name="sthref215"></a><a id="sthref216" name="sthref216"></a><a id="sthref217" name="sthref217"></a></h2>
+<p><a id="sthref218" name="sthref218"></a>Oracle recommends installing Oracle Database 10g release 2 (10.2) into a new Oracle home directory. If you must install Oracle Database 10g release 2 (10.2) into an Oracle home directory that contains previously installed Oracle8<span class="italic">i</span> or Oracle9<span class="italic">i</span> components, then use Oracle Universal Installer to remove these components before beginning a new installation.</p>
+<p>Refer to <span class="italic">Oracle Database Upgrade Guide</span> before deciding to upgrade an existing database. Upgrade procedures on Windows are covered in <span class="italic">Oracle Database Upgrade Guide</span>. However, this section describes several Windows-specific issues to understand before following the instructions in <span class="italic">Oracle Database Upgrade Guide</span>.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a href="deinstall.htm#CIHDGGJJ">Chapter 6, " Removing Oracle Database Software "</a></td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+<p>This section contains these topics:</p>
+<ul>
+<li type="disc">
+<p><a href="#BABFDABE">Upgrading Databases that Use the AL24UTFFSS Character Set</a></p>
+</li>
+<li type="disc">
+<p><a href="#i1007026">Policies for Linking and Relinking Applications</a></p>
+</li>
+<li type="disc">
+<p><a href="#CIHCFCJJ">Oracle Real Application Clusters Upgrade Requirements</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABECEIJ">Downgrading a Database</a></p>
+</li>
+</ul>
+<a id="BABFDABE" name="BABFDABE"></a>
+<div class="sect2"><a id="sthref219" name="sthref219"></a>
+<h3 class="sect2"><span class="secnum">1.10.1</span> <a id="sthref220" name="sthref220"></a><a id="sthref221" name="sthref221"></a><a id="sthref222" name="sthref222"></a>Upgrading Databases that Use the AL24UTFFSS Character Set</h3>
+<p><a id="sthref223" name="sthref223"></a><a id="sthref224" name="sthref224"></a>To upgrade an existing database that uses the AL24UTFFSS character set, upgrade the database character set to UTF8 before upgrading to Oracle Database 10g release 2 (10.2). Oracle recommends that you use the <a id="sthref225" name="sthref225"></a>Character Set Scanner (<code>csscan</code>) utility for data analysis before attempting to upgrade your existing database character set. The Character Set Scanner utility checks all character data in the database and tests for the effects of, and problems with, changing the character set encoding.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a caution" title="This is a layout table to format a caution" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Caution:</p>
+AL32UTF8 <a id="sthref226" name="sthref226"></a><a id="sthref227" name="sthref227"></a>is the Oracle Database character set that is appropriate for XMLType data. It is equivalent to the IANA registered standard UTF-8 encoding, which supports all valid XML characters.
+<p>Do not confuse Oracle Database database character set UTF8 (no hyphen) with database character set AL32UTF8 or with character encoding UTF-8. Database character set UTF8 has been superseded by AL32UTF8. Do not use UTF8 for XML data. UTF8 supports only Unicode version 3.1 and earlier; it does not support all valid XML characters. AL32UTF8 has no such limitation.</p>
+<p>Using database character set UTF8 for XML data could potentially cause a fatal error or affect security negatively. If a character that is not supported by the database character set appears in an input-document element name, a replacement character (usually "?") is substituted for it. This will terminate parsing and raise an exception.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+</div>
+<!-- class="sect2" -->
+<a id="i1007026" name="i1007026"></a>
+<div class="sect2"><a id="sthref228" name="sthref228"></a>
+<h3 class="sect2"><span class="secnum">1.10.2</span> Policies for Linking and Relinking Applications</h3>
+<p>If you upgrade your Oracle database to 10g release 2 (10.2), then Oracle recommends that you upgrade the client software to 10g release 2 (10.2) as well. Keeping the server and client software at the same release number ensures maximum stability for your applications. In addition, the latest Oracle client software may provide added functionality and performance enhancements that were not available with previous releases.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Database Upgrade Guide</span> for rules regarding linking and relinking applications when you perform a feature release upgrade of the client software</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect2" -->
+<a id="CIHCFCJJ" name="CIHCFCJJ"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref229" name="sthref229"></a>
+<h3 class="sect2"><span class="secnum">1.10.3</span> Oracle Real Application Clusters Upgrade Requirements<a id="sthref230" name="sthref230"></a></h3>
+<p><a id="sthref231" name="sthref231"></a>Oracle recommends that you upgrade Oracle Real Application Clusters to 10g release 2 (10.2).</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Database Oracle Clusterware and Oracle Real Application Clusters (RAC) Installation Guide</span> for information regarding Oracle Real Applications Clusters upgrade requirements</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect2" -->
+<a id="BABECEIJ" name="BABECEIJ"></a>
+<div class="sect2"><a id="sthref232" name="sthref232"></a>
+<h3 class="sect2"><span class="secnum">1.10.4</span> Downgrading a Database</h3>
+<p><a id="sthref233" name="sthref233"></a><a id="sthref234" name="sthref234"></a><a id="sthref235" name="sthref235"></a>Steps to downgrade a database, including steps to change the <a id="sthref236" name="sthref236"></a>word size, are covered in<span class="italic">Oracle Database Upgrade Guide</span>.<a id="sthref237" name="sthref237"></a></p>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" --></div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="whatsnew.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="reqs.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;1996, 2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

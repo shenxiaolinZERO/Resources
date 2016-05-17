@@ -1,0 +1,622 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>D Installing and Configuring Oracle Database Using Response Files</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.5 Build 272" />
+<meta name="Date" content="August 18, 2005 19:51:01" />
+<meta name="doctitle" content="Oracle&reg; Database Installation Guide 10g Release 2 (10.2) for Microsoft Windows (32-Bit)" />
+<meta name="partno" content="B14316-01" />
+<meta name="docid" content="NTDBI" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Glossary" href="glossary.htm" title="Glossary" type="text/html" />
+<link rel="Prev" href="ofa.htm" title="Previous" type="text/html" />
+<link rel="Next" href="gblsupp.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14316.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database Installation Guide<br />
+10<i>g</i> Release 2 (10.2) for Microsoft Windows (32-Bit)</b><br />
+Part Number B14316-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="ofa.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="gblsupp.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top"><a href="../b14316.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="CHDICDJA" name="CHDICDJA"></a><a id="i634763" name="i634763"></a>
+<h1 class="appendix"><span class="secnum">D</span> <span class="bold"><a name="NTDBI008" id="NTDBI008"></a></span> Installing and Configuring <a id="ABC1162371" name="ABC1162371"></a>Oracle <a id="sthref1113" name="sthref1113"></a><a id="sthref1114" name="sthref1114"></a><a id="sthref1115" name="sthref1115"></a>Database Using Response Files</h1>
+<p>This appendix describes how to use response files to perform silent or noninteractive installations, configure network connections, and configure or start an Oracle database. It covers the following topics:</p>
+<ul>
+<li type="disc">
+<p><a href="#BBAHEGFF">How Response Files Work</a></p>
+</li>
+<li type="disc">
+<p><a href="#BBAEDBJG">Preparing a Response File</a></p>
+</li>
+<li type="disc">
+<p><a href="#BBAIEBDG">Running Oracle Universal Installer Using the Response File</a></p>
+</li>
+<li type="disc">
+<p><a href="#BBACCDJF">Running Net Configuration Assistant Using a Response File</a></p>
+</li>
+<li type="disc">
+<p><a href="#BBAFCFDH">Running Database Configuration Assistant Using a Response File</a></p>
+</li>
+</ul>
+<a id="BBAHEGFF" name="BBAHEGFF"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref1116" name="sthref1116"></a>
+<h2 class="sect1"><span class="secnum">D.1</span> How Response Files Work<a id="sthref1117" name="sthref1117"></a></h2>
+<p><a id="sthref1118" name="sthref1118"></a>You can automate the installation and configuration of Oracle software, either fully or partially, by specifying a response file when you start Oracle Universal Installer. Oracle Universal Installer uses the values contained in the response file to provide answers to some or all of Oracle Universal Installer prompts.</p>
+<p>Typically, Oracle Universal Installer runs in interactive mode, which means that it prompts you to provide information in graphical user interface (GUI) screens. When you use response files to provide this information, you run Oracle Universal Installer at a command prompt using either of the following modes:</p>
+<ul>
+<li type="disc">
+<p><a id="sthref1119" name="sthref1119"></a><span class="bold">Silent mode</span>:<a id="sthref1120" name="sthref1120"></a> Oracle Universal Installer does not display any screens. Instead it displays progress information in the command window where you started it. To use silent mode, you run <code>setup.exe</code> with the <code>-silent</code> parameter and include a response file, which contains responses to the Oracle Universal Installer prompts.</p>
+</li>
+<li type="disc">
+<p><a id="sthref1121" name="sthref1121"></a><span class="bold">Noninteractive <a id="sthref1122" name="sthref1122"></a>(or suppressed) mode</span>: Oracle Universal Installer only displays screens for which you did not supply information in the response file. You can use variables in the response file or command-line prompts to suppress other Oracle Universal Installer screens, such as Welcome and Summary, that do not prompt for information. To use noninteractive mode, run <code>setup.exe</code> without the <code>-silent</code> parameter, but include the response file or any other parameters that apply.</p>
+</li>
+</ul>
+<p><a id="sthref1123" name="sthref1123"></a>You define the settings for a silent or noninteractive installation by entering values for the variables listed in the response file. For instance, to specify the Oracle home name, you would supply the appropriate value for the <code>ORACLE_HOME_NAME</code> variable, as in the following example:</p>
+<pre xml:space="preserve" class="oac_no_warn">ORACLE_HOME_NAME="OraDBHome1"
+
+</pre>
+<p>Another way of specifying the response file's variable settings is to pass them as command line arguments when you run Oracle Universal Installer. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">SYSTEM_DRIVE</span>:\<span class="italic">setup.exe_location</span>&gt; setup -silent "ORACLE_HOME_NAME=OraDBHome1" ...
+
+</pre>
+<p><a id="sthref1124" name="sthref1124"></a><a id="sthref1125" name="sthref1125"></a><a id="sthref1126" name="sthref1126"></a>This method is particularly useful if you do not want to embed sensitive information, such as passwords, in the response file. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">SYSTEM_DRIVE</span>:\<span class="italic">setup.exe_location</span>&gt; setup -silent "s_dlgRBOPassword=binks342" ...
+
+</pre>
+<p>Ensure that you enclose the variable and its setting in quotes.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Universal Installer and OPatch User's Guide</span> for more information about response file formats.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref1127" name="sthref1127"></a>
+<h3 class="sect2"><span class="secnum">D.1.1</span> Reasons for Using Silent Mode or Noninteractive Mode</h3>
+<p><a href="#BBAICCFF">Table D-1</a>describes several reasons why you might want to run Oracle Universal Installer in silent mode or noninteractive mode:</p>
+<div class="tblhruleformal"><a id="sthref1128" name="sthref1128"></a><a id="BBAICCFF" name="BBAICCFF"></a>
+<p class="titleintable">Table D-1 Reasons for Using Silent Mode or Noninteractive Mode</p>
+<table class="HRuleFormal" title="Reasons for Using Silent Mode or Noninteractive Mode" summary="Reasons for using silent mode" dir="ltr" border="1" width="100%" frame="hsides" rules="rows" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t3">Mode</th>
+<th align="left" valign="bottom" id="r1c2-t3">Uses</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t3" headers="r1c1-t3">
+<p>Silent<a id="sthref1129" name="sthref1129"></a></p>
+</td>
+<td align="left" headers="r2c1-t3 r1c2-t3">
+<p>Use silent mode if you want to:</p>
+<ul>
+<li type="disc">
+<p>Complete an unattended installation</p>
+</li>
+<li type="disc">
+<p>Complete several similar installations on multiple systems without user interaction</p>
+</li>
+</ul>
+<p>Oracle Universal Installer displays progress information in the terminal that you used to start it, but it does not display the Oracle Universal Installer screens.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t3" headers="r1c1-t3">
+<p>Noninteractive<a id="sthref1130" name="sthref1130"></a></p>
+</td>
+<td align="left" headers="r3c1-t3 r1c2-t3">
+<p>Use noninteractive mode if you want to complete similar Oracle software installations on more than one system, providing default answers to some, but not all of Oracle Universal Installer prompts.</p>
+<p>If you do not specify information required for a particular Installer screen in the response file, Oracle Universal Installer displays that screen. It suppresses screens for which you have provided all of the required information.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblhruleformal" --></div>
+<!-- class="sect2" -->
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref1131" name="sthref1131"></a>
+<h3 class="sect2"><span class="secnum">D.1.2</span> General Procedure for Using Response Files<a id="sthref1132" name="sthref1132"></a></h3>
+<p><a id="sthref1133" name="sthref1133"></a>You will follow these <a id="sthref1134" name="sthref1134"></a>general steps to install Oracle Database using response files:</p>
+<ol type="1" start="1">
+<li>
+<p>If you plan to use Automatic Storage Management and need to configure new disks, you need to perform the following steps:</p>
+<ol type="a">
+<li>
+<p>Create partitions for DAS or SAN disks.</p>
+</li>
+<li>
+<p>Manually configure the disks using <code>asmtoolg</code> or <code>asmtool</code>.</p>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p><a href="reqs.htm#CHDCCEHC">"Step 3: Creating DAS or SAN Disk Partitions for an ASM Instance"</a></p>
+</li>
+<li type="disc">
+<p><a href="reqs.htm#CCHJJICA">"Step 4: Manually Configuring Disks for Automatic Storage Management"</a></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</li>
+<li>
+<p>Customize or create a response file for the installation settings that you need.</p>
+<p>You can create the response file by using either of the following methods:</p>
+<ul>
+<li type="disc">
+<p>Modifying one of the sample response files that are provided with the installation.</p>
+</li>
+<li type="disc">
+<p>Running Oracle Universal Installer at a command prompt using record mode.</p>
+</li>
+</ul>
+<p><a href="#BBAEDBJG">"Preparing a Response File"</a> explains how to customize or create the response file.</p>
+</li>
+<li>
+<p>Run Oracle Universal Installer from a command prompt, specifying the response file, using either silent or noninteractive mode.</p>
+<p><a href="#BBAIEBDG">"Running Oracle Universal Installer Using the Response File"</a> explains how to run Oracle Universal Installer with a response file.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BBAEDBJG" name="BBAEDBJG"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref1135" name="sthref1135"></a>
+<h2 class="sect1"><span class="secnum">D.2</span> Preparing a Response File</h2>
+<p>This section describes the methods that you can use to prepare a response file for use during silent-mode or noninteractive-mode installations:</p>
+<ul>
+<li type="disc">
+<p><a href="#BBAICFGJ">Editing a Response File Template</a></p>
+</li>
+<li type="disc">
+<p><a href="#BBADBFFI">Recording a Response File</a></p>
+</li>
+</ul>
+<a id="BBAICFGJ" name="BBAICFGJ"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref1136" name="sthref1136"></a>
+<h3 class="sect2"><span class="secnum">D.2.1</span> Editing a Response File Template<a id="sthref1137" name="sthref1137"></a></h3>
+<p>Oracle provides response file templates for each product and installation type, and for each configuration tool. These files are located in the <code>database\response</code> directory on the Oracle Database installation media.</p>
+<p>Creating a response file using a response file template is most useful for the Enterprise Edition or Standard Edition installation types.</p>
+<p><a href="#i634251">Table D-2</a> lists the available sample response files:</p>
+<div class="tblhruleformal"><a id="sthref1138" name="sthref1138"></a><a id="i634251" name="i634251"></a>
+<p class="titleintable">Table D-2 Response Files</p>
+<table class="HRuleFormal" title="Response Files " summary="This table describes the response files. Column 1 lists the names of the response file. Column 2 describes the installation type the file performs." dir="ltr" border="1" width="100%" frame="hsides" rules="rows" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t5">Response File Name</th>
+<th align="left" valign="bottom" id="r1c2-t5">This File Silently Runs The...</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t5" headers="r1c1-t5">
+<p><code>enterprise.rsp</code> <a id="sthref1139" name="sthref1139"></a><a id="sthref1140" name="sthref1140"></a></p>
+</td>
+<td align="left" headers="r2c1-t5 r1c2-t5">
+<p>Enterprise Edition installation type of Oracle Database<a id="sthref1141" name="sthref1141"></a></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t5" headers="r1c1-t5">
+<p><code>standard.rsp</code> <a id="sthref1142" name="sthref1142"></a><a id="sthref1143" name="sthref1143"></a></p>
+</td>
+<td align="left" headers="r3c1-t5 r1c2-t5">
+<p>Standard Edition installation type of Oracle Database<a id="sthref1144" name="sthref1144"></a></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t5" headers="r1c1-t5">
+<p><code>personal.rsp</code> <a id="sthref1145" name="sthref1145"></a><a id="sthref1146" name="sthref1146"></a></p>
+</td>
+<td align="left" headers="r4c1-t5 r1c2-t5">
+<p>Personal Edition installation type of Oracle Database<a id="sthref1147" name="sthref1147"></a></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t5" headers="r1c1-t5">
+<p><code>custom.rsp</code> <a id="sthref1148" name="sthref1148"></a><a id="sthref1149" name="sthref1149"></a></p>
+</td>
+<td align="left" headers="r5c1-t5 r1c2-t5">
+<p>Custom installation type of Oracle Database<a id="sthref1150" name="sthref1150"></a></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t5" headers="r1c1-t5">
+<p><code>dbca.rsp</code> <a id="sthref1151" name="sthref1151"></a><a id="sthref1152" name="sthref1152"></a></p>
+</td>
+<td align="left" headers="r6c1-t5 r1c2-t5">
+<p>Database Configuration Assistant<a id="sthref1153" name="sthref1153"></a></p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t5" headers="r1c1-t5">
+<p><code>netca.rsp</code><a id="sthref1154" name="sthref1154"></a><a id="sthref1155" name="sthref1155"></a></p>
+</td>
+<td align="left" headers="r7c1-t5 r1c2-t5">
+<p>Oracle Net Configuration Assistant <a id="sthref1156" name="sthref1156"></a>&nbsp;</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r8c1-t5" headers="r1c1-t5">
+<p><code>emca.rsp</code><a id="sthref1157" name="sthref1157"></a><a id="sthref1158" name="sthref1158"></a></p>
+</td>
+<td align="left" headers="r8c1-t5 r1c2-t5">
+<p>Enterprise Manager Configuration Assistant<a id="sthref1159" name="sthref1159"></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblhruleformal" -->
+<p>To copy and modify a response file:</p>
+<ol type="1" start="1">
+<li>
+<p>Copy the appropriate response files from the <code>database\response</code> directory on the Oracle Database media to your hard drive.</p>
+</li>
+<li>
+<p>Modify the response files with a text file editor.</p>
+<p>In addition to editing settings specific to the Oracle Database installation, check that the <code>FROM_LOCATION</code> path is correct and points to the <code>products.xml</code> file in the <code>stage</code> directory in the installation media. You may want to set this variable to point to an absolute path, for example:</p>
+<pre xml:space="preserve" class="oac_no_warn">FROM_LOCATION="\\myserver\database\stage\products.xml"
+
+</pre>
+<p>Remember that you can specify sensitive information, such as passwords, at the command line rather than within the response file. <a href="#BBAHEGFF">"How Response Files Work"</a> explains this method.</p>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<span class="italic">Oracle Universal Installer and OPatch User's Guide</span> for detailed information on creating response files. In an installed Oracle Database, select <span class="bold">Start</span>, then <span class="bold">Programs</span>, then <span class="bold">Oracle -</span> <span class="bolditalic">HOME_NAME</span>, then <span class="bold">Oracle Installation Products</span>, then <span class="bold">Universal Installer Concepts Guide</span>. It appears in HTML format.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</li>
+<li>
+<p>Run the response file by following the instructions in the <a href="#BBAIEBDG">"Running Oracle Universal Installer Using the Response File"</a> section.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="BBADBFFI" name="BBADBFFI"></a>
+<div class="sect2"><!-- infolevel="all" infotype="General" --><a id="sthref1160" name="sthref1160"></a>
+<h3 class="sect2"><span class="secnum">D.2.2</span> Recording a Response File</h3>
+<p><a id="sthref1161" name="sthref1161"></a>You can create a response file by running Oracle Universal Installer in interactive mode using <a id="sthref1162" name="sthref1162"></a><a id="sthref1163" name="sthref1163"></a>record mode. This method is most useful for custom or software-only installations.</p>
+<p>Recording the response file generates the response file immediately after you complete the Summary window, so you do not need to actually install Oracle Database to create the response file. After you create the response file in this manner, you can customize it to your needs.</p>
+<p>If you want to use record mode during a noninteractive mode installation, Oracle Universal Installer records the variable values that were specified in the original source response file into the new response file.</p>
+<div align="center">
+<div class="inftblnote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">Note:</p>
+You cannot use record mode to create a response file based on the <a id="sthref1164" name="sthref1164"></a>Basic installation type.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnote --></div>
+<p>To record a response file:</p>
+<ol type="1" start="1">
+<li>
+<p>Ensure that the computer on which you are creating the response file has met the requirements described in <a href="reqs.htm#BCFHFECH">Chapter 2</a>.</p>
+</li>
+<li>
+<p>At the command prompt, use the <code>cd</code> command to change to the directory that contains the Oracle Universal Installer <code>setup.exe</code> executable.</p>
+<p>On the installation DVD, <code>setup.exe</code> is located in the <code>database</code> directory. Alternatively, navigate to the directory where you downloaded or copied the installation files.</p>
+</li>
+<li>
+<p>Enter the following command:</p>
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">SYSTEM_DRIVE</span>:\<span class="italic">setup.exe_location</span>&gt; setup -record -destinationFile <span class="italic">response_file_name</span>
+
+</pre>
+<p>Replace <code><span class="codeinlineitalic">response_file_name</span></code> with the complete path for the new response file. For example:</p>
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">SYSTEM_DRIVE</span>:\<span class="italic">setup.exe_location</span>&gt; setup -record -destinationFile c:\response_files\install_oracle10_2.rsp
+
+</pre></li>
+<li>
+<p>After Oracle Universal Installer launches, enter the installation settings, which will be recorded into the response file.</p>
+</li>
+<li>
+<p>When the Summary window appears, do one of the following:</p>
+<ul>
+<li type="disc">
+<p>Click <span class="bold">Install</span> to create the response file and continue with the installation.</p>
+</li>
+<li type="disc">
+<p>Click <span class="bold">Cancel</span> if you only want to create the response file but not continue with the installation. The installation will stop, but the settings you have entered will be recorded in the response file.</p>
+</li>
+</ul>
+<p>Afterwards, Oracle Universal Installer saves your new response file using the path and file name you specified on the command line.</p>
+</li>
+<li>
+<p>Edit the new response file to have any environment-specific changes for the computer on which you will run it.</p>
+<p>In addition to editing settings specific to the Oracle Database installation, check that the <code>FROM_LOCATION</code> path is correct and points to the <code>products.xml</code> file in the <code>stage</code> directory in the installation media. You may want to set this variable to point to an absolute path, for example:</p>
+<pre xml:space="preserve" class="oac_no_warn">FROM_LOCATION="\\myserver\database\response\stage\products.xml"
+
+</pre>
+<p>Remember that you can specify sensitive information, such as passwords, at the command line rather than within the response file. <a href="#BBAHEGFF">"How Response Files Work"</a> explains this method.</p>
+</li>
+<li>
+<p>Run the response file by following the instructions in the <a href="#BBAIEBDG">"Running Oracle Universal Installer Using the Response File"</a> section, next.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="BBAIEBDG" name="BBAIEBDG"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref1165" name="sthref1165"></a>
+<h2 class="sect1"><span class="secnum">D.3</span> Running Oracle Universal Installer Using the Response File<a id="sthref1166" name="sthref1166"></a></h2>
+<p>At this stage, you are ready to run Oracle Universal Installer at the command line, specifying the response file you created, to perform the installation. The Oracle Universal Installer executable, <code>setup.exe</code>, provides several options. For help information on the full set of these options, run <code>setup.exe</code> with the <code>-help</code> option, for example:</p>
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">SYSTEM_DRIVE</span>:\<span class="italic">setup.exe_location</span>&gt; setup -help
+
+</pre>
+<p>A new command window appears, with the "Preparing to launch..." message. In a moment, the help information appears in that window.</p>
+<p>To run Oracle Universal Installer and specify a response file:</p>
+<ol type="1" start="1">
+<li>
+<p>Place the response file on the computer where you want to install Oracle Database.</p>
+</li>
+<li>
+<p>At a command prompt, run Oracle Universal Installer with the appropriate response file. For example: <a id="sthref1167" name="sthref1167"></a><a id="sthref1168" name="sthref1168"></a></p>
+<pre xml:space="preserve" class="oac_no_warn"><span class="italic">SYSTEM_DRIVE</span>:\<span class="italic">setup.exe_location</span>&gt; setup [-silent] "<span class="italic">variable</span>=<span class="italic">setting</span>" [-nowelcome] [-noconfig] [-nowait] -responseFile <span class="italic">filename</span> 
+
+</pre>
+<p>where:</p>
+<ul>
+<li type="disc">
+<p><code><span class="codeinlineitalic">filename</span></code>: Identifies the full path of the response file.</p>
+</li>
+<li type="disc">
+<p><code>-silent</code>: Runs Oracle Universal Installer in silent mode and suppresses the Welcome window. When you use -silent, then the -nowelcome option is not necessary.</p>
+</li>
+<li type="disc">
+<p><code>"</code><code><span class="codeinlineitalic">variable</span></code><code>=</code><code><span class="codeinlineitalic">setting</span></code><code>"</code> refers to a variable within the response file that you may prefer to run at the command line rather than set in the response file. Enclose the variable and its setting in quotes.</p>
+</li>
+<li type="disc">
+<p><code>-nowelcome</code>: Suppresses the <a id="sthref1169" name="sthref1169"></a>Welcome window that appears during installation.</p>
+</li>
+<li type="disc">
+<p><code>-noconfig</code>: Suppresses running the <a id="sthref1170" name="sthref1170"></a>configuration<a id="sthref1171" name="sthref1171"></a><a id="sthref1172" name="sthref1172"></a> assistants during installation, performing a software-only installation instead.</p>
+</li>
+<li type="disc">
+<p><code>-nowait</code>: Closes the console window when the silent installation completes.</p>
+</li>
+</ul>
+</li>
+</ol>
+<div align="center">
+<div class="inftblnotealso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<ul>
+<li type="disc">
+<p>"Installing Oracle Products" in <span class="italic">Oracle Universal Installer and OPatch User's Guide</span> for more information about installing on using response files</p>
+</li>
+<li type="disc">
+<p>"Deinstalling Products" in <span class="italic">Oracle Universal Installer and OPatch User's Guide</span> for <a id="sthref1173" name="sthref1173"></a>more information about deinstalling using response files</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblnotealso --></div>
+</div>
+<!-- class="sect1" -->
+<a id="BBACCDJF" name="BBACCDJF"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref1174" name="sthref1174"></a>
+<h2 class="sect1"><span class="secnum">D.4</span> Running Net Configuration Assistant Using a Response File<a id="sthref1175" name="sthref1175"></a><a id="sthref1176" name="sthref1176"></a><a id="sthref1177" name="sthref1177"></a></h2>
+<p>When you run Net Configuration Assistant with a response file, you run it in silent mode. This lets you configure and start an Oracle Net listener on the system, configure naming methods, and configure Oracle Net service names. To run NetCA in silent mode, use the <code><a id="sthref1178" name="sthref1178"></a>netca.rsp</code> response file.</p>
+<p>To create a Net Configuration Assistant response file:</p>
+<ol type="1" start="1">
+<li>
+<p>Copy the <code>netca.rsp</code> response file template from the response file directory to a directory on your system.</p>
+<p>The <code>netca.rsp</code> is located in the <code>database\response</code> directory on the Oracle Database installation media.</p>
+</li>
+<li>
+<p>Open the response file in a text editor.</p>
+</li>
+<li>
+<p>Edit the file, following the instructions in the file.</p>
+<p>Net Configuration Assistant fails if you do not correctly configure the <code>netca.rsp</code> response file.</p>
+</li>
+</ol>
+<p>To run Net Configuration Assistant using the response file you just created:</p>
+<ol type="1" start="1">
+<li>
+<p>At a command prompt, set the <code>ORACLE_HOME</code> environment variable to specify the correct Oracle home directory, for example:</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\&gt; set ORACLE_HOME = c:\oracle\product\10.2.0\db_1
+
+</pre></li>
+<li>
+<p>Run Net Configuration Assistant in silent mode as follows, replacing <code><span class="codeinlineitalic">local_dir</span></code> with the directory where you placed your version of the <code>netca.rsp</code> response file:</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\&gt; <span class="italic">ORACLE_BASE</span>\<span class="italic">ORACLE_HOME</span>\bin&gt; netca /silent /responsefile /<span class="italic">local_dir</span>\<span class="italic">netca.rsp</span>
+
+</pre>
+<p>For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\&gt; <span class="italic">ORACLE_BASE</span>\<span class="italic">ORACLE_HOME</span>\bin&gt; netca /silent /responsefile /c:\oracle_response_files\mynetca.rsp
+</pre></li>
+</ol>
+</div>
+<!-- class="sect1" -->
+<a id="BBAFCFDH" name="BBAFCFDH"></a>
+<div class="sect1"><!-- infolevel="all" infotype="General" --><a id="sthref1179" name="sthref1179"></a>
+<h2 class="sect1"><span class="secnum">D.5</span> Running Database Configuration Assistant Using a Response File<a id="sthref1180" name="sthref1180"></a><a id="sthref1181" name="sthref1181"></a></h2>
+<p>You can run Database Configuration Assistant in silent or noninteractive mode to configure and start an Oracle database on your system. To run Database Configuration Assistant in silent or noninteractive mode, use the <code>dbca.rsp</code> response file.</p>
+<p>To create a Database Configuration Assistant response file:</p>
+<ol type="1" start="1">
+<li>
+<p>Copy the <code>dbca.rsp</code> response file template from the response file directory to a directory on your system.</p>
+<p>The <a id="sthref1182" name="sthref1182"></a><code>dbca.rsp</code> response file is located in the <code>database\response</code> directory on the Oracle Database installation media.</p>
+</li>
+<li>
+<p>Open the <code>dbca.rsp</code> response file in a text editor.</p>
+</li>
+<li>
+<p>Edit the <code>dbca.rsp</code> file, following the instructions in the file.</p>
+<p>Database Configuration Assistant fails if you do not correctly configure the <code>dbca.rsp</code> response file.</p>
+</li>
+</ol>
+<p>To run Database Configuration Assistant using the response file you just created:</p>
+<ol type="1" start="1">
+<li>
+<p>At a command prompt, set the <code>ORACLE_HOME</code> environment variable to specify the correct Oracle home directory, for example:</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\&gt; set ORACLE_HOME = c:\oracle\product\10.2.0\db_1
+
+</pre></li>
+<li>
+<p>Run Database Configuration Assistant in silent or noninteractive mode using the following syntax:</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\<span class="italic">ORACLE_BASE</span>\<span class="italic">ORACLE_HOME</span>\bin&gt; dbca {-progressOnly | -silent} [-cloneTemplate] \[-datafileDestination /<span class="italic">datafilepath</span>] -responseFile /<span class="italic">local_dir</span>/dbca.rsp
+
+</pre>
+<p>where:</p>
+<ul>
+<li type="disc">
+<p><code>-silent</code> runs Database Configuration Assistant in silent mode</p>
+</li>
+<li type="disc">
+<p><code>-progressOnly</code> runs Database Configuration Assistant in noninteractive mode</p>
+</li>
+<li type="disc">
+<p><code>-cloneTemplate</code> lets you create one of the following preconfigured databases:</p>
+<ul>
+<li type="circle">
+<p>General purpose</p>
+</li>
+<li type="circle">
+<p>Transaction processing</p>
+</li>
+<li type="circle">
+<p>Data warehouse</p>
+</li>
+</ul>
+</li>
+<li type="disc">
+<p><code>-datafileDestination</code> specifies the parent directory where you want to create the database files. By default, this directory is <code><span class="codeinlineitalic">ORACLE_BASE</span></code><code>\</code><code><span class="codeinlineitalic">ORACLE_HOME</span></code><code>\oradata</code>.</p>
+</li>
+<li type="disc">
+<p><code>/local_dir</code> is the full path of the directory where you copied the <code>dbca.rsp</code> response file template.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>For example:</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\<span class="italic">&gt; ORACLE_BASE</span>\<span class="italic">ORACLE_HOME</span>\bin&gt; dbca -progressOnly -cloneTemplate -responseFile
+         /c:\oracle_response_files\mydbca.rsp
+
+</pre>
+<p>As an alternative to creating a database using a response file, you can run <code>dbca</code> at the command line by specifying all the required information as command line options. For information about the list of options supported, enter the following command:</p>
+<pre xml:space="preserve" class="oac_no_warn">c:\&gt; <span class="italic">ORACLE_BASE</span>\<span class="italic">ORACLE_HOME</span>\bin\dbca -help<a id="sthref1183" name="sthref1183"></a>
+</pre></div>
+<!-- class="sect1" --></div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="ofa.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="gblsupp.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;1996, 2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PREREQUISITETESTS>
+    
+    <PREREQUISITESET NAME="oracle.server_EE_cluster_install">
+        <PREREQUISITESETREF NAME="oracle.server_EE"/>
+        <PREREQUISITESETREF NAME="clusterTests"/>
+    </PREREQUISITESET>
+
+    <PREREQUISITESET NAME="oracle.server_SE_cluster_install">
+        <PREREQUISITESETREF NAME="oracle.server_SE"/>
+        <PREREQUISITESETREF NAME="clusterTests"/>
+    </PREREQUISITESET>
+    
+    <PREREQUISITESET NAME="oracle.server_PE_cluster_install">
+        <PREREQUISITESETREF NAME="oracle.server_PE"/>
+        <PREREQUISITESETREF NAME="clusterTests"/>
+    </PREREQUISITESET>
+
+    <PREREQUISITESET NAME="oracle.server_Custom_cluster_install">
+        <PREREQUISITESETREF NAME="oracle.server_Custom"/>
+        <PREREQUISITESETREF NAME="clusterTests"/>
+    </PREREQUISITESET>
+    
+    <PREREQUISITESET NAME="oracle.server_EE">
+        <PREREQUISITESETREF NAME="genericTests"/>
+        <PREREQUISITESETREF NAME="asmTests"/>
+        <PREREQUISITEREF NAME="CompatibilityChecks" SEVERITY="Error"/>
+    </PREREQUISITESET>
+    
+    <PREREQUISITESET NAME="oracle.server_SE">
+        <PREREQUISITESETREF NAME="genericTests"/>
+        <PREREQUISITESETREF NAME="asmTests"/>
+        <PREREQUISITEREF NAME="CompatibilityChecks" SEVERITY="Error"/>
+    </PREREQUISITESET>
+    
+    <PREREQUISITESET NAME="oracle.server_PE">
+        <PREREQUISITESETREF NAME="genericTests"/>
+        <PREREQUISITESETREF NAME="asmTests"/>
+        <PREREQUISITEREF NAME="CompatibilityChecks" SEVERITY="Error"/>
+    </PREREQUISITESET>
+    
+    <PREREQUISITESET NAME="oracle.server_Custom">
+        <PREREQUISITESETREF NAME="customTests"/>
+        <PREREQUISITESETREF NAME="asmTests"/>
+        <PREREQUISITEREF NAME="CompatibilityChecks_Custom" SEVERITY="Error"/>
+    </PREREQUISITESET>
+
+    <PREREQUISITESET NAME="clusterTests">
+        <PREREQUISITEREF NAME="Detect10.2CRS" SEVERITY="Error"/>
+    </PREREQUISITESET>
+
+    <PREREQUISITESET NAME="genericTests">
+        <PREREQUISITESETREF NAME="genericSystemTests"/>
+        <PREREQUISITESETREF NAME="genericHomeTests"/>
+    </PREREQUISITESET>
+
+    <PREREQUISITESET NAME="asmTests">
+        <PREREQUISITEREF NAME="DetectAnyInvalidASMHome" SEVERITY="Error"/>
+    </PREREQUISITESET>
+
+    <PREREQUISITESET NAME="genericSystemTests">  
+        <PREREQUISITEREF NAME="CertifiedVersions" SEVERITY="Error"/>
+        <PREREQUISITEREF NAME="ServicePackChecks" SEVERITY="Error"/>
+        <PREREQUISITEREF NAME="TotalMemory" SEVERITY="Warning"/>
+        <PREREQUISITEREF NAME="DetectIfDHCPAssignedIP" SEVERITY="Warning"/>
+    </PREREQUISITESET>
+
+    <PREREQUISITESET NAME="genericHomeTests">  
+        <PREREQUISITEREF NAME="OracleBase" SEVERITY="Warning"/>
+        <PREREQUISITEREF NAME="OracleHomeSpace" SEVERITY="Warning"/>
+	<PREREQUISITEREF NAME="InstallOnRoot" SEVERITY="Error"/>
+    </PREREQUISITESET>  
+  
+    <PREREQUISITESET NAME="customTests">
+        <PREREQUISITEREF NAME="CertifiedVersions" SEVERITY="Error"/>
+        <PREREQUISITEREF NAME="ServicePackChecks" SEVERITY="Error"/>
+        <PREREQUISITEREF NAME="TotalMemory" SEVERITY="Warning"/>
+        <PREREQUISITEREF NAME="OracleBase" SEVERITY="Warning"/>
+        <PREREQUISITEREF NAME="InstallOnRoot" SEVERITY="Error"/>
+    </PREREQUISITESET>
+
+    <PREREQUISITE NAME="CertifiedVersions"
+                EXTERNALNAME="Is the Oracle software certified on the current O/S?"
+                EXTERNALNAMEID="S_CHECK_CERTIFIED_VERSIONS@oracle.install.prereqs.resources.PrereqRes" SEVERITY="Error">
+        <DESCRIPTION TEXT="This is a prerequisite condition to test whether the Oracle software is certified on the current O/S or not."
+                TEXTID="S_CHECK_CERTIFIED_VERSIONS_DESCRIPTION@oracle.install.prereqs.resources.PrereqRes"/>
+        <RULESETREF NAME="OSChecks" RULE="CertifiedVersions" FILE="db/refhost.xml"
+                RESULTS_FILE="install_rule_results.xml"/>
+        <PROBLEM TEXT="This Oracle software is not certified on the current O/S."
+                TEXTID="S_CHECK_CERTIFIED_VERSIONS_ERROR@oracle.install.prereqs.resources.PrereqRes"/>
+        <RECOMMENDATION TEXT="Make sure you are installing the software on a certified platform." 
+                TEXTID="S_CHECK_CERTIFIED_VERSIONS_ACTION@oracle.install.prereqs.resources.PrereqRes"/>
+    </PREREQUISITE>
+
+	<PREREQUISITE NAME="ServicePackChecks"
+                EXTERNALNAME="Checking service pack"
+                EXTERNALNAMEID="S_CHECK_SERVICE_PACK@oracle.install.prereqs.resources.PrereqRes"
+                SEVERITY="Error">
+        <DESCRIPTION TEXT="This is a prerequisite condition to test whether the Service Pack level recommended for installing the product is available on the system."
+                TEXTID="S_CHECK_SERVICE_PACK_DESCRIPTION@oracle.install.prereqs.resources.PrereqRes"/>
+        <RULESETREF NAME="ServicePackChecks" RULE="CheckServicePack" FILE="db/refhost.xml"
+                RESULTS_FILE="install_rule_results.xml"/>
+        <PROBLEM TEXT="The system does not have the minimum Service Pack level."
+                TEXTID="S_CHECK_SERVICE_PACK_ERROR@oracle.install.prereqs.resources.PrereqRes">
+        </PROBLEM>
+        <RECOMMENDATION TEXT="Install the recommended Service Pack."
+                TEXTID="S_CHECK_SERVICE_PACK_ACTION@oracle.install.prereqs.resources.PrereqRes"/>
+    </PREREQUISITE>
+    
+    <PREREQUISITE NAME="TotalMemory"
+                EXTERNALNAME="Does the system have sufficient physical memory?"
+                EXTERNALNAMEID="S_CHECK_TOTAL_MEMORY@oracle.install.prereqs.resources.PrereqRes"
+                SEVERITY="Warning">
+        <DESCRIPTION TEXT="This is a prerequisite condition to test whether the system has sufficient physical memory."
+                TEXTID="S_CHECK_TOTAL_MEMORY_DESCRIPTION@oracle.install.prereqs.resources.PrereqRes"/>
+        <RULESETREF NAME="SystemChecks" RULE="CheckPhysicalMemory" FILE="db/refhost.xml"
+                RESULTS_FILE="install_rule_results.xml"/>
+        <PROBLEM TEXT="The system does not have sufficient physical memory to perform the install."
+                TEXTID="S_CHECK_TOTAL_MEMORY_ERROR@oracle.install.prereqs.resources.PrereqRes">
+        </PROBLEM>
+        <RECOMMENDATION TEXT="Upgrade the memory for your system in order for Oracle software to function."
+                TEXTID="S_CHECK_TOTAL_MEMORY_ACTION@oracle.install.prereqs.resources.PrereqRes"/>
+    </PREREQUISITE>
+
+    <PREREQUISITE NAME="CompatibilityChecks"
+                EXTERNALNAME="Oracle Home compatibility check?"
+                EXTERNALNAMEID="S_CHECK_ORACLE_HOME_COMPATIBILITY_DB@oracle.install.prereqs.resources.PrereqRes"
+                SEVERITY="Error">
+        <DESCRIPTION TEXT="This is a prerequisite condition to test whether the oracle home is compatible or not."
+                 TEXTID="S_CHECK_ORACLE_HOME_COMPATIBILITY_DB_DESCRIPTION@oracle.install.prereqs.resources.PrereqRes"/>
+        <RULESETREF NAME="CompatibilityChecks" RULE="CheckCompatibility"
+                FILE="db/refhost.xml" RESULTS_FILE="install_rule_results.xml"/>
+        <PROBLEM TEXT="Oracle Home not compatible."
+                TEXTID="S_CHECK_ORACLE_HOME_COMPATIBILITY_DB_ERROR@oracle.install.prereqs.resources.PrereqRes"/>
+        <RECOMMENDATION TEXT="Your Oracle Home is incompatible."
+                TEXTID="S_CHECK_ORACLE_HOME_COMPATIBILITY_DB_ACTION@oracle.install.prereqs.resources.PrereqRes"/>
+    </PREREQUISITE>
+
+    <PREREQUISITE NAME="CompatibilityChecks_Custom"
+	    EXTERNALNAME="Oracle Home compatibility check?"
+	    EXTERNALNAMEID="S_CHECK_ORACLE_HOME_COMPATIBILITY_DB@oracle.install.prereqs.resources.PrereqRes"
+	    SEVERITY="Error">
+	    <DESCRIPTION TEXT="This is a prerequisite condition to test whether the oracle home is compatible or not."
+		    TEXTID="S_CHECK_ORACLE_HOME_COMPATIBILITY_DB_DESCRIPTION@oracle.install.prereqs.resources.PrereqRes"/>
+	    <RULESETREF NAME="CompatibilityChecks" RULE="CheckCompatibility"
+		    FILE="db/refhost_Custom.xml" RESULTS_FILE="install_rule_results.xml"/>
+	    <PROBLEM TEXT="Oracle Home not compatible."
+		    TEXTID="S_CHECK_ORACLE_HOME_COMPATIBILITY_DB_ERROR@oracle.install.prereqs.resources.PrereqRes"/>
+	    <RECOMMENDATION TEXT="Your Oracle Home is incompatible."
+		    TEXTID="S_CHECK_ORACLE_HOME_COMPATIBILITY_DB_ACTION@oracle.install.prereqs.resources.PrereqRes"/>
+    </PREREQUISITE>
+    
+    <PREREQUISITE NAME="OracleBase"
+                EXTERNALNAME="ORACLE_HOME should not be a parent of ORACLE_BASE"
+                EXTERNALNAMEID="S_CHECK_ORACLE_BASE@oracle.install.prereqs.resources.PrereqRes"
+                SEVERITY="Warning">
+        <DESCRIPTION TEXT="This is a prerequisite condition to test whether the ORACLE_BASE environment variable is set to a subdirectory of the Oracle home into which the install is taking place."
+                TEXTID="S_CHECK_ORACLE_BASE_DESCRIPTION@oracle.install.prereqs.resources.PrereqRes"/>
+        <RULESETREF NAME="OracleHomeChecks" RULE="CheckOracleBase" FILE="db/refhost.xml"
+                RESULTS_FILE="install_rule_results.xml"/>
+        <PROBLEM TEXT="The environment variable 'ORACLE_BASE' is set to be a subdirectory of the Oracle home."
+                TEXTID="S_CHECK_ORACLE_BASE_ERROR@oracle.install.prereqs.resources.PrereqRes">
+        </PROBLEM>
+        <RECOMMENDATION TEXT="Unset the ORACLE_BASE or set it to be a parent of the Oracle home."
+                TEXTID="S_CHECK_ORACLE_BASE_ACTION@oracle.install.prereqs.resources.PrereqRes"/>
+    </PREREQUISITE>
+
+    <PREREQUISITE NAME="OracleHomeSpace"
+                EXTERNALNAME="Checking for spaces in the ORACLE_HOME provided by the user"
+                EXTERNALNAMEID="S_CHECK_ORACLE_HOME_SPACE@oracle.install.prereqs.resources.PrereqRes"
+                SEVERITY="Warning">
+        <DESCRIPTION TEXT="This is a prerequisite condition to test whether ORACLEHOME value has spaces ."
+                TEXTID="S_CHECK_ORACLE_HOME_SPACE_DESCRIPTION@oracle.install.prereqs.resources.PrereqRes"/>
+        <RULESETREF NAME="OracleHomeChecks" RULE="CheckForSpaces" FILE="db/refhost.xml"
+                RESULTS_FILE="install_rule_results.xml"/>
+        <PROBLEM TEXT="The environment variable 'ORACLE_HOME' has spaces."
+                TEXTID="S_CHECK_ORACLE_HOME_SPACE_ERROR@oracle.install.prereqs.resources.PrereqRes">
+        </PROBLEM>
+        <RECOMMENDATION TEXT="Remove the spaces from the chosen ORACLE_HOME ."
+                TEXTID="S_CHECK_ORACLE_HOME_SPACE_ACTION@oracle.install.prereqs.resources.PrereqRes"/>
+    </PREREQUISITE>
+
+ <PREREQUISITE NAME="InstallOnRoot"
+                EXTERNALNAME="Installation cannot be done on the root drive"
+                EXTERNALNAMEID="S_CHECK_INSTALL_ON_ROOT_DRIVE@oracle.install.prereqs.resources.PrereqRes"
+                SEVERITY="Error">
+        <DESCRIPTION TEXT="This is a prerequisite condition to test whether installation is done on Root drive."
+                TEXTID="S_CHECK_INSTALL_ON_ROOT_DRIVE_DESCRIPTION@oracle.install.prereqs.resources.PrereqRes"/>
+        <RULESETREF NAME="OracleHomeChecks" RULE="CheckIfInstallOnRoot" FILE="db/refhost.xml"
+                RESULTS_FILE="install_rule_results.xml"/>
+        <PROBLEM TEXT="The installation cannot be done on the root drive. "
+                TEXTID="S_CHECK_INSTALL_ON_ROOT_DRIVE_ERROR@oracle.install.prereqs.resources.PrereqRes">
+        </PROBLEM>
+        <RECOMMENDATION TEXT="You may need to chose a folder to proceed with the installation."
+                TEXTID="S_CHECK_INSTALL_ON_ROOT_DRIVE_ACTION@oracle.install.prereqs.resources.PrereqRes"/>
+    </PREREQUISITE>
+
+	<PREREQUISITE NAME="DetectIfDHCPAssignedIP"
+                EXTERNALNAME="Check to see if  the IP is a DHCP assigned one or a static one "
+                EXTERNALNAMEID="S_CHECK_DHCP_ASSIGNED_IP@oracle.install.prereqs.resources.PrereqRes"
+                SEVERITY="Warning">
+        <DESCRIPTION TEXT="This is a prerequisite condition to test whether the IP address assigned to the m/c is a DHCP assiged one or a static one."
+                TEXTID="S_CHECK_DHCP_ASSIGNED_IP_DESCRIPTION@oracle.install.prereqs.resources.PrereqRes"/>
+        <RULESETREF NAME="StaticIPCheck" RULE="checkIfStaticIP" FILE="db/refhost.xml"
+                RESULTS_FILE="install_rule_results.xml"/>
+        <PROBLEM TEXT="The install has detected that the IP address assigned to the m/c is assgined by a DHCP server. Please ensure that the IP address should be  a  static one."
+                TEXTID="S_CHECK_DHCP_ASSIGNED_IP_ERROR@oracle.install.prereqs.resources.PrereqRes">
+        </PROBLEM>
+        <RECOMMENDATION TEXT="Please set up Microsoft LoopBack Adapter and ensure that it is the primary adapter"
+                TEXTID="S_CHECK_DHCP_ASSIGNED_IP_WIN_ACTION@oracle.install.prereqs.resources.PrereqRes"/>
+    </PREREQUISITE>
+
+  <PREREQUISITE NAME="Detect10.2CRS"
+                EXTERNALNAME="Checking Oracle Clusterware version ..."
+                EXTERNALNAMEID="S_CHECK_10.2_CRS@oracle.install.prereqs.resources.PrereqRes"
+                SEVERITY="Error">
+        <DESCRIPTION TEXT="This is a prerequisite condition to test if all nodes in the cluster have had the Clusterware upgraded to 10g Release 2 (10.2)."
+                TEXTID="S_CHECK_10.2_CRS_DESCRIPTION@oracle.install.prereqs.resources.PrereqRes"/>
+        <RULESETREF NAME="CRS102Checks" RULE="CheckFor102CRS" FILE="db/refhost.xml"
+                RESULTS_FILE="install_rule_results.xml"/>
+        <PROBLEM TEXT="The 'active' version of Oracle Clusterware is not 10g Release 2 (10.2)."
+                TEXTID="S_CHECK_10.2_CRS_ERROR@oracle.install.prereqs.resources.PrereqRes">
+        </PROBLEM>
+        <RECOMMENDATION TEXT="You must upgrade all nodes of the cluster to Oracle Clusterware 10g Release 2.  If you have upgraded some but not all of the nodes to use the 10g Release 2 version of Oracle Clusterware, then the 'active' version is still 10g Release 1 (10.1)  You must upgrade all nodes in the cluster to Oracle Clusterware 10g Release 2 before installing Oracle 10g Release 2 Real Application Clusters."
+                TEXTID="S_CHECK_10.2_CRS_ACTION@oracle.install.prereqs.resources.PrereqRes"/>
+    </PREREQUISITE>
+
+    <PREREQUISITE NAME="DetectAnyInvalidASMHome"
+                EXTERNALNAME="Check if any unclean ASM Home exists in the system"
+                EXTERNALNAMEID="S_CHECK_PROPER_OH_CLEANUP@oracle.install.prereqs.resources.PrereqRes"
+                SEVERITY="Error">
+        <DESCRIPTION TEXT="This is a prerequisite condition to test whether the system has been cleaned properly."
+                TEXTID="S_CHECK_PROPER_OH_CLEANUP_DESCRIPTION@oracle.install.prereqs.resources.PrereqRes"/>
+        <RULESETREF NAME="ASMChecks" RULE="CheckIfValidASMHome" FILE="db/refhost.xml"
+                RESULTS_FILE="install_rule_results.xml"/>
+        <PROBLEM TEXT="The installer has detected that you may have an Automatic Storage Management (ASM) instance improperly configured or one that was not properly cleaned up from a previous install.."
+                TEXTID="S_CHECK_PROPER_OH_CLEANUP_ERROR@oracle.install.prereqs.resources.PrereqRes">
+        </PROBLEM>
+        <RECOMMENDATION TEXT="You must completely remove the ASM instance by removing the ASM service from the Service Control Manager, or you must configure it properly by ensuring that the ASM service is associated with a valid Oracle Home where ASM is configured."
+                TEXTID="S_CHECK_PROPER_OH_CLEANUP_ACTION_WIN@oracle.install.prereqs.resources.PrereqRes"/>
+    </PREREQUISITE>
+
+</PREREQUISITETESTS>

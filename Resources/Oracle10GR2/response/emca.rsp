@@ -1,0 +1,189 @@
+##############################################################################
+##                            EMCA response file                            ##
+##                            ------------------                            ##
+## Copyright Ã 1997, 1998, 1999, Oracle Corporation. All Rights Reserved.   ##
+##                                                                          ##
+## Specify values for the variables listed below to customize repository    ##
+## creation using the Enterprise Manager Configuration Assistant.           ##
+##                                                                          ##
+## Each variable is associated with a comment. The comment identifies the   ##
+## variable type.                                                           ##
+##                                                                          ##
+## Please specify the values in the following format:                       ##
+##     Type         Example                                                 ##
+##     String       "<value>"                                               ##
+##     Boolean      True or False                                           ##
+##     Number       <numeric value>                                         ##
+##     StringList   {"<value1>","<value2>"}                                 ##
+##                                                                          ##
+##############################################################################
+
+#-----------------------------------------------------------------------------
+# The GENERAL section is required for all types of repository operations.
+#-----------------------------------------------------------------------------
+[GENERAL]
+
+#-----------------------------------------------------------------------------
+# Name          : RESPONSEFILE_VERSION
+# Datatype      : String
+# Description   : Version of the the response file
+# Valid values  : "2.1.0"
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+RESPONSEFILE_VERSION="2.1.0"
+
+#-----------------------------------------------------------------------------
+# Name          : OPERATION
+# Datatype      : String
+# Description   : Repository operation to perform.
+# Valid values  : "CREATE"
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+OPERATION="CREATE"
+
+#-----------------------*** End of GENERAL section ***------------------------
+
+#-----------------------------------------------------------------------------
+# The DBA_LOGIN section is used to specify the database credentials for the
+# DBA-privileged login.  This is required so that the repository user may be
+# created, and so that certain queries may be made against the database.
+#-----------------------------------------------------------------------------
+[DBA_LOGIN]
+
+#-----------------------------------------------------------------------------
+# Name          : USERNAME
+# Datatype      : String
+# Description   : The username of the DBA-privileged user.
+# Valid values  : The username.
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+USERNAME="dbauser"
+
+#-----------------------------------------------------------------------------
+# Name          : PASSWORD
+# Datatype      : String
+# Description   : The password of the DBA-privileged user.
+# Valid values  : The password.
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+PASSWORD="dbapassword"
+
+#-----------------------------------------------------------------------------
+# Name          : SERVICE
+# Datatype      : String
+# Description   : The service of the DBA-privileged user.
+# Valid values  : The service name.  (May be zero length, for local database.)
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+SERVICE=""
+
+#-----------------------*** End of DBA_LOGIN section ***----------------------
+
+#-----------------------------------------------------------------------------
+# The REPOSITORY section is used to specify the database credentials for the
+# repository user, and the tablespaces that the user will use.
+#-----------------------------------------------------------------------------
+[REPOSITORY]
+
+#-----------------------------------------------------------------------------
+# Name          : CREATE_USER
+# Datatype      : Boolean
+# Description   : Specifies whether to create the repository user.
+#			If the repository user already exists, set to FALSE.
+# Valid values  : TRUE / FALSE
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+CREATE_USER=true
+
+#-----------------------------------------------------------------------------
+# Name          : USERNAME
+# Datatype      : String
+# Description   : The username of the repository user.
+# Valid values  : The username.
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+USERNAME="username"
+
+#-----------------------------------------------------------------------------
+# Name          : PASSWORD
+# Datatype      : String
+# Description   : The password of the repository user.
+# Valid values  : The password.
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+PASSWORD="password"
+
+#-----------------------------------------------------------------------------
+# Name          : DEFAULT_TABLESPACE
+# Datatype      : String
+# Description   : The name of the repository user's default tablespace.
+# Valid values  : The tablespace name.
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+DEFAULT_TABLESPACE="OEM_REPOSITORY"
+
+#-----------------------------------------------------------------------------
+# Name          : TEMPORARY_TABLESPACE
+# Datatype      : String
+# Description   : The name of the repository user's temporary tablespace.
+# Valid values  : The tablespace name.
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+TEMPORARY_TABLESPACE="TEMPORARY_DATA"
+
+#-----------------------*** End of REPOSITORY section ***---------------------
+
+#-----------------------------------------------------------------------------
+# The OEM_TABLESPACE section is used to specify the characteristics of the
+# OEM_REPOSITORY tablespace, which is normally used as the repository user's
+# default tablespace.
+# Currently, the only characteristic supported is whether to create the 
+# tablespace or not.
+#-----------------------------------------------------------------------------
+[OEM_TABLESPACE]
+
+#-----------------------------------------------------------------------------
+# Name          : CREATE
+# Datatype      : Boolean
+# Description   : Specifies whether to create the OEM_REPOSITORY tablespace.
+#			If the OEM_REPOSITORY tablespace already exists, set to false.
+# Valid values  : TRUE / FALSE
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+CREATE=false
+
+#-----------------------*** End of OEM_TABLESPACE section ***-----------------
+
+#-----------------------------------------------------------------------------
+# The OMS section is used to specify the characteristics of the Oracle
+# Management Server.
+# Currently, the only characteristic supported is whether to write the OMS
+# configuration parameters.
+#-----------------------------------------------------------------------------
+[OMS]
+
+#-----------------------------------------------------------------------------
+# Name          : WRITE_OMS_CONFIG
+# Datatype      : Boolean
+# Description   : Specifies whether to write the OMS configuration parameters.
+#			If you are creating a repository which will not be used by
+#			a Management Server (OMS) on this host, set to false.
+# Valid values  : TRUE / FALSE
+# Default value : None
+# Mandatory     : Yes
+#-----------------------------------------------------------------------------
+WRITE_OMS_CONFIG=true
+
+#-----------------------*** End of OMS section ***----------------------------
+

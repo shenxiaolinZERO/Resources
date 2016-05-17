@@ -1,0 +1,919 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>6 Managing Database Storage Structures</title>
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta http-equiv="Content-Language" content="en" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="robots" content="all" scheme="http://www.robotstxt.org/" />
+<meta name="Generator" content="Oracle DARB XHTML converter - Version 4.1.3 Build 116" />
+<meta name="Date" content="June 22, 2005 15:47:53" />
+<meta name="doctitle" content="Oracle&reg; Database 2 Day DBA 10g Release 2 (10.2)" />
+<meta name="partno" content="B14196-01" />
+<meta name="docid" content="ADMQS" />
+<link rel="Start" href="../../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+<link rel="Stylesheet" href="../../dcommon/css/blafdoc.css" title="Default" type="text/css" />
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="instance.htm" title="Previous" type="text/html" />
+<link rel="Next" href="users_secure.htm" title="Next" type="text/html" />
+<link rel="alternate" href="../b14196.pdf" title="PDF version" type="application/pdf" />
+</head>
+<body>
+<div class="header">
+<div class="zz-skip-header"><a name="top" id="top" href="#BEGIN">Skip Headers</a></div>
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top"><b>Oracle&reg; Database 2 Day DBA<br />
+10<i>g</i> Release 2 (10.2)</b><br />
+Part Number B14196-01</td>
+<td valign="bottom" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td align="left" valign="top">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="instance.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="users_secure.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td align="right" valign="top"><a href="../b14196.pdf"><font size="-2">View PDF</font></a></td>
+</tr>
+</table>
+<a name="BEGIN" id="BEGIN"></a></div>
+<div class="IND"><!-- End Header --><a id="CHDIFFDC" name="CHDIFFDC"></a><a id="sthref256" name="sthref256"></a>
+<h1><span class="secnum">6</span> <a name="ADMQS006" id="ADMQS006"></a>Managing Database Storage Structures</h1>
+<p>This chapter discusses using Enterprise Manager to explore and manage the storage structures of your database. This chapter contains the following topics:</p>
+<ul>
+<li type="disc">
+<p><a href="#CHDDBDHE">Exploring the Storage Structure of Your Database</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDJAAFF">Performing Common Database Storage Tasks</a></p>
+</li>
+<li type="disc">
+<p><a href="#CACJFFJI">Managing Undo for Your Database</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDDIJDD">Making Changes to the Database Storage Structure</a></p>
+</li>
+<li type="disc">
+<p><a href="#CACHDCBJ">Storage: Oracle by Example Series</a></p>
+</li>
+</ul>
+<a id="CHDDBDHE" name="CHDDBDHE"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref257" name="sthref257"></a>
+<h2>Exploring the Storage Structure of Your Database</h2>
+<p><a id="sthref258" name="sthref258"></a><a id="sthref259" name="sthref259"></a>An Oracle database is comprised of physical and logical structures that the DBA is responsible for managing. Physical structures are those that can be seen and operated on from the operating system, such as the physical files that store data on disk.</p>
+<p>Logical structures are created and recognized by the Oracle database server and are not known to the operating system. The primary logical structure in a database, a tablespace, contains physical files. The applications developer or end user may be aware of the logical structure, but is not usually aware of this physical structure. The DBA must understand the correlation between the physical and logical structures of a database and control the mapping of the logical to the physical structure.</p>
+<p>The Oracle database server can automate the management of its structure. Furthermore, Oracle Enterprise Manager provides a Web-based GUI to enable easy management and monitoring of your database.</p>
+<p>To view database storage structure, navigate to the Storage section of the Administration Home page (see <a href="instance.htm#CACJHAJE">Figure 5-2, "Database Administration Page"</a>). You can click the links shown in <a href="#CHDHAFBA">Figure 6-1</a> to access the storage pages.</p>
+<div class="figure"><a id="CHDHAFBA" name="CHDHAFBA"></a><a id="sthref260" name="sthref260"></a>
+<p class="titleinfigure">Figure 6-1 Storage Options</p>
+<img src="./storageheadingR2.gif" alt="Description of storageheadingR2.gif follows" title="Description of storageheadingR2.gif follows" /><br />
+<a id="sthref261" name="sthref261" href="./img_text/storageheadingR2.htm">Description of the illustration storageheadingR2.gif</a><br />
+<br /></div>
+<!-- class="figure" -->
+<p>The following sections provide a closer look at the database storage structure:</p>
+<ul>
+<li type="disc">
+<p><a href="#CHDEBHBC">Control Files</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDBABIE">Online Redo Log Files</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDBHJIE">Archive Log Files</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDIFFBD">Rollback Segments</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDHDCHF">Tablespaces</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDCBCGD">Datafiles</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDIBIJH">Other Storage Structures</a></p>
+</li>
+</ul>
+<a id="CHDEBHBC" name="CHDEBHBC"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref262" name="sthref262"></a>
+<h3>Control Files</h3>
+<p><a id="sthref263" name="sthref263"></a><a id="sthref264" name="sthref264"></a>A control file tracks the physical components of the database and other control information. It is essential to the functioning of the database. Because of the importance of the control file, Oracle recommends that the control file be multiplexed. In other words, the control file should have multiple identical copies. For databases created with DBCA, three copies of the control file are automatically created.</p>
+<p>If any control file fails, then your database becomes unavailable. As long as you still have a control file copy intact, however, you can shut down your database and re-create the failed control file from one of the other control files, then restart your database. Another option is to delete the failed control file from the <code>CONTROL_FILES</code> initialization parameter and restart your database with the remaining control files. There are other options, depending upon circumstances.</p>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref265" name="sthref265"></a>
+<h4>Displaying Control File Information</h4>
+<p>Click the <span class="bold">Control Files</span> link to open the Control Files General page. This page shows whether your database has a multiplexed control file. In addition to the General page, the Advanced and Record Section pages give you more detailed information about your control file. Explanations of this information are contained in the online help.</p>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="CHDBABIE" name="CHDBABIE"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref266" name="sthref266"></a>
+<h3>Online Redo Log Files</h3>
+<p><a id="sthref267" name="sthref267"></a><a id="sthref268" name="sthref268"></a>Every Oracle database has a set of two or more online redo log files. The set of redo log files is collectively known as the redo log for the database. A redo log is made up of redo entries, which are also called redo records.</p>
+<p>The primary function of the redo log is to record all changes made to data. If a failure prevents modified data from being permanently written to the datafiles, then the changes can be obtained from the redo log, so work is never lost. To protect against a failure involving the redo log itself, Oracle allows a multiplexed redo log so that two or more identical copies of the online redo log can be maintained on different disks.</p>
+<p>Your database's redo log consists of groups of redo log files. A group consists of a redo log file and its multiplexed copies. Each identical copy is said to be a member of that group. Each group is defined by a number, such as group 1.</p>
+<p>The database log writer process writes redo records from the memory buffer to a redo log group until the group fills up or a log switch operation is requested. It then writes to the next group. The log writer performs this action in a circular fashion so that the oldest group is overwritten by the most recent redo records.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p><a class="xlinkSRC ADMIN007" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Administrator's Guide</span></a> for detailed information about redo logs</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref269" name="sthref269"></a>
+<h4>Displaying Redo Log File Information</h4>
+<p>Click <span class="bold">Redo Log Groups</span> to open the Redo Log Groups page. This page shows the attributes of the redo log groups for your database. A database typically consists of three groups. Note the status attribute for the redo log groups. The <code>CURRENT</code> status group is the one currently being written to disk by the log writer process.</p>
+<p>You can see that each group contains only one member, which means that the database does not have a multiplexed redo log. Click the number of a redo log group to view information about the redo log group members.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref270" name="sthref270"></a>
+<h4>Multiplexing the Redo Log</h4>
+<p>While not multiplexing redo log groups is acceptable in a small database environment, consider adding multiplexing as your database grows in users and applications. Multiplexing provides better protection for data in the case of instance or media failure.</p>
+<p><a id="sthref271" name="sthref271"></a>To multiplex your redo log, you must add members to each redo log group. This example adds one member to each redo log group. It is not required that redo log groups be symmetrical (all have the same number of members), but in practice it is recommended that this be the case. It <span class="italic">is</span> required that a database have a minimum of two redo log groups.</p>
+<p>To create a multiplexed redo log for your database:</p>
+<ol type="1" start="1">
+<li>
+<p>From the Storage section of the Administration page, click <span class="bold">Redo Log Groups</span>.</p>
+<p>The Redo Log Groups page appears.</p>
+</li>
+<li>
+<p>Select a group and click <span class="bold">Edit</span>.</p>
+<p>The Edit Redo Log Group page appears.</p>
+</li>
+<li>
+<p>In the <span class="bold">Redo Log Members</span> section, click <span class="bold">Add</span>.</p>
+<p>The Add Redo Log Member page appears.</p>
+</li>
+<li>
+<p>Enter the file name for the new redo log member. For example, if your existing member file name is <code>REDO01.log</code>, then you might name this member <code>REDO01a.log</code>.</p>
+<p>Enter the file directory or accept the default. You can create this file in the same directory, but it is recommended that you store members on separate drives. That way, if there is a drive failure, you still have access to one member.</p>
+</li>
+<li>
+<p>Click <span class="bold">Continue</span>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply</span> to accept your changes.</p>
+</li>
+<li>
+<p>Repeat these steps for every existing group.</p>
+</li>
+</ol>
+<p>To see the status change on a log switch:</p>
+<ol type="1" start="1">
+<li>
+<p>Navigate to the Redo Log Groups page.</p>
+</li>
+<li>
+<p>From the <span class="bold">Actions</span> menu, select <span class="bold">Switch logfile</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="CHDBHJIE" name="CHDBHJIE"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref272" name="sthref272"></a>
+<h3>Archive Log Files</h3>
+<p><a id="sthref273" name="sthref273"></a>When you archive your redo log, you write redo log files to another location prior to their being overwritten. This location is called the archive log. You can archive to multiple locations, including a standby database.</p>
+<p>These copies of redo log files extend the amount of redo data that can be saved and used for recovery. Archiving can be either enabled or disabled for the database, but Oracle recommends that you enable archiving.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p><a class="xlinkSRC ADMIN008" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Administrator's Guide</span></a> for detailed information about archived redo logs</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref274" name="sthref274"></a>
+<h4>Displaying Archive Log File Information</h4>
+<p>Click <span class="bold">Archive Logs</span> to display the Archive Logs page. This page lets you view archive log files and their attributes.</p>
+<p>For placing the database into archive log mode, or adding archive log locations, see <a href="backrest.htm#i1006225">"Configuring Your Database for Basic Backup and Recovery"</a>.</p>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="CHDIFFBD" name="CHDIFFBD"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref275" name="sthref275"></a>
+<h3>Rollback Segments</h3>
+<p><a id="sthref276" name="sthref276"></a>In earlier releases of the Oracle database, rollback segments were database structures used to track undo information for the database. Now, the preferred way of managing undo is with the undo tablespace. For more information, see <a href="#CACJFFJI">"Managing Undo for Your Database"</a> in this chapter.</p>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref277" name="sthref277"></a>
+<h4>Displaying Rollback Segment Information</h4>
+<p>Click <span class="bold">Rollback Segments</span> to display the Rollback Segments page. This page displays the attributes of the system rollback segment. The system rollback segment is self-managing.</p>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="CHDHDCHF" name="CHDHDCHF"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref278" name="sthref278"></a>
+<h3>Tablespaces</h3>
+<p><a id="sthref279" name="sthref279"></a><a id="sthref280" name="sthref280"></a><a id="sthref281" name="sthref281"></a>A database consists of one or more tablespaces. A tablespace is a logical structure created by and known only to the Oracle database server. A tablespace consists of one or more datafiles or tempfiles.</p>
+<p>There are various types of tablespaces, including the following:</p>
+<ul>
+<li type="disc">
+<p>Undo tablespace</p>
+<p>A database running in automatic undo management mode transparently creates and manages undo segments. You can create an undo tablespace and determine the maximum retention time for undo data kept in that tablespace.</p>
+</li>
+<li type="disc">
+<p>Permanent tablespaces</p>
+<p>These tablespaces are used to store permanent objects and data.</p>
+</li>
+<li type="disc">
+<p>Temporary tablespaces</p>
+<p>Temporary tablespaces improve the concurrence of multiple sort operations, reduce their overhead, or avoid Oracle space management operations altogether. Temporary tablespaces are the most efficient tablespaces for disk sorts. Space management (extent allocation and deallocation) is locally managed.</p>
+</li>
+</ul>
+<p>Temporary and permanent tablespaces can be assigned at the user level. You can create a default temporary tablespace at database creation time. This tablespace is used as the default temporary tablespace for users who are not otherwise assigned a temporary tablespace.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p><a class="xlinkSRC ADMIN011" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Administrator's Guide</span></a> to learn more about tablespaces</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<a id="CACDDIIC" name="CACDDIIC"></a>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref282" name="sthref282"></a>
+<h4>Some Tablespaces in the Database</h4>
+<p><a href="#CHDDACII">Table 6-1</a> describes some of the tablespaces included in the database.</p>
+<div class="tblFormal"><a id="sthref283" name="sthref283"></a><a id="CHDDACII" name="CHDDACII"></a>
+<p class="titleintable">Table 6-1 Tablespaces and Descriptions</p>
+<table class="Formal" title="Tablespaces and Descriptions" summary="This table describes some of the tablespaces included in the database." dir="ltr" border="1" width="100%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<thead>
+<tr align="left" valign="top">
+<th align="left" valign="bottom" id="r1c1-t5">Tablespace</th>
+<th align="left" valign="bottom" id="r1c2-t5">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr align="left" valign="top">
+<td align="left" id="r2c1-t5" headers="r1c1-t5">EXA<a id="sthref284" name="sthref284"></a><a id="sthref285" name="sthref285"></a>MPLE</td>
+<td align="left" headers="r2c1-t5 r1c2-t5">This tablespace contains the sample schemas that Oracle includes with the database. The sample schemas provide a common platform for examples. Oracle documentation and educational materials contain examples based on the sample schemas.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r3c1-t5" headers="r1c1-t5">SYS<a id="sthref286" name="sthref286"></a><a id="sthref287" name="sthref287"></a>AUX</td>
+<td align="left" headers="r3c1-t5 r1c2-t5">This is an auxiliary tablespace to the <code>SYSTEM</code> tablespace.
+<p>Some components and products that used the <code>SYSTEM</code> tablespace or their own tablespaces prior to Oracle Database 10<span class="italic">g</span> now use the <code>SYSAUX</code> tablespace. Using <code>SYSAUX</code> reduces the load on the <code>SYSTEM</code> tablespace and reduces maintenance because there are fewer tablespaces to monitor and maintain. Every Oracle Database 10<span class="italic">g</span> or higher level database must have a <code>SYSAUX</code> tablespace.</p>
+<p>Components that use <code>SYSAUX</code> as their default tablespace during installation include Automatic Workload Repository, Oracle Streams, Oracle Text, and Enterprise Manager Repository. For more information, see the <a class="olinkSRC ADMIN" href="http://www.oracle.com/pls/db102/to_bookid?id=ADMIN"><span class="italic">Oracle Database Administrator's Guide</span></a>.</p>
+</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r4c1-t5" headers="r1c1-t5">SYST<a id="sthref288" name="sthref288"></a><a id="sthref289" name="sthref289"></a>EM</td>
+<td align="left" headers="r4c1-t5 r1c2-t5">This tablespace is always created at database creation. Oracle uses it to manage the database. It contains the data dictionary, which is the central set of tables and views used as a read-only reference for a particular database. It also contains various tables and views that contain administrative information about the database. These are all contained in the <code>SYS</code> schema, and can only be accessed by user <code>SYS</code> or other administrative users with the required privilege.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r5c1-t5" headers="r1c1-t5">TEMP<a id="sthref290" name="sthref290"></a><a id="sthref291" name="sthref291"></a></td>
+<td align="left" headers="r5c1-t5 r1c2-t5">This tablespace stores temporary data generated when processing SQL statements. For example, this tablespace would be used for sort work space. Every database should have a temporary tablespace that is assigned to users as their temporary tablespace. In the preconfigured database, the <code>TEMP</code> tablespace is specified as the default temporary tablespace. This means that if no temporary tablespace is specified when a user account is created, then Oracle assigns this tablespace to the user.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r6c1-t5" headers="r1c1-t5">UNDO<a id="sthref292" name="sthref292"></a><a id="sthref293" name="sthref293"></a>TBS1</td>
+<td align="left" headers="r6c1-t5 r1c2-t5">This is the undo tablespace used by the database server to store undo information. See <a href="#CACJFFJI">"Managing Undo for Your Database"</a> to understand how an Oracle database uses the undo tablespace. Every database must have an undo tablespace that can be created at database creation.</td>
+</tr>
+<tr align="left" valign="top">
+<td align="left" id="r7c1-t5" headers="r1c1-t5">US<a id="sthref294" name="sthref294"></a><a id="sthref295" name="sthref295"></a>ERS</td>
+<td align="left" headers="r7c1-t5 r1c2-t5">This tablespace is used to store permanent user objects and data. Like the <code>TEMP</code> tablespace, every database should have a tablespace for permanent user data that is assigned to users. Otherwise, user objects will be created in the <code>SYSTEM</code> tablespace, which is not good practice. In the preconfigured database, <code>USERS</code> is assigned the default tablespace, and space for all objects created by non-system users comes from this tablespace. For system users, the default permanent tablespace remains <code>SYSTEM</code>.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="tblFormal" --></div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref296" name="sthref296"></a>
+<h4>Temporary Tablespace Groups</h4>
+<p><a id="sthref297" name="sthref297"></a>Temporary tablespace groups enable users to consume temporary space from multiple tablespaces. Using a tablespace group rather than a single temporary tablespace can alleviate problems caused when one tablespace is inadequate to hold the results of a sort, particularly on a table that has many partitions. A tablespace group enables parallel execution servers in a single parallel operation to use multiple temporary tablespaces.</p>
+<p>You can assign a tablespace group name as a default temporary tablespace for the database or as a temporary tablespace for a user.</p>
+<p>Click the <span class="bold">Temporary Tablespace Groups</span> link to display the temporary tablespace groups defined for your database. Initially, there are none.</p>
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p>
+<a class="olinkSRC ADMIN" href="http://www.oracle.com/pls/db102/to_bookid?id=ADMIN"><span class="italic">Oracle Database Administrator's Guide</span></a> for details on using tablespace groups</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="CHDCBCGD" name="CHDCBCGD"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref298" name="sthref298"></a>
+<h3>Datafiles</h3>
+<p><a id="sthref299" name="sthref299"></a>Datafiles are the operating system files that hold the data within the database. The data is written to these files in an Oracle proprietary format that cannot be read by programs other than the database server. Tempfiles are a special class of datafiles that are associated only with temporary tablespaces.</p>
+<p>Datafiles can be broken down into the following components:</p>
+<ul>
+<li type="disc">
+<p>Segments and extents</p>
+<p>A segment contains a specific type of database object. For example, tables are stored in data segments, whereas indexes are stored in index segments.</p>
+<p>An extent is a contiguous set of data blocks within a segment. Oracle initially allocates an extent of a specified size for a segment, but if that extent fills, then more extents can be allocated.</p>
+</li>
+<li type="disc">
+<p>Data block</p>
+<p>Data blocks, also called database blocks, are the smallest unit of I/O to database storage. An extent consists of several contiguous data blocks. The default database block size is specified by a DBA at database creation or defaulted by Oracle.</p>
+<p>After the database has been created, it is not possible to change the default block size without re-creating the database. Nevertheless, it is possible to create tablespace with a block size different than the default block size. For details on how to create tablespaces with a nondefault or nonstandard block size, see <a class="olinkSRC ADMIN" href="http://www.oracle.com/pls/db102/to_bookid?id=ADMIN"><span class="italic">Oracle Database Administrator's Guide</span></a>.</p>
+</li>
+</ul>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref300" name="sthref300"></a>
+<h4>Viewing Datafile Information</h4>
+<p>Click <span class="bold">Datafiles</span> to open the Datafiles page. You can use this page to view information about your datafiles. Select a datafile and click <span class="bold">View</span> to display more attributes for the datafile. You can also click the name of the tablespace to display the attributes of the owning tablespace.</p>
+<div align="center">
+<div class="inftblNoteAlso"><br />
+<table class="NoteAlso oac_no_warn" summary="This is a layout table to format a tip" title="This is a layout table to format a tip" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p><a class="xlinkSRC ADMIN012" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Administrator's Guide</span></a> for detailed information about datafiles</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNoteAlso --></div>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" -->
+<a id="CHDIBIJH" name="CHDIBIJH"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref301" name="sthref301"></a>
+<h3>Other Storage Structures</h3>
+<p>Other storage structures that can exist in an Oracle database include the initialization parameter file, the password file, and backup files.</p>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref302" name="sthref302"></a>
+<h4>Initialization Parameter File</h4>
+<p>Initialization parameters are used by the database server at startup to determine the runtime resources for the database. They are actively monitored by the database and can be set or modified while the database is running.</p>
+<p>Initialization parameters and the initialization parameter file are discussed in <a href="instance.htm#CACFBJED">Chapter 5, "Managing the Oracle Instance"</a>.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref303" name="sthref303"></a>
+<h4>Password File</h4>
+<p>A database can use a password file to authenticate administrative users with <code>SYS<a id="sthref304" name="sthref304"></a>DBA</code> connect privileges. <code>SYSDBA</code> privileges enable a DBA to start up and shut down the database and perform other high-level administrative tasks. This password file is outside of the database itself because it must sometimes be referenced when the database is not yet running.</p>
+<p>This is not the only form of administrator authentication, so not all databases require a password file.</p>
+<p>The password file is discussed in <a href="instance.htm#CIHJIJGE">"Accessing the Database"</a> in <a href="instance.htm#CACFBJED">Chapter 5, "Managing the Oracle Instance"</a>.</p>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref305" name="sthref305"></a>
+<h4>Backup Files</h4>
+<p>Back<a id="sthref306" name="sthref306"></a>up files are technically not database files, but rather copies of the database in some form that can be used to recover the database if a failure causes loss of data.</p>
+<p>Backup files are discussed in <a href="backrest.htm#CIHEHFJJ">Chapter 9, "Performing Backup and Recovery"</a>.</p>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CHDJAAFF" name="CHDJAAFF"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref307" name="sthref307"></a>
+<h2>Performing Common Database Storage Tasks</h2>
+<p>The remainder of this chapter presents examples of some common database administration tasks relating to the storage structure:</p>
+<ul>
+<li type="disc">
+<p><a href="#CACDEHEE">Viewing Tablespaces in Your Database</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDEHEIG">Creating a Tablespace</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABDIAAI">Modifying a Tablespace</a></p>
+</li>
+<li type="disc">
+<p><a href="#CACJAJAJ">Dropping a Tablespace</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABHEBCJ">Reclaiming Wasted Space</a></p>
+</li>
+</ul>
+<a id="CACDEHEE" name="CACDEHEE"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref308" name="sthref308"></a>
+<h3>Viewing Tablespaces in Your Database</h3>
+<p>You can view all tablespaces in your database. From the Storage section of the Administration page, click <span class="bold">Tablespaces</span> to open the Tablespaces page. This page shows the following information about each tablespace:</p>
+<ul>
+<li type="disc">
+<p>Type of tablespace</p>
+</li>
+<li type="disc">
+<p>Type of extent management</p>
+</li>
+<li type="disc">
+<p>Type of segment management</p>
+</li>
+<li type="disc">
+<p>Status</p>
+</li>
+<li type="disc">
+<p>Size</p>
+</li>
+<li type="disc">
+<p>Percent used</p>
+</li>
+</ul>
+<p>Click the tablespace name for more information.</p>
+</div>
+<!-- class="sect2" -->
+<a id="CHDEHEIG" name="CHDEHEIG"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref309" name="sthref309"></a>
+<h3><a name="ADMQS1610" id="ADMQS1610"></a>Creating a Tablespace</h3>
+<p><a id="sthref310" name="sthref310"></a>A user, groups of users, or an application may require its own tablespace for creating schema objects, rather than using the default <code>USER</code> tablespace. To create a tablespace, follow the steps listed in this section. This exercise also familiarizes you with the various attributes that you can set, and possibly later modify, for a tablespace.</p>
+<ol type="1" start="1">
+<li>
+<p>From Storage section of the Administration page, click <span class="bold">Tablespaces</span>.</p>
+<p>The Tablespaces page appears.</p>
+</li>
+<li>
+<p>Click <span class="bold">Create</span> to open the Create Tablespace General page.</p>
+<p>Alternatively, to create a tablespace that is like an existing tablespace, select an existing tablespace. From the <span class="bold">Actions</span> list, select <span class="bold">Create Like</span> and then click <span class="bold">Go</span>. The other options that are available from the <span class="bold">Actions</span> menu are shortcuts for various tablespace operations.</p>
+</li>
+<li>
+<p>Enter a name for the tablespace. For example, enter <code>TB1</code>.</p>
+</li>
+<li>
+<p>In the Type section, select one of the following types:</p>
+<ul>
+<li type="disc">
+<p><span class="bold">Permanent</span></p>
+<p>Permanent tablespaces store permanent database objects created by the system or users.</p>
+</li>
+<li type="disc">
+<p><span class="bold">Temporary</span></p>
+<p>Temporary tablespaces are for storing temporary segments, as would be created when SQL statements perform sorts. The preconfigured database already has a temporary tablespace. You would create another temporary tablespace if you were creating a temporary tablespace group. Under normal circumstances, you should not need to create additional temporary tablespaces.</p>
+</li>
+<li type="disc">
+<p><span class="bold">Undo</span></p>
+<p>Undo tablespaces are used by the system to store undo data. You might want to create another undo tablespace, but only one undo tablespace can be the active one.</p>
+<p>You should not need to create additional undo tablespaces. If you want to switch the undo tablespace used by the database instance, however, then you can create a new undo tablespace and instruct the database to use it instead of the undo tablespace currently in use. The undo tablespace no longer in use can be dropped later.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>In the Status section, select <span class="bold">Read Write</span> from among the following status options:</p>
+<ul>
+<li type="disc">
+<p><span class="bold">Read Write</span></p>
+<p>Users can read and write to the tablespace after it is created. This is the default.</p>
+</li>
+<li type="disc">
+<p><span class="bold">Read Only</span></p>
+<p>If the tablespace is created read-only, then the tablespace cannot be written to until its status is changed to Read Write. You would probably not create a tablespace as read-only, but rather change it to that status after you have written data to it that you do not want modified.</p>
+</li>
+<li type="disc">
+<p><span class="bold">Offline</span></p>
+<p>If the tablespace is created offline, then no users can access it. You would probably not create a tablespace as offline, but rather you would change its status to offline to perform some maintenance on its underlying files.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>In the Datafiles section of the page, click <span class="bold">Add</span> to add one or more datafiles to the tablespace.</p>
+<p>Note that if you check <span class="bold">Use bigfile tablespace</span>, then the tablespace can have only one datafile. Bigfile tablespaces are used with very large databases that use Automatic Storage Management or other logical volume managers that support striping, RAID, and dynamically extensible logical volumes.</p>
+</li>
+<li>
+<p>In the Add Datafiles page, enter a file name. For example, enter <code>TB1.dbf</code>. Accept the <span class="bold">File Directory</span> and <span class="bold">File Size</span> defaults.</p>
+</li>
+<li>
+<p>In the Storage section, select <span class="bold">Automatically extend datafile when full (AUTOEXTEND)</span> to allow Oracle database to automatically expand the datafile. Specify an amount in the <span class="bold">Increment</span> field by which you want to extend the datafile each time it fills. Leave the Maximum File Size set to <span class="bold">Unlimited</span>. Click <span class="bold">Continue</span>.</p>
+<p>You are returned to the Create Tablespace page.</p>
+</li>
+<li>
+<p>Click <span class="bold">Storage</span> to open the Create Tablespace Storage property page. Leave all of the defaults set on the Storage page. See online Help for more information on these settings.</p>
+</li>
+<li>
+<p>Click <span class="bold">OK</span> to add the tablespace. You can see your new tablespace in the Tablespaces page.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="BABDIAAI" name="BABDIAAI"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref311" name="sthref311"></a>
+<h3><a name="ADMQS1620" id="ADMQS1620"></a>Modifying a Tablespace</h3>
+<p><a id="sthref312" name="sthref312"></a><a id="sthref313" name="sthref313"></a>With Enterprise Manager, you can modify a tablespace. For example, you can extend it, set it to automatically extend, change its space thresholds, or change its status to offline. A tablespace might need extending when you get a critical and warning alert. You might need to take a tablespace offline to recover it.</p>
+<p>This section shows you how to set a tablespace to automatically extend when it reaches its limit. To enable autoextend tablespace, do the following:</p>
+<ol type="1" start="1">
+<li>
+<p>From the Storage section of the Administration page, click <span class="bold">Tablespaces</span>.</p>
+<p>The Tablespaces page appears.</p>
+</li>
+<li>
+<p>Select a tablespace to autoextend, such as <code>USERS</code>, and click <span class="bold">Edit</span>.</p>
+<p>The Edit Tablespace: USERS General property page appears.</p>
+</li>
+<li>
+<p>Select the datafile associated with the tablespace and click <span class="bold">Edit</span>.</p>
+<p>The Edit Datafile page appears.</p>
+</li>
+<li>
+<p>Check <span class="bold">Automatically extend datafile when full (AUTOEXTEND)</span>. Set a suitable increment, such as 1 MB. You can optionally set a maximum file size or set file size to unlimited depending on your resources.</p>
+</li>
+<li>
+<p>Click <span class="bold">Continue</span> to return to the Edit Tablespace page.</p>
+</li>
+<li>
+<p>Click <span class="bold">Apply</span>.</p>
+<p>A confirmation message appears.</p>
+</li>
+</ol>
+<p>Similarly, you can change tablespace thresholds by selecting a tablespace on the Tablespaces page and clicking <span class="bold">Edit</span>. Click <span class="bold">Thresholds</span> to navigate to the Threshold property page. This page lets you set monitored thresholds for space usage. You receive a warning when the threshold is reached. You can accept the default, specify different thresholds, or disable threshold warnings. See <a href="montune.htm#CHDDAFBD">Chapter 10, "Monitoring and Tuning the Database"</a> for more information about monitoring the database.</p>
+<p>You can take a tablespace offline by selecting a tablespace on the Tablespaces page and clicking <span class="bold">Edit</span>. Select <span class="bold">Offline</span> on the Edit Tablespace General page and then click <span class="bold">Apply</span>.</p>
+</div>
+<!-- class="sect2" -->
+<a id="CACJAJAJ" name="CACJAJAJ"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref314" name="sthref314"></a>
+<h3><a name="ADMQS1630" id="ADMQS1630"></a>Dropping a Tablespace</h3>
+<p>After a tablespace has been dropped, the objects and data in it are no longer available. To recover them can be a time-consuming process. Oracle recommends performing a backup before and after dropping a tablespace.</p>
+<ol type="1" start="1">
+<li>
+<p>From the Storage section on the Administration page, click <span class="bold">Tablespaces</span>.</p>
+<p>The Tablespaces page appears.</p>
+</li>
+<li>
+<p>Select the tablespace that you want to drop and click <span class="bold">Delete</span>.</p>
+<p>Enterprise Manager asks for confirmation that you want to delete the tablespace and associated datafiles from the operating system.</p>
+</li>
+<li>
+<p>Click <span class="bold">Yes</span> to remove the tablespace.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect2" -->
+<a id="BABHEBCJ" name="BABHEBCJ"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref315" name="sthref315"></a>
+<h3>R<a name="ADMQS0065" id="ADMQS0065"></a>eclaiming Wasted Space</h3>
+<p><a id="sthref316" name="sthref316"></a><a id="sthref317" name="sthref317"></a>Over time, inserts, updates, and deletes (DML operations) to objects within a tablespace can create pockets of empty space that individually are not big enough to be reused. Collectively, these pockets can combine to form large amounts of wasted space. The resulting sparsely populated objects can suffer performance degradation during queries and DML operations.</p>
+<p>An Oracle database enables you reclaim wasted space in the following ways:</p>
+<ul>
+<li type="disc">
+<p>In a shrink operation, data is compacted to the front of the table. Free space can either be returned to the tablespace or kept in the table for future inserts. A shrink operation on a table does not affect DML operations to the table during the operation.</p>
+</li>
+<li type="disc">
+<p>In a reorganization operation, the object is re-created in a different part of the tablespace. This operation has the desirable side effect of compacting the object. For this operation to succeed, however, the tablespace must already have free space equal to the size of the object.</p>
+</li>
+</ul>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref318" name="sthref318"></a>
+<h4>Viewing Segment Advisor Recommendations</h4>
+<p>The Segment Advisor identifies objects such as tablespaces and tables that have space available for reclamation. It performs its analysis by examining usage and growth statistics and by sampling the data in the object. It is configured to run automatically at regular intervals, and you can also run it on demand (manually).</p>
+<p>The regularly scheduled Segment Advisor run is known as the Automatic Segment Advisor. Results are summarized on the Space Summary section of the home page as <span class="bold">Segment Advisor Recommendations</span>. See <a href="#BABICIBG">Figure 6-2, "Home Page Space Summary"</a>. Click the adjacent link to open the Segment Advisor Recommendations page.</p>
+<div class="figure"><a id="BABICIBG" name="BABICIBG"></a><a id="sthref319" name="sthref319"></a>
+<p class="titleinfigure">Figure 6-2 Home Page Space Summary</p>
+<img src="./home_page_space_summary.gif" alt="Description of home_page_space_summary.gif follows" title="Description of home_page_space_summary.gif follows" /><br />
+<a id="sthref320" name="sthref320" href="./img_text/home_page_space_summary.htm">Description of the illustration home_page_space_summary.gif</a><br />
+<br /></div>
+<!-- class="figure" -->
+<p>Objects such as tablespaces, tables, and indexes are made up of one or more segments. The Segment Advisor page summarizes space usage, estimating the amount of reclaimable space for each tablespace. From this page you can drill down to the segment level. See <a href="#BABEIFJH">Figure 6-3, "Segment Advisor Recommendations"</a>.</p>
+<p>Recommendations can be either a shrink or reorganization operation. If you created the tablespace with automatic segment space management, which is the default, then the Segment Advisor recommends shrinking. If the segment is not eligible for shrink, or if the tablespace was created with manual segment space management, then the Segment Advisor recommends other reorganizing methods.</p>
+<p>The following section describes how to view the recommendations and then shrink your objects using the shrink wizard.</p>
+<p>To view recommendations and shrink an object:</p>
+<ol type="1" start="1">
+<li>
+<p>From the Space Summary section of the Administration page, click the link adjacent to <span class="bold">Segment Advisor Recommendations</span>. <a href="#BABICIBG">Figure 6-2, "Home Page Space Summary"</a> shows the link.</p>
+<p>The Segment Advisor Recommendations page appears, as shown in <a href="#BABEIFJH">Figure 6-3, "Segment Advisor Recommendations"</a>.</p>
+<div class="figure"><a id="BABEIFJH" name="BABEIFJH"></a><a id="sthref321" name="sthref321"></a>
+<p class="titleinfigure">Figure 6-3 Segment Advisor Recommendations</p>
+<img src="./segment_reccom.gif" alt="Segment Advisor Reccommendations" title="Segment Advisor Reccommendations" /><br />
+<a id="sthref322" name="sthref322" href="./img_text/segment_reccom.htm">Description of the illustration segment_reccom.gif</a><br />
+<br /></div>
+<!-- class="figure" --></li>
+<li>
+<p>Select a tablespace and then click <span class="bold">Recommendation Details</span>.</p>
+<p>The Recommendation Details for Tablespace page appears, as shown in <a href="#BABIDHEC">Figure 6-4, "Segment Advisor Recommendation Details"</a>. This page lists the tablespace segments that are eligible for shrinking.</p>
+<div class="figure"><a id="BABIDHEC" name="BABIDHEC"></a><a id="sthref323" name="sthref323"></a>
+<p class="titleinfigure">Figure 6-4 Segment Advisor Recommendation Details</p>
+<img src="./reccomend_details.gif" alt="Description of reccomend_details.gif follows" title="Description of reccomend_details.gif follows" /><br />
+<a id="sthref324" name="sthref324" href="./img_text/reccomend_details.htm">Description of the illustration reccomend_details.gif</a><br />
+<br /></div>
+<!-- class="figure" --></li>
+<li>
+<p>Select a segment to Shrink by using either of the following techniques:</p>
+<ul>
+<li type="disc">
+<p>Click the <span class="bold">Shrink</span> button next to the segment you want to shrink.</p>
+</li>
+<li type="disc">
+<p>Select one or more segments and clicking <span class="bold">Implement</span>.</p>
+</li>
+</ul>
+<p>The Shrink Segment: Options page appears.</p>
+<p>Note that reorganizing an object is also a possible recommendation. You would click the <span class="bold">Reorg</span> button at this step and continue with the reorganization wizard.</p>
+</li>
+<li>
+<p>Accept <span class="bold">Compact Segments and Release Space</span>. This action returns freed space to the tablespace. If you do not want to release the freed space to the tablespace, then choose <span class="bold">Compact Segments</span>. Click <span class="bold">Implement</span>.</p>
+<p>The Shrink Segment: Schedule page appears.</p>
+</li>
+<li>
+<p>Note your job name. Under Start, select to run the job <span class="bold">Immediately</span>. Note that shrink operation can be resource intensive so Oracle recommends running this operation during off-peak hours. You can alternatively select <span class="bold">Later</span> and schedule a better time to run the operation. Click <span class="bold">Submit</span>.</p>
+<p>The scheduler Jobs page appears and shows the status of the job.</p>
+</li>
+<li>
+<p>Click <span class="bold">Refresh</span> to update the page until the status of the job is Completed. You can also click <span class="bold">View Job Status</span>.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref325" name="sthref325"></a>
+<h4>Running the Segment Advisor Manually</h4>
+<p>You can run the Segment Advisor manually. You might do so when you want to analyze objects not selected by the Automatic Segment Advisor, or when you want more up-to-date recommendations on a tablespace.</p>
+<div align="center">
+<div class="inftblNote"><br />
+<table class="Note oac_no_warn" summary="This is a layout table to format a note" title="This is a layout table to format a note" dir="ltr" border="1" width="80%" frame="hsides" rules="groups" cellpadding="3" cellspacing="0">
+<tbody>
+<tr>
+<td align="left">
+<p class="notep1">See Also:</p><a class="xlinkSRC ADMIN01401" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Administrator's Guide</span></a> for more information on running the Segment Advisor.</td>
+</tr>
+</tbody>
+</table>
+<br /></div>
+<!-- class="inftblNote --></div>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CACJFFJI" name="CACJFFJI"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref326" name="sthref326"></a>
+<h2>M<a name="ADMQS1640" id="ADMQS1640"></a>anaging Undo for Your Database</h2>
+<p><a id="sthref327" name="sthref327"></a>This section discusses undo management. These tasks involve storing the changes of database transactions long enough to accommodate rollback, read consistency, and flashback features.</p>
+<p>After you install the database, you can start building your database without immediately managing undo because the database automatically performs this task. Later, as your database activity and transaction rate increase, understanding how to manage undo becomes more useful to you.</p>
+<p>This section contains the following topics:</p>
+<ul>
+<li type="disc">
+<p><a href="#CHDFJHBI">About Undo Data</a></p>
+</li>
+<li type="disc">
+<p><a href="#g1103702">Undo Tablespace Size and Retention Time</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDBIJAC">Automatic Undo Management</a></p>
+</li>
+<li type="disc">
+<p><a href="#CHDBAEDB">Managing Undo with Enterprise Manager</a></p>
+</li>
+<li type="disc">
+<p><a href="#BABDJDBF">Using the Undo Advisor</a></p>
+</li>
+</ul>
+<a id="CHDFJHBI" name="CHDFJHBI"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref328" name="sthref328"></a>
+<h3>About Undo Data</h3>
+<p>When a transaction modifies the database, Oracle copies the original data before modifying it. The original copy of the modified data is called undo data. This information is necessary for the following reasons:</p>
+<ul>
+<li type="disc">
+<p>To undo any uncommitted changes made to the database in the event that a rollback operation is necessary. A rollback operation can be the result of a user specifically issuing a rollback statement to undo the changes of a misguided or unintentional transaction, or it can be part of a recovery operation.</p>
+</li>
+<li type="disc">
+<p>To provide read consistency, which means that each user can get a consistent view of data, even while other uncommitted changes may be occurring against the data. For example, if a user issues a query at 10:00 a.m. and the query lasts for 15 minutes, then the query results should reflect the entire state of the data at 10:00 a.m. regardless of updates or inserts by other users during the query.</p>
+</li>
+<li type="disc">
+<p>To enable certain Flashback features, namely Flashback Query and Flashback Table, which enable you to view or recover data to a previous point in time.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect2" -->
+<a id="g1103702" name="g1103702"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref329" name="sthref329"></a>
+<h3>Undo Tablespace Size and Retention Time</h3>
+<p>Undo data is stored in a logical database structure called an <a id="sthref330" name="sthref330"></a>undo tablespace. <a id="sthref331" name="sthref331"></a>The undo tablespace is of finite size. Space usage within the tablespace is such that records can be overwritten as transactions occur.</p>
+<p>Oracle saves undo data at least until the transaction has been committed. Until this time, the undo data is in the active state. Therefore, the amount of space available in the undo tablespace should be at least large enough to hold the active undo data generated by currently active transactions. Otherwise, some of these transactions might fail. When active undo data is stored in the undo tablespace, Oracle automatically ensures that it is never overwritten until the corresponding transaction has been committed.</p>
+<p>Even after the transaction has been committed, the undo data still cannot be overwritten immediately. It is important to the success of Flashback functionality, and for read consistency for long running transactions, that records not be overwritten too soon. For example, if your longest query takes 15 minutes, then the undo tablespace should be large enough to hold 15 minutes worth of undo data.</p>
+<p>To control the retention of undo records, Oracle maintains an undo retention period. This period indicates the amount of time that must transpire before Oracle overwrites undo data. The undo retention period affects the size of the undo tablespace; the longer the retention period, the more space is needed.</p>
+<p>The undo retention period should be at least as long as your longest-running query. By default, Oracle automatically extends the undo tablespace to accommodate the longest-running query based on your ongoing system activity. Nevertheless, you might need to manually increase the size of your undo tablespace in the following circumstances:</p>
+<ul>
+<li type="disc">
+<p>When your undo tablespace is set to a fixed size (auto-extend disabled) and long running queries are failing with snapshot too old errors.</p>
+</li>
+<li type="disc">
+<p>When you plan to use Flashback features to recover from user errors such as unintentional changes. In this case, the undo retention should be set equal to the period between the present and the earliest point of time to which you want to return. For more details on Flashback features, see <a class="xlinkSRC ADMIN013" href="../../dcommon/html/noexist.htm"><span class="italic">Oracle Database Administrator's Guide</span></a>.</p>
+</li>
+</ul>
+</div>
+<!-- class="sect2" -->
+<a id="CHDBIJAC" name="CHDBIJAC"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref332" name="sthref332"></a>
+<h3>Automatic Undo Management</h3>
+<p>The Oracle database automatically determines how long undo data should be preserved based on the time your queries take to run. Undo data preserved within this window of time is said to be in the unexpired state. After this time, the state of the undo data changes to expired. Undo data is a good candidate for overwriting only when it is in the expired state.</p>
+<p>The length of time that Oracle keeps undo data in the unexpired state depends on how your tablespace is configured. When you create your database with DBCA, the undo tablespace is set by default to automatically extend itself to maintain unexpired undo for the longest-running query.</p>
+<p>With a fixed-sized undo tablespace, Oracle automatically keeps the undo data in the unexpired state for the longest possible time for the tablespace of the specified size. If the undo tablespace does not have adequate free or expired space to store active undo data generated by current transactions, however, then Oracle might be forced to overwrite the unexpired undo data. This situation might cause long-running queries to fail with an error and an alert.</p>
+<p>To avoid situations in which long-running queries can fail, it is recommended that you let Oracle automatically extend the size of the undo tablespace. By default, the undo tablespace is set to auto-extend when you use DBCA to configure your database.</p>
+<p>You may choose to disable auto-extension and adjust the size of the tablespace manually. In this case, ensure that the tablespace is large enough to meet the read-consistency requirements for your longest-running query. Also, if you use Flashback features, then the tablespace must be large enough to accommodate Flashback operations. In these situations, Oracle Enterprise Manager includes an Undo Advisor to help you determine the optimal size. See <a href="#BABDJDBF">"Using the Undo Advisor"</a>.</p>
+</div>
+<!-- class="sect2" -->
+<a id="CHDBAEDB" name="CHDBAEDB"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref333" name="sthref333"></a>
+<h3>Managing Undo with Enterprise Manager</h3>
+<p><a id="sthref334" name="sthref334"></a>With Enterprise Manager, you can manage undo as follows:</p>
+<ol type="1" start="1">
+<li>
+<p>From the Database Control home page, click <span class="bold">Administration</span>.</p>
+<p>The Administration property page appears.</p>
+</li>
+<li>
+<p>In the Database Configuration section, click <span class="bold">Undo Management</span>.</p>
+<p>The Undo Management page appears, as shown in <a href="#BABBIHDF">Figure 6-5</a>.</p>
+</li>
+</ol>
+<div class="figure"><a id="BABBIHDF" name="BABBIHDF"></a><a id="sthref335" name="sthref335"></a>
+<p class="titleinfigure">Figure 6-5 Undo Management page</p>
+<img src="./undo_manage.gif" alt="Description of undo_manage.gif follows" title="Description of undo_manage.gif follows" /><br />
+<a id="sthref336" name="sthref336" href="./img_text/undo_manage.htm">Description of the illustration undo_manage.gif</a><br />
+<br /></div>
+<!-- class="figure" -->
+<p>You can use the Undo Management page to view the following about your undo configuration:</p>
+<ul>
+<li type="disc">
+<p>Name and size of undo tablespace</p>
+</li>
+<li type="disc">
+<p>Auto-extend tablespace setting</p>
+</li>
+<li type="disc">
+<p>Auto-tuned undo retention period</p>
+</li>
+<li type="disc">
+<p>Minimum retention period</p>
+</li>
+</ul>
+<p>In Undo Tablespace for this Instance, the <span class="bold">Auto-Extensible</span> field shows <span class="bold">Yes</span> if auto-extending the tablespace is enabled, which is the default. When the undo tablespace is auto-extensible, Oracle automatically increases the size of the tablespace when more space is needed. By combining automatic extension of the undo tablespace with automatically tuned undo retention, you can ensure that long-running queries succeed by guaranteeing the undo for such queries.</p>
+<p>If you have a fixed-size tablespace, then you can use this page as a starting point for determining space requirements and extending the tablespace. See <a href="#BABDJDBF">"Using the Undo Advisor"</a>.</p>
+<p>The Undo Retention Settings section describes your minimum undo retention period. While Oracle automatically tunes the undo retention period, minimum undo retention enables you to define the floor value under which Oracle should never bring down the undo retention. When you create a database, the minimum undo retention is set to a default value. You might need to alter this value to build a recovery strategy using Flashback Query. See <a href="#CACGAGJE">"Setting Minimum Undo Retention Time"</a></p>
+<p>The Recommendations section of the Undo Management page gives you recommendations on sizing your undo tablespace based on your system activity. Recommendations usually arise (along with alerts) when you are using a fixed-size tablespace and queries have been failing because of insufficient undo space. On rarer occasions, when using an auto-extend tablespace, the same recommendations can arise if the system has reached it maximum disk limit.</p>
+<p>If Oracle recommends that you extend the undo tablespace, then you can use the Undo Advisor to determine a better size.</p>
+</div>
+<!-- class="sect2" -->
+<a id="BABDJDBF" name="BABDJDBF"></a>
+<div class="sect2"><!-- infolevel=all infotype=General --><a id="sthref337" name="sthref337"></a>
+<h3>Using the Undo Advisor</h3>
+<p>The amount of undo data that can be retained depends on the size of your undo tablespace. If your tablespace is set to auto-extend, then Oracle automatically acquires space as needed. If you choose to disable auto-extend, however, then you are responsible for ensuring that the undo tablespace has enough space. In this situation, Oracle configures the undo retention to the maximum possible value for that tablespace size.<a id="sthref338" name="sthref338"></a><a id="sthref339" name="sthref339"></a></p>
+<p>The Undo Advisor helps you analyze various scenarios to determine an appropriate undo tablespace size for different values of maximum undo retention. This analysis might be required in the following situations:</p>
+<ul>
+<li type="disc">
+<p>You have a fixed-sized tablespace (auto-extend disabled) and the auto-tuned value of undo retention is not large enough to prevent queries from failing. The Undo Advisor can help you determine a better tablespace size to ensure successful completion of your queries. See <a href="#CACDHGFJ">"Gaining Advice from Undo Advisor"</a>.</p>
+</li>
+<li type="disc">
+<p>You use Flashback features such as Flashback Query or Flashback Table. For Flashback operations to go back in time, the database must ensure that undo data is not overwritten.</p>
+<p>To build a flashback recovery strategy, you can set the minimum undo retention, which determines the lowest value for automatic undo tuning. For example, if the low trheshold is set to 15 minutes, then Oracle never lowers the undo retention time to less than 15 minutes. Consequently, if your flashback recovery strategy requires you to go back 8 hours to recover from human errors, then set the minimum undo retention to 8 hours. To learn how to set a new retention time, see <a href="#CACGAGJE">"Setting Minimum Undo Retention Time"</a></p>
+</li>
+</ul>
+<a id="CACDHGFJ" name="CACDHGFJ"></a>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref340" name="sthref340"></a>
+<h4>Gaining Advice from Undo Advisor</h4>
+<p>The Undo Advisor can help you determine a better size for your undo tablespace to ensure successful completion of queries. Follow these general steps to determine the required new size of your tablespace:</p>
+<ol type="1" start="1">
+<li>
+<p>Determine the duration of your longest running query according to your application characteristics. If this duration is longer than the tuned retention, then these long-running queries will encounter an error. In this case, your undo tablespace is too small. You need to either set your tablespace to auto-extend or manually extend it.</p>
+</li>
+<li>
+<p>In the Database Configuration section of the Administration page, click <span class="bold">Undo Management</span>.</p>
+<p>The Undo Management page appears, as shown in <a href="#BABBIHDF">Figure 6-5</a>.</p>
+</li>
+<li>
+<p>Click <span class="bold">Undo Advisor</span>.</p>
+<p>The Undo Advisor page appears. The top of the page shows the current auto-tuned undo retention time and undo tablespace size, as shown in <a href="#BABGBEHJ">Figure 6-6</a>.</p>
+</li>
+<li>
+<p>In the <span class="bold">New Undo Retention</span> field of the Advisor section, plug in the value of your longest-running query.</p>
+</li>
+<li>
+<p>In the <span class="bold">Analysis Time Period</span> list, select a time period that best reflects your business cycle.</p>
+<p>The Analysis section displays the Required Tablespace size for New Undo Retention.</p>
+</li>
+</ol>
+<p>For example, suppose we have a fixed size tablespace of 25 MB. We determine the longest running query is 60 minutes. We can enter this number in the <span class="bold">New Undo Retention</span> field as shown in <a href="#BABGBEHJ">Figure 6-6</a>. The advisor tells us that we need 10 MB of space to accommodate this query. Because our tablespace is 25 MB, our undo tablespace is adequately configured.</p>
+<div class="figure"><a id="BABGBEHJ" name="BABGBEHJ"></a><a id="sthref341" name="sthref341"></a>
+<p class="titleinfigure">Figure 6-6 Undo Advisor with Fixed-Sized Tablespace</p>
+<img src="./undo_advisor.gif" alt="Description of undo_advisor.gif follows" title="Description of undo_advisor.gif follows" /><br />
+<a id="sthref342" name="sthref342" href="./img_text/undo_advisor.htm">Description of the illustration undo_advisor.gif</a><br />
+<br /></div>
+<!-- class="figure" -->
+<p>Additionally, the Required Tablespace Size by Undo Retention Length graph shows the relationship between retention period and undo tablespace size, highlighting key data points such as the Auto-tuned Undo Retention and Best Possible Undo Retention.</p>
+</div>
+<!-- class="sect3" -->
+<a id="g1103954" name="g1103954"></a>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref343" name="sthref343"></a>
+<h4>Extending the Undo Tablespace</h4>
+<p><a id="sthref344" name="sthref344"></a>When auto-extend tablespace is enabled, the system automatically extends the undo tablespace if it is under space pressure. When the auto-extend tablespace feature is disabled, however, you might need to manually extend the undo tablespace. You might discover this information ahead of time while planning with the Undo Advisor. See <a href="#BABDJDBF">"Using the Undo Advisor"</a>.</p>
+<p>You might also need to extend the undo tablespace when you get an undo tablespace alert (warning or critical), or when you get a query too long alert or snapshot too old error.</p>
+<p>To resize the tablespace:</p>
+<ol type="1" start="1">
+<li>
+<p>From the Undo Management page, click <span class="bold">Edit Undo Tablespace</span>.</p>
+<p>The Edit Tablespace page appears.</p>
+</li>
+<li>
+<p>Select a datafile to extend and click <span class="bold">Edit</span>.</p>
+<p>The Edit Datafile page appears.</p>
+</li>
+<li>
+<p>In the <span class="bold">File Size</span> field, enter a new datafile size.</p>
+<p>You can also have the system automatically extend the datafile by enabling <span class="bold">Automatically extend datafile when full</span> under Storage and specifying an increment size.</p>
+</li>
+<li>
+<p>Click <span class="bold">Continue</span>.</p>
+<p>The Edit Tablespace page appears.</p>
+</li>
+<li>
+<p>Under Datafiles, Click <span class="bold">Apply</span>.</p>
+<p>A confirmation message should appear.</p>
+</li>
+</ol>
+</div>
+<!-- class="sect3" -->
+<a id="CACGAGJE" name="CACGAGJE"></a>
+<div class="sect3"><!-- infolevel=all infotype=General --><a id="sthref345" name="sthref345"></a>
+<h4>Setting Minimum Undo Retention Time</h4>
+<p>If you are using the Flashback Query or Flashback Table feature and need to configure a flashback recovery strategy to go back in time, then configure the minimum undo retention as follows:</p>
+<ol type="1" start="1">
+<li>
+<p>In the <span class="bold">New Undo Retention</span> field of the Undo Advisor page, enter the new retention period.</p>
+<p>For configuring Flashback Query and Flashback Table, set a value equal to how far back in time you need to go. For example, if you need an eight hour flashback recovery strategy, set the minimum retention to 8 hours.</p>
+</li>
+<li>
+<p>Click <span class="bold">OK</span>.</p>
+</li>
+</ol>
+<p>Alternatively, you can set this parameter as you do for other system parameters by navigating to the All Initialization Parameters page. Set the parameter called <code>undo_retention</code>. For more information about this page, see <a href="instance.htm#CACDDIID">"Viewing and Modifying Initialization Parameters"</a>.</p>
+</div>
+<!-- class="sect3" --></div>
+<!-- class="sect2" --></div>
+<!-- class="sect1" -->
+<a id="CHDDIJDD" name="CHDDIJDD"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref346" name="sthref346"></a>
+<h2>Making Changes to the Database Storage Structure</h2>
+<p>The preconfigured database that you installed includes all of the database structures of a basic database. As the user base grows, you can expand existing database storage structures or create additional ones. For example, you might need to create additional tablespaces for users or applications, or you might want to create additional online redo log groups to expand the redo log capacity.</p>
+<p>Oracle provides alerts, advisories, and monitoring pages to help you make decisions regarding database storage. These topics are discussed in <a href="montune.htm#CHDDAFBD">Chapter 10, "Monitoring and Tuning the Database"</a>. Oracle lets you create your own alerts for other events that you want to monitor.</p>
+<p>The Storage section links shown in <a href="#CHDHAFBA">"Storage Options"</a> are links that you can use to make changes to the database storage structure. Other pages also contain links that enable you to perform specific actions that affect the database storage structure.</p>
+<p>For example, the Maintenance page includes a Backup/Recovery Settings section. This section includes a link for changing the archiving mode of the database and creating archived redo log files (see <a href="backrest.htm#i1006225">"Configuring Your Database for Basic Backup and Recovery"</a>).</p>
+<p>When you make changes to the storage structure of your database, these changes can be reflected in the data dictionary and in the control file. It is important to consider this fact in your backup and recovery strategy. This topic is discussed in <a href="backrest.htm#CIHEHFJJ">Chapter 9, "Performing Backup and Recovery"</a>.</p>
+</div>
+<!-- class="sect1" -->
+<a id="CACHDCBJ" name="CACHDCBJ"></a>
+<div class="sect1"><!-- infolevel=all infotype=General --><a id="sthref347" name="sthref347"></a>
+<h2>Storage: Oracle by Example Series</h2>
+<p>Oracle by Example (OBE) has a series on the <span class="italic">Oracle Database 2 Day DBA</span> book. This OBE steps you through the tasks in this chapter and includes annotated screen shots.</p>
+<p>To view the Storage OBE, point your browser to the following location:</p>
+<pre xml:space="preserve" class="oac_no_warn"><a href="http://www.oracle.com/technology/obe/10gr2_2day_dba/storage/storage.htm">http://www.oracle.com/technology/obe/10gr2_2day_dba/storage/storage.htm</a>
+</pre></div>
+<!-- class="sect1" --></div>
+<div class="footer">
+<hr />
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="100%">
+<tr>
+<td style="width: 33%;" align="left">
+<table class="simple oac_no_warn" summary="" cellspacing="0" cellpadding="0" align="left" width="98">
+<tr>
+<td align="center" valign="top"><a href="instance.htm"><img src="../../dcommon/gifs/leftnav.gif" alt="Go to previous page" border="0" /><br />
+<span class="icon">Previous</span></a></td>
+<td align="center" valign="top"><a href="users_secure.htm"><img src="../../dcommon/gifs/rightnav.gif" alt="Go to next page" border="0" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td style="width: 34%;" align="center" class="copyrightlogo"><img src="../../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+<a href="../../dcommon/html/cpyr.htm"><font size="-2">Copyright&nbsp;&copy;&nbsp;2004, 2005,&nbsp;Oracle.&nbsp;All&nbsp;rights&nbsp;reserved.</font></a></td>
+<td style="width: 33%;" align="right">
+<table class="icons oac_no_warn" summary="" cellspacing="0" cellpadding="0" width="245">
+<tr>
+<td align="center" valign="top"><a href="../../index.htm"><img src="../../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" border="0" /><br />
+<span class="icon">Home</span></a></td>
+<td align="center" valign="top"><a href="../../nav/portal_booklist.htm"><img src="../../dcommon/gifs/booklist.gif" alt="Go to Book List" border="0" /><br />
+<span class="icon">Book List</span></a></td>
+<td align="center" valign="top"><a href="toc.htm"><img src="../../dcommon/gifs/toc.gif" alt="Go to Table of Contents" border="0" /><br />
+<span class="icon">Contents</span></a></td>
+<td align="center" valign="top"><a href="index.htm"><img src="../../dcommon/gifs/index.gif" alt="Go to Index" border="0" /><br />
+<span class="icon">Index</span></a></td>
+<td align="center" valign="top"><a href="../../dcommon/html/feedback.htm"><img src="../../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" border="0" /><br />
+<span class="icon">Feedback</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>
