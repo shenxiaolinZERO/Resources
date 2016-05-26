@@ -1,0 +1,37 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: GeometricTransformation - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\user10\AppData\Local\Temp\RSP874B.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/GeometricTransformation.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ   /c 
+"Y:\Desktop\exp3\GeometricTransformation\GeometricTransformationView.cpp"
+]
+Creating command line "cl.exe @C:\Users\user10\AppData\Local\Temp\RSP874B.tmp" 
+Creating temporary file "C:\Users\user10\AppData\Local\Temp\RSP874C.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/GeometricTransformation.pdb" /debug /machine:I386 /out:"Debug/GeometricTransformation.exe" /pdbtype:sept 
+.\Debug\GeometricTransformation.obj
+.\Debug\StdAfx.obj
+.\Debug\MainFrm.obj
+.\Debug\GeometricTransformationDoc.obj
+.\Debug\GeometricTransformationView.obj
+.\Debug\GeometricTransformation.res
+]
+Creating command line "link.exe @C:\Users\user10\AppData\Local\Temp\RSP874C.tmp"
+<h3>Output Window</h3>
+Compiling...
+GeometricTransformationView.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+GeometricTransformation.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: CoordinateSystem - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\Users\user10\AppData\Local\Temp\RSPD4D8.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /Fp"Debug/CoordinateSystem.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ   /c 
+"C:\¡¾¡¾111ZZZZZERO\CoordinateSystem\CoordinateSystemView.cpp"
+]
+Creating command line "cl.exe @C:\Users\user10\AppData\Local\Temp\RSPD4D8.tmp" 
+Creating temporary file "C:\Users\user10\AppData\Local\Temp\RSPD4D9.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/CoordinateSystem.pdb" /debug /machine:I386 /out:"Debug/CoordinateSystem.exe" /pdbtype:sept 
+".\Debug\CoordinateSystem.obj"
+".\Debug\StdAfx.obj"
+".\Debug\MainFrm.obj"
+".\Debug\CoordinateSystemDoc.obj"
+".\Debug\CoordinateSystemView.obj"
+".\Debug\CoordinateSystem.res"
+]
+Creating command line "link.exe @C:\Users\user10\AppData\Local\Temp\RSPD4D9.tmp"
+<h3>Output Window</h3>
+Compiling...
+CoordinateSystemView.cpp
+C:\¡¾¡¾111ZZZZZERO\CoordinateSystem\CoordinateSystemView.cpp(65) : warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+C:\¡¾¡¾111ZZZZZERO\CoordinateSystem\CoordinateSystemView.cpp(66) : warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+Linking...
+
+
+
+<h3>Results</h3>
+CoordinateSystem.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
