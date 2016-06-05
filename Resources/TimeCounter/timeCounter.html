@@ -1,0 +1,33 @@
+<meta charset="utf-8"> 
+<html>
+<body onload="counter()">
+<script type="text/javascript">
+
+function  counter(){
+	var date = new Date();
+	var year = date.getFullYear();//getFullYear()：从 Date 对象以四位数字返回年份。
+
+     //创建Date对象的方法：
+	//var d = new Date(year, month, day, hours, minutes, seconds, milliseconds); //按照这个顺序哦！注意月份是0~11 ！！
+	var date2 = new Date(year,12,31,23,59,59);
+
+	//转换成秒
+	var time = (date2 - date)/1000;
+    
+    //floor(x) 	对 x 进行下舍入。
+	var day = Math.floor(time/(24*60*60));
+	var hour = Math.floor(time%(24*60*60)/(60*60));
+    var minute = Math.floor(time%(24*60*60)%(60*60)/60);
+    var second = Math.floor(time%(24*60*60)%(60*60)%60);
+
+    
+    var str = year + "年还剩" +day +"天"+hour+"时"+minute+"分"+second+"秒";
+     window.setInterval("counter()",1000);
+
+    console.log(str);
+    //alert(str);
+}
+ //window.setInterval("counter()",1000);
+</script>
+</body>
+</html>
