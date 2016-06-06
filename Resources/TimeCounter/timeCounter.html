@@ -1,31 +1,54 @@
-<meta charset="utf-8"> 
+<meta charset="utf-8"/>
 <html>
 <body onload="counter()">
+<div id="nowtime"></div>
+<div id="yeartime"></div>
+<div id="monthtime"></div>
+<div id="daytime"></div>
 <script type="text/javascript">
 
 function  counter(){
+//    求年剩余时间
 	var date = new Date();
+    document.getElementById("nowtime").innerHTML="当前时间是："+date;
 	var year = date.getFullYear();//getFullYear()：从 Date 对象以四位数字返回年份。
 
-     //创建Date对象的方法：
-	//var d = new Date(year, month, day, hours, minutes, seconds, milliseconds); //按照这个顺序哦！注意月份是0~11 ！！
-	var date2 = new Date(year,12,31,23,59,59);
+    //创建Date对象的方法：
+    //var d = new Date(year, month, day, hours, minutes, seconds, milliseconds); //按照这个顺序哦！注意月份是0~11 ！！
+	var date1 = new Date(year,12,31,23,59,59);
 
-	//转换成秒
-	var time = (date2 - date)/1000;
-    
+    //转换成秒
+	var time1 = (date1 - date)/1000;
+
     //floor(x) 	对 x 进行下舍入。
-	var day = Math.floor(time/(24*60*60));
-	var hour = Math.floor(time%(24*60*60)/(60*60));
-    var minute = Math.floor(time%(24*60*60)%(60*60)/60);
-    var second = Math.floor(time%(24*60*60)%(60*60)%60);
+	var day = Math.floor(time1/(24*60*60));
+	var hour = Math.floor(time1%(24*60*60)/(60*60));
+    var minute = Math.floor(time1%(24*60*60)%(60*60)/60);
+    var second = Math.floor(time1%(24*60*60)%(60*60)%60);
 
-    
-    var str = year + "年还剩" +day +"天"+hour+"时"+minute+"分"+second+"秒";
-     window.setInterval("counter()",1000);
+    document.getElementById("yeartime").innerHTML= year + "年还剩" +day +"天"+hour+"小时"+minute+"分"+second+"秒";
+    t=setTimeout(function(){counter();},1000);
 
-    console.log(str);
-    //alert(str);
+
+//求月剩余时间
+    var month = date.getMonth()+1;//getMonth():从 Date 对象返回月份 (0 ~ 11)。所以当前月要加上1 !
+    var date2 = new Date(year,month,30,23,59,59);
+    //转换成秒
+    var time2 = (date2 - date)/1000;
+
+    //floor(x) 	对 x 进行下舍入。
+    var day2 = Math.floor(time2/(24*60*60)/2);  //此处天数的计算有所偏差......
+    var hour2 = Math.floor(time2%(24*60*60)/(60*60));
+    var minute2 = Math.floor(time2%(24*60*60)%(60*60)/60);
+    var second2 = Math.floor(time2%(24*60*60)%(60*60)%60);
+
+    document.getElementById("monthtime").innerHTML= year+"年"+month + "月还剩" +day2 +"天"+hour2+"小时"+minute2+"分"+second2+"秒";
+
+//求当天剩余时间
+    var todaydate=date.getDate();  //获取今天是几号
+    var todayweek=date.getDay();  //获取今天是星期几，返回值是 0（周日） 到 6（周六） 之间的一个整数。
+    document.getElementById("daytime").innerHTML="【今天】：(" +year+"年"+month + "月"+todaydate+"日 星期"+todayweek +"）   还剩"+hour2+"小时"+minute2+"分"+second2+"秒";
+
 }
  //window.setInterval("counter()",1000);
 </script>
